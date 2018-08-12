@@ -1,6 +1,16 @@
-This is Philip B. Zhang
+# Philip B. Zhang's homepage
 
-# Header 1
+![pic](pic.jpg)
+
+College of Mathematical Science 
+
+Tianjin Normal University
+
+Tianjin  300387
+
+P. R. China
+
+
 ## Header 2
 ### Header 3
 
