@@ -4,13 +4,13 @@
 
 
 
-_College of Mathematical Science_ .  | . 
+_College of Mathematical Science_  
 
-_Tianjin Normal University_   |
+_Tianjin Normal University_   
 
-_Tianjin  300387, P. R. China_ |
+_Tianjin  300387, P. R. China_ 
 
-_email: zhangATtjnu.edu.cn_ . | . 
+_email: zhangATtjnu.edu.cn_ 
 
 
 I work on the field of combinatorial polynomials with only real zeros. I am also interested in combinatorial problems connected with other areas such as symmetric functions, and representation theory.
