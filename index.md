@@ -1,6 +1,16 @@
 # Philip B. Zhang
 
- ![pic](pic.jpg)
+<img align="right" height="280" src="pic.jpg"/>
+
+_College of Mathematical Science_  
+
+_Tianjin Normal University_   
+
+_Tianjin  300387, P. R. China_ 
+
+_email: zhangATtjnu.edu.cn_ 
+
+
 
 I work on the field of combinatorial polynomials with only real zeros. I am also interested in combinatorial problems connected with other areas such as symmetric functions, and representation theory.
 
@@ -40,12 +50,4 @@ You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find
 - M. H.Y. Xie and P. B. Zhang, Derivation of the Real-rootedness of Coordinate Polynomials from the Hermite-Biehler Theorem. Acta Math. Hungar. 143(1)(2014), 185-191.
 
 
----
 
-_College of Mathematical Science_  
-
-_Tianjin Normal University_   
-
-_Tianjin  300387, P. R. China_ 
-
-_email: zhangATtjnu.edu.cn_ 
