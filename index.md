@@ -2,17 +2,6 @@
 
  ![pic](pic.jpg)
 
-
-
-_College of Mathematical Science_  
-
-_Tianjin Normal University_   
-
-_Tianjin  300387, P. R. China_ 
-
-_email: zhangATtjnu.edu.cn_ 
-
-
 I work on the field of combinatorial polynomials with only real zeros. I am also interested in combinatorial problems connected with other areas such as symmetric functions, and representation theory.
 
 I am now an instructor at the College of Mathematical Science at the Tianjin Normal University.  I received my Ph.D. in June 2015 from Nankai University under the guidance of [Arthur L.B. Yang](http://www.combinatorics.net.cn/homepage/yang/).
@@ -51,3 +40,12 @@ You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find
 - M. H.Y. Xie and P. B. Zhang, Derivation of the Real-rootedness of Coordinate Polynomials from the Hermite-Biehler Theorem. Acta Math. Hungar. 143(1)(2014), 185-191.
 
 
+---
+
+_College of Mathematical Science_  
+
+_Tianjin Normal University_   
+
+_Tianjin  300387, P. R. China_ 
+
+_email: zhangATtjnu.edu.cn_ 
