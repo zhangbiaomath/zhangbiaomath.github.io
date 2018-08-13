@@ -20,7 +20,7 @@ I am now an instructor at the College of Mathematical Science at the Tianjin Nor
 
 ## Publications
 
-You may also look up my papers on the Mathematics arXiv, MathSciNet, and Google Scholar.
+You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find/grp_math/1/au:+Zhang_Philip_B/0/1/0/all/0/1), [MathSciNet](http://www.ams.org/mathscinet/search/publications.html?pg1=INDI&s1=1066440), and [Google Scholar](https://scholar.google.com/citations?user=E0RFmmMAAAAJ&hl=en).
 
 - Philip B. Zhang, The Local h-Polynomials of Cluster Subdivisions Have Only Real Zeros, Bull. Austral. Math. Soc., accepted.
 
