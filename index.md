@@ -17,7 +17,6 @@ I work on the field of combinatorial polynomials with only real zeros. I am also
 I am now an instructor at the College of Mathematical Science at the Tianjin Normal University.  I received my Ph.D. in June 2015 from Nankai University under the guidance of [Arthur L.B. Yang](http://www.combinatorics.net.cn/homepage/yang/).
 
 
----
 
 # Publications
 
