@@ -27,7 +27,7 @@ You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find
 
 - Philip B. Zhang, Interlacing Polynomials and the Veronese Construction for Rational Formal Power Series, Proc. Roy. Soc. Edinburgh Sect. A, accepted.
 
-- Herman Z. Q. Chen, Arthur L. B. Yang, Philip B. Zhang, The Real-rootedness of Generalized Narayana Polynomials, Rocky Mountain J. Math. 48(1) (2018), 107-119.
+- Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Generalized Narayana Polynomials, Rocky Mountain J. Math. 48(1) (2018), 107-119.
 
 - Chunmei Luo, Liancui Zuo, Philip B. Zhang, The Wiener Index of Sierpinski-like Graphs, J. Comb. Optim. 35(3) (2018), 814–841.
 
@@ -47,7 +47,7 @@ You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find
 
 - Arthur L.B. Yang and Philip B. Zhang, The Real-rootedness of Eulerian polynomials via the Hermite–Biehler Theorem. DMTCS Proceedings, FPSAC’15, 2015, 465-474.
 
-- M. H.Y. Xie and P. B. Zhang, Derivation of the Real-rootedness of Coordinate Polynomials from the Hermite-Biehler Theorem. Acta Math. Hungar. 143(1)(2014), 185-191.
+- Matthew H.Y. Xie and Philip B. Zhang, Derivation of the Real-rootedness of Coordinate Polynomials from the Hermite-Biehler Theorem. Acta Math. Hungar. 143(1)(2014), 185-191.
 
 
 
