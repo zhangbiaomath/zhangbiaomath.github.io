@@ -1,14 +1,15 @@
-# Philip B. Zhang's homepage
+ # Philip B. Zhang
+
 
 ![pic](pic.jpg)
 
-College of Mathematical Science 
+**College of Mathematical Science**
 
-Tianjin Normal University
+**Tianjin Normal University**
 
-Tianjin  300387
+**Tianjin  300387, P. R. China**
 
-P. R. China
+_email: zhangATtjnu.edu.cn_
 
 
 I work on the field of combinatorial polynomials with only real zeros. I am also interested in combinatorial problems connected with other areas such as symmetric functions, and representation theory.
@@ -18,7 +19,7 @@ I am now an instructor at the College of Mathematical Science at the Tianjin Nor
 
 
 
-## Publications
+# Publications
 
 You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find/grp_math/1/au:+Zhang_Philip_B/0/1/0/all/0/1), [MathSciNet](http://www.ams.org/mathscinet/search/publications.html?pg1=INDI&s1=1066440), and [Google Scholar](https://scholar.google.com/citations?user=E0RFmmMAAAAJ&hl=en).
 
