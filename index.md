@@ -37,17 +37,17 @@ You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find
 
 - Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, On 132-representable Graphs, Australas. J. Combin. 69(1) (2017), 105-118.
 
-- Arthur L.B. Yang and Philip B. Zhang, Brenti's Open Problem on the Real-rootedness of q-Eulerian Polynomials of Type D, SIAM J. Discrete Math. 31(2)(2017), 918-926.
+- Arthur L.B. Yang, Philip B. Zhang, Brenti's Open Problem on the Real-rootedness of q-Eulerian Polynomials of Type D, SIAM J. Discrete Math. 31(2)(2017), 918-926.
 
-- Alice L.L. Gao, Sergey Kitaev and Philip B. Zhang, Avoiding Vincular Patterns on Alternating Words, Discrete Math. 339(8)(2016), 2079-2093.
+- Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Avoiding Vincular Patterns on Alternating Words, Discrete Math. 339(8)(2016), 2079-2093.
 
-- Alice L.L. Gao, Sergey Kitaev and Philip B. Zhang, Pattern-avoiding Alternating Words, Discrete Appl. Math. 207(2016), 56-66.
+- Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Pattern-avoiding Alternating Words, Discrete Appl. Math. 207(2016), 56-66.
 
 - Philip B. Zhang, On the Real-rootedness of the Descent Polynomials of (n-2)-Stack Sortable Permutations, Electron. J. Combin. 22(4)(2015), 12.
 
-- Arthur L.B. Yang and Philip B. Zhang, The Real-rootedness of Eulerian polynomials via the Hermite–Biehler Theorem. DMTCS Proceedings, FPSAC’15, 2015, 465-474.
+- Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Eulerian polynomials via the Hermite–Biehler Theorem. DMTCS Proceedings, FPSAC’15, 2015, 465-474.
 
-- Matthew H.Y. Xie and Philip B. Zhang, Derivation of the Real-rootedness of Coordinate Polynomials from the Hermite-Biehler Theorem. Acta Math. Hungar. 143(1)(2014), 185-191.
+- Matthew H.Y. Xie, Philip B. Zhang, Derivation of the Real-rootedness of Coordinate Polynomials from the Hermite-Biehler Theorem. Acta Math. Hungar. 143(1)(2014), 185-191.
 
 
 
