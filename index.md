@@ -22,31 +22,31 @@ I am now an instructor at the College of Mathematical Science at the Tianjin Nor
 
 You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find/grp_math/1/au:+Zhang_Philip_B/0/1/0/all/0/1), [MathSciNet](http://www.ams.org/mathscinet/search/publications.html?pg1=INDI&s1=1066440), and [Google Scholar](https://scholar.google.com/citations?user=E0RFmmMAAAAJ&hl=en).
 
-- Philip B. Zhang, The Local h-Polynomials of Cluster Subdivisions Have Only Real Zeros, Bull. Austral. Math. Soc., accepted.
+- Philip B. Zhang, The Local h-Polynomials of Cluster Subdivisions Have Only Real Zeros, _Bull. Austral. Math. Soc._, accepted.
 
-- Philip B. Zhang, Interlacing Polynomials and the Veronese Construction for Rational Formal Power Series, Proc. Roy. Soc. Edinburgh Sect. A, accepted.
+- Philip B. Zhang, Interlacing Polynomials and the Veronese Construction for Rational Formal Power Series, _Proc. Roy. Soc. Edinburgh Sect. A_, accepted.
 
-- Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Generalized Narayana Polynomials, Rocky Mountain J. Math., 48(1) (2018), 107-119.
+- Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Generalized Narayana Polynomials, _Rocky Mountain J. Math._, __48(1)__(2018), 107-119.
 
-- Chunmei Luo, Liancui Zuo, Philip B. Zhang, The Wiener Index of Sierpinski-like Graphs, J. Comb. Optim., 35(3) (2018), 814–841.
+- Chunmei Luo, Liancui Zuo, Philip B. Zhang, The Wiener Index of Sierpinski-like Graphs, _J. Comb. Optim._, __35(3)__(2018), 814–841.
 
-- Herman Z. Q. Chen, Arthur L. B. Yang, Philip B. Zhang, Kirillov's Unimodality Conjecture for the Rectangular Narayana Polynomials, Electron. J. Combin., 25(1) (2018), 17.
+- Herman Z. Q. Chen, Arthur L. B. Yang, Philip B. Zhang, Kirillov's Unimodality Conjecture for the Rectangular Narayana Polynomials, _Electron. J. Combin._, __25(1)__(2018), 17.
 
-- Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, On Pattern Avoiding Indecomposable Permutations, Integers, 18(2018), A2.
+- Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, On Pattern Avoiding Indecomposable Permutations, _Integers_, __18__(2018), A2.
 
-- Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, On 132-representable Graphs, Australas. J. Combin., 69(1) (2017), 105-118.
+- Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, On 132-representable Graphs, _Australas. J. Combin._, __69(1)__(2017), 105-118.
 
-- Arthur L.B. Yang, Philip B. Zhang, Brenti's Open Problem on the Real-rootedness of q-Eulerian Polynomials of Type D, SIAM J. Discrete Math., 31(2)(2017), 918-926.
+- Arthur L.B. Yang, Philip B. Zhang, Brenti's Open Problem on the Real-rootedness of q-Eulerian Polynomials of Type D, _SIAM J. Discrete Math._, __31(2)__(2017), 918-926.
 
-- Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Avoiding Vincular Patterns on Alternating Words, Discrete Math., 339(8)(2016), 2079-2093.
+- Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Avoiding Vincular Patterns on Alternating Words, _Discrete Math._, __339(8)__(2016), 2079-2093.
 
-- Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Pattern-avoiding Alternating Words, Discrete Appl. Math., 207(2016), 56-66.
+- Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Pattern-avoiding Alternating Words, _Discrete Appl. Math._, __207__(2016), 56-66.
 
-- Philip B. Zhang, On the Real-rootedness of the Descent Polynomials of (n-2)-Stack Sortable Permutations, Electron. J. Combin., 22(4)(2015), 12.
+- Philip B. Zhang, On the Real-rootedness of the Descent Polynomials of (n-2)-Stack Sortable Permutations, _Electron. J. Combin._, __22(4)__(2015), 12.
 
-- Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Eulerian polynomials via the Hermite–Biehler Theorem. DMTCS Proceedings, FPSAC’15, 2015, 465-474.
+- Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Eulerian polynomials via the Hermite–Biehler Theorem. _DMTCS Proceedings_, FPSAC’15, 2015, 465-474.
 
-- Matthew H.Y. Xie, Philip B. Zhang, Derivation of the Real-rootedness of Coordinate Polynomials from the Hermite-Biehler Theorem. Acta Math. Hungar., 143(1)(2014), 185-191.
+- Matthew H.Y. Xie, Philip B. Zhang, Derivation of the Real-rootedness of Coordinate Polynomials from the Hermite-Biehler Theorem. _Acta Math. Hungar._, __143(1)__(2014), 185-191.
 
 
 
