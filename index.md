@@ -44,7 +44,7 @@ You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find
 
 - Philip B. Zhang, On the Real-rootedness of the Descent Polynomials of (n-2)-Stack Sortable Permutations, _Electron. J. Combin._, __22(4)__(2015), 12.
 
-- Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Eulerian polynomials via the Hermite–Biehler Theorem. _DMTCS Proceedings_, FPSAC’15, 2015, 465-474.
+- Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Eulerian polynomials via the Hermite–Biehler Theorem. _DMTCS Proceedings_, __FPSAC’15__(2015), 465-474.
 
 - Matthew H.Y. Xie, Philip B. Zhang, Derivation of the Real-rootedness of Coordinate Polynomials from the Hermite-Biehler Theorem. _Acta Math. Hungar._, __143(1)__(2014), 185-191.
 
