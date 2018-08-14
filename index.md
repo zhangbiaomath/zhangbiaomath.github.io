@@ -30,7 +30,7 @@ You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find
 
 - Chunmei Luo, Liancui Zuo, Philip B. Zhang, The Wiener Index of Sierpinski-like Graphs, _J. Comb. Optim._, __35(3)__(2018), 814–841.
 
-- Herman Z. Q. Chen, Arthur L. B. Yang, Philip B. Zhang, Kirillov's Unimodality Conjecture for the Rectangular Narayana Polynomials, _Electron. J. Combin._, __25(1)__(2018), 17.
+- Herman Z. Q. Chen, Arthur L. B. Yang, Philip B. Zhang, Kirillov's Unimodality Conjecture for the Rectangular Narayana Polynomials, _Electron. J. Combin._, __25(1)__(2018), P1.17.
 
 - Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, On Pattern Avoiding Indecomposable Permutations, _Integers_, __18__(2018), A2.
 
@@ -42,7 +42,7 @@ You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find
 
 - Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Pattern-avoiding Alternating Words, _Discrete Appl. Math._, __207__(2016), 56-66.
 
-- Philip B. Zhang, On the Real-rootedness of the Descent Polynomials of (n-2)-Stack Sortable Permutations, _Electron. J. Combin._, __22(4)__(2015), 12.
+- Philip B. Zhang, On the Real-rootedness of the Descent Polynomials of (n-2)-Stack Sortable Permutations, _Electron. J. Combin._, __22(4)__(2015), P4.12.
 
 - Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Eulerian polynomials via the Hermite–Biehler Theorem. _DMTCS Proceedings_, __FPSAC’15__(2015), 465-474.
 
