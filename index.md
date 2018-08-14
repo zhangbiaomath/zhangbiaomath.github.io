@@ -46,7 +46,7 @@ You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find
 
 - Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Eulerian polynomials via the Hermite–Biehler Theorem. _DMTCS Proceedings_, __FPSAC’15__(2015), 465-474.
 
-- Matthew H.Y. Xie, Philip B. Zhang, Derivation of the Real-rootedness of Coordinate Polynomials from the Hermite-Biehler Theorem. _Acta Math. Hungar._, __143(1)__(2014), 185-191.
+- Matthew H.Y. Xie, Philip B. Zhang, Derivation of the Real-rootedness of Coordinate Polynomials from the Hermite-Biehler Theorem, _Acta Math. Hungar._, __143(1)__(2014), 185-191.
 
 
 
