@@ -24,9 +24,9 @@ You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find
 
 - Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a Greedy Algorithm to Construct Universal Cycles for Permutations, _International Journal of Foundations of Computer Science_, accepted.
 
-- Philip B. Zhang, The Local h-Polynomials of Cluster Subdivisions Have Only Real Zeros, _Bull. Austral. Math. Soc._, accepted.
-
 - Philip B. Zhang, Interlacing Polynomials and the Veronese Construction for Rational Formal Power Series, _Proc. Roy. Soc. Edinburgh Sect. A_, accepted.
+
+- Philip B. Zhang, The Local h-Polynomials of Cluster Subdivisions Have Only Real Zeros, _Bull. Austral. Math. Soc._, __98 (2)__ (2018),  258-264.
 
 - Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Generalized Narayana Polynomials, _Rocky Mountain J. Math._, __48 (1)__  (2018), 107-119.
 
