@@ -2,16 +2,14 @@
 
 
 
-
-<img align="right" height="280" src="pic.jpg"/>
-
-Address: College of Mathematical Science
-
-Tianjin Normal University, Tianjin  300387, P. R. China
+Address: College of Mathematical Science, Tianjin Normal University, Tianjin  300387, P. R. China
 
 email: _zhangATtjnu.edu.cn_
 
 
+
+
+<img align="right" height="280" src="pic.jpg"/>
 
 I work on the field of combinatorial polynomials with only real zeros. I am also interested in combinatorial problems connected with other areas such as symmetric functions, and representation theory.
 
