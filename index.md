@@ -1,8 +1,13 @@
-# Philip B. Zhang  (张彪)
+<center>Welcome To Philip B. Zhang's Homepage</center>
 
 
+Philip B. Zhang  
 
-Address: College of Mathematical Science, Tianjin Normal University, Tianjin  300387, P. R. China
+College of Mathematical Science
+
+Tianjin Normal University
+
+Tianjin  300387, P. R. China
 
 email: _zhangATtjnu.edu.cn_
 
