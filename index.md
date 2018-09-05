@@ -8,7 +8,7 @@ _Tianjin Normal University_
 
 _Tianjin  300387, P. R. China_
 
-email: _zhangATtjnu.edu.cn_
+e-mail: _zhangATtjnu.edu.cn_
 
 I am a lecturer at the Tianjin Normal University. I am currently a visiting scholar at the University of Pennsylvania where my mentor was [James Haglund](https://www.math.upenn.edu/~jhaglund/) from August 2018 to Augut 2019.
 I received my Ph.D. in June 2015 from Nankai University under the guidance of [Arthur L.B. Yang](http://www.combinatorics.net.cn/homepage/yang/).
