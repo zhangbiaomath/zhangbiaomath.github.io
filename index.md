@@ -26,7 +26,7 @@ You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find
 
 - Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a Greedy Algorithm to Construct Universal Cycles for Permutations, _International Journal of Foundations of Computer Science_, accepted.
 
-- Philip B. Zhang, The Local h-Polynomials of Cluster Subdivisions Have Only Real Zeros, _Bull. Austral. Math. Soc._, __98 (2)__ (2018),  258-264.
+- Philip B. Zhang, The Local _h_-Polynomials of Cluster Subdivisions Have Only Real Zeros, _Bull. Austral. Math. Soc._, __98 (2)__ (2018),  258-264.
 
 - Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Generalized Narayana Polynomials, _Rocky Mountain J. Math._, __48 (1)__  (2018), 107-119.
 
@@ -38,13 +38,13 @@ You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find
 
 - Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, On 132-representable Graphs, _Australas. J. Combin._, __69 (1)__ (2017), 105-118.
 
-- Arthur L.B. Yang, Philip B. Zhang, Brenti's Open Problem on the Real-rootedness of q-Eulerian Polynomials of Type D, _SIAM J. Discrete Math._, __31 (2)__ (2017), 918-926.
+- Arthur L.B. Yang, Philip B. Zhang, Brenti's Open Problem on the Real-rootedness of _q_-Eulerian Polynomials of Type D, _SIAM J. Discrete Math._, __31 (2)__ (2017), 918-926.
 
 - Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Avoiding Vincular Patterns on Alternating Words, _Discrete Math._, __339 (8)__ (2016), 2079-2093.
 
 - Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Pattern-avoiding Alternating Words, _Discrete Appl. Math._, __207__ (2016), 56-66.
 
-- Philip B. Zhang, On the Real-rootedness of the Descent Polynomials of (n-2)-Stack Sortable Permutations, _Electron. J. Combin._, __22 (4)__ (2015), P4.12.
+- Philip B. Zhang, On the Real-rootedness of the Descent Polynomials of (_n-2_)-Stack Sortable Permutations, _Electron. J. Combin._, __22 (4)__ (2015), P4.12.
 
 - Arthur L.B. Yang, Philip B. Zhang, The Real-rootedness of Eulerian polynomials via the Hermite–Biehler Theorem. _DMTCS Proceedings_, __FPSAC’15__ (2015), 465-474.
 
