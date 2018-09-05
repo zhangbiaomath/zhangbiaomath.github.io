@@ -1,5 +1,5 @@
 
-<img align="right" height="280" src="pic.jpg"/>
+<img align="right" height="270" src="pic.jpg"/>
 
 _College of Mathematical Science_
 
