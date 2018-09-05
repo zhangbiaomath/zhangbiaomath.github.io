@@ -1,6 +1,5 @@
 # Philip B. Zhang  (张彪)
 
-I am a lecturer at the Tianjin Normal University.
 
 <img align="right" height="280" src="pic.jpg"/>
 
