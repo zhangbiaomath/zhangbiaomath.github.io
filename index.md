@@ -22,9 +22,10 @@ I am now a lecturer at the College of Mathematical Science at the Tianjin Normal
 
 You may also look up my papers on the Mathematics [arXiv](https://arxiv.org/find/grp_math/1/au:+Zhang_Philip_B/0/1/0/all/0/1), [MathSciNet](http://www.ams.org/mathscinet/search/publications.html?pg1=INDI&s1=1066440), and [Google Scholar](https://scholar.google.com/citations?user=E0RFmmMAAAAJ&hl=en).
 
-- Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a Greedy Algorithm to Construct Universal Cycles for Permutations, _International Journal of Foundations of Computer Science_, accepted.
 
 - Philip B. Zhang, Interlacing Polynomials and the Veronese Construction for Rational Formal Power Series, _Proc. Roy. Soc. Edinburgh Sect. A_, accepted.
+
+- Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a Greedy Algorithm to Construct Universal Cycles for Permutations, _International Journal of Foundations of Computer Science_, accepted.
 
 - Philip B. Zhang, The Local h-Polynomials of Cluster Subdivisions Have Only Real Zeros, _Bull. Austral. Math. Soc._, __98 (2)__ (2018),  258-264.
 
