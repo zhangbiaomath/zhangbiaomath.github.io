@@ -18,7 +18,7 @@ I work on the field of combinatorial polynomials with only real zeros. I am also
 
 # Publications
 
-You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/au:+Zhang_Philip_B/0/1/0/all/0/1), [MathSciNet](http://www.ams.org/mathscinet/search/publications.html?pg1=INDI&s1=1066440), and [Google Scholar](https://scholar.google.com/citations?user=E0RFmmMAAAAJ&hl=en).
+You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/au:+Zhang_Philip_B/0/1/0/all/0/1), [Google Scholar](https://scholar.google.com/citations?user=E0RFmmMAAAAJ&hl=en), and [MathSciNet](http://www.ams.org/mathscinet/search/publications.html?pg1=INDI&s1=1066440).
 
 
 1. Philip B. Zhang, Interlacing Polynomials and the Veronese Construction for Rational Formal Power Series, _Proc. Roy. Soc. Edinburgh Sect. A_, accepted.
