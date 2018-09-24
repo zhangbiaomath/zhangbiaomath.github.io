@@ -6,7 +6,7 @@
 <h2> <font >Tianjin  300387, P. R. China</font></h2>
 <h2> <font >e-mail:  zhangATtjnu.edu.cn</font></h2>
 </td>
-<td width="20%">
+<td width="30%">
 </td>
 <td>
 <img height="300"  src="pic.jpg">
@@ -41,7 +41,6 @@ You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/
 1. Chunmei Luo, Liancui Zuo, Philip B. Zhang, [The Wiener Index of Sierpinski-like Graphs](papers/2018/2018jco.pdf), _J. Comb. Optim._, __35 (3)__ (2018), 814–841.
 
 1. Herman Z. Q. Chen, Arthur L. B. Yang, Philip B. Zhang, [Kirillov's Unimodality Conjecture for the Rectangular Narayana Polynomials](papers/2018/2018ejc.pdf), _Electron. J. Combin._, __25 (1)__ (2018), P1.17.
-
 1. Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, [On Pattern Avoiding Indecomposable Permutations](papers/2018/2018integers.pdf), _Integers_, __18__ (2018), A2.
 
 1. Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, [On 132-representable Graphs](papers/2017/2017ajc.pdf), _Australas. J. Combin._, __69 (1)__ (2017), 105-118.
