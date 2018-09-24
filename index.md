@@ -7,7 +7,7 @@
 	<p><font size="4"><b>Address</b></font> </p>
 	<blockquote>
 	    College of Mathematical Science<br>
-	    Tianjin Normal Universit<br>
+	    Tianjin Normal University<br>
 	    Tianjin  300387<br>
  	    P. R. China<br>
 	</blockquote>
