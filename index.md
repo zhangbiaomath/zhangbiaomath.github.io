@@ -4,17 +4,19 @@
 <center>
 <table width="90%">
   <tbody><tr>
-    <td width="25%"><img border="0" alt="" src="pic.jpg" width="140" height="200"></td>
     <td width="42%">
-      <p><font color="#0000cc" size="4"><b>Address</b></font> </p>
-      <blockquote>
-	  College of Mathematical Science<br>
-	  Tianjin Normal Universit<br>
-	  Tianjin  300387<br>
-    P. R. China<br>
-	  </blockquote>
-	  <p><font color="#0000cc" size="4"> <b>Email:</b></font>    <a href="mailto:zhang@tjnu.edu.cn">  zhang at tjnu dot edu dot cn</a> </p>
-	</td>
+	<p><font color="#0000cc" size="4"><b>Address</b></font> </p>
+	<blockquote>
+	    College of Mathematical Science<br>
+	    Tianjin Normal Universit<br>
+	    Tianjin  300387<br>
+ 	    P. R. China<br>
+	</blockquote>
+	<p><font color="#0000cc" size="4"> <b>Email:</b></font>   
+		<a href="mailto:zhang@tjnu.edu.cn">  zhang at tjnu dot edu dot cn</a> </p>
+      </td>
+	<td width="25%">
+	    <img border="0" alt="" src="pic.jpg" width="140" height="200"></td>
   </tr>
 </tbody></table>
 </center>
