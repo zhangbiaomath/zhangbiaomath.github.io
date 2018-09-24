@@ -13,9 +13,11 @@ _e-mail:  zhangATtjnu.edu.cn_
 I am an instructor at the Tianjin Normal University. 
 <!--- I am currently a visiting scholar at the University of Pennsylvania where my mentor is [James Haglund](https://www.math.upenn.edu/~jhaglund/) from August 2018 to August 2019.  -->
 
-I received my Ph.D. in June 2015 from Nankai University under the guidance of [Arthur L.B. Yang](http://www.combinatorics.net.cn/homepage/yang/).
+<!---  I received my Ph.D. in June 2015 from Nankai University under the guidance of [Arthur L.B. Yang](http://www.combinatorics.net.cn/homepage/yang/). -->
 
-I work on the field of combinatorial polynomials with only real zeros. I am also interested in combinatorial problems connected with other areas such as symmetric functions and representation theory.
+I work on the field of combinatorial polynomials with only real zeros. 
+
+I am also interested in combinatorial problems connected with other areas such as symmetric functions and representation theory.
 
 
 # Publications
