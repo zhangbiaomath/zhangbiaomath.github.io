@@ -42,7 +42,7 @@ You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/
 
 1. Philip B. Zhang, Interlacing Polynomials and the Veronese Construction for Rational Formal Power Series, _Proc. Roy. Soc. Edinburgh Sect. A_, accepted.
 
-1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a Greedy Algorithm to Construct Universal Cycles for Permutations, _International Journal of Foundations of Computer Science_, accepted.
+1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a Greedy Algorithm to Construct Universal Cycles for Permutations, _Int. J. Found. Comput. Sci._, accepted.
 
 1. Philip B. Zhang, [The Local _h_-Polynomials of Cluster Subdivisions Have Only Real Zeros](papers/2018/2018bams.pdf), _Bull. Austral. Math. Soc._, __98 (2)__ (2018),  258-264.
 
