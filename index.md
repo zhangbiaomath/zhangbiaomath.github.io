@@ -1,19 +1,24 @@
-# Philip B. Zhang （张彪）
-
-<img align="right" height="270" src="pic.jpg" />
-
-_College of Mathematical Science_
-
-_Tianjin Normal University_
-
-_Tianjin  300387, P. R. China_
-
-_e-mail:  zhangATtjnu.edu.cn_
+<table>
+<tbody><tr>
+<td><h1> Philip B. Zhang （张彪）</h1>
+<h2> <font >College of Mathematical Science</font></h2>
+<h2> <font >Tianjin Normal University</font></h2>
+<h2> <font >Tianjin  300387, P. R. China</font></h2>
+<h2> <font >e-mail:  zhangATtjnu.edu.cn</font></h2>
+</td>
+<td width="20%">
+</td>
+<td>
+<img height="300"  src="pic.jpg">
+</td>
+</tr>
+</tbody></table>
 
 <!--- I am an instructor at the Tianjin Normal University.  -->
 <!--- I am currently a visiting scholar at the University of Pennsylvania where my mentor is [James Haglund](https://www.math.upenn.edu/~jhaglund/) from August 2018 to August 2019.  -->
 
 <!---  I received my Ph.D. in June 2015 from Nankai University under the guidance of [Arthur L.B. Yang](http://www.combinatorics.net.cn/homepage/yang/). -->
+
 
 I work on the field of combinatorial polynomials with only real zeros. 
 
