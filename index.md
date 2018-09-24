@@ -1,15 +1,22 @@
+# Philip B. Zhang （张彪)
+
 <table>
 <tbody><tr>
-<td><h1> Philip B. Zhang （张彪）</h1>
-<h2> <font >College of Mathematical Science</font></h2>
-<h2> <font >Tianjin Normal University</font></h2>
-<h2> <font >Tianjin  300387, P. R. China</font></h2>
-<h2> <font >e-mail:  zhangATtjnu.edu.cn</font></h2>
+<td>
+  
+_College of Mathematical Science_
+  
+_Tianjin Normal University_
+
+_Tianjin  300387, P. R. China_
+
+_e-mail:  zhangATtjnu.edu.cn_
+
 </td>
-<td width="30%">
+<td width="40%">
 </td>
 <td>
-<img width="200"  src="pic.jpg">
+<img width="160"  src="pic.jpg">
 </td>
 </tr>
 </tbody></table>
