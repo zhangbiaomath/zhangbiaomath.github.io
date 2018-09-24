@@ -9,14 +9,14 @@
 <table width="80%">
   <tbody><tr>
     <td width="42%">
-	<p><font size="5"><b>Address:</b> </p>
+	<p><font size="5"><b>Address:</b> </font></p>
 	<blockquote>
-	    College of Mathematical Science<br>
-	    Tianjin Normal University<br>
-	    Tianjin  300387<br>
- 	    P. R. China<br></font>
+	    <font size="5"> College of Mathematical Science</font><br>
+	    <font size="5">Tianjin Normal University</font><br>
+	    <font size="5">Tianjin  300387</font><br>
+ 	    <font size="5">P. R. China</font><br>
 	</blockquote>
-	<p><font size="5"> <b>Email: </b>  <a href="mailto:zhang@tjnu.edu.cn">  zhang at tjnu dot edu dot cn</a> </font>  </p>
+	<p><font size="5"> <b>Email: </b>  </font>   <a href="mailto:zhang@tjnu.edu.cn"> <font size="5"> zhang at tjnu dot edu dot cn </font> </a> </p>
       </td>
 	<td width="25%">
 	    <img border="0" alt="" src="pic.jpg" width="140" ></td>
