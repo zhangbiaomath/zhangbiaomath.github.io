@@ -4,13 +4,10 @@
 <tbody><tr>
 <td>
   
-<font color="blue">College of Mathematical Science</font>
-  
-<font color="blue">Tianjin Normal University</font>r
-
-<font color="blue">Tianjin  300387, P. R. China</font>
-
-<font color="blue">e-mail:  zhangATtjnu.edu.cn</font>
+<h3>College of Mathematical Science<h3>
+<h3>Tianjin Normal University<h3>
+<h3>Tianjin  300387, P. R. China<h3>
+<h3>e-mail:  zhangATtjnu.edu.cn<h3>
 
 </td>
 <td width="40%">
