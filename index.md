@@ -1,6 +1,6 @@
 # Philip B. Zhang （张彪）
 
-<img align="right" height="270" src="pic.jpg"/>
+<img align="right" height="270" src="pic.jpg" />
 
 _College of Mathematical Science_
 
@@ -10,7 +10,7 @@ _Tianjin  300387, P. R. China_
 
 _e-mail:  zhangATtjnu.edu.cn_
 
-I am an instructor at the Tianjin Normal University. 
+<!--- I am an instructor at the Tianjin Normal University.  -->
 <!--- I am currently a visiting scholar at the University of Pennsylvania where my mentor is [James Haglund](https://www.math.upenn.edu/~jhaglund/) from August 2018 to August 2019.  -->
 
 <!---  I received my Ph.D. in June 2015 from Nankai University under the guidance of [Arthur L.B. Yang](http://www.combinatorics.net.cn/homepage/yang/). -->
