@@ -4,7 +4,7 @@
 <table width="80%">
   <tbody><tr>
     <td width="42%">
-	<p><font size="4"><b>Address</b></font> </p>
+	<p><font size="4"><b>Address:</b></font> </p>
 	<blockquote>
 	    College of Mathematical Science<br>
 	    Tianjin Normal University<br>
