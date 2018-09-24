@@ -6,11 +6,12 @@
   
 <font color="blue">College of Mathematical Science</font>
   
-<font color="blue">Tianjin Normal University</font>
+<font color="blue">Tianjin Normal University</font>r
 
 <font color="blue">Tianjin  300387, P. R. China</font>
 
 <font color="blue">e-mail:  zhangATtjnu.edu.cn</font>
+
 </td>
 <td width="40%">
 </td>
