@@ -16,8 +16,6 @@
 	<td width="25%">
 	    <img border="0" alt="" src="pic.jpg" width="140" ></td>
   </tr></tbody></table>
-<br><br>
-
 
 <!---  <img width="160"  src="pic.jpg"> . -->
 
