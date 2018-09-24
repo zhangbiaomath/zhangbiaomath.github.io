@@ -14,7 +14,7 @@
 	<p><font size="4"> <b>Email: </b></font>   <a href="mailto:zhang@tjnu.edu.cn">  zhang at tjnu dot edu dot cn</a> </p>
       </td>
 	<td width="25%">
-	    <img border="0" alt="" src="pic.jpg" width="140" height="200"></td>
+	    <img border="0" alt="" src="pic.jpg" width="140" ></td>
   </tr>
 </tbody></table>
 <br><br>
