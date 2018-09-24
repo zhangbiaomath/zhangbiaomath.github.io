@@ -13,7 +13,7 @@
 	  Tianjin  300387<br>
     P. R. China<br>
 	  </blockquote>
-	  <p><b>Email:</b>    <a href="mailto:zhang@tjnu.edu.cn">  zhang at tjnu dot edu dot cn</a> </p>
+	  <p><font color="#0000cc" size="4"> <b>Email:</b></font>    <a href="mailto:zhang@tjnu.edu.cn">  zhang at tjnu dot edu dot cn</a> </p>
 	</td>
   </tr>
 </tbody></table>
