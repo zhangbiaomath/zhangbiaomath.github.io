@@ -9,7 +9,7 @@
 <td width="30%">
 </td>
 <td>
-<img height="300"  src="pic.jpg">
+<img width="220"  src="pic.jpg">
 </td>
 </tr>
 </tbody></table>
