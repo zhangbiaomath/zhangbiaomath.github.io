@@ -1,7 +1,7 @@
 # Philip B. Zhang （张彪)
 
 
-<table width="90%">
+<table width="80%">
   <tbody><tr>
     <td width="42%">
 	<p><font size="4"><b>Address</b></font> </p>
@@ -15,8 +15,7 @@
       </td>
 	<td width="25%">
 	    <img border="0" alt="" src="pic.jpg" width="140" ></td>
-  </tr>
-</tbody></table>
+  </tr></tbody></table>
 <br><br>
 
 
