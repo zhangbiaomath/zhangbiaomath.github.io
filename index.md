@@ -11,12 +11,12 @@
     <td width="42%">
 	<p><font size="5"><b>Address:</b> </font></p>
 	<blockquote>
-	    <font size="5"> College of Mathematical Science</font><br>
-	    <font size="5">Tianjin Normal University</font><br>
-	    <font size="5">Tianjin  300387</font><br>
- 	    <font size="5">P. R. China</font><br>
+	    <font size="4"> College of Mathematical Science</font><br>
+	    <font size="4">Tianjin Normal University</font><br>
+	    <font size="4">Tianjin  300387</font><br>
+ 	    <font size="4">P. R. China</font><br>
 	</blockquote>
-	<p><font size="5"> <b>Email: </b>  </font>   <a href="mailto:zhang@tjnu.edu.cn"> <font size="5"> zhang at tjnu dot edu dot cn </font> </a> </p>
+	<p><font size="5"> <b>Email: </b>  </font>   <a href="mailto:zhang@tjnu.edu.cn"> <font size="4"> zhang at tjnu dot edu dot cn </font> </a> </p>
       </td>
 	<td width="25%">
 	    <img border="0" alt="" src="pic.jpg" width="140" ></td>
