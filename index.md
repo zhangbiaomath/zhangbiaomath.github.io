@@ -1,7 +1,6 @@
 # Philip B. Zhang （张彪)
 
 
-<center>
 <table width="90%">
   <tbody><tr>
     <td width="42%">
@@ -19,7 +18,6 @@
 	    <img border="0" alt="" src="pic.jpg" width="140" height="200"></td>
   </tr>
 </tbody></table>
-</center>
 <br><br>
 
 
