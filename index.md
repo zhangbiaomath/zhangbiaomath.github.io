@@ -1,7 +1,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>Philip B. Zhang's Homepage</title>
-<link rel="icon" href="ico.png"> 
+<link rel="icon" href="ico.ico"> 
 </head>
 
 	
