@@ -1,5 +1,4 @@
 <head>
-<meta  charset=utf-8"/>
 <title>Philip B. Zhang's rHomepage</title>
 </head>
 
