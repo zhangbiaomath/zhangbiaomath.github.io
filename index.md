@@ -59,7 +59,7 @@ You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/
 
 1. Chunmei Luo, Liancui Zuo, Philip B. Zhang, [The Wiener index of Sierpinski-like graphs](papers/2018/2018jco.pdf), _J. Comb. Optim._, __35 (3)__ (2018), 814–841. 
 
-1. Herman Z. Q. Chen, Arthur L. B. Yang, Philip B. Zhang, [Kirillov's unimodality conjecture for the rectangular Narayana polynomials](papers/2018/2018ejc.pdf), _Electron. J. Combin._, __25 (1)__ (2018), P1.17. 
+1. Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, [Kirillov's unimodality conjecture for the rectangular Narayana polynomials](papers/2018/2018ejc.pdf), _Electron. J. Combin._, __25 (1)__ (2018), P1.17. 
 
 1. Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, [On pattern avoiding indecomposable permutations](papers/2018/2018integers.pdf), _Integers_, __18__ (2018), A2. 
 
