@@ -49,7 +49,7 @@ I am currently a visiting scholar at the University of Pennsylvania where my men
 You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/au:+Zhang_Philip_B/0/1/0/all/0/1), [Google Scholar](https://scholar.google.com/citations?user=E0RFmmMAAAAJ&hl=en), and [MathSciNet](http://www.ams.org/mathscinet/search/publications.html?pg1=INDI&s1=1066440).
 
 
-1. Zhiguang Hu, Philip B.Zhang, Determinants and characteristic polynomials of Lie algebras, _Linear Algebra Appl._, to appear.
+1. Zhiguang Hu, Philip B. Zhang, Determinants and characteristic polynomials of Lie algebras, _Linear Algebra Appl._, to appear.
 
 1. Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, accepted.
 
