@@ -50,11 +50,13 @@ I am currently a visiting scholar at the University of Pennsylvania where my men
 You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/au:+Zhang_Philip_B/0/1/0/all/0/1), [Google Scholar](https://scholar.google.com/citations?user=E0RFmmMAAAAJ&hl=en), and [MathSciNet](http://www.ams.org/mathscinet/search/publications.html?pg1=INDI&s1=1066440).
 
 
-1. Zhiguang Hu, Philip B. Zhang, Determinants and characteristic polynomials of Lie algebras, _Linear Algebra Appl._,  __563__ (2019), 426-439.
+
 
 1. Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, accepted.
 
 1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a greedy algorithm to construct universal cycles for permutations, _Int. J. Found. Comput. Sci._, accepted. 
+
+1. Zhiguang Hu, Philip B. Zhang, Determinants and characteristic polynomials of Lie algebras, _Linear Algebra Appl._,  __563__ (2019), 426-439.
 
 1. Philip B. Zhang, [The Local _h_-polynomials of cluster subdivisions have only real zeros](papers/2018/2018bams.pdf), _Bull. Austral. Math. Soc._, __98 (2)__ (2018),  258-264.
 
