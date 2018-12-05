@@ -58,7 +58,7 @@ You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/
 
 1. Zhiguang Hu, Philip B. Zhang, [Determinants and characteristic polynomials of Lie algebras](papers/2019/2019LAA.pdf), _Linear Algebra Appl._,  __563__ (2019), 426-439.
 
-1. Philip B. Zhang, [The Local _h_-polynomials of cluster subdivisions have only real zeros](papers/2018/2018bams.pdf), _Bull. Austral. Math. Soc._, __98 (2)__ (2018),  258-264.
+1. Philip B. Zhang, [The local _h_-polynomials of cluster subdivisions have only real zeros](papers/2018/2018bams.pdf), _Bull. Austral. Math. Soc._, __98 (2)__ (2018),  258-264.
 
 1. Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, [The real-rootedness of generalized Narayana polynomials](papers/2018/2018rmj.pdf), _Rocky Mountain J. Math._, __48 (1)__  (2018), 107-119. 
 
