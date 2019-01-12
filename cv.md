@@ -27,7 +27,7 @@
   + 2017年6月10日，参加了在天津师范大学召开的“天津市工业与应用数学学会2017年学术年会”。 [website](http://www.tjsiam.org/newsDetail.asp?id=117)
   +	2017年9月至12月，在北京外国语大学参加了出国留学人员英语培训。 
 + 2016
-  + 2016年8月14日—17日, 参加了在河北师范大学举办的“第七届全国组合数学与图论大会”，并做小组报告。[website](http://www.cscgt.org/conference/2016CGC.html)
+  + 2016年8月14日至17日, 参加了在河北师范大学举办的“第七届全国组合数学与图论大会”，并做小组报告。[website](http://www.cscgt.org/conference/2016CGC.html)
    + 2016年12月22日至24日，组合数学中心举办了“符号计算与组合数学研讨会”。 [website](http://www.combinatorics.net.cn/news/newsN.aspx?link=1622-fhzh)
 + 2015
   + 2015年11月27日至30日，参加了在南开大学组合数学中心举行的“2015组合序列单峰性研讨会”，并做学术报告。 [website](http://www.combinatorics.net.cn/news/newsN.aspx?link=15hou_zhxl)
