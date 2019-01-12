@@ -7,6 +7,7 @@
 + 主持 校博士基金 2017.01-2019,12
 
 # 参加会议
+
 + 2018
   + 2018年5月18日至20日，参加了在哈尔滨工业大学举办的“组合数学及其应用”会议。 [website](http://im.hit.edu.cn/2018/0511/c8390a207777/page.htm)
   + 2018年6月25日至29日，参加了韩国釜山举办的“Riordan Arrays and Related Topics”国际会议。 [website](https://sites.google.com/view/5rart/home)
@@ -27,14 +28,13 @@
 + 2015
   + 2015年11月27日至30日，参加了在南开大学组合数学中心举行的“2015组合序列单峰性研讨会”，并做学术报告。 [website](http://www.combinatorics.net.cn/news/newsN.aspx?link=15hou_zhxl)
   + 2015年7月27日至31日，参加了在南开大学组合数学中心举行的“组合数学暑期研讨会”，并做学术报告。 [website](http://www.combinatorics.net.cn/news/newsN.aspx?link=15CC)
-  + 2015.07, Daejeon, South Korea, FPSAC2015
-+ 2014
-  + 2014.11, 华南师范大学, 第六届全国组合数学与图论大会
-  + 2014.08, 北京交通大学, 国际数学家大会卫星会议
-+ 2013
-  + 2013.08, 南开大学, The Combinatorics of q-Series and Partitions
-  + 2013.07, 湖南师范大学, 第七届海峡两岸图论与组合数学学术会议
-  + 2011.12, 南开大学, 组合、设计与代数学术研讨会暨康庆德教授七十华诞庆祝会
++ 博士期间参加的会议
+  + 2015年7月, Daejeon, South Korea, FPSAC2015
+  + 2014年11月, 华南师范大学, 第六届全国组合数学与图论大会
+  + 2014年8月, 北京交通大学, 国际数学家大会卫星会议
+  + 2013年8月, 南开大学, The Combinatorics of q-Series and Partitions
+  + 2013年7月, 湖南师范大学, 第七届海峡两岸图论与组合数学学术会议
+  + 2011年12月, 南开大学, 组合、设计与代数学术研讨会暨康庆德教授七十华诞庆祝会
 
 
 # 发表论文
