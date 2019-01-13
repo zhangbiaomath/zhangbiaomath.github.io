@@ -46,14 +46,19 @@
 
 
 # 发表论文 
-The list only contains papers of me as the first autor or corresponding authr. For a full list, see [here](https://zhangbiaomath.github.io/).
+The following list only contains papers of me as the first autor or corresponding author after working at TJNU. For a full publication list, see [here](https://zhangbiaomath.github.io/).
 
 + 第一作者
   + Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, Proc. Roy. Soc. Edinburgh Sect. A, accepted. 
   + Philip B. Zhang, The local h-polynomials of cluster subdivisions have only real zeros, Bull. Austral. Math. Soc., 98 (2) (2018), 258-264. 
+
 + 通讯作者
   + Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, The real-rootedness of generalized Narayana polynomials, Rocky Mountain J. Math., 48 (1) (2018), 107-119. 
   + Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Pattern-avoiding alternating words, Discrete Appl. Math., 207 (2016), 56-66. 
+
+  
+
+
 
 
 
