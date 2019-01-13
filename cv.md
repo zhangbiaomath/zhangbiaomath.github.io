@@ -52,7 +52,7 @@
 + 通讯作者
   + Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, The real-rootedness of generalized Narayana polynomials, Rocky Mountain J. Math., 48 (1) (2018), 107-119. 
   + Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Pattern-avoiding alternating words, Discrete Appl. Math., 207 (2016), 56-66. 
-
++[其他](https://zhangbiaomath.github.io/)
 
 
 
