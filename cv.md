@@ -15,7 +15,7 @@
   +	2018年8月26日起，应[James Haglund](https://www.math.upenn.edu/~jhaglund)教授邀请，赴美国宾夕法尼亚大学(UPenn)开始为期一年的学术访问。
   + 2018年7月25日至8月25日，参加了在南开大学陈省身数学研究所举办的“Summer Research Institute on q-Series”国际会议。 [website](http://q2018.combinatorics.net/)
   + 2018年7月23日至25日，应[王国亮](http://math.bit.edu.cn/szdw/azcpl/fjs/wgl/index.htm)教授邀请访问北京理工大学，并做学术报告。 
-  + 2018年7月16日至17日， 参加了在天津师范大学举办的“数学前沿----群论及泛函分析会议”。  [website](http://conf.cnki.net/WebSite/index.aspx?conferenceID=02c1d050-9c9d-45a0-8a58-8a1c8da68766)
+  + 2018年7月16日至17日， 参加了在天津师范大学举办的“数学前沿—群论及泛函分析会议”。  [website](http://conf.cnki.net/WebSite/index.aspx?conferenceID=02c1d050-9c9d-45a0-8a58-8a1c8da68766)
   + 2018年6月25日至29日，参加了在韩国釜山举办的“Riordan Arrays and Related Topics”国际会议。 [website](https://sites.google.com/view/5rart/home)
   + 2018年5月18日至20日，参加了在哈尔滨工业大学举办的“组合数学及其应用”会议。 [website](http://im.hit.edu.cn/2018/0511/c8390a207777/page.htm)
  
