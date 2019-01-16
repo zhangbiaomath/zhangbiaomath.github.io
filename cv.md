@@ -33,7 +33,7 @@
    + 2016年8月14日至17日, 参加了在河北师范大学举办的“第七届全国组合数学与图论大会”，并做小组报告。[website](http://www.cscgt.org/conference/2016CGC.html)
 
 + 2015
-  + 2015年11月27日至30日，参加了在南开大学组合数学中心举行的“2015组合序列单峰性研讨会”，并做学术报告。 [website](http://www.combinatorics.net.cn/news/newsN.aspx?link=15hou_zhxl)
+  + 2015年11月27日至30日，参加了在南开大学组合数学中心举行的“2015组合序列单峰性研讨会”。 [website](http://www.combinatorics.net.cn/news/newsN.aspx?link=15hou_zhxl)
   + 2015年7月27日至31日，参加了在南开大学组合数学中心举行的“组合数学暑期研讨会”，并做学术报告。 [website](http://www.combinatorics.net.cn/news/newsN.aspx?link=15CC)
 
 + 博士期间参加的会议
