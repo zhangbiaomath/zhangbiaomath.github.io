@@ -15,10 +15,12 @@
 	    <img border="0" alt="" src="pic.jpg" width="180" ></td>
 <td width="42%">
 	<p><b>Address:</b> </p>
-	    College of Mathematical Science<br>
+	<blockquote>
+	  College of Mathematical Science"<br>
 	    Tianjin Normal University<br>
 	    Tianjin  300387<br>
  	    P. R. China<br>
+	</blockquote>
 	<p><b>Email: </b>  <a href="mailto:zhang@tjnu.edu.cn"> <font size="4"> zhang at tjnu dot edu dot cn </font> </a> </p>
       </td>
   </tr></tbody></table>
