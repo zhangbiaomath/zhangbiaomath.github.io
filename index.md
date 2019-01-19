@@ -1,6 +1,6 @@
-%<head>
-%<title>Philip B. Zhang's Homepage</title>
-%</head>
+<!---  <head>   -->
+<!--- <title>Philip B. Zhang's Homepage</title> -->
+<!---  </head> -->
 
 	
 # Philip B. Zhang （张彪)
