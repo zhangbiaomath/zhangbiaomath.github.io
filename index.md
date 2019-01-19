@@ -11,7 +11,9 @@
 
 <table width="80%">
   <tbody><tr>
-    <td width="42%">
+	<td width="20%">
+	    <img border="0" alt="" src="pic.jpg" width="180" ></td>
+<td width="42%">
 	<p><b>Address:</b> </p>
 	<blockquote>
 	    College of Mathematical Science<br>
@@ -21,8 +23,6 @@
 	</blockquote>
 	<p><b>Email: </b>  <a href="mailto:zhang@tjnu.edu.cn"> <font size="4"> zhang at tjnu dot edu dot cn </font> </a> </p>
       </td>
-	<td width="20%">
-	    <img border="0" alt="" src="pic.jpg" width="180" ></td>
   </tr></tbody></table>
 
 <!---  <img width="160"  src="pic.jpg"> -->
