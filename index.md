@@ -51,11 +51,11 @@ You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/
 
 1. Sergey Kitaev, Philip B. Zhang, Distributions of mesh patterns of short lengths, submitted.  [arXiv](https://arxiv.org/abs/1811.07679)
 
-1. Philip B. Zhang, Xutong Zhang, Multivariate Stable Eulerian Polynomials on Segmented Permutations, submitted. [arXiv](https://arxiv.org/abs/1807.00984)
+1. Philip B. Zhang, Xutong Zhang, Multivariate stable Eulerian polynomials on segmented permutations, submitted. [arXiv](https://arxiv.org/abs/1807.00984)
 
 1. Alice L.L. Gao, Linyuan Lu, Matthew H.Y. Xie, Arthur L.B. Yang, Philip B. Zhang, The Kazhdan-Lusztig polynomials of uniform matroids, submitted. [arXiv](https://arxiv.org/abs/1806.10852)
 
-1. Arthur L.B. Yang, Philip B. Zhang, Descent Generating Polynomials and the Hermite-Biehler Theorem, submitted.
+1. Arthur L.B. Yang, Philip B. Zhang, Descent generating polynomials and the Hermite-Biehler theorem, submitted.
 
 1. Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, accepted. [arXiv](https://arxiv.org/abs/1806.08165)
 
