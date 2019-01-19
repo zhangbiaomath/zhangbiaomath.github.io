@@ -45,16 +45,21 @@ I am currently a visiting scholar at the University of Pennsylvania where my men
 <!--- I am also interested in combinatorial problems connected with other areas such as symmetric functions and representation theory. -->
 
 
-# Publications
+# Papers
 
 You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/au:+Zhang_Philip_B/0/1/0/all/0/1), [Google Scholar](https://scholar.google.com/citations?user=E0RFmmMAAAAJ&hl=en), and [MathSciNet](http://www.ams.org/mathscinet/search/publications.html?pg1=INDI&s1=1066440).
 
+1. Sergey Kitaev, Philip B. Zhang, Distributions of mesh patterns of short lengths,   [arXiv](https://arxiv.org/abs/1811.07679)
 
+1. Philip B. Zhang, Xutong Zhang, Multivariate Stable Eulerian Polynomials on Segmented Permutations, submitted. [arXiv](https://arxiv.org/abs/1807.00984)
 
+1. Alice L.L. Gao, Linyuan Lu, Matthew H.Y. Xie, Arthur L.B. Yang, Philip B. Zhang, The Kazhdan-Lusztig polynomials of uniform matroids, submitted. [arXiv](https://arxiv.org/abs/1806.10852)
+
+1. Arthur L.B. Yang, Philip B. Zhang, Descent Generating Polynomials and the Hermite--Biehler Theorem, submitted.
 
 1. Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, accepted. [arXiv](https://arxiv.org/abs/1806.08165)
 
-1.  Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a greedy algorithm to construct universal cycles for permutations, _Int. J. Found. Comput. Sci._, accepted. [arXiv](https://arxiv.org/abs/1711.10820)
+1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a greedy algorithm to construct universal cycles for permutations, _Int. J. Found. Comput. Sci._, accepted. [arXiv](https://arxiv.org/abs/1711.10820)
 
 1. Zhiguang Hu, Philip B. Zhang, Determinants and characteristic polynomials of Lie algebras, _Linear Algebra Appl._,  __563__ (2019), 426-439.  [pdf](papers/2019/2019LAA.pdf)
 
