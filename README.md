@@ -1,2 +1,1 @@
-
-# [Welcome to my homepage!](https://zhangbiaomath.github.io/)
+[Welcome to my homepage!](https://zhangbiaomath.github.io/)
