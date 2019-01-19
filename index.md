@@ -60,9 +60,9 @@ You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/
 
 1. Arthur L.B. Yang, Philip B. Zhang, Descent generating polynomials and the Hermite-Biehler theorem, submitted.
 
-1. Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, accepted. [arXiv](https://arxiv.org/abs/1806.08165)
+1. Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, to appear. [arXiv](https://arxiv.org/abs/1806.08165)
 
-1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a greedy algorithm to construct universal cycles for permutations, _Int. J. Found. Comput. Sci._, accepted. [arXiv](https://arxiv.org/abs/1711.10820)
+1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a greedy algorithm to construct universal cycles for permutations, _Int. J. Found. Comput. Sci._, to appear. [arXiv](https://arxiv.org/abs/1711.10820)
 
 1. Zhiguang Hu, Philip B. Zhang, Determinants and characteristic polynomials of Lie algebras, _Linear Algebra Appl._,  __563__ (2019), 426-439.  [pdf](papers/2019/2019LAA.pdf)
 
