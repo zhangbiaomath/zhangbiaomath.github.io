@@ -16,7 +16,7 @@
 <td width="42%">
 	<p><b>Address:</b> </p>
 	<blockquote>
-	  College of Mathematical Science"<br>
+	    College of Mathematical Science<br>
 	    Tianjin Normal University<br>
 	    Tianjin  300387<br>
  	    P. R. China<br>
