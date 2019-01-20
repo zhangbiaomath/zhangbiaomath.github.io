@@ -12,7 +12,7 @@
 <table width="80%">
   <tbody><tr>
 	<td width="20%">
-	    <img border="0" alt="" src="pic.jpg" width="180" ></td>
+	    <img border="0" alt="" src="content/pic.jpg" width="180" ></td>
 <td width="42%">
 	<p><b>Address:</b> </p>
 	<blockquote>
