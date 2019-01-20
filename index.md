@@ -25,7 +25,7 @@
       </td>
   </tr></tbody></table>
 
-<!---  <img width="160"  src="pic.jpg"> -->
+<!---  <img width="160"  src="content/pic.jpg"> -->
 <!--- - **Address:** College of Mathematical Science, Tianjin Normal University, Tianjin  300387, P. R. China  -->
 <!---  - **Email:** [zhang at tjnu dot edu dot cn](mailto:zhang@tjnu.edu.cn) -->
 
