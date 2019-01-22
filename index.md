@@ -44,9 +44,9 @@ I am currently a visiting scholar at the University of Pennsylvania where my men
 <!--- I am also interested in combinatorial problems connected with other areas such as symmetric functions and representation theory. -->
 
 
-# Papers
+<!--- # Papers -->
+# Preprints
 
-You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/au:+Zhang_Philip_B/0/1/0/all/0/1), [Google Scholar](https://scholar.google.com/citations?user=E0RFmmMAAAAJ&hl=en), and [MathSciNet](http://www.ams.org/mathscinet/search/publications.html?pg1=INDI&s1=1066440).
 
 
 1. James Haglund, Philip B. Zhang, Real-rootedness of variations of Eulerian polynomials, in preparation.
@@ -60,6 +60,9 @@ You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/
 1. Alice L.L. Gao, Linyuan Lu, Matthew H.Y. Xie, Arthur L.B. Yang, Philip B. Zhang, The Kazhdan-Lusztig polynomials of uniform matroids, submitted. [arXiv](https://arxiv.org/abs/1806.10852)
 
 1. Arthur L.B. Yang, Philip B. Zhang, Descent generating polynomials and the Hermite-Biehler theorem, submitted.
+
+
+# Publications
 
 1. Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, to appear. [arXiv](https://arxiv.org/abs/1806.08165)
 
@@ -92,3 +95,4 @@ You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/
 1. Matthew H.Y. Xie, Philip B. Zhang, Derivation of the real-rootedness of coordinate polynomials from the Hermite-Biehler theorem, _Acta Math. Hungar._, 143 (1) (2014), 185-191.  [pdf](content/papers/2014/2014amh.pdf)
 
 
+You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/au:+Zhang_Philip_B/0/1/0/all/0/1), [Google Scholar](https://scholar.google.com/citations?user=E0RFmmMAAAAJ&hl=en), and [MathSciNet](http://www.ams.org/mathscinet/search/publications.html?pg1=INDI&s1=1066440).
