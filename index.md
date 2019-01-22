@@ -49,6 +49,8 @@ I am currently a visiting scholar at the University of Pennsylvania where my men
 You may also look up my papers on the [arXiv](https://arxiv.org/find/grp_math/1/au:+Zhang_Philip_B/0/1/0/all/0/1), [Google Scholar](https://scholar.google.com/citations?user=E0RFmmMAAAAJ&hl=en), and [MathSciNet](http://www.ams.org/mathscinet/search/publications.html?pg1=INDI&s1=1066440).
 
 
+1. James Haglund, Philip B. Zhang, Real-rootedness of variations of Eulerian polynomials, in preparation.
+
 1. Matthew H.Y. Xie, Philip B. Zhang, Equivariant Kazhdan-Lusztig  polynomials of thagomizer matroids, in preparation.
 
 1. Sergey Kitaev, Philip B. Zhang, Distributions of mesh patterns of short lengths, submitted.  [arXiv](https://arxiv.org/abs/1811.07679)
