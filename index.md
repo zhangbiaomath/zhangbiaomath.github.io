@@ -59,7 +59,7 @@ I am currently a visiting scholar at the University of Pennsylvania where my men
 
 1. Alice L.L. Gao, Linyuan Lu, Matthew H.Y. Xie, Arthur L.B. Yang, Philip B. Zhang, The Kazhdan-Lusztig polynomials of uniform matroids, submitted. [arXiv](https://arxiv.org/abs/1806.10852)
 
-1. Arthur L.B. Yang, Philip B. Zhang, Mutual Interlacing and Eulerian-like Polynomials for Weyl Groups, submitted. [arXiv](https://arxiv.org/abs/1401.6273)
+1. Arthur L.B. Yang, Philip B. Zhang, Mutual interlacing and Eulerian-like polynomials for Weyl groups, submitted. [arXiv](https://arxiv.org/abs/1401.6273)
 
 
 # Publications
