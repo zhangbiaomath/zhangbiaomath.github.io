@@ -66,13 +66,13 @@ I am currently a visiting scholar at the University of Pennsylvania where my men
 
 1. Philip B. Zhang, [Interlacing polynomials and the Veronese construction for rational formal power series](), _Proc. Roy. Soc. Edinburgh Sect. A_, to appear. [arXiv](https://arxiv.org/abs/1806.08165)
 
-1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, [On a greedy algorithm to construct universal cycles for permutations](), _Int. J. Found. Comput. Sci._, to appear. [arXiv](https://arxiv.org/abs/1711.10820)
+1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, [On a greedy algorithm to construct universal cycles for permutations](https://arxiv.org/abs/1711.10820), _Int. J. Found. Comput. Sci._, to appear. [arXiv](https://arxiv.org/abs/1711.10820)
 
-1. Zhiguang Hu, Philip B. Zhang, __Determinants and characteristic polynomials of Lie algebras__, _Linear Algebra Appl._,  563 (2019), 426-439.  [pdf](content/papers/2019/2019LAA.pdf)
+1. Zhiguang Hu, Philip B. Zhang, [Determinants and characteristic polynomials of Lie algebras](content/papers/2019/2019LAA.pdf), _Linear Algebra Appl._,  563 (2019), 426-439.  
 
 1. Philip B. Zhang, 
-__The local _h_-polynomials of cluster subdivisions have only real zeros__, 
-_Bull. Austral. Math. Soc._, 98 (2) (2018),  258-264. [arXiv](https://arxiv.org/abs/1605.04780)  [pdf](content/papers/2018/2018bams.pdf) 
+[The local _h_-polynomials of cluster subdivisions have only real zeros](content/papers/2018/2018bams.pdf), 
+_Bull. Austral. Math. Soc._, 98 (2) (2018),  258-264. [arXiv](https://arxiv.org/abs/1605.04780) 
 
 1. Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, __The real-rootedness of generalized Narayana polynomials__, _Rocky Mountain J. Math._, 48 (1)  (2018), 107-119.   [arXiv](https://arxiv.org/abs/1602.00521)   [pdf](content/papers/2018/2018rmj.pdf)  
 
