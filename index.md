@@ -66,7 +66,7 @@ I am currently a visiting scholar at the University of Pennsylvania where my men
 
 1. Philip B. Zhang, [Interlacing polynomials and the Veronese construction for rational formal power series](), _Proc. Roy. Soc. Edinburgh Sect. A_, to appear. [arXiv](https://arxiv.org/abs/1806.08165)
 
-1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, __On a greedy algorithm to construct universal cycles for permutations__, _Int. J. Found. Comput. Sci._, to appear. [arXiv](https://arxiv.org/abs/1711.10820)
+1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, [On a greedy algorithm to construct universal cycles for permutations](), _Int. J. Found. Comput. Sci._, to appear. [arXiv](https://arxiv.org/abs/1711.10820)
 
 1. Zhiguang Hu, Philip B. Zhang, __Determinants and characteristic polynomials of Lie algebras__, _Linear Algebra Appl._,  563 (2019), 426-439.  [pdf](content/papers/2019/2019LAA.pdf)
 
