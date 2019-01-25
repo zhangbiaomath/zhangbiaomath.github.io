@@ -27,7 +27,7 @@
 
 1. Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, The real-rootedness of generalized Narayana polynomials, _Rocky Mountain J. Math._, 48 (1)  (2018), 107-119.   [arXiv](https://arxiv.org/abs/1602.00521)   [pdf](content/papers/2018/2018rmj.pdf)  
 
-1. Chunmei Luo, Liancui Zuo, Philip B. Zhang, The Wiener index of Sierpinski-like graphs, _J. Comb. Optim._, 35 (3) (2018), 814â841.  [pdf](content/papers/2018/2018jco.pdf)
+1. Chunmei Luo, Liancui Zuo, Philip B. Zhang, The Wiener index of Sierpinski-like graphs, _J. Comb. Optim._, 35 (3) (2018), 814-841.  [pdf](content/papers/2018/2018jco.pdf)
 
 1. Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, Kirillov's unimodality conjecture for the rectangular Narayana polynomials, _Electron. J. Combin._, 25 (1) (2018), P1.17.   [arXiv](https://arxiv.org/abs/1601.05863)   [pdf](content/papers/2018/2018ejc.pdf)
 
