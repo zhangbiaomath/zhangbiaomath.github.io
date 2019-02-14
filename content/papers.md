@@ -2,18 +2,16 @@
 
 
 
-1. James Haglund, Philip B. Zhang, Real-rootedness of variations of Eulerian polynomials, in preparation.
+1. James Haglund, Philip B. Zhang, Real-rootedness of variations of Eulerian polynomials, submitted.
 
-1. Matthew H.Y. Xie, Philip B. Zhang, Equivariant Kazhdan-Lusztig  polynomials of thagomizer matroids, in preparation.
+1. Matthew H.Y. Xie, Philip B. Zhang, Equivariant Kazhdan-Lusztig  polynomials of thagomizer matroids, submitted.
 
-1. Sergey Kitaev, Philip B. Zhang, Distributions of mesh patterns of short lengths, submitted.  [arXiv](https://arxiv.org/abs/1811.07679)
+1. Sergey Kitaev, Philip B. Zhang, Distributions of mesh patterns of short lengths, submitted.  
 
 
 
-1. Alice L.L. Gao, Linyuan Lu, Matthew H.Y. Xie, Arthur L.B. Yang, Philip B. Zhang, The Kazhdan-Lusztig polynomials of uniform matroids, submitted. [arXiv](https://arxiv.org/abs/1806.10852)
-
-1. Arthur L.B. Yang, Philip B. Zhang, Mutual interlacing and Eulerian-like polynomials for Weyl groups, submitted. [arXiv](https://arxiv.org/abs/1401.6273)
-
+1. Alice L.L. Gao, Linyuan Lu, Matthew H.Y. Xie, Arthur L.B. Yang, Philip B. Zhang, The Kazhdan-Lusztig polynomials of uniform matroids, submitted.
+1. Arthur L.B. Yang, Philip B. Zhang, Mutual interlacing and Eulerian-like polynomials for Weyl groups, submitted. 
 
 # Publications
 
