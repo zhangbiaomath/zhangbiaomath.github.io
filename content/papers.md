@@ -12,7 +12,7 @@
 
 1. Philip B. Zhang,  On the real-rootedness of the local _h_-polynomials of edgewise subdivisions of simplexes, submitted.
 
-1. Arthur L.B. Yang, Philip B. Zhang, Mutual interlacing and Eulerian-like polynomials for Weyl groups, submitted. 
+1. Arthur L.B. Yang, Philip B. Zhang, Descent generating polynomials and the Hermite--Biehler theorem, submitted. 
 
 # Publications
 
