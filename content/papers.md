@@ -8,9 +8,10 @@
 
 1. Sergey Kitaev, Philip B. Zhang, Distributions of mesh patterns of short lengths, submitted.  
 
-
-
 1. Alice L.L. Gao, Linyuan Lu, Matthew H.Y. Xie, Arthur L.B. Yang, Philip B. Zhang, The Kazhdan-Lusztig polynomials of uniform matroids, submitted.
+
+1. Philip B. Zhang,  On the real-rootedness of the local _h_-polynomials of edgewise subdivisions of simplexes, submitted.
+
 1. Arthur L.B. Yang, Philip B. Zhang, Mutual interlacing and Eulerian-like polynomials for Weyl groups, submitted. 
 
 # Publications
