@@ -21,7 +21,7 @@
 
 1. Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, to appear. 
 
-1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a greedy algorithm to construct universal cycles for permutations, _Int. J. Found. Comput. Sci._, to appear. [arXiv](https://arxiv.org/abs/1711.10820)
+1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a greedy algorithm to construct universal cycles for permutations, _Int. J. Found. Comput. Sci._, to appear. 
 
 1. Zhiguang Hu, Philip B. Zhang, Determinants and characteristic polynomials of Lie algebras, _Linear Algebra Appl._,  563 (2019), 426-439.  
 
