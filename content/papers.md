@@ -1,5 +1,7 @@
 # Preprints
 
+1. Sergey Kitaev, Philip B. Zhang, Xutong Zhang, Distributions of several infinite families of mesh patterns, submitted.
+
 1. James Haglund, Philip B. Zhang, Real-rootedness of variations of Eulerian polynomials, submitted.
 
 1. Sergey Kitaev, Philip B. Zhang, Distributions of mesh patterns of short lengths, submitted.  
@@ -16,9 +18,9 @@
 
 1. Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, to appear. 
 
-1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a greedy algorithm to construct universal cycles for permutations, _Int. J. Found. Comput. Sci._, to appear. 
-
 1. Philip B. Zhang, Xutong Zhang, Multivariate stable Eulerian polynomials on segmented permutations, _European J. Combin._, 78 (2019), 155-162. 
+
+1. Alice L.L. Gao, Sergey Kitaev, Wolfgang Steiner, Philip B. Zhang, On a greedy algorithm to construct universal cycles for permutations, _Int. J. Found. Comput. Sci._,  30 (1) (2019), 61-72. 
 
 1. Zhiguang Hu, Philip B. Zhang, Determinants and characteristic polynomials of Lie algebras, _Linear Algebra Appl._,  563 (2019), 426-439.  
 
@@ -27,10 +29,13 @@
 1. Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, The real-rootedness of generalized Narayana polynomials, _Rocky Mountain J. Math._, 48 (1)  (2018), 107-119.  
 
 1. Chunmei Luo, Liancui Zuo, Philip B. Zhang, The Wiener index of Sierpinski-like graphs, _J. Comb. Optim._, 35 (3) (2018), 814-841.  
+
 1. Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, Kirillov's unimodality conjecture for the rectangular Narayana polynomials, _Electron. J. Combin._, 25 (1) (2018), P1.17. 
 
 1. Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, On pattern avoiding indecomposable permutations, _Integers_, 18 (2018), A2. 
+
 1. Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, On 132-representable graphs, _Australas. J. Combin._, 69 (1) (2017), 105-118. 
+
 1. Arthur L.B. Yang, Philip B. Zhang, Brenti's open problem on the real-rootedness of _q_-Eulerian polynomials of type D, _SIAM J. Discrete Math._, 31 (2) (2017), 918-926. 
 
 1. Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Avoiding vincular patterns on alternating words, _Discrete Math._, 339 (8) (2016), 2079-2093.   
