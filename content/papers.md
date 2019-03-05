@@ -1,22 +1,20 @@
 # Preprints
 
-
-
 1. James Haglund, Philip B. Zhang, Real-rootedness of variations of Eulerian polynomials, submitted.
-
-1. Matthew H.Y. Xie, Philip B. Zhang, Equivariant Kazhdan-Lusztig  polynomials of thagomizer matroids, submitted.
 
 1. Sergey Kitaev, Philip B. Zhang, Distributions of mesh patterns of short lengths, submitted.  
 
 1. Alice L.L. Gao, Linyuan Lu, Matthew H.Y. Xie, Arthur L.B. Yang, Philip B. Zhang, The Kazhdan-Lusztig polynomials of uniform matroids, submitted.
 
-1. Philip B. Zhang,  On the real-rootedness of the local _h_-polynomials of edgewise subdivisions of simplexes, submitted.
-
 1. Arthur L.B. Yang, Philip B. Zhang, Descent generating polynomials and the Hermite--Biehler theorem, submitted. 
 
 # Publications
 
-1. Philip B. Zhang, Xutong Zhang, Multivariate stable Eulerian polynomials on segmented permutations, _European J. Combin._, to appear. 
+1. Matthew H.Y. Xie, Philip B. Zhang, Equivariant Kazhdan-Lusztig  polynomials of thagomizer matroids,  Proc. Amer. Math. Soc., to appear. 
+
+1. Philip B. Zhang,  On the real-rootedness of the local _h_-polynomials of edgewise subdivisions of simplexes, Electron. J. Combin., to appear. 
+
+1. Philip B. Zhang, Xutong Zhang, Multivariate stable Eulerian polynomials on segmented permutations, _European J. Combin._, 78 (2019), 155-162. 
 
 1. Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, to appear. 
 
