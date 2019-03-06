@@ -8,7 +8,7 @@
 
 1. Alice L.L. Gao, Linyuan Lu, Matthew H.Y. Xie, Arthur L.B. Yang, Philip B. Zhang, The Kazhdan-Lusztig polynomials of uniform matroids, submitted.
 
-1. Arthur L.B. Yang, Philip B. Zhang, Descent generating polynomials and the Hermite--Biehler theorem, submitted. 
+1. Arthur L.B. Yang, Philip B. Zhang, Descent generating polynomials and the Hermite-Biehler theorem, submitted. 
 
 # Publications
 
