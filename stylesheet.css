@@ -1,0 +1,442 @@
+
+/** Main styles for the document **/
+
+  html
+    {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      overflow-y: scroll; /** Ensures the up-down scrollbar is always present, to avoid 
+                              the appearance of the header shifting slightly when going 
+                              from pages requiring the scrollbar to ones which don't. **/
+    }
+
+  body
+    {
+      margin: 0;
+      border: 0;
+      padding: 0 0 50px;
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+    }
+
+  header
+    {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      position: fixed;            /** Keeps the header fixed in relation to the browser window. **/
+      width: 100%;
+      z-index: 1000;              /** Ensures the header is above other elements when scrolling. **/
+      background-color: #ffffff;  /** Gives the header a white background, so that other elements
+                                      aren't visible underneath the header when scrolling. **/
+      text-align: center;         /** Besides centering the title, this will center the
+                                      navigation bar as a whole. **/
+      white-space: nowrap;        /** Forces the contents of a header element to never wrap. **/  
+    }
+
+  h4
+    {
+      margin: 40px 0 0;
+      border: 0;
+      padding: 0;
+    }
+
+  h4:first-of-type
+    {
+      margin: 0;
+    }
+
+        /** The title of the page. **/
+
+          header h2  /** Selects all h2's inside of a header. **/
+            {
+              margin: 4px;
+              border: 0;
+              padding: 4px 0 0;
+              font-size: 16pt;
+              font-weight: bold;
+            }
+
+        /** The horizontal lines in the header. **/
+
+/          header hr  /** Selects all hr's inside of a header. **/
+/            {
+/              margin: 2px 0;
+/              border: 0;
+/              padding: 0;
+/              height: 2px;
+/              background: #333333;
+/            }
+
+        /** The navigation bar (the area between the two horizontal lines). **/
+
+          nav
+            {
+              margin: 0;
+              border: 0;
+              padding: 0;
+            }
+
+        /** Anything that is a menu (the main navigation bar, and its submenus). **/
+
+          nav ul  /** Selects all ul's inside of a nav. **/
+            {
+              margin: 0;
+              border: 0;
+              padding: 0;
+              position: relative;     /** This will allow us to absolutely position the
+                                          submenus relative to the main navigation bar. **/
+              list-style: none;       /** Suppresses the usual bullets of a ul (unordered list). **/
+              display: inline-table;  /** This isn't supported in IE before version 8. **/
+              vertical-align: bottom; /** Gets rid of a pernicious small extra bottom border
+                                          by forcing the main navigation bar to the bottom of the nav. **/
+            }
+
+        /** Anything that is an entry (elements of the main navigation bar, elements of submenus). **/
+
+          nav ul li  /** Selects all li's that are inside of a ul which is inside of a nav. **/
+            {
+              float: left;
+              margin: 0 15px;
+              border: 0;
+              padding: 0;
+            }
+
+        /** Links in the main navigation bar. **/
+
+          nav > ul a  /** Selects all links that are inside of a ul which is a child of a nav. **/
+            {
+               margin: 0;
+               border: 0;
+               border-radius: 5px;
+               padding: 2px 5px;
+               display: block;
+               font-weight: bold;
+            }
+
+        /** Anything that is a submenu. **/
+
+          nav ul ul  /** Selects all ul's that are inside of a ul which is inside of a nav. **/
+            {
+              margin: 0;
+              border: 0;
+              padding: 0;
+              position: absolute;  /** Because the most recent ancestor of a submenu ul which is
+                                       a positioned element is the main navigation bar ul, the
+                                       absolute positioning of the submenus is relative to the
+                                       main navigation bar ul. **/
+              top: 100%;           /** Positions the top of a submenu 100% below the top of (i.e.,
+                                       at the bottom of) its parent (the corresponding li in the
+                                       main navigation bar.) **/
+              display: none;       /** Tells the browser not to display submenus (of course,
+                                       this setting is changed when the corresponding li in the
+                                       main navigation bar is hovered over.) **/
+              text-align: left;
+            }
+
+        /** Anything that is an entry of a submenu. **/
+
+          nav ul ul li
+            {
+              margin: 0;
+              float: none;
+              position: relative;
+            }
+
+        /** Anything that is a submenu whose corresponding title is being hovered over. **/
+
+          nav ul li:hover > ul  /** Selects all ul's that are children of a hovered-over li
+                                    inside a ul inside a nav. Selecting only the children (instead of
+                                    possible further descendants) avoids selecting any sub-menus. **/
+            {
+              display: block;        /** Makes the submenu appear. **/
+              background: #ffffff;   /** Gives the submenu a white background. **/
+              margin: 0;
+              border-style: solid;        /** Introduces a transparent top border to the submenu, **/
+              border-top-color: transparent;  /** making the horizontal lines visible while ensuring that **/
+              border-top-width: 6px;      /** hovering over the "gap" does not make the submenu disappear. **/
+              border-top-left-radius: 15px;        /** Curves this border greatly enough that the padding-area of the **/
+              border-top-right-radius: 15px;                            /** submenu disappears behind its entries. **/
+              border-bottom-left-radius: 8px;
+              border-bottom-right-radius: 8px;
+              border-left-width: 1px;
+              border-right-width: 1px;
+              border-left-color: #cccccc;
+              border-right-color: #cccccc;
+              padding: 0;
+              -moz-background-clip: padding;
+              -webkit-background-clip: padding; /** These commands restrict the background color to the padding-area **/
+              background-clip: padding-box;     /** so that the transparent border is actually transparent. **/
+            }
+
+        nav li ul li:hover a
+          {
+            background: #cccccc;  /** Because the li element that comprises an entry in the navigation
+                                      bar contains its submenu, when the submenu is called into view,
+                                      hovering over the submenu is still hovering over that li, and so
+                                      the entry in the navigation bar retains its gray background. **/
+          }
+
+        nav ul li:hover ul a
+          {
+            margin: 2px 0 0;
+            background: #ffffff;
+            font-size: 9pt;
+            font-weight: normal;
+          }
+
+        nav ul li:hover ul li:first-of-type a
+          {
+            margin: 0;
+          }
+
+        nav ul li:hover ul a:hover
+          {
+            background: #cccccc;
+          }
+
+  #content
+    {
+      margin: 0 auto;
+      border: 0;
+      padding: 100px 0px 0px;
+      width: 70%;
+      min-width: 400px;
+      max-width: 800px;
+      text-align: left;
+      position: relative;
+      display: block;
+    }
+
+/*Styling links*/
+
+    /*Colors all links (regardless of whether or not previously visited, 
+    currently under the cursor, or currently clicked) blue, and
+    forces the browser to display them without an underline*/
+
+    a:link, a:hover, a:visited, a:visited:hover
+      {
+        color: #990033;
+        text-decoration: none;
+      }
+
+    /*Gives links currently under the cursor a gray background.*/
+
+    a:hover, a:visited:hover
+      {
+        background-color: #cccccc;
+      }
+
+    /*Removes border from image links.*/
+
+    a img
+      {
+        border: none;
+      }
+
+
+/*Styles relevant to the links page*/
+
+    .linkspage h4
+      {
+        position: relative;
+      }
+
+    .linkspage h4 a
+      {
+        position: absolute;
+        top: -85px;
+      }
+
+    .linkspage li
+      {
+        margin-top: 10px;
+      }
+
+/** Defining a few different list styles (specifically, with different spacing between entries). **/
+
+    ul.spaced li
+      {
+        margin-top: 20px;
+      }
+
+    ul.halfspaced li
+      {
+        margin-top: 10px;
+      }
+
+    ul.nonspaced li
+      {
+        margin-top: 0;
+      }
+
+    ul.ultranonspaced
+      {
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+
+/** Styles relevant to the home page **/
+
+    #portrait
+      {
+        float: right;
+        height: 318px;
+        width: 300px;
+        padding-left: 50px;
+      }
+
+    #contactinfo
+      {
+        text-align: left;
+        width: 355px;
+        height: 131px;
+        margin: 15px 0;
+        border-collapse: collapse;
+      }
+
+    #contactinfo td
+      {
+        vertical-align: top;
+      }
+
+    .c1
+      {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        width: 65px;
+      }
+
+    .c2
+      {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        width: 290px;
+      }
+
+    .r1
+      {
+        height: 25px;
+      }
+
+    .r2
+      {
+        height: 80px;
+      }
+
+    .r3
+      {
+        height: 25px;
+      }
+
+/** Styles relevant to the research and teaching pages **/
+
+    .researchpage p:first-of-type, .teachingpage p:first-of-type
+      {
+        margin: 0;
+        border: 0;
+        padding: 0;
+      }
+
+/** Styles relevant to the expository / notes page **/
+
+    .notespage p:first-of-type
+      {
+        margin: 0;
+        border: 0;
+        padding: 0;
+      }
+    
+    .notespage li
+      {
+        margin-top: 10px;
+      }
+    
+    .notespage ul li span:nth-of-type(1)
+      {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        display: inline-block;
+        width: 365px;
+      }
+
+    .notespage ul li span:nth-of-type(2)
+      {
+        margin: 0 0.5% 0 0.5%;
+        border: 0;
+        padding: 2px 4px;
+        border-radius: 5px;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+      }
+    
+    .notespage ul li span:nth-of-type(2) div
+      {
+        position: absolute;
+        left: 0%;
+        top: -100%;
+      }
+      
+
+    .notespage ul li span:nth-of-type(3)
+      {
+        margin: 0 1% 0 0.5%;
+        border: 0;
+        padding: 0;
+        display: inline-block;
+        text-align: center;
+      }
+    
+    .notespage ul li button
+      {
+        margin: 0;
+        display: inline-block;
+        width: 70px;
+      }
+
+    .notespage span.uptodate
+      {
+        background: #80ED89;
+        /*color: green;
+        font-weight: bold;*/
+      }
+    
+    .notespage span.outofdate
+      {
+        background: #FF7373;
+        /*color: red;
+        font-weight: bold;*/
+      }
+
+/** Styles relevant to the expository / notes page **/
+
+    .shirtpage div
+      {
+        width: 500px;
+        height: 500px;
+        text-align: center;
+        margin: 0 auto 20px;
+        border: 1px solid gray;
+        border-radius: 5px;
+      }
+
+    .shirtpage h4
+      {
+        margin: 20px 0 10px;
+      }
+    
+    .shirtpage img
+      {
+        width: 400px;
+        height: 400px;
+      }
+
+
+
