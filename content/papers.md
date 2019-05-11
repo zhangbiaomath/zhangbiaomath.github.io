@@ -1,8 +1,7 @@
 # Preprints
 
-1. Sergey Kitaev, Philip B. Zhang, Xutong Zhang, Distributions of several infinite families of mesh patterns, submitted.
 
-1. James Haglund, Philip B. Zhang, Real-rootedness of variations of Eulerian polynomials, submitted.
+
 
 1. Sergey Kitaev, Philip B. Zhang, Distributions of mesh patterns of short lengths, submitted.  
 
@@ -12,11 +11,15 @@
 
 # Publications
 
-1. Philip B. Zhang,  On the real-rootedness of the local _h_-polynomials of edgewise subdivisions of simplexes, Electron. J. Combin., to appear. 
+1. Sergey Kitaev, Philip B. Zhang, Xutong Zhang, Distributions of several infinite families of mesh patterns, Adv. in Appl. Math., to appear.
+
+1. James Haglund, Philip B. Zhang, Real-rootedness of variations of Eulerian polynomials, Adv. in Appl. Math., to appear.
 
 1. Matthew H.Y. Xie, Philip B. Zhang, Equivariant Kazhdan-Lusztig  polynomials of thagomizer matroids,  Proc. Amer. Math. Soc., to appear. 
 
 1. Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, to appear. 
+
+1. Philip B. Zhang,  On the real-rootedness of the local _h_-polynomials of edgewise subdivisions of simplexes, Electron. J. Combin., Electron. J. Combin., 26 (1) (2019), #P1.52.
 
 1. Philip B. Zhang, Xutong Zhang, Multivariate stable Eulerian polynomials on segmented permutations, _European J. Combin._, 78 (2019), 155-162. 
 
