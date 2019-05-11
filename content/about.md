@@ -46,8 +46,8 @@
 The following list only contains papers of me as the first autor or corresponding author after working at TJNU. For a full publication list, see [here](https://zhangbiaomath.github.io/).
 
 + 第一作者
-  + Philip B. Zhang,  On the real-rootedness of the local _h_-polynomials of edgewise subdivisions of simplexes, Electron. J. Combin., to appear. 
   + Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, to appear. 
+  + Philip B. Zhang,  On the real-rootedness of the local _h_-polynomials of edgewise subdivisions of simplexes, Electron. J. Combin.,Electron. J. Combin., 26 (1) (2019), #P1.52.
   + Philip B. Zhang, Xutong Zhang, Multivariate stable Eulerian polynomials on segmented permutations, _European J. Combin._, 78 (2019), 155-162. 
   + Philip B. Zhang, The local _h_-polynomials of cluster subdivisions have only real zeros, Bull. Austral. Math. Soc., 98 (2) (2018), 258-264. 
 
