@@ -10,6 +10,7 @@
 # 参加会议
 + 2019
   +  2019年5月3日至4日，参加了在费城举办的Mid-Atlantic Algebra, Geometry, and Combinatorics (MAAGC 2019）会议。  [website](http://www.maagc.info/philadelphia-2019)
+  +  2019年4月5日至7日, 参加了在费城举办的Graduate Student Combinatorics Conference 2019 (GSCC 2019)会议。[website](https://sites.google.com/view/gscc2019/)
 + 2018
   +	2018年8月26日起，赴美国宾夕法尼亚大学(UPenn)开始为期一年的学术访问，合作教授[James Haglund](https://www.math.upenn.edu/~jhaglund)。
   + 2018年7月25日至8月25日，参加了在南开大学陈省身数学研究所举办的“Summer Research Institute on q-Series”国际会议。 [website](http://q2018.combinatorics.net/)
