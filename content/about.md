@@ -74,8 +74,6 @@ The following list only contains papers of me as the first autor or correspondin
 + zbMATH 评论员
 + 中国运筹学会会员
 + 中国工业与应用数学学会会员
-+ 
-
 
 
 
