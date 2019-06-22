@@ -63,10 +63,19 @@ The following list only contains papers of me as the first autor or correspondin
   
 
 # Referee for: 
++ Algebraic Combinatorics
 + Applied Mathematics and Computation
 + Discrete Applied Mathematics
 + Discrete Mathematics
 + Electronic Journal of Combinatorics
+
+# 学术兼职
++ Mathematical Reviews 评论员
++ zbMATH 评论员
++ 中国运筹学会会员
++ 中国工业与应用数学学会会员
++ 
+
 
 
 
