@@ -1,3 +1,5 @@
+
+
 # 科研项目
 + 主持 组合数学中的实根多项式，国家自然科学基金青年科学基金项目(No. 11701424)，2018年1月至2020年12月
 + 主持 广义欧拉多项式的实根性，国家自然科学基金数学天元基金(No. 11626172)，2017年1月至2017年12月
@@ -9,7 +11,9 @@
 
 # 参加会议
 + 2019
-  +  2019年5月3日至4日，参加了在费城举办的Mid-Atlantic Algebra, Geometry, and Combinatorics (MAAGC 2019）会议。  [website](http://www.maagc.info/philadelphia-2019)
+  +  2019年6月17日至20日, 参加了在美国圣地亚哥举办的Adriano Garsia's 90th Birthday Conference，并做报告（flash talks）。 [website](https://sites.google.com/view/garsiafest)
+  +  2019年5月3日至4日，参加了在美国费城举办的Mid-Atlantic Algebra, Geometry, and Combinatorics (MAAGC 2019）会议。  [website](http://www.maagc.info/philadelphia-2019)
+  +  2019年4月5日至7日, 参加了在美国费城举办的Graduate Student Combinatorics Conference 2019 (GSCC 2019)会议。[website](https://sites.google.com/view/gscc2019/)
 + 2018
   +	2018年8月26日起，赴美国宾夕法尼亚大学(UPenn)开始为期一年的学术访问，合作教授[James Haglund](https://www.math.upenn.edu/~jhaglund)。
   + 2018年7月25日至8月25日，参加了在南开大学陈省身数学研究所举办的“Summer Research Institute on q-Series”国际会议。 [website](http://q2018.combinatorics.net/)
@@ -43,26 +47,22 @@
   + 2013年7月, 湖南师范大学, 第七届海峡两岸图论与组合数学学术会议
   + 2011年12月, 南开大学, 组合、设计与代数学术研讨会暨康庆德教授七十华诞庆祝会
 
-
-# 发表论文 
-The following list only contains papers of me as the first autor or corresponding author after working at TJNU. For a full publication list, see [here](https://zhangbiaomath.github.io/).
-
-+ 第一作者
-  + Philip B. Zhang, Interlacing polynomials and the Veronese construction for rational formal power series, _Proc. Roy. Soc. Edinburgh Sect. A_, to appear. 
-  + Philip B. Zhang,  On the real-rootedness of the local _h_-polynomials of edgewise subdivisions of simplexes, Electron. J. Combin.,Electron. J. Combin., 26 (1) (2019), #P1.52.
-  + Philip B. Zhang, Xutong Zhang, Multivariate stable Eulerian polynomials on segmented permutations, _European J. Combin._, 78 (2019), 155-162. 
-  + Philip B. Zhang, The local _h_-polynomials of cluster subdivisions have only real zeros, Bull. Austral. Math. Soc., 98 (2) (2018), 258-264. 
-
-+ 通讯作者
-  + Herman Z.Q. Chen, Arthur L.B. Yang, Philip B. Zhang, The real-rootedness of generalized Narayana polynomials, Rocky Mountain J. Math., 48 (1) (2018), 107-119. 
-  + Alice L.L. Gao, Sergey Kitaev, Philip B. Zhang, Pattern-avoiding alternating words, Discrete Appl. Math., 207 (2016), 56-66.
-  
-
   
 
 
 
+# Referee for: 
++ Algebraic Combinatorics
++ Applied Mathematics and Computation
++ Discrete Applied Mathematics
++ Discrete Mathematics
++ Electronic Journal of Combinatorics
 
+# 学术兼职
++ Mathematical Reviews 评论员
++ zbMATH 评论员
++ 中国运筹学会会员
++ 中国工业与应用数学学会会员
 
 
 
