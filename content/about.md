@@ -11,7 +11,10 @@
 
 # 参加会议
 + 2019
-  +  2019年6月17日至20日, 参加了在美国圣地亚哥举办的Adriano Garsia's 90th Birthday Conference，并做报告（flash talks）。 [website](https://sites.google.com/view/garsiafest)
+  + 2019年12月13日至16日，在天津师范大学组织的“2019李理论及相关课题研讨会上”做40分钟报告。
+  + 2019年11月9日至10日，在南开大学举办的“组合数学研讨会”做45分钟邀请报告。
+  + 2019年10月19日至20日，在中国科学院举办的“组合理论与算法研讨会”会议做30分钟报告。
+  +  2019年6月17日至20日, 参加了在美国加州大学圣地亚哥分校举办的Adriano Garsia's 90th Birthday Conference，并做15分钟报告（flash talks）。 [website](https://sites.google.com/view/garsiafest)
   +  2019年5月3日至4日，参加了在美国费城举办的MAAGC 2019 (Mid-Atlantic Algebra, Geometry, and Combinatorics)会议。  [website](http://www.maagc.info/philadelphia-2019)
   +  2019年4月5日至7日, 参加了在美国费城举办的GSCC 2019（Graduate Student Combinatorics Conference 2019）会议。[website](https://sites.google.com/view/gscc2019/)
 + 2018
