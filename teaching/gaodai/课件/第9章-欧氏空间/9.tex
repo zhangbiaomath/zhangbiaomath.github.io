@@ -1,0 +1,1439 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[13pt]{beamer}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{amsmath,amssymb,amsthm}             % AMS Math
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\linespread{1.3}
+
+\usepackage{mathrsfs}  %花写字母
+ 
+
+%%%=== theme ===%%%
+% \usetheme{Warsaw}
+%\usetheme{Copenhagen}
+%\usetheme{Singapore}
+\usetheme{Madrid}
+%\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+% \usefonttheme{structureitalicserif}
+%%\useinnertheme{rounded}
+%%\useinnertheme{inmargin}
+\useinnertheme{circles}
+%\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[page number]
+
+
+
+
+\usepackage{ctex}
+% \usepackage{CJK,CJKnumb,CJKulem}
+\usepackage{minitoc}
+
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{thm}{定理}
+\newtheorem{lem}{引理}
+\newtheorem{exa}{例}
+\newtheorem*{defi}{定义}
+\newtheorem*{coro}{推论}
+\newtheorem*{ex}{练习}
+\newtheorem*{rem}{注}
+\newtheorem*{prop}{性质}
+
+\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
+\def\pf{{\bf 证明~~ }}
+\def\Rn{\mathbb{R}^n}
+\def\A{\mathscr{A}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\r{\gamma}
+
+\usepackage{color}
+\definecolor{linkcol}{rgb}{0,0,0.4}
+\definecolor{citecol}{rgb}{0.5,0,0}
+
+
+
+  \usepackage{graphicx}
+  \DeclareGraphicsExtensions{.eps}
+%   \usepackage[a4paper,pagebackref,hyperindex=true,pdfnewwindow=true]{hyperref}
+
+
+\begin{document}
+
+
+
+\title[]{第九章 \quad  欧几里得空间}
+\author[]{{\large 张彪}\\  }
+\institute[]{{\normalsize
+		天津师范大学\\[6pt]
+		zhang@tjnu.edu.cn}}
+
+\date{}
+
+
+\AtBeginSection[]
+{
+	\setcounter{exa}{0}
+	\setcounter{equation}{0}
+}
+
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\begin{frame}{}
+\begin{itemize}
+\item 前面主要介绍了向量的线性运算，向量组的线性相关 与线性无关性，并讨论了向量空间中的基、维数以及向量 的坐标等概念. 
+
+\item 但在向量空间中还没有涉及度量性质，即还没有考虑 向量空间中的向量的大小、向量间的夹角等问题. 
+
+
+%在解析几何中， 考虑几何空间$\mathbb{R}^2$, $\mathbb{R}^3$， 向量的长度，夹角等度量性质
+%都可以通过内积反映出来：
+%\[
+%\begin{aligned}
+%	&\text { 长度 } \quad|\alpha|=\sqrt{\alpha \cdot \alpha}\\
+%	&\text { 角度 }<\alpha, \beta>  \quad \cos <\alpha, \beta>\, =\frac{\alpha \cdot \beta}{|\alpha||\beta|}
+%\end{aligned}
+%\]
+
+
+
+\item 本章将在向量空间中引入内积的概念，并赋予相应的 度量性质. 
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+	\item 
+在几何空间中两个向量 $a, b$ 的内积 (数量积)定义为:
+\[
+a \cdot b=|a| \cdot|b| \cos \theta
+\]
+其中 | ${a}|,| {b} |$ 是向量 $a, b$ 的长度, ${\theta}$ 是向量 ${a}, {b}$ 的夹角. 
+ 
+ \item 
+在建立空间直角坐标系后，有了向量的坐标表示，即
+\[
+a=\left(a_{1}, a_{2}, a_{3}\right), b=\left(b_{1}, b_{2}, b_{3}\right)
+\]
+相应地，内积的计算公式为 $a \cdot b=\sum_{i=1}^{3} a_{i} b_{i}$
+
+\item 下面仿照该计算公式，在空间 $\mathbb{R}^{n}$ 引入中的内积概念. 
+\end{itemize}
+\end{frame}
+
+\section{欧氏空间}
+\begin{frame}{\S 1 欧氏空间}
+\begin{defi}
+设V是实数域 $\mathbb{R}$上的线性空间，对V中任意两个向量 $\alpha, \beta$
+定义一个二元实函数，记作   $(\alpha, \beta)$, 
+它具有满足以下性质
+\begin{enumerate}
+\item 	$(\alpha, \beta)=(\beta, \alpha)$
+	（对称性）
+\item 	$(k \alpha, \beta)=k(\alpha, \beta)$
+	（左数乘性）
+\item 	$(\alpha+\beta, \gamma)=(\alpha, \gamma)+(\beta, \gamma)$  （左可加性）
+\item 	$(\alpha, \alpha) \geq \mathbf{0},$ 当且仅当 $\alpha=\mathbf{0}$ 时 $(\alpha, \alpha)=\mathbf{0} . \quad$ （正定性）
+\end{enumerate}
+这里 $\alpha, \beta, \gamma$ 是 $V$ 中任意的向量， $k$ 是任意实数,
+则称 $(\alpha, \beta)$为$\alpha$和  $\beta$  的\alert{内积}，并称这种定义了内积的
+实数域 R上的线性空间V为\alert{欧几里得空间}, 简称 \alert{欧氏空间}.
+
+\end{defi}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+在  $\mathbb{R}^n$中，对于向量 
+$\alpha=\left( a_{1}, a_{2}, \cdots, a_{n}\right)$, $\beta=\left(b_{1}, b_{2}, \cdots, b_{n}\right)$
+
+定义$$(\alpha, \beta)=a_{1} b_{1}+a_{2} b_{2}+\cdots+a_{n} b_{n}$$
+
+验证 $(\alpha, \beta)$满足定义中的4个性质. 
+\begin{enumerate}
+	\item   $(\alpha, \beta)=\sum_{i=1}^{n} a_{i} b_{i}=\sum_{i=1}^{n} b_{i} a_{i}=(\beta, \alpha)$
+	\item  $(k \alpha, \beta)=\sum_{i=1}^{n}\left(k a_{i}\right) b_{i}=\sum_{i=1}^{n} k\left(a_{i} b_{i}\right)=k(\alpha, \beta)$
+	\item 如果 $\gamma=\left(c_{1}, c_{2}, \ldots, c_{n}\right), \alpha + \beta =\left(a_{1}+b_{1}\right.$
+	$\left.a_{2}+b_{2}, \ldots, a_{n}+b_{n}\right),$ 则
+	$(\alpha+\beta, \gamma)=\sum_{i=1}^{n}\left(a_{i}+b_{i}\right) c_{i}=\sum_{i=1}^{n} a_{i} c_{i}+\sum_{i=1}^{n} b_{i} c_{i}=(\alpha, \gamma)+(\beta, \gamma)$
+	\item $(\alpha, \alpha)=\sum_{i=1}^{n} a_{i} a_{i}=\sum_{i=1}^{n} a_{i}^{2} \geq 0$ 
+	当且仅当 $a_{i}=0(i=1,2, \dots, n)$ 时, $(\alpha, \alpha)=0$
+\end{enumerate}
+
+因此，$\mathbb{R}^n$对于内积$(\alpha, \beta)$ 就成为一个欧氏空间.
+\end{exa}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+${C}({a}, {b})$ 为闭区间 $[{a}, {b}]$ 上的所有实连续函数
+所成线性空间，对于函数 $f(x), g(x),$ 定义
+\[
+(f, g)=\int_{a}^{b} f(x) g(x) d x
+\]
+则 $C(a, b)$ 作成一个欧氏空间.
+\end{exa}
+\end{frame}
+ 
+\begin{frame}
+\begin{prop}
+设$V$为欧氏空间， 
+$\forall \alpha, \beta, \gamma \in {V}$, $\forall k \in \mathbb{R}$
+\begin{enumerate}
+	\item  $(\alpha, k \beta)=k(\alpha, \beta)$, 
+	\item $(\alpha, \beta+\gamma)=(\alpha, \beta)+(\alpha, \gamma)$
+	\item   $(\mathbf{0}, \beta)=0$
+	\item $\left(\sum_{i=1}^{n} k_{i} \alpha_{i}, \sum_{j=1}^{m} l_{j} \beta_{j}\right)=\sum_{i=1}^{n} \sum_{j=1}^{m} k_{i} l_{j}\left(\alpha_{i}, \beta_{j}\right)$
+\end{enumerate}
+\end{prop}
+
+
+\begin{rem}
+\begin{itemize}
+\item 在欧几里得空间的定义中，对它作为线性空间的维数并无要 求，可以是有限维的，也可以是无限维的. 
+\item 内积满足齐次性、可加性，这两条性质合在一
+起称为内积的双线性性. 即内积是实线性空间中的一个正定
+对称双线性函数. 
+\end{itemize}
+\end{rem}
+\end{frame}
+ 
+ 
+ \begin{frame}{ 二、欧氏空间中向量的长度}
+ 
+ 1. 引入长度概念的可能性
+ 
+ 1）在 ${R}^{3}$ 向量 $\alpha$ 的长度模 $$|\alpha|=\sqrt{\alpha \cdot \alpha}$$
+ 
+ 2) 欧氏空间V中, $\forall \alpha \in V, \quad(\alpha, \alpha) \geq \mathbf{0}$ 使得 $\sqrt{\alpha \cdot \alpha}$ 有意义.
+ 
+ 2. 向量长度的定义
+
+\begin{defi}
+ 在欧氏空间$V$中，对任意向量$\alpha \in V$,
+称 $$|\alpha|=\sqrt{(\alpha, \alpha)}$$ 为向量 $\alpha$ 的长度.
+特别地，当 $|\alpha |=1$ 时，称 $\alpha$ 为单位向量.
+\end{defi}
+
+ \end{frame}
+
+
+\begin{frame}{向量长度的简单性质}
+\begin{prop}
+\begin{enumerate}
+	\item $|\alpha| \geq {0}; $  \qquad $|\alpha|={0} \Leftrightarrow \alpha=\mathbf{0}$
+	
+	\item  $|k \alpha|=|k||\alpha|$
+	
+	\item 如果$\alpha \neq 0$,  则 $\frac{1}{|\alpha|} \alpha$ 是一个\alert{单位向量}. 
+\end{enumerate}
+\end{prop}
+
+
+
+通常称此过程为把 $\alpha$ \alert{单位化}.
+\end{frame}
+
+
+\begin{frame}{三、欧氏空间中向量的角度}
+1. 引入夹角概念的可能性与困难
+
+1）在 $\mathbb{R}^{3}$ 中向量 $\alpha$ 与 $\beta$ 的夹角
+\[
+<\alpha, \beta>=\arccos \frac{\alpha \cdot \beta}{|\alpha||\beta|}
+\]
+
+2）在一般欧氏空间中推广
+上面形式，首先应证明不等式: 
+$$\quad\left|\frac{ ( \alpha, \beta)}{|\alpha \| \beta|}\right| \leq 1$$
+\end{frame}
+
+
+\begin{frame}{柯西-布涅柯夫斯基不等式(又称"柯西-施瓦兹不等式")}
+\begin{prop}
+对欧氏空间V中任意两个向量 $\alpha, \beta,$ 有
+\[
+| \left(\alpha, \beta \right) | \leq |\alpha|   \cdot | \beta|
+\]
+当且仅当 $\alpha, \beta$ 线性相关时等号成立.
+\end{prop}
+
+1) 对于欧氏空间$\mathbb{R}^n$
+$$\left|a_{1} b_{1}+a_{2} b_{2}+\dots+a_{n} b_{n}\right|
+\leq \sqrt{a_{1}^{2}+a_{2}^{2}+\dots+a_{n}^{2}}   \sqrt{b_{1}^{2}+b_{2}^{2}+\dots+b_{n}^{2}}$$
+
+2) 对于欧氏空间$C[a,b]$
+$$\left|\int_{a}^{b} f(x) g(x) d x\right| \leq \sqrt{\int_{a}^{b} f^{2}(x) d x}  \cdot  \sqrt{\int_{a}^{b} g^{2}(x) d x}$$
+\end{frame}
+
+\begin{frame}
+\[
+|(\alpha, \beta)| \leq |\alpha|   \cdot | \beta|
+\]
+\pf
+当 $\beta=\mathbf{0}$ 时 $, \quad(\alpha, \mathbf{0})=0, \quad|\beta|=0$
+
+因此，$ \quad(\alpha, \beta)=|\alpha||\beta|=0 . \quad$ 结论成立.
+
+当 $\beta \neq \mathbf{0}$ 时，作向量 $\quad \gamma=\alpha+ \alert{t} \beta, \quad t  \in \mathbb{R}$
+
+由内积的正定性，对 $\forall t \in \mathbb{R}, \quad$ 皆有
+$$(\gamma, \gamma)=(\alpha+ \alert{t} \beta, \alpha+\alert{t} \beta)
+=(\alpha, \alpha)+2(\alpha, \beta) \alert{t}+(\beta, \beta) \alert{t}^{2} \geq 0 $$
+取 $t=-\frac{(\alpha, \beta)}{(\beta, \beta)} $
+ 代入上式, 得  
+$$(\alpha, \alpha)-2(\alpha, \beta) \frac{(\alpha, \beta)}{(\beta, \beta)}+(\beta, \beta) \frac{(\alpha, \beta)^{2}}{(\beta, \beta)^{2}} \geq 0$$
+即 $\quad(\alpha, \beta)^{2} \leq(\alpha, \alpha)(\beta, \beta)$
+两边开方，
+
+即得 $\quad|(\alpha, \beta)| \leq|\alpha \| \beta|$
+\end{frame}
+
+\begin{frame}
+当
+$\alpha, \beta$ 线性相关时，不妨设$\alpha=k \beta$
+于是, $$|(\alpha, \beta)|=|(k \beta, \beta)|=|k(\beta, \beta)|=|k \| {\beta}|^{2}$$
+$$
+|\alpha\|\beta|=| k \beta\| \beta|=|k \| \beta|^{2}
+$$
+因此$|(\alpha, \beta)|=|\alpha||\beta| . \quad$ 等号成立.
+
+反之，若等号成立，
+由以上证明过程知
+
+或者 $\beta=0,$ 或者 $\alpha-\frac{(\alpha, \beta)}{(\beta, \beta)} \beta=0$
+
+也即 $\alpha, \beta$ 线性相关.
+
+\end{frame}
+
+
+\begin{frame}
+\begin{coro}
+对欧氏空间中的任意两个向量 $\alpha, \beta,$ 有
+$$|\alpha+\beta| \leq|\alpha|+|\beta|$$
+\end{coro}
+\pf 
+\[
+\begin{aligned}
+|\alpha+\beta|^{2}& =(\alpha+\beta, \alpha+\beta) \\
+\quad& =(\alpha, \alpha)+2(\alpha, \beta)+(\beta, \beta) \\
+\quad & \leq|\alpha|^{2}+2|\alpha||\beta|+|\beta|^{2}=(|\alpha|+|\beta|)^{2}
+\end{aligned}
+\]
+两边开方，证毕.
+\qed
+\end{frame}
+
+
+
+
+\begin{frame}
+\begin{defi}
+	设V为欧氏空间, $\alpha, \beta$ 为V中任意两非零
+向量， 
+$\alpha, \beta$ 的夹角定义为
+\[
+\langle\alpha, \beta\rangle=\arccos \frac{(\alpha, \beta)}{|\alpha||\beta|},
+\quad
+(0 \leq\langle\alpha, \beta\rangle \leq \pi)
+\]
+\end{defi}
+%\end{frame}
+%
+%\begin{frame}
+\begin{defi}
+	设 $\alpha, \beta$ 为欧氏空间中两个向量，若内积
+$
+(\alpha, \beta)=0
+$
+则称 $\alpha$ 与 $\beta$ 正交或互相垂直，记作 $\alpha \perp \beta$.
+\end{defi}
+\begin{rem}
+	\begin{itemize}
+		\item 零向量与任意向量正交.
+		 \item $\alpha \perp \beta \Longleftrightarrow\langle\alpha, \beta\rangle=\frac{\pi}{2},$ 即 $\cos \langle\alpha, \beta\rangle=0$.
+	\end{itemize}
+\end{rem}
+
+\end{frame}
+
+\begin{frame}
+(3) 勾股定理:
+设V为欧氏空间， $\forall \alpha, \beta \in V$
+$$\alpha \perp \beta \Longleftrightarrow|\alpha+\beta|^{2}=|\alpha|^{2}+|\beta|^{2}$$
+\pf
+因为$$
+\begin{aligned}
+|\alpha+\beta|^{2}& =(\alpha+\beta, \alpha+\beta) \\ 
+	& =(\alpha, \alpha)+2(\alpha, \beta)+(\beta, \beta) 
+\end{aligned}$$
+
+所以$\quad|\alpha+\beta|^{2}=|\alpha|^{2}+|\beta|^{2} \Longleftrightarrow(\alpha, \beta)=0$
+$\Longleftrightarrow \alpha \perp \beta$ \qed
+
+{\bf 推广~~}  若欧氏空间V中向量 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}$ 两两正交,
+即 $\quad\left(\alpha_{i}, \alpha_{j}\right)=\mathbf{0}, \quad i \neq j, \quad i, j=1,2, \cdots, m$, 有
+$$\left|\alpha_{1}+\alpha_{2}+\cdots+\alpha_{m}\right|^{2}=\left|\alpha_{1}\right|^{2}+\left|\alpha_{2}\right|^{2}+\cdots+\left|\alpha_{m}\right|^{2}$$
+
+\end{frame}
+
+\begin{frame}
+	\begin{exa}己知 $\alpha=(2,1,3,2), \quad \beta=(1,2,-2,1)$
+	在通常的内积定义下, 求 $|\alpha|,(\alpha, \beta),\langle\alpha, \beta\rangle,|\alpha-\beta| .$
+	\end{exa}
+	\pause
+{\bf 解~~} 
+$|\alpha|=\sqrt{(\alpha, \alpha)}=\sqrt{2^{2}+1^{2}+3^{2}+2^{2}}=\sqrt{18}=3 \sqrt{2}$
+
+因为 $(\alpha, \beta)=2 \times 1+1 \times 2+3 \times(-2)+2 \times 1=0$. 
+
+所以, $\langle\alpha, \beta\rangle=\frac{\pi}{2}$.
+
+又因为 $\alpha-\beta=(1,-1,5,1)$
+
+所以$|\alpha-\beta|=\sqrt{1^{2}+(-1)^{2}+5^{2}+1^{2}}=\sqrt{28}=2 \sqrt{7}$
+\end{frame}
+\begin{frame}
+	通常称 $|\alpha-\beta|$ 为 $\alpha$ 与 $\beta$ 的距离，记作 $d(\alpha, \beta)$.
+\begin{ex}[{课后习题第3题}]
+证明
+$$d(\alpha, {\gamma}) \leqslant d({a}, {\beta})+d({\beta}, {\gamma})$$
+\end{ex}
+
+\end{frame}
+
+
+\begin{frame}
+{四、$n$ 维欧氏空间中内积的矩阵表示}
+设V为欧氏空间, $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 为V的一组基，对V中
+任意两个向量
+$\alpha=x_{1} \varepsilon_{1}+x_{2} \varepsilon_{2}+\cdots+x_{n} \varepsilon_{n}, \quad
+\beta=y_{1} \varepsilon_{1}+y_{2} \varepsilon_{2}+\cdots+y_{n} \varepsilon_{n}$
+$$
+(\alpha, \beta)=\left(\sum_{i=1}^{n} x_{i} \varepsilon_{i}, \sum_{j=1}^{n} y_{j} \varepsilon_{j}\right)=\sum_{i=1}^{n} \sum_{j=1}^{n}\left(\varepsilon_{i}, \varepsilon_{j}\right) x_{i} y_{j} $$
+\end{frame}
+
+
+\begin{frame}
+
+令$ a_{i j}=\left(\varepsilon_{i}, \varepsilon_{j}\right), \quad i, j=1,2, \cdots n$, 
+
+令
+$A=\left(a_{i j} \right)_{n \times n}$,
+$X= \left(x_1, x_2, \dots, x_n \right)^{\prime}$, 
+$Y=\left(y_1, y_2, \dots, y_n \right)^{\prime}$,
+
+于是,
+$(\alpha, \beta)=\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} y_{j}=X^{\prime} A Y$
+
+%{\bf 定义~~~} 
+\begin{defi}
+称$$A=
+\left(\begin{array}{cccc}
+\left(\varepsilon_{1}, \varepsilon_{1}\right) & \left(\varepsilon_{1}, \varepsilon_{2}\right) & \cdots & \left(\varepsilon_{1}, \varepsilon_{n}\right) \\ 
+\left(\varepsilon_{2}, \varepsilon_{1}\right) & \left(\varepsilon_{2}, \varepsilon_{2}\right) & \cdots & \left(\varepsilon_{2}, \varepsilon_{n}\right) \\
+\cdots & \cdots & \cdots & \cdots \\ 
+\left(\varepsilon_{n}, \varepsilon_{1}\right)  & \left(\varepsilon_{n}, \varepsilon_{2}\right) & \cdots & \left(\varepsilon_{n}, \varepsilon_{n}\right)
+\end{array}\right)$$
+为基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 的度量矩阵.
+\end{defi}
+
+
+\end{frame}
+
+
+\begin{frame}{}
+
+$$A=
+\left(\begin{array}{cccc}
+\left(\varepsilon_{1}, \varepsilon_{1}\right) & \left(\varepsilon_{1}, \varepsilon_{2}\right) & \cdots & \left(\varepsilon_{1}, \varepsilon_{n}\right) \\ 
+\left(\varepsilon_{2}, \varepsilon_{1}\right) & \left(\varepsilon_{2}, \varepsilon_{2}\right) & \cdots & \left(\varepsilon_{2}, \varepsilon_{n}\right) \\
+ \cdots & \cdots & \cdots & \cdots \\ 
+ \left(\varepsilon_{n}, \varepsilon_{1}\right)  & \left(\varepsilon_{n}, \varepsilon_{2}\right) & \cdots & \left(\varepsilon_{n}, \varepsilon_{n}\right)
+\end{array}\right)$$
+
+\begin{rem}
+	\begin{itemize}
+		\item 度量矩阵A是实对称矩阵.
+		\item 由内积的正定性，度量矩阵A还是正定矩阵.
+		事实上，对 $\forall \alpha \in V, \alpha \neq \mathbf{0},$ 即 $X \neq 0$
+		有 $(\alpha, \alpha)=X^{\prime} A X>0$.
+		因此，$ A$ 为正定矩阵.
+		\item 在基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下，向量的内积
+		由度量矩阵A完全确定.
+	\end{itemize}
+\end{rem}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{rem}
+	\begin{itemize}
+	\item 对同一内积而言，不同基的度量矩阵是合同的. 
+	\end{itemize}
+\end{rem}
+\pf
+\small{ 设 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n} ; \eta_{1}, \eta_{2}, \cdots, \eta_{n}$ 为欧氏空间V的两组
+基，它们的度量矩阵分别为A、B，且
+$$\left(\eta_{1}, \eta_{2}, \cdots, \eta_{n}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) C,$$
+其中 $C=\left(c_{i j}\right)_{n \times n}=\left(C_{1}, C_{2}, \cdots, C_{n}\right)$
+
+于是，$\eta_{i}=\sum_{k=1}^{n} c_{k i} \varepsilon_{k}, i=1,2, \cdots, n$
+
+因此， 
+$\left(\eta_{i}, \eta_{j}\right) =\left(\sum_{k=1}^{n} c_{k i} \varepsilon_{k}, \sum_{l=1}^{n} c_{l j} \varepsilon_{l}\right)=\sum_{k=1}^{n} \sum_{l=1}^{n}\left(\varepsilon_{k}, \varepsilon_{l}\right) c_{k i} c_{l j}$\\
+	~~~~~~~~~~~~~~~~~
+	$ =\sum_{k=1}^{n} \sum_{l=1}^{n} a_{k l} c_{k i} c_{l j}=C_{i}^{\prime} A C_{j}$
+
+所以 $B=\left(\left(\eta_{i}, \eta_{j}\right)\right)=\left(C_{i}^{\prime} A C_{j}\right)$
+$=\left(\begin{array}{c}C_{1}^{\prime} \\ C_{2}^{\prime} \\ \vdots \\ C_{n}^{\prime}\end{array}\right) A\left(C_{1}, C_{2}, \cdots, C_{n}\right)=C^{\prime} A C$
+}
+\end{frame}
+
+\section{标准正交基的定义与求法}
+\begin{frame}{\S 2 标准正交基的定义与求法}
+
+\begin{defi}[正交向量组]
+设 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}$ 是一组非零向量, 如果它们两两正交, 则称为\alert{正交向量组}.
+\end{defi}
+%\begin{rem}
+%\begin{itemize}
+%	\item 
+%\end{itemize}
+%\end{rem}
+\end{frame}
+
+\begin{frame}
+\begin{prop}
+	正交向量组是线性无关的.  
+\end{prop}
+\pf 设正交向量组 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 有一线性关系
+\[
+k_{1} {\alpha}_{1}+k_{2} {\alpha}_{2}+\cdots+k_{m} {\alpha}_{m}=\mathbf{0}
+\]
+用 ${\alpha}_{i}$ 与等式两边作内积,即得
+$k_{i}\left({\alpha}_{i}, {\alpha}_{i}\right)=0$
+
+由 ${\alpha}_{i} \neq \mathbf{0},$ 有 $\left({\alpha}_{i}, {\alpha}_{i}\right)>0,$ 从而 $k_{i}=0(i=1,2, \cdots, m) .$ 
+
+这就证明了
+${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 是线性无关的.
+\qed
+\begin{coro}
+	$n$维欧氏空间V中, 两两正交的非零 向量的个数不会超过$n$. 
+\end{coro}
+
+这个事实的几何意义是清楚的.
+例如 , 在平面上找不 到三个两两垂直的非零向量; 在空间中,找不到四个两两垂直的非零向量.
+
+\end{frame}
+
+\begin{frame}
+\begin{defi}[正交基]
+	在$n$维欧氏空间中, 由$n$个两两正交的非零向量构成的向量组称为 \alert{正交基}. 
+	由单位向量组成的正交基称为 \alert{标准正交基}.
+	
+\end{defi}
+
+
+\begin{prop}
+	\begin{itemize}
+		\item 向量组 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}$ 是一个
+		标准正交向量组
+		$\Longleftrightarrow$ 
+		$\left(\alpha_{i}, \alpha_{j}\right)=\left\{\begin{array}{ll} 
+		{1} & {i}={j} \\ 
+		{0} & {i} \neq {j}
+		\end{array}\right.$
+		\item 	一组基是标准正交基$\Longleftrightarrow$ 它的度量矩阵是单位矩阵. 
+	\end{itemize}
+\end{prop}
+
+\end{frame}
+\begin{frame}
+\begin{prop}
+	设 $\varepsilon_{1}, \varepsilon_{2}, \dots, \varepsilon_{n}$ 是 $n$ 维欧氏空间 $V$ 的
+	一组标准正交基, 对 $\alpha, \beta \in V,$ 设向量 $\alpha, \beta$ 的 坐标分别是 $X=\left(x_{1}, x_{2}, \ldots, x_{n}\right)^{\prime}, Y=\left(y_{1}, y_{2}, \ldots, y_{n}\right)^{\prime}$, 则
+	\begin{itemize}
+		\item $x_{i}=\left(\alpha, \alpha_{i}\right) \quad i=1,2, \dots, n$
+		\item  $(\alpha, \beta)=X^{\prime} Y=x_{1} y_{1}+x_{2} y_{2}+\ldots+x_{n} y_{n}$
+	\end{itemize}
+\end{prop}
+
+\pf 
+\small{
+由题设可以
+	\[
+	{\alpha}=x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+{x}_{n} {\varepsilon}_{n}
+	\]
+	用 ${\varepsilon}_{i}$ 与等式两边作内积, 即得
+	\[
+	x_{i}=\left({\varepsilon}_{i}, {\alpha}\right) \quad(i=1,2, \cdots, n)
+	\]
+因为
+	\[
+	\begin{array}{l}
+	{\alpha}=x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+x_{n} {\varepsilon}_{n} \\
+	{\beta}=y_{1} {\varepsilon}_{1}+y_{2} {\varepsilon}_{2}+\cdots+y_{n} {\varepsilon}_{n}
+	\end{array}
+	\]
+所以
+	\[
+	({\alpha}, {\beta})=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}={X}^{\prime} {Y}
+	\]}
+\end{frame}
+
+
+\begin{frame}
+{三. 求标准正交基的办法--Schmidt正交化方法}
+\begin{thm}
+$n$维欧氏空间中任一个正交向量组都能扩充成一组正交基.
+\end{thm}
+\pf 
+\small{
+设 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 是一正交向量组,我们对 $n-m$ 作
+数学归纳法.
+\begin{itemize}
+\item 当 $n-m=0$ 时, ${\alpha}_{1}, {\alpha}
+_{2}, \cdots, {\alpha}_{m}$ 就是一组正交基了.
+
+\item 假设 $n-m=k$ 时定理成立，也就是说，可以找到向量 ${\beta}_{1}$
+${\beta}_{2}, \cdots, {\beta}_{k},$ 使得
+\[
+{\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}, {\beta}_{1}, {\beta}_{2}, \cdots, {\beta}_{k}
+\]
+成为一组正交基. 
+
+\item 现在来看 $n-m=k+1$ 的情形.因为 $m<n$,所以一定有向 量不能被 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 线性表出,作向量
+\[
+{\alpha}_{m+1}={\beta}-k_{1} {\alpha}_{1}-k_{2} {\alpha}_{2}-\cdots-k_{m} {\alpha}_{m}
+\]
+这里 $k_{1}, k_{2}, \cdots, k_{m}$ 是待定的系数.
+\end{itemize}
+}
+\end{frame}
+
+
+\begin{frame}
+用 ${\alpha}_{i}$ 与 ${\alpha}_{m+1}$ 作内积,得
+\[
+\left({\alpha}_{i}, {\alpha}_{m+1}\right)=\left({\beta}, {\alpha}_{i}\right)-k_{i}\left({\alpha}_{i}, {\alpha}_{i}\right) \quad(i=1,2, \cdots, m)
+\]
+取
+\[
+k_{i}=\frac{\left({\beta}, {\alpha}_{i}\right)}{\left({\alpha}_{i}, {\alpha}_{i}\right)} \quad(i=1,2, \cdots, m)
+\]
+有
+\[
+\left({a}_{i}, {\alpha}_{m+1}\right)=0 \quad(i=1,2, \cdots, m)
+\]
+由 ${\beta}$ 的选择可知 $, {\alpha}_{m+1} \neq \mathbf{0} .$ 因此 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}, {\alpha}_{m+1}$ 是一正交向
+量组 ,根据归纳法假定 , ${\alpha}_{1}, {w}_{2}, \cdots, {\alpha}_{m}, {\alpha}_{m+1}$ 可以扩充成一正交
+基.于是定理得证. 
+\qed
+\end{frame}
+
+
+\begin{frame}
+在求欧氏空间的正交基时，常常是已经有了空间的一组基.对 于这种情形，有下面的结果：
+
+\begin{thm}
+对于 n 维欧氏空间中任意一组基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n},$ 都
+可以找到一组标准正交基 ${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n},$ 使
+\[
+L\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{i}\right)=L\left(\eta_{1}, \eta_{2}, \cdots, \eta_{i}\right), i=1,2, \cdots, n
+\]
+\end{thm}
+\pf 
+ 设 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 是一组基, 我们来逐个地求出向量
+${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}$.
+
+\begin{itemize}
+	\item 首先,可取 ${\eta}_{1}=\frac{1}{\left|{\varepsilon}_{1}\right|} {\varepsilon}_{1} .$ 
+	
+	\item 一般地,假定已经求出 ${\eta}_{1}, {\eta}_{2}, \cdots$
+	${\eta}_{m},$ 它们是单位正交的,具有性质
+	\[
+	L\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{i}\right)=L\left({\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{i}\right), i=1,2, \cdots, m
+	\]
+	
+	\item 下一步求 ${\eta}_{m+1}$. 
+	因为 $L\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{m}\right)=L\left({\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{m}\right),$ 所以 ${\varepsilon}_{m+1}$ 不能
+	被 ${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{m}$ 线性表出.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}	
+	按定理 1 证明中的方法 $,$ 作向量
+	\[
+	\xi_{m+1}=\varepsilon_{m+1}-\sum_{i=1}^{m}\left(\varepsilon_{m+1}, \eta_{i}\right) \eta_{i}
+	\]
+	显然
+	\[
+	\xi_{m+1} \neq 0, \text { 且 }\left(\xi_{m+1}, \eta_{i}\right)=0, i=1,2, \cdots, m
+	\]
+	令
+	\[
+	{\eta}_{m+1}=\frac{{\xi}_{m+1}}{\left|{\xi}_{m+1}\right|}
+	\]
+	${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{m}, {\eta}_{m+1}$ 就是一单位正交向量组.
+	同时
+	\[
+	L\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{m+1}\right)=L\left({\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{m+1}\right)
+	\]
+	由归纳法原理,定理得证.  
+\qed
+
+\end{frame}
+
+\begin{frame}
+\begin{rem}
+\begin{itemize}
+	\item 定理中的要求
+	\[
+	L\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{i}\right)=L\left(\eta_{1}, \eta_{2}, \cdots, \eta_{i}\right), i=1,2, \cdots, n
+	\]
+	就相当于由基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 到基 ${\eta}_{i}, {\eta}_{2}, \cdots, {\eta}_{n}$ 的过渡矩陈是上三角矩阵.
+\end{itemize}
+\end{rem}
+\end{frame}
+
+
+\begin{frame}{施密特(Schmidt) 正交化过程}
+ \begin{itemize}
+	\item $n$ 维欧氏空间 $V$必存在正交基与标准正交基.
+ 
+	\item 对 $n$ 维欧氏空间 V的任
+一组基$\alpha_1, \alpha_2，..., \alpha_n$ , 都可以用\alert{施密特(Schmidt) 正交化过程}化为正交基
+$\beta_1, \beta_{2}, \cdots, \beta_{n}$.
+
+% 施密特正交化过程如下
+ 
+$\beta_{1}=\alpha_{1}$
+
+$\beta_{2}=\alpha_{2}-\frac{\left(\alpha_{2}, \beta_{1}\right)}{\left(\beta_{1}, \beta_{1}\right)} \beta_{1}$
+
+$\cdots \cdots$
+
+$\beta_{n}=\alpha_{n}-\frac{\left(\alpha_{n}, \beta_{1}\right)}{\left(\beta_{1}, \beta_{1}\right)} \beta_{1}-\frac{\left(\alpha_{n}, \beta_{2}\right)_{\beta}}{\left(\beta_{2}, \beta_{2}\right)} \ldots \ldots-\frac{\left(\alpha_{n}, \beta_{n-1}\right)}{\left(\beta_{n-1}, \beta_{n-1}\right)} \beta_{n-1}$
+
+	\item 如果再把每个$\beta_i$ 单位化，即得到 V 的一组标准正交基
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+设 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 与 ${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}$ 是欧氏空间 $V$ 中的两组标
+准正交基,它们之间的过渡矩阵显 ${A}=\left(a_{i j}\right),$ 即
+\[
+\left(\eta_{1}, \eta_{2}, \cdots, \eta_{n}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right)\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right)
+\]
+因为 ${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}$ 是标准正交基,所以
+\[
+\left({\eta}_{i}, {\eta}_{j}\right)=\left\{\begin{array}{l}
+1, \text { 当 } i=j \\
+0, \text { 当 } i \neq j
+\end{array}\right.
+\]
+矩阵 A 的各\alert{列}就是 ${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}$ 在标准正交基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的坐标.
+上式可以表示为
+\[
+a_{1 i} a_{1 j}+a_{2 i} a_{2 j}+\cdots+a_{j i} a_{n j}=\left\{\begin{array}{l}
+1, \text { 当 } i=j \\
+0, \text { 当 } i \neq j
+\end{array}\right.
+\]
+
+\end{frame}
+
+
+\begin{frame}
+相当于一个矩阵的等式
+\[
+A^{\prime} A=E
+\]
+或者
+\[
+{A}^{-1}={A}^{\prime}
+\]
+我们引入： 
+\begin{defi}
+$\quad n$ 级实数矩阵 A 称为正交矩阵, 如果 A $^{\prime} {A}={E}$
+\end{defi}
+ 因此,以上分析表明,
+ \begin{itemize}
+	\item 由标准正交基到标准正交基的过渡矩阵是正交矩阵;
+ 	\item 如果第一组基是标准正交基, 同时过渡矩阵是正交矩阵, 那么第二组基一定也是标准正交基.
+ \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{rem}
+根据逆矩阵的性质，由
+\[
+{A}^{\prime} {A}={E}
+\]
+即得
+\[
+A A^{\prime}=E
+\]
+写出来就是$A$的各\alert{行}满足
+\[
+a_{i 1} a_{j 1}+a_{i 2} a_{j 2}+\cdots+a_{i n} a_{j n}=\delta_{i j}, 
+\]
+其中 \[
+\delta_{i j}=
+\left\{\begin{array}{l}
+1, \text { 当 } i=j \\
+0, \text { 当 } i \neq j
+\end{array}\right.
+\]
+\end{rem}
+
+\end{frame}
+
+
+\begin{frame}{正交矩阵之等价定义}
+实矩阵 $A=\left(a_{i j}\right)_{n n}$ 为正交矩阵
+
+ $\Leftrightarrow  \sum_{k=1}^{n} a_{k i} a_{k j}=\delta_{i j} $
+ 
+ $\Leftrightarrow A^{-1}=A^{\prime}$
+ 
+$\Leftrightarrow A A^{\prime}=E $
+
+$\Leftrightarrow \sum_{k=1}^{n} a_{i k} a_{j k}=\delta_{i j}$
+
+$\Leftrightarrow A$ 的行（列）向量组是R $^{n}$ 的一组标准正交基
+\end{frame}
+
+
+\begin{frame}{正交矩阵之性质}
+\begin{itemize}
+	\item 如果 $A$ 是正交矩阵,则 | $A |=\pm 1$
+	\item 如果 A 是正交矩阵,则 $A^{\prime}, A^{-1}, A^{*}, A^{k}$ 均是正交矩阵;而 A 是正交矩
+	阵的充分必要条件是 $l=\pm 1$
+	\item 如果 $A, B$ 是 $n$ 级正交矩阵,则 $A B$ 也是正交矩阵
+	\item $n$级实矩阵 A 是正交矩阵的充分必要条件是，$A$的 $n$个列(或行) 向量是 两两正交的单位向量
+\end{itemize}
+
+%\pf 设A是一个正交矩阵. 
+%因为|A| = 土1,所以
+%\[
+%A^{*}=|A| A^{-1}=|A| A^{T}=\pm A^{T}
+%\]
+%那么
+%\[
+%A^{*}\left(A^{*}\right)^{T}=\left(\pm A^{T}\right)(\pm A)=A^{T} A=E
+%\]
+%故A*也是一个正交矩阵.
+\end{frame}
+
+\begin{frame}
+标准正交基的有关结果总结如下：
+
+设 $V$ 是 $n$ 维欧氏空间 $, \varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 是 $V$ 的一组标准正交基,则
+
+1) 标准正交基的度量矩阵是单位矩阵
+
+2) 设 $\alpha, \beta \in V,$ 且 $\alpha, \beta$ 在基$\varepsilon_1, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的坐标分别为
+\[
+x=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{\prime}, \quad y=\left(y_{1}, y_{2}, \cdots, y_{n}\right)^{\prime}
+\]
+则
+\[
+(\alpha, \beta)=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}=x^{\prime} y
+\]
+
+3) $V$ 中任一元素 $\alpha$ 在基$\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的坐标为
+\[
+\left(\left(\alpha, \varepsilon_{1}\right),\left(\alpha, \varepsilon_{2}\right), \cdots,\left(\alpha, \varepsilon_{n}\right)\right)^{\prime}
+\]
+
+4) 由标准正交基到标准正交基的过渡矩阵是正交矩阵(即满足 $A^{\prime} A=E$ 的
+$n$ 级实矩阵）. 
+又若两组基之间的过渡矩阵是正交矩阵,且其中一组基是标 准正
+交基，则另一组基也是标准正交基 .
+\end{frame}
+
+\section{欧氏空间的同构}
+\begin{frame}{$\S 3$ 欧氏空间的同构}
+我们来建立欧氏空间同构的概念.  
+
+\begin{defi}
+ 实数域 $\mathbb{R}$ 上欧氏空间 $V_1$与 $V_2$称为同构的,如果由 $V_1$ 到 $V_2$ 有一个双射 $\sigma$,满足
+\begin{enumerate}
+	\item $\sigma({\alpha}+{\beta})=\sigma({\alpha})+\sigma({\beta})$
+	\item $\sigma(k {\alpha})=k \sigma({\alpha})$
+	\item $(\sigma({\alpha}), \sigma({\beta}))=({\alpha}, {\beta})$
+\end{enumerate}
+这里 ${\alpha}, {\beta} \in V_1, k \in \mathbf{R},$ 这样的映射 $\sigma$ 称为 $V_1$ 到 $V_2$ 的同构映射. 
+\end{defi}
+由定义可知，如果 $\sigma$ 是欧氏空间 $V_1$ 到$V_2$的一个同构映射,那么 $\sigma$ 也是 $V_1$ 到 $V_2$作为线性空间的同构映射.
+因此，同构的 欧氏空间必有相同的维数.
+\end{frame}
+
+
+
+\begin{frame}
+设 $V_1$ 是一个 $n$ 维欧氏空间,在 $V_1$ 中取一组标准正交基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n} \cdot$ 在这组基下， $V_1$ 的每个向量 ${\alpha}$ 都可表成
+\[
+{\alpha}= {x}_{1} {\varepsilon}_{1}+x_{2} {{\varepsilon}}_{2}+\cdots+x_{n} {\varepsilon}_{n}
+\]
+令
+\[
+\sigma({a})=\left(x_{1}, x_{2}, \cdots, x_{n}\right) \in \mathbb{R}^n
+\]
+
+这是 V 到 $\mathbb{R}^n$ 的一个双射,并且适合定义中条件 1), 2).
+
+上一节可知, $\sigma$ 也适合定义中条件 3).
+
+因而 $\sigma$ 是 V 到 $\mathbb{R}^n$ 的一个同构映射.
+
+由此可知，每个 $n$ 维的欧氏空间都与$\mathbb{R}^n$ 同构. 
+
+\end{frame}
+
+
+\begin{frame}
+下面来证明,同构作为欧氏空间之间的关系具有反身性、对称性与传递性.
+
+\begin{itemize}
+\item  首先，每个欧氏空间到自身的恒等映射显然是一同构 映射 . 这就是说，同构关系是反身的.
+
+\item 其次, 设 $\sigma$ 是 $V_1$ 到 $V_2$的一同 构映射，我们知道，逆映射 $\sigma^{-1}$ 也适合定义中 1）与 2） , 而且对于 ${\alpha}, {\beta} \in V_2$, 有
+$$
+\begin{aligned}
+	({\alpha}, {\beta}) &=\left(\sigma\left(\sigma^{-1}({\alpha})\right), \sigma\left(\sigma^{-1}({\beta})\right)\right) \\
+	&=\left(\sigma^{-1}({\alpha}), \sigma^{-1}({\beta})\right)
+\end{aligned}
+$$
+这就是说, $\sigma^{-1}$ 是 V' 到 $V$ 的一同构映射, 因而同构关系是对称的. 
+
+\item 第三,设 $\sigma, \tau$ 分别是 $V_1$到 $V_2$, $V_2$ 到 $V_3$ 的同构映射. 不难证明 $\tau \sigma$ 是 $V_1$ 到$V_3$的同构映射，因而同构关系是传递的.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+
+ 既然每个 $n$ 维欧氏空间都与 $\mathbb{R}^n$同构, 按对称性与传递性即
+得,任意两个$n$维欧氏空间都同构.
+综上所述,就有 
+\begin{thm}
+两个有限维欧氏空间同构$\Leftrightarrow$ 它们的维数相同.
+\end{thm}
+这个定理说明, 抽象的观点看,欧氏空间的结构完全被它的 维数决定.
+
+\end{frame}
+
+
+\section{正交变换}
+\begin{frame}{$\S 4$ 正交变换}
+在解析几何中,我们有正交变换的概念.
+正交变换就是保持点 之间的距离不变的变换.在一般的欧氏空间中,我们有 
+\begin{defi}
+欧氏空间 $V$ 的线性变换 $\mathscr{A}$
+称为正交变换, 如果它保 持向量的内积不变,
+即对于任意的 ${\alpha}, {\beta} \in V$ 都有 $$(\mathscr{A} {\alpha}, \mathscr{A} {\beta})=({\alpha}, {\beta})$$
+\end{defi}
+\end{frame}
+
+
+
+\begin{frame}
+正交变换可以从几个不同的方面来加以刻画.  
+
+\begin{thm}
+设 $\mathscr{A}$是 $n$ 维欧邸空间 $V$ 的一个线性变换, 于是下面 四个命题是相互等价的：
+\begin{enumerate}
+	\item $\mathscr{A}$是正交变换
+	\item $\mathscr{A}$保持向量的长度不变, 即对于 ${\alpha} \in V,|\mathscr{A} {\alpha}|=| {\alpha} |$
+	\item 如果 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 是标准正交基,那么 $\mathscr{A} {\varepsilon}_{1}, \mathscr{A} {\varepsilon}_{2}, \cdots, \mathscr{A}{\varepsilon}_{n}$
+	也是标准正交基
+	\item $\mathscr{A}$在任一组标准正交基下的矩阵是正交矩阵.
+\end{enumerate}
+\end{thm}
+
+%证明 首先证明 1)与 2 等价.  如果 人是正交变换,那么
+\end{frame}
+
+\begin{frame}
+因为正交矩阵是可逆的,所以正交变换是可逆的.
+
+由定义不难 看出,正交变换实际上就是一个欧氏空间到它自身的同构映射, 因而
+\begin{prop}
+正交变换的乘积与正交变换的逆变换还是正交变换. 
+\end{prop}
+
+
+ 在标准正交基下,正交变换与正交矩阵对应，因此,
+\begin{prop}
+正交矩阵的乘 积与正交矩阵的逆矩阵也是正交矩阵.  
+\end{prop}
+\end{frame}
+
+\begin{frame}
+如果 A 是正交矩阵,那么由
+$
+{A A}^{\prime}={E}
+$
+可知
+$
+|{A}|^{2}=1 \text { 或者 }|{A}|=\pm 1
+$
+
+因此,
+\begin{prop}
+正交变换的行列式等于 $+ 1$ 或者 $- 1$.
+\end{prop}
+
+\begin{itemize}
+\item 行列式等于 $+1$ 的正交变换通常称为旋转,或者称为\alert{第一类}的;
+\item 行列式等于 $- 1$ 的正交变 换称为\alert{第二类}的.  
+\end{itemize}
+
+
+
+例如，在欧氏空间中任取一组标准正交基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n},$ 定义
+线性变换 $\mathscr{A}$为:
+\[
+\mathscr{A} {\varepsilon}_{1}=-{\varepsilon}_{1}, \mathscr{A} {\varepsilon}_{i}={\varepsilon}_{i}, i=2, \cdots, {n}
+\]
+那么, $\mathscr{A}$ 就是一个第二类的正交变换. 从几何上看，这是一个镜面 反射(参看本章习题 15). 
+\end{frame}
+
+
+
+
+\section{正交子空间}
+\begin{frame}{\S 5 正交子空间}
+我们来讨论欧氏空间中子空间的正交关系. 
+\begin{defi}
+设 $V_1$，$V_2$是欧氏空间 V 中两个子空间.如果对于 任意的 ${\alpha} \in V_{1}, {\beta} \in V_{2},$ 恒有
+\[
+({\alpha}, {\beta})= {0}
+\]
+则称 $V_{1}, V_{2}$ 为正交的,记为 $V_{1} \perp V_{2} .$ 一个向量 ${\alpha},$ 如果对于任意 的 ${\beta} \in V_{1},$ 恒有
+\[
+({\alpha}, {\beta})=0
+\]
+则称 ${\alpha}$ 与子空间 $V_{1}$ \alert{正交},记为 ${\alpha} \perp V_{1}$
+\end{defi}
+\end{frame}
+
+
+\begin{frame}
+因为只有零向量与它自身正交,所以由 $V_{1} \perp V_{2}$ 可知 $V_{1} \cap$ $V_{2}=\{\mathbf{0}\} ;$ 由 ${\alpha} \perp V_{1}, {\alpha} \in V_{1}$ 可知 ${\alpha}=\mathbf{0}$
+关于正交的子空间,我们有： 
+\begin{thm}
+	如果子空间 $V_{1}, V_{2}, \cdots, V_{s}$ 两两正交,那么和 $V_{1}+$ $V_{2}+\cdots+V,$ 是直和. 
+\end{thm}
+\pf 设 ${\alpha}_{i} \in V_{i}, i=1,2, \cdots, s,$ 且
+\[
+{\alpha}_{1}+{\alpha}_{2}+\cdots+{\alpha}_{s}=\mathbf{0}
+\]
+ 
+我们来证明 ${\alpha}_{i}=\mathbf{0}$.  事实上,用 ${\alpha}_{i}$ 与等式两边作内积, 利用正交性，得
+\[
+\left({\alpha}_{i}, {\alpha}_{i}\right)=0
+\]
+从而 ${\alpha}_{i}=\mathbf{0}\, (i=1,2, \cdots, s) .$ 这就是说 $,$ 和
+\[
+V_{1}+V_{2}+\cdots+V_{s}
+\]
+是直和 . \qed
+\end{frame}
+
+
+\begin{frame}
+\begin{defi}
+子空间 $V_{2}$ 称为子空间 $V_{1}$ 的一个正交补,如果 $V_{1} \perp V_{2},$ 并且 $V_{1}+V_{2}=V$
+\end{defi}
+显然，如果 $V_{2}$ 是 $V_{1}$ 的正交补,那么 $V_{1}$ 也是 $V_{2}$ 的正交补.
+\end{frame}
+
+
+\begin{frame}
+\begin{thm}
+$n$ 维欧氏空间 V 的每一个子空间 $V_{1}$ 都有唯一的正 交补. 
+\end{thm}
+\pf 如果 $V_{1}=\{\mathbf{0}\},$ 那么它的正交补就是 $V$,唯一性是显
+然的.
+
+设 $V_{1} \neq\{\mathbf{0}\} .$ 欧氏空间的子空间在所定义的内积之下也显
+下个欧氏空间.
+
+在 $V_1$中取一组正交基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{m}$, 由定理1，它
+可以扑充成 $V$ 的一组正交基
+\[
+{\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{m}, {\varepsilon}_{m+1}, \cdots, {\varepsilon}_{n}
+\]
+子空间 L $\left({\varepsilon}_{m+1}, \cdots, {\varepsilon}_{n}\right)$ 就是 $V_{1}$ 的正交补.
+\end{frame}
+
+
+\begin{frame}
+再来证唯一性.设 $V_{2}, V_{3}$ 都是 $V_{1}$ 的正交补,于是
+\[
+\begin{array}{l}
+V=V_{1} \oplus V_{2} \\
+V=V_{1} \oplus V_{3}
+\end{array}
+\]
+令 ${\alpha} \in V_{2},$ 由第二式即有
+\[
+{\alpha}={\alpha}_{1}+{\alpha}_{3}
+\]
+其中 ${\alpha}_{1} \in V_{1}, {\alpha}_{3} \in V_{3} .$ 因为 ${\alpha} \perp {\alpha}_{1}$ 所以
+\[
+\begin{aligned}
+\left({\alpha}, {\alpha}_{1}\right) &=\left({\alpha}_{1}+{\alpha}_{3}, {\alpha}_{1}\right)=\left({\alpha}_{1}, {a}_{1}\right)+\left({\alpha}_{3}, {\alpha}_{1}\right) \\
+&=\left({\alpha}_{1}, {\alpha}_{1}\right)=0
+\end{aligned}
+\]
+即 ${\alpha}_{1}=\mathbf{0}$. 
+由此得知 ${\alpha} \in V_{3},$ 即 $V_{2} \subset V_{3}$
+同理可证 $V_{3} \subset V_{2} .$ 因此 $V_{2}=V_{3},$ 唯一性得证. 
+\qed
+
+\end{frame}
+
+
+\begin{frame}
+\begin{rem}
+\begin{itemize}
+\item $V_{1}$ 的正交补记为 $V_{1}^{\perp} .$ 
+\item 由定义可知
+$$
+\text{dim}\left(V_{1}\right)+\text{dim} \left(V_{1}^{\perp}\right)=n
+$$
+
+\item $V_{1}^{\perp}$ 恰由所有与 $V_{1}$ 正交的向量组成.
+
+\item  由分解式
+\[
+V=V_{1} \oplus V_{1}^{\perp}
+\]
+可知，V 中任一向量 ${\alpha}$ 都可以唯一地分解成
+\[
+{\alpha}={\alpha}_{1}+{\alpha}_{2}
+\]
+其中 ${\alpha}_{1} \in V_{1}, {\alpha}_{2} \in V_{1}^{\perp}$. 
+
+我们称 ${\alpha}_{1}$ 为向量 ${\alpha}$ 在子空间 $V_{1}$ 上的\alert{内射影}.
+\end{itemize}
+\end{rem}
+
+\end{frame}
+
+
+
+\begin{frame}{${\xi} {6} $ 实对称知阵的惊准形}
+\begin{itemize}
+\item 在第五章我们得到,任意一个对称矩阵都合同于一个对角矩 阵,换句话说，都有一个可逆矩阵 C 使 ${C}^{\prime} {A} {C}$
+成对角形.
+现在利用欧氏空间的理论,第五章中关于实对称矩阵的结果可以加强.
+
+\item 这一节的主要结果： 对于任意一个 n 级实对称矩阵 A,都存在一个 n 级正交矩陈
+${T},$ 使
+\[
+{T}^{\prime} {A} {T}={T}^{-1} {A} {T}
+\]
+成对角形. 
+
+\item 先讨论对称矩阵的一些性质，它们本身在今后也是非常有用
+的. 我们把它们归纳成下面几个引理.
+\end{itemize}
+
+
+
+
+
+\end{frame}
+
+\begin{frame}
+
+\begin{lem}
+设 A 是实对称矩阵,则 A 的特征值皆为实数. 
+\end{lem}
+\pf  设 $\lambda_{0}$ 是 $\mathbf{A}$ 的特征值,于是有非零向量
+$\xi=\left(x_{1}, x_{2}, \ldots, x_{n}\right)^{\prime}$
+满足
+${A} {\xi}=\lambda_{0} {\xi}$, 
+令
+$\xi = \left( {x}_{1}, {x}_{2}, \ldots, {x}_{n} \right)^{\prime}$
+其中 $\bar{x}_{i}$ 是 $x_{i}$ 的共轭复数,则 $\overline{A \xi}=\bar{\lambda}_{0} \bar{\xi}$
+考察等式
+\[
+\bar{\xi}^{\prime}(A \xi)=\bar{\xi}^{\prime} A^{\prime} \xi=(A \bar{\xi})^{\prime} \xi=(\overline{A \xi})^{\prime} \xi
+\]
+其左边为 $\lambda_{0} \bar{\xi}^{\prime} \xi$, 右边为 $\bar{\lambda}_{0} \bar{\xi}^{\prime} \xi$. 故
+\[
+\lambda_{0} \bar{\xi}^{\prime} \xi = \bar{\lambda}_{0} \bar{\xi}^{\prime} \xi
+\]
+又因 $\xi$ 是非零向量，
+\[
+\bar{\xi}^{\prime} \xi=\bar{x}_{1} x_{1}+\bar{x}_{2} x_{2}+\cdots+\bar{x}_{n} x_{n} \neq 0
+\]
+故 $\lambda_{0}=\bar{\lambda}_{0},$ 即 $\lambda_{0}$ 是一个实数. 
+\qed
+\end{frame}
+
+
+\begin{frame}
+
+对应于实对称矩阵 $A$，在 $n$ 维欧氏空间 $\Rn$ 上定义一个线性 变换$\mathscr{A}$如下：
+\begin{align}\label{eq-1}
+\mathscr{A}\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right)={A}\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right)
+\end{align}
+于是，$\mathscr{A}$在标准正交基
+\[
+{\varepsilon}_{1}=\left(\begin{array}{c}
+1 \\
+0 \\
+\vdots \\
+0
+\end{array}\right), {\varepsilon}_{2}=\left(\begin{array}{c}
+0 \\
+1 \\
+\vdots \\
+0
+\end{array}\right), \cdots, {\varepsilon}_{n}=\left(\begin{array}{c}
+0 \\
+0 \\
+\vdots \\
+1
+\end{array}\right)
+\]
+下的矩阵就是$A$. 
+\end{frame}
+
+
+\begin{frame}
+\begin{lem}
+设 $A$ 是实对称矩阵,公的定义如上,则对任意 ${\alpha}, {\beta}$ $\in \mathbf{R}^{n}$,有
+\begin{align}\label{eq-3}
+(\mathscr{A} {a}, {\beta})=({\alpha}, \mathscr{A} {\beta})
+\end{align}
+或
+\[
+{\beta}^{\prime}({A} {\alpha})={\alpha}^{\prime} {A} {\beta}
+\]
+\end{lem}
+\pf 只要证明后一等式就行了.实际上\\
+$\qquad \qquad \qquad \qquad 
+{\beta}^{\prime}({A} {\alpha})={\beta}^{\prime} {A}^{\prime} {\alpha}=({A} {\beta})^{\prime} {\alpha}={\alpha}^{\prime}({A} {\beta}).
+$
+\qed 
+等式\eqref{eq-3}把实对称矩阵的特性反映到线性变换上. 我们引入
+\begin{defi}
+欧氏空间中满足等式$(\mathscr{A} {a}, {\beta})=({\alpha}, \mathscr{A} {\beta})$的线性变换称为对称变
+换. 
+\end{defi}
+对称变换在标准正交基下的矩阵是实对称矩阵. 
+用对称变换来反映实对称矩阵，一些性质可以看得更清楚.
+\end{frame}
+
+
+\begin{frame}
+\begin{lem}
+设$\mathscr{A}$是对称变换，$V_1$ 是 $\mathscr{A}$-子空间,则 $V_{1}^{\perp}$ 也是
+$\mathscr{A}$-子空间. 
+\end{lem}
+
+\pf 
+设 ${a} \in V_{1}^{\perp},$ 要证 $\mathscr{A} {\alpha} \in V_{1}^{\perp},$ 即 $\mathscr{A} {\alpha} \perp V_{1} .$ 任取 ${\beta} \in$
+$V_{1},$ 都有 $\mathscr{A} {\beta} \in V_{1} .$ 因 ${\alpha} \perp V_{1},$ 故 $({\alpha}, \mathscr{A} {\beta})=0$
+因此
+\[
+(\mathscr{A} {a}, {\beta})=({\alpha}, \mathscr{A} {\beta})=0
+\]
+即 $\mathscr{A} {\alpha} \perp V_{1}, \mathscr{A} {\alpha} \in V_{1}^{\perp}, V_{1}^{\perp}$ 也是 $\mathscr{A}-$ 子空间.
+\qed
+\end{frame}
+
+\begin{frame}
+\begin{lem}
+设 $\mathscr{A} $ 是实对称短阵,则 $\Rn$ 中属于$\mathscr{A} $的不同特征值 的特征向量必正交.
+\end{lem}
+\pf 
+设 $\lambda, \mu$ 是 矩阵$A$ 的两个不同的特征值, ${\alpha}, {\beta}$ 分别是属于
+$\lambda, \mu$ 的特征向量 $ A {\alpha}=\lambda {\alpha}, {A} {\beta}=\mu {\beta}$. 
+定义$\Rn$上的线性变换 $\A$如下: $$\A X=AX,$$ 其中$X \in \Rn$. 
+于是,
+$\mathscr{A} {\alpha}=\lambda {\alpha}, \mathscr{A} {\beta}=\mu {\beta}$.
+由 $(\mathscr{A} {\alpha}, {\beta})=({\alpha}, \mathscr{A} {\beta})$, 有
+\[
+\lambda({\alpha}, {\beta})=\mu({\alpha}, {\beta}).
+\]
+因为 $\lambda \neq \mu,$ 所以 $({\alpha}, {\beta})=0$, 即 ${\alpha}, {\beta}$ 正交.
+\qed
+\end{frame}
+
+
+\begin{frame}
+现在来证明主要定理.
+\begin{thm}
+对于任意一个 $n$ 级实对称矩阵 $A$ ,都存在一个 $n$ 级 正交矩阵 $T$,使$T^{\prime}AT = T ^{-1} {A T}$ 成对角形. 
+\end{thm}
+\pf 
+由于实对称矩阵和对称变换的关系, 只要证明对称变 换 $\A$有 $n$ 个特征向量做成标准正交基就行了. 我们对空间的维数 $n$ 作归纳法.
+\begin{itemize}
+\item $n=1,$ 显然定理的结论成立. 
+\item 设 $n-1$ 时定理的结论成立.
+\item 对 $n$ 维欧氏空间 $\Rn$ ,线性变换$\A$有一特征向量 ${\alpha}_{1},$ 其特征值为实数$\lambda_{1} .$  把 ${\alpha}_{1}$ 单位化,还用 ${\alpha}_{1}$
+代表它.作 $L ( {\a}_{1}$ )的正交补,设为 $V_{1}.$ 
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+由引理 3, $V_{1}$ 是 $\mathscr{A}$ 的不变子空间, 其维数为 $n-1$.
+
+因为$$(\A|_{V_{1}} {\a}, {\beta})=(\A {\a}, {\beta})=({\alpha}, \A {\beta})=({\alpha}, \A|_{V_{1}} {\beta}),$$ 其中 $\a, \b \in V_1$, 所以 $\A|_{V_{1}}$ 仍是对称变换.
+
+据归纳法假设, $\A|_{V_{1}}$, 有 $n-1$ 个特征向量 ${\alpha}_{2}, \cdots, {\alpha}_{n}$ 作成 $V_{1}$ 的
+标准正交基.
+从而 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{n}$ 是 $\mathbb{R}^{n}$ 的标准正交基, 又是 $\mathscr{A}$ 有
+$n$ 个特征向量. 定理得证. 
+\qed
+\begin{itemize}
+\item  下面来看看在给定了一个实对称矩阵 $\A$ 之后,按什么办法求 正交矩阵 $T$ 使$T^{\prime}AT$ 成对角形. 
+\item  在定理的证明中我们看到, 矩阵 A 在 $\Rn$中定义了一个线性变换.
+\item  求正交矩阵 $T$ 的问题就 相当于在 $\Rn$ 中求一组由$A$ 的\alert{特征向量}构成的标准正交基.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+
+
+事实上,设
+\[
+\eta_{1}=\left(\begin{array}{c}
+t_{11} \\
+t_{21} \\
+\vdots \\
+t_{n 1}
+\end{array}\right), \eta_{2}=\left(\begin{array}{c}
+t_{12} \\
+t_{22} \\
+\vdots \\
+t_{n 2}
+\end{array}\right), \cdots, \eta_{n}=\left(\begin{array}{c}
+t_{1 n} \\
+t_{2 n} \\
+\vdots \\
+t_{n n}
+\end{array}\right)
+\]
+是 $\Rn$ 的一组标准正交基, 它们都是 $A$ 的特征向量.
+显然，由 ${\varepsilon}_{1}$
+${\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 到 ${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}$ 的\alert{过渡矩阵}就是
+\[
+{T}=\left(\begin{array}{cccc}
+t_{11} & t_{12} & \cdots & t_{1 n} \\
+t_{21} & t_{22} & \cdots & t_{2 n} \\
+\vdots & \vdots & & \vdots \\
+t_{n 1} & t_{n 2} & \cdots & t_{n n}
+\end{array}\right)
+\]
+$T$ 是一个正交矩阵，而
+\[
+{T}^{-1} {A} {T}={T}^{\prime} {A} {T}
+\]
+就是对角形.
+\end{frame}
+
+\begin{frame}
+正交矩阵$T$的求法可以按以下步骤进行：
+
+
+
+\begin{enumerate}
+	\item 求出 $A$ 的特征值. 设 $\lambda_{1}, \cdots, \lambda,$ 是 ${A}$ 的全部不同的特征
+	值. 
+	\item 对于每个 $\lambda_{i},$ 解齐次线性方程组$\left(\lambda_{i} {E}-{A}\right)X=\mathbf{0}$
+	求出一个基础解系，这就是 A 的特征子空间 $V_{\lambda_{i}}$ 的一组基.由这 组基出发,按定理 2 的方法求出 $V_{\lambda_{i}}$ 的一组标准正交基 ${\eta}_{i 1}, \cdots,{\eta}_{i k}$
+	\item 因为 $\lambda_{1}, \cdots, \lambda_{r}$ 两两不同,所以根据这一节引理 4, 向量组
+	${\eta}_{11}, \cdots, {\eta}_{1 k_{1}}, \cdots, {\eta}_{r 1}, \cdots, {\eta}_{r_{r}}$ 还是两两正交的.又根据定理 7 以及
+	第七章 $\S$5 的讨论，它们的个数就等于空间的维数.因此，它们就 构成 $\Rn$ 的一组标准正交基,并且也都是 $A$ 的特征向量.这样,正 交矩阵 $T$ 也就求出了. 
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\small{如果线性替换
+\[
+\left\{\begin{array}{l}
+x_{1}=c_{11} y_{1}+c_{12} y_{2}+\cdots+c_{1 n} y_{n} \\
+x_{2}=c_{21} y_{1}+c_{22} y_{2}+\cdots+c_{2 n} y_{n} \\
+\cdots \cdots \cdots \cdots \\
+x_{n}=c_{n 1} y_{1}+c_{n 2} y_{2}+\cdots+c_{n n} y_{n}
+\end{array}\right.
+\]
+的矩阵 ${C}=\left(c_{i j}\right)$ 是正交的,那么它就称为正交的线性替换.
+正交的线性替换当然是非退化的. 
+
+用二次型的语言,定理 7 可以叙述为： 
+\begin{thm}
+任意一个实二次型
+\[
+\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j},  \quad  a_{i j}=a_{j i}
+\]
+都可以经过正交的线性替换变成平方和
+\[
+\lambda_{1} y_{1}^{2}+\lambda_{2} y_{2}^{2}+\cdots+\lambda_{n} y_{n}^{2}
+\]
+其中平方项的系数 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 就是矩阵 ${A}$ 的特征多项式全部 的根. 
+\end{thm}
+}
+\end{frame}
+
+\end{document} 

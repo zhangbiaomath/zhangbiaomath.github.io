@@ -1,0 +1,992 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[13pt]{beamer}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{amsmath,amssymb,amsthm}             % AMS Math
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\linespread{1.3}
+
+\usepackage{mathrsfs}  %花写字母
+ 
+
+%%%=== theme ===%%%
+% \usetheme{Warsaw}
+%\usetheme{Copenhagen}
+%\usetheme{Singapore}
+\usetheme{Madrid}
+%\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+% \usefonttheme{structureitalicserif}
+%%\useinnertheme{rounded}
+%%\useinnertheme{inmargin}
+\useinnertheme{circles}
+%\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[page number]
+
+
+
+
+\usepackage{ctex}
+% \usepackage{CJK,CJKnumb,CJKulem}
+\usepackage{minitoc}
+
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{thm}{定理}
+\newtheorem{lem}{引理}
+\newtheorem{exa}{例}
+\newtheorem*{theo}{定理}
+\newtheorem*{defi}{定义}
+\newtheorem*{coro}{推论}
+\newtheorem*{ex}{练习}
+\newtheorem*{rem}{注}
+\newtheorem*{prop}{性质}
+\newtheorem*{qst}{问题}
+
+\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
+\def\pf{{\bf 证明~~ }}
+\def\sol{{\bf 解~~ }}
+
+
+
+\def\R{\mathbb{R}}
+\def\Rn{\mathbb{R}^n}
+\def\A{\mathscr{A}}
+\def\B{\mathscr{B}}
+\def\D{\mathscr{D}}
+\def\E{\mathscr{E}}
+\def\O{\mathscr{O}}
+
+\def\rank{\operatorname{rank}}
+\def\dim{\operatorname{dim}}
+\def\0{\mathbf{0}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\r{\gamma}
+
+\usepackage{color}
+\definecolor{linkcol}{rgb}{0,0,0.4}
+\definecolor{citecol}{rgb}{0.5,0,0}
+
+\definecolor{blue}{rgb}{0,0.08,1}
+\newcommand{\blue}{\textcolor{blue}}
+
+  \usepackage{graphicx}
+  \DeclareGraphicsExtensions{.eps}
+%   \usepackage[a4paper,pagebackref,hyperindex=true,pdfnewwindow=true]{hyperref}
+
+
+\begin{document}
+
+
+
+\title[]{第五章 \quad 二次型}
+\author[]{{\large 张彪}\\  }
+\institute[]{{\normalsize
+		天津师范大学\\[6pt]
+		zhang@tjnu.edu.cn}}
+
+\date{}
+
+
+\AtBeginSection[]
+{
+\setcounter{exa}{0}
+\setcounter{equation}{0}
+}
+
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+
+\begin{frame}
+二次型就是二次齐次多项式. 在解析几何中讨论的有心二次曲线，
+当中心与坐标原点重合时，其一般方程为：
+\[
+a x^{2}+2 b x y+c y^{2}=f
+\]
+方程的右端就是关于 x， y 的一个二次齐次多项式. 为了便于研究
+这个二次曲线的几何性质，通过选取合适的角度，把坐标轴作逆
+时针旋转，则相应的坐标变换为：
+\[
+\left\{\begin{array}{l}
+x=x^{\, \prime} \cos \theta-y^{\, \prime} \sin \theta \\
+y=x^{\, \prime} \sin \theta+y^{\, \prime} \cos \theta
+\end{array}\right.
+\]
+在新坐标下二次曲线的方程可化为标准方程：
+\[
+a^{\, \prime} x^{\, \prime 2}+c^{\, \prime} y^{\, \prime 2}=f
+\]
+这是一个只含有平方项的标准方程. 
+\end{frame}
+
+\begin{frame}
+考察方程：
+\[
+\frac{13}{72} x^{2}+\frac{10}{72} x y+\frac{13}{72} y^{2}=1
+\]
+该方程表示 xy 平面上怎样的一条二次曲线?
+
+将 $x y$ 坐标系逆时针旋转 $\frac{\pi}{4}$, 即令
+\[
+\left\{\begin{array}{l}
+x=\frac{\sqrt{2}}{2} x^{\, \prime}-\frac{\sqrt{2}}{2} y^{\, \prime} \\
+y=\frac{\sqrt{2}}{2} x^{\, \prime}+\frac{\sqrt{2}}{2} y^{\, \prime}
+\end{array}\right.
+\]
+在新坐标下二次曲线的方程可化为标准方程：
+\[
+\frac{x^{\, \prime 2}}{4}+\frac{y^{\, \prime 2}}{9}=1
+\]
+\end{frame}
+
+\section{ 二次型及其矩阵表示}
+\begin{frame}{\S 1   二次型及其矩阵表示}
+
+\begin{defi}
+一个系数在数域 $P$上的 $x_{1}, x_{2}, \cdots, x_{n}$ 的二次齐次多项式
+\[
+\begin{aligned}
+f\left(x_{1}, x_{2}, \cdots, x_{n}\right) &=a_{11} x_{1}^{2}+2 a_{12} x_{1} x_{2}+\cdots+2 a_{1 n} x_{1} x_{n} \\
+& \quad +a_{22} x_{2}^{2}+\cdots+2 a_{2 n} x_{2} x_{n}+\cdots+a_{n n} x_{n}^{2}
+\end{aligned}
+\]
+称为数域 $P$ 上的一个$n$元二次型，简称为二次型. 
+\end{defi}
+注意：
+
+(1) 二次型就是 $n$ 元二次齐次多项式;
+
+(2) 交叉项的系数采用$2a_{ij}$，主要是为了矩阵表示的方便. 
+\end{frame}
+
+
+\begin{frame}
+若在 $n$ 元二次型中令 $a_{i j}=a_{j i},$ 由于 $x_{i} x_{j}=x_{j} x_{i},$ 则二次型可表示为
+\[
+f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j}
+\]
+若记
+\[
+A=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\cdots & \cdots & \cdots & \cdots \\
+a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right), \quad
+X=\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right)
+\]
+其中 $a_{i j}=a_{j i}, i, j=1,2, \cdots, n,$ 则二次型可用矩阵的乘积表示为
+\[
+f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=X^{\, \prime} A X
+\]
+其中 $A$ 称为该\alert{二次型的矩阵}，$A$ 的秩称为该\alert{二次型的秩}. 
+\end{frame}
+
+\begin{frame}
+对于二次型的矩阵表示方法，需注意如下几点：
+
+(1) 由于 $a_{i j}=a_{j i},$ 故 $A$ 为对称矩阵
+
+(2) 矩阵 A 中 $a_{i i}$ 为 $x_{i}^{2}$ 项的系数， $a_{i j}$ 为交叉项 $x_{i} x_{j}$ 系数的
+
+(3) $n$ 元二次型 $f$ 与  $n$ 阶\alert{对称矩阵} $A$ 一一对应
+
+\begin{exa}
+	写出二次型 $f=x_{1}^{2}+2 x_{2}^{2}-3 x_{3}^{2}+4 x_{1} x_{2}-6 x_{2} x_{3}$
+	的矩阵.
+\end{exa}
+\pause
+%$a_{11}=1, a_{22}=2, a_{33}=-3, $
+%
+%\qquad $a_{12}=a_{21}=2, a_{13}=a_{31}=0, a_{23}=a_{32}=-3$\\[6pt]
+
+$$ A=\left(\begin{array}{ccc}1 & 2 & 0 \\ 2 & 2 & -3 \\ 0 & -3 & -3\end{array}\right)$$
+
+%$ f\left(x_{1}, x_{2}, x_{3}\right)=\left(x_{1}, x_{2}, x_{3}\right) A\left(\begin{array}{c}x_{1} \\ x_{2} \\ x_{3}\end{array}\right)
+
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+写出下列对称矩阵的二次型
+
+(1) $\left(\begin{array}{lll}0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0\end{array}\right)$
+(2) $\left(\begin{array}{lll}1 & 1 & 2 \\ 1 & 2 & 3 \\ 2 & 3 & 3\end{array}\right)$
+\end{exa}
+
+\begin{exa}
+写出二次型 $f\left(x_{1}, x_{2}\right)=X^{\,\prime}\left(\begin{array}{cc}2 & 1 \\ 3 & 1\end{array}\right) X$ 的矩阵. 
+\end{exa}
+\end{frame}
+
+
+\begin{frame}{线性替换} 
+\begin{defi}
+系数在数域 P中的一组关系式：
+\[
+\left\{\begin{array}{cc}
+x_{1}=c_{11} y_{1}+c_{12} y_{2}+\cdots+c_{1 n} y_{n} \\
+x_{2}=c_{21} y_{1}+c_{22} y_{2}+\cdots+c_{2 n} y_{n} \\
+\cdots & \cdots \\
+x_{n}=c_{n 1} y_{1}+c_{n 2} y_{2}+\cdots+c_{n n} y_{n}
+\end{array}\right.
+\]
+称为由向量 $x_{1}, x_{2}, \cdots, x_{n}$ 到 $y_{1}, y_{2}, \cdots, y_{n}$ 的一个\alert{线性替换}.
+
+令
+$
+\quad X=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{\, \prime}, 
+\quad Y=\left(y_{1}, y_{2}, \cdots, y_{n}\right)^{\,\prime}
+$,
+
+则线性替换可以表示为 $X=C Y$.  
+
+若系数矩阵 $C$ 的行列式 $|C| \neq 0,$ 则称
+该线性替换是\alert{非退化}的.
+\end{defi}
+\end{frame}
+
+\begin{frame}
+二次型 $f=X^{\, \prime} A X$ 经可逆变换 $X := C Y$ 后, 有
+\[
+f=(C Y)^{\prime} A(C Y\, )=Y^{\, \prime}\left(C^{\, \prime} A C \right) Y
+\]
+得到一个新二次型，矩阵由$A$变为 $B=C^{\, \prime} A C$.
+
+\begin{defi}
+设$A$, $B$是$n$阶矩阵，如果存在一个$n$阶可逆矩
+阵$C$，使得 $\quad {B}={C}^{\, \prime} {A} {C}$
+则称 $B$ 与 $A$是合同的. 
+\end{defi}
+
+\begin{rem}
+\begin{itemize}
+\item 	合同是矩阵之间的一个等价关系, 这时因为合同关系满足
+\begin{enumerate}
+\item  反身性 $: A=E^{\, \prime} A E$
+\item  对称性:由 ${B}={C}^{\, \prime} {A C}$ 即得 ${A}=\left({C}^{-1}\right)^{\prime} {B} {C}^{-1}$
+\item  传递性:由 ${A}_{1}={C}_{1}^{\, \prime} {A C}_{1}$ 和 ${A}_{2}={C}_{2}^{\, \prime} {A}_{1} {C}_{2}$ 即得
+${A}_{2}=\left({C}_{1} {C}_{2}\right)^{\prime} {A}\left({C}_{1} {C}_{2}\right)$
+\end{enumerate}
+\item 合同矩阵具有相同的秩. 
+\item 若$A$为对称矩阵，则$B$也为对称矩阵. 
+\end{itemize}
+\end{rem}
+\end{frame}
+
+
+
+\section{标准形}
+\begin{frame}{\S 2  标准形}
+\begin{defi}
+	一个只含有平方项的 n 元二次型
+	\[
+	f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=d_{1} x_{1}^{2}+d_{2} x_{2}^{2}+\cdots+d_{n} x_{n}^{2}
+	\]
+	称为\alert{标准二次型}.
+\end{defi}
+
+要使二次型$f$经非退化线性变换 $X=C Y$ 变成标准形 就是要使
+\[
+\begin{array}{l}
+f=Y^{\, \prime}\left(C^{\, \prime} A C\right) Y=k_{1} y_{1}^{2}+k_{2} y_{2}^{2}+\cdots+k_{n} y_{n}^{2} \\
+=\left(y_{1}, y_{2}, \cdots, y_{n}\right)\left(\begin{array}{cccc}
+k_{1} & &&\\
+&k_{2} &&\\
+& & \ddots &\\
+& &&k_{n}\\
+\end{array}\right)\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right)
+\end{array}
+\]
+也就是要使 $C^{\, \prime} A C$ 成为对角矩阵.
+\end{frame}
+
+\begin{frame}
+\begin{thm}
+数域 $P$ 上任意一个二次型都可以经过非退化的线性 替换变成标准形.
+\end{thm}
+
+\begin{thm}
+数域 $P$ 上任意一个对称矩阵都合同于一个对角矩阵. 
+\end{thm}
+
+\end{frame}
+
+\begin{frame}
+\pf 下面的证明实际上是一个具体地把二次型化成平方和 的方法,这就是中学里学过的“配方法” 我们对变量的个数 $n$ 作归纳法. 
+\begin{itemize}
+\item 对于 $n=1,$ 二次型就是
+\[
+f\left(x_{1}\right)=a_{11} x_{1}^{2}
+\]
+已经是平方和了.
+\item  现假定对 $n-1$ 元的二次型,定理的结论成立.  
+\item 再设 \[
+f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_j, \quad\left(a_{i j}=a_{j i}\right)
+\]
+分三种情形来讨论：
+
+1) $a_{i i}\, (1 \le i\le n)$ 中至少有一个不为零.
+
+2) 所有 $a_{i i}=0,$ 但是至少有一 $a_{1 j} \neq 0(2 \le j \le n)$.
+
+3) $a_{11}=a_{12}=\dots=a_{1 n}=0$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+1) $a_{i i}(i=1,2, \cdots, n)$ 中至少有一个不为零, 例如 $a_{11} \neq 0 .$ 这
+时
+\begin{align*}
+f &=a_{11} x_{1}^{2}+\sum_{j=2}^{n} a_{1j} x_{1} x_{j}+\sum_{i=2}^{n} a_{i 1} x_{i} x_{1} +\sum_{i=2}^{n} \sum_{j=2}^{n} a_{n} x_{i} x_{j} \\
+&=a_{11} x_{1}^{2}+2 \sum_{j=2}^{n} a_{1j} x_{1} x_{j}+\sum_{i=2}^{n} \sum_{j=2}^{n} a_{i, j} x_{i} x_j \\
+&=a_{11}\left(x_{1}+\sum_{j=2}^{n} a_{11}^{-1} a_{1 j} x_{j}\right)^{2}-a_{11}^{-1}\left(\sum_{j=2}^{n} a_{1 j} x_{j}\right)^{2}  +\sum_{i=2}^{n} \sum_{j=2}^{n} a_{i j} x_{i} x_{j} \\
+& =a_{11}\left(x_{1}+\sum_{j=2}^{n} a_{11}^{-1} a_{1j }x_{j}\right)^{2}+\sum_{i=2}^{n} \sum_{j=2}^{n} b_{i j} x_{i} x_{j}
+\end{align*}
+这里
+\[
+\sum_{i=2}^{n} \sum_{j=2}^{n} b_{i j} x_{i} x_{j}
+=-a_{11}^{-1}\left(\sum_{j=2}^{n} a_{1 j} x_j \right)^{2}+\sum_{i=2}^{n} \sum_{j=2}^{n} a_{i j} x_{i} x_j
+\]
+是一个 $x_{2}, x_{3}, \cdots, x_{n}$ 的二次型.
+\end{frame}
+
+\begin{frame}
+\begin{center}
+令
+$
+\left\{\begin{array}{l}
+y_{1}=x_{1}+\sum_{j=2}^{n} a_{11}^{-1} a_{1}, x_{j} \\
+y_{2}=x_{2} \\
+\cdots \cdots \cdots \cdots \\
+y_{n}=x_{n}
+\end{array}\right.
+$
+即
+$
+\left\{\begin{array}{l}
+x_{1}=y_{1}-\sum_{j=2}^{n} a_{11}^{-1} a_{1, y} \\
+x_{2}=y_{2} \\
+\cdots \cdots \cdots \cdots \\
+x_{n}=y_{n}
+\end{array}\right.
+$
+\end{center}
+
+这是一个非退化线性替换，它使
+\[
+f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=a_{11} y_{1}^{2}+\sum_{i=2}^{n} \sum_{j=2}^{n} b_{ij}  y_i y_{j}
+\]
+由归纳法假定，对 $\sum_{i=2}^{n} \sum_{j=2}^{n} b_{i j} y_{i} y_j,$ 有非退化线性替换
+\[
+\left\{\begin{array}{l}
+z_{2}=c_{22} y_{2}+c_{23} y_{3}+\cdots+c_{2 n} y_{n} \\
+z_{3}=c_{32} y_{2}+c_{33} y_{3}+\cdots+c_{3 n} y_{n} \\
+\cdots \ldots \ldots . \\
+z_{n}=c_{n 2} y_{2}+c_{n 3} y_{3}+\cdots+c_{n n} y_{n}
+\end{array}\right.
+\]
+能使它变成平方和
+$
+d_{2} z_{2}^{2}+d_{3} z_{3}^{2}+\cdots+d_{n} z_{n}^{2}.
+$
+\end{frame}
+
+
+\begin{frame}
+于是非退化线性替换
+\[
+\left\{\begin{array}{l}
+z_{1}=y_{1} \\
+z_{2}=c_{22} y_{2}+\cdots+c_{2 n} y_{n} \\
+\cdots \cdots \cdots \cdots \\
+z_{n}=c_{n 2} y_{2}+\cdots+c_{n n} y_{n}
+\end{array}\right.
+\]
+
+就使 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 变成
+\[
+f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=a_{11} z_{1}^{2}+d_{2} z_{2}^{2}+\cdots+d_{n} z_{n}^{2}
+\]
+即变成平方和了.根据归纳法原理, 定理得证. 
+\end{frame}
+
+\begin{frame}
+2) 所有 $a_{i i}=0,$ 但是至少有一 $a_{1 j} \neq 0(j>1),$ 不失普遍性, 设 $a_{12} \neq 0 .$ 令
+\[
+\left\{\begin{array}{l}
+x_{1}=z_{1}+z_{2} \\
+x_{2}=z_{1}-z_{2} \\
+x_{3}=z_{3} \\
+\dots \dots \dots \\
+x_{n}=z_{n}
+\end{array}\right.
+\]
+它是非退化线性替换,且使
+\[
+\begin{aligned}
+f\left(x_{1}, x_{2}, \cdots, x_{n}\right) &=2 a_{12} x_{1} x_{2}+\cdots \\
+&=2 a_{12}\left(z_{1}+z_{2}\right)\left(z_{1}-z_{2}\right)+\cdots \\
+&=2 a_{12} z_{1}^{2}-2 a_{12} z_{2}^{2}+\cdots
+\end{aligned}
+\]
+这时上式右端是 $z_{1}, z_{2}, \cdots, z_{n}$ 的二次型,且 $z_{1}^{2}$ 的系数不为零, 属 于第一种情况, 定理成立. 
+\end{frame}
+
+
+\begin{frame}
+3) $a_{11}=a_{12}=\dots=a_{1 n}=0$.
+由于对称性，有
+\[
+a_{21}=a_{31}=\dots=a_{n 1}=0
+\]
+这时
+\[
+f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=\sum_{i=2}^{n} \sum_{j=2}^{n} a_{i j} x_{i} x_{j}
+\]
+是 $n-1$ 元二次型.
+
+根据归纳法假定，它能用非退化线性替换变成
+平方和. 
+\qed
+\end{frame}
+
+
+\begin{frame}{配方法}
+用配方法化二次型为标准形的关键是消去交叉项
+
+\blue{情形 1}~~ 如果二次型 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 含$x_1$ 的平方项,而 $a_{11} \neq 0$
+则集中二次型中含 $x_1$ 的所有交叉项, 然后与 $x_i$ 配方，并作非退化线性替换
+\[
+\left\{\begin{array}{l}
+y_{1}=a_{1} x_{1}+c_{12} x_{2}+\cdots+a_{n} x_{n} \\
+y_{2}= \quad x_2\\
+\cdots \cdots \\
+y_{n}= \quad x_n
+\end{array} \right.
+\]
+得 $f=d_{1} y_{1}^{2}+g\left(y_{2}, \cdots, y_{n}\right),$ 其中 $g\left(y_{2}, \cdots, y_{n}\right)$ 是 $y_{2}, \cdots, y_{n}$ 的二次型 $\cdot$ 对
+$g\left(y_{2}, y_{3}, \cdots, y_{n}\right)$ 重复上述方法直到化二次型 $f$ 为标准形为止.
+\end{frame}
+\begin{frame}
+\blue{情形 2}~~如果二次型 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 不含平方项, 即 $a_{i i}=0(i=1,2,$
+$\cdots, n)$,但含某一个 $a_{i j} \neq 0(i \neq j),$ 则可先作非退化线性替换
+$$\left\{\begin{aligned} x_{i} &=y_{i}+y_{j} \\ x_{j} &=y_{i}-y_{j} \\ x_{k} &=y_{k} \quad(k=1,2, \cdots, n ; k \neq i, j) \end{aligned}\right.$$
+
+把 f化为一个含平方项 $y_{i}^{2}$ 的二次型,再用情形 1 的方法化为标准形.
+\end{frame}
+
+%\begin{enumerate}
+%\item  若二次型含有 $x_{i}$ 的平方项，则先把含有
+%${x}_{i}$ 的乘积项集中，然后配方，再对其余的变量同 样进行，直到都配成平方项为止，经过非退化线 性变换，就得到标准形;
+%\item 若二次型中不含有平方项，但是 $a_{i j} \neq {0}$ $(i \neq j)$,则先做可逆线性变换
+%\[
+%\left\{\begin{array}{ll}
+%x_{i}& =y_{i}-y_{j} \\
+%x_{j}& =y_{i}+y_{j} \\
+%x_{k}& =y_{k}
+%\end{array}\quad (k=1,2, \cdots, n \text { 且  } k \neq i, j)\right.
+%\]
+%化二次型为含有平方项的二次型，然后再按1中方 法配方.
+%\end{enumerate}
+
+\begin{frame}
+\begin{exa}
+用非退化线性变换化二次型 $$f\left(x_{1}, x_{2}, x_{3}\right)=2 x_{1}^{2}+4 x_{1} x_{2}+6 x_{1} x_{3}+3 x_{2}^{2}-\frac{1}{2} x_{3}^{2}$$ 为标准形, 并写出所用的非退化线性变换.
+\end{exa}
+\sol (配方法)
+\begin{align*}
+f\left(x_{1}, x_{2}, x_{3}\right)
+& = 2 \blue{x_{1}^{2}}+ \blue{x_{1}} \left(\alert{4 x_{2}+6 x_{3}}\right) +3 x_{2}^{2}-\frac{1}{2} x_{3}^{2} \\
+&=2\left(\blue{x_{1}}+\alert{x_{2}+\frac{3}{2} x_{3}}\right)^{2}+3 x_{2}^{2}-\frac{1}{2} x_{3}^{2}-2\left(\alert{x_{2}+\frac{3}{2} x_{3}}\right)^{2}\\
+& =2\left(x_{1}+x_{2}+\frac{3}{2} x_{3}\right)^{2}+\blue{x_{2}^{2}}-6 \blue{x_{2}} \alert{x_{3}} -5 x_{3}^{2}\\
+&=2\left(x_{1}+x_{2}+\frac{3}{2} x_{3}\right)^{2}+\left(x_{2}-3 x_{3}\right)^{2}-14 x_{3}^{2} 
+\end{align*}
+\end{frame}
+
+
+\begin{frame}
+令
+$\left\{\begin{array}{l}y_{1}=x_{1}+x_{2}+\frac{3}{2} x_{3} \\ y_{2}=x_{2}-3 x_{3} \\ y_{3}=x_{3}\end{array}\right.$
+即
+$\left\{\begin{array}{l}x_{1}=y_{1}-y_{2}-\frac{9}{2} y_{3} \\ x_{2}=y_{2}+3 y_{3} \\ x_{3}=y_{3}\end{array}\right.$
+\\[6pt]
+则原二次型化为 
+$g(Y)=2 y_{1}^{2}+y_{2}^{2}-14 y_{3}^{2}$.
+
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+ 化二次型
+\[
+f=2 x_{1} x_{2}+2 x_{1} x_{3}-6 x_{2} x_{3}
+\]
+成标准形,并求所用的变换矩阵. 
+\end{exa}
+\sol 由于所给二次型中无平方项，所以
+
+%\begin{center}
+令 $\left\{\begin{array}{l}x_{1}=y_{1}+y_{2}, \\ x_{2}=y_{1}-y_{2}, \\ x_{3}=y_{3}, \end{array}\right.$\quad 
+ 即  
+	$\left(
+	\begin{array}{l}
+	x_{1} \\ x_{2} \\ x_{3}
+	\end{array}\right)
+	=\left(\begin{array}{ccc}1 & 1 & 0 \\ 1 & -1 & 0 \\ 0 & 0 & 1\end{array}\right)
+	\left(\begin{array}{l}y_{1} \\ y_{2} \\ y_{3}\end{array}\right)$,
+%\end{center}
+
+代入 $$f=2 x_{1} x_{2}+2 x_{1} x_{3}-6 x_{2} x_{3}$$
+
+得 $$f=2 y_{1}^{2}-2 y_{2}^{2}-4 y_{1} y_{3}+8 y_{2} y_{3}.$$
+
+\end{frame}
+
+\begin{frame}
+再配方，得
+\[
+f=2\left(y_{1}-y_{3}\right)^{2}-2\left(y_{2}-2 y_{3}\right)^{2}+6 y_{3}^{2} 
+\]
+令 
+$\left\{\begin{array}{l}
+z_{1}=y_{1}-y_{3}, \\
+z_{2}=y_{2}-2 y_{3}, \\
+z_{3}=y_{3},
+\end{array}\right. $
+
+则 
+$\left\{ \begin{array}{l}
+y_{1}=z_{1}+z_{3}, \\
+y_{2}=z_{2}+2 z_{3}, \\
+y_{3}=z_{3},
+\end{array}\right.$
+即
+$\left(\begin{array}{l}
+y_{1} \\
+y_{2} \\
+y_{3}
+\end{array}\right)=\left(\begin{array}{rrr}
+1 & 0 & 1 \\
+0 & 1 & 2 \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{l}
+z_{1} \\
+z_{2} \\
+z_{3}
+\end{array}\right)$
+
+得 $$ f=2 z_{1}^{2}-2 z_{2}^{2}+6 z_{3}^{2}.$$
+
+
+所用变换矩阵为
+\[
+C=\left(\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & -1 & 0 \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{ccc}
+1 & 0 & 1 \\
+0 & 1 & 2 \\
+0 & 0 & 1
+\end{array}\right)=\left(\begin{array}{ccc}
+1 & 1 & 3 \\
+1 & -1 & -1 \\
+0 & 0 & 1
+\end{array}\right).
+\]
+\end{frame}
+
+
+\begin{frame}{合同变换法}
+\begin{enumerate}
+\item 写出二次型 $f$ 的矩阵 $A$,并构造 $2 n \times n$ 矩阵 $\left(\begin{array}{c}A \\ E\end{array}\right)$.
+
+\item  对 $A$ 进行初等行变换和同样的初等列变换，把 $A$ 化为对角矩 阵
+$D$,并对 $E$ 施行与 $A$ 相同的初等列变换化为矩阵 $C,$ 此时 $C A C=D$.
+
+\item  写出非退化线性替换 $X=C Y$ 化二次型为标准形 $f=Y^{\, \prime} D Y$
+这个方法可示意如下：
+\[
+\left(\begin{array}{c}
+A \\
+E
+\end{array}\right) 
+\xrightarrow[\text{ 对 } E \text{ 只进行其中的初等列变换 }]{\text{ 对 } A \text{ 进行同样 的初等行变换和初 等列变换 }\quad }
+\left(\begin{array}{c}
+D \\
+C
+\end{array}\right)
+\]
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\sol 用合同变换法 化二次型
+$
+f=2 x_{1} x_{2}+2 x_{1} x_{3}-6 x_{2} x_{3}
+$
+成标准形.
+\begin{align*}
+\left(\begin{array}{c}
+A \\
+E
+\end{array}\right) 
+= & 
+\left(\begin{array}{ccc}0 & 1 & 1 \\ 1 & 0 & -3 \\ 1 & -3 & 0 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{array}\right) 
+\rightarrow
+\left(\begin{array}{ccc}2 & 1 & -2 \\ 1 & 0 & -3 \\ -2 & -3 & 0 \\ 1 & 0 & 0 \\ 1 & 1 & 0 \\ 0 & 0 & 1\end{array}\right)\\
+\rightarrow & 
+\left(\begin{array}{ccc}2 & 0 & 0 \\ 0 & -\frac{1}{2} & -2 \\ 0 & -2 & -2 \\ 1 & -\frac{1}{2} & 1 \\ 1 & \frac{1}{2} & 1 \\ 0 & 0 & 1\end{array}\right)
+\rightarrow
+\left(\begin{array}{ccc}2 & 0 & 0 \\ 0 & -\frac{1}{2} & 0 \\ 0 & 0 & 6 \\ 1 & -\frac{1}{2} & 3 \\ 1 & \frac{1}{2} & -1 \\ 0 & 0 & 1\end{array}\right)=\left(\begin{array}{c}D \\ C\end{array}\right)
+\end{align*}
+
+则$C^{\, \prime} AC = D$.
+\end{frame}
+
+\begin{frame}{\S 3 唯一性}
+标准形中的系数不是唯一确定的. 例如：对二次型
+\[
+2 x_{1} x_{2}-6 x_{2} x_{3}+2 x_{1} x_{3}
+\]
+做线性替换
+\[
+\left(\begin{array}{l}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{array}\right)=\left(\begin{array}{ccc}
+1 & 1 & 3 \\
+1 & -1 & -1 \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{l}
+w_{1} \\
+w_{2} \\
+w_{3}
+\end{array}\right)
+\]
+得到标准形
+\[
+2 w_{1}^{2}-2 w_{2}^{2}+6 w_{3}^{2}
+\]
+\end{frame}
+
+\begin{frame}
+进一步做替换
+\[
+\left(\begin{array}{l}
+w_{1} \\
+w_{2} \\
+w_{3}
+\end{array}\right)=\left(\begin{array}{lll}
+1 & 0 & 0 \\
+0 & \frac{1}{2} & 0 \\
+0 & 0 & \frac{1}{3}
+\end{array}\right)\left(\begin{array}{l}
+y_{1} \\
+y_{2} \\
+y_{3}
+\end{array}\right)
+\]
+得到另一个标准形
+\[
+2 y_{1}^{2}-\frac{1}{2} y_{2}^{2}+\frac{2}{3} y_{3}^{2}
+\]
+合同不改变矩阵的秩. 
+
+
+共同点：标准形中系数不为零的平方项的个数是唯一确定的. 
+\end{frame}
+
+\begin{frame}{复数域上的  二次型}
+\small{
+\begin{thm}
+	任意一个秩为 $r$ 的复系数的 $n$ 元二次型，可经过适当的非退化线性
+	替换化为复规范型：
+	\[
+	z_{1}^{2}+z_{2}^{2}+\cdots+z_{r}^{2}
+	\]
+	而且这个规范型是唯一的.
+\end{thm}
+\begin{coro}
+\begin{itemize}
+	\item 任意一个复对称矩阵 $A$ 都合同于对角矩阵：
+	\[
+	\left(\begin{array}{cc}
+	E_r&\\
+	& O\\
+	\end{array}\right)
+	\]
+	其中对角线上 1 的个数 $r$ 等于矩阵 $A$ 的秩.
+	
+	\item 两个复对称矩阵合同$\Leftrightarrow$它们的秩相等.
+\end{itemize}
+\end{coro}
+
+
+}
+\end{frame}
+
+\begin{frame}{ 实数域上的 二次型}
+\begin{thm}
+任意一个秩为 $r$ 的实系数的 $n$ 元二次型，可经过适当的非退化线性
+替换化为实规范型：
+\[
+z_{1}^{2}+z_{2}^{2}+\cdots+z_{p}^{2}-z_{p+1}^{2}-\cdots-z_{r}^{2}
+\]
+而且这个规范型是唯一的.
+\end{thm}
+\begin{defi}
+	实二次型 $f$ 的规范型中，
+	\begin{itemize}
+		\item 正平方项的个数 $p$ 称为 $f$ 的\alert{正惯性指数};
+		\item 负平方项的个数 $r-p$ 称为 $f$ 的\alert{负惯性指数};
+		\item 它们的差 $p-(r-p)$ 称为$f$ 的\alert{符号差}.
+	\end{itemize}
+\end{defi}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+对标准二次型
+\[
+2 w_{1}^{2}-2 w_{2}^{2}+6 w_{3}^{2}, 
+\]
+\begin{itemize}
+\item 令$z_1=\sqrt{2}w_1, \, z_2=\sqrt{2}w_2 i, \,  z_3=\sqrt{6}w_3 i$,
+
+得到复数域上的规范形 $$z_1^2+z_2^2+z_3^2;$$
+
+\item 令$y_1=\sqrt{2}w_1, \,  y_2=\sqrt{6}w_3, \,   y_3=\sqrt{2}w_2$,
+
+得到实数域上的规范形 $$y_1^2+y_2^2-y_3^2.$$
+\end{itemize}
+
+
+
+\end{exa}
+
+\end{frame}
+\begin{frame}
+\begin{coro}
+任意一个实对称矩阵 $A$ 都合同于对角矩阵：
+\[
+\left(\begin{array}{ccc}
+E_p & & \\
+& E_{r-p} & \\
+& & O
+\end{array}\right)
+\]
+其中对角线上 1 和 -1 的个数是唯一确定的，且其和 $r$ 等于矩阵 $A$ 的秩. 
+\end{coro}
+
+问题：试给出两个实对称矩阵合同的充要条件. 
+\pause
+\begin{coro}
+两个
+实对称阵合同$\Leftrightarrow$它们的秩相等且正惯性指数也相等.
+\end{coro}
+\end{frame}
+
+
+\section{正定二次型}
+\begin{frame}{\S 4 正定二次型}
+%正定二次型的定义和判定
+\begin{defi}
+实二次型 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 是正定的，如果对任意一组不全为零的
+的实数 $c_{1}, c_{2}, \cdots, c_{n}$ 都有 $f\left(c_{1}, c_{2}, \cdots, c_{n}\right)>0$
+\end{defi}
+
+\begin{thm}
+实二次型 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=d_{1} x_{1}^{2}+d_{2} x_{2}^{2}+\cdots+d_{n} x_{n}^{2}$ 是正定二次型
+的充要条件是 $d_{i}>0, i=1,2, \cdots, n$
+\end{thm}
+
+非退化的线性替换不改变二次型的正定性.
+\begin{thm}
+ ${n}$ 元实二次型 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 正定的充要条件是它的正惯性指数为 $n$.
+\end{thm}
+\end{frame}
+
+\begin{frame}{正定矩阵}
+\begin{defi}
+如果实二次型 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=X^{\, \prime} A X$ 是正定的，则称实对称矩阵
+$A$ 为正定矩阵.
+\end{defi}
+\begin{thm}
+实对称矩阵 $A$ 正定 $\Leftrightarrow$ 它与单位矩阵合同. 
+
+实对称矩阵 $A$ 正定 $\Leftrightarrow$  存在非奇异矩阵 ${C},$ 使得 $A=C^{\, \prime} C$
+\end{thm}
+
+
+
+\begin{coro}
+正定矩阵的行列式大于零. 
+\end{coro}
+
+正定矩阵是可逆的，且其逆矩阵仍为正定矩阵. 
+\end{frame}
+
+\begin{frame}
+直接利用矩阵的元素来判断它的正定性. 
+
+\begin{defi}
+$n$ 阶实对称矩阵 ${A}=\left({a}_{i j}\right)$ 的左上角的 ${k}$ 阶子式
+\[
+\left|\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 k} \\
+a_{21} & a_{22} & \cdots & a_{2 k} \\
+\vdots & \vdots &  & \vdots \\
+a_{k 1} & a_{k 2} & \cdots & a_{k k}
+\end{array}\right|, \quad k=1,2, \cdots, n
+\]
+称为矩阵 $A$ 的 $k$ 阶顺序主子式. 
+\end{defi}
+\begin{thm}
+实二次型 $f(X)=X^{\, \prime} A X$ 正定
+$\Leftrightarrow$
+矩阵 $A$ 的各阶顺序主子式全大于零. 
+\end{thm}
+\end{frame}
+
+\begin{frame}
+\begin{theo}
+	设实二次型 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=X^{\,\prime} A X,$ 下列命题等价：
+	\begin{enumerate}
+		\item $n$ 元实二次型 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=X^{\, \prime} A X$ 是正定的
+		\item 它的正惯性指数为 $n$
+		\item $A$ 与单位矩阵 $E$ 合同
+		\item 存在 n 级实可逆矩阵 $C$
+		使 $A=C^{\,\prime} C$.
+		\item 矩阵 $A$ 的各阶顺序主子式全大于零. 
+	\end{enumerate}
+\end{theo}
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+判别二次型 $f\left(x_{1}, x_{2}, x_{3}\right)=5 x_{1}^{2}+x_{2}^{2}+5 x_{3}^{2}+4 x_{1} x_{2}-8 x_{1} x_{3}-4 x_{2} x_{3}$
+是否正定。
+\end{exa}
+\sol 
+$f\left(x_{1}, x_{2}, x_{3}\right)$ { 的矩阵为 } 
+\[
+\begin{array}{l}
+
+\qquad\left(\begin{array}{rrr}
+5 & 2 & -4 \\
+2 & 1 & -2 \\
+-4 & -2 & 5
+\end{array}\right)
+\end{array}
+\]
+它的顺序主子式
+\[
+5>0,\left|\begin{array}{cc}
+5 & 2 \\
+2 & 1
+\end{array}\right|>0,\left|\begin{array}{rrr}
+5 & 2 & -4 \\
+2 & 1 & -2 \\
+-4 & -2 & 5
+\end{array}\right|>0
+\]
+因之, $f\left(x_{1}, x_{2}, x_{3}\right)$ 正定.
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+当$t$ 为何值时, 下面的二次型是正定的？ $$f\left(x_{1}, x_{2}, x_{3}\right)=x_{1}^{2}+4 x_{2}^{2}+4 x_{3}^{2}+2 t x_{1} x_{2}-2 x_{1} x_{3}+4 x_{2} x_{3}$$
+
+\end{exa}
+%\pf 分析 $\quad$ 应填 : - $2<t<1$ 
+\sol
+二次型的矩阵为 
+$A=\left(\begin{array}{rrr}1 & t & -1 \\ t & 4 & 2 \\ -1 & 2 & 4\end{array}\right)$
+
+要使 $f$ 为正定二次型, 其充分必要
+条件是 $A$的各阶顺序主子式均大于零，
+\begin{align*}
+& \Delta_{1}=1>0, \Delta_{2}=\left|\begin{array}{cc}
+1 & t \\
+t & 4
+\end{array}\right|=4-t>0, \\
+&
+\Delta_{3}=\left|\begin{array}{ccc}
+1 & t & -1 \\
+t & 4 & 2 \\
+-1 & 2 & 4
+\end{array}\right| =- 4( t + 2) ( t - 1) > 0
+\end{align*}
+
+
+%由 $\Delta_{2}>0$ 解得 $-2<t<2 ;$ 由 $\Delta_{3}>0$ 解得 $-2<t<1.$ 
+
+ 解得 当 $-2<t<1$ 时
+二次型 $f$ 正定 .
+\end{frame}
+
+\begin{frame}{二次型的分类}
+\begin{defi}
+设实二次型 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right),$ 若对于任意一组不全为零的实数
+$c_{1}, c_{2}, \cdots, c_{n}$ 都有
+\begin{enumerate}
+\item $f\left(c_{1}, c_{2}, \cdots, c_{n}\right)>0,$ 则称 $f\left(c_{1}, c_{2}, \cdots, c_{n}\right)$ 是正定的。
+\item $f\left(c_{1}, c_{2}, \cdots, c_{n}\right) \geq 0,$ 则称 $f\left(c_{1}, c_{2}, \cdots, c_{n}\right)$ 是半正定的。
+\item $f\left(c_{1}, c_{2}, \cdots, c_{n}\right)<0,$ 则称 $f\left(c_{1}, c_{2}, \cdots, c_{n}\right)$ 是负定的。
+\item $f\left(c_{1}, c_{2}, \cdots, c_{n}\right) \leq 0,$ 则称 $f\left(c_{1}, c_{2}, \cdots, c_{n}\right)$ 是半负定的。
+\item $f\left(c_{1}, c_{2}, \cdots, c_{n}\right)$ 不确定，则称 $f\left(c_{1}, c_{2}, \cdots, c_{n}\right)$ 是不定的。
+\end{enumerate}
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\begin{thm}
+设实二次型 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=X^{\,\prime} A X,$ 下列命题等价：
+\begin{enumerate}
+	\item $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=X^{\, \prime} A X$ 是半正定的
+	\item 它的负惯性指数与秩相等，
+	\item 有可逆实矩阵 $C,$ 使得
+\[
+C^{\, \prime} A C=\left(\begin{array}{cccc}
+d_{1} & & & \\
+& d_{2} & & \\
+& & \ddots & \\
+& & & d_{n}
+\end{array}\right), d_{i} \geq 0, i=1,2, \cdots, n
+\]
+	\item 有实矩阵 $C$，使得 $A=C^{\, \prime} C$
+ 	\item 矩阵$A$ 的所有主子式大于或等于零.
+\end{enumerate}
+\end{thm}
+\end{frame}
+\end{document} 

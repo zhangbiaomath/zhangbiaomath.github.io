@@ -1,0 +1,2951 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[13pt]{beamer}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{amsmath,amssymb,amsthm}             % AMS Math
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\linespread{1.3}
+
+\usepackage{mathrsfs}  %花写字母
+ 
+
+%%%=== theme ===%%%
+% \usetheme{Warsaw}
+%\usetheme{Copenhagen}
+%\usetheme{Singapore}
+\usetheme{Madrid}
+%\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+% \usefonttheme{structureitalicserif}
+%%\useinnertheme{rounded}
+%%\useinnertheme{inmargin}
+\useinnertheme{circles}
+%\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[page number]
+
+
+
+
+\usepackage{ctex}
+% \usepackage{CJK,CJKnumb,CJKulem}
+\usepackage{minitoc}
+
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{thm}{定理}
+\newtheorem{lem}{引理}
+\newtheorem{exa}{例}
+%\newtheorem*{theorem}{定理}
+\newtheorem*{defi}{定义}
+\newtheorem*{coro}{推论}
+\newtheorem*{ex}{练习}
+\newtheorem*{rem}{注}
+\newtheorem*{prop}{性质}
+\newtheorem*{qst}{问题}
+\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
+\def\pf{{\bf 证明~~ }}
+\def\sol{{\bf 解~~ }}
+\def\Rn{\mathbb{R}^n}
+\def\A{\mathscr{A}}
+\def\B{\mathscr{B}}
+\def\D{\mathscr{D}}
+\def\E{\mathscr{E}}
+\def\O{\mathscr{O}}
+
+
+\def\dim{\operatorname{dim}}
+\def\0{\mathbf{0}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\r{\gamma}
+
+\usepackage{color}
+\definecolor{linkcol}{rgb}{0,0,0.4}
+\definecolor{citecol}{rgb}{0.5,0,0}
+
+\definecolor{blue}{rgb}{0,0.08,1}
+\newcommand{\blue}{\textcolor{blue}}
+
+  \usepackage{graphicx}
+  \DeclareGraphicsExtensions{.eps}
+%   \usepackage[a4paper,pagebackref,hyperindex=true,pdfnewwindow=true]{hyperref}
+
+
+\begin{document}
+
+
+
+\title[]{第七章 \quad  线性变换}
+\author[]{{\large 张彪}\\  }
+\institute[]{{\normalsize
+		天津师范大学\\[6pt]
+		zhang@tjnu.edu.cn}}
+
+\date{}
+
+
+\AtBeginSection[]
+{
+\setcounter{exa}{0}
+\setcounter{equation}{0}
+}
+
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+\section{线性变换的定义}
+\begin{frame}{\S 1  线性变换的定义}
+
+%\begin{itemize}
+%\item 上一章我们看到,数域 $P$ 上任意一个 $n$ 维线性空间都与 $P^{n}$ 同构,因之, ,有限维线性空间的结构可以认为是完全清楚了.
+%
+%\item 线性 空间是某一类事物从量的方面的一个抽象.我们认识客观事物, 固然要弄清它们单个的和总体的性质,但是更重要的是研究它们之间的各种各样的联系.
+%
+%\item 在线性空间中,事物之间的联系就反映为线 性空间的映射.线性空间 V 到自身的映射通常称为 V 的一个变 换.这一章中要讨论的线性变换就是最简单的,同时也可以认为是 最基本的一种变换, 正如线性函数是最简单的和最基本的函数一 样.线性变换是线性代数的一个主要研究对象.
+%\end{itemize}
+
+
+下面如果不特别声明,所考虑的都是某一固定的数域 $P$ 上的
+线性空间.
+
+\begin{defi}
+线性空间 $V$ 的一个变换 称为线性变换, 如果对于 $V$ 中任意的元素 ${\alpha}, {\beta}$ 和数域 $P$ 中任意数 $k$,都有
+\[
+\begin{array}{c}
+\mathscr{A}({\alpha}+{\beta})=\mathscr{A}({\alpha})+\mathscr{A}({\beta}) \\
+\mathscr{A}({k} {\alpha})=k \mathscr{A}({\alpha})
+\end{array}
+\]
+\end{defi}
+
+\begin{rem}
+\begin{itemize}
+\item 一般用花体拉丁字母 $\mathscr{A}, \mathscr{B}, \cdots$ 或 $\sigma,\tau, \cdots$代表 $V$ 的变换
+\item $\mathscr{A}({\alpha})$或 $\A \a$ 代表元素 ${\alpha}$ 在变换 $\A$ 下的像
+\item 线性变换保持向量的加法与数量乘法
+\end{itemize}
+\end{rem}
+\end{frame}
+
+\begin{frame}
+下面我们来看几个简单的例子,它们表明线性变换这个概念 是有丰富的内容的.
+\begin{exa}[{旋转变换}]
+平面上的向量构成实数域上的二维线性空间.把平面 围绕坐标原点按反时针方向旋转 $\theta$ 角,就是一个线性变换,我们 用 $\mathscr{I}_{\theta}$ 表示.如果平面上一个向量 ${\alpha}$ 在直角坐标系下的坐标是 $\left( x_1,y_1 \right)$, 那么像 $\mathscr{I}_{\theta}({\alpha})$ 的坐标, 即 ${\alpha}$ 旋转 $\theta$ 角之后的坐标 $\left(x_2, y_2\right)$ 是按
+照公式
+\[
+\left(\begin{array}{l}
+x_2 \\
+y_2
+\end{array}\right)=\left(\begin{array}{ll}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{array}\right)
+\left(\begin{array}{l}
+x_1 \\
+y_1
+\end{array}\right)
+\]
+来计算的.同样地,空间中绕轴的旋转也是一个线性变换. 
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+	\begin{exa}[投影变换]
+设 $\a$是几何空间中一固定的非零向量,把每个向量 $\zeta$变到它在 ${\alpha}$ 上的内射影的变换也是一个线性变换,以 $\Pi_{\alpha}$ 表示它.
+用公式表示就是
+\[
+\Pi_{\a}(\zeta)=\frac{({\alpha}, \zeta)}{({\alpha}, {\alpha})} {\alpha}
+\]
+这里 $({\alpha}, {\zeta}),({\alpha}, {\alpha})$ 表示内积.
+	\end{exa}
+
+
+
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+	线性空间 V 中的\alert{恒等变换}或称\alert{单位变换}\, $\mathscr{E}$,即
+	\[
+	\E({\alpha})={\alpha} \quad({\alpha} \in V)
+	\]
+	以及\alert{零变换} $\mathscr{O}$, 即
+	\[
+	\O({\alpha})=\mathbf{0} \quad({\alpha} \in V)
+	\]
+	都是线性变换. 
+\end{exa}
+
+\begin{exa}
+	设 $V$ 是数域 $P$ 上的线性空间, $k$ 是 $P$ 中某个数,定义 $V$ 的变换如下：
+$${\alpha} \rightarrow k {\alpha}, \quad {\alpha} \in V$$
+可以证明,这是一个线性变换,称为由数 $k$ 决定的\alert{数乘变换}, 可用 $\mathscr{K}$表示. 
+当 $k=1$ 时, 我们便得恒等变换,  当 $k=0$ 时,便得零变换.
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}[导数]
+在线性空间 $P[x]$或者 $P[x]_{n}$ 中,求导数是一个线性
+变换.这个变换通常用 $\mathscr{D}$代表,即
+\[
+\mathscr{D}(f(x))=f^{\, \,\prime}(x)
+\]
+\end{exa}
+
+\begin{exa}[积分]
+	定义在闭区间$[a,b]$上的全体连续函数组成实数域上 一线性空间,以 $C(a,b)$代表.在这个空间中,变换
+	\[
+	\mathscr{S}(f(x))=\int_{a}^{x} f(t) \mathrm{d} t   \qquad (\mbox{这里}\mathscr{S} \mbox{是花体} S)
+	\] 
+	是一个线性变换.
+\end{exa}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+
+
+从定义推出线性变换的以下简单性质：
+这是因为
+\begin{itemize}
+	\item[1] 设$\A$是线桂空间$V$的一个线性变换, 则
+	$$\A(\0)=\0, \quad \A(-\alpha)=-\A(\alpha).$$
+\end{itemize}
+
+\pf\\[-30pt]
+\begin{align*}
+\A(\0)& =\A(0\, \a) =0\,  \A(\a) =\0, \\
+\A(-\alpha) & =A\left( (-1) \alpha\right)=-A(\alpha)=-A(\alpha).
+\end{align*}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+	\item[2] 线性变换保持线性组合与线性关系式不变.
+	
+	换句话说, 如果 ${\beta}$ 是 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha},$ 的线性组合:
+	\[
+	{\beta}=k_{1} {\alpha}_{1}+k_{2} {\alpha}_{2}+\cdots+k_{r} {\alpha}_{r}
+	\]
+	那么$\A(\beta)$ 是 $\A({\alpha}_{1}), \A({\alpha}_{2}), \cdots, \A({\alpha})$ 的线性组合:
+	\[
+	\mathscr{A}({\beta})=k_{1} \mathscr{A}\left({\alpha}_{1}\right)+k_{2} \mathscr{A}\left({\alpha}_{2}\right)+\cdots+k_{r}  \mathscr{A}\left({\alpha}_{r}\right)
+	\]
+	又如果 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha},$ 之间有一线性关系式
+\[
+k_{1} {\alpha}_{1}+k_{2} {\alpha}_{2}+\cdots+k_{r} {\alpha}_{r}=\0
+\]
+那么它们的像之间也有同样的关系
+\[
+k_{1}  \mathscr{A}\left({\alpha}_{1}\right)+k_{2}  \mathscr{A}\left({\alpha}_{2}\right)+\cdots+k_{r}  \mathscr{A}\left({\alpha}_{r}\right)={\0}
+\]
+
+	
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+
+
+\begin{itemize}
+	\item[3] 线性变换把线性相关的向量组变成线性相关的向量组.  
+
+\end{itemize}
+
+
+	注意： \alert{它的逆是不对的.}
+	
+	线性变换可能把线性无关的向 量组也变成线性相关的向量组.
+	
+	例如零变换就是这样.
+
+
+\end{frame}
+\section{线性变换的运算}
+\begin{frame}{\S 2 线性变换的运算}{一、线性变换的乘积}
+首先,线性空间的线性变换作为映射的特殊情形当然可以定
+义乘法.设 $\mathscr{A}, \mathscr{B}$ 是线性空间 $V$ 的两个线性变换,定义它们的\alert{乘积} $\mathscr{A B}$ 为
+\[
+(\mathscr{A} \mathscr{B})({\alpha})=\mathscr{A}(\mathscr{B}({\alpha})) \quad({\alpha} \in V)
+\]
+\\[-10pt]
+\begin{itemize}
+	\item {线性变换的乘积也是线性变换.} 
+	\[
+	\begin{aligned}
+	(\mathscr{A} \mathscr{B})({\alpha}+{\beta}) &=\mathscr{A}(\mathscr{B}({\alpha}+{\beta}))=\mathscr{A}(\mathscr{B}({\alpha})+\mathscr{B}({\beta})) \\
+	&=\mathscr{A}(\mathscr{B}({\alpha}))+\mathscr{A}(\mathscr{P}({\beta})) \\
+	&=(\A \mathscr{B})({\alpha})+(\mathscr{A} \mathscr{B})({\beta}) \\
+	(\mathscr{A} \mathscr{B})(k {\alpha}) &=\mathscr{A}(\mathscr{B}(k {\alpha}))=\mathscr{A}(k \mathscr{B}({\alpha})) \\
+	&=k \mathscr{A}(\mathscr{B}({\alpha}))=k(\mathscr{A} \mathscr{B})({\alpha})
+	\end{aligned}
+	\]
+	这说明 $\A \mathscr{B}$ 是线性的.  
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+	\item
+既然一般映射的乘法适合结合律, 线性变换的乘法当然也适 合\alert{结合律},即
+\[
+(\mathscr{A} \mathscr{B}) \mathscr{C}=\mathscr{A}(\mathscr{B} \mathscr{C})
+\]
+	\item 但线性变换的乘法一般是\alert{不可交换}的.例如, 在实数域 R 上的线 性空间 $R[x]$ 中,线性变换
+\[
+\begin{array}{c}
+\mathscr{D}(f(x))=f^{\,\, \prime}(x) \\
+\mathscr{S}(f(x))=\int_{0}^{x} f(t) \mathrm{d} t
+\end{array}
+\]
+的乘积 $\mathscr{D}  \mathscr{S} =\mathscr{E},$ 但一般 $\mathscr{S} \mathscr{D} \neq \mathscr{E}$.
+
+	\item 对于乘法, 单位变换 $\E$有特殊的地位.对于任意线性变换. 都有
+\[
+\E \A=\A \E=\A
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{二、线性变换的加法}
+其次,对于线性变换还可以定义加法.设 $\mathscr{A}, \mathscr{B}$ 是线性空间 $V$ 的两个线性变换,定义它们的和 为
+$$
+(\mathscr{A}+\mathscr{B})({\alpha})=\mathscr{A}({\alpha})+\mathscr{B}({\alpha}) \quad({\alpha} \in V)
+$$
+\\[-10pt]
+\begin{itemize}
+	\item 线性变换的和还是线性变换. 
+\begin{align*}
+(\alpha+\mathscr{B})({\alpha}+{\beta}) &=\mathscr{A}({\alpha}+{\beta})+\mathscr{B}({\alpha}+{\beta}) \\
+&=(\mathscr{A}({\alpha})+\mathscr{A}({\beta}))+(\mathscr{B}({\alpha})+\mathscr{B}({\beta})) \\
+&=(\mathscr{A}({\alpha})+\mathscr{B}({\alpha}))+(\mathscr{A}({\beta})+\mathscr{B}({\beta})) \\
+&=(\mathscr{A}+\mathscr{B})({\alpha})+(\mathscr{A}+\mathscr{B})({\beta}) \\
+(\mathscr{A}+\mathscr{B})(k {\alpha}) &=\mathscr{A}(k {\alpha})+\mathscr{B}(k {\alpha}) \\
+&=k \mathscr{A}({\alpha})+k \mathscr{B}({\alpha})=k(\mathscr{A}({\alpha})+\mathscr{P}({\alpha})) \\
+&=k(\mathscr{A}+\mathscr{B})({\alpha})
+\end{align*}
+%这就说明$\mathscr{A}+\mathscr{B}$是线性变换. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+	\item 线性变换的加法适合结合律与交换律,即
+	\begin{align*}
+	\mathscr{A}+(\mathscr{B}+\mathscr{C}) &=(\mathscr{A}+\mathscr{B})+\mathscr{C} \\
+	\mathscr{A}+\mathscr{B} &=\mathscr{B}+\mathscr{A}
+	\end{align*}
+	\item 对于加法, 零变换 $\O$ 有着特殊的地位.它与所有线性变换 $\A$ 的和仍等于 $\A$:
+	\[
+	\A+\O=\mathscr{A}
+	\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+对于每个线性变换 $-\A$,我们可以定义它的负变换:
+\[
+(-\mathscr{A})({\alpha})=-\mathscr{A}({\alpha}) \quad({\alpha} \in V)
+\]
+\begin{itemize}
+	\item 负变换 $-\A$ 也是线性的,且
+	\[
+	\A+(-\A)= \O
+	\]
+	\item 线性变换的乘法对加法有左右分配律,即
+	\[
+	\begin{array}{l}
+	\mathscr{A}(\mathscr{B}+\mathscr{C})=\mathscr{A} \mathscr{B}+\mathscr{A} \mathscr{C} \\
+	(\mathscr{B}+\mathscr{C}) \mathscr{A}=\mathscr{B} \mathscr{A}+\mathscr{C} \mathscr{A}
+	\end{array}
+	\]
+
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{三、线性变换的数量乘法}
+%在上一节例 4 中我们看到,数域 $P$ 中每个数 $k$ 都决定一个数 乘变换$\mathscr{K}$.
+利用线性变换的乘法, 可以定义数域$P$ 中的数与线性 变换的数置乘法为
+$$
+(k \A)(\alpha)=(\mathscr{K} \A)(\alpha)=\mathscr{K}(\A(\alpha))
+$$\\[-10pt]
+\begin{itemize}
+	\item $k \mathscr{A}$ 还是线性变换. 
+	\item 线性变换的数量乘法适合以 下的规律：
+\begin{itemize}
+\item 数乘结合律 $(k l) \A=k(l \A)$
+\item 数乘分配律 $({k}+l) \A={k} {\A}+{\A}$
+\item 数乘分配律 $k(\mathscr{A}+\mathscr{B})=k \mathscr{A}+k \mathscr{B}$
+\item 1的数乘 $1 \A=\A$
+\end{itemize}
+\item 
+由加法与数量乘法的性质可知,线性空间 $V$ 上全体线性变换.  
+
+对于如上定义的加法与数量乘法,也构成数域 $P$ 上一个线性空间.  
+\end{itemize}
+
+
+\end{frame}
+
+
+
+\begin{frame}{四、线性变换的逆变换}
+${V}$ 的变换$\A$ 称为可逆的, 如果存在 $V$的变换$\B$, 使
+\[
+\A \B=\B \A=\E
+\]
+这时, 变换$\B$称为$\A$的逆变换, 记为$\A^{-1}$
+可逆线性变换$\A$的逆变换. 
+\begin{itemize}
+\item 可逆线性变换$\A$的逆变换$\A^{-1}$也是线性变换
+\end{itemize}
+\begin{align*} 
+\A^{-1}(k \alpha+\ell \beta) &= \A^{-1}\left(k\left(\A \A^{-1}\right)(\alpha)+l\left(\A \A^{-1}\right)(\beta)\right) \\ &=\A^{-1}\left(\A\left(k \A^{-1}(\alpha)\right)+\A\left(l A^{-1}(\beta)\right)\right) \\ 
+&=\A^{-1}\left(\A\left(k \A^{-1}(\alpha)+\ell \A^{-1}(\beta)\right)\right) \\
+ &=\left(\A^{-1} \A\right)\left(k \A^{-1}(\alpha)+\ell \A^{-1}(\beta)\right) \\
+  &=k \A^{-1}(\alpha)+\ell \A^{-1}(\beta) 
+  \end{align*}
+
+\end{frame}
+
+
+\begin{frame}{五、线性变换的多项式}
+\small{
+当 $n$ 个($n$ 是正整数)线性变换相乘时,我们就可以用
+\[
+\overbrace{\A \A \cdots\A}^{n}
+\]
+来表示, 称为 $\A$的 $n$ 次幂,简单地记作 $\A^n$.
+此外,作为定义, 令
+$$
+\mathscr{A}^{0}=\mathscr{E}.
+$$
+
+根据线性变换幂的定义, 可以推出指数法则：
+\[
+\mathscr{A}^{m+n}=\mathscr{A}^{m} \cdot \mathscr{A}^{n},\left(\mathscr{A}^{m}\right)^{n}=\mathscr{A}^{m n} \quad(m, n \geqslant 0)
+\]
+当线性变换$\A$可逆时,定义 $\A$的负整数幂为
+\[
+\mathscr{A}^{-n}=\left(\mathscr{A}^{-1}\right)^{n} \quad(n \text { 是正整数 })
+\]
+%这时, 指数法则可以推广到负整数幂的情形. 
+
+值得注意的是,线性变换乘积的指数法则不成立, 即一般说来\[
+(\mathscr{A} \mathscr{B})^{n} \neq \mathscr{A}^{n} \mathscr{B}^{n}
+\] }
+\end{frame}
+
+
+\begin{frame}
+
+
+设
+\[
+f(x)=a_{m} x^{m}+a_{m-1} x^{m-1}+\cdots+a_{0}
+\]
+是 $P[x]$ 中一多项式 $, \mathscr{A}$ 是 $V$ 的一线性变换,我们定义
+\[
+f(\A)=a_{m} \cdot \mathscr{A}^{m}+a_{m-1} \mathscr{A}^{m-1}+\cdots+a_{0} \mathscr{E}
+\]
+显然 , $f(\A)$ 是一线性变换,它称为线性变换$\A$的多项式. 
+
+如果在 $P[x]$中
+\[
+h(x)=f(x)+g(x), p(x)=f(x) g(x)
+\]
+那么
+\[
+h(\mathscr{\A})=f(\mathscr{A})+g(\mathscr{A}), p(\mathscr{A})=f(\mathscr{A}) g(\mathscr{A})
+\]
+特别地, 
+\[
+f(\A) g(\A)=g(\mathscr{A}) f(\mathscr{A})
+\]
+即同一个线性变换的多项式的乘法是可交换的.  
+
+%下面的例子表明,线性变换之间的一些关系可以通过线性变 换的运算表示出来. 
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+在线性空间 $P[\lambda]_{n}$ 中,求微商是一个线性变换,用$\mathscr{D}$表示.显然有
+\[
+\mathscr{D}^{n}=\O
+\]
+其次,变数的平移
+\[
+f(\lambda) \rightarrow f(\lambda+a) \quad(a \in P)
+\]
+\[
+\begin{aligned}
+f(\lambda+a)=f(\lambda)+a f^{\,\,\prime}(\lambda)+\frac{a^{2}}{2 !} f^{\, \, \prime \prime}(\lambda)+\cdots
++\frac{a^{n-1}}{(n-1) !} f^{\,\, (n-1)}(\lambda)
+\end{aligned}
+\]
+因之 $\mathscr{S}_{a}$ 实质上是 $\mathscr{D}$ 的多项式:
+\[
+\mathscr{S}_{a}=\mathscr{E}+a \mathscr{D}+\frac{a^{2}}{2 !} \mathscr{D}^{2}+\cdots+\frac{a^{n-1}}{(n-1) !} {\mathscr{D}^{n-1}}
+\]
+\end{exa} 
+\end{frame}
+
+
+\section{线性变换的矩阵}
+\begin{frame}{\S 3 线性变换的矩阵}
+设 $V$ 是数域 $P$ 上 $n$ 维线性空间 $, {\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 是 $V$ 的一组基,现在我们来建立线性变换与矩阵的关系. 
+\begin{itemize}
+	\item 
+空间 V 中任一向量 $\xi$可以由基${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$线性表出, 即
+\[
+\xi=x_{1} \varepsilon_{1}+x_{2} \varepsilon_{2}+\cdots+x_{n} \varepsilon_{n}
+\]
+其中系数是唯一确定的, 它们就是 $\xi$ 在这组基下的坐标. 
+
+	\item  由于线 性变换保持线 性关系不变, 因而在 $\xi$ 的像 $\A\xi$ 与基的像 $\A{\varepsilon}_{1}, \mathscr{A} {\varepsilon}_{2}, \cdots, \mathscr{A} {\varepsilon}_{n}$ 之间也必然有相同的关系 
+\[
+\begin{aligned}
+\mathscr{A} {\xi} &=\mathscr{A}\left(x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+x_{n} {\varepsilon}_{n}\right) \\
+&=x_{1} \mathscr{A}\left({\varepsilon}_{1}\right)+x_{2} \mathscr{A}\left({\varepsilon}_{2}\right)+\cdots+x_{n} \mathscr{A}\left({\varepsilon}_{n}\right)
+\end{aligned}
+\]
+
+	\item 上式表明,如果我们知道了基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 的像,那么线性空间中
+任意一个向量 $\xi$ 的像也就知道了
+\end{itemize}
+\end{frame}
+
+\begin{frame}{一、线性变换作用在基上}
+1. 设 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 是线性空间 $V$ 的一组基.如果线性变换
+$\A$与 $\B$在这组基上的作用相同,即
+$\mathscr{A} {\varepsilon}_{i}=\mathscr{B} {\varepsilon}_{i}, \quad i=1,2, \cdots, n$
+那么 $\mathscr{A}=\mathscr{B}$
+
+\pf 对$V$中任意向量$\xi$, 有
+\begin{align*} 
+\mathscr{A} {\xi} 
+&=\mathscr{A}\left(x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+x_{n} {\varepsilon}_{n}\right) \\ 
+&=x_{1} \mathscr{A}\left({\varepsilon}_{1}\right)+x_{2} \mathscr{A}\left({\varepsilon}_{2}\right)+\cdots+x_{n} \mathscr{A}\left({\varepsilon}_{n}\right) \\
+&=x_{1} \mathscr{B}\left({\varepsilon}_{1}\right)+x_{2} \mathscr{B}\left({\varepsilon}_{2}\right)+\cdots+x_{n} \mathscr{B}\left({\varepsilon}_{n}\right) \\
+&=\mathscr{B}\left(x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+x_{n} {\varepsilon}_{n}\right) \\ 
+&= \mathscr{B} {\xi} 
+\end{align*}
+因此, $\mathscr{A}=\mathscr{B}$. \qed
+
+结论 1 的意义就是, 一个线性变换完全被它在一组基上的作 用所决定.
+\end{frame}
+
+\begin{frame}
+下面我们进一步指出,基向量的像却完全可以是任意 的, 也就是说, 
+
+2. 设 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 是线性空间 $V$ 的一组基.对任意一组
+向量 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{n}$ 一定有一个线性变换 $\A$ 使
+\[
+\A \varepsilon_{i}={\a}_{i}, \quad i=1, 2, \cdots, n
+\]
+
+\pf 
+我们来作出所要的线性变换.设
+\[
+\xi=\sum_{i=1}^{n} x_{i} \varepsilon_{i}
+\]
+是线性空间 V 的任意一个向量,我们定义 V 的变换 $\A$为
+\[
+\mathscr{A} \xi=\sum_{i=1}^{n} x_{i} {\alpha}_{i}
+\]
+\end{frame}
+
+\begin{frame}
+下面来证明变换 $\A$是线性的. 
+在 $V$ 中任取两个向量, 
+\[
+{\beta}=\sum_{i=1}^{n} b_{i} \, {\varepsilon}_{i}, \quad \gamma=\sum_{i=1}^{n} c_{i}\, {\varepsilon}_{i}
+\]
+于是
+\begin{align*}
+{\beta}+\gamma =\sum_{i=1}^{n}\left(b_{i}+c_{i}\right) {\varepsilon}_{i}, \qquad 
+k {\beta}  =\sum_{i=1}^{n} k b_{i} \, {\varepsilon}_{i},  \quad k \in P
+\end{align*}
+于是, 
+\begin{align*}
+\mathscr{A}({\beta}+{\gamma})& =\sum_{i=1}^{n}\left(b_{i}+c_{i}\right) {\alpha}_{i}\\
+&=\sum_{i=1}^{n} b_{i} {\alpha}_{i}+\sum_{i=1}^{n} c_{i} {\alpha}_{i}=\mathscr{A} {\beta}+\omega {\gamma} \\
+\mathscr{A}({k} {\beta}) &=\sum_{i=1}^{n} k b_{i} {\alpha}_{i}=k \sum_{i=1}^{n} b_{i} {\alpha}_{i}=k   {\beta}
+\end{align*}
+因此, $\mathscr{A}$是线性变换. 
+\end{frame}
+
+\begin{frame}
+再来证$\A$满足$\A \varepsilon_{i}={\a}_{i}, \quad i=1, 2, \cdots, n$.
+因为
+\[
+{\varepsilon}_{i}=0 {\varepsilon}_{1}+\cdots+0 {\varepsilon}_{i-1}+1 {\varepsilon}_{i}+0 {\varepsilon}_{i+1}+\cdots+0 {\varepsilon}_{n}, \quad i=1,2, \cdots, n
+\]
+所以
+\[
+\A \varepsilon_{i}=0 {\alpha}_{1}+\cdots+0 {\alpha}_{i-1}+1 {\alpha}_{i}+0 {\alpha}_{i+1}+\cdots+0 {\alpha}_{n}={\alpha}_{i} \quad i=1,2, \cdots, n 
+\]
+证毕.\qed
+综合以上两点,得 
+\begin{thm}
+设 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 是线性空间 $V$ 的一组基, ${\a}_{1},$
+${\alpha}_{2}, \cdots, {\alpha}_{n}$ 是 $V$ 中任意 $n$ 个向量, 存在唯一的线性变换 $\A$ 使
+\[
+\mathcal{A} {\varepsilon}_{i}={\alpha}_{i}, \quad i=1,2, \cdots, n.
+\]
+
+\end{thm}
+\end{frame}
+
+
+\begin{frame}{二、线性变换在一组基下的矩阵}
+有了以上的讨论, 我们就可以来建立线性变换与矩阵的联系.
+
+\begin{itemize}
+	\item  设 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 是数域 $P$ 上 $n$ 维线性空间 $V$ 的一组基, $\A$ 是$V$ 中的一个线性变换, 基向量的像可以被基线性表出：
+	$$\left\{\begin{array}{cc}
+	\A \varepsilon_{1} & =  a_{11} \varepsilon_{1}+a_{21} \varepsilon_{2}+\cdots+a_{n 1} \varepsilon_{n} \\
+	\A \varepsilon_{2} & =  a_{12} \varepsilon_{1}+a_{22} \varepsilon_{2}+\cdots+a_{n 2} \varepsilon_{n} \\ 
+	\cdots &   \cdots \cdots \\ 
+	\A \varepsilon_{n} & =  a_{1 n} \varepsilon_{1}+a_{2 n} \varepsilon_{2}+\cdots+a_{n n} \varepsilon_{n}
+	\end{array}\right.$$
+	\item 写成矩阵的形式
+	\begin{align*}
+	\left(\mathscr{A} \varepsilon_{1}, \mathscr{A} \varepsilon_{2}, \ldots, \mathscr{A} \varepsilon_{n}\right)
+	=\left(\varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{n}\right)
+	\left(
+	\begin{array}{cccc} 
+	a_{11} & a_{12} & \cdots & a_{1 n} \\
+	a_{21} & a_{22} & \cdots & a_{2 n} \\
+	\vdots & \vdots & & \vdots \\
+	a_{n 1} & a_{n 2} & \cdots & a_{n n}
+	\end{array}
+	\right)
+	\end{align*}
+\end{itemize}
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\begin{defi}矩阵
+	\[
+	{A}=\left(\begin{array}{cccc}
+	a_{11} & a_{12} & & a_{1 n} \\
+	a_{21} & a_{22} & \cdots & a_{2 n} \\
+	\vdots & \vdots & & \vdots \\
+	a_{n 1} & a_{n 2} & \cdots & a_{n n}
+	\end{array}\right)
+	\]
+	称为 线性变换$\A$在基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的矩阵.
+\end{defi}
+记$\A \left(\varepsilon_{1}, \varepsilon_{2}, \dots, \varepsilon_{n}\right):=\left(\A \varepsilon_{1}, \A \varepsilon_{2}, \dots, \A \varepsilon_{n}\right)$. 于是, 
+\begin{align}\label{eq-A}
+\A  \left(\varepsilon_{1}, \varepsilon_{2}, \dots, \varepsilon_{n}\right)  =\left( \varepsilon_{1}, \varepsilon_{2}, \dots, \varepsilon_{n}\right) A.
+\end{align}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+设$V$是数域$P$上$n$维线性空间, 则
+\begin{itemize}
+\item 恒等变换在任一组基下的矩阵是\underline{\qquad \qquad}
+\item 零变换在任一组基下的矩阵是\underline{\qquad \qquad}
+\item 由$k$决定的数乘变换在任一组基下的矩阵是\underline{\qquad \qquad}
+\end{itemize}
+\pause
+\end{exa}
+\begin{itemize}
+\item $n$阶单位矩 阵 $E$
+\item $n$阶 零矩阵${O}$
+\item $n$阶数量矩阵 $k E$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+设$P^{\,3}$的线性变换$\A$为 $\A\left(x_{1}, x_{2}, x_{3}\right)=\left(x_{1}, x_{2}, x_{1}+x_{2}\right)$
+取一组基 $\varepsilon_{1}=(1,0,0), \varepsilon_{2}=(0,1,0), \varepsilon_{3}=(0,0,1)$
+则 
+$$
+\begin{array}{llll}
+\mathscr{A} \varepsilon_{1} = &  \varepsilon_{1} & \quad& +\varepsilon_{3}\\
+\mathscr{A} \varepsilon_{2} = & \quad & \varepsilon_{2}& +\varepsilon_{3}\\
+\mathscr{A} \varepsilon_{3} = &  0& &
+\end{array}
+$$
+所以下$\A$在基$\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}$ 的矩阵为
+\pause  $$\left(\begin{array}{lll}1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 1 & 0\end{array}\right)$$
+\end{exa}
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+	在空间 $P[x]_n$ 中,线性变换
+	\[
+	\mathscr{D} f(x)=f^{\,\prime}(x)
+	\]
+	在基 $1, x, \frac{x^{2}}{2 !}, \ldots, \frac{x^{n-1}}{(n-1) !}$ 下的矩阵是\pause
+	\[
+	{D}=\left(\begin{array}{ccccc}
+	0 & 1 & 0 & \cdots & 0 \\
+	0 & 0 & 1 & \cdots & 0 \\
+	\vdots & \vdots & \vdots & & \vdots \\
+	0 & 0 & 0 & & 1 \\
+	0 & 0 & 0 & \cdots & 0
+	\end{array}\right)
+	\]
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+设 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{m}$ 是 $n(n>m)$ 维线性空间 $V$ 的子空间
+W 的一组基, 把它扩充为 V 的一组基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$.  指定线性变换
+$\A$ 如下
+\[
+\left\{\begin{array}{l}
+\mathscr{A} {\varepsilon}_{i}={\varepsilon}_{i}, \text { 当 } i=1,2, \cdots, m \\
+\mathscr{A} {\varepsilon}_{i}={0}, \text { 当 } i=m+1, \cdots, n
+\end{array}\right.
+\]
+如此确定的线性变换 $\A$称为对子空间 $W$ 的一个投影. 于是
+\[
+\mathscr{A}^{2}=\mathscr{A}
+\]
+投影 $\A$在基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的矩阵是
+$$\left(\begin{array}{cc}
+E_m & 0\\
+0& 0
+\end{array}\right)$$
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+\item 在取定一组基之后, 我们就建立了由数域 $P$ 上的 $n$ 维线性空间 $V$ 的线性变换到数域 $P$ 上的 $n \times n$ 矩阵的一个映射. 
+
+\item 前 面的结论 1 说明这个映射是单射, 结论 2 说明这个映射是满射. 换 句话说,我们在这二者之间建立了一个双射. 
+\item 这个对应的重要性表 现在它保持运算, 即有
+\end{itemize}
+
+\begin{thm}
+设 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 是数域 $P$ 上 $n$ 维线性空间 $V$ 的一
+组基,在这组基下,每个线性变换按公式\eqref{eq-A}对应一个 $n \times n$ 矩阵. 这个对应具有以下的性质：
+\begin{enumerate}
+	\item 线性变换的和对应于矩阵的和,
+	\item 线性变换的乘积对应于矩阵的乘积,
+	\item 线性变换的数量乘积对应于矩阵的数量乘积,
+	\item 可逆的线性变换与可逆矩阵对应,且逆变换对应于逆矩
+	阵.
+\end{enumerate}
+\end{thm}
+\end{frame}
+
+\begin{frame}
+	\pf 设 $\mathscr{A}, \mathscr{B}$ 是两个线性变换,它们在基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的
+	矩阵分别是 ${A}, {B},$ 即
+	\[
+	\begin{array}{l}
+	\mathscr{A}\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right)=\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right) {A} \\
+	\mathscr{B}\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right)=\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right) {B}
+	\end{array}
+	\]
+	1) 由
+	\[
+	\begin{aligned}
+	&(\mathscr{A}+\mathscr{B})\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right) \\
+	=& \mathscr{A}\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right)+\mathscr{P}\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right) \\
+	=&\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right) {A}+\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right) {B} \\
+	=&\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right)({A}+{B})
+	\end{aligned}
+	\]
+	可知,在基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下,线性变换 $\mathscr{A}+\mathscr{B}$ 的矩阵是 ${A}+{B}$
+	
+	2) 相仿地, 
+	\[
+	\begin{aligned}
+	&(\mathscr{A} \mathscr{B})\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right)=\mathscr{A}\left(\mathscr{B}\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right)\right) \\
+	=& \mathscr{A}\left(\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right) {B}\right)=\left(\mathscr{A}\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right)\right) {B} \\
+	=&\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right) {A} {B}
+	\end{aligned}
+	\]
+	因此, 在基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下,线性变换 $\mathscr{A B}$ 的矩阵是 ${A} {B}$
+\end{frame}
+
+\begin{frame}
+	3) 因为
+	\[
+	\left(k \varepsilon_{1}, k \varepsilon_{2}, \cdots, k \varepsilon_{n}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) k E
+	\]
+	所以数乘变换 从在任何一组基下都对应于数量矩阵 $k {E}$. 由此可 知,数量乘积 $k \A$ 对应于矩阵的数量乘积 $k {A}$
+	
+	4) 单位变换 $\E$对应于单位矩阵,因之等式
+	\[
+	\mathscr{A} \mathscr{B}=\mathscr{B} \mathscr{A}=\mathscr{E}
+	\]
+	与等式
+	\[
+	{A B}={B A}={E}
+	\]
+	相对应, 从而可逆线性变换与可逆矩阵对应, 而且逆变换与逆矩阵 对应. 
+	\qed
+	
+	定理 2 说明数域 $P$ 上 $n$ 维线性空间 $V$ 的全部线性变换组成
+	
+	的集合 $L(V)$对于线性变换的加法与数量乘法构成 $P$ 上一个线性 空间,与数域 $P$ 上 $n$ 级方阵构成的线性空间 $P^{n \times n}$ 同构. 
+\end{frame}
+
+
+\begin{frame}{三、向量的象的坐标}
+
+\begin{thm}
+设线性变换$\A$在基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n},$ 下的矩阵是 ${A}$,  $\xi$在基
+${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的坐标 $\left(x_{1}, x_{2}, \cdots, x_{n}\right)$,
+则
+向量$\A \xi$在基
+${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的坐标 $\left(y_{1}, y_{2}, \cdots, y_{n}\right)$ 可以按公式
+\[
+\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right)=A\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right)
+\]
+计算. 
+\end{thm}
+\end{frame}
+
+
+\begin{frame}
+\pf 由假设
+\[
+\xi=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right)\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right)
+\]
+于是
+\begin{align*}
+\A \xi & =\left(\A \varepsilon_{1}, \A \varepsilon_{2}, \cdots, \A \varepsilon_{n}\right)\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right) \\
+& =\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) A\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right)
+\end{align*}
+
+\end{frame}
+
+
+\begin{frame}
+另一方面,由假设
+\[
+d \xi=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right)\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right)
+\]
+由于 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 线性无关,所以
+\[
+\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right)=A\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right) .
+\]
+\qed
+
+\end{frame}
+
+\begin{frame}{四、线性变换在不同基下的矩阵}
+\begin{itemize}
+	\item 线性变换的矩阵是与空间中一组基联系在一起的.
+	\item 一般说来,  随着基的改变,同一个线性变换就有不同的矩阵.
+	\item 为了利用矩阵来 研究线性变换,我们有必要弄清楚线性变换的矩阵是如何随着基的改变而改变的. 
+\end{itemize}
+
+\begin{thm}
+设线性空间 $V$ 中线性变换 $\A$在两组基
+\begin{align}
+	{\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}  \label{b-1} \tag{I}\\
+	{\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n} \label{b-2} \tag{II}
+\end{align}
+下的矩阵分别为$A$和$B$, 从基\eqref{b-1}到\eqref{b-2}的过渡矩阵是 $X$, 于是 ${B}={X}^{-1} {A X}$
+\end{thm}
+\end{frame}
+
+\begin{frame}
+\pf 已知
+\[
+\begin{array}{c}
+\left(\mathscr{A} {\varepsilon}_{1}, \A {\varepsilon}_{2}, \cdots, \mathscr{A} {\varepsilon}_{n}\right)=\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right) {A} \\
+\left(\A{\eta}_{1}, \A {\eta}_{2}, \cdots, \A {\eta}_{n}\right)=\left({\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}\right) {B} \\
+\left({\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}\right)=\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right) {X}
+\end{array}
+\]
+于是
+$$
+\begin{aligned} 
+& \left( \mathscr{A} \eta_{1}, \mathscr{A} \eta_{2}, \ldots, \mathscr{A} \eta_{n}\right)
+=   \mathscr{A} \left({\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}\right)  \\
+= & \, \A\left(\left( \varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{n}\right) X \right) 
+=    \left( \A \left(\varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{n}\right)\right) X \\
+=  &  \left( \A \varepsilon_{1}, \A \varepsilon_{2}, \ldots, \A \varepsilon_{n}\right) X
+=   \left(\varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{n}\right) A X \\
+= &     \left(\eta_{1}, \eta_{2}, \ldots, \eta_{n}\right) X^{-1} A X \end{aligned}
+ $$
+由此即得
+\[
+{B}={X}^{-1} {A} {X}.
+\]
+\qed
+定理 4 告诉我们,同一个线性变换 \&在不同基下的矩阵之间 的关系.这个基本关系在以后的讨论中是重要的.
+
+
+\end{frame}
+ 
+ 
+\begin{frame}
+现在,我们对于 矩阵引进相应的定义. 
+\begin{defi}
+ 设 A,B 为数域 P上两个 n 级矩阵,如果可以找到 数域 $P$ 上的 $n$ 级可逆矩阵 X ,使得 ${B}={X}^{-1} {A X}$,就说 ${A}$ 相似手
+${B},$ 记作 ${A} \sim {B}$
+\end{defi}
+相似是矩阵之间的一种关系, 这种关系具有下面三个性质：
+\begin{enumerate}
+	\item 反身性 : $A \sim A$ 这是因为 ${A}={E}^{-1} {A} {E}$
+	\item 对称性:如果 ${A} \sim {B},$ 那么 ${B} \sim {A}$.
+	
+	如果 ${A} \sim {B}$,那么有 ${X}$ 使 ${B}={X}^{-1} {A} {X}$.
+	
+	令 ${Y}={X}^{-1}$,就有 ${A}=$
+	${X B X}^{-1} = {Y}^{-1} {B Y},$ 所以 ${B} \sim {A}$
+	\item 传递性:如果 ${A} \sim {B}, {B} \sim {C},$ 那么 ${A} \sim {C}$.
+	
+	已知有 ${X}, {Y}$ 使 ${B}={X}^{-1} {A} {X}, {C}={Y}^{-1} {B} {Y}$.
+	
+	令 ${Z}={X} {Y},$ 就有
+	${C}={Y}^{-1} {X}^{-1} {A} {X} {Y}={Z}^{-1} {A} {Z}$. 
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+因之
+有了矩阵相似的概念之后,定理 4 可以补充成： 
+\begin{thm}
+\begin{itemize}
+	\item 线性变换在不同基下所对应的矩阵是相似的; 反过
+	来,
+	\item 如果两个矩阵相似,那么它们可以看作同一个线性变换在两组 基下所对应的矩阵. 
+\end{itemize}
+\end{thm}
+
+\pf  前一部分已经为定理 4 证明.
+
+现在证明后一部分.设 级矩阵 A 和 B 相似. A 可以看做是 $n$ 维线性空间 V 中一个线性 变换 $\A$ 在基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的矩阵.因为 ${B}={X}^{-1} {A} {X},$ 令
+\[
+\left({\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}\right)=\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right) {X}
+\]
+因为$X$可逆, 所以 ${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}$ 也是一组基, $\A$ 在这组基下的矩阵就是 ${B}$. \qed
+\end{frame}
+
+
+\begin{frame}
+矩阵的相似对于运算有下面的性质.  
+
+\begin{itemize}
+	\item 如果 ${B}_{1}={X}^{-1} {A}_{1} {X}, {B}_{2}={X}^{-1} {A}_{2} {X}$, 那么
+\begin{align*}
+	{B}_{1}+{B}_{2} & ={X}^{-1}\left({A}_{1}+{A}_{2}\right) {X}, \\
+	{B}_{1} {B}_{2} & ={X}^{-1}\left({A}_{1} {A}_{2}\right) {X}
+\end{align*}
+	\item 如果 ${B}={X}^{-1} {A} {X},$ 且 $f(x)$ 是数域 $P$ 上一多项式,那么
+	\[
+	f({B})={X}^{-1} f({A}) {X}
+	\]
+	
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+利用矩阵相似的这个性质可以简化矩
+阵的计算. 
+\begin{exa}
+设 $V$ 是数域 $P$ 上一个二维线性空间, ${\varepsilon}_{1}, {\varepsilon}_{2}$ 是一组基,
+线性变换 $\A$在 ${\varepsilon}_{1}, {\varepsilon}_{2}$ 下的矩阵是
+\[
+\left(\begin{array}{rr}
+2 & 1 \\
+-1 & 0
+\end{array}\right)
+\]
+现在来计算 $\A$在 $V$ 的另一组基 ${\eta}_{1}, {\eta}_{2}$ 下的矩阵,这里
+\[
+\left({\eta}_{1}, {\eta}_{2}\right)=\left({\varepsilon}_{1}, {\varepsilon}_{2}\right)\left(\begin{array}{rr}
+1 & -1 \\
+-1 & 2
+\end{array}\right)
+\]
+由定理 4, $\A$在 ${\eta}_{1}, {\eta}_{2}$ 下的矩阵为
+\[
+\begin{array}{l}
+\left(\begin{array}{rr}
+1 & -1 \\
+-1 & 2
+\end{array}\right)^{-1}\left(\begin{array}{rr}
+2 & 1 \\
+-1 & 0
+\end{array}\right)\left(\begin{array}{rr}
+1 & -1 \\
+-1 & 2
+\end{array}\right) =\left(\begin{array}{rr}
+1 & 1 \\
+0 & 1
+\end{array}\right)
+\end{array}
+\]
+\end{exa}
+\end{frame}
+
+\begin{frame}
+归纳可知, 
+\[
+\left(\begin{array}{ll}
+1 & 1 \\
+0 & 1
+\end{array}\right)^{k}=\left(\begin{array}{ll}
+1 & k \\
+0 & 1
+\end{array}\right)
+\]
+再利用上面得到的关系
+\[
+\left(\begin{array}{rr}
+1 & -1 \\
+-1 & 2
+\end{array}\right)^{-1}\left(\begin{array}{rr}
+2 & 1 \\
+-1 & 0
+\end{array}\right)\left(\begin{array}{rr}
+1 & -1 \\
+-1 & 2
+\end{array}\right)=\left(\begin{array}{ll}
+1 & 1 \\
+0 & 1
+\end{array}\right)
+\]
+即
+\[
+\left(\begin{array}{rr}
+2 & 1 \\
+-1 & 0
+\end{array}\right)=\left(\begin{array}{rr}
+1 & -1 \\
+-1 & 2
+\end{array}\right)\left(\begin{array}{rr}
+1 & 1 \\
+0 & 1
+\end{array}\right)\left(\begin{array}{rr}
+1 & -1 \\
+-1 & 2
+\end{array}\right)^{-1}
+\]
+\end{frame}
+
+\begin{frame}
+
+
+我们可以得到
+\[
+\begin{aligned}
+\left(\begin{array}{rr}
+2 & 1 \\
+-1 & 0
+\end{array}\right)^{k} &=\left(\begin{array}{rr}
+1 & -1 \\
+-1 & 2
+\end{array}\right)\left(\begin{array}{rr}
+1 & 1 \\
+0 & 1
+\end{array}\right)^{k}\left(\begin{array}{rr}
+1 & -1 \\
+-1 & 2
+\end{array}\right)^{-1} \\
+&=\left(\begin{array}{rr}
+1 & -1 \\
+-1 & 2
+\end{array}\right)\left(\begin{array}{rr}
+1 & k \\
+0 & 1
+\end{array}\right)\left(\begin{array}{rr}
+2 & 1 \\
+1 & 1
+\end{array}\right) \\
+&=\left( \begin{array}{cc}
+k+1 & k \\
+-k & -k+1
+\end{array}\right).
+\end{aligned}
+\]
+
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+	取 $P^{3}$ 的线性变换 $\sigma(a, b, c)=(2 a-b, b+c, a)$
+\begin{enumerate}
+
+\item 求 $\sigma$ 在基 $\varepsilon_{1}=(1,0,0), \varepsilon_{2}=(0,1,0), \varepsilon_{3}=(0,0,1)$ 下的矩阵;
+\item 求 $\sigma$ 在基 $\eta_{1}=(1,0,0), \eta_{2}=(1,1,0), \eta_{3}=(1,1,1)$ 下的矩阵;
+\item 求向量 $\alpha=(1,2,3)$ 的像 $\sigma \alpha$ 分别在基 $\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}$ 和 $\eta_{1}, \eta_{2}, \eta_{3}$ 下的坐标.	
+\end{enumerate}
+\end{exa}
+\end{frame}
+
+\begin{frame}
+
+\sol~ 
+
+\small{(1) 
+$\sigma \varepsilon_{1}
+=\sigma(1,0,0)=(2,0,1)
+=\left(\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}\right)
+\left(\begin{array}{l}2 \\ 0 \\ 1\end{array}\right)$, 
+
+~~~~
+$\sigma \varepsilon_{2}
+=\left(\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}\right)
+\left(\begin{array}{c}-1 \\ 1 \\ 0\end{array}\right), \quad
+\sigma \varepsilon_{3}
+=\left(\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}\right)\left(\begin{array}{l}0 \\ 1 \\ 0\end{array}\right),$
+
+则 $$\sigma\left(\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}\right)A, \quad \mbox{其中 }A=\left(\begin{array}{ccc}2 & -1 & 0 \\ 0 & 1 & 1 \\ 1 & 0 & 0\end{array}\right)$$
+
+
+(2) $\left(\eta_{1}, \eta_{2}, \eta_{3}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}\right)C$, \quad 其中$C=\left(\begin{array}{ccc}1 & 1 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1\end{array}\right)_{}$,则 $\sigma$ 在基 $\eta_{1}, \eta_{2}, \eta_{3}$ 下的矩阵为 $C^{-1} A C=
+\left(\begin{array}{ccc}2 & 0 & -1 \\ -1 & 0 & 1 \\ 1 & 1 & 1\end{array}\right)$
+}
+\end{frame}
+
+\begin{frame}
+	
+(3) $\alpha=\left(\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}\right)\left(\begin{array}{l}1 \\ 2 \\ 3\end{array}\right)$, 
+
+$\sigma \alpha=\sigma\left(\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}\right)\left(\begin{array}{l}1 \\ 2 \\ 3\end{array}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}\right) A\left(\begin{array}{l}1 \\ 2 \\ 3\end{array}\right)
+=\left(\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}\right) \left(\begin{array}{l}0 \\ 5 \\ 1\end{array}\right)
+$
+
+$
+\sigma \alpha
+=\left(\eta_{1}, \eta_{2}, \eta_{3}\right) C^{-1} 
+	\left(\begin{array}{l}0 \\ 5 \\ 1	\end{array}\right)
+= \left(\eta_{1}, \eta_{2}, \eta_{3}\right)
+	\left(\begin{array}{c} -5 \\ 4 \\ 1	\end{array}\right)
+$
+\end{frame}
+
+\section{特征值与特征向量}
+\begin{frame}{\S 4 特征值与特征向量}
+\begin{itemize}
+\item 我们知道,在有限维线性空间中,取了一组基之后,线性变换 就可以用矩阵来表示.
+
+\item 为了利用矩阵来研究线性变换,对于每个给 定的线性变换,我们希望能找到一组基使得它的矩阵具有最简单 的形式.
+
+\item 从现在开始,我们主要地就来讨论,在适当的选择基之后,  一个线性变换的矩阵可以化成什么样的简单形式.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+%$\begin{aligned} {P}^{-1} {A P} &=\Lambda \\ \text { 其中 } \Lambda &=\left(\begin{array}{ccc}\lambda_{1} & \\ & \lambda_{2} \\ & & \ddots \\ & & \lambda_{n}\end{array}\right) \\ &=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right) \end{aligned}$
+
+
+设 $A$ 是 $n$ 阶方阵, ${P}$ 为 ${n}$ 阶可逆阵, 
+$${P}^{-1} {A P}=\Lambda$$
+其中
+$\Lambda =\operatorname{diag}\left\{\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right\}$
+
+令$P=\left(p_{1}, p_{2}, \cdots, p_{n}\right)$
+\begin{align*}
+& {P}^{-1} {A} P=\Lambda \\
+\Leftrightarrow & 	A \left(p_{1}, p_{2}, \cdots, p_{n}\right)
+=\left(p_{1}, p_{2}, \cdots, p_{n}\right) 
+\operatorname{diag}\left\{\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right\}\\
+\Leftrightarrow	&	\left(A p_{1}, A p_{2}, \cdots, A p_{n}\right)	
+=	\left(\lambda_{1} p_{1}, \lambda_{2} p_{2}, \cdots, \lambda_{n} p_{n}\right)\\
+\Leftrightarrow &  A p_{i}=\lambda_{i} p_{i}, i=1,2, \cdots, n
+\end{align*}
+此过程的逆推在最后一步要求矩阵 P是可逆的。
+\end{frame}
+
+\begin{frame}
+为了这个目的,  先介绍特征值和特征向量的概念,它们对于线性变换的研究具有 基本的重要性.  
+\begin{defi}
+设 $\A$ 是数域 $P$ 上线性空间 $V$ 的一个线性变换,如果 对于数域 $P$ 中一数 $\lambda_{0},$ 存在一个非零向量 ${\xi}$,使得
+\[
+\A \xi=\lambda_{0} \xi
+\]
+个特征向量. 
+\end{defi}
+从几何上来看,特征向量的方向经过线性变换后,保持在同一 条直线上,这时或者方向不变( $\lambda_{0}>0$ ) ,或者方向相反 $\left(\lambda_{0}<0\right),$ 至
+于 $\lambda_{0}=0$ 时,特征向量就被线性变换变成 $\mathbf{0}$
+\end{frame}
+
+
+
+\begin{frame}
+如果 $\xi$ 是线性变换$\A$的属于特征值$\lambda_0$的特征向量,那么 的任何一个非零倍数$k\xi$ 也是 $\A$的属于 $\lambda_{0}$ 的特征向量. 因为$\A \xi=\lambda_{0} \xi$, 所以
+\[
+\mathscr{A}(k \xi)=\lambda_{0}(k \xi)
+\]
+这说明特征向量不是被特征值所唯一确定定的.相反,特征值却是被 特征向量所唯一确定的,因为,一个特征向量只能属于一个特征值.
+\end{frame}
+
+
+
+\begin{frame}
+现在来给出寻找特征值和特征向量的方法, 设 $V$ 是数域 $P$ 上 $n$ 维线性空间, ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 是它的一组基,线性变换 $\A$ 在这组基
+下的矩 阵是 $A$. 设 $\lambda$是特征值, 它的一个特征向量 ${\xi}$ 在 ${\varepsilon}_{1}$ ${\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的坐标是 $x_{01}, x_{02}, \cdots, x_{0 n}$, 则 $\A \xi$的坐标是
+\[
+A\left(\begin{array}{c}
+x_{01} \\
+x_{02} \\
+\vdots \\
+x_{0 n}
+\end{array}\right)
+\]
+
+
+$\lambda_{0} \xi$ 的坐标是
+\[
+\lambda_{0}\left(\begin{array}{l}
+x_{01} \\
+x_{02} \\
+\vdots \\
+x_{0 n}
+\end{array}\right)
+\]
+
+\end{frame}
+
+
+
+\begin{frame}
+因此, $\A \xi=\lambda_{0} \xi$, 相当于坐标之间的等式
+\[
+{A}\left(\begin{array}{c}
+x_{01} \\
+x_{02} \\
+\vdots \\
+x_{0 n}
+\end{array}\right)=\lambda_{0}\left(\begin{array}{c}
+x_{01} \\
+x_{02} \\
+\vdots \\
+x_{0 n}
+\end{array}\right)
+\]
+或
+\[
+\left(\lambda_{0} {E}-{A}\right)\left(\begin{array}{c}
+x_{01} \\
+x_{02} \\
+\vdots \\
+x_{0 n}
+\end{array}\right)=\mathbf{0} \tag{*} \label{eq-*}
+\]
+\end{frame}
+
+
+\begin{frame}
+这说明特征向量 $\xi$ 的坐标$\left(x_{01}, x_{02}, \cdots, x_{0 n}\right)$ 满足齐次方程组
+即
+\[
+\left\{\begin{array}{rrrrr}
+\left(\lambda_{0}-a_{11}\right) x_{1}&-a_{12} x_{2}&-\quad \cdots& -a_{1 n} x_{n}&=0 \\
+-a_{21} x_{1}& +\left(\lambda_{0}-a_{22}\right) x_{2}& - \quad \cdots& -a_{2 n} x_{n}&=0 \\
+\cdots& \cdots &\cdots &\quad \cdots  & \\
+-a_{n 1} x_{1} & -a_{n 2} x_{2} & - \quad \cdots & +\left(\lambda_{0}-a_{n n}\right) x_{n}& =0
+\end{array}\right.
+\]
+由于 $\xi\neq \mathbf{0}$, 所以它的坐标  $x_{01}, x_{02}, \cdots, x_{0 n}$ 不全为零,即齐次方程 组有非零解.
+
+我们知道, 齐次线性方程组$(\lambda E-A)X=\mathbf{0}$有非零解的充分必要 条件是 它的系数行列式为零,即
+\[
+\left|\lambda_{0} {E}-{A}\right|=\left|\begin{array}{cccc}
+\lambda_{0}-a_{11} & -a_{12} &  \cdots & -a_{1 n} \\
+-a_{21} & \lambda_{0}-a_{22} &  \cdots & -a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+-a_{n 1} & -a_{n 2} & \cdots & \lambda_{0}-a_{n n}
+\end{array}\right|=0
+\]
+\end{frame}
+
+
+\begin{frame}
+我们引入以下的定义. 
+\begin{defi}
+$\lambda {E}-{A}$ 的行列式
+\[
+|\lambda {E}-{A}|=\left|\begin{array}{cccc}
+\lambda-a_{11} & -a_{12} &  \cdots &-a_{1 n} \\
+-a_{21} & \lambda-a_{22} & \cdots & -a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+-a_{n 1} & -a_{n 2} & \cdots & \lambda-a_{n n}
+\end{array}\right|
+\]
+称为 $A$ 的特征多项式,这是数域 $P$ 上的一个 $n$ 次多项式.
+\end{defi}
+
+
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item 上面的分析说明, 如果 $\lambda_0$是线 性变换 $\A$的特征值,那么 $\lambda_0$
+一定是矩阵 A 的特征多项式的一个根;
+\item 反过来,如果 $\lambda_{0}$ 是知阵 ${A}$ 的特征多项式在数域 P 中的一个根,即  $|\lambda_{0} {E}-{A} |=0,$ 那么齐 线性方程组$(\lambda E-A)X=\mathbf{0}$就有非零解. 
+\item 这时, 如果$\left( x_{01} ; x_{02}, \cdots, x_{0 n}\right)$ 是方程
+组$(\lambda E-A)X=\mathbf{0}$的一个非零解, 那么非零向量
+\[
+\xi=x_{01} \varepsilon_{1}+x_{02} \varepsilon_{2}+\cdots+x_{0 n} \varepsilon_{n}
+\]
+$\lambda_{0}$ 的一个特征向量. 
+\end{itemize}
+
+
+
+
+
+\end{frame}
+
+\begin{frame}
+求一个线性变换 $\A$的特征值与特征向量的方法可以
+分成以下几步 :
+\begin{enumerate}
+	\item 在线性空间 $V$ 中取一组基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n},$ 写出 $\mathscr{A}$ 在这组基下的矩阵 $A$ ;
+	\item 求出 $\A$ 的特征多项式| $\lambda {E}-{A} |$ 在数域 $P$ 中全部的根, 它们也就是线性变换 $\A$ 的全部特征值
+	\item 把所求得的特征值逐个地代入方程组$(\lambda E-A)X=\mathbf{0}$,对于每一个特 征值,解方程组$(\lambda E-A)X=\mathbf{0}$,求出一组基础解系, 它们就是属于这个特征值 的几个线性无关的特征向量在基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的坐标,这样,我
+	们也就求出了属于每个特征值的全部线性无关的特征向量. 
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{矩阵的特征值与特征向量}
+\begin{defi}
+\begin{itemize}
+	\item 矩阵 $A$ 的特征多项式的根称为$A$ 的特征值,
+	\item 相应的线性方程组$(\lambda E-A)X=\mathbf{0}$的解称为$A$的属于这个特征值的特征向量.  
+\end{itemize}
+
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+在 $n$ 维线性空间中,数乘变换$\mathscr{K}$ 在任意一组基下的矩 阵都且 $kE$, 它的特征多项式是
+\[
+|\lambda {E}-k {E}|=(\lambda-k)^{n}
+\]
+因此,数乘变换 从的特征值只有 $k$. 由定义可知,每个非零向量都 是属于数乘变换 $\mathscr{K}$ 的特征向量.
+\end{exa}
+\end{frame}
+
+
+
+\begin{frame}
+%\begin{exa}
+%设线性变换$\A$在基 ${\varepsilon}_{1}, {\varepsilon}_{2}, {\varepsilon}_{3}$ 下的矩阵是
+%\[
+%A=\left(\begin{array}{lll}
+%1 & 2 & 2 \\
+%2 & 1 & 2 \\
+%2 & 2 & 1
+%\end{array}\right)
+%\]
+%求 $\A$ 的特征值与特征向量. 
+%\end{exa}
+
+\begin{exa}
+设 $A=\left(\begin{array}{ccc}1 & 2 & 2 \\ 2 & 1 & 2 \\ 2 & 2 & 1\end{array}\right)$,求 $A$ 的特征值与对应的特征向量.
+\end{exa}
+
+\sol
+1~ 由矩阵 $A$ 的特征方程，求出特征值。
+
+$$|\lambda E-A|=\left|\begin{array}{ccc}\lambda-1 & -2 & -2 \\ -2 & \lambda-1 & -2 \\ -2 & -2 & \lambda-1\end{array}\right|=(\lambda+1)^{2}(\lambda-5),$$
+得
+$$\lambda_{1}=\lambda_{2}=-1, \lambda_{3}=5$$
+
+\end{frame}
+
+
+\begin{frame}
+2、把每个特征值$\lambda$代入线性方程组 $(A-\lambda E) x=0$
+求出基础解系。
+\begin{itemize}
+\item 再求属于 $\lambda_{1}=\lambda_{2}=-1$ 的特征向量,即求方程组 $(-E-A) X=0$ 的解.
+
+$$\left\{\begin{array}{l}-2 x_{1}-2 x_{2}-2 x_{3}=0 \\ -2 x_{1}-2 x_{2}-2 x_{3}=0,\end{array}\right.$$
+即 $$x_{1}+x_{2}+x_{3}=0,$$
+
+得基础解系为 
+$X_{1}=(1,-1,0)'$,
+$X_{2}=(1,0,-1)'$,
+
+$X_{1}, X_{2}$ 就是属于$\lambda_{1}=-1$ 的两个线性无关的特征向量,
+
+属于 $\lambda_{1}=-1$ 的全部特征向量为 $k_{1} X_{1}+k_{2} X_{2},$ 其中 $k_{1}, k_{2}$ 不全为零. 
+\end{itemize}
+\end{frame}
+\begin{frame}
+
+\begin{itemize}
+\item 最后求属于 $\lambda_{3}=5$ 的特征向量,即求方程组 $(5 E-A) X=0$ 的解.
+
+$$\left\{\begin{aligned} 4 x_{1}-2 x_{2}-2 x_{3} &=0 \\-2 x_{1}+4 x_{2}-2 x_{3} &=0
+\\-2 x_{1}-2 x_{2}+4 x_{3} &=0 \end{aligned}\right.,$$
+
+基础解系为  $X_{3}=(1,1,1)'$
+
+ $X_{3}$ 就是属于 $\lambda_{3}=5$ 的线性无关的特征向量,
+
+属于 $\lambda_{3}=5$ 的全部特征向量为 $k_{3} X_{3},$ 其中 $k_{3} \neq 0$.
+\end{itemize}
+
+\begin{rem}
+\begin{itemize}
+\item 审题时注意：题目要的求是矩阵的特征值与特征向量，还是线性变换的特征值与特征向量.
+
+\item 两者的特征值都是一样的，但矩阵的特征向量是$\mathbb{R}^n$中的向量，线性变换的的特征向量是$V$中的向量.
+\end{itemize}
+\end{rem}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+求矩阵 $A=\left(\begin{array}{ccc}-1 & 1 & 0 \\ -4 & 3 & 0 \\ 1 & 0 & 2\end{array}\right)$ 的特征值和特征向量.
+\end{exa}
+\sol 1~ 由矩阵 $A$ 的特征方程，求出特征值。
+\[
+\begin{aligned}
+|A-\lambda E| &=\left|\begin{array}{ccc}
+-1-\lambda & 1 & 0 \\
+-4 & 3-\lambda & 0 \\
+1 & 0 & 2-\lambda
+\end{array}\right|=(2-\lambda)\left|\begin{array}{cc}
+-1-\lambda & 1 \\
+-4 & 3-\lambda
+\end{array}\right| \\
+&=(2-\lambda)(\lambda-1)^{2}=0
+\end{aligned}
+\]
+特征值为 $\lambda=2,1$.
+\end{frame}
+
+
+\begin{frame}
+2~ 把每个特征值 $\lambda$ 代入线性方程组 $(A-\lambda E) X=\mathbf{0}$
+求出基础解系。
+\begin{itemize}
+	\item 当 $\lambda={2}$ 时， 解线性方程组 $(A-2 E) X=\mathbf{0}$
+\[
+(A-2 E)=\left(\begin{array}{ccc}
+-3 & 1 & 0 \\
+-4 & 1 & 0 \\
+1 & 0 & 0
+\end{array}\right) \rightarrow\left(\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0
+\end{array}\right)
+\]
+解得
+\[
+\left\{\begin{array}{l}{x}_{1}={0} \\ {x}_{2}={0}\end{array}\right.
+\]
+得基础解系  
+\[
+{p}_{1}=\left(\begin{array}{l} {0} \\ {0} \\ {1}\end{array}\right).
+\]
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{itemize}
+	\item 
+当 $\lambda=1$ 时， 解线性方程组 $(A-E) X=\mathbf{0}$
+
+\[
+(A-E)=\left(\begin{array}{ccc}-2 & 1 & 0 \\ -4 & 2 & 0 \\ 1 & 0 & 1\end{array}\right) \rightarrow\left(\begin{array}{lll}1 & 0 & 1 \\ 0 & 1 & 2 \\ 0 & 0 & 0\end{array}\right)
+\]
+解得
+\[
+\left\{\begin{array}{l}x_{1}+x_{3}=0 \\ x_{2}+2 x_{3}=0\end{array}\right.
+\]
+
+得基础解系 
+\[
+p_{2}=\left(\begin{array}{c}1 \\ -2 \\ 1\end{array}\right).
+\]
+\end{itemize}
+
+
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+在空间 $P[x]_n$ 中,线性变换
+\[
+\mathscr{D} f(x)=f^{\,\prime}(x)
+\]
+在基 $1, x, \frac{x^{2}}{2 !}, \ldots, \frac{x^{n-1}}{(n-1) !}$ 下的矩阵是
+\[
+{D}=\left(\begin{array}{ccccc}
+0 & 1 & 0 & \cdots & 0 \\
+0 & 0 & 1 & \cdots & 0 \\
+\vdots & \vdots & \vdots & & \vdots \\
+0 & 0 & 0 & & 1 \\
+0 & 0 & 0 & \cdots & 0
+\end{array}\right)
+\]
+\end{exa}
+\end{frame}
+
+\begin{frame}
+$\mathscr{D}$ 的特征多项式是 $|\lambda E-D|=\left|\begin{array}{ccccc}\lambda & -1 & 0 & \cdots & 0 \\ 0 & \lambda & -1 & \cdots & 0 \\ \vdots & \vdots & \vdots & & \vdots \\ 0 & 0 & 0 & \cdots & -1 \\ 0 & 0 & 0 & \cdots & \lambda\end{array}\right|=\lambda^{n}$
+
+$\mathscr{D}$ 的特征值只有0. 
+
+通过解相应的
+齐次线性方程组知道, 属于特征值0的线性
+无关的特征向量只能是任一非零常数. 
+%这表明微商为零的多项式只能是零或
+%非零的常数. 
+
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+平面上全体向量构成实数域上一个二
+维线性空间, 第一节例3中旋转变换$\mathscr{I}_{\theta}$在直角坐
+标系下的矩阵为
+\[
+\left(\begin{array}{cc}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{array}\right)
+\]
+它的特征多项式为 $\left|\begin{array}{cc}\lambda-\cos \theta & \sin \theta \\ -\sin \theta & \lambda-\cos \theta\end{array}\right|=\lambda^{2}-2 \lambda \cos \theta+1$
+
+当 $\theta \neq k \pi$ 时,这个多项式没有实根. 
+
+因之,当 $\theta \neq k \pi$ 时, $\mathscr{I}_{\theta}$没有特征值.
+
+%从几何上看, 这个结论是显然的.
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+\item 属于同一特征值$\lambda_0$ 的特征向量全体连同零向量构成$V$的一个子空间$V_{\lambda_{0}}$, 称其为\alert{特征子空间}. 
+用集合记号可号为 $$V_{\lambda_{0}}=\left\{\alpha |  \A \alpha=\lambda_{0} \alpha, \alpha \in V \right\}.$$
+它的维数等于属于同一特征值$\lambda_{0}$ 的线性无关特征向量的最大个数, 称为特征值$\lambda_0$的\alert{几何重数}. 
+\end{itemize}
+
+
+
+
+\end{frame}
+
+\begin{frame}{特征多项式的系数}{前两项}
+{
+$$|\lambda {E}-{A}|=\left|\begin{array}{cccc}\lambda-a_{11} & -a_{12} & & -a_{1n} \\ -a_{21} & \lambda-a_{22} & \dots & -a_{21} \\ \vdots & \vdots & & \vdots \\ -a_{n 1} & -a_{n 2} & \cdots & \lambda-a_{nn}\end{array}\right|$$
+
+\begin{itemize}
+	\item 展开式中有一项是主对角线上元素的连乘积 
+	$$\left(\lambda-a_{11}\right)\left(\lambda-a_{22}\right) \cdots\left(\lambda-a_{nn}\right).$$
+	\item 展开式中其余答项,至多包含 $n-2$ 个主对角线上的元素, 它对 $\lambda$ 的次数最多是 $n-2 .$
+\end{itemize}
+}
+\end{frame}
+
+\begin{frame}
+\small{
+ 因此,特征多项式中含 $\lambda$ 的 $n$ 次与 $n-1$ 次的项只能出现在主对角线上元素的连乘积中, 它们是
+\[
+\lambda^{n}\alert{-\left(a_{11}+a_{2}+\dots+a_{nn}\right)} \lambda^{n-1}
+\]
+在$|\lambda {E}-{A}|$中, 令$\lambda=0$, 得到常数项系数为 $$\alert{|-{A}|=(-1)^n|A|}$$
+\begin{prop}
+	\begin{itemize}
+		\item 如果只写出特征多项式的前两项和常数项, 就有
+		$$|\lambda E-A|= \lambda^{n}{-\left(a_{11}+a_{22}+\cdots+a_{nn}\right)} \lambda^{n-1}+ \cdots+{(-1)^n|A|}.$$
+		\item 由多项式的根与系数的关系可知
+		\[
+		\sum_{i=1}^{n} \lambda_{i}=\mbox{tr}({A}), \quad \prod_{i=1}^{n} \lambda_{i}=|{A}|, 
+		\]
+		其中
+		$\mbox{tr}({A}):=\sum_{i=1}^{n} {a}_{i i}$称为矩阵$A$的迹.
+	\end{itemize}
+\end{prop} }
+\end{frame}
+
+\begin{frame}
+%特征值自然是被线性变换所决定的.
+%但是在有限维空间中,任取一组基之后,特征值就是线性变换在这组基下矩阵的特征多项 式的根.随着基的不同,线性变换的矩阵一般是不同的. 但这些 矩阵是相似的, 
+%\item 相似矩阵有相同的特征多项式和相同的特征值.
+%\item 线性变换的特征值与基的选择无关.
+对于相似矩阵我们有 
+\begin{thm}
+相似的矩阵有相同的特征多项式.
+\end{thm}
+\pf 设 ${A} \sim {B},$ 即有可逆矩阵 ${X}$,使 ${B}={X}^{-1} {A X} .$ 于是
+\[
+\begin{aligned}
+|\lambda {E}-{B}| &=\left|\lambda {E}-{X}^{-1} {A} {X}\right|=\left|{X}^{-1}(\lambda {E}-{A}) {X}\right| \\
+&=\left|{X}^{-1}\right||\lambda {E}-{A}||{X}|=|\lambda {E}-{A}|.
+\qquad \qquad  \hfill{\rule{4pt}{7pt}}
+\end{aligned}
+\]
+\begin{itemize}
+\item 线性变换的矩阵的特征多项式与基的选择
+无关,它是直接被线性变换决定的.
+%因此,以后就可以说线性变换 的特征多项式了.  
+%\item 既然相似的矩阵有相同的特征多项式,当然特征多项式的各 项系数对于相似的矩阵来说都是相同的.觀如说,考虑特征多项式 的常数项,得到相似矩阵有相同的行列式.因此, 以后就可以说线 性变换的行列式了. 
+\item 定理 6 的逆是不对的, 特征多项式相同的矩阵不一定是相似的.例如
+\[
+{A}=\left(\begin{array}{ll}
+1 & 0 \\
+0 & 1
+\end{array}\right), {B}=\left(\begin{array}{ll}
+1 & 1 \\
+0 & 1
+\end{array}\right)
+\]
+它们的特征多项式都是$( \lambda-1 )^{2}$,但 ${A}$ 和 ${B}$ 不相似.
+
+这是因为与单位矩阵$A$相似的矩阵只能是$A$本身.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+	\item 设 $A=\left(\begin{array}{cc}A_{1} & A_{2} \\ 0 & A_{3}\end{array}\right)$,则 $f_{A}(\lambda)=f_{A_{1}}(\lambda) f_{A_{3}}(\lambda),$ 即 $|\lambda E-A|=\left|\lambda E-A_{1} \| \lambda E-A_{3}\right|$
+	\item 根据 $|A|=\prod_{i=1}^{n} \lambda_{i},$ 则 
+	
+	$|A|=0 \Leftrightarrow A$ 一定有零特征值.
+	
+	 $|A| \neq 0$ 	$\Leftrightarrow A$ 无零特征值,即特征值非零.
+	 
+	 例子: 设 $A=\left(\begin{array}{ll}1 & 1 \\ 2 & 2\end{array}\right)$,则 $|A|=0,$ 从而有一个零特征值,另一个为 $3 .$ 依据公式 $\sum_{i=1}^{n} a_{i i}=\sum_{i=1}^{n} \lambda_{i}$.
+	 
+	 \item  $f_{A}(\lambda)$ 在所考虑的数域范围内不一定有解,从而可以没有特征值.
+\end{itemize}
+
+
+
+\end{frame}
+\begin{frame}{哈密顿 - 凯莱(Hamilton-Caylay)定理 }
+%最后, 我们指出特征多项式的一个重要性质.  
+
+\begin{itemize}
+	\item 
+设 $A$ 是数域 $P$ 一个 $n \times n$ 矩阵, $f(\lambda)=|\lambda {E}-{A}|$ 是 ${A}$ 的特征多项式,则
+\[
+f({A})={A}^{n}-\left(a_{11}+a_{22}+\cdots+a_{n n}\right) {A}^{n-1}+\cdots+(-1)^{n}|{A}| {E}=0
+\]
+
+\item 设$\A$是有限维线性空间 $V$ 的线性变换, $f(\lambda)$ 是 $\mathscr{A}$ 的特征 多项式, 那么 $$f(\A)=\O.$$
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{prop}
+若$\lambda$是 $A$ 的特征值，即 $A X=\lambda X( X \neq 0),$ 则
+\begin{itemize}
+	\item  $k \lambda$ 是 ${k} {A}$ 的特征值 $({k} \text { 是常数 }),$ 且 ${k} A {X}={k} \lambda {X}$.
+	\item $\lambda^{m}$ 是 $A^{m}$ 的特征值 $\left(m \text { 是正整数) }, \text { 且 } A^{m} X=\lambda^{m} X\right.$
+	\item 若 $A$ 可逆，则 
+\begin{itemize}
+	\item $\lambda^{-1}$ 是 $A^{-1}$ 的特征值, 且 $A^{-1} X=\lambda^{-1} X$, 
+	\item $\lambda^{-1}|A|$ 是 $A^{*}$ 的特征值，且 $A^{*} X=\lambda^{-1}|A| X$.
+\end{itemize}
+	\item $\varphi(t)$ 为 $t$ 的多项式，则 $\varphi(\lambda)$ 是 $\varphi(A)$ 的特征值, 且 $\varphi(A) X=\varphi(\lambda) X$.
+	\item 矩阵 $A$ 和 $A^{\mathrm{T}}$ 的特征值相同，特征多项式相同。	
+\end{itemize}
+\end{prop}
+\end{frame}
+
+
+\section{对角矩阵}
+\begin{frame}{\S 5 对角矩阵}
+本节的目的: 研究什么样的线性变换,在一组基下的矩阵形式是对角阵. 
+\begin{qst}
+设3维线性空间的一个线性变换 $\A$ 在一组基 $\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}$ 下的矩阵为 $$A=\left(\begin{array}{ccc}1 & 2 & 2 \\ 2 & 1 & 2 \\ 2 & 2 & 1\end{array}\right).$$
+是否存在在一组基，使得 $\A$ 在这组基下的矩阵形式是对角阵. 
+\end{qst}
+
+
+
+\end{frame}
+
+
+\begin{frame}
+\sol
+\small{
+令 $X=\left(\begin{array}{ccc}1 & 1 & 1 \\ -1 & 0 & 1 \\ 0 & -1 & 1\end{array}\right)$,可知 $X$ 可逆.
+
+令 $$\left(\xi_{1}, \xi_{2}, \xi_{3}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}\right) X, $$
+
+即令
+$$\xi_{1}=\varepsilon_{1}-\varepsilon_{2}, \xi_{2}=\varepsilon_{1}-\varepsilon_{3}, \xi_{3}=\varepsilon_{1}+\varepsilon_{2}+\varepsilon_{3},$$
+
+则 $$\A \xi_{1}=-\xi_{1}, \A \xi_{2}=-\xi_{2}, \A \xi_{3}=5 \xi_{3},$$
+且
+$\xi_{1}, \xi_{2}, \xi_{3}$ 是线性空间的一组基.
+
+因此, 
+$\A$ 在这组基下的矩阵 
+\[
+X^{-1} A X = \left(\begin{array}{ccc}-1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 5\end{array}\right)
+\]
+是对角阵.
+}
+
+\end{frame}
+
+
+\begin{frame}
+%可以认为是矩阵中最简单的一种.现在我们来考察,  究竟哪一些线性变换的矩阵在一组适当的基下可以是对角矩阵. 
+\begin{thm}
+设 $\A$是 $n$ 维线性空间 $V$ 的一个线性变换$\A$ 的矩阵.
+
+ $\A$在某一组基下为对角矩阵$\Longleftrightarrow$$\A$有 $n$ 个线性 无关的特征向量.
+\end{thm}
+
+\pf 
+\small{
+	\begin{itemize}
+		\item 
+	设 $\A$在基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下具有对角矩阵
+	$$\mbox{diag}\left(  \lambda_{1}, \lambda_{2}, \ldots, \lambda_{n} \right),$$
+这就是说, 
+\[
+\mathscr{A} {\varepsilon}_{i}=\lambda_{i} {\varepsilon}_{i}, i=1,2, \cdots, n
+\]
+因此 , ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 就是 $\A$ 的 $n$ 个线性无关的特征向量.
+
+\item 反过来,如果 $\A$有 $n$ 个线性无关的特征向量 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n},$ 那
+么就取 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 为基, 在这组基下 $\mathscr{A}$ 的矩阵是对角矩阵. 
+\end{itemize}}
+\end{frame}
+
+
+\begin{frame}
+%为了进一步给出一些判别条件,我们来证 
+\begin{thm}
+属于不同特征值的特征向量是线性无关的.
+\end{thm}
+\pf
+对特征值的个数作数学归纳法.
+\begin{itemize}
+	\item 由于特征向量是不为零的,所以单个的特征向量必然线性无关. 
+	\item 现在设属于 $k$ 个不同 特征值伺特征向量线性无关.
+	\item 我们证明属于 $k+1$ 个不同特征值 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{k+1}$ 的特征向量 ${\xi}_{1}, {\xi}_{2}, \cdots, {\xi}_{k+1}$ 也线性无关.
+\end{itemize}
+\setcounter{equation}{0}
+
+假设有关系式
+\begin{equation}
+a_{1} \xi_{1}+a_{2} \xi_{2}+\cdots+a_{k} \xi_{k}+a_{k+1} \xi_{k+1}=0
+\end{equation}
+
+成立.等式两端乘以 $\lambda_{k+1}$,得
+\begin{equation}
+a_{1} \lambda_{k+1} \xi_{1}+a_{2} \lambda_{k+1} \xi_{2}+\cdots+a_{k} \lambda_{k+1} \xi_{k}+a_{k+1} \lambda_{k+1} \xi_{k+1}=0
+\end{equation}
+(1) 式两端同时施行变换 $\mathscr{A},$ 即有 
+\begin{equation}
+a_{1} \lambda_{1} \xi_{1}+a_{2} \lambda_{2} \xi_{2}+\cdots+a_{k} \lambda_{k} \xi_{k}+a_{k+1} \lambda_{k+1} \xi_{k+1}=0\end{equation}
+\end{frame}
+
+
+\begin{frame}
+
+
+(3) 减去(2)得到 $$a_{1}\left(\lambda_{1}-\lambda_{k+1}\right) \xi_{1}+\cdots+a_{k}\left(\lambda_{k}-\lambda_{k+1}\right) \xi_{k}=\mathbf{0}$$
+根据归纳法假设,  ${\xi}_{1}, {\xi}_{2}, \cdots, {\xi}_{k}$ 线性无关,于是
+\[
+a_{i}\left(\lambda_{i}-\lambda_{k+1}\right)=0, i=1,2, \cdots, k
+\]
+但 $\lambda_{i}-\lambda_{k+1} \neq 0(i \leqslant k),$ 所以 $a_{i}=0, i=1,2, \cdots, k$.
+
+这时 (1) 式变成
+$$a_{k+1} \xi_{k+1}=\mathbf{0}.$$
+又因为 $\xi_{k+1} \neq 0,$ 所以只有 $a_{k+1}=0.$ 
+
+这就证明了 $\xi_{1}$
+${\xi}_{2}, \cdots, {\xi}_{k+1}$ 线性无关.
+
+根据归纳法原理,定理得证. \qed
+
+\end{frame}
+
+
+
+\begin{frame}
+从上面这两个定理就得到
+
+\begin{coro}
+	在 $n$ 维线性空间 $V$ 中, 线性变换 $\A$ 的特征多项式在数域 $P$ 中有 $n$ 个不同的根,即 $\A$有 $n$ 个不同的特征值, 那么 $\A$在某组基下的矩阵是对角形的.
+\end{coro}
+
+复数域中任一个 $n$ 次多项式都有 $n$ 个根. 因此, 上面的 论断可以改写为 
+\begin{coro}
+	在复数域上的线性空间中,如果线性变换$\A$的特征 多项式没有重根,那么$\A$在某组基下的矩阵是对角形的. 
+\end{coro}
+\end{frame}
+
+\begin{frame}
+ 在一个线性变换没有 $n$ 个不同的特征值的情形,要判别这个 线性变换的矩阵能不能成为对角形,问题就要复杂些.
+ 
+ 为了利用定理 7,我们把定理 8 推广为 
+\begin{thm}
+	如果 $\lambda_{1}, \cdots, \lambda_{k}$ 是线性变换 $\A$ 的不同的特征值, 
+	而 ${\alpha}_{i 1}, \cdots, {\alpha}_{i_{r_i}}$ 是属于特征值 $\lambda_{i}$ 的线性无关的特征向量 $i=1, \cdots, k$, 
+	那么向量组 $${\alpha}_{11}, \cdots, {a}_{1 r_{1}}, \cdots, {a}_{k 1}, \cdots, {a}_{k r_{n}}$$ 也线性无关.
+\end{thm}
+
+根据这个定理,对于一个线性变换,求出属于每个特征值的线性无关的特征向量,把它们合在一起还是线性无关的.
+
+
+
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item 如果它们的 个数等于空间的维数,那么这个线性变换在一组合适的基下的矩 阵是对角矩阵;
+\item 如果它们的个数少于空间的维数,那么这个线性变 换在任何一组基下的矩阵都不能是对角形的
+\end{itemize}
+
+
+
+
+换句话说,设 A全 部不同的特征值是 $\lambda_{1}, \cdots, \lambda_{r},$ 于是 在某一组基下的矩阵成对角
+于空间的维数.  
+
+应该看到, 当线性变换$\A$在一组基下的矩阵 $A$ 是对角形时：
+	$$\mbox{diag}\left(  \lambda_{1}, \lambda_{2}, \ldots, \lambda_{n} \right),$$
+A 的特征多项式就显
+\[
+|\lambda{E}-{A}|=\left(\lambda-\lambda_{1}\right)\left(\lambda-\lambda_{2}\right) \cdots\left(\lambda-\lambda_{n}\right)
+\]
+因此,如果线性变换 
+线上的元素除排列次序外是确定的,它们正是 $\A$ 的特征多项式全 部的根(重根按重数计算). 
+
+\end{frame}
+
+
+%\begin{frame}
+% 根据 $\S$ 3 定理 5,一个线性变换的矩阵能不能在某一组基下是 对角形的问题就相当于一个矩阵是不是相似于一个对角矩阵的问 题.因此,这一节的讨论也就解决了后一个问题.   
+%\end{frame}
+
+
+\begin{frame}{判断相似对角化的方法,步骤}
+
+%判断是否可以相似对角化,若可以,求可逆阵 X ,使得 $X^{-1} A X$ 为对角阵.
+
+
+(1) 对 $A$,求所有的特征值. $f_{A}(\lambda)=|\lambda E-A|=\left(\lambda-\lambda_{1}\right)^{n_{1}}\left(\lambda-\lambda_{2}\right)^{n_{2}} \cdots\left(\lambda-\lambda_{s}\right)^{n_{5}}$
+
+
+(2) 是否可以相似对角化 $\Leftrightarrow r\left(\lambda_{i} E-A\right)=n-n_{i}, i=1,2, \cdots, s$.
+\begin{itemize}
+	\item 若都成立,则可以;
+	\item 若有一个不成立,则不能. 
+		\begin{itemize}
+		\item 对单根 $\lambda_{i}$ 自然成立, 不用判断 $r\left(\lambda_{i} E-A\right)=n-1$.
+		\item 主要是对重根 $\lambda_{i},$ 来判断是否 $r\left(\lambda_{i} E-A\right)=n-n_{i}$.
+		\end{itemize}
+\end{itemize}
+
+
+(3) 若可以,求方程组 $\left(\lambda_{i} E-A\right) X=0$ 的基础解系 $X_{i 1}, X_{i 2}, \cdots, X_{i n_{i}}$
+
+令 $X=\left(X_{11}, \cdots, X_{1 n_{1}}, X_{21}, \cdots, X_{2 n_{2}}, \cdots, X_{s 1}, \cdots, X_{s n_{5}}\right),$ 则 $X^{-1} A X=\left(\begin{array}{cccc}\lambda_{1} E_{n_{1}} & & & \\ & \lambda_{2} E_{n_{2}} & & \\ & & \ddots & \\ & & & \lambda_{s} E_{n_{5}}\end{array}\right)$
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\begin{exa}
+判断 $\left(\begin{array}{cc}0 & 1 \\ 0 & 0\end{array}\right)$ 是否可以相似对角化. 
+
+若可以,求可逆阵 X ,使得 $X^{-1} A X$ 为对角阵.
+
+\end{exa}
+\sol
+$|\lambda E-A|=\left|\begin{array}{cc}\lambda & -1 \\ 0 & \lambda\end{array}\right|=\lambda^{2}=0,$ 则 $\lambda_{1}=\lambda_{2}=0$.
+
+$0 E-A=-A$,秩为 $1 \neq 2-2$,故不能相似对角化.
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+	判断$A=\left(\begin{array}{ccc}1 & 2 & 2 \\ 0 & 2 & 2 \\ 0 & 0 & 3\end{array}\right)$
+	是否可以相似对角化.
+	
+	若可以,求可逆阵 X ,使得 $X^{-1} A X$ 为对角阵.
+\end{exa}
+\sol 
+$A$ 的特征值为 $\lambda_{1}=1, \lambda_{2}=2, \lambda_{3}=3$,有3个互异的特征值,可以相似对角化.
+
+对 $\lambda_{1}=1$, 线性方程组$(E-A) X=0$ 的解: $X_{1}=(1,0,0)'$,
+
+对 $\lambda_{2}=2$, 线性方程组$(2 E-A) X=0$ 的解: $X_{2}=(2,1,0)'$,
+
+对 $\lambda_{3}=3$, 线性方程组$(3 E-A) X=0$ 的解: $X_{3}=(3,2,1)'$. 
+
+令 $X=\left(\begin{array}{ccc}1 & 2 & 3 \\ 0 & 1 & 2 \\ 0 & 0 & 1\end{array}\right)$,
+
+则 
+$X^{-1} A X=\mbox{diag}(1,2,3).$
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+	判断$A=\left(\begin{array}{ccc}1 & 2 & 2 \\ 0 & 1 & 2 \\ 0 & 0 & 2\end{array}\right)$
+	是否可以相似对角化
+\end{exa}
+\sol
+$A$ 的特征值为 $\lambda_{1}=\lambda_{2}=1, \lambda_{3}=2$
+
+对 $\lambda_{1}=1, E-A=\left(\begin{array}{ccc}0 & -2 & -2 \\ 0 & 0 & -2 \\ 0 & 0 & -1\end{array}\right)$,秩为2, $2 \neq 3-2,$ 
+
+不能相似对角化
+\end{frame}
+
+
+
+\begin{frame}
+\begin{exa}
+判断 $A=\left(\begin{array}{cccc}1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 \\ 2 & 2 & 2 & 2 \\ 3 & 3 & 3 & 3\end{array}\right)$ 是否可以相似对角化
+\end{exa} 
+\sol 
+$\left|\begin{array}{cccc}\lambda-1 & -1 & -1 & -1 \\ -1 & \lambda-1 & -1 & -1 \\ -2 & -2 & \lambda-2 & -2 \\ -3 & -3 & -3 & \lambda-3\end{array}\right| 
+=\lambda^{3}(\lambda-7)$,
+
+得到特征值 $\lambda_{1}=0$(3重), $\lambda_{2}=7$.
+
+$r(-A)=1=4-3,$ 有 3 个.
+
+可以相似对角化.
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\begin{exa}[*]
+设 $n$ 阶方阵 $A$ 满足 $A^{2}=E,$ 判断 $A$ 是否可以相似对角化
+\end{exa}
+\sol $A^{2}-E=(A+E)(A-E)=0$.
+
+首先 $|A+E \| A-E|=0$,则 $A$ 有特征值1或者 $-1 .$
+$r(A+E)+r(A-E) \leq n$.同时 $n=r(A+E-A+E) \leq r(A+E)+r(A-E)$
+
+则 $r(A+E)+r(A-E)=n .$ 设 $r(A+E)=r,$ 则 $r(A-E)=n-r$
+
+对特征值1, 线性方程组$(E-A) X=0$ 的基础解系含有 $n-(n-r)=r$ 个向量 $\xi_{1}, \xi_{2}, \cdots, \xi_{r}$
+
+对特征值-1, 线性方程组$(-E-A) X=0$ 的基础解系含有 $n-r$ 个向量 $\xi_{r+1}, \xi_{r+2}, \cdots, \xi_{n}$
+
+又属于不同特征值的特征问量线性无关,从而 A 有 $n$ 个线性无关的特征向量 $\xi_{1}, \xi_{2}, \cdots, \xi_{n}$
+
+令 $X=\left(\xi_{1}, \xi_{2}, \cdots, \xi_{n}\right)$ 则 $X^{-1} A X=\left(\begin{array}{cc}E_{r} & 0 \\ 0 & -E_{n-r}\end{array}\right).$
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}[*]
+	设 $n$ 阶方阵 $A$ 满足 $A^{2}=A$,判断 $A$ 是否可以相似对角化.
+\end{exa}
+\sol
+	$A^{2}-A=A(A-E)=0$,首先 $|A \| A-E|=0$,则 $A$ 有特征值 0 或者 1
+	且 $r(A)+r(A-E)=n .$ 设 $r(A)=r,$ 
+	
+	则 $r(A-E)=n-r$
+	
+	对特征值1 , 线性方程组$(E-A) X=0$ 的基础解系含有 $n-(n-r)=r$ 个向量 $\xi_{1}, \xi_{2}, \cdots, \xi_{r}$
+	
+	对特征值0, 线性方程组$(-A) X=0$ 的基础解系含有 $n-r$ 个向量 $\xi_{r+1}, \xi_{r+2}, \cdots, \xi_{n}$
+	
+	又属于不同特征值的特征向量线性无关,从而 $A$ 有 $n$ 个线性无关的特征向量 $\xi_{1}, \xi_{2}, \cdots, \xi_{n}$
+	
+	令$X=\left(\xi_{1}, \xi_{2}, \cdots, \xi_{n}\right)$.则 $X^{-1} A X=\left(\begin{array}{cc}E_{r} & 0 \\ 0 & 0\end{array}\right)$.
+\end{frame}
+
+
+
+
+
+
+\section{线性变换的值域与核}
+\begin{frame}{\S 6 线性变换的值域与核}
+\begin{defi}
+\begin{itemize}
+	\item 设$\A$是线性空间 $V$ 的一个线性变换,
+	则的全体像组成的集合称为A的\alert{值域},
+	用$\A V$ 或者$\operatorname{Im} \A$表示.
+	\item 
+	所有被$\A$变成零向量的向量组成的集合
+	称为$\A$的\alert{核}, 用$\A^{-1}(\0)$或 $\A ^{-1}(\0)$表示．
+\end{itemize}
+
+
+若用集合的集合, 则
+\begin{align*}
+\A V  & = \{ \A\xi \,| \, \xi \in V \},\\
+\A^{-1}(\0) & = \{\xi \, | \,\xi \in V,  \A \xi = \0\}.
+\end{align*}
+
+\end{defi}
+
+\end{frame}
+
+\begin{frame}
+\begin{prop}
+线性变换的值域与核都是 $V$ 的子空间.
+\end{prop}
+\pf 
+\begin{itemize}
+\item 
+首先$\A V$非空, 并且对于 $V$中任何向量 $\alpha, \beta$ 和 ${k} \in {P},$ 都有
+\[
+\A \alpha+ \A \beta= \A(\alpha+\beta), \quad k \A \alpha=\A(k \alpha)
+\]
+即$\A V$对$V$的加法和数乘封闭, 故$\A V$是$V$的子空间. 
+
+\item 同样, 由于$\A(\0) =\0,$ 故 $\0 \in {\A}^{-1}(\0)$ ${\A}^{-1}(\mathbf{0})$ 非空.
+
+设 $\alpha, \beta$ 是 $\A^{-1}(\0)$ 中任何向量和 ${k} \in {P}$
+由
+\[
+\A \alpha=\0, \quad \A \beta=\0
+\]
+可知
+\[
+\A (\alpha+\beta)=\0, \quad \A(k \alpha)=\0
+\]
+所以, $\A^{-1}(\0)$对加法和数乘封闭,  故$\A^{-1}(\0)$是$V$的子空间. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{defi}
+$\dim \A V$称为$\A$的秩, 记为$rank (\A)$ 或$r(\A)$. 
+
+$\dim\, \A^{-1}(\0) $称为$\A^{-1}(\0) $的零度, 记为$null (\A)$.
+\end{defi}
+
+\begin{exa}
+在线性空间 $P[x]_{n}$ 中,令
+\[
+\mathscr{D}(f(x))=f^{\,\, \prime}(x)
+\]
+则 $\mathscr{D}$的值域就是 $P[ x]_{n-1}$, $\mathscr{D}$ 的核就是子空间 $P$.
+
+从而$rank (\A) =n-1$, $null (\A) = 1$.
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+\begin{thm}
+设$\A$是$n$维向量空间$V$的线性变换, ${\varepsilon}_{1},{\varepsilon}_{2}, \ldots, {\varepsilon}_{n}$是$V$的一组基, $\A$在这组基下的矩阵是$A$, 则
+
+\begin{enumerate}
+	\item  $\A$的值域 $\A V$ 是由基像组生成的子空间,即 $$\mathscr{A} V=L\left(\mathscr{d} {\varepsilon}_{1}, \mathscr{d} {\varepsilon}_{2}, \cdots, \mathscr{A} {\varepsilon}_{n}\right).$$
+	\item $\A$的秩 = $A$ 的秩. 
+\end{enumerate}
+\end{thm}
+
+\pf 
+\small{(1) 集合相等. 
+首先, $\A V \supseteq L\left(\A \varepsilon_{1}, \A \varepsilon_{2}, \cdots, \A \varepsilon_{n}\right)$.
+
+%设 $\xi$ 是 $V$ 中任一元素, 可用基的线性组合表示为
+%\[
+%\xi=x_{1} \varepsilon_{1}+x_{2} \varepsilon_{2}+\cdots+x_{n} \varepsilon_{n}
+%\]
+其次, 任给 $\A \alpha \in \A V$,则 $\alpha \in V,$ 
+从而 $\alpha=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) X$,
+
+则$\A \alpha=\left(\A \varepsilon_{1}, \A \varepsilon_{2}, \cdots, \A \varepsilon_{n}\right) X \in L\left(\A \varepsilon_{1}, \A \varepsilon_{2}, \cdots, \A \varepsilon_{n}\right),$ 
+
+从而 $\A V \subseteq L\left(\A \varepsilon_{1}, \A \varepsilon_{2}, \cdots, \A \varepsilon_{n}\right).$ 
+
+因此,
+$\A V=L\left(\A \varepsilon_{1}, \A \varepsilon_{2}, \cdots, \A \varepsilon_{n}\right)$.
+
+
+(2)
+因为$\left(\A \varepsilon_{1}, \A \varepsilon_{2}, \cdots, \A \varepsilon_{n}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) A,$ 所以$$\operatorname{dim} L \left(\A \varepsilon_{1}, \A \varepsilon_{2}, \cdots, \A \varepsilon_{n}\right)=r(A).$$
+}
+\end{frame}
+
+
+\begin{frame}
+{求值域与核}
+\begin{itemize}
+\item  $\A V=L\left(\A  \varepsilon_{1}, \A  \varepsilon_{2}, \cdots, \A  \varepsilon_{n}\right),$ 求 $\A  \varepsilon_{1}, \A  \varepsilon_{2}, \cdots, \A  \varepsilon_{n}$ 的极大无关组即可.
+\item 任给 $\alpha \in \A^{-1}(\0)$,则 $\A  \alpha=0$,假设 $\A$在基$\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{m}$ 下的矩阵为$A$, 并设 $\alpha=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) X$,则
+$$0=\A  \alpha=\A \left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) X=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) A X,$$ 
+从而 $A X=0$, 
+则 $\alpha$ 在基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的坐标是齐次线
+性方程组 $A X=0$ 的解.
+从而求得 $A X=0$ 的一组基础解系 $$\eta_{1}, \eta_{2}, \cdots, \eta_{r},$$ 以基础解系为坐标的向量
+$$\xi_{1}, \xi_{2}, \cdots, \xi_{r}$$ 就是 $\A^{-1}(\0)$ 的一组基,即 $\A^{-1}(\0) =L\left(\xi_{1}, \xi_{2}, \cdots, \xi_{r}\right).$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+设 $V=F^{\, 3},$ 变换: $\A \left(x_{1}, x_{2}, x_{3}\right)=\left(2 x_{1}+x_{2}, x_{2}+x_{3}, 2 x_{1}-x_{3}\right)$.求 $\A $ 的值域与核.
+\end{exa}
+\sol 
+\begin{itemize}
+	\item 设 $X=\left( x_1, x_2, x_3 \right)'$, 
+%则 $\A (X)=\left(\begin{array}{ccc}2 & 1 & 0 \\ 0 & 1 & 1 \\ 2 & 0 & -1\end{array}\right) X,$ 
+取单位向量 $\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3},$ 则 
+$\A$在基$\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}$下的矩阵为
+$A=\left(\begin{array}{ccc}2 & 1 & 0 \\ 0 & 1 & 1 \\ 2 & 0 & -1\end{array}\right).$
+
+将$A$做初等行变换化成阶梯形矩阵:
+$$A\rightarrow\left(\begin{array}{ccc}2 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 0\end{array}\right)$$
+取 $\alpha_{1}=(2,0,2)', \alpha_{2}=(1,1,0)'$, 
+则 $\A V=L\left(\alpha_{1}, \alpha_{2}\right)$.
+
+	\item  解方程组 $A X=0$, 得基础解系 $\eta=(1,-2,2)'$,则 $\A^{-1}(\0) =L(\eta)$.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{thm}
+设 $\A  \in L(V), \operatorname{dim} V=n$,则 
+\begin{itemize}
+\item $\A (V)$ 的一组基的原象及 $\A^{-1}(\0)$ 的一组基合起来是 $V$ 的一组基,
+\item $\A  \mbox{的秩}+ \A \mbox{ 的零度 }=n.$
+\end{itemize}
+%$$\operatorname{dim} \A (V)+\operatorname{dim} \A ^{-1}(0)=\operatorname{dim} V=n,$$ 即 
+
+\end{thm}
+
+\begin{exa}
+设 $F[x]_{n}$ 的微分变换 $\D$, 
+$\D  F[x]_{n}=F[x]_{n-1}, \D ^{-1}(\0)=F,$ 从而 $\operatorname{dim} \A (V)=n-1, \operatorname{dim} \A ^{-1}(\0)=1 .$
+% $\A  V \cap \A^{-1}(\0)=F$
+\end{exa}
+
+\begin{rem}
+	$\A  V$ 与 $\A^{-1}(\0)$ 的维数之和为 $n,$ 但是 $\A  V+\A^{-1}(\0)$ 不一定是直和
+\end{rem}
+\end{frame}
+
+\begin{frame}
+\pf 设 $\A (V)$ 的一组基为 $\eta_{1}, \eta_{2}, \cdots, \eta_{r},$ 其原象设为 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{r},$ 即 $\A  \varepsilon_{i}=\eta_{i}$, $i=1,2, \cdots, r$.
+设  $\A^{-1}(\0)$ 的一组基为 $\varepsilon_{r+1}, \varepsilon_{r+2}, \cdots, \varepsilon_{s},$ 下证$$\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{r}, \varepsilon_{r+1}, \varepsilon_{r+2}, \cdots, \varepsilon_{s}$$ 是 $V$ 的一组基.
+
+1)~~ 先证$\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{r}, \varepsilon_{r+1}, \varepsilon_{r+2}, \cdots, \varepsilon_{s}$ 线性无关.
+设$$k_{1} \varepsilon_{1}+\cdots+k_{r} \varepsilon_{r}+k_{r+1} \varepsilon_{r+1}+\cdots+k_{s} \varepsilon_{s}=\0$$
+用 $\A $ 作用一下, $$k_{1} \A  \varepsilon_{1}+\cdots+k_{r} \A  \varepsilon_{r}=\0,$$ 即 $$k_{1} \eta_{1}+\cdots+k_{r} \eta_{1}=\0.$$
+因为  $\eta_{1}, \eta_{2}, \cdots, \eta_{r}$是$\A (V)$ 的一组基, 所以 $$k_{1}=\cdots=k_{r}=0.$$
+
+\end{frame}
+
+\begin{frame}
+于是,
+$$k_{r+1} \varepsilon_{r+1}+\cdots+k_{s} \varepsilon_{s}=\0.$$
+因为
+$\varepsilon_{r+1}, \varepsilon_{r+2}, \cdots, \varepsilon_{s}$ 为$\A^{-1}(\0)$的一组基, 所以 $$k_{r+1}=\cdots=k_{s}=0.$$
+因此,$\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{r}, \varepsilon_{r+1}, \varepsilon_{r+2}, \cdots, \varepsilon_{s}$ 线性无关.\\[10pt]
+
+
+2)~~  再证$V$中任意向量都可由$\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{r}, \varepsilon_{r+1}, \varepsilon_{r+2}, \cdots, \varepsilon_{s}$ 线性表示.
+任给 $\alpha \in V$,则 $\A  \alpha \in \A (V)=L\left(\eta_{1}, \eta_{2}, \cdots, \eta_{r}\right),$ 从而
+\begin{align*}
+\A  \alpha& =k_{1} \eta_{1}+k_{2} \eta_{2}+\cdots+k_{r} \eta_{r}\\
+& =k_{1} \A  \varepsilon_{1}+k_{2} \A  \varepsilon_{2}+\cdots+k_{r} \A  \varepsilon_{r}\\
+& =\A \left(k_{1} \varepsilon_{1}+k_{2} \varepsilon_{2}+\cdots+k_{r} \varepsilon_{r}\right)
+\end{align*}
+即 $$\A \left(\alpha-k_{1} \varepsilon_{1}-k_{2} \varepsilon_{2}-\cdots-k_{r} \varepsilon_{r}\right)=\0,$$ 
+
+\end{frame}
+
+\begin{frame}
+则 $$\alpha-k_{1} \varepsilon_{1}-k_{2} \varepsilon_{2}-\cdots-k_{r} \varepsilon_{r} \in \A^{-1}(\0),$$ 
+即有
+$$\alpha-k_{1} \varepsilon_{1}-k_{2} \varepsilon_{2}-\cdots-k_{r} \varepsilon_{r}=k_{r+1} \varepsilon_{r+1}+k_{r+2} \varepsilon_{r+2}+\cdots+k_{s} \varepsilon_{s}$$
+从而 $$\alpha=k_{1} \varepsilon_{1}+k_{2} \varepsilon_{2}+\cdots+k_{r} \varepsilon_{r}+k_{r+1} \varepsilon_{r+1}+k_{r+2} \varepsilon_{r+2}+\cdots+k_{s} \varepsilon_{s}.$$
+
+
+综上, $$\underbrace{\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{r},}_{\small{\A (V) \mbox{的一组基的原象}}} \underbrace{\varepsilon_{r+1}, \varepsilon_{r+2}, \cdots, \varepsilon_{s}}_{\small{\A^{-1}(\0) \mbox{的一组基}}}$$ 是 $V$ 的一组基, 从而$s=n$, 且
+$\operatorname{dim} \A (V)+\operatorname{dim} \A ^{-1}(\0)=\operatorname{dim} V=n.$
+\qed
+%另外的证明: $\A $ 的秩+ $\A $ 的零度 $=\operatorname{dim} V$ 由于 $\A $ 的秩等于 $\A $ 在一组基下矩阵 $A$ 的秩,而 $\A $ 的奥度等于核的维数,即等于 $A X=0$ 的基础解系所含向
+%量的个数 $n-r(A),$ 从而 $\A $ 的秩+ $\A $ 的零度 $=r(A)+n-r(A)=n$
+
+
+
+\end{frame}
+
+\begin{frame}
+\begin{coro}
+	设 $V$ 是一个有限维线性空间, $\A  \in L(V)$,则 $\A $ 是单射 $\Leftrightarrow \A $ 是满射.
+\end{coro}
+\pf
+\begin{align*}
+\A  \mbox{ 是单射} & \Leftrightarrow  \A ^{-1}(\0)=\0  \Leftrightarrow \operatorname{dim} \A ^{-1}(\0)=0\\
+\A  \mbox{ 是满射} & \Leftrightarrow  \A (V)=V   \,\,\,\,\, \Leftrightarrow \operatorname{dim} \A (V)=n
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+\small{
+\begin{exa}[*]
+设 $n$ 阶方阵 $A$, 满足 $A^{2}=A,$ 证明 $A$ 可以相似于对角阵 $\left(\begin{array}{cc}E_{r} & 0 \\ 0 & 0\end{array}\right)$
+\end{exa}
+
+\pf 取线性空间 $V$ 及一组基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n},$ 则存在线性变换 $\A$,
+使得 $\A$ 在 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的矩阵为
+$A$,
+则 $\A^{2}=\A$.
+
+ 对 $\A V,$ 取一组基 $\eta_{1}, \eta_{2}, \cdots, \eta_{r},$ 其原象设为 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{r},$ 
+ 
+即 $\A \alpha_{i}=\eta_{i}, i=1,2, \cdots, r$
+则 $\A \eta_{i}=\A^{2} \alpha_{i}=\A \alpha_{i}=\eta_{i}, i=1,2, \cdots, r,$ 
+
+即 $\eta_{1}, \eta_{2}, \cdots, \eta_{r}$ 得原象就是 $\eta_{1}, \eta_{2}, \cdots, \eta_{r} .$ 
+
+取 $\A ^{-1}(\0)$ 的一组基
+$\eta_{r+1}, \eta_{r+2}, \cdots, \eta_{n},$ 
+
+则 $\eta_{1}, \eta_{2}, \cdots, \eta_{r}, \eta_{r+1}, \eta_{r+2}, \cdots, \eta_{n}$ 是 $V$ 的一组基, 
+
+$\A$ 在 $\eta_{1}, \eta_{2}, \cdots, \eta_{n}$ 下的矩阵为
+$\A\left(\eta_{1}, \eta_{2}, \cdots, \eta_{n}\right)=\left(\eta_{1}, \cdots, \eta_{r}, 0, \cdots, 0\right)=\left(\eta_{1}, \eta_{2}, \cdots, \eta_{n}\right)\left(\begin{array}{cc}E_{r} & 0 \\ 0 & 0\end{array}\right)$
+
+从而由于一个线性变换在不同基下的矩阵是相似的.
+
+故 $A$ 与 $\left(\begin{array}{cc}E_{r} & 0 \\ 0 & 0\end{array}\right)$ 相似.
+}
+
+
+\end{frame}
+\section{不变子空间}
+\begin{frame}{\S 7 不变子空间}
+%1. 不变子空间
+\begin{defi}
+取线性空间 $V, \A  \in L(V),$ 设 $W$ 是 $V$ 的一个子空间,若 $W$ 中的向量在 $\A $ 作用下的象仍在 $W$ 中,即
+任给 $\alpha \in W$,则有 $\A  \alpha \in W$,则称 $W$ 是 $\A $ 的一个不变子空间,筒称为 $\A -$ 子空间.
+\end{defi}
+
+
+\begin{exa}{非不变子空间}
+取3维平面 $V=\mathbb{R}^{3}$,取线性变换 $\A $ 为绕 $X$ 轴线从 $Y$ 轴线到 $Z$ 轴线旋转 $90^{\circ}$ 角的变换
+即 $\A (x, y, z)=(x,-z, y),$ 取子空间 $W=X O Y$ 面,则 $W$ 不是不变子空间, 因为 $\A (0,1,0)=(0,0,1) \notin W$.
+\end{exa}
+
+\begin{exa}
+	平凡子空间 $\0$ 与 $V$ 是任一线性变换的不变子空间.
+\end{exa}
+
+\end{frame}
+
+\begin{frame}
+
+
+\begin{exa}
+任一线性变换 $\A $ 的值域 $\A  V$ 与核 $\A ^{-1}(\0)$ 是 $\A $ 的不变子空间.
+\end{exa}
+\pf
+\begin{itemize}
+\item 任给 $\A  \alpha \in \A  V$, 则 $\A (\A  \alpha) \in \A  V$.
+\item 任给 $\alpha \in \A ^{-1}(\0) $,则 $\A  \alpha=\0,$ 从而 $\A (\A  \alpha)=\A (\0)=\0,$ 因此 $\A  \alpha \in \A ^{-1}(\0).$
+\end{itemize}
+
+
+
+
+\begin{exa}
+取 $\A , \B \in L(V)$,满足 $\A  \B =\B \A $,则 $\B V$ 与 $\B^{-1}(\0)$ 都是 $\A$-子空间
+$\B V$.
+\end{exa}
+\pf
+\begin{itemize}
+\item 任给 $\B \alpha \in \B V,$ 证 $\A (\B \alpha) \in \B V$.
+$\A (\B \alpha)=(\A  \B) \alpha=(\B \A ) \alpha= \B (\A  \alpha) \in \B V$.
+\item 任给 $\alpha \in \B^{-1}(\0),$ 证 $\A  \alpha \in \B ^{-1}(\0),$ 
+即证 $\B(\A  \alpha)=\A (\B \alpha)=\0.$
+\end{itemize}
+
+
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+	任一子空间都是数乘变换的不变子空间, 这是因为子空间对数乘封闭.
+\end{exa}
+{\bf 注~~ }
+
+\begin{itemize}
+	\item 特征向量与一维不变子空间的关系.
+
+\begin{itemize}
+	\item 取 $\A  \xi=\lambda_{0} \xi,$ 设 $W=L(\xi),$ 则 $\operatorname{dim} W=1, \A (k \xi)=\lambda_{0} k \xi \in W,$ 从而 $W=L(\xi)$ 是 $\A -$ 子空间.
+	\item 反之,取一维不变子空间 W = L( $\xi), \A  W \subseteq W$,则 $\A  \xi \in W=L(\xi),$ 从而存在一个数 $\lambda,$ 使得 $\A  \xi=\lambda \xi,$ 即生成元 $\xi$ 是 $\A $ 的属于 $\lambda$ 的一个特征向量.
+\end{itemize}
+
+\item $\A$的属于特征值 $\lambda_{0}$ 的特征子空间 $V_{\lambda_{0}}$ 也是 $\mathscr{A}$ 的不变子
+空间.
+
+\item 取 $\A$-子空间 $W_{1}, W_{2},$ 则 $W_{1}+W_{2}$ 与 $W_{1} \cap W_{2}$ 都是 $\A$-子空间.
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{defi}
+设 $\A $ -子空间 $W$,由于 $\A  W \subseteq W$,则 $\A $ 就可以看做是 $W$ 上的一个线性变换, 
+从而定义 $\left.\A \right|_{m}$ 为 $\A$ \alert{限制}在不
+变子空间 W 上的线性变换.
+\end{defi}
+
+
+
+注意 $\A$和$\A|_W$的异同: 
+\begin{itemize}
+\item $\A$是$V$的线性变
+换, $V$中每个向量在$\A$下都有确定的像; 
+\item $\A|_W$是不变子空间$W$上的线性变换. 
+它的作用为
+任给 $\alpha \in W,\left.\A \right|_{m}(\alpha)=\A (\alpha),$ 但是 $\A $ 对 $W$ 之外的向量没有作用.
+
+\end{itemize}
+
+例如, 对于任一线性变换$\A$,
+\begin{itemize}
+\item  $\A$在它的核空间上引起的变换是零变换, 即 $\A |_{\A^{-1}(\0)} = \O$,
+\item $\A$在特征子空间$V_{\lambda_0}$上引起的变换是数乘变换$\A|_{V_{\lambda_0}}(\xi)=\lambda_0 \xi$.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{prop}
+若  $W=L\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}\right)$, 则 
+\begin{align*}
+W \mbox{ 是 }\, \A -\mbox{子空间} \, \Leftrightarrow \,  
+\A  \alpha_{1}, \A  \alpha_{2}, \cdots, \A  \alpha_{m} \in W.
+\end{align*}
+\end{prop}
+
+\pf  
+$\Rightarrow$ 若 $\A  W \subseteq W$,则 $\A  \alpha_{1}, \A  \alpha_{2}, \cdots, \A  \alpha_{s} \in W$.
+
+$\Leftarrow$ 反之,若 $\A  \alpha_{1}, \A  \alpha_{2}, \cdots, \A  \alpha_{s} \in W$,则任给
+$\alpha \in W,$ 设 $\alpha=\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{s}\right) X,$ 则 $\A  \alpha=\left(\A  \alpha_{1}, \A  \alpha_{2}, \cdots, \A  \alpha_{s}\right) X \in W,$ 从而 $\A  W \subseteq W$. 
+$W$ 是 $\A$-子空间.
+\end{frame}
+
+
+
+\begin{frame}{不变子空间与线性变换的矩阵}
+1) 设 $\A$是 $n$ 维线性空间 $V$ 的线性变换，$W$ 是 $V$ 的 $\A$-子空
+间. 
+
+在 $W$ 中取一组基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{k},$ 并且把它扩充成 $V$ 的一组基
+\begin{align}\label{eq-b}
+{\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{k}, {\varepsilon}_{k+1}, \cdots, {\varepsilon}_{n},
+\end{align}
+ 那么 $\A$在这组基下的矩阵就具有下列形状
+ \begin{align}\label{eq-utm}
+\left(\begin{array}{cccccc}a_{11} & \cdots & a_{1 k} & a_{1, k+1} & \cdots & a_{1 n} \\ \vdots & & \vdots & \vdots & & \vdots \\ a_{k 1} & \cdots & a_{k k} & a_{k, k+1} & & a_{k n} \\ 0 & \cdots & 0 & a_{k+1, k+1} & \cdots & a_{k+1, n} \\ \vdots & & \vdots & \vdots & & \vdots \\ 0 & \cdots & 0 & a_{n, k+1} & \cdots & a_{n n}\end{array}\right)=\left(\begin{array}{cc}A_{1} & A_{3} \\ 0 & A_{2}\end{array}\right)
+ \end{align}
+且左上角的 $k$ 级矩阵 ${A}_{1}$ 就是 $\mathscr{A} |_W$ 在 $W$ 的基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{k}$ 下的矩阵. 
+
+\end{frame}
+
+
+\begin{frame}
+这是因为 $W$ 是 $\A$-子空间,所以像 $\mathscr{A} {\varepsilon}_{1}, \mathscr{A} {\varepsilon}_{2}, \cdots, \mathscr{A} {\varepsilon}_{k}$ 仍在
+$W$ 中. 
+
+它们可以通过 $W$ 的基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{k}$ 线性表示
+\[
+\begin{array}{l}
+\mathscr{A} {\varepsilon}_{1}=a_{11} {\varepsilon}_{1}+a_{21} {\varepsilon}_{2}+\cdots+a_{k 1} {\varepsilon}_{k} \\
+\mathscr{A} {\varepsilon}_{2}=a_{12} {\varepsilon}_{1}+a_{22} {\varepsilon}_{2}+\cdots+a_{k 2} {\varepsilon}_{k} \\
+\ldots \ldots \ldots . \\
+\mathscr{A} {\varepsilon}_{k}=a_{1 k} {\varepsilon}_{1}+a_{2 k} {\varepsilon}_{2}+\cdots+a_{k k} {\varepsilon}_{k}
+\end{array}
+\]
+从而 
+\begin{itemize}
+\item 
+$\A$在基${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{k}, {\varepsilon}_{k+1}, \cdots, {\varepsilon}_{n}$下的矩阵具有形状~\eqref{eq-utm}, 
+\item
+$\A|_W$ 在 $W$ 的基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots$
+${\varepsilon}_{k}$ 下的矩阵是 ${A}_{1}$.\\[10pt]
+\end{itemize}
+
+反之,如果 $\A$在基(1)下的矩阵是(2),那么可以证明,由 ${\varepsilon}_{1}$ ${\varepsilon}_{2}, \cdots, {\varepsilon}_{k}$ 生成的子空间 $W$ 是 $\mathscr{A}$ 的不变子空间.
+\end{frame}
+
+\begin{frame}
+2) 设 $V$ 分解成若干个 $\A$-子空间的直和：
+$$
+V=W_{1} \oplus W_{2} \oplus \cdots \oplus W_{s}
+$$
+在每一个 $\A$-子空间 $W$ 中取基
+\begin{align}\label{eq-7-3}
+{\varepsilon}_{i \, 1}, {\varepsilon}_{i \, 2}, \cdots, {\varepsilon}_{i \, n_{i}} \quad(i=1,2, \cdots, s)
+\end{align}
+并把它们合并起来成为 V 的一组基,则在这组基下的矩阵为准对角形
+\begin{align}\label{eq-7-4}
+\mbox{diag} \left(A_1, A_2, \ldots, A_s \right) 
+\end{align}
+其中 ${A}_{i}(i=1,2, \cdots, s)$ 就是 $\mathscr{A} | W_{i}$ 在基\eqref{eq-7-3}下的矩阵. 
+
+反之,如果线性变换 A在某组基下的矩阵是准对角形\eqref{eq-7-4}, 则由
+\eqref{eq-7-3} 生成的子空间 $W_{i}$ 是 $\mathscr{A}$-子空间.
+
+由此可知,\alert{矩阵分解为准对角形}与\alert{空间分解为不变子空间的直和}是相当的.
+\end{frame}
+
+
+\begin{frame}
+
+
+
+
+ 下面我们应用哈密尔顿 - 凯莱定理将空间 $V$ 按特征值分解 成不变子空间的直和.  
+ \begin{thm}[准素分解]
+ 设线性变换 $\A$ 的特征多项式为 $f(\lambda)$,它可分解成
+一次因式的乘积
+\[
+f(\lambda)=\left(\lambda-\lambda_{1}\right)^{r_{1}}\left(\lambda-\lambda_{2}\right)^{r_{2}} \cdots\left(\lambda-\lambda_{s}\right)^{r_{s}}
+\]
+则 V 可分解成不变子空间的直和
+\[
+V=V_{1} \oplus V_{2} \oplus \cdots \oplus V_{s},
+\]
+其中 
+\[
+V_{i}=\left\{\xi \, |\, \left(  \A -\lambda_{i} \mathscr{E} \right)^{r_i} \xi=0, \, \xi \in V\right\}.
+\]
+ \end{thm}
+通常将$V_i$称为根子空间.
+\end{frame}
+
+
+\section{若尔当(Jordan)标准形介绍}
+\begin{frame}{\S 若尔当(Jordan)标准形介绍}
+一般来说, 并不是对于每一个线性变换 都有一组基,使它在这组基下的矩阵成为对角形.
+
+这一节的目的就是考察一般的一个方阵相似最简形式是什么. 我们的讨论限制在\alert{复数城}中.
+\begin{defi}
+形式为
+\[
+{J}(\lambda, t)=
+\left(\begin{array}{cccccc}
+\lambda & 0 & \cdots & 0 & 0 & 0 \\
+1 & \lambda & \cdots & 0 & 0 & 0 \\
+\vdots & \vdots & & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & 1 & \lambda & 0 \\
+0 & 0 & \cdots & 0 & 1 & \lambda
+\end{array}\right)_{t \times t}
+\]
+的矩阵称为Jordan块,其中$\lambda$是复数. 
+%  用$J(\lambda,t)$表示$t$ 阶对角线上元素是$\lambda$的Jordan块.
+
+\end{defi}
+\end{frame}
+
+
+
+
+\begin{frame}
+\begin{defi}
+由Jordan块组成的准对角矩阵称为Jordan形矩阵, 其一般形状如
+\[
+\left(\begin{array}{cccc}
+J(\lambda_{1}, k_1) & & & \\
+& J(\lambda_{2}, k_2)& & \\
+& & \ddots & \\
+& & &J(\lambda_{s}, k_s)
+\end{array}\right)
+\]
+并且 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_s$ 中有一些可以相等.
+\end{defi}
+
+\end{frame}
+
+
+
+\begin{frame}
+例如
+\[
+\left(\begin{array}{lll}
+2 & 0 & 0 \\
+1 & 2 & 0 \\
+0 & 1 & 2
+\end{array}\right),
+\left(\begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0
+\end{array}\right),
+\left(\begin{array}{cc}
+i & 0 \\
+1 & i
+\end{array}\right)
+\]
+都是若尔当块,而
+\[
+\left(\begin{array}{cccccc}
+1 & 0 & 0 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 4 & 0 & 0 & 0 \\
+0 & 0 & 0 & 4 & 0 & 0 \\
+0 & 0 & 0 & 1 & 4 & 0 \\
+0 & 0 & 0 & 0 & 1 & 4
+\end{array}\right)
+\]
+是一个若尔当形矩阵.
+\end{frame}
+
+\begin{frame}
+\begin{rem}
+	$
+	\left(\begin{array}{cccccc}
+	\lambda & 0 & \cdots & 0 & 0 & 0 \\
+	1 & \lambda & \cdots & 0 & 0 & 0 \\
+	\vdots & \vdots & & \vdots & \vdots & \vdots \\
+	0 & 0 & \cdots & 1 & \lambda & 0 \\
+	0 & 0 & \cdots & 0 & 1 & \lambda
+	\end{array}\right)_{t}
+	$
+	与
+	$
+	\left(\begin{array}{cccccc}
+	\lambda & 1 & \cdots & 0 & 0 & 0 \\
+	0 & \lambda & \cdots & 1 & 0 & 0 \\
+	\vdots & \vdots & & \vdots & \vdots & \vdots \\
+	0 & 0 & \cdots & 0 & \lambda & 1 \\
+	0 & 0 & \cdots & 0 & 0 & \lambda
+	\end{array}\right)_{t}
+	$
+	相似.	
+\end{rem}
+\pf 
+
+令
+$P=
+\left(\begin{array}{cccccc}
+0 & 0 & \cdots & 0 & 0 & 1 \\
+0 & 0 & \cdots & 0 & 1 & 0 \\
+\vdots & \vdots & & \vdots & \vdots & \vdots \\
+0 & 1 & \cdots & 0 & 0 & 0 \\
+1 & 0 & \cdots & 0 & 0 & 0
+\end{array}\right)_{t}
+$, 则 $P^{-1}{J}(\lambda, t)P$等于右边的矩阵.
+\end{frame}
+
+\begin{frame}
+\begin{rem}
+\begin{itemize}
+	\item 上面的$\lambda_{1}, \lambda_{2}, \cdots, \lambda_s$ 中
+	有一些可以相等.
+	\item 一阶Jordan块就是一阶矩阵,因此Jordan 形矩阵中包括对角矩阵.
+	\item 因为Jordan形矩阵是下三角形矩阵, 所以, Jordan标准形中, 主对角线上的元素正是特征多项式的全部的根(重根按重数计算).
+\end{itemize}
+\end{rem}
+
+
+\end{frame}
+\begin{frame}
+\begin{thm}
+设复数域上线性空间$V$ 的线性变换$\A$, 则存在$V$的一组基, 使得$\A$ 在此组基下的矩阵为Jordan形矩阵.
+\end{thm}
+
+
+
+\begin{thm}
+	设$A$是复数域上的一个方阵,
+则$A$相似于一个Jordan形矩阵. 
+\end{thm}
+
+
+\end{frame}
+
+
+\begin{frame}{代数重数与几何重数}
+对方阵 $A$,特征多项式 $$f_{A}(\lambda)=|\lambda E-A|=\left(\lambda-\lambda_{1}\right)^{n_{1}}\left(\lambda-\lambda_{2}\right)^{n_{2}} \cdots\left(\lambda-\lambda_{s}\right)^{n_{s}},$$ 其中$\lambda_{1}, \lambda_{2}, \cdots, \lambda_{s}$ 两两互异.
+
+\begin{itemize}
+	\item $n_{i}$ 称为特征值 $\lambda_{i}$ 的\alert{代数重数}.
+	\item 再看特征值 $\lambda_{i}$ 的特征子空间 $V_{\lambda_{i}}$,其维数 $\operatorname{dim} V_{\lambda_{i}}=m_{i}$ 称为 $\lambda_{i}$ 的\alert{几何重数}. $\quad m_{i}=n-r\left(\lambda_{i} E-A\right)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{prop}
+矩阵的任一特征值的几何重数小于等于其代数重数.
+\end{prop}
+
+\begin{prop}
+方阵 $A$ 可相似对角化 $\Leftrightarrow$ 任一特征值的代数重数与几何重数相等.
+\end{prop}
+
+\begin{prop}
+设 $A$ 是一 $n$ 阶方阵, $A$ 的特征多项式为 $$f_{A}(\lambda)=\left(\lambda-\lambda_{1}\right)^{n_{1}}\left(\lambda-\lambda_{2}\right)^{n_{2}} \cdots\left(\lambda-\lambda_{s}\right)^{n_{i}}$$
+则 
+\begin{align*}
+A \mbox{ 可相似对角化 } & \Leftrightarrow n_{i}=n-r\left(\lambda_{i} E-A\right), \quad  i=1,2, \cdots, s.\\
+& \Leftrightarrow r\left(\lambda_{i} E-A\right)=n-n_{i}, \quad i=1,2, \cdots, s.
+\end{align*}
+\end{prop}
+\end{frame}
+
+
+%矩阵的任一特征值的几何重数小于等于其代数重数.
+%证明：对 $A$,任给线性空间 $V$ 及一组基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n},$ 存在线性变换 $\sigma$,使得 $\sigma-\frac{\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}}{\longrightarrow} A$
+%假设 $\lambda_{0}$ 是 $A$ 的一个特征值,代数重数为 $n_{0} .$ 设 $\operatorname{dim} V_{\lambda_{0}}=m_{0},$ 不妨设 $\xi_{1}, \xi_{2}, \cdots, \xi_{m_{0}}$ 是 $V_{\lambda_{0}}$ 的一组基,扩充这一
+%组基为 $V$ 的一组基, $\xi_{1}, \cdots, \xi_{m_{0}}, \xi_{m_{0}+1}, \cdots, \xi_{n},$ 则由于 $\sigma \xi_{i}=\lambda_{0} \xi_{i}, i=1,2, \cdots, m_{0} .$ 则
+%$\sigma \frac{\xi_{1}, \cdots ; \xi_{m_{0}}, \xi_{m_{0}+1} \cdots, \xi_{n}}{\rightarrow}\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right) \cdot\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right)$ 与A是同一个线性变换 $\sigma$ 在不同基下的矩阵,则
+%$\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right)$ 与 $A$ 相似,从而特征多项式相同. $\left|\lambda E-\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right)\right|=|\lambda E-A|$
+%右边因式 $\lambda-\lambda_{0}$ 是 $n_{0}$ 重.左边中 $\lambda-\lambda_{0}$ 也应该是 $n_{0}$ 重.但是左边展开后
+%$\left|\lambda E-\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right)\right|=\left|\begin{array}{cc}\left(\lambda-\lambda_{0}\right) E & A_{2} \\ 0 & \lambda E-A_{3}\end{array}\right|=\left(\lambda-\lambda_{0}\right)^{m_{0}}\left|\lambda E-A_{3}\right| \cdot$ 从而 $m_{0} \leq n_{0}$
+
+
+
+
+\section{最小多项式}
+\begin{frame}{\S 9  最小多项式}
+\begin{defi}
+设$A$是数域$P$上$n$阶方阵，$f(x)\in P[x]$. 
+\begin{itemize}
+\item 如果$f(A)=0$, 那么称$f(x)$是$A$的\alert{零化多项式}.
+\item 如果$f(x)$首1，且$f(x)$是A的零化多项式中
+次数最低者, 那么称$A$的零化多项式$f(x)$是$A$的\alert{最小多项式}.
+\end{itemize}
+\end{defi}
+\end{frame}
+
+
+\begin{frame}
+\begin{lem}
+数域$P$上$n$阶方阵$A$的最小多项式唯一
+\end{lem}
+\pf 
+设 $g_{1}(x)$ 和 $g_{2}(x)$ 都是 ${A}$ 的最小多项式,根据带余除
+法，$g_1(x)$ 可表成
+\[
+g_{1}(x)=q(x) g_{2}(x)+r(x)
+\]
+其中 $r(x)=0$ 或 $\deg(r(x))<\deg \left(g_{2}(x)\right)$, 于是
+\[
+g_{1}({A})=q({A}) g_{2}({A})+r({A})={O}
+\]
+因此 $r({A})={O} .$ 由最小多项式的定义 $, r(x)=0,$ 即 $g_{2}(x) |$
+$g_{1}(x)$. 
+
+同样可证 $g_{1}(x) | g_{2}(x) .$ 因此 $g_{1}(x)$ 与 $g_{2}(x)$ 只能相差 一个非零常数因子.
+
+又因 $g_{1}(x)$ 与 $g_{2}(x)$ 的首项系数都等于 1, 所以 $g_{1}(x)=g_{2}(x)$
+\qed
+\end{frame}
+
+
+\begin{frame}
+%应用同样的方法, 可以证明
+\small{
+\begin{lem}
+	设$m(x)$是方阵$A$的最小多项
+式，$f(x) \in P[x]$, 则
+\begin{center}
+$f(x)$是$A$的零化多项式 $\Leftrightarrow  m(x)|f(x)$.
+\end{center}
+\end{lem}
+\pf 
+$\Rightarrow$
+根据带余除法，$f(x)$ 可表成
+\[
+f(x)=q(x) m(x)+r(x)
+\]
+其中 $r(x)=0$ 或 $\deg(r(x))<\deg \left(m(x)\right)$.
+若$r(x)\neq 0$, 
+则由$$r({A}) =f({A})-q({A}) m({A})={O}$$
+可知$r(x)$也是$A$的零化多项式. 但$\deg(r(x))<\deg \left(m(x)\right)$与设$m(x)$是方阵$A$的最小多项
+式矛盾. 因此,$r(x)=0$, 进而$m(x)|f(x)$.
+
+$\Leftarrow$
+ 因为$m(x)|f(x)$, 所以存在$q(x) \in P[x]$使得$f(x)=q(x) m(x)$.
+又因为$m(x)$是$A$的零化多项式, 所以$f(A)=q(A) m(A)={O}.$
+即 $f(x)$是$A$的零化多项式.
+\qed
+
+\begin{coro}
+最小多项式整除特征多项式. 
+\end{coro}
+}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+\begin{itemize}
+\item 数量矩阵$kE$的最小多项式是
+$x-k$.  反过来, 
+\item 最小多项式是一次的矩阵
+必是数量矩阵. 
+\end{itemize}
+\end{exa}
+
+
+\begin{exa}
+\[
+{A}=\left(\begin{array}{ccc}
+1 & 1 & \\
+& 1 & \\
+& & 1
+\end{array}\right)
+\]
+求 A 的最小多项式.  
+\end{exa}
+\sol 
+因为 A 的特征多项式为 $|x {E}-{A}|=(x-1)^{3}$,
+所以 A 的最小多项式为$(x-1)^{3}$ 的因式.
+因为$A-E \neq O$ 而 $({A}-{E})^{2}={O}$, 所以  ${A}$ 的最小多项式为 $(x-1)^{2}$.
+\end{frame}
+
+
+\begin{frame}
+	content...
+\end{frame}
+
+\begin{frame}
+\begin{prop}
+如果矩阵 A 与B 相似: ${B}={T}^{-1} {A T},$ 那么对任一多项式
+$f(x), f({B})={T}^{-1} f({A}) {T} .$ 因此 $f({B})={O}$ 当且仅当 $f({A})={O}$
+这说明相似矩阵有相同的最小多项式.
+\end{prop}
+但是需要注意, 这个条件并 不是充分的, 即最小多项式相同的矩阵不一定是相似的.下面的例 子说明这个结论 例 3 设
+\[
+{A}=\left(\begin{array}{cccc}
+1 & 1 && \\
+& 1&& \\
+&& 1&\\
+&&&2
+\end{array}\right), 
+{B}=\left(\begin{array}{cccc}
+1 & 1 &  &\\
+& 1  &&\\
+& & 2 &\\
+& & &2
+\end{array}\right)
+\]
+${A}$ 与 ${B}$ 的最小多项式都等于 $(x-1)^{2}(x-2),$ 但是它们的特征手 项式不同,因此 A 和 B 不是相似的.
+\end{frame}
+
+\begin{frame}
+\small{
+\begin{lem}
+设 $A$ 是一个准对角矩阵
+\[
+{A}=\left[\begin{array}{ll}
+{A}_{1} & \\
+& {A}_{2}
+\end{array}\right]
+\]
+并设 $A_{1}$ 的最小多项式为 $g_{1}(x), {A}_{2}$ 的最小多项式为 $g_{2}(x)$,那么 A 的最小多项式为 $g_{1}(x), g_{2}(x)$ 的最小公倍式 $\left[g_{1}(x), g_{2}(x)\right]$
+\end{lem}
+\pf 
+记 $g(x)=\left[g_{1}(x), g_{2}(x)\right]$,首先
+\[
+g({A})=\left[\begin{array}{cc}
+g\left({A}_{1}\right) & \\
+& g\left({A}_{2}\right)
+\end{array}\right]={O}
+\]
+因此 $g(x)$ 能被 $A$ 的最小各项式整除.其次, 如果 $h({A})={O}$,那么
+\[
+h({A})=\left[\begin{array}{cc}
+h\left({A}_{1}\right) & \\
+& h\left({A}_{2}\right)
+\end{array}\right]={O}
+\]
+所以 $h\left({A}_{1}\right)={O}, h\left({A}_{2}\right)={O} .$ 因而 $g_{1}(x)\left|h(x), g_{2}(x)\right| h(x)$ 并
+由此得 $g(x) | h(x)$.这样就证明了 $g(x)$ 是 $\mathbf{A}$ 的最小多项式.
+\qed}
+\end{frame}
+
+\begin{frame}
+这个结论可以推广到 $A$ 为若干个矩阵组成的准对角矩阵的 情形.
+\begin{coro}
+如果
+\[
+{A}=\left(\begin{array}{cccc}
+{A}_{1} & & & \\
+& {A}_{2} & & \\
+& & \ddots & \\
+& & & {A}
+\end{array}\right)
+\]
+${A}_{i}$ 的最小多项式为 $g_{i}(x), i=1,2, \cdots, s,$ 那么 ${A}$ 的最小多项式为
+$\left[g_{1}(x), g_{2}(x), \cdots, g_{s}(x)\right]$
+\end{coro}
+\end{frame}
+
+
+\begin{frame}
+\begin{lem}
+$k$级Jordan块
+\[
+{J}=\left(\begin{array}{cccc}
+a & & & \\
+1 & \ddots & & \\
+& \ddots & \ddots & \\
+& & 1 & a
+\end{array}\right)
+\]
+的最小多项式为 $(x-a)^{k}$.
+\end{lem}
+\pf 
+${J}$ 的特征多项式为 $(x-a)^{k},$ 而
+所以 $J$ 的最小多项式为( $x-a)^{k}$. 
+\qed
+\end{frame}
+
+
+\begin{frame}
+
+\begin{thm}
+数域 $P$ 上 $n$ 级矩阵$A$ 与对角矩阵相似  $\Leftrightarrow A$ 的最小多项式是 $P$ 上互素的一次因式的乘积. 
+\end{thm}
+%\pf  根据引理 3 的推广的情形，条件的必要性是显然的. 
+%现在证明充分性.  根据矩阵和线性变换之间的对应关系,我们可定义任意线性 变换.
+%
+%$\A$的最小多项式,它等于其对应矩阵 A 的最小多项式.我们 只要证明,若数域 P 上某线性空间 V 上的线性变换 . 1的最小多
+%项式 $g(x)$ 是 $P$ 上互素的一次因式的乘积 $: g(x)=\prod_{i=1}^{1}\left(x-a_{i}\right)$ 则 \&有一组特征向量做成 V 的基.  实际上，由于 $g(\mathscr{N}) V=\mathbf{0},$ 用定理 12 中同样步骤可证 $V=$ $V_{1} \oplus \cdots \oplus V_{i},$ 其中 $V_{i}=\left\{\xi |\left(\emptyset /-a_{i} \mathscr{E}\right) \xi=\mathbf{0}, \xi \in V\right\} .$ 把 $V_{1}, \cdots$
+%$V,$ 各自的基合起来就是 $V$ 的基. 而 每个基向量都属于某个 $V_{i}$
+%因而是 A 的特征向量
+
+\begin{coro}
+复数矩阵 $A$ 与对角矩阵相似$\Leftrightarrow  A$的最小多项式没有重根.
+\end{coro}
+\end{frame} 
+
+
+\begin{frame}
+\begin{exa}
+设复矩阵$A$满足$A^\ell=E$, 其中$\ell$为正整数. 证明$A$相
+似于对角形. 
+\end{exa} 
+\pf 因为$A$的最小多项式是$x^\ell-1$ 的因式，
+从而无重根，由推论知A相似于对角形. 
+\qed
+
+\begin{exa}
+	设矩阵$A$满足$A^{2}=A$. 证明$A$相
+	似于对角形. 
+\end{exa} 
+\pf 因为$A$的最小多项式是$x^2-x$ 的因式，
+从而无重根，可知A相似于对角形. 
+\qed
+
+\end{frame}
+
+
+\end{document} 

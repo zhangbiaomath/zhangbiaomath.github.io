@@ -1,0 +1,2412 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[13pt]{beamer}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{amsmath,amssymb,amsthm}             % AMS Math
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\linespread{1.3}
+
+\usepackage{mathrsfs}  %花写字母
+ 
+
+%%%=== theme ===%%%
+% \usetheme{Warsaw}
+%\usetheme{Copenhagen}
+%\usetheme{Singapore}
+\usetheme{Madrid}
+%\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+% \usefonttheme{structureitalicserif}
+%%\useinnertheme{rounded}
+%%\useinnertheme{inmargin}
+\useinnertheme{circles}
+%\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[page number]
+
+
+
+
+\usepackage{ctex}
+% \usepackage{CJK,CJKnumb,CJKulem}
+\usepackage{minitoc}
+
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{thm}{定理}
+\newtheorem{lem}{引理}
+\newtheorem{exa}{例}
+\newtheorem*{theo}{定理}
+\newtheorem*{defi}{定义}
+\newtheorem*{coro}{推论}
+\newtheorem*{ex}{练习}
+\newtheorem*{rem}{注}
+\newtheorem*{prop}{性质}
+\newtheorem*{qst}{问题}
+
+\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
+\def\pf{{\bf 证明~~ }}
+\def\sol{{\bf 解~~ }}
+
+
+
+\def\R{\mathbb{R}}
+\def\Rn{\mathbb{R}^n}
+\def\A{\mathscr{A}}
+\def\B{\mathscr{B}}
+\def\D{\mathscr{D}}
+\def\E{\mathscr{E}}
+\def\O{\mathscr{O}}
+
+\def\rank{\operatorname{rank}}
+\def\dim{\operatorname{dim}}
+\def\0{\mathbf{0}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\r{\gamma}
+
+\usepackage{color}
+\definecolor{linkcol}{rgb}{0,0,0.4}
+\definecolor{citecol}{rgb}{0.5,0,0}
+
+\definecolor{blue}{rgb}{0,0.08,1}
+\newcommand{\blue}{\textcolor{blue}}
+
+  \usepackage{graphicx}
+  \DeclareGraphicsExtensions{.eps}
+%   \usepackage[a4paper,pagebackref,hyperindex=true,pdfnewwindow=true]{hyperref}
+
+
+\begin{document}
+
+
+
+\title[]{第六章 \quad  线性空间}
+\author[]{{\large 张彪}\\  }
+\institute[]{{\normalsize
+		天津师范大学\\[6pt]
+		zhang@tjnu.edu.cn}}
+
+\date{}
+
+
+\AtBeginSection[]
+{
+\setcounter{exa}{0}
+\setcounter{equation}{0}
+}
+
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+\item 线性空间(linear space)也叫向量空间是线性代数的重要内容. 线性空间的概念具体展示了代数的高度抽象性和应用的广泛性. 
+
+\item 本章涉及概念多，要利用解析几何中已经学过的内容理解这些抽象的概念，在理解的基础上搞清概念之间的联系. 在学习中也会暴露在逻辑上的不少混乱，因此这一章对逻辑思维能力的训练也是十分重要的. 
+	
+\item 初学者感到困难，不习惯从概念出发进行推理，这一点要通过听课和练习逐步培养. 
+\end{itemize}
+\end{frame}
+
+
+\section{集合 映射}
+\begin{frame}{\S 1  集合 映射}
+一、集合
+\begin{defi}
+\begin{itemize}
+	\item \alert{集合}是指作为整体一起看的一堆东西. 通常用大写英文字母$A, B, C, \ldots$表示.
+	\item 组成集合的东西叫\alert{元素}，用小写英文字母$a, b, c, \ldots$表示.
+
+\end{itemize}
+\end{defi}
+
+\begin{defi}
+\begin{itemize}
+	\item $a \in A$ 表示a是A的元素
+	\item $a \notin A(\text { 或 } a \in A)$ 表示a不是A的元素
+\end{itemize}
+\end{defi}
+\end{frame}
+
+
+\begin{frame}
+	集合的表示法：
+	
+\begin{itemize}
+	\item 列举法  \quad 把集合中的所有元素一一列举出来. 
+
+	例如, $M=\{1,2,3\}.$
+
+	\item 描述法  \quad $M=\{a | a \text { 具有的性质 }\}$
+
+例如 ,适合方程 $\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1$ 的全部点的集合 $M$ 可写成
+\[
+M=\left\{(x, y) | \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1\right\}.
+\]
+又例如, 两个多项式 $f(x), g(x)$ 的公因式的集合可写成
+\[
+M=\{d(x)|d(x)| f(x), d(x) | g(x)\}
+\]
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{defi}
+\begin{itemize}
+\item 集合的运算
+\[
+\begin{aligned}
+&\mathrm{M} \cap \mathrm{N}=\{\mathrm{x} | \mathrm{x} \in \mathrm{M} \text { 且 } \mathrm{x} \in \mathrm{N}\}\\
+&\mathrm{M} \cup \mathrm{N}=\{\mathrm{x} | \mathrm{x} \in \mathrm{M} \text { 或 } \mathrm{x} \in \mathrm{N}\}
+\end{aligned}	
+\]
+
+\item 集合的包含 
+
+称$M$是$N$的子集（记为$M \subset N$), 如果$x \in \mathrm{M} \Rightarrow \mathrm{x} \in \mathrm{N}$
+\item 
+集合的相等
+
+称$M = N$，如果$M$和$N$具有相同元素 或者说 $x \in \mathrm{M} \Leftrightarrow \mathrm{x} \in \mathrm{N}$
+\end{itemize}
+\end{defi}
+
+
+\begin{prop}
+\[
+\mathrm{M}=\mathrm{N} \Leftrightarrow \mathrm{M} \subset \mathrm{N}, \mathrm{N} \subset \mathrm{M}
+\]
+\end{prop}
+\end{frame}
+
+\begin{frame}{二、映射}
+%上面介绍了有关集合的一些概念, 下面再来介绍映射的概念.  
+\begin{defi}
+设 $A$ 与 $B$是两个集合, 所谓集合 $A$ 到集合 $B$的一个映射 就是指一个法则,它使 $A$ 中每一个元素 $a$ 都有 $B$中一个确定的 元素 $b$与之对应.如果映射 $\A$ 使元素 $b \in  B$与元素 $a \in A$ 对应 那么就记为
+\[
+\A(a)=b
+\]
+$b$ 称为 $a$ 在映射 $\A$ 下的像，而 $a$ 称为 $b$在映射 $\A$ 下的一个原像.	
+\end{defi}
+
+
+$A$ 到 $A$ 自身的映射,有时也称为 $A$ 到自身的变换. 
+\begin{defi}
+集合 $A$ 到集合 $B$的两个映射 $\A$ 及 $\tau$, 若对 $M$ 的每个元素 $a$ 都有 
+$\A(a)=\tau(a)$, 则称它们相等, 记作 $\A=\tau.$
+\end{defi}
+\end{frame}
+
+
+
+\begin{frame}
+\small{
+%1
+\begin{exa}
+设$Z$是整数全体，$M$是偶数的全体. 定义
+$
+\A: Z \rightarrow M, \quad \A(n)=2 n
+$
+则$\A$是$Z$到$M$的映射. 
+\end{exa}
+
+%2
+\begin{exa}
+	设$P$是一个数域. 定义
+$\A_1: {P}^{\, n \times n} \rightarrow {P}, \quad \A(\mathrm{A})=|\mathrm{A}|,$
+则 $\A_1$ 是 ${P}^{{n} \times {n}}$ 到 $P$ 的映射.
+\end{exa}
+
+%3
+\begin{exa}
+%$M$ 是数域 $P$ 上全体 $n$ 级矩阵的集合,
+定义
+$
+\A_{2}(a)=a {E}, \quad a \in P, {E}$ 是 $n$ 级单位矩阵,这是 $P$ 到 ${P}^{\, n \times n}$ 的一个映射.
+\end{exa}
+}
+\end{frame}
+
+
+\begin{frame}
+%4
+\begin{exa}
+对于 $f(x) \in P[x],$ 定义
+\[
+\A(f(x))=f^{\,\prime}(x)
+\]
+这是 $P[x]$ 到自身的一个映射. 
+\end{exa}
+
+%5
+\begin{exa}
+设 $M_1$, $M_2$是两个非空的集合，$a_0$是 $M_2$中一个固定的
+元素，定义
+\[
+\A(a)=a_{0}, \quad a \in M_1
+\]
+即 $\A$ 把 $M_1$ 的每个元素都映到 $a_{0}$, 这是 $M_1$ 到 $M_2$ 的一个映射. 	
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+%6
+\begin{exa}
+设 $M$ 是一集合,定义
+\[
+\A(a)=a, a \in M
+\]
+即 $\A$ 把每个元素映到它自身,称为集合 $M$ 的恒等映射或单位映 射,记为  $1_{M}$. 在不致引起混淆时,也可以简单地记为 $1$.
+\end{exa}
+
+%7
+\begin{exa}
+任意一个定义在全体实数上的函数
+\[
+y=f(x)
+\]
+都是实数集合到自身的映射.
+因此,函数可以认为是映射的一个特殊情形.
+\end{exa}
+\end{frame}
+
+\begin{frame}{映射的乘积}
+% 对于映射我们可以定义乘法.
+\begin{defi}
+设 $\A, \tau$ 分别是集合 $M_1$ 到 $M_2$, $M_2$到 $M_3$的映射,乘积 $\tau \A$ 定义为
+\[
+(\tau \A)(a)=\tau(\A(a)), a \in M
+\]
+即相继施行 $\A$ 和 $\tau$的结果, $\tau \A$  是 $M_1$ 到 $M_3$ 的一个映射. 	
+\end{defi}
+
+
+\begin{exa}
+例如, 上面 例 2 与例 3 中映射的乘积 $\A_{2} \A_{1}$ 就把每个 $n$ 级矩阵 ${A}$ 映到数量矩 阵 $|A|{E}$,它是全体 $n$ 级矩阵的集合到自身的一个映射.	
+\end{exa}
+
+
+
+\end{frame}
+
+\begin{frame}
+\begin{prop}
+\begin{itemize}
+\item 与恒等映射的乘法\quad  $f: A \rightarrow B$
+\[
+{1}_{B} {f}={f}\, {1}_{A}={f}.
+\]
+\item 映射的合成满足结合律 \quad
+设 $\A, \tau, \psi$ 分别是集合 $A$ 到 $B$, $B$
+到 $C$, $C$ 到 $D$ 的映射,映射乘法的结合律就是
+\[
+(\psi \tau) \A=\psi(\tau \A).
+\]
+\end{itemize}
+\end{prop}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{defi}
+\begin{itemize}
+	\item 单射： $a_{1} \neq a_{2} \Rightarrow f\left(a_{1}\right) \neq$
+$f\left(a_{2}\right)$
+
+\qquad $\Leftrightarrow\left(f\left(a_{1}\right)=f\left(a_{2}\right) \Rightarrow a_{1}=a_{2}\right)$
+\item 满射: $f(A)=B$
+
+\qquad  $\Leftrightarrow \forall b \in B, \exists a \in A,$ s.t. $b=f(a)$
+\item 双射： 既是单射又满射
+\end{itemize}
+\end{defi}
+\begin{defi}
+\begin{itemize}
+	\item
+逆映射： 若 $f$ 是双射, $f: A \rightarrow B, \quad f(a)=b$ 则可以定义逆映射 
+\[f^{-1}: B \rightarrow A, \quad  f^{-1}(b)=a\]
+\end{itemize}
+\end{defi}
+\begin{prop}
+$f^{-1}$ 还是双射,并且
+\[
+f^{-1} f=1_{A}, f\, f^{-1}=1_{B}
+\]		
+\end{prop}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\begin{prop}
+设映射 $f: A \rightarrow B$, $g: B \rightarrow C$,
+\begin{itemize}
+\item  若 $f$ 是单射, ${g}$ 是单射, 则 ${g}\, {f}$ 也是单射;
+\item  若 $f$ 是满射, ${g}$ 是满射, 则 $g\, f$ 也是满射;
+\item  若 $f$, $g$ 都是双射, 则 $g f$ 也是双射.
+\end{itemize}
+\end{prop}
+
+\begin{prop}
+设映射 $f: A \rightarrow B$, $g: B \rightarrow C$,
+\begin{itemize}
+\item  若 $g\, f$ 是单射, 则 ${f}$ 是单射;
+\item  若 $g\, f$ 是满射, 则 $g$ 是满射;
+\item  若 $g\, f$ 是双射, 则 ${f}$ 是单射 ${g}$ 是满射.
+\end{itemize}
+\end{prop}
+\end{frame}
+
+\section{线性空间的定义与简单性质}
+\begin{frame}{\S 2 线性空间的定义与简单性质}
+\begin{itemize}
+	\item 线性空间是线性代数最基本的概念之一.
+	\item 这一节我们来介绍它的\alert{定义},并讨论它的一些最简单的\alert{性质}.
+	\item 线性空间也是我们碰到 的第一个抽象的概念.
+\end{itemize}
+
+为了说明线性空间的来源，在引入定义之前，先看 几个熟知的\alert{例子}.  
+\begin{exa}
+\begin{itemize}
+	\item 在解析几何中,我们讨论过三维空间中的向量. 
+	\item 向量的基本属性是可以按平行四边形规律相加，也可以与实数作数量乘法.
+	\item 不少几何和力学对象的性质是通过向量的这两种运算来描述的.  
+\end{itemize}
+
+
+\end{exa}
+
+\end{frame}
+
+
+\begin{frame}
+
+\begin{exa}
+为解线性方程组,我们讨论过以 $n$ 元有序数组 $\left(a_{1},a_{2}, \cdots, a_{n}\right)$ 为元素
+\begin{align*}
+\left(a_{1}, a_{2}, \cdots, a_{n}\right)+\left(b_{1}, b_{2}, \cdots, b_{n}\right) 
+& =\left(a_{1}+b_{1}, a_{2}+b_{2}, \cdots, a_{n}+b_{n}\right), \\
+k\left(a_{1}, a_{2}, \cdots, a_{n}\right) & =\left(k a_{1}, k a_{2}, \cdots, k a_{n}\right).
+\end{align*}
+$P_n$: 数域$P$上的所有$n$维向量组成的集合,连同在其上定义的加法和数乘运算, 构成数域$P$上的$n$维向量空间．
+\end{exa}
+
+
+对于函数, 也可以定义加法和函数与实数的数量乘法.  
+
+\begin{exa}
+考虑全体定义在区间$[a,b]$上的连续函数.
+
+连续函数的和是连续函数，连续函数与实数的数量乘积还是连续函数. 
+\end{exa}
+
+%\begin{exa}
+%考虑全体定义在区间$[a,b]$上的可导函数.
+%
+%可导函数的和是可导函数，可导函数与实数的数量乘积还是可导函数. 
+%\end{exa}
+%
+%
+%\begin{exa}
+%考虑全体定义在区间$[a,b]$上的可积函数.
+%
+%可积函数的和是可积函数，可积函数与实数的数量乘积还是可积函数. 
+%\end{exa}
+\end{frame}
+
+
+\begin{frame}
+
+\begin{defi}
+\begin{itemize}
+\item 设$V$是一非空集合, $P$ 是一数域.
+\item 在集合$V$的元素之间定义一种“\alert{加法}" 运算, 即对于任意 $\alpha, \beta \in V$,在 $V$ 中都有唯一确定的元素$\gamma$与之对应, 称 $\gamma$ 为 $\alpha$ 与 $\beta$ 的和,记作
+\[
+\gamma=\alpha+\beta.
+\]
+
+\item 在数域$P$与集合$V$的元素之间定义一种``\alert{数量乘法}'' 运算,即对于任意 $k \in P$ 和 $\a \in V$, 在 $V$ 中也都有惟一确定的元素$\delta$与之对应, $\delta$ 称为 $k$ 与 $\alpha$ 数量乘积, 记作 $\delta={k} \alpha.$
+\end{itemize}
+\end{defi}
+\end{frame}
+
+
+\begin{frame}
+\begin{defi}
+
+如果上述运算满足如下8条运算性质,则称$V$ 是 数域$P$上的\alert{线性空间}.	
+\begin{enumerate}
+	\item 加法交换律: $\alpha+\beta=\beta+\alpha$
+	\item 加法结合律: $(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma)$
+	\item 存在向量$\0$, 使得对任一个向量 $\alpha$,都有 $\alpha+{0}=\alpha$
+	\item 对任一个向量 $\alpha,$ 存在向量 $\alpha$ ，使得 $\alpha+\alpha^{\, \prime}={0}$
+	\item 1的数乘: $1 \alpha=\alpha$
+	\item 数乘结合律 $: k(l \alpha)=(k l) \alpha$
+	\item 数乘分配律: $k(\alpha+\beta)=k \alpha+k \beta$
+	\item 数乘分配律: $({k}+I) \alpha={k} \alpha+l \alpha$
+\end{enumerate}
+其中 $\alpha, \beta, \gamma$ 是 $V$ 中的向量, $k, l \in {P}$.
+\end{defi}
+
+\end{frame}
+
+\begin{frame}
+下面再来举几个例子. 
+%4
+\begin{exa}
+\begin{itemize}
+	\item 数域 $P$ 上一元多项式环 $P[x]$,按通常的多项式加法和 数与多项式的乘法,构成一个数域 $P$ 上的线性空间.
+	\item 如果只考虑 其中\alert{次数小于 $n$} 的多项式,再添上零多项式也构成数域 $P$ 上的一 个线性空间,用 $P[x]_{n}$ 表示.
+\end{itemize}
+\end{exa}
+
+%5
+\begin{exa}
+元素属于数域 $P$ 的 $m \times n$ 矩阵, 接矩阵的加法和矩阵 与数的数量乘法，构成数域 P 上的一个线性空间,用 $P^{m \times n}$ 表示. 
+\end{exa}
+\end{frame}
+
+\begin{frame}
+%6
+\begin{exa}
+全体实函数,按函数的加法和数与函数的数量乘法, 构成一个实数域上的线性空间. 
+\end{exa}
+%7
+\begin{exa}
+数域 $P$ 按照本身的加法与乘法，即构成一个数域$P$自身上的线性空间. 
+\end{exa}
+
+
+\begin{exa}
+数域$P$上的齐次线性方程组$AX=0$的全体解向量, 在向量加法及数乘向量运算下构成$P$上线性空间．
+\end{exa}
+
+
+
+\end{frame}
+
+
+\begin{frame}
+
+\begin{exa}
+设$V$是全体正实数的集合$\mathbb{R}^{+}$, 数域是实数域$\mathbb{R}$.
+定义$V$中的加法与数乘为
+\[
+\begin{array}{c}
+{a} \oplus {b}={a} {b}, \\
+{k} \cdot {a}={a}^{k},
+\end{array}
+\]
+则$\mathbb{R}^{+}$对于所定义的运算构成实数域$\mathbb{R}$上 的线性空间.
+
+这里的零元素是实数$1$, $a$的负元素是 $a^{-1}$.	
+\end{exa}
+
+\begin{rem}
+\begin{itemize}
+	\item 线性空间的元素也称为向量. 这里所谓向量比几何中所 谓向量的涵义要广泛得多.线性空间有时也称为向量空间.
+	\item 常用黑体的小写希腊字母 ${\alpha}, {\beta}, {\gamma}, \cdots$ 代表线性空间 $V$ 中的元素，用小写的拉丁字母 $a, b, c, \cdots$ 代表数域 $P$ 中的数. 
+	\item 
+\end{itemize}	
+\end{rem}
+\end{frame}
+
+\newtheorem{proposition}{性质}
+
+
+\begin{frame}
+下面我们直接从定义来证明线性空间的一些简单性质. 
+\begin{proposition}
+零元素是唯一的. 
+\end{proposition}
+\pf 
+假设  $\0_{1}, {\0}_{2}$ 是线性空间 $V$ 中的两个零元素. 我们来证 $\0_{1}={\0}_{2}$. 
+考虑和
+\[
+{\0}_{1}+{\0}_{2}
+\]
+由于  $\0_{1}$ 是零元素,所以 ${\0}_{1}+{\0}_{2}={\0}_{2}$. 
+又由于 ${\0}_{2}$ 也是零元素,所以
+\[
+{\0}_{1}+{\0}_{2}={\0}_{2}+{\0}_{1}={\0}_{1}
+\]
+于是
+\[
+{\0}_{1}={\0}_{1}+{\0}_{2}={\0}_{2}
+\]
+这就证明了零元素的唯一性. \qed
+
+仅有一个零向量组成的 线性空间称为\alert{零空间}，零空间一般记作$\0 = \{\0\}$．
+\end{frame}
+
+
+
+\begin{frame}
+\begin{proposition}
+负元素是唯一的. 这就是说，适合条件 ${\alpha}+{\beta}={0}$ 的元素 ${\beta}$ 是被元素${\alpha}$ 唯一决定
+的. 
+\end{proposition}
+\pf   假设 ${\alpha}$ 有两个负元素 ${\beta}$ 与 $\gamma$
+\[
+{\alpha}+{\beta}={\0}, {\alpha}+{\gamma}={\0}
+\]
+那么
+\[
+{\beta}={\beta}+{\0}={\beta}+({\alpha}+{\gamma})=({\beta}+{\alpha})+{\gamma}={\0}+{\gamma}={\gamma}.
+\]
+\begin{defi}
+	向量 ${\alpha}$ 的负元素记为 $-{\alpha}$
+利用负元素, 我们定义减法如下：
+\[
+{\alpha}-{\beta}={\alpha}+(-{\beta}).
+\]
+\end{defi}
+
+
+\end{frame}
+
+
+\begin{frame}
+\begin{proposition}
+\[ 
+0 {\alpha}={\0}; \quad {k}\, {\0}={\0}; \quad (-1) {\alpha}=-{\alpha}.
+\]
+\end{proposition}
+\pf 
+\small{
+\begin{itemize}
+\item 我们先来证 $0 {\alpha}={\0}$. 因为
+\[
+\alpha+0 \alpha=1 \alpha+0 \alpha=(1+0) \alpha=1 \alpha=\alpha,
+\]
+两边加上 $- \a$ 即得
+$\qquad \qquad 
+0 \alpha=\0.
+$
+
+\item 再证 ${k}\, {\0}={\0}$. 因为
+\[
+{k}\, {\0} + k \alpha=k \left( \0 + \alpha\right)
+=k \alpha,
+\]
+两边加上 $-k \a$ 即得
+$\qquad \qquad 
+{k}\, {\0}={\0}.
+$
+
+\item 证第三个等式.我们有
+\[
+{\a}+(-1) {\a}=1 {\a}+(-1) {\a}=(1-1) {\a}=0 {\alpha}={\0},
+\]
+两边加上 $-\alpha$ 即得\qquad
+$
+(-1) {\alpha}=-{\alpha}.
+$
+\end{itemize}
+}\qed
+\end{frame}
+
+
+\begin{frame}
+\begin{proposition}
+如果  $k\, \alpha={\0},$ 那么 $k=0$ 或者 ${\alpha}={\0}$.
+\end{proposition}
+\pf  
+假设 $k \neq 0,$ 于是一方面
+\[
+k^{-1} (k a)=k^{-1} {0}=\0.
+\]
+而另一方面
+\[
+k^{-1}(k \alpha)=\left(k^{-1} k\right) \alpha=1 \alpha=\alpha.
+\]
+由此即得 \quad ${\alpha}={\0}.$
+\end{frame}
+
+\section{维数、基与坐标}
+\begin{frame}{\S 3  维数、基与坐标}
+
+向量空间中的概念和结论, 都可平移过来 
+%\begin{defi}
+%设 $V$ 是数域P上的线性空间 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{\text {是 } V 的一组向富,} k_{1}, k_{2}, \ldots, k_{s}$ 是数域P 中的一组数,
+%\[
+%k_{1} \alpha_{1}+k_{2} \alpha_{2}+\ldots+k_{s} \alpha
+%\]
+%称为向量组 $\alpha_{1}, \alpha_{2}, \dots, \alpha_{s}$ 的一个\alert{线性组合}, $k_{1}, k_{2}, \ldots, k_{s}$ 称为该组合的系数. 
+%\end{defi}
+
+
+\begin{defi}
+设$V$是数域$P$上的一个线性空间, 
+${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_n \quad (r \geqslant 1)$ 是 $V$ 中一组向量, $k_{1}, k_{2}, \cdots, k_{r},$ 是数域 $P$ 中的数,那么向量
+\[
+{\alpha}=k_{1} {\alpha}_{1}+k_{2} {\alpha}_{2}+\cdots+k_{, \alpha}
+\]
+称为向量组 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}$ 的一个\alert{线性组合}. 有时我们也说向量 ${\alpha}$
+可以用向量组 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}$ \alert{线性表出}.
+\end{defi}
+\end{frame}
+
+
+\begin{frame}
+\begin{defi}
+设
+\begin{align}
+{\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{r}  \label{v-1}\\
+{\beta}_{1}, {\beta}_{2}, \cdots, {\beta}_{s}  \label{v-2}
+\end{align}
+是 $V$ 中两个向量组.
+\begin{itemize}
+\item 如果\eqref{v-1}中每个向量都可以用向量组\eqref{v-2}线性 表出,那么称向量组\eqref{v-1}可以用向量组\eqref{v-2}\alert{线性表出}.
+\item 如果\eqref{v-1}与\eqref{v-2}可以互相线性表出,那么向量组\eqref{v-1}与\eqref{v-2}称为\alert{等价的}. 	
+\end{itemize}
+\end{defi}
+\end{frame}
+
+
+\begin{frame}
+\begin{defi}
+\begin{itemize}
+\item 线性空间 $V$ 中向量 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{r}\quad (r \geqslant 1)$ 称为\alert{线性相关}, 如果在数域 $P$ 中有 $r$ 个不全为0的数 $k_{1}, k_{2}, \cdots, k_{r}$, 使
+\begin{align}\label{v-3}
+k_{1} {\alpha}_{1}+k_{2} {\alpha}_{2}+\cdots+k_{,} {\alpha}_{r}={0}
+\end{align}
+\item 如果向量 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{r}$ 不线性相关,就称为\alert{线性无关}.
+
+换句话说,
+向量组 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha},$ 称为 {线性无关}, 如果等式\eqref{v-3}只有在 $k_{1}=k_{2}=\cdots=k_{r}=0$ 时才成立.
+\end{itemize}
+\end{defi}
+\end{frame}
+
+\begin{frame}
+常用的结论
+\begin{enumerate}
+
+\item \begin{itemize}
+\item 单个向量$\alpha$线性相关 $\Leftrightarrow  \alpha= \0$;
+\item 向量组 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{m}\quad  ({m} \geq 2)$ 线性相关$\Leftrightarrow$ 其中至少有一个向量可以由 其余$m-1$个向量线性表示.
+\end{itemize}
+\vskip 10pt
+
+\item 
+\begin{itemize}
+\item 
+若向量组 $\alpha_{1}, \alpha_{2}, \dots, \alpha_{s}$ 可以由向量组
+$\beta_{1}, \beta_{2}, \ldots, \beta_{t}$ 线性表示,  并且 $s>t,$ 则
+向量组 $\alpha_{1}, \alpha_{2}, \dots, \alpha_{s}$ 线性相关.
+
+\item  设向量组 $\alpha_{1}, \alpha_{2}, \dots, \alpha_{s}$ 线性无关
+并且可以由向量组 $\beta_{1}, \beta_{2}, \ldots, \beta_{t}$ 线性 表示，则 $s \leq t$.
+
+\item 两个等价的线性无关的向量组, 必含有\alert{相同}个数的向量.
+\end{itemize}
+\vskip 10pt
+
+
+\item
+\begin{itemize}
+\item 设向量组 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{m}$ 线性无关，
+而向量 组 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{m}, \beta$ 线性相关，
+则 $\beta$ 可由向量组 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{m}$ 线性表示，
+且表示法\alert{唯一}.
+\end{itemize}
+
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{维数}
+%$n$维向量空间中,有 $n$ 个线性无关的问量，任意 $n+1$ 个向量都是线性相关的.
+
+在一个线性空间中,究竟最多能有几个线性无关的向量, 是线性空间的一个重要属性.
+\begin{defi}
+如果在线性空间 $V$ 中有 $n$ 个线性无关的向量,但虽 没有更多数目的线性无关的向量,那么 $V$ 就称为 $n$ 维的; 如 $V$ 中可以找到任意多个线性无关的向量, 那么 $V$ 就称为无限维的.
+\end{defi}
+
+\begin{exa}
+	$n$ 元数组所成的空间是 $n$ 维的.
+\end{exa}
+
+\begin{exa}
+由所有实系数多项式所成 的实线性空间是无限维的.因为对于任意的 $n$, 都有 $n$ 个线性无 关的向量.
+\end{exa}
+\end{frame}
+
+
+
+\begin{frame}
+在解析几何中我们看到, 为了研究向量的性质, 引入坐标是一个重要的步骤.
+
+对于有限维线性空间,坐标同样是一个有力的工具.
+
+\begin{defi}
+在 $n$ 维线性空间$V$中, 
+\begin{itemize}
+\item 	$n$个线性无关的向量 
+${\varepsilon}_{1}, {\varepsilon}_{2}, \ldots, {\varepsilon}_{n}$
+称为 $V$ 的一组\alert{基}. 
+\item 设 ${\alpha}$ 是 $V$ 中任一向量, 于是 ${\varepsilon}_{1}, {\varepsilon}_{2}, 
+\ldots, {\varepsilon}_{n}, {\alpha}$ 线性相关,
+因此 ${\a}$ 可以被基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$线性表出,
+$${\alpha}=a_{1} {\varepsilon}_{1}+a_{2} {\varepsilon}_{2}+\cdots+a_{n} {\varepsilon}_{n},$$
+其中系数 $a_{1}, a_{2}, \cdots, a_{n}$ 是被向量 ${\alpha}$ 和基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 唯一确定的, 
+这组数就称为 $\a$ 在基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的\alert{坐标}, 记为 $\left(a_{1}, a_{2}, \cdots, a_{n}\right).$
+\end{itemize}
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\begin{rem}
+\begin{itemize}
+\item 零空间$\0$没有基, 规定其维数为0, 即$\dim \0 = 0$.
+\item 无限维空间是一个专门研究的对象,它与有限维空间有比较 大的差别.但是上面提到的线性表出,线性相关,线性无关等性质, 只要不涉及维数和基, 就对无限维空间成立. 在本课程中, 我们主要讨论有限维空间. 
+\end{itemize}
+\end{rem}
+\end{frame}
+
+\begin{frame}
+\begin{thm}
+如果在线性空间 $V$ 中有 $n$ 个线性无关的向量 $\a_{1}, {\a}_{2}, \cdots, {\alpha_n}$, 
+且 $V$ 中任一向量都可以用它们线性表出.
+那么 $V$ 是 $n$维的, 
+且 ${\a}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{n}$ 就是 $V$ 的一组基.
+\end{thm}
+\pf 
+既然 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{n}$ 是线性无关的, 那么 $V$ 的维数至
+少是 $n$.为了证明 $V$ 是 $n$ 维的,只须证 $V$ 中任意 $n+1$ 个向量必定 线性相关.设 ${\beta}_{1}, {\beta}_{2}, \cdots, {\beta}_{n+1}$
+是 $V$ 中任意 $n+1$ 个向量, 它们可以用 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{n}$ 线性走出
+假如它们线性无关,就有 $n+1 \leqslant n$, 于是得出矛盾.
+\qed
+\end{frame}
+
+\begin{frame}
+\setcounter{exa}{0}
+\begin{exa}
+在线性空间 $P[x]_{n}$ 中
+$1, x, x^{2}, \cdots, x^{n-1}$是 $n$ 个线性无关的向量，而且每一个次数小于 $n$ 的数域 $P$ 上的多项式都可以被它们线性表出,
+所以 $P[x]_{n}$ 是 $n$ 维的,而 $$1, x, \cdots, x^{n-1}$$ 就是它的一组基.
+在这组基下,多项式
+$f(x)=a_{0}+a_{1} x+\cdots+a_{n-1} x^{n-1}$的坐标 
+就是它的系数 $$\left(a_{0}, a_{1}, \cdots, a_{n-1}\right).$$
+\end{exa}
+
+\end{frame}
+
+\begin{frame}
+\addtocounter{exa}{-1}
+\begin{exa}
+如果在$V$中取另外一组基中
+$$\varepsilon_{1}^{\, \prime}=1, {\varepsilon}_{2}^{\, \prime}=(x-a) , \cdots, {\varepsilon}_{n}^{\, \prime}=(x-a)^{n-1}$$
+那么按泰勒展开公式
+$$f(x)=f(a)+f^{\,\prime}(a)(x-a)+\cdots+\frac{f^{(n-1)}(a)}{(n-1) !}(x-a)^{n-1}.$$
+因此， $f(x)$ 在基 ${\varepsilon}_{1}^{\, \prime}, {\varepsilon}_{2}^{\, \prime}, \cdots, {\varepsilon}_{n}^{\, \prime}$ 下的坐标是
+$$\left( f(a), f^{\,\prime}(a), \cdots, \frac{f^{\,(n-1)}(a)}{(n-1)!}\right).$$
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+\setcounter{exa}{1}
+\begin{exa}
+在 $n$ 维空间 $P^n$ 中,
+\[
+\left\{\begin{array}{l}
+{\varepsilon}_{1}=(1,0, \cdots, 0) \\
+{\varepsilon}_{2}=(0,1, \cdots, 0) \\
+\ldots \ldots \ldots \ldots \\
+{\varepsilon}_{n}=(0,0, \cdots, 1)
+\end{array}\right.
+\]
+是一组基.
+对每一个向量 ${\alpha}=\left(a_{1}, a_{2}, \cdots, a_{n}\right),$ 都有
+\[
+{\alpha}=a_{1} {\varepsilon}_{1}+a_{2} {\varepsilon}_{2}+\cdots+a_{n} {\varepsilon}_{n}
+\]
+所以 $\left(a_{1}, a_{2}, \cdots, a_{n}\right)$ 就是向量 ${\alpha}$ 在这组基下的坐标.
+
+\end{exa}
+\end{frame}
+
+\begin{frame}
+\addtocounter{exa}{-1}
+\begin{exa}
+另一方面，
+\[
+\left\{\begin{array}{l}
+{\varepsilon}_{1}^{\, \prime}=(1,1, \cdots, 1) \\
+{\varepsilon}_{2}^{\, \prime}=(0,1, \cdots, 1) \\
+\ldots \ldots \ldots . . \\
+{\varepsilon}_{n}^{\, \prime}=(0,0, \cdots, 1)
+\end{array}\right.
+\]
+是 $P^{n}$ 中 $n$ 个线性无关的向量. 
+在基 ${\varepsilon}_{1}^{\, \prime}, {\varepsilon}_{2}^{\, \prime}, \cdots, {\varepsilon}_{n}^{\, \prime}$ 下,对于向量
+$=\left(a_{1}, a_{2}, \cdots, a_{n}\right),$ 有
+\[
+{\alpha}=a_{1} {\varepsilon}_{1}^{\, \prime}+\left(a_{2}-a_{1}\right) {\varepsilon}_{2}^{\, \prime}+\cdots+\left(a_{n}-a_{n-1}\right) {\varepsilon}_{n}^{\, \prime}
+\]
+因此，在基 ${\varepsilon}_{1}^{\, \prime}, {\varepsilon}_{2}^{\, \prime}, \cdots, {\varepsilon}_{n}^{\, \prime}$ 下的坐标为
+\[
+\left(a_{1}, a_{2}-a_{1}, \cdots, a_{n}-a_{n-1}\right)
+\]
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+\begin{itemize}
+\item 如果把复数域 $\mathbb{C}$ 看作是自身上的线性空间, 那么它是 一维的,数 1 就是一组基;
+\item 如果看作是实数域$\mathbb{R}$上的线性空间, 那么 就是二维的,数 1 与 i 就是一组基.
+\end{itemize}
+\end{exa}
+这个例子告诉我们, 维数是和 所考虑的数域有关的. 
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+在线性空间$P^{m \times n}$中,记$E_{ij}$为第$i$行第$j$列的元素为1, 其它元素均为0的
+$m \times n$矩阵.
+% 即 $E_{i j}=\left[\begin{array}{ccccc}0 & \cdots & 0 & \cdots & 0 \\ \vdots & & \vdots & & \vdots \\ 0 & \cdots & 1 & \cdots & 0 \\ \vdots & & \vdots & & \vdots \\ 0 & \cdots & 0 & \cdots & 0\end{array}\right]$
+关于任一 $m \times n$ 矩阵 $A=\left( a_{i j} \right)_{m \times n}$ 有
+\[
+A=\sum_{j=1}^{n} \sum_{i=1}^{m} a_{i j} E_{i j}
+\]
+所以 $\{ E_{i j} \}_{1\le i \le m, 1 \le j \le n}$ 线性无关.
+从而, $\{ E_{i j} \}_{1\le i \le m, 1 \le j \le n}$  是$P^{m\times n}$的一组基, 
+且$\dim P^{m\times n} = m n$.
+\end{exa}
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+设$A$是$m \times n$ 矩阵，则齐次线性方 程组
+$A X= O$
+的解向量全体构成一个线性空间, 称为线 性方程组$AX = O$ 的解空间.
+
+若矩阵$A$的 秩为$r$, 则解空间的维数为$n - r$.
+\end{exa}
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+在 $F^{\, 4}$ 中, 求 $\xi=(1,2,1,1)$ 在基
+\[
+\left\{\begin{array}{l}
+\varepsilon_{1}=(1,1,1,1), \\
+\varepsilon_{2}=(1,1,-1,-1), \\
+\varepsilon_{3}=(1,-1,1,-1), \\
+\varepsilon_{4}=(1,-1,-1,1),
+\end{array}\right.
+\]下的坐标.
+\end{exa}
+
+\end{frame}
+
+\begin{frame}
+
+\sol 令$\xi =a \varepsilon_1+b \varepsilon_2+c \varepsilon_3+d \varepsilon_4,$ 比较分量得
+$$
+\left\{\begin{array}{l}
+a+b+c+d=1, \\
+a+b-c-d=2, \\
+a-b+c-d=1, \\
+a-b-c+d=1.
+\end{array}\right.
+$$
+
+解得 $a=\frac{5}{4}, b=\frac{1}{4}, c=-\frac{1}{4}, d=-\frac{1}{4}.$ 
+
+故 $\xi$ 在基$\varepsilon_1, \varepsilon_{2}, \varepsilon_{3}, \varepsilon_{4}$ 下的坐标为
+$\left(\frac{5}{4}, \frac{1}{4},-\frac{1}{4},-\frac{1}{4}\right).$
+\end{frame}
+
+\section{基变换与坐标变换}
+\begin{frame}{\S 4 基变换与坐标变换}
+%在 $n$ 维线性空间中, 任意 $n$ 个线性无关的向量都可以取作空 间的基.
+%
+%对不同的基，同一个向量的坐标一般是不同的. 
+%
+%现在我们来看，随着基的改变,向量的坐标是怎样变化的.  
+
+设 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 
+与 ${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}$ 是 $n$ 维线性空间 $V$ 中两组基,
+它们的关系是
+\begin{equation}\label{eq-4-1}
+\left\{\begin{array}{l}
+{\eta}_{1}=a_{11} {\varepsilon}_{1}+a_{21} {\varepsilon}_{2}+\cdots+a_{n 1} {\varepsilon}_{n}, \\
+{\eta}_{2}=a_{12} {\varepsilon}_{1}+a_{22} {\varepsilon}_{2}+\cdots+a_{n 2} {\varepsilon}_{n}, \\
+\ldots \ldots \ldots \\
+{\eta}_{n}=a_{1 n} {\varepsilon}_{1}+a_{2 n} {\varepsilon}_{2}+\cdots+a_{m m} {\varepsilon}_{n}.
+\end{array}\right.
+\end{equation}
+设向量 $\xi$ 在这两组基下的坐标分别是 $\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 与 $\left( y_1, y_2, \cdots, y_n\right)$, 即
+\[
+\xi=x_{1} \varepsilon_{1}+x_{2} \varepsilon_{2}+\cdots+x_{n} \varepsilon_{n}=y_1 \eta_{1}+y_2 \eta_{2}+\cdots+y_n \eta_{n}
+\]
+现在的问题就是找出 $\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 与 $\left( y_1, y_2, \cdots, y_n\right)$的关系.
+\end{frame}
+
+
+\begin{frame}
+\begin{defi}
+称矩阵
+$$A=\left(
+\begin{array}{cccc} 
+a_{11} & a_{12} & \cdots & a_{1 n} \\ 
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\  
+a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right)$$
+为由基 $\varepsilon_{1}, \varepsilon_{2}, \dots, \varepsilon_{n}$
+到基 $\eta_{1}, \eta_{2}, \ldots, \eta_{n}$ 的\alert{过渡矩阵}.
+\end{defi}
+
+\begin{itemize}
+\item 过渡矩阵一定可逆;
+\item 可采用矩阵乘积运算规则将上式\alert{形式}地记为
+\[
+\left(\eta_{1}, \eta_{2}, \ldots, \eta_{n}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{n}\right) A
+\]
+\end{itemize}\end{frame}
+
+\begin{frame}{关于形式记法}
+\begin{prop}
+设$\varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{n}$是线性空间$V$的一组基,
+% $$\left\{\begin{array}{c}
+% \eta_{1}={a}_{11} \varepsilon_{1}+{a}_{21} \varepsilon_{2}+\cdots+{a}_{n 1} \varepsilon_{n} \\ 
+% \eta_{2}={a}_{12} \varepsilon_{1}+{a}_{22} \varepsilon_{2}+\cdots+{a}_{n 2} \varepsilon_{n} \\
+% \cdots \\ 
+% \eta_{n}={a}_{1 n} \varepsilon_{1}+{a}_{2 n} \varepsilon_{2}+\cdots+{a}_{n n} \varepsilon_{n}\end{array}\right.
+% $$
+且
+ \[
+ \left(\eta_{1}, \eta_{2}, \ldots, \eta_{n}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{n}\right) A.
+ \]
+于是,  
+\begin{itemize}
+\item $\eta_{1}, \eta_{2}, \ldots, \eta_{n}$ 是 $V$ 的基$\Leftrightarrow$  矩阵$A=(a_{ij})$可逆.
+\item 当 $\eta_{1}, \eta_{2}, \ldots, \eta_{n}$ 为V的基时, 有 关系式
+\[
+\left(\varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{n}\right)=\left(\eta_{1}, \eta_{2}, \ldots, \eta_{n}\right) A^{-1}.
+\]
+\end{itemize}
+\end{prop}
+\end{frame}
+
+
+
+\begin{frame}{关于形式记法}
+\begin{prop}
+设 $\alpha_{1}, \alpha_{3}, \dots, \alpha_{n}$ 和 $\beta_{{1}}, \beta_{2}, \dots, \beta_{n}$ 是线性
+空间 $V$的两个向 量组, $A=\left(a_{i j}\right), B=\left(b_{i j}\right)$
+是两个$n$阶方阵, 则有 
+\begin{itemize}
+\item $\left(\left[\alpha_{1}, \alpha_{2}, \ldots, \alpha_{n}\right] A\right) B=\left[\alpha_{1}, \alpha_{2}, \ldots, \alpha_{n}\right](A B)$
+\item $\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{n}\right) A+\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{n}\right) B=\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{n}\right)(A+B)$
+\item $\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{n}\right) A+\left(\beta_{1}, \beta_{2}, \ldots, \beta_{n}\right) A$\\ $\quad = \left(\alpha_{1}+\beta_{1}, \alpha_{2}+\beta_{2}, \ldots, \alpha_{n}+\beta_{n}\right) A$
+\end{itemize}
+\end{prop}
+\end{frame}
+
+
+
+\begin{frame}{坐标变换}
+\begin{prop}
+设 $\varepsilon_{1}, \varepsilon_{2}, \dots, \varepsilon_{n}$ 和 $\eta_{1}, \eta_{2}, \dots, \eta_{n}$ 是线性空间 $V$的 两组基, 
+且
+
+由 $\varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{n}$ 到$\eta_{1}, \eta_{2}, \ldots, \eta_{n}$ 过渡矩阵是$A$，即 $$\left(\eta_{1}, \eta_{2}, \ldots, \eta_{n}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{n}\right) A.$$
+
+$\xi$是$V$中的一个向量,  设 $\xi$对 于基 $\varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{n}$ 和 $\eta_{1}, \eta_{2}, \ldots, \eta_{n}$ 的坐标分
+别是 $X=\left({x}_{1}, {x}_{2}, \ldots, {x}_{n}\right)^{\mathrm{T}}$ 和 $Y=\left({y}_{1} {y}_{2}, \ldots, {y}_{n}\right)^{\mathrm{T}}$, 
+则
+$$ \alert{X=AY}, \quad  \alert{Y=A^{-1}X}.$$
+\end{prop}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+在 \S 3 例 2 中，我们有
+\[
+\left({\varepsilon}_{1}^{\prime}, {\varepsilon}_{2}^{\prime}, \cdots, {\varepsilon}_{n}^{\prime}\right)=\left({\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}\right)\left(\begin{array}{cccc}
+1 & 0 &  & 0 \\
+1 & 1 & \cdots & 0 \\
+\vdots & \vdots & & \vdots \\
+1 & 1 & \cdots & 1
+\end{array}\right)
+\]
+这里
+\[
+{A}=\left(\begin{array}{cccc}
+1 & 0 &\cdots& 0 \\
+1 & 1 &\cdots& 0 \\
+\vdots & \vdots && \vdots \\
+1 & 1 &\cdots& 1
+\end{array}\right)
+\]
+就是过渡矩阵.
+\end{exa} 
+\end{frame}
+
+\begin{frame}
+\addtocounter{exa}{-1}
+\begin{exa}
+\[
+{A}^{-1}=\left(\begin{array}{ccccc}
+1 & 0 & 0 & \cdots& 0 \\
+-1 & 1 & 0 & \cdots& 0 \\
+0 & -1 & 1 &\cdots  & 0 \\
+\vdots & \vdots & \vdots & & \vdots \\
+0 & 0 & 0 & \cdots & 1
+\end{array}\right)
+\]
+因此
+\[
+\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right)=\left(\begin{array}{ccccc}
+1 & 0 & 0 &\cdots & 0 \\
+-1 & 1 & 0 & \cdots & 0 \\
+0 & -1 & 1 &\cdots & 0 \\
+\vdots & \vdots & \vdots & & \vdots \\
+0 & 0 & 0 &\cdots & 1
+\end{array}\right)\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right)
+\]
+也就是
+\[
+y_1=x_{1}, \quad y_i=x_{i}-x_{i-1} \quad(i=2, \cdots, n)
+\]
+\end{exa} 
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+设$P_3[x]$ 的一组基 $1, x, x^{2}, x^{3}$.
+
+(1) 证明  $1, 1+x, (1+x)^{2}, (1+x)^{3}$ 也是一组基
+
+(2) 求基 $1, x, x^{2}, x^{3}$ 到 $1,(1+x),(1+x)^{2},(1+x)^{3}$ 的 过渡矩阵. 
+\end{exa}
+\sol
+$$\left( 1, 1+x,(1+x)^{2},(1+x)^{3} \right)=\left( 1, x, x^{2}, x^{3} \right)\left(\begin{array}{llll}1 & 1 & 1 & 1 \\ 0 & 1 & 2 & 3 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 1\end{array}\right)_{=A}$$
+
+因为$|A|=1\neq 0$, 所以矩阵 $A$可逆.
+
+故
+$1,1+{x},(1+{x})^{2},(1+{x})^{3}$
+也是一组基, 且$A$为过渡矩阵 .\qed
+上例给出了证明向量组为基的办法. 
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+已知 $f_{1}=1-x, f_{2}=1+x^{2}, f_{3}=x+2 x^{2}$ 与 $g_{1}=x, g_{2}=1-x^{2}, g_{3}=1-x+x^{2}$ 是 $P[x]_{3}$ 中的两个向量组,
+\begin{enumerate}
+\item 证明 $f_{1}, f_{2}, f_{3}$ 和 $g_{1}, g_{2}, g_{3}$ 都是 $P[x]_{3}$ 的基,
+\item 求由基 $f_{1}, f_{2}, f_{3}$ 到基 $g_{1}, g_{2}, g_{3}$ 的过渡矩阵,
+\item 求 $f=1+2 x+3 x^{2}$ 分别在基 $f_{1}, f_{2}, f_{3}$ 与基 $g_{1}, g_{2}, g_{3}$ 下的坐标.
+\end{enumerate}
+\end{exa}
+\sol 
+\begin{align*}
+\left(f_{1}, f_{2}, f_{3}\right) &
+ =\left(1, x, x^{2}\right)\left(\begin{array}{ccc}1 & 1 & 0 \\ -1 & 0 & 1 \\ 0 & 1 & 2\end{array}\right)_{=A}\\
+\left(g_{1}, g_{2}, g_{3}\right) &
+ =\left(1, x, x^{2}\right)\left(\begin{array}{ccc}0 & 1 & 1 \\ 1 & 0 & -1 \\ 0 & -1 & 1\end{array}\right)_{=B}
+\end{align*}
+\end{frame}
+
+\begin{frame}
+(1) $|A|=1,|B|=-2$, 故$A, B$ 都可逆.  又因为线性空间 $P[x]_{3}$的维数为 3, 
+
+所以 $f_{1}, f_{2}, f_{3}$ 和
+$g_{1}, g_{2}, g_{3}$ 都是 $P[x]_{3}$ 的基.
+
+
+(2) $$\left(g_{1}, g_{2}, g_{3}\right)=\left(1, x, x^{2}\right) B=\left(f_{1}, f_{2}, f_{3}\right) A^{-1} B$$
+计算可得, 由基 $f_{1}, f_{2}, f_{3}$ 到基 $g_{1}, g_{2}, g_{3}$ 的过渡矩阵为
+% $$A^{-1}=\left(\begin{array}{ccc}-1 & -2 & 1 \\ 2 & 2 & -1 \\ -1 & -1 & 1\end{array}\right)$$,则
+ $$A^{-1} B=\left(\begin{array}{ccc}-2 & -2 & 2 \\ 2 & 3 & -1 \\ -1 & -2 & 1\end{array}\right)$$
+\end{frame}
+\begin{frame}
+
+\begin{align*}
+(3) \quad f & =1+2 x+3 x^{2}  =\left(1, x, x^{2}\right)\left(\begin{array}{l}1 \\ 2 \\ 3\end{array}\right)\\
+  & =\left(f_{1}, f_{2}, f_{3}\right) A^{-1}\left(\begin{array}{l}1 \\ 2 \\ 3\end{array}\right)
+     =\left(f_{1}, f_{2}, f_{3}\right)\left(\begin{array}{c}-2 \\ 3 \\ 0\end{array}\right)\\
+%f & =1+2 x+3 x^{2}=\left(1, x, x^{2}\right)\left(\begin{array}{l}1 \\ 2 \\ 3\end{array}\right)\\
+   & =\left(g_{1}, g_{2}, g_{3}\right) B^{-1}\left(\begin{array}{l}1 \\ 2 \\ 3\end{array}\right)
+      =\left(g_{1}, g_{2}, g_{3}\right)\left(\begin{array}{c}4 \\ -1 \\ 2\end{array}\right)
+\end{align*}
+因此, $f=1+2 x+3 x^{2}$ 在基 $f_{1}, f_{2}, f_{3}$ 下的坐标为$(-2,3,0)$,
+
+$f$在基 $g_{1}, g_{2}, g_{3}$ 下的坐标为$(4,-1,2)$.
+\end{frame}
+
+
+\section{线性子空间}
+\begin{frame}{\S 5  线性子空间}{一、 子空间}
+\begin{defi}
+设$W$是数域$P$上线性空间$V$的非空子集, 若$W$对于$V$的两种运算也构成线性空间，则称$W$为$V$的\alert{线性子空间}，简称\alert{子空间}．
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+对于任意线性空间 $V$，由单个零向量组 成的子集 $\{\0\}$ 和 $V$ 都是 $V$ 的子空间，称为 ${V}$ 的 \alert{平凡子空间}, 其中$\{\0\}$ 称为\alert{零子空间}.
+\end{exa}
+
+\begin{exa}
+$V=\{(x, y, 0) | x, y \in \R\}$ 表示通常几何
+空间中由$xOy$平面上所有向量全体作 成的集合，它是一个线性空间，从 而是几何空间$\R^3$的子空间.
+\end{exa}
+\end{frame}
+
+
+\begin{frame}{子空间的判别}
+\begin{thm}
+设$W$是线性空间$V$的非空子集合, 则 
+\begin{center}
+	$W$ 是$V$的子空间$\Leftrightarrow  {W}$ 对于 $V$ 的运算是封闭的.
+\end{center}
+\end{thm}
+\pf  必要性 \, 由子空间的定义可知.
+
+充分性 \, 因为W对于加法及数与向量的乘法运算封 闭.所以性质1), 2), 5) ,6), 7), 8) 成立.
+ 剩下来只须证明3) 和4) 成立即可.
+
+取数 $0$, 则对任意 $\alpha \in W$,都有 $0 \alpha={\0} \in W$ 后者就是W的零向量; 
+
+又对任意 $\alpha \in W$, 取数$-1$, 则 $(-1) \alpha=-\alpha \in W,$ 即为 $\alpha$ 的负向量. 
+
+于是3)与4) 满足, 从而 $W$ 是 $V$ 的子空间.
+\qed
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+$V = \{ (x, y, 1) | x, y\in \R \}$ 表示通常几何空间中与$xOy$平面平行、纵坐标为1的平面上所有向量全体作成的集合，它不构成线性空间．
+\end{exa} 
+
+\begin{exa}
+\[
+V = \{ ( a_1, a_2, \ldots , a_{n-1}, 0 ) \,  |\,  a_1, a_2, \ldots, a_{n-1} \in P \}
+\]
+是数域$P$上的线性空间, 因而是$P^n$的子空间.
+\end{exa}
+
+\begin{exa}
+ $V=\left\{\left(a_{1}, a_{2}, \ldots, a_{n-1}, 1\right) | a_{1}, a_{2}, \ldots, a_{n-1} \in {P}\right\}$
+不是线性空间, 因为  $V$  对于加法运算不封闭.
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+	在线性空间$P_{n}[x]$ 中 $${P}_{n-1}[x], {P}_{n-2}[x], \ldots, {P}_{1}[x]$$
+都是$P_n[x]$的子空间; 而且由于 $${P}_{n}[x] \supset {P}_{n-1}[x] \supset \ldots \supset {P}_{1}[x]$$
+后者也都是前者的子空间.
+\end{exa}
+\end{frame}
+
+\begin{frame}
+\begin{exa}[解空间] 
+在线性空间$P^n$中, 齐次线性方程组 
+$$
+\left\{\begin{array}{l}
+a_{11} x_{1}+a_{12} x_{2}+\dots+a_{1 n} x_{n}=0 \\
+a_{21} x_{1}+a_{22} x_{2}+\dots+a_{2 n} x_{n}=0 \\
+\dots \dots \dots \\ 
+a_{s 1} x_{1}+a_{s 2} x_{2}+\dots+a_{s n} x_{n}=0
+\end{array}\right.
+$$
+的全部解向量组成$P^n$的子空间，称之为 齐次线性方程组的解空间.
+
+解空 间的基就是方程组的基础解系，它的维 数等于$n-r$, 其中$r$为系数矩阵的秩.
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+设$$
+A=\left(\begin{array}{ccc}
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+0 & 2 & 2
+\end{array}\right), 
+$$
+记  $W=\left\{B \, | \, A B=B A, B \in P^{3 \times 3}\right\}$,  求  $W$ 的维数和一组基. 
+\end{exa}
+\sol 
+ 设  
+ $$
+A=E+\left(\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 1 \\
+0 & 2 & 1
+\end{array}\right)=E+T, \quad
+B=\left(\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+x & y & z
+\end{array}\right)$$
+ 满足 
+ $A B=B A$, { 而 } 
+ $A B=B A$ { 等价于 } $T B=B T$.
+{ 即 }
+$$\left(\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 1 \\
+0 & 2 & 1
+\end{array}\right)\left(\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+x & y & z
+\end{array}\right)=\left(\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+x & y & z
+\end{array}\right)\left(\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 1 \\
+0 & 2 & 1
+\end{array}\right).$$ 
+
+\end{frame}
+
+
+
+\begin{frame}
+从而 
+$$
+\left(\begin{array}{ccc}
+x & y & z \\
+x & y & z \\
+2 d+x & 2 e+y & 2 f+z
+\end{array}\right)=\left(\begin{array}{ccc}
+0 & 2 c & a+b+c \\
+0 & 2 f & d+e+f \\
+0 & 2 z & x+y+z
+\end{array}\right)$$
+
+$\left\{
+\begin{array}{c}
+d=x=0 \\
+y=2 c=2 f \\
+a+b+c=z \\
+e+f=z
+\end{array},
+\right.$
+取  $a, b, c$ 自由,则 
+$
+\left\{\begin{array}{c}
+d=x=0 \\
+y=2 f=2 c \\
+z=a+b+c \\
+e=a+b
+\end{array}
+\right.$
+故 
+$$B=\left(\begin{array}{ccc}
+a & b & c \\
+0 & a+b & c \\
+0 & 2 c & a+b+c
+\end{array}\right)$$
+\end{frame}
+
+
+\begin{frame}
+因此,
+$$W=\left\{\left. \left(\begin{array}{ccc}
+a & b & c \\
+0 & a+b & c \\
+0 & 2 c & a+b+c
+\end{array}\right) \right| a, b, c \in P\right\}$$
+于是, $\operatorname{dim} W=3$,
+且 一组基为 $$\left(\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right),\left(\begin{array}{ccc}
+0 & 1 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right),\left(\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 1 \\
+0 & 2 & 1
+\end{array}\right).$$
+\end{frame}
+
+
+
+\begin{frame}{二、 生成子空间}
+\begin{defi}[生成子空间]
+设$V$是$P$上线性空间, $\alpha_{1}, \alpha_{2}$ 是 的向量. 
+
+考虑它们所有可能的线性组合的集合
+$${W}=\left\{{k}_{1} \alpha_{1}+{k}_{2} \alpha_{2}+\ldots+{k}_{\mathrm{m}} \alpha_{\mathrm{m}} | {k}_{1}, \ldots, {k}_{\mathrm{m}} \in {P}\right\}$$
+对于$V$的运算封闭,所以$W$为$V$的子空间,称 为由向量组 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{m}$ 生成的子空间,记作 $L\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{m}\right)$.
+\end{defi}
+
+\begin{exa}
+	设$A$是数域$P$上的$m \times n$矩阵, 且
+	$
+	A=\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{n}\right)
+	$
+	其中 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{n}$ 是矩阵 $A$ 的列向量, 则称
+	$
+	L\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{n}\right)
+	$
+	为矩阵$A$的列空间,它是$P^n$的子空间.
+\end{exa}
+\end{frame}
+
+\begin{frame}
+
+
+
+\begin{rem}
+	\begin{itemize}
+		\item  $L \left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{m}\right)$ 是 $V$ 中包含向 量 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{m}$ 的最小子空间.
+		
+		\pf 因为任何包含 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{m}$ 的V的子
+		空间 一定包含 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{m}$ 的所有线性
+		组合，从而包含 $L \left(\alpha_{1}, \alpha_{2}, \dots, \alpha_{m}\right)$.
+		\item 有限维线性空间$V$的任何子空间$W$ 都具形式 $L \left(\alpha_{1}, \alpha_{2}, \dots, \alpha_{m}\right),$ 其中
+		$\alpha_{1}, \alpha_{2}, \ldots, \alpha_{m} \in {V}$.
+		
+		\pf  取$W$的任何一组基作为 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{m}$即可.
+	\end{itemize}
+\end{rem}
+\end{frame}
+
+\begin{frame}
+\begin{thm}
+\begin{enumerate}
+\item 两个向量组生成相同子空 间 $\Leftrightarrow $这两个向量组等价.
+\item $\operatorname{dim} L\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}\right)
+=\operatorname{rank}\left\{\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}\right\}$
+\end{enumerate}
+
+\end{thm}
+\pf (1) $\Rightarrow$
+设L $\left(\alpha_{1}, \alpha_{2}, \dots, \alpha_{s}\right)=L\left(\beta_{1}, \beta_{2}, \dots, \beta_{t}\right)$
+则 $\beta_{i}$ 可由 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}$ 线性表示. 
+同样, $\alpha_{j}$ 也可由 $\beta_{1} \beta_{2}, \ldots, \beta_{t}$ 线性表示.
+
+$\Leftarrow$
+${L}\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}\right)$ 中向量均可由 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}$ 线性表示, 从而可由 $\beta_{1}, \beta_{2}, \ldots, \beta_{t}$ 线性表示.
+于是, $L \left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}\right)$ 含于 $L \left(\beta_{1}, \beta_{2}, \ldots, \beta_{t}\right)$
+中. 
+同理 $L\left(\beta_{1}, \beta_{2}, \dots, \beta_{t}\right)$ 含于
+$L\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}\right)$ 之中. 
+
+(2) 设 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}$ 的秩为 $r,$ 不妨设 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{r}$ 为极大线性无关组,则
+$\alpha_{1}, \alpha_{2}, \ldots, \alpha_{r}$ 与 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}$ 等价,从而
+$$L\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{r}\right)=L\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}\right).$$
+
+由定理1可知, 
+$L\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}\right)$ 的一组基为
+$\alpha_{1}, \alpha_{2}, \ldots, \alpha_{r},$ 它的维数是 $r$.
+\end{frame}
+
+
+\begin{frame}
+\begin{thm}
+设 $W$ 是数域 $P$ 上 $n$ 维线性空间 $V$ 的一个 $m$ 维子 空间， ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 是 $W$ 的一组基,那么这组向量必定可扩充并
+整个空间的基.也就是说，在 V 中必定可以找到 $n-m$ 个向量 ${\alpha}_{m+1}, {\alpha}_{m+2}, \cdots, {\alpha}_{n},$ 使得 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{n}$ 是 $V$ 的一组基.
+\end{thm}
+\pf 对维数差 $n-m$ 作归纳法.
+\begin{itemize}
+\item 当 $n-m=0$,定理成
+立，因为 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 已经是 $V$ 的基.
+
+\item 现在假定 $n-m=k$ 时定
+理成立.
+\item 我们考虑 $n-m=k+1$ 的情形.
+既然 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 还不是 $V$ 的一组基,它又是线性无关的.
+那么在 V 中必定有一个向量 ${\alpha}_{m+1}$ 不能被 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 线性表
+出,把 ${\alpha}_{m+1}$ 添加进去 $${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}, {\alpha}_{m+1}$$ 必定是线性无关的.
+由定理 3, 子空间 $L\left({\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}, {\alpha}_{m+1}\right)$ 是 $m+1$ 维的.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+
+
+因为 $$n-(m+1)=(n-m)-1=k+1-1=k,$$ 
+
+由\alert{归纳假设}, $ L\left({\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}, {\alpha}_{m+1}\right)$ 的基 $${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}, {\alpha}_{m+1}$$ 可以扩充为整个空间的基. 
+
+根据归纳法原理，定理得证. \qed
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+	求下列子空间的维数和一组基:
+	\begin{enumerate}
+		\item $L((2,-3,1),(1,4,2),(5,-2,4)) \subseteq P^{3}$
+		\item $L\left(x-1,1-x^{2}, x^{2}-x\right) \subseteq P[x]$
+		\item $L\left(\left(\begin{array}{cc}2 & 1 \\ -1 & 3\end{array}\right),\left(\begin{array}{ll}1 & 0 \\ 2 & 0\end{array}\right),\left(\begin{array}{ll}3 & 1 \\ 1 & 3\end{array}\right),\left(\begin{array}{cc}1 & 1 \\ -3 &
+		3\end{array}\right)\right) \subseteq P^{2 \times 2}$
+	\end{enumerate}
+	
+\end{exa}
+\end{frame}
+
+\begin{frame}
+1) 
+$\left(\begin{array}{ccc}2 & 1 & 5 \\ 3 & 4 & -2 \\ 1 & 2 & 4\end{array}\right) \rightarrow\left(\begin{array}{ccc}2 & 1 & 5 \\ 0 & \frac{11}{2} & \frac{11}{2} \\ 0 & \frac{3}{2} & \frac{3}{2}\end{array}\right) \rightarrow\left(\begin{array}{ccc}2 & 1 & 5 \\ 0 & 1 & 1 \\ 0 & 0 & 0\end{array}\right)$
+
+所以，维数为2，一组基为 $(2,-3,1), (1,4,2)$.
+
+2) 
+$\left(x-1,1-x^{2}, x^{2}-x\right)=\left(1, x, x^{2}\right)\left(\begin{array}{ccc}-1 & 1 & 0 \\ 1 & 0 & -1 \\ 0 & -1 & 1\end{array}\right)$
+$\left(\begin{array}{ccc}-1 & 1 & 0 \\ 1 & 0 & -1 \\ 0 & -1 & 1\end{array}\right) \rightarrow\left(\begin{array}{ccc}1 & -1 & 0 \\ 0 & 1 & -1 \\ 0 & -1 & 1\end{array}\right) \rightarrow\left(\begin{array}{ccc}1 & -1 & 0 \\ 0 & 1 & -1 \\ 0 & 0 & 0\end{array}\right)$
+
+所以，维数为2，一组基为 $x-1,1-x^{2}$
+\end{frame}
+
+
+\begin{frame}
+3）
+\begin{align*}
+& \left(
+\left(\begin{array}{cc}2 & 1 \\ -1 & 3\end{array}\right), 
+\left(\begin{array}{cc}1 & 0 \\ 2 & 0\end{array}\right), 
+\left(\begin{array}{cc}3& 1 \\ 1 &3\end{array}\right), 
+\left(\begin{array}{cc}1 & 1 \\ -3 & 3\end{array}\right)\
+\right)\\
+= & \left(E_{11}, E_{12}, E_{13}, E_{14}\right)
+\left(\begin{array}{cccc} 2 & 1 & 3 & 1 \\ 1 & 0 & 1 & 1 \\ -1 & 2 & 1 & -3 \\ 3 & 0 & 3 & 3\end{array}\right) 
+\end{align*}
+
+
+$$\left(\begin{array}{cccc}2 & 1 & 3 & 1 \\ 1 & 0 & 1 & 1 \\ -1 & 2 & 1 & -3 \\ 3 & 0 & 3 & 3\end{array}\right) 
+\rightarrow
+\left(\begin{array}{cccc}1 & 0 & 1 & 1 \\ 0 & 1 & 1 & 1 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{array}\right)$$
+
+所以，维数为2，一组基为 
+$\left(\begin{array}{ll}2 & 1 \\ 1 & 3\end{array}\right)\left(\begin{array}{ll}1 & 0 \\ 2 & 0\end{array}\right)$
+
+\end{frame}
+
+\section{子空间的交与和}
+\begin{frame}{\S 6 子空间的交与和}
+\begin{defi}
+设$V_1, V_2$ 是线性空间 $V$ 的两个子空间,
+那么它们的交与和分别定义为
+\begin{align*}
+V_{1} \cap V_{2} & :=\left\{\alpha\, | \, \alpha \in V_{1} \text { 且 }\,  \alpha \in V_{2}\right\},\\
+V_{1}+V_{2} & :=\left\{\alpha_{1}+\alpha_{2} \, | \, \alpha_{1} \in V_{1} \text { 且 }\,  \alpha_{2} \in V_{2}\right\}.
+\end{align*}
+\end{defi}
+\end{frame}
+
+
+\begin{frame}
+\begin{rem}
+\begin{itemize}
+\item 交与和均满足交换律与结合律，即
+\begin{itemize}
+\item  $V_{1} \cap V_{2}=V_{2} \cap V_{1}$.
+\item  $\left(V_{1} \cap V_{2}\right) \cap V_{3}=V_{1} \cap\left(V_{2} \cap V_{3}\right).$
+\item  $V_{1}+V_{2}=V_{2}+V_{1}$.
+\item  $\left(V_{1}+V_{2}\right)+V_{3}=V_{1}+\left(V_{2}+V_{3}\right).$
+\end{itemize}
+\item 由结合律, 可定义任意有限多个子空间 的交与和.
+\end{itemize}
+\end{rem}
+\end{frame}
+
+\begin{frame}
+\small{
+\begin{prop}
+设 $V_{1}, V_{2}$ 是线性空间 $V$ 的两个子 空间，则
+\begin{itemize}
+\item 交 $V_{1} \cap V_{2}$ 也是 $V$ 的子空间.
+\item 和 $V_{1}+V_{2}$ 也是 $V$ 的子空间
+\end{itemize}
+\end{prop}
+
+\pf
+(1)
+由$\0\in V_{1}$, ${\0} \in V_{2}$, 知 ${\0} \in V_{{1}} \cap V_{2}$.
+因而 $V_{1} \cap V_{2}$ 非空.
+
+又设 $\alpha, \beta \in V_{1} \cap V_{2},$ 即 $\alpha, \beta \in V_{1},$ 且
+$\alpha, \beta \in V_{2},$ 
+
+那么
+$\alpha+\beta \in V_{1}, \alpha+\beta \in V_{2},$ 因此
+$\alpha+\beta \in V_{1} \cap V_{2} .$ 
+
+对数量乘积可类似证明. 
+所以 $V_{1} \cap V_{2}$ 是 $V$ 的子空间.
+
+(2)\, 由 ${\0} \in V_{1}$, ${\0} \in V_{2}$, 知 ${\0}={\0}+{\0} \in V_{{1}}+V_{{2}}$, 
+故 $V_{{1}}+V_{2}$ 非空. 
+
+又设 $\alpha, \beta \in V_{1}+V_{2},$ 即 
+$$ \alpha=\alpha_{1}+\alpha_{2}, \quad \alpha_{1} \in V_{1},  \alpha_{2} \in V_{2}$$ $$\beta=\beta_{1}+\beta_{2}, \quad \beta_{1} \in V_{1},  \beta_{2} \in V_{2}$$
+
+则 $\alpha+\beta=\left(\alpha_{1}+\alpha_{2}\right)+\left(\beta_{1}+\beta_{2}\right)
+=\left(\alpha_{1}+\beta_{1}\right)+\left(\alpha_{2}+\beta_{2}\right) \in V_{1}+V_{2}$.
+	 
+同样可证 $ {k} \alpha={k} \alpha_{1}+{k} \alpha_{2} \in V_{1}+V_{2}$.	
+所以, $V_{1}+V_{2}$ 是 $V$ 的子空间.}\qed
+\end{frame}
+
+
+\begin{frame}
+\begin{rem}
+	\begin{itemize}
+		\item
+$V_{1} \cup V_{2}$ 不是子空间. 
+
+实际上,任给 $\alpha, \beta \in V_{1} \cup V_{2}$,则 $\alpha, \beta \in V_{1}$ 或者 $\alpha, \beta \in V_{2}$.
+
+若 $\alpha, \beta \in V_{1}$ 则 $k \alpha+l \beta \in V_{1} \cup V_{2} ;$ 
+
+若 $\alpha, \beta \in V_{2},$ 则 $k \alpha+l \beta \in V_{1} \cup V_{2}$.
+
+但是 $\alpha \in V_{1},$ 同时 $\beta \in V_{2},$ 则没有如上的结论.
+
+例如: 取二维平面 ${\R}^{2},$ 设 $X, Y$ 轴分别为 $V_{1}$ 与 $V_{2}$
+则 $V_{1} \cap V_{2}=\{0\}$, $
+V_{1}+V_{2}=\R^{2},$ 
+
+但是 $V_{1} \cup V_{2}$ 就是 $X$ 轴和 $Y$ 轴. 
+
+	\end{itemize}
+\end{rem}
+
+
+\end{frame}
+
+\begin{frame}
+\begin{rem}
+	\begin{itemize}
+		\item 同时包含$V_ 1, V_2$ 的$V$ 的最小子空间是\underline{\qquad\qquad},
+		\item 同时包含于$V_1,  V_2$的$V$ 的
+最大子空间是\underline{\qquad\qquad}.
+	\end{itemize}
+\end{rem}
+
+\begin{itemize}
+\item 同时包含于 $V_{1}, V_{2}$ 的 $V$ 的子空间 $W$ 都包含于 $V_{1} \cap V_{2}$.
+	
+	即 $V_{1} \cap V_{2}$ 是同时包含于 $V_{1}, V_{2}$ 的 $V$ 的最大子空间
+	
+	即若子空间 W 满足 $W \subseteq V_{1}$ 且 $W \subseteq V_{2},$ 则必有 $W \subseteq V_{1} \cap V_{2}$
+
+\item 同时包含 $V_{1}, V_{2}$ 的 $V$ 的子空间 $W$ 都包含 $V_{1}+V_{2} .$ 
+
+即 $V_{1}+V_{2}$ 是同时包含于 $V_{1}, V_{2}$ 的 $V$ 的最小子空间
+
+即若子空间 W满足 $V_{1} \subseteq W$ 且 $V_{2} \subseteq W$,则必有 $V_{1}+V_{2} \subseteq W$.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{exa}
+在$3$维几何空间$\R^3$中, $V_{1}$ 表示一条通过原点的直线, $V_{2}$ 表示一张通过原点 且与 $V_{1}$ 垂直 的平面. 则
+\[
+V_{1} \cap V_{2}=\{\0\} ; \quad V_{1}+V_{2}=\mathbf{R}^{3}
+\]
+\end{exa}
+
+\begin{exa}
+在线性空间 $V$中, 有
+$L\left(\a_{1}, \a_{2}, \cdots, \a_{s}\right)+L\left(\b_{1}, \b_{2}, \cdots, \b_{t}\right)=L\left(\a_{1}, \a_{2}, \cdots, \a_{s}, \b_{1}, \b_{2}, \cdots, \b_{t}\right)$.
+\end{exa}
+\small{
+\pf 
+若 $\alpha \in L\left(\a_{1}, \a_{2}, \cdots, \a_{s}\right)+L\left(\b_{1}, \b_{2}, \cdots, \b_{t}\right)$, 
+
+则 $\alpha=\r_{1}+\r_{2}$, 
+其中 $\r_{1} \in L\left(\a_{1}, \a_{2}, \cdots, \a_{s}\right)$
+$\r_{2} \in L\left(\b_{1}, \b_{2}, \cdots, \b_{t}\right)$. 于是,  $$\alpha_{1}+\alpha_{2} \in L\left(\a_{1}, \a_{2}, \cdots, \a_{s}, \b_{1}, \b_{2}, \cdots, \b_{t}\right).$$
+
+反之, $L\left(\a_{1}, \a_{2}, \cdots, \a_{s}, \b_{1}, \b_{2}, \cdots, \b_{t}\right)$ 中任一向量都可写成 $L\left(\a_{1}, \a_{2}, \cdots, \a_{s}\right)$ 中与 $L\left(\b_{1}, \b_{2}, \cdots, \b_{t}\right)$ 中向量的和,
+则 $L\left(\a_{1}, \a_{2}, \cdots, \a_{s}\right)+L\left(\b_{1}, \b_{2}, \cdots, \b_{t}\right)=L\left(\a_{1}, \a_{2}, \cdots, \a_{s}, \b_{1}, \b_{2}, \cdots, \b_{t}\right).$
+}\qed
+%问题: $L\left(\a_{1}, \a_{2}, \cdots, \a_{s}\right) \cap L\left(\b_{1}, \b_{2}, \cdots, \b_{t}\right)=?$
+
+
+
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+\small{
+线性空间$P^n$中, $V_{1}, V_{2}$ 分别表示齐次 线性方程组 
+$$\left\{\begin{array}{c}
+a_{11} x_{1}+a_{12} x_{2}+\cdots +a_{1 n} x_{n}=0 \\
+a_{21} x_{1}+a_{22} x_{2}+\cdots +a_{2 n} x_{n}=0 \\
+  \cdots \cdots  \cdots\\ 
+a_{s 1} x_{1}+a_{s 2} x_{2}+\cdots +a_{s n} x_{n}=0
+\end{array}\right.
+\mbox{和}\,\,
+\left\{\begin{array}{c}
+b_{11} x_{1}+b_{12} x_{2}+\cdots +b_{1 n} x_{n}=0 \\ 
+b_{21} x_{1}+b_{22} x_{2}+\cdots +b_{2 n} x_{n}=0 \\ 
+\cdots \cdots \cdots \\ 
+b_{t1} x_{1}+b_{t2} x_{2}+\cdots +b_{t n} x_{n}= 0 
+\end{array}\right.$$
+的解空间, 
+则 $V_{1} \cap V_{2}$ 就是齐次线性方程组 
+$$\left\{
+\begin{array}{c}
+a_{11} x_{1}+a_{12} x_{2}+  \cdots +a_{1 n} x_{n}=0\\
+\cdots \cdots \cdots\\ 
+a_{s 1} x_{1}+a_{s 2} x_{2}+  \cdots +a_{s n} x_{n}=0\\
+b_{11} x_{1}+b_{12} x_{2}+  \cdots +b_{1 n} x_{n}=0 \\ 
+\cdots \cdots \cdots \\ 
+b_{t 1} x_{1}+b_{t 2} x_{2}+ \cdots +b_{t n} x_{n}=0
+\end{array}
+\right.$$
+的解空间.}
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+\setcounter{thm}{6}
+\begin{thm}[维数公式]
+若 $V_{1}, V_{2}$ 是线性空间 $V$ 的两个子空间,则 $$\operatorname{dim}\left(V_{1}+V_{2}\right)+\operatorname{dim}\left(V_{1} \cap V_{2}\right)=\operatorname{dim} V_{1}+\operatorname{dim} V_{2}.$$
+\end{thm}
+
+
+\pf 
+%要证
+%$\{\0\}-V_{1} \cap V_{2}<
+%\begin{array}{c}
+%V_{2}\\
+%V_{1}
+%\end{array}
+%> V_{1}+V_{2} - V$
+%或者 
+设 $\operatorname{dim}\left(V_{1} \cap V_{2}\right)=m, \operatorname{dim} V_{1}=n_{1}, \operatorname{dim} V_{2}=n_{2}$
+设 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}$ 是 $V_{1} \cap V_{2}$ 的一组基,则 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}$ 可以扩充成 $V_{1}$ 与 $V_{2}$ 的一组基,设为
+$$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m},  \blue{\beta_{1}, \beta_{2}, \cdots, \beta_{n_{1}-m}}$$ 与 $$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}, \alert{\gamma_{1}, \gamma_{2}, \cdots, \gamma_{n_{2}-m}}.$$
+考虑向量组 $$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}, \blue{\beta_{1}, \beta_{2}, \cdots, \beta_{n_{1}-m}}, \alert{\gamma_{1}, \gamma_{2}, \cdots, \gamma_{n_{2}-m}}.$$ 其个数为 $n_{1}+n_{2}-m$.
+\end{frame}
+
+\begin{frame}
+接下来证明 
+\begin{align*}
+\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}, \blue{\beta_{1}, \beta_{2}, \cdots, \beta_{n_{1}-m}}, \alert{\gamma_{1}, \gamma_{2}, \cdots, \gamma_{n_{2}-m}}
+\end{align*} 是 $V_{1}+V_{2}$ 的一组基. 需要证明 
+\begin{enumerate}
+\item 这个向量组线性无关, 
+\item  $V_{1}+V_{2}$ 中任一向量可由这个向量组线性表出.
+\end{enumerate} 
+
+
+(1) 假设 $$k_{1} \alpha_{1}+\cdots+k_{m} \alpha_{m}
+\blue{+\ell_{1} \beta_{1}+\cdots+\ell_{n_{1}-m} \beta_{n_{1}-m}}
+\alert{+t_{1} \gamma_{1}+\cdots+t_{n_{2}-m} \gamma_{n_{2}-m}}
+=\0$$
+改写为 
+\begin{align*}
+\a & = k_{1} \alpha_{1}+\cdots+k_{m} \alpha_{m}
+\blue{+\ell_{1} \beta_{1}+\cdots+\ell_{n_{1}-m} \beta_{n_{1}-m}}\\
+& = \alert{-t_{1} \gamma_{1}-\cdots-t_{n_{2}-m} \gamma_{n_{2}-m}},
+\end{align*}
+则 $\alpha \in V_{1} \cap V_{2}=L\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}\right)$.
+
+
+\end{frame}
+
+\begin{frame}
+设 $\alpha=p_{1} \alpha_{1}+p_{2} \alpha_{2}+\cdots+p_{m} \alpha_{m},$ 则
+$$p_{1} \alpha_{1}+p_{2} \alpha_{2}+\cdots+p_{m} \alpha_{m}
+\alert{+t_{1} \gamma_{1}+t_{2} \gamma_{2}+\cdots+t_{n_{2}-m} \gamma_{n_{2}-m}}=\0.$$
+
+ 由于 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}, 
+ \alert{\gamma_{1}, \gamma_{2}, \cdots, \gamma_{n_{2}-m}}$ 是
+$V_{2}$ 的一组基,则 $$p_{1}=p_{2}=\cdots=p_{m}=t_{1}=t_{2}=\cdots=t_{n_{2}-m}=0.$$
+
+从而 $$\0=\alpha=k_{1} \alpha_{1}+k_{2} \alpha_{2}+\cdots+k_{m} \alpha_{m}
+\blue{+\ell_{1} \beta_{1}+\ell_{2} \beta_{2}+\cdots+\ell_{n_{1}-m} \beta_{n_{1}-m}}.$$ 
+于是
+$k_{1}=k_{2}=\cdots=k_{m}=\ell_{1}=\ell_{2}=\cdots=\ell_{n_{1}-m}=0 .$ 
+
+因此, 向量组$$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}, \blue{\beta_{1}, \beta_{2}, \cdots, \beta_{n_{1}-m}}, \alert{\gamma_{1}, \gamma_{2}, \cdots, \gamma_{n_{2}-m}}$$线性无关
+\end{frame}
+
+
+\begin{frame}
+(2) 
+因为
+\begin{align*}
+V_{1}+V_{2}& =L\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}, \blue{\beta_{1}, \beta_{2}, \cdots, \beta_{n_{1}-m}}\right)\\
+& \qquad +L\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}, \alert{\gamma_{1}, \gamma_{2}, \cdots, \gamma_{n_{2}-m}}\right)\\
+& =L\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}, \blue{\beta_{1}, \beta_{2}, \cdots, \beta_{n_{1}-m}}, \alert{\gamma_{1}, \gamma_{2}, \cdots, \gamma_{n_{2}-m}}\right)
+\end{align*}
+所以 $$\alpha_{1}, \alpha_{2}, \cdots, 
+\blue{\alpha_{m}, \beta_{1}, \beta_{2}, \cdots, \beta_{n_{1}-m}}, 
+\alert{\gamma_{1}, \gamma_{2}, \cdots, \gamma_{n_{2}-m}}$$ 
+是 $V_{1}+V_{2}$ 的一组基.
+于是，  
+\begin{align*}
+\operatorname{dim}\left(V_{1}+V_{2}\right)& = n_1+n_2-m\\
+&=\operatorname{dim} V_{1}+\operatorname{dim} V_{2}-\operatorname{dim}\left(V_{1} \cap V_{2}\right).
+\end{align*}
+
+
+从而有维数公式. \qed
+\end{frame}
+
+
+\begin{frame}{怎样求子空间的交与和}
+设 $V=F^{\,n},$ 设 $V_{1}=L\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{s}\right), V_{2}=L\left(\beta_{1}, \beta_{2}, \cdots, \beta_{t}\right)$,理论上如何求 $V_{1}+V_{2}, V_{1} \cap V_{2}$.
+\begin{align*}
+V_{1}+V_{2} & =L\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{s}\right)+L\left(\beta_{1}, \beta_{2}, \cdots, \beta_{t}\right)\\
+& =L\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{s}, \beta_{1}, \beta_{2}, \cdots, \beta_{t}\right)
+\end{align*}
+
+同时应用维数公式可得 $$\operatorname{dim}\left(V_{1} \cap V_{2}\right)=\operatorname{dim} V_{1}+\operatorname{dim} V_{2}-\operatorname{dim}\left(V_{1}+V_{2}\right)$$
+其中
+\begin{align*}
+\operatorname{dim} V_{1}& =r\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{s}\right),\\
+ \operatorname{dim} V_{2}& =r\left(\beta_{1}, \beta_{2}, \cdots, \beta_{t}\right),\\ \operatorname{dim}\left(V_{1}+V_{2}\right) & =r\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{s}, \beta_{1}, \beta_{2}, \cdots, \beta_{t}\right)
+\end{align*}
+\end{frame}
+
+
+\begin{frame}
+不妨设 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n_{1}}, \beta_{1}, \beta_{2}, \cdots, \beta_{n_{2}}$ 分别是 $V_{1}$ 与 $V_{2}$ 的一组基.
+
+
+任给 $\xi \in V_{1} \cap V_{2},$ 则 $\xi \in V_{1}$ 且 $\xi \in V_{2}$,则 $\xi$ 可由 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n_{1}}$及 $\beta_{1}, \beta_{2}, \cdots, \beta_{n_{2}}$ 线性表出.
+$$\xi=x_{1} \alpha_{1}+x_{2} \alpha_{2}+\cdots+x_{n_{1}} \alpha_{n_{1}}=y_{1} \beta_{1}+y_{2} \beta_{2}+\cdots+y_{n_{2}} \beta_{n_{2}},$$ 即求解方程组
+$$x_{1} \alpha_{1}+x_{2} \alpha_{2}+\cdots+x_{n_{1}} \alpha_{n_{1}}-y_{1} \beta_{1}-y_{2} \beta_{2}-\cdots-y_{n_{2}} \beta_{n_{2}}=\0.$$
+
+若只有零解, 即 $V_{1} \cap V_{2}=\{\0\},$ 
+
+若有非零解, 则 $V_{1} \cap V_{2} \neq\{\0\}$,基础解系所含向量的个数为
+$$n_{1}+n_{2}-r \left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n_{1}}, \beta_{1}, \beta_{2}, \cdots, \beta_{n_{2}}\right)=\operatorname{dim}\left(V_{1} \cap V_{2}\right)=m$$
+\end{frame}
+
+
+\begin{frame}
+
+设
+\begin{align*}
+	\eta_{1}  &=\left(k_{11}, k_{12}, \cdots, k_{1 n_{1}}, \ell_{11}, \ell_{12}, \cdots, \ell_{1 n_{2}}\right), \\
+	 			 &\cdots \cdots \\
+	\eta_{m} & =\left(k_{m 1}, k_{m 2}, \cdots, k_{m m_{1}}, \ell_{m 1}, \ell_{m 2}, \cdots, \ell_{m_{n_{2}}}\right).
+\end{align*}
+
+
+ 则得到
+\begin{align*}
+\xi_{1}& =k_{11} \alpha_{1}+k_{12} \alpha_{2}+\cdots+k_{1 n_{1}} \alpha_{n_{1}}=\ell_{11} \beta_{1}+\ell_{12} \beta_{2}+\cdots+\ell_{1 n_{2}} \beta_{n_{2}}\\
+  	 &\cdots \cdots\\
+\xi_{m}& =k_{m 1} \alpha_{1}+k_{m 2} \alpha_{2}+\cdots+k_{m n_{1}} \alpha_{n_{1}}=\ell_{m 1} \beta_{1}+\ell_{m 2} \beta_{2}+\cdots+\ell_{m n_{2}} \beta_{n_{2}}
+\end{align*}
+ { 则 } $\xi_{1}, \xi_{2}, \cdots, \xi_{m}$ 
+ { 就是 } $V_{1} \cap V_{2} $ { 的一组基. } 
+
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+设 
+$\alpha_{1}=(1,0,-1,0)^{\prime}, \alpha_{2}=(0,1,2,1)^{\prime}, \alpha_{3}=(2,1,0,1)^{\prime}$, 
+\quad $\beta_{1}=(-1,1,1,1)^{\prime}, \beta_{2}=(1,-1,-3,-1)^{\prime}, \beta_{3}=(-1,1,-1,1)^{\prime}$.
+
+令 $V_{1}=L\left(\alpha_{1}, \alpha_{2}, \alpha_{3}\right), V_{2}=L\left(\beta_{1}, \beta_{2}, \beta_{3}\right)$.
+
+求  $V_{1}+V_{2}$ { 与 } $V_{1} \cap V_{2}${ 的维数和一组基 }.
+\end{exa} 
+
+
+
+\end{frame}
+
+\begin{frame}
+\sol 
+先求 $\operatorname{dim} V_{1}, \operatorname{dim} V_{2}$ 以及一组基.
+
+
+\[
+\left(\alpha_{1}, \alpha_{2}, \alpha_{3}\right)
+=\left(\begin{array}{ccc}
+1 & 0 & 2 \\
+0 & 1 & 1 \\
+-1 & 2 & 0 \\
+0 & 1 & 1
+\end{array}\right) 
+\rightarrow
+\left(\begin{array}{ccc}
+1 & 0 & 2 \\
+0 & 1 & 1 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{array}\right)
+\]
+则  $\operatorname{dim} V_{1}=2,$
+取$\alpha_{1}, \alpha_{2} $为基.
+
+\[
+\left(\beta_{1}, \beta_{2}, \beta_{3}\right)
+=\left(\begin{array}{ccc}
+-1 & 1 & -1 \\
+1 & -1 & 1 \\
+1 & -3 & -1 \\
+1 & -1 & 1
+\end{array}\right) 
+\rightarrow
+\left(\begin{array}{ccc}
+-1 & 1 & -1 \\
+0 & 1 & 1 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{array}\right) 
+\]
+则  $\operatorname{dim} V_{2}=2$,
+{ 取 } $\beta_{1}, \beta_{2}$  { 为基. }
+\end{frame}
+
+\begin{frame}
+而 
+$V_{1}+V_{2}=L\left(\alpha_{1}, \alpha_{2}, \alpha_{3}, \beta_{1}, \beta_{2}, \beta_{3}\right), $
+则
+\begin{align*}
+\left(\alpha_{1}, \alpha_{2}, \alpha_{3}, \beta_{1}, \beta_{2}, \beta_{3}\right)
+& =\left(\begin{array}{ccc|ccc}
+1 & 0 & 2 & -1 & 1 & -1 \\
+0 & 1 & 1 & 1 & -1 & 1 \\
+-1 & 2 & 0 & 1 & -3 & -1 \\
+0 & 1 & 1 & 1 & -1 & 1
+\end{array}\right) \\
+& \rightarrow
+\left(\begin{array}{ccc|ccc}
+1 & 0 & 2 & -1 & 1 & -1 \\
+0 & 1 & 1 & 1 & -1 & 1 \\
+0 & 0 & 0 & -1 & 0 & -2 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right) 
+\end{align*}
+{ 则 } $\operatorname{dim}\left(V_{1}+V_{2}\right)=3, \alpha_{1}, \alpha_{2}, \beta_{1}$ 是一组基.
+
+由维数公式, 有 $\operatorname{dim}\left(V_{1} \cap V_{2}\right)=2+2-3=1$.
+\end{frame}
+
+
+\begin{frame}
+ \small{ 任取 $\xi \in V_{1} \cap V_{2}$,   则 
+ $$\xi=x_{1} \alpha_{1}+x_{2} \alpha_{2}=y_{1} \beta_{1}+y_{2} \beta_{2},$$  { 即 }
+ $$x_{1} \alpha_{1}+x_{2} \alpha_{2}-y_{1} \beta_{1}-y_{2} \beta_{2}=0.$$ 
+ 系数矩阵 
+\begin{align*}
+\left(\alpha_{1}, \alpha_{2},-\beta_{1},-\beta_{2}\right)
+& =\left(\begin{array}{cc|cc}
+1 & 0 & 1 & -1 \\
+0 & 1 & -1 & 1 \\
+-1 & 2 & -1 & 3 \\
+0 & 1 & -1 & 1
+\end{array}\right)
+ \rightarrow\left(\begin{array}{cc|cc}
+1 & 0 & 1 & -1 \\
+0 & 1 & -1 & 1 \\
+0 & 2 & 0 & 2 \\
+0 & 0 & 0 & 0
+\end{array}\right)  \\
+& \rightarrow\left(\begin{array}{cc|cc}
+1 & 0 & 0 & -1 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right)
+\end{align*}
+得 基础解系
+$\eta=(1,-1,0,1)^{\prime}$.
+
+于是, $\xi=\alpha_{1}-\alpha_{2}=\beta_{2}$ 就是 
+$V_{1} \cap V_{2}$   的基.}
+\end{frame}
+
+
+%\end{aligned}
+%$$
+
+
+%$$
+%\left(\alpha_{1}, \alpha_{2}, \alpha_{3}, \beta_{1}, \beta_{2}, \beta_{3}\right)
+%=\left(\begin{array}{ccc|ccc}
+%	1 & 2 & 1 & 1 & 1 & 1 \\
+%	2 & 3 & 2 & 1 & 0 & 3 \\
+%	1 & 1 & 2 & 1 & 1 & 0 \\
+%	-2 & 0 & -3 & 1 & -1 & -4
+%	\end{array}\right) \rightarrow\left(\begin{array}{ccc|ccc}
+%	1 & 2 & 0 & 0 & 0 & 3 \\
+%	0 & -1 & 0 & -1 & 0 & 1 \\
+%	0 & 0 & -1 & -1 & 0 & 2 \\
+%	0 & 0 & 0 & 0 & 1 & 0
+%	\end{array}\right) \\
+%	\mathbb{N}_{1}+V_{2}=L\left(\alpha_{1}, \alpha_{2}, \alpha_{3}, \beta_{2}\right),
+%$$	
+
+
+
+
+\begin{frame}
+\begin{exa}
+求 $L\left(\alpha_{1}, \alpha_{2}\right)$ 和 $L \left(\beta_{1}, \beta_{2}\right)$ 的交与和, 并 分别求它们的维数与一组基, 其中
+\[
+\begin{array}{ll}
+\alpha_{1}=(2,5,-1,-5), & \alpha_{2}=(-1,2,-2,-3) \\
+\beta_{1}=(2,0,-1,2), & \beta_{2}=(1,3,2,-4)
+\end{array}
+\]
+\end{exa}
+\pause
+\sol
+
+(1) $L\left(\alpha_{1}, \alpha_{2}\right)+L\left(\beta_{1}, \beta_{2}\right)=L\left(\alpha_{1}, \alpha_{2}, \beta_{1}, \beta_{2}\right)$
+因为 $r \left(\alpha_{1}, \alpha_{2}, \beta_{1}, \beta_{2}\right)=3,$ 故维数3 ; 
+基
+$\alpha_{1}, \alpha_{2}, \beta_{1}$
+
+(2) 设$\alpha \in L\left(\alpha_{1}, \alpha_{2}\right) \cap L\left(\beta_{1}, \beta_{2}\right)$, 则 
+	$\alpha=k_{1} \alpha_{1}+k_{2} \alpha_{2}=\ell_{1} \beta_{1}+\ell_{2} \beta_{2}$
+	
+解齐次方程组, 基础解系$(1,-1,1,1)$, 得 向量
+\[
+\alpha_{0}=\alpha_{1}-\alpha_{2}=\beta_{1}+\beta_{2}=(3,3,1,-2)
+\]
+所以交为$L \left(\alpha_{0}\right)$; 
+维数为1：基为 $\alpha_{0}=(3,3,1,-2)$
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+已知两个齐次线性方程组
+\begin{center}
+$\left\{\begin{array}{c}x_{1}+2 x_{2}+x_{3}=0 \\ 2 x_{1}+2 x_{2}+x_{4}=0\end{array}\right.$ (I)  
+\quad  与  \quad 
+ $\left\{\begin{array}{l}-2 x_{1}+x_{2}+6 x_{3}-x_{4}=0 \\ -x_{1}+2 x_{2}+5 x_{3}-x_{4}=0\end{array}\right.$ (II)
+\end{center}
+
+\begin{enumerate}
+\item 分别求(I)和(II)的解空间 $V_{1}$ 和 $V_{2}$ 的维数和一组基,
+\item 求 $V_{1}+V_{2}$ 和 $V_{1} \cap V_{2}$ 的维数和各自的一组基.
+\end{enumerate}
+\end{exa}
+
+\end{frame}
+
+\section{子空间的直和}
+\begin{frame}{\S 7 子空间的直和}
+子空间的直和是子空间的和的一个重要的特殊情形.  
+
+\begin{defi}
+设 $V_{1}, V_{2}$ 是线性空间 $V$ 的子空间,如果和 $V_{1}+V_{2}$ 中每个向量 $\alpha$ 的分解式
+\[
+{\alpha}={\alpha}_{1}+{\alpha}_{2}, \quad {\alpha}_{1} \in V_{1}, {\alpha}_{2} \in V_{2}
+\]
+是唯一的,这个和就称为直和,记为 $V_{1} \oplus V_{2}$.
+\end{defi} 
+
+\begin{exa}
+在3维几何空间$\R^3$中,$V_1$表示一条通过原点的直线, $V_2$表示一张通过原点且与垂直的平面, 则和$V_1+V_2=\R^3$ 就是直和, 即
+                 $V_1 \oplus V_2= \R^3.$
+\end{exa}
+
+\end{frame}
+
+\begin{frame}
+\small{
+\begin{thm}
+和 $V_{1}+V_{2}$ 是直和的充分必要条件是等式
+\[
+\begin{array}{c}
+{\alpha}_{1}+{\alpha}_{2}={\0} \\
+{\alpha}_{i} \in V_{i} \quad(i=1,2)
+\end{array}
+\]
+只有在 ${\alpha}_{i}$ 全为零向量时才成立. 
+\end{thm} 
+
+\pf 定理的条件实际上就是:零向量的分解式是唯一的.因 而这个条件显然是必要的.下面来证这个条件的充分性.  设 ${\alpha} \in V_{1}+V_{2},$ 它有两个分解式
+\[
+\begin{array}{c}
+{\alpha}={\alpha}_{1}+{\alpha}_{2}={\beta}_{1}+{\beta}_{2}, \quad {\alpha}_{i}, {\beta}_{i} \in V_{i} \quad(i=1,2)
+\end{array}
+\]
+于是
+\[
+\left({\alpha}_{1}-{\beta}_{1}\right)+\left({\alpha}_{2}-{\beta}_{2}\right)=\mathbf{0}
+\]
+其中 ${\alpha}_{i}-{\beta_i} \in V_{i}\quad (i=1,2) .$ 由定理的条件,应有
+\[
+{\alpha}_{i}-{\beta}_{i}={0}, \quad {\alpha}_{i}={\beta}_{i}(i=1,2)
+\]
+这就是说，向量 ${\alpha}$ 的分解式是唯一的. }\qed
+\end{frame}
+
+\begin{frame}
+\begin{coro}
+和 $V_{1}+V_{2}$ 为直和的充分必要条件是
+\[
+V_{1} \cap V_{2}=\{\mathbf{0}\}
+\]
+\end{coro}
+\pf 先证条件的充分性.假设有等式.
+
+\[
+{\alpha}_{1}+{\alpha}_{2}={0}, {\alpha}_{i} \in V_{i} \quad(i=1,2)
+\]
+那么
+\[
+{\alpha}_{1}=-{\alpha}_{2} \in V_{1} \cap V_{2}
+\]
+由假设
+\[
+{a}_{1}={\alpha}_{2},={0}
+\]
+这就证明了 $V_{1}+V_{2}$ 是直和.
+\end{frame}
+
+\begin{frame}
+再证必要性.任取向量 ${\alpha} \in V_{1} \cap V_{2} .$ 于是零向量可以表成
+\[
+\mathbf{0}={\alpha}+(-{\alpha}), \quad {\alpha} \in V_{1},-{\alpha} \in V_{2}
+\]
+因为是直和,所以 ${\alpha}=-{\alpha}=\mathbf{0} .$ 这就证明了
+\[
+V_{1} \cap V_{2}=\{\mathbf{0}\}
+\]
+\qed
+\end{frame}
+
+\begin{frame}
+\begin{thm}
+设 $V_{1}, V_{2}$ 是 $V$ 的子空间, 令 $W=V_{1}+V_{2}$, 则
+\[
+W=V_{1} \oplus V_{2}
+\]
+的充分必要条件为
+\[
+\dim(W)=\dim \left(V_{1}\right)+\dim\left(V_{2}\right)
+\]
+\end{thm}
+\pf  因为
+\[
+\dim(W)+\dim \left(V_{1} \cap V_{2}\right)=\dim \left(V_{1}\right)+\dim \left(V_{2}\right)
+\]
+而由前面定理 8 的推论知 $V_{1}+V_{2}$ 为直和的充要条件是 $V_{1} \cap V_{2}$
+$=\{\mathbf{0}\},$ 
+
+这是与 $\dim \left(V_{1} \cap V_{2}\right)=0$ 等价的, 也就与 $$\dim(W)=\dim\left(V_{1}\right)
++ \dim (V_2)$$等价.这就证明了定理. 
+\qed
+\end{frame}
+
+\begin{frame}
+\begin{theo}
+$V_{1}, V_{2}$ 是 $V$ 的一些子空间,下面这些条件 是等价的：
+\begin{enumerate}
+	\item $W=V_{1}+V_{2}$ 是直和
+	\item 零向量的表法唯一：
+	\item $V_{1} \cap V_{2}=\{\mathbf{0}\}$
+	\item $\dim(W)=\dim \left(V_{1}\right)+\dim\left(V_{2}\right)$
+\end{enumerate}
+\end{theo}
+\end{frame}
+
+\begin{frame}
+\begin{thm}
+	设 $U$ 是线性空间 $V$ 的一个子空间,那么一定存在
+一个子空间 W 使 $V=U \oplus W$
+\end{thm}
+\pf 取 $U$ 的一组基 ${\alpha}_{1}, \cdots, {\alpha}_{m} .$ 把它扩充为 $V$ 的一组基
+${\alpha}_{1}, \cdots, {\alpha}_{m}, {\alpha}_{m+1}, \cdots, {\alpha}_{n} \cdot$ 令
+\[
+W=L\left({\alpha}_{m+1}, \cdots, {\alpha}_{n}\right)
+\]
+$W$ 即满足要求.  
+\end{frame}
+
+\begin{frame}
+\small{
+子空间的直和的概念可以推广到多个子空间的情形。 
+\begin{defi}
+设 $V_{1}, V_{2}, \cdots, V,$ 都是线性空间 $V$ 的子空间.如果
+和 $V_{1}+V_{2}+\cdots+V_{s}$ 中每个向量 ${\alpha}$ 的分解式
+\[
+{\alpha}={\alpha}_{1}+{\alpha}_{2}+\cdots+{\alpha}_{s}, {\alpha}_{i} \in V_{i}(i=1,2, \cdots, s).
+\]
+是唯一的,这个和就称为直和.记为 $V_{1} \oplus V_{2} \oplus \cdots \oplus V_{s}$
+\end{defi}
+
+
+
+和两个子空间的直和一样,我们有 
+
+\begin{thm}
+$V_{1}, V_{2}, \cdots, V_{s}$ 是 $V$ 的一些子空间, 下面这些条件是等价的：
+\begin{enumerate}
+\item $W=\sum_{i=1}^s V_{i}$ 是直和
+\item 零向量的表法唯一：
+\item $V_i \cap \sum_{j \neq i} V_j =\{\mathbf{0}\} \quad(i=1,2, \cdots, s)$
+\item  $\dim ( W)= \sum \dim_{i=1}^s \left(V_{i}\right)$
+\end{enumerate}
+\end{thm} 
+这个定理的证明和 $s=2$ 的情形基本一样.}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+取线性空间 $V=P^{n \times n},$ 取子空间 $V_{1}=\left\{A | A^{T}=A\right\}, V_{2}=\left\{A | A^{T}=-A\right\}$. 证明 $V=V_{1} \oplus V_{2}$.
+\end{exa}
+\pf 
+\begin{itemize}
+\item 首先证明直和.
+ 任给 $A \in V_{1} \cap V_{2},$ 则 $A \in V_{1}$ 且 $A \in V_{2}.$ 
+ 
+ 因为$A \in V_{1},$ 所以 $A^{T}=A.$ 因为$A \in V_{2}$, 所以 $A^{T}=-A.$ 
+ 
+ 从而
+$A^{T}=A=-A,$ 即 $A=\0,$ 故 $V_{1} \cap V_{2}=\{\0\}$.
+
+ 因此, $V_{1}+V_{2}$ 是直和.
+\item 再证明 $V=V_{1}+V_{2}.$
+
+% 即证明互相包含,其中子空间的和还是子空间, 从而 $V \supseteq V_{1}+V_{2}$ 是自然的, 不用证.
+任取$A\in V$, 
+令$A_1= \frac{1}{2}(A+A^{T})$, $A_2=\frac{1}{2}(A-A^{T})$, 
+
+则
+${A_1}^{T}={A_1}, {A_2}^{T}=-{A_2}$. 即 $A_1 \in V_1, A_2 \in V_2.$ 
+%任给 $A \in V, A$ 能写成一个对称阵和一个反对称阵的和, 即 $A=\frac{1}{2}(A+A^{T})+\frac{1}{2}(A-A^{T}).$ 
+故 $V=V_{1}+V_{2}$.
+\item 因此, $V=V_{1} \oplus V_{2}$. \qed
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+	设 $V=F^{\, n}, A$ 是一个 $n$ 阶方阵, $A^{2}=A,$ 设 $V_{1}=\left\{X \, | \, A X=0, X \in F^{n}\right\}, V_{2}=\left\{X \, | \,  A X=X, X \in F^{\, n}\right\}$.
+	
+证明 $F^{n}=V_{1} \oplus V_{2}$.
+\end{exa}
+\pf 
+\begin{itemize}
+\item 任给 $X \in V_{1} \cap V_{2}$. 因为 $X \in V_{1}$, 所以  $A X=\0$. 因为  $X \in V_{2}$, 所以 $A X=X$. 于是$A X=X=\0$. 因此, $V_{1}+V_{2}$ 是直和.
+
+\item 再证明 $V=V_{1}+V_{2}$. 任给 $X \in V,$ 
+令$X_{1}=X-A X,$ $X_{2}= A X,$ 则
+ $X=X_{1}+X_{2}$, 且
+ $A X_{1}=\0, A X_{2}=X_{2},$ 
+即 $X_{1} \in V_{1}, X_{2} \in V_{2}.$ 
+
+所以, $V=V_{1}+V_{2}$
+\item 因此, $V=V_{1} \oplus V_{2}$. \qed
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+设 $V=F^{\, n}, A$ 是一 $n$ 阶方阵, $A^{2}=E,$ 设 $V_{1}=\left\{X \, | \,A X=X, X \in F^{n}\right\}, V_{2}=\left\{X  \, | \, A X=-X, X \in F^{n}\right\}$.
+	
+证明 $F^{\, n}=V_{1} \oplus V_{2}$.
+\end{exa}
+\pf 
+\begin{itemize}
+\item 任给 $X \in V_{1} \cap V_{2}$. 因为$X \in V_{1},$ 所以 $A X=X$. 因为 $X \in V_{2}$, 所以 $A X=-X.$ 从而 $A X=X=-X, X=\0$. 因此, $V_{1}+V_{2}$ 是直和.
+
+\item 再证明 $V=V_{1}+V_{2}$. 
+
+任给 $X \in V$, 
+令 $X_{1}=\frac{1}{2}(X+A X) \in V_{1}, X_{2}=\frac{1}{2}(X-A X) \in V_{2}$,
+
+则 $X=X_1+X_2$, 
+ 
+%设 $X=X_{1}+X_{2},$ 其中要求 $X_{1} \in V_{1}, X_{2} \in V_{2},$ 即 $A X_{1}=X_{1}, A X_{2}=-X_{2}$
+%$A X=A X_{1}+A X_{2},$ 得 $A X=X_{1}-X_{2},$ 则 
+
+且 $A X_{1}=X_{1}, A X_{2}=-X_{2}.$
+即 $X_{1} \in V_{1}, X_{2} \in V_{2}.$ 
+
+于是, $V=V_{1}+V_{2}$.
+\item 因此, $V=V_{1} \oplus V_{2}$. \qed
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\small{
+\begin{exa}
+设 $A \in F^{\, n \times n}, f(x), g(x) \in F[x],$ 且 $(f(x), g(x))=1,$ 令 $V, V_{1}, V_{2}$ 分别为齐次线性方程组
+$f(A) g(A) X=\0, f(A) X=\0$ 与 $f(B) X=\0$ 的解空间, 证明 $V=V_{1} \oplus V_{2}$.
+\end{exa}
+\pf 
+\begin{itemize}
+\item  对于任意的 $\alpha \in V_{1} \cap V_{2},$ 有
+	$f(A) \alpha=g(A) \alpha=\0,$ 从而有 $$\alpha=u(A) f(A) \alpha+v(A) g(A) \alpha=\0.$$
+	因此, $V_{1}+V_{2}$ 是直和.
+	
+\item 	因为 $(f(x), g(x))=1$, 所以存在 $u(x), v(x),$ 使得 $u(x) f(x)+v(x) g(x)=1.$ 从而有
+$u(A) f(A)+v(A) g(A)=E$, 则对于任意的 $\alpha \in W$,有 $$\alpha=u(A) f(A) \alpha+v(A) g(A) \alpha,$$ 则
+$u(A) f(A) \alpha \in V_{2}, v(A) g(A) \alpha \in V_{1}.$ 所以 $V=V_{1}+V_{2}.$ 
+
+\item 因此, $V=V_{1} \oplus V_{2}$. \qed
+\end{itemize}
+}
+\end{frame}
+
+\section{线性空间的同构}
+\begin{frame}{\S 8 线性空间的同构}
+
+\begin{defi}
+设数域 $F$ 上的线性空间 $V$ 与$W$, 若存在一个映射 $\sigma: V \rightarrow W$ 满足
+\begin{enumerate}
+\item $\sigma$ 是个双射.
+\item $\sigma(\alpha+\beta)=\sigma(\alpha)+\sigma(\beta)$
+\item $\sigma(k \alpha)=k \sigma(\alpha)$
+\end{enumerate}
+对任意的 $\alpha, \beta \in V, k \in F$,则称 $\sigma$ 是从 $V$ 到 $W$ 的一个\alert{同构映射},称 $V$ 与 $W$ 同构.
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\begin{prop}
+任一个 数域$F$上的$n$ 维线性空间 $V$ 与 $F^{\, n}$. 
+
+任取 $V$ 的一组基, $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$, 任给 $\alpha \in V$, 
+
+则 $\alpha$ 可由
+$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$ 唯一线性表出, 
+设为 $$\alpha=k_{1} \alpha_{1}+k_{2} \alpha_{2}+\cdots+k_{n} \alpha_{n},$$
+
+即 $X=\left(k_{1}, k_{2}, \cdots, k_{n}\right)$ 为 $\alpha$ 在基
+$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$ 下的坐标.
+
+做
+$$\A: V \rightarrow F^{\, n} ; \alpha \mapsto X,$$
+即将 $\alpha$ 映到它在基 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$ 下的坐标.
+
+这就是一个同构映射, 
+从而任意一个 $n$维线性空间都与 $F^{\, n}$ 同构.
+\end{prop}
+\end{frame}
+
+\begin{frame}{例子}
+\begin{exa}
+\begin{align*}
+\sigma : F[x]_{n}  & \rightarrow F^{\, n}\\
+f(x) = k_{1}+k_{2} x+\cdots+k_{n} x^{n-1} &  \mapsto  X=\left(k_{1}, k_{2}, \cdots, k_{n}\right)
+\end{align*}
+\end{exa}
+
+\begin{exa}
+\begin{align*}
+\sigma : F^{\, 2 \times 2} &  \rightarrow F^{\, 4}\\
+A=\left(\begin{array}{ll}a & b \\ c & d\end{array}\right)
+&  \mapsto(a, b, c, d)
+\end{align*}
+\end{exa}
+\end{frame}
+
+\begin{frame}
+\begin{prop}
+设 $V$ 与$W$ 是   数域 $F$ 上的线性空间,映射 $\sigma$是 $V$到$W$的一个同构映射，则
+\begin{align*}
+\sigma (\0) & = \0,\\
+\sigma (-\alpha) & =-\sigma (\alpha)\\
+\sigma \left( \sum_{i=1}^{n} k_{i} \, \alpha_{i}  \right)& =  \sum_{i=1}^{n}   k_{i}\,   \sigma \left( \alpha_{i} \right).
+\end{align*}
+\end{prop}
+\end{frame}
+
+
+\begin{frame}
+\begin{prop} 
+	$V$ 中向量组 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}$ 线性相关 
+	$\Longleftrightarrow$\\ $W$中向量组 $\sigma\left(\alpha_{1}\right), \sigma\left(\alpha_{2}\right), \cdots, \sigma\left(\alpha_{m}\right)$ 线性相关.
+\end{prop}
+\pf 因为由
+	\[
+	k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{r} \boldsymbol{\alpha}_{r}=\boldsymbol{0}
+	\]
+	可得
+	\[
+	k_{1} \sigma\left(\boldsymbol{\alpha}_{1}\right)+k_{2} \sigma\left(\boldsymbol{\alpha}_{2}\right)+\cdots+k_{r} \sigma\left(\boldsymbol{\alpha}_{r}\right)=\mathbf{0}.
+	\]
+	反过来，由
+	\[
+	k_{1} \sigma\left(\boldsymbol{\alpha}_{1}\right)+k_{2} \sigma\left(\boldsymbol{\alpha}_{2}\right)+\cdots+k_{r} \sigma\left(\boldsymbol{\alpha}_{r}\right)=\mathbf{0}.
+	\]
+	有
+	\[
+	\sigma\left(k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{r} \boldsymbol{\alpha}_{r}\right)=\mathbf{0}.
+	\]
+	因为 $\sigma$ 是单射,只有 $\sigma(\mathbf{0})=\mathbf{0},$ 所以
+	\[
+	k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{r} \boldsymbol{\alpha}_{r}=\mathbf{0}.
+	\]
+
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+
+\item 若 $V_{1}$ 是 $V$ 的子空间,则 $\sigma \left(V_{1}\right)$ 是 $W$ 的子空间, 且 $\dim (V_1) =\dim \sigma \left(V_{1}\right)$.
+
+\item 同构映射的逆及同构映射的乘积仍然是同构的.
+
+\item  同构是一个等价关系, 即满足
+        (1) 自反性; 
+        (2) 对称性; 
+        (3) 传递性. 
+\end{itemize}
+\begin{thm}
+数域 $F$ 上的两个线性空间同构$\Leftrightarrow$维数相等.
+\end{thm}
+\end{frame}
+\end{document} 
