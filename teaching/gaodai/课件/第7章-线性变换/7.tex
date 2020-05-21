@@ -41,7 +41,7 @@
 \newtheorem{thm}{定理}
 \newtheorem{lem}{引理}
 \newtheorem{exa}{例}
-%\newtheorem*{theorem}{定理}
+\newtheorem*{theo}{定理}
 \newtheorem*{defi}{定义}
 \newtheorem*{coro}{推论}
 \newtheorem*{ex}{练习}
@@ -1380,8 +1380,8 @@ $\lambda_{0}$ 的一个特征向量.
 求一个线性变换 $\A$的特征值与特征向量的方法可以
 分成以下几步 :
 \begin{enumerate}
-	\item 在线性空间 $V$ 中取一组基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n},$ 写出 $\mathscr{A}$ 在这组基下的矩阵 $A$ ;
-	\item 求出 $\A$ 的特征多项式| $\lambda {E}-{A} |$ 在数域 $P$ 中全部的根, 它们也就是线性变换 $\A$ 的全部特征值
+	\item 在线性空间 $V$ 中取一组基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n},$ 写出 $\mathscr{A}$ 在这组基下的矩阵 $A$;
+	\item 求出 $\A$ 的特征多项式| $\lambda {E}-{A} |$ 在数域 $P$ 中全部的根, 它们也就是线性变换 $\A$ 的全部特征值. 
 	\item 把所求得的特征值逐个地代入方程组$(\lambda E-A)X=\mathbf{0}$,对于每一个特 征值,解方程组$(\lambda E-A)X=\mathbf{0}$,求出一组基础解系, 它们就是属于这个特征值 的几个线性无关的特征向量在基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的坐标,这样,我
 	们也就求出了属于每个特征值的全部线性无关的特征向量. 
 \end{enumerate}
@@ -1432,13 +1432,13 @@ $\lambda_{0}$ 的一个特征向量.
 
 $$|\lambda E-A|=\left|\begin{array}{ccc}\lambda-1 & -2 & -2 \\ -2 & \lambda-1 & -2 \\ -2 & -2 & \lambda-1\end{array}\right|=(\lambda+1)^{2}(\lambda-5),$$
 得
-$$\lambda_{1}=\lambda_{2}=-1, \lambda_{3}=5$$
+$$\lambda_{1}=\lambda_{2}=-1, \lambda_{3}=5.$$
 
 \end{frame}
 
 
 \begin{frame}
-2、把每个特征值$\lambda$代入线性方程组 $(A-\lambda E) x=0$
+2、把每个特征值$\lambda$代入线性方程组 $(A-\lambda E) X=0$
 求出基础解系。
 \begin{itemize}
 \item 再求属于 $\lambda_{1}=\lambda_{2}=-1$ 的特征向量,即求方程组 $(-E-A) X=0$ 的解.
@@ -1706,10 +1706,59 @@ $$|\lambda {E}-{A}|=\left|\begin{array}{cccc}\lambda-a_{11} & -a_{12} & & -a_{1n
 	 
 	 \item  $f_{A}(\lambda)$ 在所考虑的数域范围内不一定有解,从而可以没有特征值.
 \end{itemize}
+\end{frame}
 
 
+\begin{frame}
+\begin{itemize}
+\item 线性变换的矩阵的特征多项式与基的选择无关, $\sigma$ 在 的矩阵
+$A$ 的特征多项式称为 $\sigma$ 的特征多项式, 并记作 $f_{\sigma}(\lambda)$.
+\item 相似矩阵有相同的行列式, 故可定义线性变换 $\sigma$ 的行列式为 $\sigma$ 在任意一组
+基下的矩阵的行列式.
+\item 矩阵的特征根、迹、行列式都是相似不变量.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+设 $A=\left(\begin{array}{ccc}3 & 2 & -1 \\ 2 & 3 & -1 \\ -4 & b & a\end{array}\right),$ 已知 $A$ 有特征值 $\lambda_{1}=\lambda_{2}=1, \lambda_{3}=5.$ 
+
+求 $a, b$的值.
+\end{exa} 
+\sol  因为 $A$ 有特征值 $\lambda_{1}=\lambda_{2}=1, \lambda_{3}=5, \quad$ 
+
+所以有 $\operatorname{Tr}(A)=6+a=7,$ 即
+$a=1 .$ 
+
+由 $|A|=b+1=\lambda_{1} \lambda_{2} \lambda_{3}$ 得 $b=4$.
 
 \end{frame}
+
+
+\begin{frame}{特征多项式的性质} 
+首先介绍一个概念. 形如
+\[
+B(\lambda)=\lambda^{m} B_{0}+\lambda^{m-1} B_{1}+\cdots+B_{m}
+\]
+多项式, 其中 $B_{0}, B_{1}, \cdots, B_{m}$ 都是 $n \times n$ 数字矩阵, 叫做一个矩阵多项式, $n$ 叫做 的级数, 当 $B_{0} \neq 0$ 时, $m$ 叫做它的次数. 如
+\begin{align*}
+\left(\begin{array}{cc}\lambda^{3}+3 \lambda+1 & \lambda+2 \\ \lambda^{3}+2 \lambda & 3\end{array}\right)
+& =\left(\begin{array}{cc}\lambda^{3} & 0 \\ \lambda^{3} & 0\end{array}\right)+\left(\begin{array}{cc}3 \lambda & \lambda \\ 2 \lambda & 0\end{array}\right)+\left(\begin{array}{cc}1 & 2 \\ 0 & 3\end{array}\right)\\
+& =\lambda^{3}\left(\begin{array}{ll}
+1 & 0 \\
+1 & 0
+\end{array}\right)+\lambda\left(\begin{array}{ll}
+3 & 1 \\
+2 & 0
+\end{array}\right)+\left(\begin{array}{ll}
+1 & 2 \\
+0 & 3
+\end{array}\right)
+\end{align*}
+
+\end{frame}
+
 \begin{frame}{哈密顿 - 凯莱(Hamilton-Caylay)定理 }
 %最后, 我们指出特征多项式的一个重要性质.  
 
@@ -1787,7 +1836,7 @@ X^{-1} A X = \left(\begin{array}{ccc}-1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 5\end{a
 \begin{thm}
 设 $\A$是 $n$ 维线性空间 $V$ 的一个线性变换$\A$ 的矩阵.
 
- $\A$在某一组基下为对角矩阵$\Longleftrightarrow$$\A$有 $n$ 个线性 无关的特征向量.
+ $\A$在某一组基下的矩阵为对角矩阵$\Longleftrightarrow$$\A$有 $n$ 个线性 无关的特征向量.
 \end{thm}
 
 \pf 
@@ -1882,65 +1931,204 @@ ${\xi}_{2}, \cdots, {\xi}_{k+1}$ 线性无关.
 	而 ${\alpha}_{i 1}, \cdots, {\alpha}_{i_{r_i}}$ 是属于特征值 $\lambda_{i}$ 的线性无关的特征向量 $i=1, \cdots, k$, 
 	那么向量组 $${\alpha}_{11}, \cdots, {a}_{1 r_{1}}, \cdots, {a}_{k 1}, \cdots, {a}_{k r_{n}}$$ 也线性无关.
 \end{thm}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+	在 $F^{\, 3}$ 中, 设线性变换 $\sigma$ 在基 $\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}$ 下的矩阵为
+	\[
+	A=\left(\begin{array}{ccc}
+	1 & 4 & 2 \\
+	0 & -3 & 4 \\
+	0 & 4 & 3
+	\end{array}\right)
+	\]
+	其中 $\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}$ 为 3 维单位向量组.	
+	问: 线性变换 $\sigma$ 在此基下的矩阵是否为对 角形？
+\end{exa}
+\pause
+\sol 特征多项式 $f_{A}(\lambda)=|\lambda E-A|=(\lambda-1)(\lambda-5)(\lambda+5),$
+
+ 所以 $\lambda_{1}=1, \lambda_{2}=5, \lambda_{3}=-5.$
+%属于这些特征值的特征向量分为为
+%\[
+%\eta_{1}=\left(\begin{array}{l}
+%1 \\
+%0 \\
+%0
+%\end{array}\right), \eta_{2}=\left(\begin{array}{l}
+%2 \\
+%1 \\
+%2
+%\end{array}\right), \eta_{3}=\left(\begin{array}{c}
+%1 \\
+%-2 \\
+%1
+%\end{array}\right)
+%\]
+%易知 $\eta_{1}, \eta_{2}, \eta_{3}$ 是线性无关的, 从而构成一组基, 
+
+由推论可知，线性变换 $\sigma$ 在此基下的矩阵为对 角形.
+\end{frame}
+
+\begin{frame}
 
 根据这个定理,对于一个线性变换,求出属于每个特征值的线性无关的特征向量,把它们合在一起还是线性无关的.
-
+\begin{itemize}
+\item 如果它们的 个数等于空间的维数,那么这个线性变换在一组合适的基下的矩 阵是对角矩阵;
+\item 如果它们的个数小于空间的维数,那么这个线性变 换在任何一组基下的矩阵都不能是对角形的.
+\end{itemize}
 
 
 \end{frame}
 
 \begin{frame}
-\begin{itemize}
-\item 如果它们的 个数等于空间的维数,那么这个线性变换在一组合适的基下的矩 阵是对角矩阵;
-\item 如果它们的个数少于空间的维数,那么这个线性变 换在任何一组基下的矩阵都不能是对角形的
-\end{itemize}
+设 $\A$的全 部不同的特征值是 $\lambda_{1}, \cdots, \lambda_{s}$.
+	
+对每个 $1 \le  i \le  s$, 设 $\operatorname{dim} V_{\lambda_{i}}=m_{i},\left\{{\alpha}_{i 1}, \cdots, {\alpha}_{i_m}\right\}$ 是 $V_{i}$ 的一组基. 
 
-
-
-
-换句话说,设 A全 部不同的特征值是 $\lambda_{1}, \cdots, \lambda_{r},$ 于是 在某一组基下的矩阵成对角
-于空间的维数.  
-
-应该看到, 当线性变换$\A$在一组基下的矩阵 $A$ 是对角形时：
-	$$\mbox{diag}\left(  \lambda_{1}, \lambda_{2}, \ldots, \lambda_{n} \right),$$
-A 的特征多项式就显
-\[
-|\lambda{E}-{A}|=\left(\lambda-\lambda_{1}\right)\left(\lambda-\lambda_{2}\right) \cdots\left(\lambda-\lambda_{n}\right)
-\]
-因此,如果线性变换 
-线上的元素除排列次序外是确定的,它们正是 $\A$ 的特征多项式全 部的根(重根按重数计算). 
+则各特征子空间 $V_{\lambda_{i}}$ 的基 $M_{i}$ 所含向量共同组成的集合 $$\left\{ {\alpha}_{i j} \, | \, 1 \le i \le s , 1 \le j \le m_{i} \right\}$$
+线性无关，它包含 $m_{1}+m_{2}+\cdots+m_{s}$ 个线性无关的特征向量, 是 $\A$ 的特征向量集合的一个极大线性无关量组.
+ 
+ 
+\begin{prop}
+	$\A$ 在某一组基下的矩阵成对角形$\Leftrightarrow  \A$ 的各特征子空间$V_{\lambda_{1}}, \ldots, V_{\lambda_{s}}$的维数之和等于空间的维数$\operatorname{dim}  V$ .
+\end{prop}
 
 \end{frame}
 
 
-%\begin{frame}
-% 根据 $\S$ 3 定理 5,一个线性变换的矩阵能不能在某一组基下是 对角形的问题就相当于一个矩阵是不是相似于一个对角矩阵的问 题.因此,这一节的讨论也就解决了后一个问题.   
-%\end{frame}
+\begin{frame}
+
+\begin{prop}
+当线性变换$\A$在一组基下的矩阵 $A$ 是对角形
+	$$\mbox{diag}\left(  \lambda_{1}, \lambda_{2}, \ldots, \lambda_{n} \right),$$
+	时, $\A$ 的特征多项式为
+	\[
+	|\lambda{E}-{A}|=\left(\lambda-\lambda_{1}\right)\left(\lambda-\lambda_{2}\right) \cdots\left(\lambda-\lambda_{n}\right)
+	\]
+	因此,如果线性变换 
+	线上的元素除排列次序外是确定的,它们正是 $\A$ 的特征多项式全 部的根(重根按重数计算). 
+\end{prop}
 
 
-\begin{frame}{判断相似对角化的方法,步骤}
+
+ 根据 $\S$ 3 定理 5,一个线性变换的矩阵能不能在某一组基下是 对角形的问题就相当于一个矩阵是不是相似于一个对角矩阵的问题.
+ 
+ 因此, 这一节的讨论也就解决了后一个问题.   
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{总结：矩阵的可对角化问题}
+\begin{itemize}
+	\item 如果数域 $P$ 上的 $n$ 级矩阵 $A$ 可相似于对角矩阵,则称 $A$ 可对角化.
+	
+	\item 数域 $P$上 $n$ 级矩阵 $A$ 可对角化的条件如下：
+	\begin{enumerate}
+		\item (充分必要条件) $A$有 $n$ 个线性无关的特征向量.
+		\item (充分条件) $A$ 有 $n$ 个互异的特征值.
+		\item (充分必要条件) $A$ 的所有重特征值对应的线性无关特征向量的个数等于其重数.	
+	\end{enumerate}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{总结：线性变换的可对角化问题}
+设 $\A$ 是数域 $P$上 $n$ 维线性空间 $V$的一个线性变换，$\A$ 的矩阵可以在某
+一组基下为对角矩阵有下列条件：
+\begin{enumerate}
+\item （充分必要条件）$\A$ 有 $n$ 个线性无关的特征向量.
+\item （充分条件）$\A$在数域 $P$中有 $n$ 个不同的特征值.
+\item （充分必要条件）设 $\A$的全部互异的特征值为$\lambda_1，\lambda_2，\ldots , \lambda_s$, 则 $\A$ 的特征子空间 $V_{1},  V_{2},  \cdots,  V_{s}$ 的维数之和等于 $n$.
+\end{enumerate}
+\end{frame}
+
+
+
+
+
+\begin{frame}{代数重数与几何重数}
+
+% $m_{1}+\cdots+m_{s}=\operatorname{dim} V$ 何时成立，会在本章后面几节继续研究.
+ 
+对方阵 $A$,特征多项式 $$f_{A}(\lambda)=|\lambda E-A|=\left(\lambda-\lambda_{1}\right)^{n_{1}}\left(\lambda-\lambda_{2}\right)^{n_{2}} \cdots\left(\lambda-\lambda_{s}\right)^{n_{s}},$$ 其中$\lambda_{1}, \lambda_{2}, \cdots, \lambda_{s}$ 两两互异.
+
+\begin{itemize}
+	\item $n_{i}$ 称为特征值 $\lambda_{i}$ 的\alert{代数重数}.
+	\item 再看特征值 $\lambda_{i}$ 的特征子空间 $V_{\lambda_{i}}$,其维数 $\operatorname{dim} V_{\lambda_{i}}=m_{i}$ 称为 $\lambda_{i}$ 的\alert{几何重数}. $\quad m_{i}=n-r\left(\lambda_{i} E-A\right)$
+\end{itemize}
+
+\begin{prop}
+	矩阵的任一特征值的几何重数小于等于其代数重数.
+\end{prop}
+证明需要不变子空间的性质，会在本章\S 7给出。
+\end{frame}
+
+\begin{frame}
+\begin{prop}
+矩阵的任一特征值的几何重数小于等于其代数重数.
+\end{prop}
+
+\begin{prop}
+方阵 $A$ 可相似对角化 $\Leftrightarrow$ 任一特征值的代数重数与几何重数相等.
+\end{prop}
+
+\begin{prop}
+设 $A$ 是一 $n$ 阶方阵, $A$ 的特征多项式为 $$f_{A}(\lambda)=\left(\lambda-\lambda_{1}\right)^{n_{1}}\left(\lambda-\lambda_{2}\right)^{n_{2}} \cdots\left(\lambda-\lambda_{s}\right)^{n_{i}}$$
+则 
+\begin{align*}
+A \mbox{ 可相似对角化 } & \Leftrightarrow n_{i}=n-r\left(\lambda_{i} E-A\right), \quad  i=1,2, \cdots, s.\\
+& \Leftrightarrow r\left(\lambda_{i} E-A\right)=n-n_{i}, \quad i=1,2, \cdots, s.
+\end{align*}
+\end{prop}
+\end{frame}
+
+
+%矩阵的任一特征值的几何重数小于等于其代数重数.
+%证明：对 $A$,任给线性空间 $V$ 及一组基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n},$ 存在线性变换 $\sigma$,使得 $\sigma-\frac{\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}}{\longrightarrow} A$
+%假设 $\lambda_{0}$ 是 $A$ 的一个特征值,代数重数为 $n_{0} .$ 设 $\operatorname{dim} V_{\lambda_{0}}=m_{0},$ 不妨设 $\xi_{1}, \xi_{2}, \cdots, \xi_{m_{0}}$ 是 $V_{\lambda_{0}}$ 的一组基,扩充这一
+%组基为 $V$ 的一组基, $\xi_{1}, \cdots, \xi_{m_{0}}, \xi_{m_{0}+1}, \cdots, \xi_{n},$ 则由于 $\sigma \xi_{i}=\lambda_{0} \xi_{i}, i=1,2, \cdots, m_{0} .$ 则
+%$\sigma \frac{\xi_{1}, \cdots ; \xi_{m_{0}}, \xi_{m_{0}+1} \cdots, \xi_{n}}{\rightarrow}\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right) \cdot\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right)$ 与A是同一个线性变换 $\sigma$ 在不同基下的矩阵,则
+%$\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right)$ 与 $A$ 相似,从而特征多项式相同. $\left|\lambda E-\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right)\right|=|\lambda E-A|$
+%右边因式 $\lambda-\lambda_{0}$ 是 $n_{0}$ 重.左边中 $\lambda-\lambda_{0}$ 也应该是 $n_{0}$ 重.但是左边展开后
+%$\left|\lambda E-\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right)\right|=\left|\begin{array}{cc}\left(\lambda-\lambda_{0}\right) E & A_{2} \\ 0 & \lambda E-A_{3}\end{array}\right|=\left(\lambda-\lambda_{0}\right)^{m_{0}}\left|\lambda E-A_{3}\right| \cdot$ 从而 $m_{0} \leq n_{0}$
+
+
+
+
+\begin{frame}{判断相似对角化的方法}
 
 %判断是否可以相似对角化,若可以,求可逆阵 X ,使得 $X^{-1} A X$ 为对角阵.
 
 
-(1) 对 $A$,求所有的特征值. $f_{A}(\lambda)=|\lambda E-A|=\left(\lambda-\lambda_{1}\right)^{n_{1}}\left(\lambda-\lambda_{2}\right)^{n_{2}} \cdots\left(\lambda-\lambda_{s}\right)^{n_{5}}$
+(1) 对 $A$,求所有特征值 $f_{A}(\lambda)=|\lambda E-A|=\left(\lambda-\lambda_{1}\right)^{n_{1}} \cdots\left(\lambda-\lambda_{s}\right)^{n_{s}}$
 
 
 (2) 是否可以相似对角化 $\Leftrightarrow r\left(\lambda_{i} E-A\right)=n-n_{i}, i=1,2, \cdots, s$.
 \begin{itemize}
 	\item 若都成立,则可以;
 	\item 若有一个不成立,则不能. 
-		\begin{itemize}
+	\begin{itemize}
 		\item 对单根 $\lambda_{i}$ 自然成立, 不用判断 $r\left(\lambda_{i} E-A\right)=n-1$.
 		\item 主要是对重根 $\lambda_{i},$ 来判断是否 $r\left(\lambda_{i} E-A\right)=n-n_{i}$.
-		\end{itemize}
+	\end{itemize}
 \end{itemize}
 
 
-(3) 若可以,求方程组 $\left(\lambda_{i} E-A\right) X=0$ 的基础解系 $X_{i 1}, X_{i 2}, \cdots, X_{i n_{i}}$
+(3) 若可以,求方程组 $\left(\lambda_{i} E-A\right) X=0$ 的基础解系 $X_{i 1},  \cdots, X_{i n_{i}}$
 
-令 $X=\left(X_{11}, \cdots, X_{1 n_{1}}, X_{21}, \cdots, X_{2 n_{2}}, \cdots, X_{s 1}, \cdots, X_{s n_{5}}\right),$ 则 $X^{-1} A X=\left(\begin{array}{cccc}\lambda_{1} E_{n_{1}} & & & \\ & \lambda_{2} E_{n_{2}} & & \\ & & \ddots & \\ & & & \lambda_{s} E_{n_{5}}\end{array}\right)$
-
+令 $X=\left(X_{11}, \cdots, X_{1 n_{1}}, X_{21}, \cdots,  X_{s n_{s}}\right),$ 则 
+$X^{-1} A X=
+\left(\begin{array}{ccc}
+\lambda_{1} E_{n_{1}} & & \\ 
+& \ddots & \\ 
+& & \lambda_{s} E_{n_{s}}
+\end{array}\right)$
 
 \end{frame}
 
@@ -1956,15 +2144,15 @@ A 的特征多项式就显
 \sol
 $|\lambda E-A|=\left|\begin{array}{cc}\lambda & -1 \\ 0 & \lambda\end{array}\right|=\lambda^{2}=0,$ 则 $\lambda_{1}=\lambda_{2}=0$.
 
-$0 E-A=-A$,秩为 $1 \neq 2-2$,故不能相似对角化.
+$0 E-A=-A$,秩为 $1 \neq 2-2$, 故不能相似对角化.
 \end{frame}
 
 \begin{frame}
 \begin{exa}
-	判断$A=\left(\begin{array}{ccc}1 & 2 & 2 \\ 0 & 2 & 2 \\ 0 & 0 & 3\end{array}\right)$
-	是否可以相似对角化.
-	
-	若可以,求可逆阵 X ,使得 $X^{-1} A X$ 为对角阵.
+判断$A=\left(\begin{array}{ccc}1 & 2 & 2 \\ 0 & 2 & 2 \\ 0 & 0 & 3\end{array}\right)$
+是否可以相似对角化.
+
+若可以,求可逆阵 $X$ ,使得 $X^{-1} A X$ 为对角阵.
 \end{exa}
 \sol 
 $A$ 的特征值为 $\lambda_{1}=1, \lambda_{2}=2, \lambda_{3}=3$,有3个互异的特征值,可以相似对角化.
@@ -1983,8 +2171,10 @@ $X^{-1} A X=\mbox{diag}(1,2,3).$
 
 \begin{frame}
 \begin{exa}
-	判断$A=\left(\begin{array}{ccc}1 & 2 & 2 \\ 0 & 1 & 2 \\ 0 & 0 & 2\end{array}\right)$
-	是否可以相似对角化
+判断$A=\left(\begin{array}{ccc}1 & 2 & 2 \\ 0 & 1 & 2 \\ 0 & 0 & 2\end{array}\right)$
+是否可以相似对角化.
+
+若可以,求可逆阵 $X$ ,使得 $X^{-1} A X$ 为对角阵.
 \end{exa}
 \sol
 $A$ 的特征值为 $\lambda_{1}=\lambda_{2}=1, \lambda_{3}=2$
@@ -2010,8 +2200,6 @@ $r(-A)=1=4-3,$ 有 3 个.
 
 可以相似对角化.
 \end{frame}
-
-
 
 
 
@@ -2182,7 +2370,69 @@ $$\xi_{1}, \xi_{2}, \cdots, \xi_{r}$$ 就是 $\A^{-1}(\0)$ 的一组基,即 $\A^
 
 \begin{frame}
 \begin{exa}
-设 $V=F^{\, 3},$ 变换: $\A \left(x_{1}, x_{2}, x_{3}\right)=\left(2 x_{1}+x_{2}, x_{2}+x_{3}, 2 x_{1}-x_{3}\right)$.求 $\A $ 的值域与核.
+设 $\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}, \varepsilon_{4}$ 是线性空间V的一组基，已知
+	线性变换 $\sigma$ 在此基下的矩阵为 $A=\left(\begin{array}{cccc}1 & 0 & 2 & 1 \\ -1 & 2 & 1 & 3 \\ 1 & 2 & 5 & 5 \\ 2 & -2 & 1 & -2\end{array}\right)$.
+求 $\sigma $ 的值域与核的维数与基.
+\end{exa}
+
+
+
+\end{frame}
+
+
+\begin{frame}
+
+
+\sol 
+先求 $\sigma(V) .$ 
+对矩阵$A$做初等行变换，得
+$$A \rightarrow  \left(
+\begin{array}{cccc}
+1 & 0 & 2 & 1 \\
+0 & 1 & \frac{3}{2} & 2 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}
+\right)$$
+
+于是，
+$\sigma$ 的秩为2,
+即 $\sigma(V)$ 为2维的, 且
+\[
+\begin{array}{lr}
+\sigma\left(\varepsilon_{1}\right)=&\varepsilon_{1}-\varepsilon_{2}+\varepsilon_{3}+2 \varepsilon_{4}, \\
+\sigma\left(\varepsilon_{2}\right)=& \quad 2 \varepsilon_{2}+2 \varepsilon_{3}-2 \varepsilon_{4}.
+\end{array}
+\]
+% $\sigma\left(\varepsilon_{1}\right), \sigma\left(\varepsilon_{2}\right)$ 
+ 是 $\sigma(V)$ 的一组基.
+\end{frame}
+
+
+\begin{frame}
+%由于\sigma 的零度为2，所
+求 $\sigma^{-1}(\0)$.  设 $\xi \in \sigma^{-1}(\0),$ 它在 $\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}, \varepsilon_{4}$
+下的坐标为 $\left(x_{1}, x_{2}, x_{3}, x_{4}\right)$
+由于 $\sigma(\xi)=\mathbf{0},$ 有 $\sigma(\xi)$ 在 $\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}, \varepsilon_{4}$ 下的坐标为
+$({0}, {0}, {0}, {0})$.
+解齐次线性方程组
+$$\left(\begin{array}{cccc}1 & 0 & 2 & 1 \\ -1 & 2 & 1 & 3 \\ 1 & 2 & 5 & 5 \\ 2 & -2 & 1 & -2\end{array}\right)\left(\begin{array}{l}x_{1} \\ x_{2} \\ x_{3} \\ x_{4}\end{array}\right)=\left(\begin{array}{l}0 \\ 0 \\ 0 \\ 0\end{array}\right)$$
+得它的一个基础解系
+$(-2,-2/3, 1,  0)$, $(-1, -2, 0, 1)$.
+%再求 $\sigma(V)$. 由于$\sigma$ 的零度为2，所以の 的秩为2,
+%即 $\sigma(V)$ 为2维的. $\quad$ 又由矩阵$A$，有
+于是，$\sigma^{-1}(\0)$的维数为2，且
+\[\begin{array}{rrrr}
+-2 \varepsilon_{1}& -\frac{2}{3}\varepsilon_{2}& +\varepsilon_{3},& \\
+- \varepsilon_{1} & -2 \varepsilon_{2}&&+  \varepsilon_{4}
+\end{array}\]
+是
+$\sigma^{-1}(\0)$的一组基. \qed
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+设 $V=F^{\, 3},$ 变换: $\A \left(x_{1}, x_{2}, x_{3}\right)=\left(2 x_{1}+x_{2}, x_{2}+x_{3}, 2 x_{1}-x_{3}\right)$. 求 $\A $ 的值域与核.
 \end{exa}
 \sol 
 \begin{itemize}
@@ -2503,10 +2753,48 @@ $$
 
 
 \begin{frame}
+\begin{defi}
+	设 $\lambda_{i}$ 是线性变换 $\A$ 的一个特征值，则
+	\begin{itemize}
+		\item 特征子空间 $V_{i}$ 维数 称为 $\lambda_{i}$ 的\alert{几何重数}.
+		\item 每个特征根 $\lambda_{i}$ 在特征多项式 $f_{\A}\left(\lambda_{i}\right)$ 中的重数称为 \alert{代数重数}.
+	\end{itemize}
+	
+\end{defi}
+同一个特征值的代数重数和几 重数之间有如下关系:
+\begin{theo}
+	设 $\lambda_{i}$ 是线性变换 $\A$ 的特征值，它的代数重数为 $n_{i},$ 几何重 数为 $m_{i},$ 则
+	\begin{enumerate}
+		\item 每个特征值的几何重数小于或等于它的代数重数, 即$1 \le m_{i} \le n_i$.
+		\item  $\A$ 的矩阵可以在某
+		一组基下为对角矩阵 $\Leftrightarrow$ 每个特征值的几何重数都等于代数重数.
+	\end{enumerate}
+\end{theo}
+\end{frame}
 
 
+\begin{frame}
+\pf (1)~~特征值$\lambda_i$的特征子空间 $V_{\lambda_i}$的维数等于$m_i$, 取$V_{\lambda_i}$的一组基扩充充为 $V$ 的一组基，则 $\A$在这组基下的矩阵为上三角矩阵 
+$$B=
+\left(
+\begin{array}{cc} 
+\lambda_i E_{m_i} & A_{3} \\
+ 0 & A_{2}
+\end{array}
+\right)$$
+它的特征多项式$(\lambda-\lambda_{i})^{m_i} \det \left(\lambda E - A_{2} \right) $, 含有因子 $(\lambda-\lambda_{i})^{m_i}$.  于是$\lambda_{i}$在其中的代数重数$n_i \ge m_i$.
+
+(2) 设 $\lambda_{1}, \quad \cdots, \lambda_{t}$ 是 $\mathscr{A}$ 的全部不同的特征值. 由\S 5 中的推论  知道
+$\A$ 可对角化的充分必要条件是
+\[
+m_{1}+\cdots+m_{s}=n=n_{1}+\cdots+n_{s}
+\]
+成立. 
+但 $m_{i} \leqslant n_{i}$ 对 $1 \leqslant i \leqslant s$ 成立，故$\A$ 可对角化当且仅当 $m_{i}=n_{i}$ 对所有的 $1 \leqslant i \leqslant s$ 成立。
+\end{frame}
 
 
+\begin{frame}
  下面我们应用哈密尔顿 - 凯莱定理将空间 $V$ 按特征值分解 成不变子空间的直和.  
  \begin{thm}[准素分解]
  设线性变换 $\A$ 的特征多项式为 $f(\lambda)$,它可分解成
@@ -2531,7 +2819,7 @@ V_{i}=\left\{\xi \, |\, \left(  \A -\lambda_{i} \mathscr{E} \right)^{r_i} \xi=0,
 \begin{frame}{\S 若尔当(Jordan)标准形介绍}
 一般来说, 并不是对于每一个线性变换 都有一组基,使它在这组基下的矩阵成为对角形.
 
-这一节的目的就是考察一般的一个方阵相似最简形式是什么. 我们的讨论限制在\alert{复数城}中.
+这一节的目的就是考察一般的一个方阵相似最简形式是什么. 我们的讨论限制在\alert{复数域}中.
 \begin{defi}
 形式为
 \[
@@ -2667,46 +2955,6 @@ $, 则 $P^{-1}{J}(\lambda, t)P$等于右边的矩阵.
 
 
 \end{frame}
-
-
-\begin{frame}{代数重数与几何重数}
-对方阵 $A$,特征多项式 $$f_{A}(\lambda)=|\lambda E-A|=\left(\lambda-\lambda_{1}\right)^{n_{1}}\left(\lambda-\lambda_{2}\right)^{n_{2}} \cdots\left(\lambda-\lambda_{s}\right)^{n_{s}},$$ 其中$\lambda_{1}, \lambda_{2}, \cdots, \lambda_{s}$ 两两互异.
-
-\begin{itemize}
-	\item $n_{i}$ 称为特征值 $\lambda_{i}$ 的\alert{代数重数}.
-	\item 再看特征值 $\lambda_{i}$ 的特征子空间 $V_{\lambda_{i}}$,其维数 $\operatorname{dim} V_{\lambda_{i}}=m_{i}$ 称为 $\lambda_{i}$ 的\alert{几何重数}. $\quad m_{i}=n-r\left(\lambda_{i} E-A\right)$
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\begin{prop}
-矩阵的任一特征值的几何重数小于等于其代数重数.
-\end{prop}
-
-\begin{prop}
-方阵 $A$ 可相似对角化 $\Leftrightarrow$ 任一特征值的代数重数与几何重数相等.
-\end{prop}
-
-\begin{prop}
-设 $A$ 是一 $n$ 阶方阵, $A$ 的特征多项式为 $$f_{A}(\lambda)=\left(\lambda-\lambda_{1}\right)^{n_{1}}\left(\lambda-\lambda_{2}\right)^{n_{2}} \cdots\left(\lambda-\lambda_{s}\right)^{n_{i}}$$
-则 
-\begin{align*}
-A \mbox{ 可相似对角化 } & \Leftrightarrow n_{i}=n-r\left(\lambda_{i} E-A\right), \quad  i=1,2, \cdots, s.\\
-& \Leftrightarrow r\left(\lambda_{i} E-A\right)=n-n_{i}, \quad i=1,2, \cdots, s.
-\end{align*}
-\end{prop}
-\end{frame}
-
-
-%矩阵的任一特征值的几何重数小于等于其代数重数.
-%证明：对 $A$,任给线性空间 $V$ 及一组基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n},$ 存在线性变换 $\sigma$,使得 $\sigma-\frac{\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}}{\longrightarrow} A$
-%假设 $\lambda_{0}$ 是 $A$ 的一个特征值,代数重数为 $n_{0} .$ 设 $\operatorname{dim} V_{\lambda_{0}}=m_{0},$ 不妨设 $\xi_{1}, \xi_{2}, \cdots, \xi_{m_{0}}$ 是 $V_{\lambda_{0}}$ 的一组基,扩充这一
-%组基为 $V$ 的一组基, $\xi_{1}, \cdots, \xi_{m_{0}}, \xi_{m_{0}+1}, \cdots, \xi_{n},$ 则由于 $\sigma \xi_{i}=\lambda_{0} \xi_{i}, i=1,2, \cdots, m_{0} .$ 则
-%$\sigma \frac{\xi_{1}, \cdots ; \xi_{m_{0}}, \xi_{m_{0}+1} \cdots, \xi_{n}}{\rightarrow}\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right) \cdot\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right)$ 与A是同一个线性变换 $\sigma$ 在不同基下的矩阵,则
-%$\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right)$ 与 $A$ 相似,从而特征多项式相同. $\left|\lambda E-\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right)\right|=|\lambda E-A|$
-%右边因式 $\lambda-\lambda_{0}$ 是 $n_{0}$ 重.左边中 $\lambda-\lambda_{0}$ 也应该是 $n_{0}$ 重.但是左边展开后
-%$\left|\lambda E-\left(\begin{array}{cc}\lambda_{0} E & A_{2} \\ 0 & A_{3}\end{array}\right)\right|=\left|\begin{array}{cc}\left(\lambda-\lambda_{0}\right) E & A_{2} \\ 0 & \lambda E-A_{3}\end{array}\right|=\left(\lambda-\lambda_{0}\right)^{m_{0}}\left|\lambda E-A_{3}\right| \cdot$ 从而 $m_{0} \leq n_{0}$
-
 
 
 
