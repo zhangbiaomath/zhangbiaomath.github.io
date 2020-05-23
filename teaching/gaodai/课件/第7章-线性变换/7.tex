@@ -398,10 +398,10 @@ $$\\[-10pt]
 	\item $k \mathscr{A}$ 还是线性变换. 
 	\item 线性变换的数量乘法适合以 下的规律：
 \begin{itemize}
-\item 数乘结合律 $(k l) \A=k(l \A)$
-\item 数乘分配律 $({k}+l) \A={k} {\A}+{\A}$
+\item 数乘结合律 $(k \ell) \A=k(\ell \A)$
+\item 数乘分配律 $({k}+\ell) \A={k} {\A}+\ell {\A}$
 \item 数乘分配律 $k(\mathscr{A}+\mathscr{B})=k \mathscr{A}+k \mathscr{B}$
-\item 1的数乘 $1 \A=\A$
+\item 1的数乘 \quad \, $1 \A=\A$
 \end{itemize}
 \item 
 由加法与数量乘法的性质可知,线性空间 $V$ 上全体线性变换.  
@@ -425,7 +425,7 @@ ${V}$ 的变换$\A$ 称为可逆的, 如果存在 $V$的变换$\B$, 使
 \item 可逆线性变换$\A$的逆变换$\A^{-1}$也是线性变换
 \end{itemize}
 \begin{align*} 
-\A^{-1}(k \alpha+\ell \beta) &= \A^{-1}\left(k\left(\A \A^{-1}\right)(\alpha)+l\left(\A \A^{-1}\right)(\beta)\right) \\ &=\A^{-1}\left(\A\left(k \A^{-1}(\alpha)\right)+\A\left(l A^{-1}(\beta)\right)\right) \\ 
+\A^{-1}(k \alpha+\ell \beta) &= \A^{-1}\left(k\left(\A \A^{-1}\right)(\alpha)+\ell\left(\A \A^{-1}\right)(\beta)\right) \\ &=\A^{-1}\left(\A\left(k \A^{-1}(\alpha)\right)+\A\left( \ell A^{-1}(\beta)\right)\right) \\ 
 &=\A^{-1}\left(\A\left(k \A^{-1}(\alpha)+\ell \A^{-1}(\beta)\right)\right) \\
  &=\left(\A^{-1} \A\right)\left(k \A^{-1}(\alpha)+\ell \A^{-1}(\beta)\right) \\
   &=k \A^{-1}(\alpha)+\ell \A^{-1}(\beta) 
@@ -471,17 +471,17 @@ f(x)=a_{m} x^{m}+a_{m-1} x^{m-1}+\cdots+a_{0}
 \]
 是 $P[x]$ 中一多项式 $, \mathscr{A}$ 是 $V$ 的一线性变换,我们定义
 \[
-f(\A)=a_{m} \cdot \mathscr{A}^{m}+a_{m-1} \mathscr{A}^{m-1}+\cdots+a_{0} \mathscr{E}
+f(\A)=a_{m} \mathscr{A}^{m}+a_{m-1} \mathscr{A}^{m-1}+\cdots+a_{0} \mathscr{E}
 \]
-显然 , $f(\A)$ 是一线性变换,它称为线性变换$\A$的多项式. 
+于是, $f(\A)$ 是一线性变换,它称为线性变换$\A$的多项式. 
 
 如果在 $P[x]$中
 \[
-h(x)=f(x)+g(x), p(x)=f(x) g(x)
+h(x)=f(x)+g(x),  \quad  p(x)=f(x) g(x)
 \]
 那么
 \[
-h(\mathscr{\A})=f(\mathscr{A})+g(\mathscr{A}), p(\mathscr{A})=f(\mathscr{A}) g(\mathscr{A})
+h(\mathscr{\A})=f(\mathscr{A})+g(\mathscr{A}), \quad p(\mathscr{A})=f(\mathscr{A}) g(\mathscr{A})
 \]
 特别地, 
 \[
@@ -544,16 +544,17 @@ f(\lambda+a)=f(\lambda)+a f^{\,\,\prime}(\lambda)+\frac{a^{2}}{2 !} f^{\, \, \pr
 1. 设 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 是线性空间 $V$ 的一组基.如果线性变换
 $\A$与 $\B$在这组基上的作用相同,即
 $\mathscr{A} {\varepsilon}_{i}=\mathscr{B} {\varepsilon}_{i}, \quad i=1,2, \cdots, n$
-那么 $\mathscr{A}=\mathscr{B}$
+那么 $\mathscr{A}=\mathscr{B}$.
 
-\pf 对$V$中任意向量$\xi$, 有
+\pf 对$V$中任意向量
+$\xi = x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+x_{n} {\varepsilon}_{n}$, 有
 \begin{align*} 
 \mathscr{A} {\xi} 
 &=\mathscr{A}\left(x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+x_{n} {\varepsilon}_{n}\right) \\ 
-&=x_{1} \mathscr{A}\left({\varepsilon}_{1}\right)+x_{2} \mathscr{A}\left({\varepsilon}_{2}\right)+\cdots+x_{n} \mathscr{A}\left({\varepsilon}_{n}\right) \\
-&=x_{1} \mathscr{B}\left({\varepsilon}_{1}\right)+x_{2} \mathscr{B}\left({\varepsilon}_{2}\right)+\cdots+x_{n} \mathscr{B}\left({\varepsilon}_{n}\right) \\
+&=x_{1} \mathscr{A}{\varepsilon}_{1}+x_{2} \mathscr{A}{\varepsilon}_{2}+\cdots+x_{n} \mathscr{A}{\varepsilon}_{n} \\
+&=x_{1} \mathscr{B} {\varepsilon}_{1}+x_{2} \mathscr{B}{\varepsilon}_{2}+\cdots+x_{n} \mathscr{B}{\varepsilon}_{n} \\
 &=\mathscr{B}\left(x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+x_{n} {\varepsilon}_{n}\right) \\ 
-&= \mathscr{B} {\xi} 
+&= \mathscr{B} {\xi}.
 \end{align*}
 因此, $\mathscr{A}=\mathscr{B}$. \qed
 
@@ -586,7 +587,7 @@ $\mathscr{A} {\varepsilon}_{i}=\mathscr{B} {\varepsilon}_{i}, \quad i=1,2, \cdot
 \[
 {\beta}=\sum_{i=1}^{n} b_{i} \, {\varepsilon}_{i}, \quad \gamma=\sum_{i=1}^{n} c_{i}\, {\varepsilon}_{i}
 \]
-于是
+有
 \begin{align*}
 {\beta}+\gamma =\sum_{i=1}^{n}\left(b_{i}+c_{i}\right) {\varepsilon}_{i}, \qquad 
 k {\beta}  =\sum_{i=1}^{n} k b_{i} \, {\varepsilon}_{i},  \quad k \in P
@@ -594,8 +595,8 @@ k {\beta}  =\sum_{i=1}^{n} k b_{i} \, {\varepsilon}_{i},  \quad k \in P
 于是, 
 \begin{align*}
 \mathscr{A}({\beta}+{\gamma})& =\sum_{i=1}^{n}\left(b_{i}+c_{i}\right) {\alpha}_{i}\\
-&=\sum_{i=1}^{n} b_{i} {\alpha}_{i}+\sum_{i=1}^{n} c_{i} {\alpha}_{i}=\mathscr{A} {\beta}+\omega {\gamma} \\
-\mathscr{A}({k} {\beta}) &=\sum_{i=1}^{n} k b_{i} {\alpha}_{i}=k \sum_{i=1}^{n} b_{i} {\alpha}_{i}=k   {\beta}
+&=\sum_{i=1}^{n} b_{i} {\alpha}_{i}+\sum_{i=1}^{n} c_{i} {\alpha}_{i}=\mathscr{A} {\beta}+\A {\gamma} \\
+\mathscr{A}({k} {\beta}) &=\sum_{i=1}^{n} (k b_{i}) {\alpha}_{i}=k \sum_{i=1}^{n} b_{i} {\alpha}_{i}=k   {\beta}
 \end{align*}
 因此, $\mathscr{A}$是线性变换. 
 \end{frame}
@@ -631,7 +632,7 @@ ${\alpha}_{2}, \cdots, {\alpha}_{n}$ 是 $V$ 中任意 $n$ 个向量, 存在唯�
 	$$\left\{\begin{array}{cc}
 	\A \varepsilon_{1} & =  a_{11} \varepsilon_{1}+a_{21} \varepsilon_{2}+\cdots+a_{n 1} \varepsilon_{n} \\
 	\A \varepsilon_{2} & =  a_{12} \varepsilon_{1}+a_{22} \varepsilon_{2}+\cdots+a_{n 2} \varepsilon_{n} \\ 
-	\cdots &   \cdots \cdots \\ 
+	 &   \cdots \cdots \\ 
 	\A \varepsilon_{n} & =  a_{1 n} \varepsilon_{1}+a_{2 n} \varepsilon_{2}+\cdots+a_{n n} \varepsilon_{n}
 	\end{array}\right.$$
 	\item 写成矩阵的形式
@@ -660,7 +661,7 @@ ${\alpha}_{2}, \cdots, {\alpha}_{n}$ 是 $V$ 中任意 $n$ 个向量, 存在唯�
 \begin{defi}矩阵
 	\[
 	{A}=\left(\begin{array}{cccc}
-	a_{11} & a_{12} & & a_{1 n} \\
+	a_{11} & a_{12} & \cdots & a_{1 n} \\
 	a_{21} & a_{22} & \cdots & a_{2 n} \\
 	\vdots & \vdots & & \vdots \\
 	a_{n 1} & a_{n 2} & \cdots & a_{n n}
@@ -705,7 +706,7 @@ $$
 \mathscr{A} \varepsilon_{3} = &  0& &
 \end{array}
 $$
-所以下$\A$在基$\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}$ 的矩阵为
+所以, $\A$在基$\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}$ 的矩阵为
 \pause  $$\left(\begin{array}{lll}1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 1 & 0\end{array}\right)$$
 \end{exa}
 \end{frame}
@@ -2308,9 +2309,12 @@ $r(A+E)+r(A-E) \leq n$.同时 $n=r(A+E-A+E) \leq r(A+E)+r(A-E)$
 
 \begin{frame}
 \begin{defi}
-$\dim \A V$称为$\A$的秩, 记为$rank (\A)$ 或$r(\A)$. 
+\begin{itemize}
+\item $\A V$的维数称为$\A$的\alert{秩}, 记为$rank (\A)$ 或$r(\A)$. 
 
-$\dim\, \A^{-1}(\0) $称为$\A^{-1}(\0) $的零度, 记为$null (\A)$.
+\item $\A^{-1}(\0)$的维数称为$\A$的\alert{零度}, 记为$null (\A)$.
+\end{itemize}
+
 \end{defi}
 
 \begin{exa}
@@ -2364,7 +2368,7 @@ $\A V=L\left(\A \varepsilon_{1}, \A \varepsilon_{2}, \cdots, \A \varepsilon_{n}\
 {求值域与核}
 \begin{itemize}
 \item  $\A V=L\left(\A  \varepsilon_{1}, \A  \varepsilon_{2}, \cdots, \A  \varepsilon_{n}\right),$ 求 $\A  \varepsilon_{1}, \A  \varepsilon_{2}, \cdots, \A  \varepsilon_{n}$ 的极大无关组即可.
-\item 任给 $\alpha \in \A^{-1}(\0)$,则 $\A  \alpha=0$,假设 $\A$在基$\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{m}$ 下的矩阵为$A$, 并设 $\alpha=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) X$,则
+\item 任给 $\alpha \in \A^{-1}(\0)$,则 $\A  \alpha=0$,假设 $\A$在基$\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的矩阵为$A$, 并设 $\alpha=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) X$,则
 $$0=\A  \alpha=\A \left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) X=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) A X,$$ 
 从而 $A X=0$, 
 则 $\alpha$ 在基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的坐标是齐次线

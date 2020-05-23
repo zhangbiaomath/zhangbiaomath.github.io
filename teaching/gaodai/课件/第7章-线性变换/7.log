@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  22 MAY 2020 16:32
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  24 MAY 2020 07:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1434,7 +1434,7 @@ Overfull \vbox (6.17387pt too high) detected at line 462
 ] [25
 
 ]
-Overfull \vbox (9.80196pt too high) detected at line 654
+Overfull \vbox (9.80196pt too high) detected at line 655
  []
 
 [26
@@ -1458,7 +1458,7 @@ Overfull \vbox (9.80196pt too high) detected at line 654
 ] [35
 
 ]
-Overfull \vbox (25.8045pt too high) detected at line 807
+Overfull \vbox (25.8045pt too high) detected at line 808
  []
 
 [36
@@ -1470,7 +1470,7 @@ Overfull \vbox (25.8045pt too high) detected at line 807
 ] [39
 
 ]
-Overfull \vbox (7.66565pt too high) detected at line 892
+Overfull \vbox (7.66565pt too high) detected at line 893
  []
 
 [40
@@ -1480,7 +1480,7 @@ Overfull \vbox (7.66565pt too high) detected at line 892
 ] [42
 
 ]
-Overfull \vbox (6.01581pt too high) detected at line 968
+Overfull \vbox (6.01581pt too high) detected at line 969
  []
 
 [43
@@ -1500,7 +1500,7 @@ Overfull \vbox (6.01581pt too high) detected at line 968
 ] [50
 
 ]
-Overfull \vbox (16.46204pt too high) detected at line 1193
+Overfull \vbox (16.46204pt too high) detected at line 1194
  []
 
 [51
@@ -1557,7 +1557,7 @@ Overfull \vbox (16.46204pt too high) detected at line 1193
 ] [76
 
 ]
-Overfull \vbox (2.41042pt too high) detected at line 1701
+Overfull \vbox (2.41042pt too high) detected at line 1702
  []
 
 [77
@@ -1581,7 +1581,7 @@ Overfull \vbox (2.41042pt too high) detected at line 1701
 ] [86
 
 ]
-Overfull \vbox (10.63106pt too high) detected at line 1893
+Overfull \vbox (10.63106pt too high) detected at line 1894
  []
 
 [87
@@ -1625,7 +1625,7 @@ Missing character: There is no ， in font [lmroman10-regular]:mapping=tex-text;
 ] [104
 
 ]
-Overfull \vbox (0.30733pt too high) detected at line 2231
+Overfull \vbox (0.30733pt too high) detected at line 2232
  []
 
 [105
@@ -1642,13 +1642,13 @@ Overfull \vbox (0.30733pt too high) detected at line 2231
 Missing character: There is no d in font rsfs10!
 Missing character: There is no d in font rsfs10!
 
-Overfull \vbox (13.04309pt too high) detected at line 2360
+Overfull \vbox (13.04309pt too high) detected at line 2364
  []
 
 [110
 
 ]
-Overfull \vbox (4.51352pt too high) detected at line 2375
+Overfull \vbox (4.51352pt too high) detected at line 2379
  []
 
 [111
@@ -1669,17 +1669,17 @@ Overfull \vbox (4.51352pt too high) detected at line 2375
 
 ]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 2530.
+LaTeX Font Warning: Command \small invalid in math mode on input line 2534.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 2530.
+LaTeX Font Warning: Command \small invalid in math mode on input line 2534.
 
 [119
 
 ] [120
 
 ]
-Overfull \vbox (6.43417pt too high) detected at line 2576
+Overfull \vbox (6.43417pt too high) detected at line 2580
  []
 
 [121
@@ -1707,7 +1707,7 @@ Overfull \vbox (6.43417pt too high) detected at line 2576
 ] [132
 
 ]
-Overfull \vbox (3.86526pt too high) detected at line 2846
+Overfull \vbox (3.86526pt too high) detected at line 2850
  []
 
 [133
@@ -1727,7 +1727,7 @@ Overfull \vbox (3.86526pt too high) detected at line 2846
 ] [140
 
 ]
-Overfull \vbox (1.4457pt too high) detected at line 3038
+Overfull \vbox (1.4457pt too high) detected at line 3042
  []
 
 [141
@@ -1769,11 +1769,11 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the 7.log file.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3206.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3206.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3210.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3210.
 (./7.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3206.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3206.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3210.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3210.
 
 Package rerunfilecheck Info: File `7.out' has not changed.
 (rerunfilecheck)             Checksum: B737E668D7BA3AD761B0C65A414234D1;913.
@@ -1785,7 +1785,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  32522 strings out of 479418
  686538 string characters out of 5884585
- 974776 words of memory out of 5000000
+ 974775 words of memory out of 5000000
  49108 multiletter control sequences out of 15000+600000
  543334 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
