@@ -1482,7 +1482,7 @@ $$\left\{\begin{aligned} 4 x_{1}-2 x_{2}-2 x_{3} &=0 \\-2 x_{1}+4 x_{2}-2 x_{3} 
 \begin{itemize}
 \item 审题时注意：题目要的求是矩阵的特征值与特征向量，还是线性变换的特征值与特征向量.
 
-\item 两者的特征值都是一样的，但矩阵的特征向量是$\mathbb{R}^n$中的向量，线性变换的的特征向量是$V$中的向量.
+\item 两者的特征值都是一样的，但线性变换的的特征向量是$V$中的向量，不是坐标；而矩阵的特征向量是$\mathbb{R}^n$中的向量.
 \end{itemize}
 \end{rem}
 \end{frame}
@@ -1492,7 +1492,7 @@ $$\left\{\begin{aligned} 4 x_{1}-2 x_{2}-2 x_{3} &=0 \\-2 x_{1}+4 x_{2}-2 x_{3} 
 \begin{exa}
 求矩阵 $A=\left(\begin{array}{ccc}-1 & 1 & 0 \\ -4 & 3 & 0 \\ 1 & 0 & 2\end{array}\right)$ 的特征值和特征向量.
 \end{exa}
-\sol 1~ 由矩阵 $A$ 的特征方程，求出特征值。
+\sol 1~ 由矩阵 $A$ 的特征多项式，求出特征值。
 \[
 \begin{aligned}
 |A-\lambda E| &=\left|\begin{array}{ccc}
@@ -1720,8 +1720,8 @@ $$|\lambda {E}-{A}|=\left|\begin{array}{cccc}\lambda-a_{11} & -a_{12} & & -a_{1n
 \begin{frame}
 \begin{itemize}
 \item 线性变换的矩阵的特征多项式与基的选择无关, $\sigma$ 在 的矩阵
-$A$ 的特征多项式称为 $\sigma$ 的特征多项式, 并记作 $f_{\sigma}(\lambda)$.
-\item 相似矩阵有相同的行列式, 故可定义线性变换 $\sigma$ 的行列式为 $\sigma$ 在任意一组
+$A$ 的特征多项式称为 $\sigma$ 的\alert{特征多项式}, 并记作 $f_{\sigma}(\lambda)$.
+\item 相似矩阵有相同的行列式, 故可定义线性变换 $\sigma$ 的\alert{行列式}为 $\sigma$ 在任意一组
 基下的矩阵的行列式.
 \item 矩阵的\alert{特征值}、\alert{迹}、\alert{行列式}都是相似不变量.
 \end{itemize}
