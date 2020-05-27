@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  26 MAY 2020 09:51
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  27 MAY 2020 13:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1681,7 +1681,7 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 2534.
 ] [120
 
 ]
-Overfull \vbox (6.43417pt too high) detected at line 2580
+Overfull \vbox (6.43417pt too high) detected at line 2578
  []
 
 [121
@@ -1771,11 +1771,11 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the 7.log file.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3210.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3210.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3213.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3213.
 (./7.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3210.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3210.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3213.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3213.
 
 Package rerunfilecheck Info: File `7.out' has not changed.
 (rerunfilecheck)             Checksum: B737E668D7BA3AD761B0C65A414234D1;913.
@@ -1785,10 +1785,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 32541 strings out of 479418
- 687362 string characters out of 5884585
- 975038 words of memory out of 5000000
- 49124 multiletter control sequences out of 15000+600000
+ 32530 strings out of 479418
+ 686605 string characters out of 5884585
+ 974911 words of memory out of 5000000
+ 49113 multiletter control sequences out of 15000+600000
  543334 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  63i,16n,82p,795b,875s stack positions out of 5000i,500n,10000p,200000b,80000s
