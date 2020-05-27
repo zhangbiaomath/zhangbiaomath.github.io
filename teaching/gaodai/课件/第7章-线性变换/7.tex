@@ -79,7 +79,7 @@
 
 \begin{document}
 
-\titlegraphic{\includegraphics[width=2cm]{tjnu.jpg}} 
+\titlegraphic{\includegraphics[width=2cm]{../tjnu.jpg}} 
 
 \title[]{第七章 \quad  线性变换}
 \author[]{{\large 张彪}\\  }
@@ -3203,10 +3203,34 @@ ${J}$ 的特征多项式为 $(x-a)^{k},$ 而
 
 
 \begin{frame}
+%\begin{prop}
+%$A$的最小多项式与它的特征多项式在数域$P$中有相同的根.
+%\end{prop}
+
 \begin{prop}
-$A$的最小多项式与它的特征多项式在数域$P$中有相同的根.
+如果 $f(\lambda)$ 是 $A$ 的零化多项式，则 $A$ 的所有特征值 $\lambda_{i}$ 都是
+$f(\lambda)$ 的根。特别地，A 的所有特征值都是 $A$ 的最小多项式 $d_{A}(\lambda)$ 的根。 
 \end{prop}
 
+\pf 设 $X$ 是属于特征值 $\lambda_{i}$ 的任一特征向量, 则 $A X=\lambda_{i} X=\0 .$ 
+
+由此推出
+$
+A^{2} X=A(A X)=A \lambda_{i} X=\lambda_{i} A X=\lambda_{i}\left(\lambda_{i} X\right)=\lambda_{i}^{2} X.
+$
+
+一般地，用数学归纳法可以证明 $A^{m} X=\lambda_{i}^{m} X$ 对所有的正整数 $m$ 成立.
+设
+$
+f(\lambda)=a_{0}+a_{1} \lambda+\cdots+a_{m} \lambda^{m}$,  { 则 } 
+\begin{align*}
+f({A}) {X} &=a_{0} {X}+a_{1} A {X}+\cdots+a_{m} {A}^{m} {X} \\
+&=a_{0} {X}+a_{1} \lambda_{i} {X}+\cdots+a_{m} \lambda_{i}^{m} {X}=f\left(\lambda_{i}\right) X
+\end{align*}
+{ 由 } $f({A})={O}$  { 知 }
+$f(A) X=\0$, 
+ { 从而 } $f\left(\lambda_{i}\right) X=\0$,  { 但 } $X \neq \0$,  { 因此 } $f\left(\lambda_{i}\right)= 0$.
+ \qed
 \end{frame}
 
 

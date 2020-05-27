@@ -6,9 +6,9 @@
 \headcommand {\beamer@framepages {3}{3}}
 \headcommand {\slideentry {0}{0}{4}{4/4}{}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\sectionentry {1}{欧氏空间}{5}{欧氏空间}{0}}
 \headcommand {\beamer@sectionpages {1}{4}}
 \headcommand {\beamer@subsectionpages {1}{4}}
+\headcommand {\sectionentry {1}{欧氏空间}{5}{欧氏空间}{0}}
 \headcommand {\slideentry {1}{0}{1}{5/5}{}{0}}
 \headcommand {\beamer@framepages {5}{5}}
 \headcommand {\slideentry {1}{0}{2}{6/6}{}{0}}
@@ -47,9 +47,9 @@
 \headcommand {\beamer@framepages {23}{23}}
 \headcommand {\slideentry {1}{0}{19}{24/24}{}{0}}
 \headcommand {\beamer@framepages {24}{24}}
-\headcommand {\sectionentry {2}{标准正交基的定义与求法}{25}{标准正交基的定义与求法}{0}}
 \headcommand {\beamer@sectionpages {5}{24}}
 \headcommand {\beamer@subsectionpages {5}{24}}
+\headcommand {\sectionentry {2}{标准正交基的定义与求法}{25}{标准正交基的定义与求法}{0}}
 \headcommand {\slideentry {2}{0}{1}{25/25}{}{0}}
 \headcommand {\beamer@framepages {25}{25}}
 \headcommand {\slideentry {2}{0}{2}{26/26}{}{0}}
@@ -82,9 +82,9 @@
 \headcommand {\beamer@framepages {39}{39}}
 \headcommand {\slideentry {2}{0}{16}{40/40}{}{0}}
 \headcommand {\beamer@framepages {40}{40}}
-\headcommand {\sectionentry {3}{欧氏空间的同构}{41}{欧氏空间的同构}{0}}
 \headcommand {\beamer@sectionpages {25}{40}}
 \headcommand {\beamer@subsectionpages {25}{40}}
+\headcommand {\sectionentry {3}{欧氏空间的同构}{41}{欧氏空间的同构}{0}}
 \headcommand {\slideentry {3}{0}{1}{41/41}{}{0}}
 \headcommand {\beamer@framepages {41}{41}}
 \headcommand {\slideentry {3}{0}{2}{42/42}{}{0}}
@@ -93,9 +93,9 @@
 \headcommand {\beamer@framepages {43}{43}}
 \headcommand {\slideentry {3}{0}{4}{44/44}{}{0}}
 \headcommand {\beamer@framepages {44}{44}}
-\headcommand {\sectionentry {4}{正交变换}{45}{正交变换}{0}}
 \headcommand {\beamer@sectionpages {41}{44}}
 \headcommand {\beamer@subsectionpages {41}{44}}
+\headcommand {\sectionentry {4}{正交变换}{45}{正交变换}{0}}
 \headcommand {\slideentry {4}{0}{1}{45/45}{}{0}}
 \headcommand {\beamer@framepages {45}{45}}
 \headcommand {\slideentry {4}{0}{2}{46/46}{}{0}}
@@ -104,9 +104,9 @@
 \headcommand {\beamer@framepages {47}{47}}
 \headcommand {\slideentry {4}{0}{4}{48/48}{}{0}}
 \headcommand {\beamer@framepages {48}{48}}
-\headcommand {\sectionentry {5}{正交子空间}{49}{正交子空间}{0}}
 \headcommand {\beamer@sectionpages {45}{48}}
 \headcommand {\beamer@subsectionpages {45}{48}}
+\headcommand {\sectionentry {5}{正交子空间}{49}{正交子空间}{0}}
 \headcommand {\slideentry {5}{0}{1}{49/49}{}{0}}
 \headcommand {\beamer@framepages {49}{49}}
 \headcommand {\slideentry {5}{0}{2}{50/50}{}{0}}
@@ -145,4 +145,4 @@
 \headcommand {\beamer@subsectionpages {49}{65}}
 \headcommand {\beamer@sectionpages {49}{65}}
 \headcommand {\beamer@documentpages {65}}
-\headcommand {\def \inserttotalframenumber {64}}
+\headcommand {\gdef \inserttotalframenumber {64}}
