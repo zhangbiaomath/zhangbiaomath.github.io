@@ -49,11 +49,14 @@
 
 \def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
 \def\pf{{\bf 证明~~ }}
+\def\R{\mathbb{R}}
 \def\Rn{\mathbb{R}^n}
 \def\A{\mathscr{A}}
 \def\a{\alpha}
 \def\b{\beta}
 \def\r{\gamma}
+\def\0{\mathbf{0}}
+
 
 \usepackage{color}
 \definecolor{linkcol}{rgb}{0,0,0.4}
@@ -124,9 +127,9 @@
 	\item 
 在几何空间中两个向量 $a, b$ 的内积 (数量积)定义为:
 \[
-a \cdot b=|a| \cdot|b| \cos \theta
+a \cdot b=|a| \cdot|b| \cos \theta,
 \]
-其中 | ${a}|,| {b} |$ 是向量 $a, b$ 的长度, ${\theta}$ 是向量 ${a}, {b}$ 的夹角. 
+其中  $|{a}|$, $| {b} |$ 是向量 $a, b$ 的长度, ${\theta}$ 是向量 ${a}, {b}$ 的夹角. 
  
  \item 
 在建立空间直角坐标系后，有了向量的坐标表示，即
@@ -224,16 +227,16 @@ $\forall \alpha, \beta, \gamma \in {V}$, $\forall k \in \mathbb{R}$
  
  1. 引入长度概念的可能性
  
- 1）在 ${R}^{3}$ 向量 $\alpha$ 的长度模 $$|\alpha|=\sqrt{\alpha \cdot \alpha}$$
+ 1）在 ${\R}^{3}$ 向量 $\alpha$ 的长度模 $$|\alpha|=\sqrt{\alpha \cdot \alpha}$$
  
- 2) 欧氏空间V中, $\forall \alpha \in V, \quad(\alpha, \alpha) \geq \mathbf{0}$ 使得 $\sqrt{\alpha \cdot \alpha}$ 有意义.
+ 2) 欧氏空间V中,  对任意的$ \alpha \in V, \quad(\alpha, \alpha) \geq \mathbf{0}$ 使得 $\sqrt{\alpha \cdot \alpha}$ 有意义.
  
  2. 向量长度的定义
 
 \begin{defi}
  在欧氏空间$V$中，对任意向量$\alpha \in V$,
-称 $$|\alpha|=\sqrt{(\alpha, \alpha)}$$ 为向量 $\alpha$ 的长度.
-特别地，当 $|\alpha |=1$ 时，称 $\alpha$ 为单位向量.
+称 $$|\alpha|=\sqrt{(\alpha, \alpha)}$$ 为向量 $\alpha$ 的\alert{长度}.
+特别地，当 $|\alpha |=1$ 时，称 $\alpha$ 为\alert{单位向量}.
 \end{defi}
 
  \end{frame}
@@ -270,7 +273,7 @@ $$\quad\left|\frac{ ( \alpha, \beta)}{|\alpha \| \beta|}\right| \leq 1$$
 \end{frame}
 
 
-\begin{frame}{柯西-布涅柯夫斯基不等式(又称"柯西-施瓦兹不等式")}
+\begin{frame}{柯西-布涅柯夫斯基不等式(又称``柯西-施瓦兹不等式'')}
 \begin{prop}
 对欧氏空间V中任意两个向量 $\alpha, \beta,$ 有
 \[
@@ -279,12 +282,13 @@ $$\quad\left|\frac{ ( \alpha, \beta)}{|\alpha \| \beta|}\right| \leq 1$$
 当且仅当 $\alpha, \beta$ 线性相关时等号成立.
 \end{prop}
 
-1) 对于欧氏空间$\mathbb{R}^n$
+\begin{itemize}
+\item 对于欧氏空间$\mathbb{R}^n$
 $$\left|a_{1} b_{1}+a_{2} b_{2}+\dots+a_{n} b_{n}\right|
-\leq \sqrt{a_{1}^{2}+a_{2}^{2}+\dots+a_{n}^{2}}   \sqrt{b_{1}^{2}+b_{2}^{2}+\dots+b_{n}^{2}}$$
-
-2) 对于欧氏空间$C[a,b]$
-$$\left|\int_{a}^{b} f(x) g(x) d x\right| \leq \sqrt{\int_{a}^{b} f^{2}(x) d x}  \cdot  \sqrt{\int_{a}^{b} g^{2}(x) d x}$$
+\leq \sqrt{a_{1}^{2}+a_{2}^{2}+\dots+a_{n}^{2}}   \sqrt{b_{1}^{2}+b_{2}^{2}+\dots+b_{n}^{2}}.$$
+\item 对于欧氏空间$C(a,b)$
+$$\left|\int_{a}^{b} f(x) g(x) d x\right| \leq \sqrt{\int_{a}^{b} f^{2}(x) d x}  \cdot  \sqrt{\int_{a}^{b} g^{2}(x) d x}.$$
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -307,32 +311,43 @@ $$(\alpha, \alpha)-2(\alpha, \beta) \frac{(\alpha, \beta)}{(\beta, \beta)}+(\bet
 即 $\quad(\alpha, \beta)^{2} \leq(\alpha, \alpha)(\beta, \beta)$
 两边开方，
 
-即得 $\quad|(\alpha, \beta)| \leq|\alpha \| \beta|$
+即得 $\quad|(\alpha, \beta)| \leq|\alpha|  \cdot| \beta|.$
 \end{frame}
 
 \begin{frame}
+\begin{center}
+$| \left(\alpha, \beta \right) | = |\alpha|    | \beta|
+$
+当且仅当 $\alpha, \beta$ 线性相关.
+\end{center}
+
+
+\begin{itemize}
+\item 
 当
-$\alpha, \beta$ 线性相关时，不妨设$\alpha=k \beta$
+$\alpha, \beta$ 线性相关时，不妨设$\alpha=k \beta$.
 于是, $$|(\alpha, \beta)|=|(k \beta, \beta)|=|k(\beta, \beta)|=|k \| {\beta}|^{2}$$
 $$
 |\alpha\|\beta|=| k \beta\| \beta|=|k \| \beta|^{2}
 $$
 因此$|(\alpha, \beta)|=|\alpha||\beta| . \quad$ 等号成立.
 
+\item 
 反之，若等号成立，
 由以上证明过程知
 
-或者 $\beta=0,$ 或者 $\alpha-\frac{(\alpha, \beta)}{(\beta, \beta)} \beta=0$
+或者 $\beta=\0,$ 或者 $\alpha-\frac{(\alpha, \beta)}{(\beta, \beta)} \beta=0$
 
 也即 $\alpha, \beta$ 线性相关.
-
+\qed
+\end{itemize}
 \end{frame}
 
 
 \begin{frame}
 \begin{coro}
 对欧氏空间中的任意两个向量 $\alpha, \beta,$ 有
-$$|\alpha+\beta| \leq|\alpha|+|\beta|$$
+$$|\alpha+\beta| \leq|\alpha|+|\beta|. $$
 \end{coro}
 \pf 
 \[
@@ -380,9 +395,11 @@ $
 \end{frame}
 
 \begin{frame}
-(3) 勾股定理:
-设V为欧氏空间， $\forall \alpha, \beta \in V$
-$$\alpha \perp \beta \Longleftrightarrow|\alpha+\beta|^{2}=|\alpha|^{2}+|\beta|^{2}$$
+\begin{prop}[勾股定理]
+设V为欧氏空间， 对任意的 $ \alpha, \beta \in V$
+$$\alpha \perp \beta \Longleftrightarrow|\alpha+\beta|^{2}=|\alpha|^{2}+|\beta|^{2}. $$
+\end{prop} 
+
 \pf
 因为$$
 \begin{aligned}
@@ -391,11 +408,15 @@ $$\alpha \perp \beta \Longleftrightarrow|\alpha+\beta|^{2}=|\alpha|^{2}+|\beta|^
 \end{aligned}$$
 
 所以$\quad|\alpha+\beta|^{2}=|\alpha|^{2}+|\beta|^{2} \Longleftrightarrow(\alpha, \beta)=0$
-$\Longleftrightarrow \alpha \perp \beta$ \qed
+$\Longleftrightarrow \alpha \perp \beta$. \qed
 
-{\bf 推广~~}  若欧氏空间V中向量 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}$ 两两正交,
-即 $\quad\left(\alpha_{i}, \alpha_{j}\right)=\mathbf{0}, \quad i \neq j, \quad i, j=1,2, \cdots, m$, 有
-$$\left|\alpha_{1}+\alpha_{2}+\cdots+\alpha_{m}\right|^{2}=\left|\alpha_{1}\right|^{2}+\left|\alpha_{2}\right|^{2}+\cdots+\left|\alpha_{m}\right|^{2}$$
+\begin{coro}
+若欧氏空间V中向量 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}$ 两两正交,
+
+即 $\left(\alpha_{i}, \alpha_{j}\right)={0}$, \quad $i \neq j$, \quad $i, j=1,2, \cdots, m$, 有
+$$\left|\alpha_{1}+\alpha_{2}+\cdots+\alpha_{m}\right|^{2}=\left|\alpha_{1}\right|^{2}+\left|\alpha_{2}\right|^{2}+\cdots+\left|\alpha_{m}\right|^{2}.$$
+\end{coro}
+%{\bf 推广~~}  
 
 \end{frame}
 
@@ -405,34 +426,60 @@ $$\left|\alpha_{1}+\alpha_{2}+\cdots+\alpha_{m}\right|^{2}=\left|\alpha_{1}\righ
 	\end{exa}
 	\pause
 {\bf 解~~} 
-$|\alpha|=\sqrt{(\alpha, \alpha)}=\sqrt{2^{2}+1^{2}+3^{2}+2^{2}}=\sqrt{18}=3 \sqrt{2}$
+\begin{itemize}
+\item 
+$|\alpha|=\sqrt{(\alpha, \alpha)}=\sqrt{2^{2}+1^{2}+3^{2}+2^{2}}=\sqrt{18}=3 \sqrt{2}$.
 
-因为 $(\alpha, \beta)=2 \times 1+1 \times 2+3 \times(-2)+2 \times 1=0$. 
+\item  $(\alpha, \beta)=2 \times 1+1 \times 2+3 \times(-2)+2 \times 1=0$. 
 
-所以, $\langle\alpha, \beta\rangle=\frac{\pi}{2}$.
+\item   $\langle\alpha, \beta\rangle=\frac{\pi}{2}$.
 
-又因为 $\alpha-\beta=(1,-1,5,1)$
+\item    因为 $\alpha-\beta=(1,-1,5,1)$,
 
-所以$|\alpha-\beta|=\sqrt{1^{2}+(-1)^{2}+5^{2}+1^{2}}=\sqrt{28}=2 \sqrt{7}$
+所以$|\alpha-\beta|=\sqrt{1^{2}+(-1)^{2}+5^{2}+1^{2}}=\sqrt{28}=2 \sqrt{7}.$
+\end{itemize}
 \end{frame}
 \begin{frame}
-	通常称 $|\alpha-\beta|$ 为 $\alpha$ 与 $\beta$ 的距离，记作 $d(\alpha, \beta)$.
-\begin{ex}[{课后习题第3题}]
-证明
-$$d(\alpha, {\gamma}) \leqslant d({a}, {\beta})+d({\beta}, {\gamma})$$
-\end{ex}
+%	通常称 $|\alpha-\beta|$ 为 $\alpha$ 与 $\beta$ 的距离，记作 $d(\alpha, \beta)$.
+%\begin{ex}[{课后习题第3题}]
+%证明
+%$$d(\alpha, {\gamma}) \leqslant d({a}, {\beta})+d({\beta}, {\gamma})$$
+%\end{ex}
+
+在解析几何中,两个点 $\alpha$ 和 $\beta$ 间的距离等于向量 ${\alpha}-{\beta}$ 的长
+度.
+
+在欧氏空间中我们同样可引入 
+\begin{defi}
+长度 $|{\a}-{\beta} |$ 称为向量 ${\alpha}$ 和 ${\beta}$ 的距离,记为 $d({\alpha}, {\beta}).$
+\end{defi}
+
+\begin{prop}
+距离的三条基本性质：
+\begin{enumerate}
+\item  $d({\alpha}, {\beta})=d({\beta}, {\alpha})$
+\item  $d({\alpha}, {\beta}) \geqslant 0,$ 并且仅当 ${\a}={\beta}$ 时等号才成立
+\item  $d({\alpha}, {\beta}) \leqslant d({\alpha}, {\gamma})+d({\gamma}, {\beta})\text { (三角形不等式) }.$
+\end{enumerate}
+\end{prop}
+
 
 \end{frame}
 
 
 \begin{frame}
 {四、$n$ 维欧氏空间中内积的矩阵表示}
-设V为欧氏空间, $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 为V的一组基，对V中
+设$V$为欧氏空间, $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 为$V$的一组基，对$V$中
 任意两个向量
-$\alpha=x_{1} \varepsilon_{1}+x_{2} \varepsilon_{2}+\cdots+x_{n} \varepsilon_{n}, \quad
-\beta=y_{1} \varepsilon_{1}+y_{2} \varepsilon_{2}+\cdots+y_{n} \varepsilon_{n}$
+\begin{align*}
+\alpha & = x_{1} \varepsilon_{1}+x_{2} \varepsilon_{2}+\cdots+x_{n} \varepsilon_{n},\\
+\beta  & = y_{1} \varepsilon_{1}+y_{2} \varepsilon_{2}+\cdots+y_{n} \varepsilon_{n},
+\end{align*}
+有
 $$
-(\alpha, \beta)=\left(\sum_{i=1}^{n} x_{i} \varepsilon_{i}, \sum_{j=1}^{n} y_{j} \varepsilon_{j}\right)=\sum_{i=1}^{n} \sum_{j=1}^{n}\left(\varepsilon_{i}, \varepsilon_{j}\right) x_{i} y_{j} $$
+(\alpha, \beta)
+=\left(\sum_{i=1}^{n} x_{i} \, \varepsilon_{i}, \sum_{j=1}^{n} y_{j} \, \varepsilon_{j}\right)
+=\sum_{i=1}^{n} \sum_{j=1}^{n}\left(\varepsilon_{i}, \varepsilon_{j}\right) x_{i}\, y_{j}.$$
 \end{frame}
 
 
@@ -442,11 +489,11 @@ $$
 
 令
 $A=\left(a_{i j} \right)_{n \times n}$,
-$X= \left(x_1, x_2, \dots, x_n \right)^{\prime}$, 
-$Y=\left(y_1, y_2, \dots, y_n \right)^{\prime}$,
+$X= \left(x_1, x_2, \dots, x_n \right)^{\, \prime}$, 
+$Y=\left(y_1, y_2, \dots, y_n \right)^{\, \prime}$,
 
 于是,
-$(\alpha, \beta)=\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} y_{j}=X^{\prime} A Y$
+$(\alpha, \beta)=\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} y_{j}=X^{\, \prime} A Y$
 
 %{\bf 定义~~~} 
 \begin{defi}
@@ -454,7 +501,7 @@ $(\alpha, \beta)=\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} y_{j}=X^{\prime} A 
 \left(\begin{array}{cccc}
 \left(\varepsilon_{1}, \varepsilon_{1}\right) & \left(\varepsilon_{1}, \varepsilon_{2}\right) & \cdots & \left(\varepsilon_{1}, \varepsilon_{n}\right) \\ 
 \left(\varepsilon_{2}, \varepsilon_{1}\right) & \left(\varepsilon_{2}, \varepsilon_{2}\right) & \cdots & \left(\varepsilon_{2}, \varepsilon_{n}\right) \\
-\cdots & \cdots & \cdots & \cdots \\ 
+\vdots & \vdots &  & \vdots \\ 
 \left(\varepsilon_{n}, \varepsilon_{1}\right)  & \left(\varepsilon_{n}, \varepsilon_{2}\right) & \cdots & \left(\varepsilon_{n}, \varepsilon_{n}\right)
 \end{array}\right)$$
 为基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 的度量矩阵.
@@ -470,7 +517,7 @@ $$A=
 \left(\begin{array}{cccc}
 \left(\varepsilon_{1}, \varepsilon_{1}\right) & \left(\varepsilon_{1}, \varepsilon_{2}\right) & \cdots & \left(\varepsilon_{1}, \varepsilon_{n}\right) \\ 
 \left(\varepsilon_{2}, \varepsilon_{1}\right) & \left(\varepsilon_{2}, \varepsilon_{2}\right) & \cdots & \left(\varepsilon_{2}, \varepsilon_{n}\right) \\
- \cdots & \cdots & \cdots & \cdots \\ 
+\vdots & \vdots &  & \vdots \\ 
  \left(\varepsilon_{n}, \varepsilon_{1}\right)  & \left(\varepsilon_{n}, \varepsilon_{2}\right) & \cdots & \left(\varepsilon_{n}, \varepsilon_{n}\right)
 \end{array}\right)$$
 
@@ -479,7 +526,7 @@ $$A=
 		\item 度量矩阵A是实对称矩阵.
 		\item 由内积的正定性，度量矩阵A还是正定矩阵.
 		事实上，对 $\forall \alpha \in V, \alpha \neq \mathbf{0},$ 即 $X \neq 0$
-		有 $(\alpha, \alpha)=X^{\prime} A X>0$.
+		有 $(\alpha, \alpha)=X^{\, \prime} A X>0$.
 		因此，$ A$ 为正定矩阵.
 		\item 在基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下，向量的内积
 		由度量矩阵A完全确定.
@@ -506,10 +553,10 @@ $$\left(\eta_{1}, \eta_{2}, \cdots, \eta_{n}\right)=\left(\varepsilon_{1}, \vare
 因此， 
 $\left(\eta_{i}, \eta_{j}\right) =\left(\sum_{k=1}^{n} c_{k i} \varepsilon_{k}, \sum_{l=1}^{n} c_{l j} \varepsilon_{l}\right)=\sum_{k=1}^{n} \sum_{l=1}^{n}\left(\varepsilon_{k}, \varepsilon_{l}\right) c_{k i} c_{l j}$\\
 	~~~~~~~~~~~~~~~~~
-	$ =\sum_{k=1}^{n} \sum_{l=1}^{n} a_{k l} c_{k i} c_{l j}=C_{i}^{\prime} A C_{j}$
+	$ =\sum_{k=1}^{n} \sum_{l=1}^{n} a_{k l} c_{k i} c_{l j}=C_{i}^{\, \prime} A C_{j}$
 
-所以 $B=\left(\left(\eta_{i}, \eta_{j}\right)\right)=\left(C_{i}^{\prime} A C_{j}\right)$
-$=\left(\begin{array}{c}C_{1}^{\prime} \\ C_{2}^{\prime} \\ \vdots \\ C_{n}^{\prime}\end{array}\right) A\left(C_{1}, C_{2}, \cdots, C_{n}\right)=C^{\prime} A C$
+所以 $B=\left(\left(\eta_{i}, \eta_{j}\right)\right)=\left(C_{i}^{\, \prime} A C_{j}\right)$
+$=\left(\begin{array}{c}C_{1}^{\, \prime} \\ C_{2}^{\, \prime} \\ \vdots \\ C_{n}^{\, \prime}\end{array}\right) A\left(C_{1}, C_{2}, \cdots, C_{n}\right)=C^{\, \prime} A C$
 }
 \end{frame}
 
@@ -564,10 +611,14 @@ ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 是线性无关的.
 		\item 向量组 $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{s}$ 是一个
 		标准正交向量组
 		$\Longleftrightarrow$ 
-		$\left(\alpha_{i}, \alpha_{j}\right)=\left\{\begin{array}{ll} 
+		\begin{center}
+		$\left(\alpha_{i}, \alpha_{j}\right)=
+		\left\{\begin{array}{ll} 
 		{1} & {i}={j} \\ 
 		{0} & {i} \neq {j}
 		\end{array}\right.$
+		\end{center}
+
 		\item 	一组基是标准正交基$\Longleftrightarrow$ 它的度量矩阵是单位矩阵. 
 	\end{itemize}
 \end{prop}
@@ -576,10 +627,10 @@ ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 是线性无关的.
 \begin{frame}
 \begin{prop}
 	设 $\varepsilon_{1}, \varepsilon_{2}, \dots, \varepsilon_{n}$ 是 $n$ 维欧氏空间 $V$ 的
-	一组标准正交基, 对 $\alpha, \beta \in V,$ 设向量 $\alpha, \beta$ 的 坐标分别是 $X=\left(x_{1}, x_{2}, \ldots, x_{n}\right)^{\prime}, Y=\left(y_{1}, y_{2}, \ldots, y_{n}\right)^{\prime}$, 则
+	一组标准正交基, 对 $\alpha, \beta \in V,$ 设向量 $\alpha, \beta$ 的 坐标分别是 $X=\left(x_{1}, x_{2}, \ldots, x_{n}\right)^{\, \prime}, Y=\left(y_{1}, y_{2}, \ldots, y_{n}\right)^{\, \prime}$, 则
 	\begin{itemize}
 		\item $x_{i}=\left(\alpha, \alpha_{i}\right) \quad i=1,2, \dots, n$
-		\item  $(\alpha, \beta)=X^{\prime} Y=x_{1} y_{1}+x_{2} y_{2}+\ldots+x_{n} y_{n}$
+		\item  $(\alpha, \beta)=X^{\, \prime} Y=x_{1} y_{1}+x_{2} y_{2}+\ldots+x_{n} y_{n}$
 	\end{itemize}
 \end{prop}
 
@@ -602,7 +653,7 @@ ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 是线性无关的.
 	\]
 所以
 	\[
-	({\alpha}, {\beta})=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}={X}^{\prime} {Y}
+	({\alpha}, {\beta})=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}={X}^{\, \prime} {Y}
 	\]}
 \end{frame}
 
@@ -780,15 +831,15 @@ a_{1 i} a_{1 j}+a_{2 i} a_{2 j}+\cdots+a_{j i} a_{n j}=\left\{\begin{array}{l}
 \begin{frame}
 相当于一个矩阵的等式
 \[
-A^{\prime} A=E
+A^{\, \prime} A=E
 \]
 或者
 \[
-{A}^{-1}={A}^{\prime}
+{A}^{-1}={A}^{\, \prime}
 \]
 我们引入： 
 \begin{defi}
-$\quad n$ 级实数矩阵 A 称为正交矩阵, 如果 A $^{\prime} {A}={E}$
+$\quad n$ 级实数矩阵 A 称为正交矩阵, 如果 A $^{\, \prime} {A}={E}$
 \end{defi}
  因此,以上分析表明,
  \begin{itemize}
@@ -803,11 +854,11 @@ $\quad n$ 级实数矩阵 A 称为正交矩阵, 如果 A $^{\prime} {A}={E}$
 \begin{rem}
 根据逆矩阵的性质，由
 \[
-{A}^{\prime} {A}={E}
+{A}^{\, \prime} {A}={E}
 \]
 即得
 \[
-A A^{\prime}=E
+A A^{\, \prime}=E
 \]
 写出来就是$A$的各\alert{行}满足
 \[
@@ -830,23 +881,24 @@ a_{i 1} a_{j 1}+a_{i 2} a_{j 2}+\cdots+a_{i n} a_{j n}=\delta_{i j},
 
  $\Leftrightarrow  \sum_{k=1}^{n} a_{k i} a_{k j}=\delta_{i j} $
  
- $\Leftrightarrow A^{-1}=A^{\prime}$
+ $\Leftrightarrow A^{-1}=A^{\, \prime}$
  
-$\Leftrightarrow A A^{\prime}=E $
+$\Leftrightarrow A A^{\, \prime}=E $
 
 $\Leftrightarrow \sum_{k=1}^{n} a_{i k} a_{j k}=\delta_{i j}$
 
-$\Leftrightarrow A$ 的行（列）向量组是R $^{n}$ 的一组标准正交基
+$\Leftrightarrow A$ 的行（列）向量组是 $\Rn$ 的一组标准正交基
 \end{frame}
 
 
 \begin{frame}{正交矩阵之性质}
 \begin{itemize}
-	\item 如果 $A$ 是正交矩阵,则 | $A |=\pm 1$
-	\item 如果 A 是正交矩阵,则 $A^{\prime}, A^{-1}, A^{*}, A^{k}$ 均是正交矩阵;而 A 是正交矩
-	阵的充分必要条件是 $l=\pm 1$
-	\item 如果 $A, B$ 是 $n$ 级正交矩阵,则 $A B$ 也是正交矩阵
-	\item $n$级实矩阵 A 是正交矩阵的充分必要条件是，$A$的 $n$个列(或行) 向量是 两两正交的单位向量
+	\item 如果 $A$ 是正交矩阵,则 $|A|=\pm 1$.
+	\item 如果 A 是正交矩阵,则 $A^{\, \prime}, A^{-1}, A^{*}, A^{k}$ 均是正交矩阵.
+%	;而 A 是正交矩
+%	阵的充分必要条件是 $l=\pm 1$
+	\item 如果 $A, B$ 是 $n$ 级正交矩阵,则 $A B$ 也是正交矩阵.
+	\item $n$级实矩阵 A 是正交矩阵的充分必要条件是，$A$的 $n$个列(或行) 向量是 两两正交的单位向量.
 \end{itemize}
 
 %\pf 设A是一个正交矩阵. 
@@ -870,19 +922,19 @@ $\Leftrightarrow A$ 的行（列）向量组是R $^{n}$ 的一组标准正交基
 
 2) 设 $\alpha, \beta \in V,$ 且 $\alpha, \beta$ 在基$\varepsilon_1, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的坐标分别为
 \[
-x=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{\prime}, \quad y=\left(y_{1}, y_{2}, \cdots, y_{n}\right)^{\prime}
+x=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{\, \prime}, \quad y=\left(y_{1}, y_{2}, \cdots, y_{n}\right)^{\, \prime}
 \]
 则
 \[
-(\alpha, \beta)=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}=x^{\prime} y
+(\alpha, \beta)=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}=x^{\, \prime} y
 \]
 
 3) $V$ 中任一元素 $\alpha$ 在基$\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的坐标为
 \[
-\left(\left(\alpha, \varepsilon_{1}\right),\left(\alpha, \varepsilon_{2}\right), \cdots,\left(\alpha, \varepsilon_{n}\right)\right)^{\prime}
+\left(\left(\alpha, \varepsilon_{1}\right),\left(\alpha, \varepsilon_{2}\right), \cdots,\left(\alpha, \varepsilon_{n}\right)\right)^{\, \prime}
 \]
 
-4) 由标准正交基到标准正交基的过渡矩阵是正交矩阵(即满足 $A^{\prime} A=E$ 的
+4) 由标准正交基到标准正交基的过渡矩阵是正交矩阵(即满足 $A^{\, \prime} A=E$ 的
 $n$ 级实矩阵）. 
 又若两组基之间的过渡矩阵是正交矩阵,且其中一组基是标 准正
 交基，则另一组基也是标准正交基 .
@@ -899,7 +951,7 @@ $n$ 级实矩阵）.
 	\item $\sigma(k {\alpha})=k \sigma({\alpha})$
 	\item $(\sigma({\alpha}), \sigma({\beta}))=({\alpha}, {\beta})$
 \end{enumerate}
-这里 ${\alpha}, {\beta} \in V_1, k \in \mathbf{R},$ 这样的映射 $\sigma$ 称为 $V_1$ 到 $V_2$ 的同构映射. 
+这里 ${\alpha}, {\beta} \in V_1, k \in {\R},$ 这样的映射 $\sigma$ 称为 $V_1$ 到 $V_2$ 的同构映射. 
 \end{defi}
 由定义可知，如果 $\sigma$ 是欧氏空间 $V_1$ 到$V_2$的一个同构映射,那么 $\sigma$ 也是 $V_1$ 到 $V_2$作为线性空间的同构映射.
 因此，同构的 欧氏空间必有相同的维数.
@@ -981,10 +1033,10 @@ $$
 \begin{thm}
 设 $\mathscr{A}$是 $n$ 维欧邸空间 $V$ 的一个线性变换, 于是下面 四个命题是相互等价的：
 \begin{enumerate}
-	\item $\mathscr{A}$是正交变换
-	\item $\mathscr{A}$保持向量的长度不变, 即对于 ${\alpha} \in V,|\mathscr{A} {\alpha}|=| {\alpha} |$
+	\item $\mathscr{A}$是正交变换.
+	\item $\mathscr{A}$保持向量的长度不变, 即对于 ${\alpha} \in V,|\mathscr{A} {\alpha}|=| {\alpha} |$.
 	\item 如果 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 是标准正交基,那么 $\mathscr{A} {\varepsilon}_{1}, \mathscr{A} {\varepsilon}_{2}, \cdots, \mathscr{A}{\varepsilon}_{n}$
-	也是标准正交基
+	也是标准正交基.
 	\item $\mathscr{A}$在任一组标准正交基下的矩阵是正交矩阵.
 \end{enumerate}
 \end{thm}
@@ -1010,7 +1062,7 @@ $$
 \begin{frame}
 如果 A 是正交矩阵,那么由
 $
-{A A}^{\prime}={E}
+{A A}^{\, \prime}={E}
 $
 可知
 $
@@ -1165,14 +1217,14 @@ V=V_{1} \oplus V_{1}^{\perp}
 
 \begin{frame}{${\xi} {6} $ 实对称知阵的惊准形}
 \begin{itemize}
-\item 在第五章我们得到,任意一个对称矩阵都合同于一个对角矩 阵,换句话说，都有一个可逆矩阵 C 使 ${C}^{\prime} {A} {C}$
+\item 在第五章我们得到,任意一个对称矩阵都合同于一个对角矩 阵,换句话说，都有一个可逆矩阵 C 使 ${C}^{\, \prime} {A} {C}$
 成对角形.
 现在利用欧氏空间的理论,第五章中关于实对称矩阵的结果可以加强.
 
 \item 这一节的主要结果： 对于任意一个 n 级实对称矩阵 A,都存在一个 n 级正交矩陈
 ${T},$ 使
 \[
-{T}^{\prime} {A} {T}={T}^{-1} {A} {T}
+{T}^{\, \prime} {A} {T}={T}^{-1} {A} {T}
 \]
 成对角形. 
 
@@ -1192,23 +1244,23 @@ ${T},$ 使
 设 A 是实对称矩阵,则 A 的特征值皆为实数. 
 \end{lem}
 \pf  设 $\lambda_{0}$ 是 $\mathbf{A}$ 的特征值,于是有非零向量
-$\xi=\left(x_{1}, x_{2}, \ldots, x_{n}\right)^{\prime}$
+$\xi=\left(x_{1}, x_{2}, \ldots, x_{n}\right)^{\, \prime}$
 满足
 ${A} {\xi}=\lambda_{0} {\xi}$, 
 令
-$\xi = \left( {x}_{1}, {x}_{2}, \ldots, {x}_{n} \right)^{\prime}$
+$\xi = \left( {x}_{1}, {x}_{2}, \ldots, {x}_{n} \right)^{\, \prime}$
 其中 $\bar{x}_{i}$ 是 $x_{i}$ 的共轭复数,则 $\overline{A \xi}=\bar{\lambda}_{0} \bar{\xi}$
 考察等式
 \[
-\bar{\xi}^{\prime}(A \xi)=\bar{\xi}^{\prime} A^{\prime} \xi=(A \bar{\xi})^{\prime} \xi=(\overline{A \xi})^{\prime} \xi
+\bar{\xi}^{\, \prime}(A \xi)=\bar{\xi}^{\, \prime} A^{\, \prime} \xi=(A \bar{\xi})^{\, \prime} \xi=(\overline{A \xi})^{\, \prime} \xi
 \]
-其左边为 $\lambda_{0} \bar{\xi}^{\prime} \xi$, 右边为 $\bar{\lambda}_{0} \bar{\xi}^{\prime} \xi$. 故
+其左边为 $\lambda_{0} \bar{\xi}^{\, \prime} \xi$, 右边为 $\bar{\lambda}_{0} \bar{\xi}^{\, \prime} \xi$. 故
 \[
-\lambda_{0} \bar{\xi}^{\prime} \xi = \bar{\lambda}_{0} \bar{\xi}^{\prime} \xi
+\lambda_{0} \bar{\xi}^{\, \prime} \xi = \bar{\lambda}_{0} \bar{\xi}^{\, \prime} \xi
 \]
 又因 $\xi$ 是非零向量，
 \[
-\bar{\xi}^{\prime} \xi=\bar{x}_{1} x_{1}+\bar{x}_{2} x_{2}+\cdots+\bar{x}_{n} x_{n} \neq 0
+\bar{\xi}^{\, \prime} \xi=\bar{x}_{1} x_{1}+\bar{x}_{2} x_{2}+\cdots+\bar{x}_{n} x_{n} \neq 0
 \]
 故 $\lambda_{0}=\bar{\lambda}_{0},$ 即 $\lambda_{0}$ 是一个实数. 
 \qed
@@ -1262,12 +1314,12 @@ x_{n}
 \end{align}
 或
 \[
-{\beta}^{\prime}({A} {\alpha})={\alpha}^{\prime} {A} {\beta}
+{\beta}^{\, \prime}({A} {\alpha})={\alpha}^{\, \prime} {A} {\beta}
 \]
 \end{lem}
 \pf 只要证明后一等式就行了.实际上\\
 $\qquad \qquad \qquad \qquad 
-{\beta}^{\prime}({A} {\alpha})={\beta}^{\prime} {A}^{\prime} {\alpha}=({A} {\beta})^{\prime} {\alpha}={\alpha}^{\prime}({A} {\beta}).
+{\beta}^{\, \prime}({A} {\alpha})={\beta}^{\, \prime} {A}^{\, \prime} {\alpha}=({A} {\beta})^{\, \prime} {\alpha}={\alpha}^{\, \prime}({A} {\beta}).
 $
 \qed 
 等式\eqref{eq-3}把实对称矩阵的特性反映到线性变换上. 我们引入
@@ -1319,7 +1371,7 @@ $\mathscr{A} {\alpha}=\lambda {\alpha}, \mathscr{A} {\beta}=\mu {\beta}$.
 \begin{frame}
 现在来证明主要定理.
 \begin{thm}
-对于任意一个 $n$ 级实对称矩阵 $A$ ,都存在一个 $n$ 级 正交矩阵 $T$,使$T^{\prime}AT = T ^{-1} {A T}$ 成对角形. 
+对于任意一个 $n$ 级实对称矩阵 $A$ ,都存在一个 $n$ 级 正交矩阵 $T$,使$T^{\, \prime}AT = T ^{-1} {A T}$ 成对角形. 
 \end{thm}
 \pf 
 由于实对称矩阵和对称变换的关系, 只要证明对称变 换 $\A$有 $n$ 个特征向量做成标准正交基就行了. 我们对空间的维数 $n$ 作归纳法.
@@ -1344,7 +1396,7 @@ $\mathscr{A} {\alpha}=\lambda {\alpha}, \mathscr{A} {\beta}=\mu {\beta}$.
 $n$ 个特征向量. 定理得证. 
 \qed
 \begin{itemize}
-\item  下面来看看在给定了一个实对称矩阵 $\A$ 之后,按什么办法求 正交矩阵 $T$ 使$T^{\prime}AT$ 成对角形. 
+\item  下面来看看在给定了一个实对称矩阵 $\A$ 之后,按什么办法求 正交矩阵 $T$ 使$T^{\, \prime}AT$ 成对角形. 
 \item  在定理的证明中我们看到, 矩阵 A 在 $\Rn$中定义了一个线性变换.
 \item  求正交矩阵 $T$ 的问题就 相当于在 $\Rn$ 中求一组由$A$ 的\alert{特征向量}构成的标准正交基.
 \end{itemize}
@@ -1386,7 +1438,7 @@ t_{n 1} & t_{n 2} & \cdots & t_{n n}
 \]
 $T$ 是一个正交矩阵，而
 \[
-{T}^{-1} {A} {T}={T}^{\prime} {A} {T}
+{T}^{-1} {A} {T}={T}^{\, \prime} {A} {T}
 \]
 就是对角形.
 \end{frame}
