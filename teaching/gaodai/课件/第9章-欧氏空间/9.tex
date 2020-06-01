@@ -49,13 +49,14 @@
 
 \def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
 \def\pf{{\bf 证明~~ }}
+\def\sol{{\bf 解~~ }}
 \def\R{\mathbb{R}}
 \def\Rn{\mathbb{R}^n}
 \def\A{\mathscr{A}}
 \def\a{\alpha}
 \def\b{\beta}
 \def\r{\gamma}
-\def\0{\mathbf{0}}
+\def\0{{0}}
 
 
 \usepackage{color}
@@ -154,7 +155,7 @@ a=\left(a_{1}, a_{2}, a_{3}\right), b=\left(b_{1}, b_{2}, b_{3}\right)
 \item 	$(k \alpha, \beta)=k(\alpha, \beta)$
 	（左数乘性）
 \item 	$(\alpha+\beta, \gamma)=(\alpha, \gamma)+(\beta, \gamma)$  （左可加性）
-\item 	$(\alpha, \alpha) \geq \mathbf{0},$ 当且仅当 $\alpha=\mathbf{0}$ 时 $(\alpha, \alpha)=\mathbf{0} . \quad$ （正定性）
+\item 	$(\alpha, \alpha) \geq {0},$ 当且仅当 $\alpha={0}$ 时 $(\alpha, \alpha)={0} . \quad$ （正定性）
 \end{enumerate}
 这里 $\alpha, \beta, \gamma$ 是 $V$ 中任意的向量， $k$ 是任意实数,
 则称 $(\alpha, \beta)$为$\alpha$和  $\beta$  的\alert{内积}，并称这种定义了内积的
@@ -206,7 +207,7 @@ $\forall \alpha, \beta, \gamma \in {V}$, $\forall k \in \mathbb{R}$
 \begin{enumerate}
 	\item  $(\alpha, k \beta)=k(\alpha, \beta)$, 
 	\item $(\alpha, \beta+\gamma)=(\alpha, \beta)+(\alpha, \gamma)$
-	\item   $(\mathbf{0}, \beta)=0$
+	\item   $({0}, \beta)=0$
 	\item $\left(\sum_{i=1}^{n} k_{i} \alpha_{i}, \sum_{j=1}^{m} l_{j} \beta_{j}\right)=\sum_{i=1}^{n} \sum_{j=1}^{m} k_{i} l_{j}\left(\alpha_{i}, \beta_{j}\right)$
 \end{enumerate}
 \end{prop}
@@ -229,7 +230,7 @@ $\forall \alpha, \beta, \gamma \in {V}$, $\forall k \in \mathbb{R}$
  
  1）在 ${\R}^{3}$ 向量 $\alpha$ 的长度模 $$|\alpha|=\sqrt{\alpha \cdot \alpha}$$
  
- 2) 欧氏空间V中,  对任意的$ \alpha \in V, \quad(\alpha, \alpha) \geq \mathbf{0}$ 使得 $\sqrt{\alpha \cdot \alpha}$ 有意义.
+ 2) 欧氏空间V中,  对任意的$ \alpha \in V, \quad(\alpha, \alpha) \geq {0}$ 使得 $\sqrt{\alpha \cdot \alpha}$ 有意义.
  
  2. 向量长度的定义
 
@@ -245,7 +246,7 @@ $\forall \alpha, \beta, \gamma \in {V}$, $\forall k \in \mathbb{R}$
 \begin{frame}{向量长度的简单性质}
 \begin{prop}
 \begin{enumerate}
-	\item $|\alpha| \geq {0}; $  \qquad $|\alpha|={0} \Leftrightarrow \alpha=\mathbf{0}$
+	\item $|\alpha| \geq {0}; $  \qquad $|\alpha|={0} \Leftrightarrow \alpha={0}$
 	
 	\item  $|k \alpha|=|k||\alpha|$
 	
@@ -296,11 +297,11 @@ $$\left|\int_{a}^{b} f(x) g(x) d x\right| \leq \sqrt{\int_{a}^{b} f^{2}(x) d x} 
 |(\alpha, \beta)| \leq |\alpha|   \cdot | \beta|
 \]
 \pf
-当 $\beta=\mathbf{0}$ 时 $, \quad(\alpha, \mathbf{0})=0, \quad|\beta|=0$
+当 $\beta={0}$ 时 $, \quad(\alpha, {0})=0, \quad|\beta|=0$
 
 因此，$ \quad(\alpha, \beta)=|\alpha||\beta|=0 . \quad$ 结论成立.
 
-当 $\beta \neq \mathbf{0}$ 时，作向量 $\quad \gamma=\alpha+ \alert{t} \beta, \quad t  \in \mathbb{R}$
+当 $\beta \neq {0}$ 时，作向量 $\quad \gamma=\alpha+ \alert{t} \beta, \quad t  \in \mathbb{R}$
 
 由内积的正定性，对 $\forall t \in \mathbb{R}, \quad$ 皆有
 $$(\gamma, \gamma)=(\alpha+ \alert{t} \beta, \alpha+\alert{t} \beta)
@@ -525,7 +526,7 @@ $$A=
 	\begin{itemize}
 		\item 度量矩阵A是实对称矩阵.
 		\item 由内积的正定性，度量矩阵A还是正定矩阵.
-		事实上，对 $\forall \alpha \in V, \alpha \neq \mathbf{0},$ 即 $X \neq 0$
+		事实上，对 $\forall \alpha \in V, \alpha \neq {0},$ 即 $X \neq 0$
 		有 $(\alpha, \alpha)=X^{\, \prime} A X>0$.
 		因此，$ A$ 为正定矩阵.
 		\item 在基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下，向量的内积
@@ -579,12 +580,12 @@ $=\left(\begin{array}{c}C_{1}^{\, \prime} \\ C_{2}^{\, \prime} \\ \vdots \\ C_{n
 \end{prop}
 \pf 设正交向量组 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 有一线性关系
 \[
-k_{1} {\alpha}_{1}+k_{2} {\alpha}_{2}+\cdots+k_{m} {\alpha}_{m}=\mathbf{0}
+k_{1} {\alpha}_{1}+k_{2} {\alpha}_{2}+\cdots+k_{m} {\alpha}_{m}={0}
 \]
 用 ${\alpha}_{i}$ 与等式两边作内积,即得
 $k_{i}\left({\alpha}_{i}, {\alpha}_{i}\right)=0$
 
-由 ${\alpha}_{i} \neq \mathbf{0},$ 有 $\left({\alpha}_{i}, {\alpha}_{i}\right)>0,$ 从而 $k_{i}=0(i=1,2, \cdots, m) .$ 
+由 ${\alpha}_{i} \neq {0},$ 有 $\left({\alpha}_{i}, {\alpha}_{i}\right)>0,$ 从而 $k_{i}=0(i=1,2, \cdots, m) .$ 
 
 这就证明了
 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 是线性无关的.
@@ -629,31 +630,31 @@ ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 是线性无关的.
 	设 $\varepsilon_{1}, \varepsilon_{2}, \dots, \varepsilon_{n}$ 是 $n$ 维欧氏空间 $V$ 的
 	一组标准正交基, 对 $\alpha, \beta \in V,$ 设向量 $\alpha, \beta$ 的 坐标分别是 $X=\left(x_{1}, x_{2}, \ldots, x_{n}\right)^{\, \prime}, Y=\left(y_{1}, y_{2}, \ldots, y_{n}\right)^{\, \prime}$, 则
 	\begin{itemize}
-		\item $x_{i}=\left(\alpha, \alpha_{i}\right) \quad i=1,2, \dots, n$
+		\item $x_{i}=\left(\alpha, \varepsilon_{i}\right) \quad i=1,2, \dots, n.$
 		\item  $(\alpha, \beta)=X^{\, \prime} Y=x_{1} y_{1}+x_{2} y_{2}+\ldots+x_{n} y_{n}$
 	\end{itemize}
 \end{prop}
 
 \pf 
 \small{
-由题设可以
+由题设可知
 	\[
-	{\alpha}=x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+{x}_{n} {\varepsilon}_{n}
+	{\alpha}=x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+{x}_{n} {\varepsilon}_{n}.
 	\]
 	用 ${\varepsilon}_{i}$ 与等式两边作内积, 即得
 	\[
-	x_{i}=\left({\varepsilon}_{i}, {\alpha}\right) \quad(i=1,2, \cdots, n)
+	x_{i}=\left({\alpha, \varepsilon}_{i}\right) \quad i=1,2, \cdots, n.
 	\]
 因为
 	\[
 	\begin{array}{l}
-	{\alpha}=x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+x_{n} {\varepsilon}_{n} \\
-	{\beta}=y_{1} {\varepsilon}_{1}+y_{2} {\varepsilon}_{2}+\cdots+y_{n} {\varepsilon}_{n}
+	{\alpha}=x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+x_{n} {\varepsilon}_{n}, \\
+	{\beta}=y_{1} {\varepsilon}_{1}+y_{2} {\varepsilon}_{2}+\cdots+y_{n} {\varepsilon}_{n},
 	\end{array}
 	\]
 所以
 	\[
-	({\alpha}, {\beta})=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}={X}^{\, \prime} {Y}
+	({\alpha}, {\beta})=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}={X}^{\, \prime} {Y}.
 	\]}
 \end{frame}
 
@@ -701,7 +702,7 @@ k_{i}=\frac{\left({\beta}, {\alpha}_{i}\right)}{\left({\alpha}_{i}, {\alpha}_{i}
 \[
 \left({a}_{i}, {\alpha}_{m+1}\right)=0 \quad(i=1,2, \cdots, m)
 \]
-由 ${\beta}$ 的选择可知 $, {\alpha}_{m+1} \neq \mathbf{0} .$ 因此 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}, {\alpha}_{m+1}$ 是一正交向
+由 ${\beta}$ 的选择可知 $, {\alpha}_{m+1} \neq {0} .$ 因此 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}, {\alpha}_{m+1}$ 是一正交向
 量组 ,根据归纳法假定 , ${\alpha}_{1}, {w}_{2}, \cdots, {\alpha}_{m}, {\alpha}_{m+1}$ 可以扩充成一正交
 基.于是定理得证. 
 \qed
@@ -768,39 +769,107 @@ ${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}$.
 	\[
 	L\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{i}\right)=L\left(\eta_{1}, \eta_{2}, \cdots, \eta_{i}\right), i=1,2, \cdots, n
 	\]
-	就相当于由基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 到基 ${\eta}_{i}, {\eta}_{2}, \cdots, {\eta}_{n}$ 的过渡矩陈是上三角矩阵.
+	就相当于由基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 到基 ${\eta}_{i}, {\eta}_{2}, \cdots, {\eta}_{n}$ 的过渡矩阵是上三角矩阵.
 \end{itemize}
 \end{rem}
 \end{frame}
 
 
 \begin{frame}{施密特(Schmidt) 正交化过程}
+ $n$ 维欧氏空间 $V$必存在正交基与标准正交基.
  \begin{itemize}
-	\item $n$ 维欧氏空间 $V$必存在正交基与标准正交基.
- 
 	\item 对 $n$ 维欧氏空间 V的任
 一组基$\alpha_1, \alpha_2，..., \alpha_n$ , 都可以用\alert{施密特(Schmidt) 正交化过程}化为正交基
 $\beta_1, \beta_{2}, \cdots, \beta_{n}$.
+\[\left\{
+ \begin{aligned}
+\beta_{1} & =\alpha_{1}\\
+\beta_{2} & =\alpha_{2}-\frac{\left(\alpha_{2}, \beta_{1}\right)}{\left(\beta_{1}, \beta_{1}\right)} \beta_{1}\\
+ &  \cdots \cdots\\
+\beta_{n} & =
+\alpha_{n}-
+\frac{\left(\alpha_{n}, \beta_{1}\right)}{\left(\beta_{1}, \beta_{1}\right)} \beta_{1}
+-\frac{\left(\alpha_{n}, \beta_{2}\right)}{\left(\beta_{2}, \beta_{2}\right)} \beta_2
+-\ldots \ldots
+-\frac{\left(\alpha_{n}, \beta_{n-1}\right)}{\left(\beta_{n-1}, \beta_{n-1}\right)} \beta_{n-1}
+ \end{aligned}
+ \right.
+\]
 
-% 施密特正交化过程如下
- 
-$\beta_{1}=\alpha_{1}$
-
-$\beta_{2}=\alpha_{2}-\frac{\left(\alpha_{2}, \beta_{1}\right)}{\left(\beta_{1}, \beta_{1}\right)} \beta_{1}$
-
-$\cdots \cdots$
-
-$\beta_{n}=\alpha_{n}-\frac{\left(\alpha_{n}, \beta_{1}\right)}{\left(\beta_{1}, \beta_{1}\right)} \beta_{1}-\frac{\left(\alpha_{n}, \beta_{2}\right)_{\beta}}{\left(\beta_{2}, \beta_{2}\right)} \ldots \ldots-\frac{\left(\alpha_{n}, \beta_{n-1}\right)}{\left(\beta_{n-1}, \beta_{n-1}\right)} \beta_{n-1}$
-
-	\item 如果再把每个$\beta_i$ 单位化，即得到 V 的一组标准正交基
+	\item 如果再把每个$\beta_i$ \alert{单位化}，即得到 V 的一组标准正交基.
 \end{itemize}
 
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+ 在 ${\R}^{4}$ 中把 $\alpha_{1}=(1,1,0,0)$, $\alpha_{2}=(-1,0,0,1)$, $\alpha_{3}=(1,0,1,0)$, $\alpha_{4}= (1,-1,-1,1)$ 变成单位正交的向量组. 
+\end{exa}
+\sol  把它们正交化, 得 
+\[
+\begin{array}{l}
+\beta_{1}=\alpha_{1}=(1,1,0,0)\\
+\beta_{2}=\alpha_{2}-\frac{\left(\alpha_{2}, \beta_{1}\right)}{\left(\beta_{1}, \beta_{1}\right)} \beta_{1}=\alpha_{2}+\frac{1}{2} \beta_{1}=\left(-\frac{1}{2}, \frac{1}{2}, 0,1\right) \\
+\beta_{3}=\alpha_{3}-\frac{\left(\alpha_{3}, \beta_{1}\right)}{\left(\beta_{1}, \beta_{1}\right)} \beta_{1}-\frac{\left(\alpha_{3}, \beta_{2}\right)}{\left(\beta_{2}, \beta_{2}\right)} \beta_{2}=\alpha_{3}-\frac{1}{2} \beta_{1}+\frac{1}{3} \beta_{2}=\left(\frac{1}{3},-\frac{1}{3}, 1, \frac{1}{3}\right) \\
+\beta_{4}=\alpha_{4}-\frac{\left(\alpha_{4}, \beta_{1}\right)}{\left(\beta_{1}, \beta_{1}\right)} \beta_{1}-\frac{\left(\alpha_{4}, \beta_{2}\right)}{\left(\beta_{2}, \beta_{2}\right)} \beta_{2}-\frac{\left(\alpha_{4}, \beta_{3}\right)}{\left(\beta_{3}, \beta_{3}\right)} \beta_{3}=(1,-1,-1,1)
+\end{array}
+\]
+再单位化，得
+\[
+\begin{array}{l}
+\eta_{1}=\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}, 0,0\right)\\
+\eta_{2}=\left(-\frac{\sqrt{6}}{6}, \frac{\sqrt{6}}{6}, 0, \frac{2 \sqrt{6}}{6}\right) \\
+\eta_{3}=\left(\frac{\sqrt{3}}{6},-\frac{\sqrt{3}}{6}, \frac{\sqrt{3}}{2}, \frac{\sqrt{3}}{6}\right) \\
+\eta_{4}=\left(\frac{1}{2},-\frac{1}{2},-\frac{1}{2}, \frac{1}{2}\right)
+\end{array}
+\]
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+设 ${\a}_{1}=\left({1}, {2},  {-1}\right), {\a}_{2}=\left( {- 1},  {3}, {1}\right), {\a}_{3}=\left({4}, {- 1},  {0}\right),$ 用施密特正交化
+过程把这组向量规范正交化.
+\end{exa}
+\sol 第一步 正交化，取
+\[\begin{array}{l}
+\b_{1}  =\a_{1}\\
+\b_{2}  =\a_{2}-\frac{\left(\b_{1}, \a_{2}\right)}{\left(\b_{1}, \b_{1}\right)} \b_{1}=\left( -1,  3, 1\right)-\frac{4}{6}\left(1, 2, -1\right)=\frac{5}{3}\left(-1, 1, 1\right)\\
+{\b}_{3}  ={\a}_{3}-\frac{\left({\b}_{1}, {\a}_{3}\right)}{\left({\b}_{1}, {\b}_{1}\right)} {\b}_{1}-\frac{\left({\b}_{2}, {\a}_{3}\right)}{\left({\b}_{2}, {\b}_{2}\right)} {\b}_{2}=\left({4},  -{1}, {0}\right)-\frac{{1}}{{3}}\left({1}, {2}, {- 1}\right)+\frac{{5}}{{3}}\left({- 1}, {1}, {1}\right)\\
+\, \quad ={2}\left({1}, {0}, {1}\right)
+\end{array}\]
+第二步单位化，令
+\[\begin{array}{l}
+\r_{1}=\frac{1}{\left\| \b_{1}\right\|} \b_{1}=\frac{1}{\sqrt{6}}\left(1, 2, -1\right)\\
+\r_{2}=\frac{1}{\left\| \b_{2}\right\|} \b_{2}=\frac{1}{\sqrt{3}}\left(-1, 1,  1\right)\\
+\r_{3}=\frac{1}{\left\| \ b_{3}\right\|} \b_{3}=\frac{1}{\sqrt{2}}\left(1, 0,  1\right)
+\end{array}\]
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+已知 $\a_{1}=\left( {1}, {1}, {1}\right),$ 试求非零向量 $\a_{2}, \a_{3},$ 使 $\a_{1}, \a_{2}, \a_{3}$ 两两正交.
+\end{exa} 
+\sol 若 $a_{1} \perp a_{2}, \quad a_{1} \perp a_{3}, \quad$ 则
+\[
+\begin{array}{l}
+{\left(a_{1}, a_{2}\right)=x_{1}+x_{2}+x_{3}=0} \\
+{\left(a_{1}, a_{3}\right)=x_{1}+x_{2}+x_{3}=0}
+\end{array}
+\]
+即 $\a_{2}, \a_{3},$ 应满足方程 $x_{1}+x_{2}+x_{3}=0$
+基础解系为 $$\xi_{1}=\left( 1, 0, -1 \right), \xi_{2}=\left(0, 1, -1\right).$$
+
+把基础解系正交化（以保证 $\a_{2} \perp \a_{3}$ 成立）
+$$\a_{2}=\left( 1,  0,  -1\right), \a_{3}=\frac{1}{2}\left(-1, 2, -1\right)$$
+ 即为所求.
 \end{frame}
 
 
 \begin{frame}
 设 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 与 ${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}$ 是欧氏空间 $V$ 中的两组标
-准正交基,它们之间的过渡矩阵显 ${A}=\left(a_{i j}\right),$ 即
+准正交基,它们之间的过渡矩阵 ${A}=\left(a_{i j}\right),$ 即
 \[
 \left(\eta_{1}, \eta_{2}, \cdots, \eta_{n}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right)\left(\begin{array}{cccc}
 a_{11} & a_{12} & \cdots & a_{1 n} \\
@@ -828,6 +897,8 @@ a_{1 i} a_{1 j}+a_{2 i} a_{2 j}+\cdots+a_{j i} a_{n j}=\left\{\begin{array}{l}
 \end{frame}
 
 
+
+
 \begin{frame}
 相当于一个矩阵的等式
 \[
@@ -839,7 +910,7 @@ A^{\, \prime} A=E
 \]
 我们引入： 
 \begin{defi}
-$\quad n$ 级实数矩阵 A 称为正交矩阵, 如果 A $^{\, \prime} {A}={E}$
+$\quad n$ 级实数矩阵 A 称为\alert{正交矩阵}, 如果  $A^{\prime} {A}={E}$
 \end{defi}
  因此,以上分析表明,
  \begin{itemize}
@@ -922,11 +993,11 @@ $\Leftrightarrow A$ 的行（列）向量组是 $\Rn$ 的一组标准正交基
 
 2) 设 $\alpha, \beta \in V,$ 且 $\alpha, \beta$ 在基$\varepsilon_1, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的坐标分别为
 \[
-x=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{\, \prime}, \quad y=\left(y_{1}, y_{2}, \cdots, y_{n}\right)^{\, \prime}
+X=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{\, \prime}, \quad Y=\left(y_{1}, y_{2}, \cdots, y_{n}\right)^{\, \prime}
 \]
 则
 \[
-(\alpha, \beta)=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}=x^{\, \prime} y
+(\alpha, \beta)=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}=X^{\, \prime} Y
 \]
 
 3) $V$ 中任一元素 $\alpha$ 在基$\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的坐标为
@@ -1007,7 +1078,7 @@ $$
 得,任意两个$n$维欧氏空间都同构.
 综上所述,就有 
 \begin{thm}
-两个有限维欧氏空间同构$\Leftrightarrow$ 它们的维数相同.
+两个有限维欧氏空间同构$\Longleftrightarrow$ 它们的维数相同.
 \end{thm}
 这个定理说明, 抽象的观点看,欧氏空间的结构完全被它的 维数决定.
 
@@ -1110,21 +1181,21 @@ $
 
 
 \begin{frame}
-因为只有零向量与它自身正交,所以由 $V_{1} \perp V_{2}$ 可知 $V_{1} \cap$ $V_{2}=\{\mathbf{0}\} ;$ 由 ${\alpha} \perp V_{1}, {\alpha} \in V_{1}$ 可知 ${\alpha}=\mathbf{0}$
+因为只有零向量与它自身正交,所以由 $V_{1} \perp V_{2}$ 可知 $V_{1} \cap$ $V_{2}=\{{0}\} ;$ 由 ${\alpha} \perp V_{1}, {\alpha} \in V_{1}$ 可知 ${\alpha}={0}$
 关于正交的子空间,我们有： 
 \begin{thm}
 	如果子空间 $V_{1}, V_{2}, \cdots, V_{s}$ 两两正交,那么和 $V_{1}+$ $V_{2}+\cdots+V,$ 是直和. 
 \end{thm}
 \pf 设 ${\alpha}_{i} \in V_{i}, i=1,2, \cdots, s,$ 且
 \[
-{\alpha}_{1}+{\alpha}_{2}+\cdots+{\alpha}_{s}=\mathbf{0}
+{\alpha}_{1}+{\alpha}_{2}+\cdots+{\alpha}_{s}={0}
 \]
  
-我们来证明 ${\alpha}_{i}=\mathbf{0}$.  事实上,用 ${\alpha}_{i}$ 与等式两边作内积, 利用正交性，得
+我们来证明 ${\alpha}_{i}={0}$.  事实上,用 ${\alpha}_{i}$ 与等式两边作内积, 利用正交性，得
 \[
 \left({\alpha}_{i}, {\alpha}_{i}\right)=0
 \]
-从而 ${\alpha}_{i}=\mathbf{0}\, (i=1,2, \cdots, s) .$ 这就是说 $,$ 和
+从而 ${\alpha}_{i}={0}\, (i=1,2, \cdots, s) .$ 这就是说 $,$ 和
 \[
 V_{1}+V_{2}+\cdots+V_{s}
 \]
@@ -1144,10 +1215,10 @@ V_{1}+V_{2}+\cdots+V_{s}
 \begin{thm}
 $n$ 维欧氏空间 V 的每一个子空间 $V_{1}$ 都有唯一的正 交补. 
 \end{thm}
-\pf 如果 $V_{1}=\{\mathbf{0}\},$ 那么它的正交补就是 $V$,唯一性是显
+\pf 如果 $V_{1}=\{{0}\},$ 那么它的正交补就是 $V$,唯一性是显
 然的.
 
-设 $V_{1} \neq\{\mathbf{0}\} .$ 欧氏空间的子空间在所定义的内积之下也显
+设 $V_{1} \neq\{{0}\} .$ 欧氏空间的子空间在所定义的内积之下也显
 下个欧氏空间.
 
 在 $V_1$中取一组正交基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{m}$, 由定理1，它
@@ -1178,7 +1249,7 @@ V=V_{1} \oplus V_{3}
 &=\left({\alpha}_{1}, {\alpha}_{1}\right)=0
 \end{aligned}
 \]
-即 ${\alpha}_{1}=\mathbf{0}$. 
+即 ${\alpha}_{1}={0}$. 
 由此得知 ${\alpha} \in V_{3},$ 即 $V_{2} \subset V_{3}$
 同理可证 $V_{3} \subset V_{2} .$ 因此 $V_{2}=V_{3},$ 唯一性得证. 
 \qed
@@ -1214,8 +1285,8 @@ V=V_{1} \oplus V_{1}^{\perp}
 \end{frame}
 
 
-
-\begin{frame}{${\xi} {6} $ 实对称知阵的惊准形}
+\section{实对称矩阵的标准形}
+\begin{frame}{\S {6}  实对称矩阵的标准形}
 \begin{itemize}
 \item 在第五章我们得到,任意一个对称矩阵都合同于一个对角矩 阵,换句话说，都有一个可逆矩阵 C 使 ${C}^{\, \prime} {A} {C}$
 成对角形.
@@ -1224,26 +1295,21 @@ V=V_{1} \oplus V_{1}^{\perp}
 \item 这一节的主要结果： 对于任意一个 n 级实对称矩阵 A,都存在一个 n 级正交矩陈
 ${T},$ 使
 \[
-{T}^{\, \prime} {A} {T}={T}^{-1} {A} {T}
+{T}^{\, \prime} {A} {T}={T}^{\, -1} {A} {T}
 \]
 成对角形. 
 
 \item 先讨论对称矩阵的一些性质，它们本身在今后也是非常有用
 的. 我们把它们归纳成下面几个引理.
 \end{itemize}
-
-
-
-
-
 \end{frame}
 
 \begin{frame}
 
 \begin{lem}
-设 A 是实对称矩阵,则 A 的特征值皆为实数. 
+设 $A$ 是实对称矩阵,则 $A$ 的特征值皆为实数. 
 \end{lem}
-\pf  设 $\lambda_{0}$ 是 $\mathbf{A}$ 的特征值,于是有非零向量
+\pf  设 $\lambda_{0}$ 是 ${A}$ 的特征值,于是有非零向量
 $\xi=\left(x_{1}, x_{2}, \ldots, x_{n}\right)^{\, \prime}$
 满足
 ${A} {\xi}=\lambda_{0} {\xi}$, 
@@ -1308,7 +1374,7 @@ x_{n}
 
 \begin{frame}
 \begin{lem}
-设 $A$ 是实对称矩阵,公的定义如上,则对任意 ${\alpha}, {\beta}$ $\in \mathbf{R}^{n}$,有
+设 $A$ 是实对称矩阵,公的定义如上,则对任意 ${\alpha}, {\beta}$ $\in {R}^{n}$,有
 \begin{align}\label{eq-3}
 (\mathscr{A} {a}, {\beta})=({\alpha}, \mathscr{A} {\beta})
 \end{align}
@@ -1451,7 +1517,7 @@ $T$ 是一个正交矩阵，而
 \begin{enumerate}
 	\item 求出 $A$ 的特征值. 设 $\lambda_{1}, \cdots, \lambda,$ 是 ${A}$ 的全部不同的特征
 	值. 
-	\item 对于每个 $\lambda_{i},$ 解齐次线性方程组$\left(\lambda_{i} {E}-{A}\right)X=\mathbf{0}$
+	\item 对于每个 $\lambda_{i},$ 解齐次线性方程组$\left(\lambda_{i} {E}-{A}\right)X={0}$
 	求出一个基础解系，这就是 A 的特征子空间 $V_{\lambda_{i}}$ 的一组基.由这 组基出发,按定理 2 的方法求出 $V_{\lambda_{i}}$ 的一组标准正交基 ${\eta}_{i 1}, \cdots,{\eta}_{i k}$
 	\item 因为 $\lambda_{1}, \cdots, \lambda_{r}$ 两两不同,所以根据这一节引理 4, 向量组
 	${\eta}_{11}, \cdots, {\eta}_{1 k_{1}}, \cdots, {\eta}_{r 1}, \cdots, {\eta}_{r_{r}}$ 还是两两正交的.又根据定理 7 以及
