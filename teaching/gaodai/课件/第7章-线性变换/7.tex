@@ -1157,7 +1157,7 @@ k+1 & k \\
 \end{frame}
 
 \begin{frame}
-\begin{exa}
+\begin{exa}\label{ex-1}
 	取 $P^{3}$ 的线性变换 $\sigma(a, b, c)=(2 a-b, b+c, a)$
 \begin{enumerate}
 
@@ -1953,6 +1953,7 @@ ${\xi}_{2}, \cdots, {\xi}_{k+1}$ 线性无关.
 	\end{array}\right)
 	\]
 	其中 $\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}$ 为 3 维单位向量组.	
+	
 	问: 线性变换 $\sigma$ 在此基下的矩阵是否为对 角形？
 \end{exa}
 \pause
@@ -2442,8 +2443,8 @@ $\sigma^{-1}(\0)$的一组基. \qed
 \end{frame}
 
 \begin{frame}
-\begin{exa}
-设 $V=F^{\, 3},$ 变换: $\A \left(x_{1}, x_{2}, x_{3}\right)=\left(2 x_{1}+x_{2}, x_{2}+x_{3}, 2 x_{1}-x_{3}\right)$. 求 $\A $ 的值域与核.
+\begin{exa}\label{ex-3}
+设 $V=F^{\, 3},$ 变换: $\sigma \left(x_{1}, x_{2}, x_{3}\right)=\left(2 x_{1}+x_{2}, x_{2}+x_{3}, 2 x_{1}-x_{3}\right)$. 求 $\sigma $ 的值域与核.
 \end{exa}
 \sol 
 \begin{itemize}
@@ -2454,11 +2455,13 @@ $\A$在基$\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}$下的矩阵为
 $A=\left(\begin{array}{ccc}2 & 1 & 0 \\ 0 & 1 & 1 \\ 2 & 0 & -1\end{array}\right).$
 
 将$A$做初等行变换化成阶梯形矩阵:
-$$A\rightarrow\left(\begin{array}{ccc}2 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 0\end{array}\right)$$
-取 $\alpha_{1}=(2,0,2)', \alpha_{2}=(1,1,0)'$, 
-则 $\A V=L\left(\alpha_{1}, \alpha_{2}\right)$.
+$A\rightarrow\left(\begin{array}{ccc}2 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 0\end{array}\right)$
+ 
+则 $\sigma $ 的 值域的维数为2， 一组基为 $\alpha_{1}=(2,0,2)', \alpha_{2}=(1,1,0)'$,.
 
-	\item  解方程组 $A X=0$, 得基础解系 $\eta=(1,-2,2)'$,则 $\A^{-1}(\0) =L(\eta)$.
+	\item  解方程组 $A X=0$, 得基础解系 $\eta=(1,-2,2)'$.
+	
+则 $\sigma $ 的 核的维数为1， 一组基为  $\eta$.
 \end{itemize}
 \end{frame}
 
@@ -3239,7 +3242,7 @@ $f(A) X=\0$,
 \setcounter{exa}{0}
 
 \begin{frame}
-\begin{exa}
+\begin{exa}[与\S 3 的例\ref{ex-1}类似]
 取 $P^{3}$ 的线性变换 $\sigma(a, b, c)=(a-b, b-c, a+b)$
 \begin{enumerate}
 \item  求 $\sigma$ 在基 $\varepsilon_{1}=(1,0,0), \varepsilon_{2}=(0,1,0), \varepsilon_{3}=(0,0,1)$ 下的矩阵
@@ -3266,7 +3269,7 @@ $\sigma\left(f_{1}\right)=2+x^{2}, \sigma\left(f_{2}\right)=x, \sigma\left(f_{3}
 \end{frame}
 
 \begin{frame}
-\begin{exa}
+\begin{exa}[与\S 6的例\ref{ex-3}类似]
 	在线性空间 $P^{3}$ 中，定义线性变换 $$\sigma(a, b, c)=(a+2 b-c, b+c, a+b-2 c),$$ 求 $\sigma$ 的值域与核.
 \end{exa}
 \end{frame}
