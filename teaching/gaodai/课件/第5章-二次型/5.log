@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  18 MAY 2020 11:39
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  2 JUN 2020 09:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1475,6 +1475,12 @@ Overfull \vbox (2.22548pt too high) detected at line 773
 
 ] [42
 
+] [43
+
+] [44
+
+] [45
+
 ]
 \tf@nav=\write7
 \openout7 = `5.nav'.
@@ -1496,11 +1502,12 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the 5.log file.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 992.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 992.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1028.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1028.
 (./5.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 992.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 992.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1028.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1028.
+
 Package rerunfilecheck Info: File `5.out' has not changed.
 (rerunfilecheck)             Checksum: 00A68DCACA7C8EEDEACFA1ED4525DA3D;273.
 
@@ -1509,12 +1516,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 32123 strings out of 479418
- 677689 string characters out of 5884585
- 968007 words of memory out of 5000000
- 48741 multiletter control sequences out of 15000+600000
+ 32129 strings out of 479418
+ 677737 string characters out of 5884585
+ 968180 words of memory out of 5000000
+ 48747 multiletter control sequences out of 15000+600000
  543238 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  63i,15n,82p,795b,994s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 5.pdf (42 pages).
+Output written on 5.pdf (45 pages).

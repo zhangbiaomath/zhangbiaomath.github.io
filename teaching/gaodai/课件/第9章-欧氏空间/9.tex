@@ -1530,13 +1530,18 @@ $T$ 是一个正交矩阵，而
 
 
 \begin{enumerate}
-	\item 求出 $A$ 的特征值. 设 $\lambda_{1}, \cdots, \lambda,$ 是 ${A}$ 的全部不同的特征
+	\item 求出 $A$ 的\alert{特征值}. 设 $\lambda_{1}, \cdots, \lambda,$ 是 ${A}$ 的全部不同的特征
 	值. 
-	\item 对于每个 $\lambda_{i},$ 解齐次线性方程组$\left(\lambda_{i} {E}-{A}\right)X={0}$
-	求出一个基础解系，这就是 A 的特征子空间 $V_{\lambda_{i}}$ 的一组基.由这 组基出发,按定理 2 的方法求出 $V_{\lambda_{i}}$ 的一组标准正交基 ${\eta}_{i 1}, \cdots,{\eta}_{i k}$
-	\item 因为 $\lambda_{1}, \cdots, \lambda_{r}$ 两两不同,所以根据这一节引理 4, 向量组
-	${\eta}_{11}, \cdots, {\eta}_{1 k_{1}}, \cdots, {\eta}_{r 1}, \cdots, {\eta}_{r_{r}}$ 还是两两正交的.又根据定理 7 以及
-	第七章 $\S$5 的讨论，它们的个数就等于空间的维数.因此，它们就 构成 $\Rn$ 的一组标准正交基,并且也都是 $A$ 的特征向量.这样,正 交矩阵 $T$ 也就求出了. 
+	\item 求出每个 $\lambda_{i}$对应的\alert{特征向量}. 解齐次线性方程组$\left(\lambda_{i} {E}-{A}\right)X={0}$
+	求出一个基础解系，这就是 $A$ 的特征子空间 $V_{\lambda_{i}}$ 的一组基.
+	\item 
+	由这 组基出发,按定理 2 的方法(\alert{施密特正交化}、{单位化}) 求出 $V_{\lambda_{i}}$ 的一组标准正交基 ${\eta}_{i 1}, \cdots,{\eta}_{i k}$.  
+		
+	因为 $\lambda_{1}, \cdots, \lambda_{r}$ 两两不同,所以根据这一节引理 4, 向量组
+	$$\alert{{\eta}_{11}, \cdots, {\eta}_{1 k_{1}}, \cdots, {\eta}_{r 1}, \cdots, {\eta}_{r_{r}}}$$ 还是两两正交的.又根据定理 7 以及
+	第七章 $\S$5 的讨论，它们的个数就等于空间的维数.
+	
+		因此，它们就 构成 $\Rn$ 的一组\alert{标准正交基},并且也都是 $A$ 的特征向量.这样,正 交矩阵 $T$ 也就求出了. 
 \end{enumerate}
 \end{frame}
 
@@ -1605,7 +1610,7 @@ x_{n}=c_{n 1} y_{1}+c_{n 2} y_{2}+\cdots+c_{n n} y_{n}
 \begin{frame}
 \begin{exa}
 用正交线性替换化下列二次型为标准形:
-$ x_{1}^{2}+2 x_{2}^{2}+3 x_{3}^{2}-4 x_{1} x_{2}-4 x_{2} x_{3}$
+$ x_{1}^{2}+2 x_{2}^{2}+3 x_{3}^{2}-4 x_{1} x_{2}-4 x_{2} x_{3}$.
 \end{exa}
 
 \sol 写出二次型的矩阵为
@@ -1660,7 +1665,29 @@ X=\frac{1}{3}\left(\begin{array}{ccc}
 \end{exa}
 
 \begin{exa}
- 设1,1,-3是3阶实对称矩阵 $A$ 的特征值， (1,-1,0) $^{T}$ 是 $A$ 属于-3的特征向量，求 $A$.
+	设1,1,-3是3阶实对称矩阵 $A$ 的特征值， (1,-1,0) $^{T}$ 是 $A$ 属于-3的特征向量，求 $A$.
 \end{exa}
+\end{frame}
+
+
+\begin{frame}
+
+
+
+\begin{exa}
+设 $A, B$ 都是 $n$ 阶实对称阵，证明: 存在正交阵 $Q$, 使得 $Q^{-1} A Q=B$ 当且仅当 $A, B$ 有相同的特征值.
+\end{exa}
+
+\pf 必要性. 因为 存在正交阵 $Q$, 使得$Q^{-1} A Q=B$，所以$$|\lambda E-B| = |\lambda E-Q^{-1} A Q|= |Q^{-1}| |\lambda E- A | |Q|  = |\lambda E- A |.$$
+因此， $A, B$ 有相同的特征值.
+
+充分性.
+ 设$n$阶实对称矩阵$A, B$的特征多项式的根都是 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n},$ 则存在正交矩阵 $U_{1}, U_{2},$ 使
+得
+\[
+U_{1}^{T} A U_{1}=U_{2}^{T} B U_{2}=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right)
+\]
+令U $=U_{1} U_{2}^{T},$ 则 $U^{T} A U=B,$ 且 $U$ 是一个正交矩阵.
+\qed
 \end{frame}
 \end{document} 
