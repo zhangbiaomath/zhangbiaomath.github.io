@@ -494,7 +494,7 @@ $X= \left(x_1, x_2, \dots, x_n \right)^{\, \prime}$,
 $Y=\left(y_1, y_2, \dots, y_n \right)^{\, \prime}$,
 
 于是,
-$(\alpha, \beta)=\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} y_{j}=X^{\, \prime} A Y$
+$$\alert{(\alpha, \beta)}=\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} y_{j} \alert{=X^{\, \prime} A Y}.$$
 
 %{\bf 定义~~~} 
 \begin{defi}
@@ -524,20 +524,33 @@ $$A=
 
 \begin{rem}
 	\begin{itemize}
-		\item 度量矩阵A是实对称矩阵.
-		\item 由内积的正定性，度量矩阵A还是正定矩阵.
-		事实上，对 $\forall \alpha \in V, \alpha \neq {0},$ 即 $X \neq 0$
+		\item 度量矩阵$A$是实对称矩阵.
+		\item 度量矩阵$A$是正定矩阵.
+		
+		\pf 由内积的正定性，对 $\forall \alpha \in V, \alpha \neq {0},$ 即 $X \neq 0$
 		有 $(\alpha, \alpha)=X^{\, \prime} A X>0$.
-		因此，$ A$ 为正定矩阵.
-		\item 在基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下，向量的内积
-		由度量矩阵A完全确定.
+		因此，$ A$ 为正定矩阵. \qed
+
 	\end{itemize}
 \end{rem}
-
 \end{frame}
 
 \begin{frame}
+\begin{rem}
+\begin{itemize}
+\item 在基 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下，向量的内积
+	由度量矩阵$A$完全确定.
+\item 给定一个 $n$ 级正定矩阵$A$ 及 $n$ 维实线性空间 $V$ 的一组 基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n} .$ 可以规定 $V$ 上内积,使它成为欧几里得空间,并
+且基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 的度量矩阵为 ${A}$.
+\item 欧几里得空间的子空间在所定义的内积之下也是一个欧
+几里得空间.
+\end{itemize}
+\end{rem}
+\end{frame}
 
+
+
+\begin{frame}
 \begin{rem}
 	\begin{itemize}
 	\item 对同一内积而言，不同基的度量矩阵是合同的. 
@@ -547,17 +560,20 @@ $$A=
 \small{ 设 $\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n} ; \eta_{1}, \eta_{2}, \cdots, \eta_{n}$ 为欧氏空间V的两组
 基，它们的度量矩阵分别为A、B，且
 $$\left(\eta_{1}, \eta_{2}, \cdots, \eta_{n}\right)=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) C,$$
-其中 $C=\left(c_{i j}\right)_{n \times n}=\left(C_{1}, C_{2}, \cdots, C_{n}\right)$
+其中 $C=\left(c_{i j}\right)_{n \times n}=\left(C_{1}, C_{2}, \cdots, C_{n}\right)$.
 
-于是，$\eta_{i}=\sum_{k=1}^{n} c_{k i} \varepsilon_{k}, i=1,2, \cdots, n$
+于是，$\eta_{i}=\left(\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}\right) C_i,\quad   i=1,2, \cdots, n$.
 
-因此， 
-$\left(\eta_{i}, \eta_{j}\right) =\left(\sum_{k=1}^{n} c_{k i} \varepsilon_{k}, \sum_{l=1}^{n} c_{l j} \varepsilon_{l}\right)=\sum_{k=1}^{n} \sum_{l=1}^{n}\left(\varepsilon_{k}, \varepsilon_{l}\right) c_{k i} c_{l j}$\\
-	~~~~~~~~~~~~~~~~~
-	$ =\sum_{k=1}^{n} \sum_{l=1}^{n} a_{k l} c_{k i} c_{l j}=C_{i}^{\, \prime} A C_{j}$
+%\sum_{k=1}^{n} c_{k i} \varepsilon_{k}, i=1,2, \cdots, n$
 
-所以 $B=\left(\left(\eta_{i}, \eta_{j}\right)\right)=\left(C_{i}^{\, \prime} A C_{j}\right)$
-$=\left(\begin{array}{c}C_{1}^{\, \prime} \\ C_{2}^{\, \prime} \\ \vdots \\ C_{n}^{\, \prime}\end{array}\right) A\left(C_{1}, C_{2}, \cdots, C_{n}\right)=C^{\, \prime} A C$
+因此, 
+$\left(\eta_{i}, \eta_{j}\right) 
+%=\left(\sum_{k=1}^{n} c_{k i} \varepsilon_{k}, \sum_{l=1}^{n} c_{l j} \varepsilon_{l}\right)=\sum_{k=1}^{n} \sum_{l=1}^{n}\left(\varepsilon_{k}, \varepsilon_{l}\right) c_{k i} c_{l j}$\\
+%=\sum_{k=1}^{n} \sum_{l=1}^{n} a_{k l} c_{k i} c_{l j}
+=C_{i}^{\, \prime} A C_{j}$.
+
+所以, $B=\left(\left(\eta_{i}, \eta_{j}\right)\right)_{ij}=\left(C_{i}^{\, \prime} A C_{j}\right)_{ij}$
+$=\left(\begin{array}{c}C_{1}^{\, \prime} \\ C_{2}^{\, \prime} \\ \vdots \\ C_{n}^{\, \prime}\end{array}\right) A\left(C_{1}, C_{2}, \cdots, C_{n}\right)=C^{\, \prime} A C$.
 }
 \end{frame}
 
@@ -637,24 +653,27 @@ ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{m}$ 是线性无关的.
 
 \pf 
 \small{
-由题设可知
-	\[
-	{\alpha}=x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+{x}_{n} {\varepsilon}_{n}.
-	\]
-	用 ${\varepsilon}_{i}$ 与等式两边作内积, 即得
+	\begin{itemize}
+\item 由题设可知
+\[
+{\alpha}=x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+{x}_{n} {\varepsilon}_{n}.
+\]
+用 ${\varepsilon}_{i}$ 与等式两边作内积, 即得
 \begin{align*}
 \left( \alpha, \varepsilon_{i}\right)  
 & =\left( x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+{x}_{n} {\varepsilon}_{n}, \varepsilon_{i} \right)\\
 & = x_i ({\varepsilon}_{i},{\varepsilon}_{i} ) =x_i \quad i=1,2, \ldots, n.
 \end{align*}
-因为\quad \quad
+\item 因为\quad \quad
 ${\alpha}=x_{1} {\varepsilon}_{1}+x_{2} {\varepsilon}_{2}+\cdots+x_{n} {\varepsilon}_{n}$, \,
 ${\beta}=y_{1} {\varepsilon}_{1}+y_{2} {\varepsilon}_{2}+\cdots+y_{n} {\varepsilon}_{n}$,
 
 所以\qquad \qquad \qquad
 $
-	({\alpha}, {\beta})=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}={X}^{\, \prime} {Y}.
-$
+({\alpha}, {\beta})=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}={X}^{\, \prime} {Y}.
+$\qed
+	\end{itemize}
+
 }
 \end{frame}
 
@@ -948,15 +967,13 @@ a_{i 1} a_{j 1}+a_{i 2} a_{j 2}+\cdots+a_{i n} a_{j n}=\delta_{i j},
 
 
 \begin{frame}{正交矩阵之等价定义}
-实矩阵 $A=\left(a_{i j}\right)_{n n}$ 为正交矩阵
+\quad 实矩阵 $A=\left(a_{i j}\right)_{n n}$ 为正交矩阵 
 
- $\Leftrightarrow  \sum_{k=1}^{n} a_{k i} a_{k j}=\delta_{i j} $
+ $\Leftrightarrow  {A}^{\, \prime} {A}={E}  \Leftrightarrow\sum_{k=1}^{n} a_{k i} a_{k j}=\delta_{i j} $
  
  $\Leftrightarrow A^{-1}=A^{\, \prime}$
  
-$\Leftrightarrow A A^{\, \prime}=E $
-
-$\Leftrightarrow \sum_{k=1}^{n} a_{i k} a_{j k}=\delta_{i j}$
+$\Leftrightarrow A A^{\, \prime}=E \Leftrightarrow \sum_{k=1}^{n} a_{i k} a_{j k}=\delta_{i j}$
 
 $\Leftrightarrow A$ 的行（列）向量组是 $\Rn$ 的一组标准正交基
 \end{frame}
@@ -969,7 +986,7 @@ $\Leftrightarrow A$ 的行（列）向量组是 $\Rn$ 的一组标准正交基
 %	;而 A 是正交矩
 %	阵的充分必要条件是 $l=\pm 1$
 	\item 如果 $A, B$ 是 $n$ 级正交矩阵,则 $A B$ 也是正交矩阵.
-	\item $n$级实矩阵 A 是正交矩阵的充分必要条件是，$A$的 $n$个列(或行) 向量是 两两正交的单位向量.
+%	\item $n$级实矩阵 A 是正交矩阵的充分必要条件是 $A$的 $n$个列(或行) 向量是 两两正交的单位向量.
 \end{itemize}
 
 %\pf 设A是一个正交矩阵. 
@@ -985,30 +1002,28 @@ $\Leftrightarrow A$ 的行（列）向量组是 $\Rn$ 的一组标准正交基
 \end{frame}
 
 \begin{frame}
-标准正交基的有关结果总结如下：
+标准正交基的有关结果\alert{总结}如下：
 
 设 $V$ 是 $n$ 维欧氏空间 $, \varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 是 $V$ 的一组标准正交基,则
 
-1) 标准正交基的度量矩阵是单位矩阵
+1) 标准正交基的度量矩阵是单位矩阵.
 
-2) 设 $\alpha, \beta \in V,$ 且 $\alpha, \beta$ 在基$\varepsilon_1, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的坐标分别为
+2)  $V$ 中任一元素 $\alpha$ 在基$\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的坐标为
+\[
+\left(\left(\alpha, \varepsilon_{1}\right),\left(\alpha, \varepsilon_{2}\right), \cdots,\left(\alpha, \varepsilon_{n}\right)\right)^{\, \prime}.
+\]
+
+3) 设 $\alpha, \beta \in V,$ 且 $\alpha, \beta$ 在基$\varepsilon_1, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的坐标分别为
 \[
 X=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{\, \prime}, \quad Y=\left(y_{1}, y_{2}, \cdots, y_{n}\right)^{\, \prime}
 \]
 则
 \[
-(\alpha, \beta)=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}=X^{\, \prime} Y
+(\alpha, \beta)=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}=X^{\, \prime} Y.
 \]
 
-3) $V$ 中任一元素 $\alpha$ 在基$\varepsilon_{1}, \varepsilon_{2}, \cdots, \varepsilon_{n}$ 下的坐标为
-\[
-\left(\left(\alpha, \varepsilon_{1}\right),\left(\alpha, \varepsilon_{2}\right), \cdots,\left(\alpha, \varepsilon_{n}\right)\right)^{\, \prime}
-\]
-
-4) 由标准正交基到标准正交基的过渡矩阵是正交矩阵(即满足 $A^{\, \prime} A=E$ 的
-$n$ 级实矩阵）. 
-又若两组基之间的过渡矩阵是正交矩阵,且其中一组基是标 准正
-交基，则另一组基也是标准正交基 .
+4) 由标准正交基到标准正交基的过渡矩阵是正交矩阵.
+又若两组基之间的过渡矩阵是正交矩阵,且其中一组基是标准正交基，则另一组基也是标准正交基.
 \end{frame}
 
 \section{欧氏空间的同构}
@@ -1525,6 +1540,39 @@ $T$ 是一个正交矩阵，而
 \end{enumerate}
 \end{frame}
 
+\begin{frame}
+\begin{exa}
+求正交矩阵U, 使U $^{T} A U$ 成对角形, 其中 $A = \left(\begin{array}{ccc}2 & -2 & 0 \\ -2 & 1 & -2 \\ 0 & -2 & 0\end{array}\right)$
+\end{exa}
+\pause
+\sol 因为$A$的特征多项式$|\lambda E - A |=(\lambda-1)(\lambda-4)(\lambda+2),$ 
+
+所以$A$的特征值为 $\lambda_{1}=$ $1, \lambda_{2}=4, \lambda_{3}=-2 .$ 
+
+解线性方程组, 求得对应的特征向量为
+\[
+\alpha_{1}=(-2,-1,2)^{T}, \alpha_{2}=(2,-2,1)^{T}, \alpha_{3}=(1,2,2)^{T}
+\]
+它们是两两正交的向量组(因为特征值互不相同).
+\end{frame}
+
+\begin{frame}
+将它们单位化, 可得
+\[
+\eta_{1}=(-2 / 3,-1 / 3,2 / 3)^{T}, \eta_{2}=(2 / 3,-2 / 3,1 / 3)^{T}, \eta_{3}=(1 / 3,2 / 3,2 / 3)^{T}
+\]
+故得正交矩阵
+\[
+U=\frac{1}{3}\left(\begin{array}{ccc}
+-2 & 2 & 1 \\
+-1 & -2 & 2 \\
+2 & 1 & 2
+\end{array}\right)
+\]
+使得 $U^{T} A U=\operatorname{diag}(1,4,-2)$.
+\qed
+\end{frame}
+
 
 \begin{frame}
 \small{如果线性替换
@@ -1554,4 +1602,65 @@ x_{n}=c_{n 1} y_{1}+c_{n 2} y_{2}+\cdots+c_{n n} y_{n}
 }
 \end{frame}
 
+\begin{frame}
+\begin{exa}
+用正交线性替换化下列二次型为标准形:
+$ x_{1}^{2}+2 x_{2}^{2}+3 x_{3}^{2}-4 x_{1} x_{2}-4 x_{2} x_{3}$
+\end{exa}
+
+\sol 写出二次型的矩阵为
+\[
+A=\left(\begin{array}{ccc}
+1 & -2 & 0 \\
+-2 & 2 & -2 \\
+0 & -2 & 3
+\end{array}\right)
+\]
+解特征方程$|\lambda E - A |=(\lambda-2)(\lambda+1)(\lambda-5)=0,$ 
+
+求得$A$的特征值 $\lambda_{1}=2, \lambda_{2}=-1, \lambda_{3}=5 .$ 
+
+解线性方程组, 求得对应的特征向量为
+\[
+\alpha_{1}=(2,-1,2)^{T}, \alpha_{2}=(2,2,1)^{T}, \alpha_{3}=(1,-2,2)^{T}
+\]
+它们是两两正交的向量组(因为特征值互不相同). 
+\end{frame}
+
+\begin{frame}
+将它们单位化, 可得
+\[
+\eta_{1}=(2 / 3,-1 / 3,2 / 3)^{T}, \eta_{2}=(2 / 3,2 / 3,1 / 3)^{T}, \eta_{3}=(1 / 3,-2 / 3,2 / 3)^{T}
+\]
+令
+\[
+X=\frac{1}{3}\left(\begin{array}{ccc}
+2 & 2 & 1 \\
+-1 & 2 & -2 \\
+-2 & 1 & 2
+\end{array}\right) Y
+\]
+则它是一个正交线性替换, 且将二次型化为2 $y_{1}^{2}-y_{2}^{2}+5 y_{3}^{2}$.
+\qed
+\end{frame}
+
+	\setcounter{exa}{0}
+
+\begin{frame}
+\begin{exa}
+设 $A=\left(\begin{array}{ccc}2 & -1 & -1 \\ -1 & 2 & -1 \\ -1 & -1 & 2\end{array}\right)$.
+
+(1) 求 $A$ 的特征值和对应的特征向量.
+
+(2) 求正交阵 $Q,$ 使得 $Q^{T} A Q$ 是对角阵.
+\end{exa}
+
+\begin{exa}
+ 用正交线性替换化实二次型为标准形 $f\left(x_{1}, x_{2}, x_{3}\right)=2 x_{1}^{2}+2 x_{2}^{2}+2 x_{3}^{2}-2 x_{1} x_{2}-2 x_{1} x_{3}-2 x_{2} x_{3}$.
+\end{exa}
+
+\begin{exa}
+ 设1,1,-3是3阶实对称矩阵 $A$ 的特征值， (1,-1,0) $^{T}$ 是 $A$ 属于-3的特征向量，求 $A$.
+\end{exa}
+\end{frame}
 \end{document} 

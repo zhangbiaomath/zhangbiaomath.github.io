@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  1 JUN 2020 12:42
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  2 JUN 2020 08:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1787,11 +1787,11 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the 7.log file.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3296.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3296.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3301.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3301.
 (./7.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3296.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3296.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3301.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3301.
 
 Package rerunfilecheck Info: File `7.out' has not changed.
 (rerunfilecheck)             Checksum: B737E668D7BA3AD761B0C65A414234D1;913.
