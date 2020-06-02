@@ -56,7 +56,7 @@
 \def\a{\alpha}
 \def\b{\beta}
 \def\r{\gamma}
-\def\0{{0}}
+\def\0{\mathbf{0}}
 
 
 \usepackage{color}
@@ -207,7 +207,7 @@ $\forall \alpha, \beta, \gamma \in {V}$, $\forall k \in \mathbb{R}$
 \begin{enumerate}
 	\item  $(\alpha, k \beta)=k(\alpha, \beta)$, 
 	\item $(\alpha, \beta+\gamma)=(\alpha, \beta)+(\alpha, \gamma)$
-	\item   $({0}, \beta)=0$
+	\item   $({\0}, \beta)=0$
 	\item $\left(\sum_{i=1}^{n} k_{i} \alpha_{i}, \sum_{j=1}^{m} l_{j} \beta_{j}\right)=\sum_{i=1}^{n} \sum_{j=1}^{m} k_{i} l_{j}\left(\alpha_{i}, \beta_{j}\right)$
 \end{enumerate}
 \end{prop}
@@ -250,7 +250,7 @@ $\forall \alpha, \beta, \gamma \in {V}$, $\forall k \in \mathbb{R}$
 	
 	\item  $|k \alpha|=|k||\alpha|$
 	
-	\item 如果$\alpha \neq 0$,  则 $\frac{1}{|\alpha|} \alpha$ 是一个\alert{单位向量}. 
+	\item 如果$\alpha \neq \0$,  则 $\frac{1}{|\alpha|} \alpha$ 是一个\alert{单位向量}. 
 \end{enumerate}
 \end{prop}
 
@@ -1665,7 +1665,7 @@ X=\frac{1}{3}\left(\begin{array}{ccc}
 \end{exa}
 
 \begin{exa}
-	设1,1,-3是3阶实对称矩阵 $A$ 的特征值， (1,-1,0) $^{T}$ 是 $A$ 属于-3的特征向量，求 $A$.
+	设1,1,-3是3阶实对称矩阵 $A$ 的特征值，  $(1,-1,0)^{T}$ 是 $A$ 属于-3的特征向量，求 $A$.
 \end{exa}
 \end{frame}
 

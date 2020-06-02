@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  19 MAY 2020 18:50
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  2 JUN 2020 10:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1338,43 +1338,43 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 
 ] (./0.toc) [2
 
+] [3
+
 ]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 131.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 151.
 
 
 LaTeX Font Warning: Font shape `TU/PingFangSC(0)/m/it' undefined
-(Font)              using `TU/PingFangSC(0)/m/n' instead on input line 131.
+(Font)              using `TU/PingFangSC(0)/m/n' instead on input line 151.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 131
+LaTeX Font Info:    Trying to load font information for U+msa on input line 151
 .
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 131
+LaTeX Font Info:    Trying to load font information for U+msb on input line 151
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 13
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 15
 1.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 131.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 151.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 131.
- [3
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 151.
+ [4
 
-] [4
+] [5
 
 ]
-[5
-
-] [6
+[6
 
 ] [7
 
@@ -1384,28 +1384,28 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 
 ] [10
 
+] [11
+
 ]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 231.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 251.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 231.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 251.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 231.
- [11
-
-] [12
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 251.
+ [12
 
 ] [13
 
 ] [14
 
+] [15
+
 ]
-Overfull \vbox (3.36653pt too high) detected at line 314
+Overfull \vbox (3.36653pt too high) detected at line 334
  []
 
-[15
-
-] [16
+[16
 
 ] [17
 
@@ -1431,19 +1431,19 @@ Overfull \vbox (3.36653pt too high) detected at line 314
 
 ] [28
 
-]
-Overfull \vbox (5.99142pt too high) detected at line 609
- []
-
-[29
+] [29
 
 ]
-Overfull \vbox (6.30135pt too high) detected at line 638
+Overfull \vbox (5.99142pt too high) detected at line 629
  []
 
 [30
 
-] [31
+]
+Overfull \vbox (6.30135pt too high) detected at line 658
+ []
+
+[31
 
 ] [32
 
@@ -1454,6 +1454,8 @@ Overfull \vbox (6.30135pt too high) detected at line 638
 ] [35
 
 ] [36
+
+] [37
 
 ]
 \tf@nav=\write7
@@ -1476,11 +1478,11 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the 0.log file.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 807.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 807.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 827.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 827.
 (./0.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 807.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 807.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 827.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 827.
 Package rerunfilecheck Info: File `0.out' has not changed.
 (rerunfilecheck)             Checksum: 8E64C47E0D6235F121DF1645D12AD1EF;399.
 
@@ -1489,12 +1491,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 32275 strings out of 479418
- 683045 string characters out of 5884585
- 977476 words of memory out of 5000000
- 48887 multiletter control sequences out of 15000+600000
+ 32288 strings out of 479418
+ 683796 string characters out of 5884585
+ 977727 words of memory out of 5000000
+ 48900 multiletter control sequences out of 15000+600000
  543238 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  63i,11n,82p,795b,864s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 0.pdf (36 pages).
+Output written on 0.pdf (37 pages).
