@@ -824,6 +824,7 @@ $\beta_1, \beta_{2}, \cdots, \beta_{n}$.
 \begin{exa}
  在 ${\R}^{4}$ 中把 $\alpha_{1}=(1,1,0,0)$, $\alpha_{2}=(-1,0,0,1)$, $\alpha_{3}=(1,0,1,0)$, $\alpha_{4}= (1,-1,-1,1)$ 变成单位正交的向量组. 
 \end{exa}
+\pause
 \sol  把它们正交化, 得 
 \[
 \begin{array}{l}
@@ -847,21 +848,22 @@ $\beta_1, \beta_{2}, \cdots, \beta_{n}$.
 
 \begin{frame}
 \begin{exa}
-设 ${\a}_{1}=\left({1}, {2},  {-1}\right), {\a}_{2}=\left( {- 1},  {3}, {1}\right), {\a}_{3}=\left({4}, {- 1},  {0}\right),$ 用施密特正交化
-过程把这组向量规范正交化.
+设 ${\a}_{1}=\left({1}, {2},  {-1}\right), {\a}_{2}=\left( {- 1},  {3}, {1}\right), {\a}_{3}=\left({4}, {- 1},  {0}\right)$.
+ 把这组向量 变成单位正交的向量组. 
 \end{exa}
+\pause
 \sol 第一步 正交化，取
 \[\begin{array}{l}
-\b_{1}  =\a_{1}\\
-\b_{2}  =\a_{2}-\frac{\left(\b_{1}, \a_{2}\right)}{\left(\b_{1}, \b_{1}\right)} \b_{1}=\left( -1,  3, 1\right)-\frac{4}{6}\left(1, 2, -1\right)=\frac{5}{3}\left(-1, 1, 1\right)\\
-{\b}_{3}  ={\a}_{3}-\frac{\left({\b}_{1}, {\a}_{3}\right)}{\left({\b}_{1}, {\b}_{1}\right)} {\b}_{1}-\frac{\left({\b}_{2}, {\a}_{3}\right)}{\left({\b}_{2}, {\b}_{2}\right)} {\b}_{2}=\left({4},  -{1}, {0}\right)-\frac{{1}}{{3}}\left({1}, {2}, {- 1}\right)+\frac{{5}}{{3}}\left({- 1}, {1}, {1}\right)\\
-\, \quad ={2}\left({1}, {0}, {1}\right)
+\b_{1}  =\a_{1}, \\
+\b_{2}  =\a_{2}-\frac{\left(\a_{2}, \b_{1} \right)}{\left(\b_{1}, \b_{1}\right)} \b_{1}=\left( -1,  3, 1\right)-\frac{4}{6}\left(1, 2, -1\right)=\frac{5}{3}\left(-1, 1, 1\right), \\
+{\b}_{3}  ={\a}_{3}-\frac{\left({{\a}_{3}, \b}_{1}\right)}{\left({\b}_{1}, {\b}_{1}\right)} {\b}_{1}-\frac{\left({\a}_{3}, {\b}_{2}\right)}{\left({\b}_{2}, {\b}_{2}\right)} {\b}_{2}=\left({4},  -{1}, {0}\right)-\frac{{1}}{{3}}\left({1}, {2}, {- 1}\right)+\frac{{5}}{{3}}\left({- 1}, {1}, {1}\right)\\
+\, \quad ={2}\left({1}, {0}, {1}\right),
 \end{array}\]
 第二步单位化，令
 \[\begin{array}{l}
-\r_{1}=\frac{1}{\left\| \b_{1}\right\|} \b_{1}=\frac{1}{\sqrt{6}}\left(1, 2, -1\right)\\
-\r_{2}=\frac{1}{\left\| \b_{2}\right\|} \b_{2}=\frac{1}{\sqrt{3}}\left(-1, 1,  1\right)\\
-\r_{3}=\frac{1}{\left\| \ b_{3}\right\|} \b_{3}=\frac{1}{\sqrt{2}}\left(1, 0,  1\right)
+\r_{1}=\frac{1}{| \b_{1} } \b_{1}=\frac{1}{\sqrt{6}}\left(1, 2, -1\right),\\
+\r_{2}=\frac{1}{| \b_{2} |} \b_{2}=\frac{1}{\sqrt{3}}\left(-1, 1,  1\right),\\
+\r_{3}=\frac{1}{| \b_{3} |} \b_{3}=\frac{1}{\sqrt{2}}\left(1, 0,  1\right).
 \end{array}\]
 \end{frame}
 
@@ -870,15 +872,15 @@ $\beta_1, \beta_{2}, \cdots, \beta_{n}$.
 \begin{exa}
 已知 $\a_{1}=\left( {1}, {1}, {1}\right),$ 试求非零向量 $\a_{2}, \a_{3},$ 使 $\a_{1}, \a_{2}, \a_{3}$ 两两正交.
 \end{exa} 
-\sol 若 $a_{1} \perp a_{2}, \quad a_{1} \perp a_{3}, \quad$ 则
+\sol 若 $\a_{1} \perp \a_{2}, \quad \a_{1} \perp \a_{3}, \quad$ 则
 \[
 \begin{array}{l}
-{\left(a_{1}, a_{2}\right)=x_{1}+x_{2}+x_{3}=0} \\
-{\left(a_{1}, a_{3}\right)=x_{1}+x_{2}+x_{3}=0}
+{\left(\a_{1}, \a_{2}\right)=x_{1}+x_{2}+x_{3}=0} \\
+{\left(\a_{1}, \a_{3}\right)=x_{1}+x_{2}+x_{3}=0}
 \end{array}
 \]
 即 $\a_{2}, \a_{3},$ 应满足方程 $x_{1}+x_{2}+x_{3}=0$
-基础解系为 $$\xi_{1}=\left( 1, 0, -1 \right), \xi_{2}=\left(0, 1, -1\right).$$
+基础解系为 $$\xi_{1}=\left( \alert{1, 0}, -1 \right), \xi_{2}=\left(\alert{0, 1}, -1\right).$$
 
 把基础解系正交化（以保证 $\a_{2} \perp \a_{3}$ 成立）
 $$\a_{2}=\left( 1,  0,  -1\right), \a_{3}=\frac{1}{2}\left(-1, 2, -1\right)$$
@@ -904,15 +906,15 @@ a_{n 1} & a_{n 2} & \cdots & a_{n n}
 0, \text { 当 } i \neq j
 \end{array}\right.
 \]
-矩阵 A 的各\alert{列}就是 ${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}$ 在标准正交基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的坐标.
+矩阵 $A$ 的各\alert{列}就是 ${\eta}_{1}, {\eta}_{2}, \cdots, {\eta}_{n}$ 在标准正交基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n}$ 下的坐标.
 上式可以表示为
 \[
-a_{1 i} a_{1 j}+a_{2 i} a_{2 j}+\cdots+a_{j i} a_{n j}=\left\{\begin{array}{l}
+a_{1 i} a_{1 j}+a_{2 i} a_{2 j}+\cdots+a_{n i} a_{n j}=\left\{\begin{array}{l}
 1, \text { 当 } i=j \\
 0, \text { 当 } i \neq j
 \end{array}\right.
 \]
-
+也就是说，矩阵$A$ 的列向量组是 $\Rn$ 的一组标准正交基.
 \end{frame}
 
 
@@ -971,11 +973,13 @@ a_{i 1} a_{j 1}+a_{i 2} a_{j 2}+\cdots+a_{i n} a_{j n}=\delta_{i j},
 
  $\Leftrightarrow  {A}^{\, \prime} {A}={E}  \Leftrightarrow\sum_{k=1}^{n} a_{k i} a_{k j}=\delta_{i j} $
  
+ $\Leftrightarrow A$ 的列向量组是 $\Rn$ 的一组标准正交基
+ 
  $\Leftrightarrow A^{-1}=A^{\, \prime}$
  
 $\Leftrightarrow A A^{\, \prime}=E \Leftrightarrow \sum_{k=1}^{n} a_{i k} a_{j k}=\delta_{i j}$
 
-$\Leftrightarrow A$ 的行（列）向量组是 $\Rn$ 的一组标准正交基
+$\Leftrightarrow A$ 的行向量组是 $\Rn$ 的一组标准正交基
 \end{frame}
 
 
@@ -1031,7 +1035,7 @@ X=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{\, \prime}, \quad Y=\left(y_{1}, y_{
 我们来建立欧氏空间同构的概念.  
 
 \begin{defi}
- 实数域 $\mathbb{R}$ 上欧氏空间 $V_1$与 $V_2$称为同构的,如果由 $V_1$ 到 $V_2$ 有一个双射 $\sigma$,满足
+ 实数域 $\mathbb{R}$ 上欧氏空间 $V_1$与 $V_2$称为\alert{同构}的,如果由 $V_1$ 到 $V_2$ 有一个双射 $\sigma$,满足
 \begin{enumerate}
 	\item $\sigma({\alpha}+{\beta})=\sigma({\alpha})+\sigma({\beta})$
 	\item $\sigma(k {\alpha})=k \sigma({\alpha})$
@@ -1046,7 +1050,7 @@ X=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{\, \prime}, \quad Y=\left(y_{1}, y_{
 
 
 \begin{frame}
-设 $V_1$ 是一个 $n$ 维欧氏空间,在 $V_1$ 中取一组标准正交基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n} \cdot$ 在这组基下， $V_1$ 的每个向量 ${\alpha}$ 都可表成
+设 $V$ 是一个 $n$ 维欧氏空间,在 $V$ 中取一组标准正交基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{n} \cdot$ 在这组基下， $V$ 的每个向量 ${\alpha}$ 都可表成
 \[
 {\alpha}= {x}_{1} {\varepsilon}_{1}+x_{2} {{\varepsilon}}_{2}+\cdots+x_{n} {\varepsilon}_{n}
 \]
@@ -1067,7 +1071,7 @@ X=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{\, \prime}, \quad Y=\left(y_{1}, y_{
 
 
 \begin{frame}
-下面来证明,同构作为欧氏空间之间的关系具有反身性、对称性与传递性.
+同构作为欧氏空间之间的关系具有反身性、对称性与传递性.
 
 \begin{itemize}
 \item  首先，每个欧氏空间到自身的恒等映射显然是一同构 映射 . 这就是说，同构关系是反身的.
@@ -1079,7 +1083,7 @@ $$
 	&=\left(\sigma^{-1}({\alpha}), \sigma^{-1}({\beta})\right)
 \end{aligned}
 $$
-这就是说, $\sigma^{-1}$ 是 V' 到 $V$ 的一同构映射, 因而同构关系是对称的. 
+这就是说, $\sigma^{-1}$ 是 $V_2$ 到 $V_1$ 的一同构映射, 因而同构关系是对称的. 
 
 \item 第三,设 $\sigma, \tau$ 分别是 $V_1$到 $V_2$, $V_2$ 到 $V_3$ 的同构映射. 不难证明 $\tau \sigma$ 是 $V_1$ 到$V_3$的同构映射，因而同构关系是传递的.
 \end{itemize}
@@ -1103,10 +1107,12 @@ $$
 \section{正交变换}
 \begin{frame}{$\S 4$ 正交变换}
 在解析几何中,我们有正交变换的概念.
-正交变换就是保持点 之间的距离不变的变换.在一般的欧氏空间中,我们有 
+正交变换就是保持点 之间的距离不变的变换.
+
+在一般的欧氏空间中,我们有 
 \begin{defi}
 欧氏空间 $V$ 的线性变换 $\mathscr{A}$
-称为正交变换, 如果它保 持向量的内积不变,
+称为\alert{正交变换}, 如果它保 持向量的内积不变,
 即对于任意的 ${\alpha}, {\beta} \in V$ 都有 $$(\mathscr{A} {\alpha}, \mathscr{A} {\beta})=({\alpha}, {\beta})$$
 \end{defi}
 \end{frame}
@@ -1117,7 +1123,7 @@ $$
 正交变换可以从几个不同的方面来加以刻画.  
 
 \begin{thm}
-设 $\mathscr{A}$是 $n$ 维欧邸空间 $V$ 的一个线性变换, 于是下面 四个命题是相互等价的：
+设 $\mathscr{A}$是 $n$ 维欧氏空间 $V$ 的一个线性变换, 于是下面 四个命题是相互等价的：
 \begin{enumerate}
 	\item $\mathscr{A}$是正交变换.
 	\item $\mathscr{A}$保持向量的长度不变, 即对于 ${\alpha} \in V,|\mathscr{A} {\alpha}|=| {\alpha} |$.
@@ -1196,21 +1202,21 @@ $
 
 
 \begin{frame}
-因为只有零向量与它自身正交,所以由 $V_{1} \perp V_{2}$ 可知 $V_{1} \cap$ $V_{2}=\{{0}\} ;$ 由 ${\alpha} \perp V_{1}, {\alpha} \in V_{1}$ 可知 ${\alpha}={0}$
+因为只有零向量与它自身正交,所以由 $V_{1} \perp V_{2}$ 可知 $V_{1} \cap$ $V_{2}=\{{0}\} ;$ 由 ${\alpha} \perp V_{1}, {\alpha} \in V_{1}$ 可知 ${\alpha}={\0}$
 关于正交的子空间,我们有： 
 \begin{thm}
 	如果子空间 $V_{1}, V_{2}, \cdots, V_{s}$ 两两正交,那么和 $V_{1}+$ $V_{2}+\cdots+V,$ 是直和. 
 \end{thm}
 \pf 设 ${\alpha}_{i} \in V_{i}, i=1,2, \cdots, s,$ 且
 \[
-{\alpha}_{1}+{\alpha}_{2}+\cdots+{\alpha}_{s}={0}
+{\alpha}_{1}+{\alpha}_{2}+\cdots+{\alpha}_{s}={\0}
 \]
  
-我们来证明 ${\alpha}_{i}={0}$.  事实上,用 ${\alpha}_{i}$ 与等式两边作内积, 利用正交性，得
+我们来证明 ${\alpha}_{i}={\0}$.  事实上,用 ${\alpha}_{i}$ 与等式两边作内积, 利用正交性，得
 \[
-\left({\alpha}_{i}, {\alpha}_{i}\right)=0
+\left({\alpha}_{i}, {\alpha}_{i}\right)= 0
 \]
-从而 ${\alpha}_{i}={0}\, (i=1,2, \cdots, s) .$ 这就是说 $,$ 和
+从而 ${\alpha}_{i}={\0}\, (i=1,2, \cdots, s) .$ 这就是说 $,$ 和
 \[
 V_{1}+V_{2}+\cdots+V_{s}
 \]
@@ -1230,10 +1236,10 @@ V_{1}+V_{2}+\cdots+V_{s}
 \begin{thm}
 $n$ 维欧氏空间 V 的每一个子空间 $V_{1}$ 都有唯一的正 交补. 
 \end{thm}
-\pf 如果 $V_{1}=\{{0}\},$ 那么它的正交补就是 $V$,唯一性是显
+\pf 如果 $V_{1}=\{{\0}\},$ 那么它的正交补就是 $V$, 唯一性是显
 然的.
 
-设 $V_{1} \neq\{{0}\} .$ 欧氏空间的子空间在所定义的内积之下也显
+设 $V_{1} \neq\{{\0}\} .$ 欧氏空间的子空间在所定义的内积之下也显
 下个欧氏空间.
 
 在 $V_1$中取一组正交基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{m}$, 由定理1，它
@@ -1264,8 +1270,9 @@ V=V_{1} \oplus V_{3}
 &=\left({\alpha}_{1}, {\alpha}_{1}\right)=0
 \end{aligned}
 \]
-即 ${\alpha}_{1}={0}$. 
-由此得知 ${\alpha} \in V_{3},$ 即 $V_{2} \subset V_{3}$
+即 ${\alpha}_{1}={\0}$. 
+由此得知 ${\alpha} \in V_{3},$ 即 $V_{2} \subset V_{3}$.
+
 同理可证 $V_{3} \subset V_{2} .$ 因此 $V_{2}=V_{3},$ 唯一性得证. 
 \qed
 
@@ -1303,11 +1310,11 @@ V=V_{1} \oplus V_{1}^{\perp}
 \section{实对称矩阵的标准形}
 \begin{frame}{\S {6}  实对称矩阵的标准形}
 \begin{itemize}
-\item 在第五章我们得到,任意一个对称矩阵都合同于一个对角矩 阵,换句话说，都有一个可逆矩阵 C 使 ${C}^{\, \prime} {A} {C}$
+\item 在第五章我们得到,任意一个对称矩阵都合同于一个对角矩 阵,换句话说，都有一个可逆矩阵 $C$ 使 ${C}^{\, \prime} {A} {C}$
 成对角形.
 现在利用欧氏空间的理论,第五章中关于实对称矩阵的结果可以加强.
 
-\item 这一节的主要结果： 对于任意一个 n 级实对称矩阵 A,都存在一个 n 级正交矩陈
+\item 这一节的主要结果： 对于任意一个 $n$ 级实对称矩阵 $A$,都存在一个 $n$ 级正交矩
 ${T},$ 使
 \[
 {T}^{\, \prime} {A} {T}={T}^{\, -1} {A} {T}
@@ -1389,9 +1396,9 @@ x_{n}
 
 \begin{frame}
 \begin{lem}
-设 $A$ 是实对称矩阵,公的定义如上,则对任意 ${\alpha}, {\beta}$ $\in {R}^{n}$,有
+设 $A$ 是实对称矩阵, $\A$ 的定义如上, 则对任意 ${\alpha}, {\beta}$ $\in {\R}^{n}$,有
 \begin{align}\label{eq-3}
-(\mathscr{A} {a}, {\beta})=({\alpha}, \mathscr{A} {\beta})
+(\mathscr{A} {\a}, {\beta})=({\alpha}, \mathscr{A} {\beta})
 \end{align}
 或
 \[
@@ -1405,10 +1412,11 @@ $
 \qed 
 等式\eqref{eq-3}把实对称矩阵的特性反映到线性变换上. 我们引入
 \begin{defi}
-欧氏空间中满足等式$(\mathscr{A} {a}, {\beta})=({\alpha}, \mathscr{A} {\beta})$的线性变换称为对称变
-换. 
+欧氏空间中满足等式$(\mathscr{A} {\a}, {\beta})=({\alpha}, \mathscr{A} {\beta})$的线性变换称为\alert{对称变
+换}. 
 \end{defi}
 对称变换在标准正交基下的矩阵是实对称矩阵. 
+
 用对称变换来反映实对称矩阵，一些性质可以看得更清楚.
 \end{frame}
 
@@ -1420,7 +1428,7 @@ $\mathscr{A}$-子空间.
 \end{lem}
 
 \pf 
-设 ${a} \in V_{1}^{\perp},$ 要证 $\mathscr{A} {\alpha} \in V_{1}^{\perp},$ 即 $\mathscr{A} {\alpha} \perp V_{1} .$ 任取 ${\beta} \in$
+设 ${\a} \in V_{1}^{\perp},$ 要证 $\mathscr{A} {\alpha} \in V_{1}^{\perp},$ 即 $\mathscr{A} {\alpha} \perp V_{1} .$ 任取 ${\beta} \in$
 $V_{1},$ 都有 $\mathscr{A} {\beta} \in V_{1} .$ 因 ${\alpha} \perp V_{1},$ 故 $({\alpha}, \mathscr{A} {\beta})=0$
 因此
 \[
