@@ -57,7 +57,7 @@
 \def\b{\beta}
 \def\r{\gamma}
 \def\0{\mathbf{0}}
-
+\def\dim{\operatorname{dim}}
 
 \usepackage{color}
 \definecolor{linkcol}{rgb}{0,0,0.4}
@@ -1188,24 +1188,34 @@ $
 \begin{frame}{\S 5 正交子空间}
 我们来讨论欧氏空间中子空间的正交关系. 
 \begin{defi}
-设 $V_1$，$V_2$是欧氏空间 V 中两个子空间.如果对于 任意的 ${\alpha} \in V_{1}, {\beta} \in V_{2},$ 恒有
+\begin{itemize}
+\item 设 $V_1$，$V_2$是欧氏空间 V 中两个子空间.如果对于 任意的 ${\alpha} \in V_{1}, {\beta} \in V_{2},$ 恒有
 \[
 ({\alpha}, {\beta})= {0}
 \]
-则称 $V_{1}, V_{2}$ 为正交的,记为 $V_{1} \perp V_{2} .$ 一个向量 ${\alpha},$ 如果对于任意 的 ${\beta} \in V_{1},$ 恒有
+则称 $V_{1}, V_{2}$ 为\alert{正交}的,记为 $V_{1} \perp V_{2} .$ 
+\item 一个向量 ${\alpha},$ 如果对于任意 的 ${\beta} \in V_{1},$ 恒有
 \[
 ({\alpha}, {\beta})=0
 \]
-则称 ${\alpha}$ 与子空间 $V_{1}$ \alert{正交},记为 ${\alpha} \perp V_{1}$
+则称 ${\alpha}$ 与子空间 $V_{1}$ \alert{正交},记为 ${\alpha} \perp V_{1}$.
+\end{itemize}
 \end{defi}
 \end{frame}
 
 
 \begin{frame}
-因为只有零向量与它自身正交,所以由 $V_{1} \perp V_{2}$ 可知 $V_{1} \cap$ $V_{2}=\{{0}\} ;$ 由 ${\alpha} \perp V_{1}, {\alpha} \in V_{1}$ 可知 ${\alpha}={\0}$
+\begin{rem}
+	\begin{itemize}
+		\item 因为只有零向量与它自身正交,所以由 $V_{1} \perp V_{2}$ 可知 $V_{1} \cap$ $V_{2}=\{{\0}\} ;$ 
+		\item 由 ${\alpha} \perp V_{1}, {\alpha} \in V_{1}$ 可知 ${\alpha}={\0}$.
+	\end{itemize}
+\end{rem}
+%\end{frame}
+%\begin{frame}
 关于正交的子空间,我们有： 
 \begin{thm}
-	如果子空间 $V_{1}, V_{2}, \cdots, V_{s}$ 两两正交,那么和 $V_{1}+$ $V_{2}+\cdots+V,$ 是直和. 
+	如果子空间 $V_{1}, V_{2}, \cdots, V_{s}$ 两两正交,那么和 $V_{1}+$ $V_{2}+\cdots+V_s$ 是直和. 
 \end{thm}
 \pf 设 ${\alpha}_{i} \in V_{i}, i=1,2, \cdots, s,$ 且
 \[
@@ -1216,38 +1226,48 @@ $
 \[
 \left({\alpha}_{i}, {\alpha}_{i}\right)= 0
 \]
-从而 ${\alpha}_{i}={\0}\, (i=1,2, \cdots, s) .$ 这就是说 $,$ 和
-\[
+从而 ${\alpha}_{i}={\0}\, (i=1,2, \cdots, s) .$ 这就是说, 和
+$
 V_{1}+V_{2}+\cdots+V_{s}
-\]
+$
 是直和 . \qed
 \end{frame}
 
 
 \begin{frame}
 \begin{defi}
-子空间 $V_{2}$ 称为子空间 $V_{1}$ 的一个正交补,如果 $V_{1} \perp V_{2},$ 并且 $V_{1}+V_{2}=V$
+子空间 $V_{2}$ 称为子空间 $V_{1}$ 的一个\alert{正交补}, 如果 $V_{1} \perp V_{2},$ 并且 $V_{1}+V_{2}=V$
 \end{defi}
-显然，如果 $V_{2}$ 是 $V_{1}$ 的正交补,那么 $V_{1}$ 也是 $V_{2}$ 的正交补.
+\begin{rem}
+如果 $V_{2}$ 是 $V_{1}$ 的正交补,那么 $V_{1}$ 也是 $V_{2}$ 的正交补.
+\end{rem}
 \end{frame}
 
 
 \begin{frame}
 \begin{thm}
-$n$ 维欧氏空间 V 的每一个子空间 $V_{1}$ 都有唯一的正 交补. 
+$n$ 维欧氏空间 V 的每一个子空间 $V_{1}$ 都有唯一的正交补. 
 \end{thm}
-\pf 如果 $V_{1}=\{{\0}\},$ 那么它的正交补就是 $V$, 唯一性是显
+\pf 
+\begin{itemize}
+\item 如果 $V_{1}=\{{\0}\},$ 那么它的正交补就是 $V$, 唯一性是显
 然的.
 
-设 $V_{1} \neq\{{\0}\} .$ 欧氏空间的子空间在所定义的内积之下也显
-下个欧氏空间.
+\item 设 $V_{1} \neq\{{\0}\} .$
+先证明存在性.
+
+ 欧氏空间的子空间在所定义的内积之下也是一个欧氏空间.
 
 在 $V_1$中取一组正交基 ${\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{m}$, 由定理1，它
-可以扑充成 $V$ 的一组正交基
+可以补充成 $V$ 的一组正交基
 \[
-{\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{m}, {\varepsilon}_{m+1}, \cdots, {\varepsilon}_{n}
+{\varepsilon}_{1}, {\varepsilon}_{2}, \cdots, {\varepsilon}_{m}, {\varepsilon}_{m+1}, \cdots, {\varepsilon}_{n}.
 \]
 子空间 L $\left({\varepsilon}_{m+1}, \cdots, {\varepsilon}_{n}\right)$ 就是 $V_{1}$ 的正交补.
+\end{itemize}
+
+
+
 \end{frame}
 
 
@@ -1255,8 +1275,8 @@ $n$ 维欧氏空间 V 的每一个子空间 $V_{1}$ 都有唯一的正 交补.
 再来证唯一性.设 $V_{2}, V_{3}$ 都是 $V_{1}$ 的正交补,于是
 \[
 \begin{array}{l}
-V=V_{1} \oplus V_{2} \\
-V=V_{1} \oplus V_{3}
+V=V_{1} \oplus V_{2}, \\
+V=V_{1} \oplus V_{3}.
 \end{array}
 \]
 令 ${\alpha} \in V_{2},$ 由第二式即有
@@ -1285,7 +1305,7 @@ V=V_{1} \oplus V_{3}
 \item $V_{1}$ 的正交补记为 $V_{1}^{\perp} .$ 
 \item 由定义可知
 $$
-\text{dim}\left(V_{1}\right)+\text{dim} \left(V_{1}^{\perp}\right)=n
+{\dim}\left(V_{1}\right)+{\dim} \left(V_{1}^{\perp}\right)=n
 $$
 
 \item $V_{1}^{\perp}$ 恰由所有与 $V_{1}$ 正交的向量组成.
@@ -1588,6 +1608,92 @@ U=\frac{1}{3}\left(\begin{array}{ccc}
 
 
 \begin{frame}
+\begin{exa}
+	求正交矩阵U, 使U $^{T} A U$ 成对角形, 其中 
+	$$
+	\left(\begin{array}{ccc}
+	2 & 2 & -2 \\
+	2 & 5 & -4 \\
+	-2 & -4 & 5
+	\end{array}\right)
+	$$
+\end{exa}
+\pause
+\sol 
+ 因为
+\[
+|\lambda E-A|=| \begin{array}{ccc}
+\lambda-2 & -2 & 2 \\
+-2 & \lambda-5 & 4 \\
+2 & 4 & \lambda-5
+\end{array} |=(\lambda-1)^{2}(\lambda-10)
+\]
+所以A的特征值为 $\lambda_{1}=10, \lambda_{2}=\lambda_{3}=1$.
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+\item 
+对 $\lambda_{1}=10,$ 求解齐次线性方程组
+\[
+\left\{\begin{array}{c}
+8 x_{1}-2 x_{2}+2 x_{3}=0 \\
+-2 x_{1}+5 x_{2}+4 x_{3}=0 \\
+2 x_{1}+4 x_{2}+5 x_{3}=0
+\end{array}\right.
+\]
+得一个特征向量 $\alpha_{1}=(1,2,-2)^{T}$. 
+单位化, 得 $\gamma_{1}=\frac{1}{3}(1,2,-2)^{T}$.
+
+
+\item 对于 $\lambda_{2}=\lambda_{3}=1,$ 求解齐次线性方程组
+\[
+\left\{\begin{array}{c}
+-x_{1}-2 x_{2}+2 x_{3}=0 \\
+-2 x_{1}-4 x_{2}+4 x_{3}=0 \\
+2 x_{1}+4 x_{2}-4 x_{3}=0
+\end{array}\right.
+\]
+得一个基础解系 $\alpha_{2}=(2,-1,0)^{T}, \alpha_{3}=(2,0,1)^{T},$ 它们就是属于特征值1的线性无关的特征
+向量.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+
+将它们正交化:
+\[
+\begin{array}{l}
+\beta_{2}=\alpha_{2}=(2,-1,0)^{T} \\
+\beta_{3}=\alpha_{3}-\frac{\left(\alpha_{3}, \beta_{2}\right)}{\left(\beta_{2}, \beta_{2}\right)} \beta_{1}=\alpha_{3}-\frac{4}{5} \beta_{2}=\frac{1}{5}(2,4,5)^{T}
+\end{array}
+\]
+再单位化：
+\[
+\gamma_{2}=\frac{\sqrt{5}}{5}(2,-1,0)^{T},
+\]
+\[
+\gamma_{3}=\frac{\sqrt{5}}{15}(2,4,5)^{T}.
+\]
+因此，以 $\gamma_{1}, \gamma_{2}, \gamma_{3}$ 作为列构造矩阵$U$, 就得到正交矩阵
+\[
+U=\left(\begin{array}{ccc}
+-1 / 3 & -2 \sqrt{5} / 5 & 2 \sqrt{5} / 15 \\
+-2 / 3 & \sqrt{5} / 5 & 4 \sqrt{5} / 15 \\
+2 / 3 & 0 & \sqrt{5} / 3
+\end{array}\right)
+\]
+使得$U^T AU = \operatorname{diag}(10, 1, 1).$
+\qed
+\end{frame}
+
+
+
+
+
+\begin{frame}
 \small{如果线性替换
 \[
 \left\{\begin{array}{l}
@@ -1653,7 +1759,7 @@ X=\frac{1}{3}\left(\begin{array}{ccc}
 -2 & 1 & 2
 \end{array}\right) Y
 \]
-则它是一个正交线性替换, 且将二次型化为2 $y_{1}^{2}-y_{2}^{2}+5 y_{3}^{2}$.
+则它是一个正交线性替换, 且将二次型化为$2 y_{1}^{2}-y_{2}^{2}+5 y_{3}^{2}$.
 \qed
 \end{frame}
 
