@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  7 JUN 2020 20:58
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  8 JUN 2020 20:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1754,18 +1754,6 @@ Overfull \vbox (1.4457pt too high) detected at line 3045
 
 ] [149
 
-] [150
-
-] [151
-
-] [152
-
-]
-Missing character: There is no ， in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ， in font [lmroman10-regular]:mapping=tex-text;!
-
-[153
-
 ]
 \tf@nav=\write7
 \openout7 = `7.nav'.
@@ -1809,4 +1797,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  63i,16n,82p,795b,875s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 7.pdf (153 pages).
+Output written on 7.pdf (149 pages).

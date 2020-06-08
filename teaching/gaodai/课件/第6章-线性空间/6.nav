@@ -238,14 +238,8 @@
 \headcommand {\beamer@framepages {108}{108}}
 \headcommand {\slideentry {8}{0}{6}{109/109}{}{0}}
 \headcommand {\beamer@framepages {109}{109}}
-\headcommand {\slideentry {8}{0}{7}{110/110}{}{0}}
-\headcommand {\beamer@framepages {110}{110}}
-\headcommand {\slideentry {8}{0}{8}{111/111}{}{0}}
-\headcommand {\beamer@framepages {111}{111}}
-\headcommand {\slideentry {8}{0}{9}{112/112}{}{0}}
-\headcommand {\beamer@framepages {112}{112}}
-\headcommand {\beamer@partpages {1}{112}}
-\headcommand {\beamer@subsectionpages {104}{112}}
-\headcommand {\beamer@sectionpages {104}{112}}
-\headcommand {\beamer@documentpages {112}}
-\headcommand {\gdef \inserttotalframenumber {111}}
+\headcommand {\beamer@partpages {1}{109}}
+\headcommand {\beamer@subsectionpages {104}{109}}
+\headcommand {\beamer@sectionpages {104}{109}}
+\headcommand {\beamer@documentpages {109}}
+\headcommand {\gdef \inserttotalframenumber {108}}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  8 JUN 2020 13:36
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  8 JUN 2020 20:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1475,15 +1475,6 @@ Overfull \vbox (2.22548pt too high) detected at line 773
 
 ] [42
 
-] [43
-
-] [44
-
-] [45
-
-]
-[46
-
 ]
 \tf@nav=\write7
 \openout7 = `5.nav'.
@@ -1519,12 +1510,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 32131 strings out of 479418
- 677754 string characters out of 5884585
- 968244 words of memory out of 5000000
- 48749 multiletter control sequences out of 15000+600000
+ 32133 strings out of 479418
+ 677772 string characters out of 5884585
+ 968308 words of memory out of 5000000
+ 48751 multiletter control sequences out of 15000+600000
  543238 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  63i,15n,82p,795b,994s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 5.pdf (46 pages).
+Output written on 5.pdf (42 pages).
