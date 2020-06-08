@@ -1460,7 +1460,7 @@ $V_{1},$ 都有 $\mathscr{A} {\beta} \in V_{1} .$ 因 ${\alpha} \perp V_{1},$ �
 
 \begin{frame}
 \begin{lem}
-设 $\mathscr{A} $ 是实对称短阵,则 $\Rn$ 中属于$\mathscr{A} $的不同特征值 的特征向量必正交.
+设 ${A} $ 是实对称矩阵,则 $\Rn$ 中属于${A} $的不同特征值 的特征向量必正交.
 \end{lem}
 \pf 
 设 $\lambda, \mu$ 是 矩阵$A$ 的两个不同的特征值, ${\alpha}, {\beta}$ 分别是属于
@@ -1495,13 +1495,13 @@ $\mathscr{A} {\alpha}=\lambda {\alpha}, \mathscr{A} {\beta}=\mu {\beta}$.
 
 
 \begin{frame}
-由引理 3, $V_{1}$ 是 $\mathscr{A}$ 的不变子空间, 其维数为 $n-1$.
+由\alert{引理 3}, $V_{1}$ 是 $\mathscr{A}$ 的不变子空间, 其维数为 $n-1$.
 
 因为$$(\A|_{V_{1}} {\a}, {\beta})=(\A {\a}, {\beta})=({\alpha}, \A {\beta})=({\alpha}, \A|_{V_{1}} {\beta}),$$ 其中 $\a, \b \in V_1$, 所以 $\A|_{V_{1}}$ 仍是对称变换.
 
 据归纳法假设, $\A|_{V_{1}}$, 有 $n-1$ 个特征向量 ${\alpha}_{2}, \cdots, {\alpha}_{n}$ 作成 $V_{1}$ 的
 标准正交基.
-从而 ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{n}$ 是 $\mathbb{R}^{n}$ 的标准正交基, 又是 $\mathscr{A}$ 有
+从而由\alert{引理 4}, ${\alpha}_{1}, {\alpha}_{2}, \cdots, {\alpha}_{n}$ 是 $\mathbb{R}^{n}$ 的标准正交基, 又是 $\mathscr{A}$ 有
 $n$ 个特征向量. 定理得证. 
 \qed
 \begin{itemize}
@@ -1622,11 +1622,11 @@ U=\frac{1}{3}\left(\begin{array}{ccc}
 \sol 
  因为
 \[
-|\lambda E-A|=| \begin{array}{ccc}
+|\lambda E-A|= \begin{vmatrix}
 \lambda-2 & -2 & 2 \\
 -2 & \lambda-5 & 4 \\
 2 & 4 & \lambda-5
-\end{array} |=(\lambda-1)^{2}(\lambda-10)
+\end{vmatrix}=(\lambda-1)^{2}(\lambda-10)
 \]
 所以A的特征值为 $\lambda_{1}=10, \lambda_{2}=\lambda_{3}=1$.
 \end{frame}
@@ -1779,7 +1779,7 @@ X=\frac{1}{3}\left(\begin{array}{ccc}
 \end{exa}
 
 \begin{exa}
-	设1,1,-3是3阶实对称矩阵 $A$ 的特征值，  $(1,-1,0)^{T}$ 是 $A$ 属于-3的特征向量，求 $A$.
+	设1,1,-3是3阶实对称矩阵 $A$ 的特征值，  $(1,-1,0){'}$ 是 $A$ 属于-3的特征向量，求 $A$.
 \end{exa}
 \end{frame}
 
@@ -1799,9 +1799,9 @@ X=\frac{1}{3}\left(\begin{array}{ccc}
  设$n$阶实对称矩阵$A, B$的特征多项式的根都是 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n},$ 则存在正交矩阵 $U_{1}, U_{2},$ 使
 得
 \[
-U_{1}^{T} A U_{1}=U_{2}^{T} B U_{2}=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right)
+U_{1}{'} A U_{1}=U_{2}{'} B U_{2}=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right)
 \]
-令U $=U_{1} U_{2}^{T},$ 则 $U^{T} A U=B,$ 且 $U$ 是一个正交矩阵.
+令U $=U_{1} U_{2}{'},$ 则 $U{\,'} A U=B,$ 且 $U$ 是一个正交矩阵.
 \qed
 \end{frame}
 \end{document} 

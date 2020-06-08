@@ -1,0 +1,220 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[13pt]{beamer}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{amsmath,amssymb,amsthm}             % AMS Math
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\linespread{1.3}
+
+\usepackage{mathrsfs}  %花写字母
+ 
+
+%%%=== theme ===%%%
+% \usetheme{Warsaw}
+%\usetheme{Copenhagen}
+%\usetheme{Singapore}
+\usetheme{Madrid}
+%\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+% \usefonttheme{structureitalicserif}
+%%\useinnertheme{rounded}
+%%\useinnertheme{inmargin}
+\useinnertheme{circles}
+%\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[page number]
+
+
+
+
+\usepackage{ctex}
+% \usepackage{CJK,CJKnumb,CJKulem}
+\usepackage{minitoc}
+
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{thm}{定理}
+\newtheorem{lem}{引理}
+\newtheorem{exa}{例}
+\newtheorem*{defi}{定义}
+\newtheorem*{coro}{推论}
+\newtheorem*{ex}{练习}
+\newtheorem*{rem}{注}
+\newtheorem*{prop}{性质}
+
+\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
+\def\pf{{\bf 证明~~ }}
+\def\sol{{\bf 解~~ }}
+\def\R{\mathbb{R}}
+\def\Rn{\mathbb{R}^n}
+\def\A{\mathscr{A}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\r{\gamma}
+\def\0{\mathbf{0}}
+\def\dim{\operatorname{dim}}
+
+\usepackage{color}
+\definecolor{linkcol}{rgb}{0,0,0.4}
+\definecolor{citecol}{rgb}{0.5,0,0}
+
+
+
+  \usepackage{graphicx}
+  \DeclareGraphicsExtensions{.eps}
+%   \usepackage[a4paper,pagebackref,hyperindex=true,pdfnewwindow=true]{hyperref}
+
+
+\begin{document}
+
+\titlegraphic{\includegraphics[width=2cm]{../tjnu.jpg}} 
+
+\title[]{第九章 \quad  欧几里得空间}
+\author[]{{\large 张彪}\\  }
+\institute[]{{\normalsize
+		天津师范大学\\[6pt]
+		zhang@tjnu.edu.cn}}
+
+\date{}
+
+
+\AtBeginSection[]
+{
+	\setcounter{exa}{0}
+	\setcounter{equation}{0}
+}
+
+
+%\begin{frame}
+%\maketitle
+%\end{frame}
+
+%\begin{frame}{Outline}
+%\tableofcontents
+%\end{frame}
+
+
+\setcounter{exa}{0}
+\begin{frame}
+\begin{exa}
+	设矩阵 $A, B$ 满足 $A B A^{*}=2 A B-8 E,$ 其中 $A=\left(\begin{array}{ccc}1 & 0 & 0 \\ 0 & -2 & 0 \\ 0 & 0 & 1\end{array}\right),$ 求 $B$
+\end{exa}
+
+\begin{exa}
+	设矩阵 $A, B$ 满足 $A^{*} B A=2 B A-8 E,$ 其中 $A=\left(\begin{array}{ccc}1 & 0 & 0 \\ 0 & -2 & 0 \\ 0 & 0 & 1\end{array}\right),$ 求 $B$
+\end{exa}
+\end{frame}
+
+
+\setcounter{exa}{0}
+
+\begin{frame}
+\begin{exa}
+求非退化线性替换，化二次型 $$f\left(x_{1}, x_{2}, x_{3}\right)=x_{1}^{2}-3 x_{2}^{2}-2 x_{1} x_{2}+2 x_{1} x_{3}-6 x_{2} x_{3}$$ 为标准形.
+\end{exa}
+\begin{exa}
+求非退化线性替换，化二次型 $$f\left(x_{1}, x_{2}, x_{3}\right)=4 x_{1} x_{2}-2 x_{1} x_{3}-2 x_{2} x_{3}$$ 为标准形.
+\end{exa}
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+若实二次型 $f\left(x_{1}, x_{2}, x_{3}\right)=2 x_{1}^{2}+x_{2}^{2}+x_{3}^{2}-2 t x_{1} x_{2}+2 t x_{1} x_{3}$ 正定，求 $t$ 的取值范围.
+\end{exa}
+\end{frame}
+
+
+\setcounter{exa}{0}
+\begin{frame}
+
+\begin{exa}
+	已知 $$f_{1}=1-x, f_{2}=1+x^{2}, f_{3}=x+2 x^{2}$$ 与 $$g_{1}=x, g_{2}=1-x^{2}, g_{3}=1-x+x^{2}$$ 是 $P[x]_{3}$ 中的两个向量组
+	\begin{enumerate}
+		\item 证明 $f_{1}, f_{2}, f_{3}$ 和 $g_{1}, g_{2}, g_{3}$ 都是 $P[x]_{3}$ 的基;
+		\item 求由基 $f_{1}, f_{2}, f_{3}$ 到基 $g_{1}, g_{2}, g_{3}$ 的过渡矩阵
+		\item 求 $f=1+2 x+3 x^{2}$ 在基 $f_{1}, f_{2}, f_{3}$ 下的坐标.
+	\end{enumerate}
+\end{exa}
+\end{frame}
+
+
+
+\begin{frame}
+\small{\begin{exa}
+	\begin{enumerate}
+		\item 设 $A=\left(\begin{array}{ccc}1 & 0 & 0 \\ 1 & 1 & 1 \\ 0 & 0 & 2\end{array}\right),$ 记 $W=\left\{B\, | \, A B=B A, B \in P^{3 \times 3}\right\},$ 求 $W$ 的维数和一组基.
+		\item 设 $A=\left(\begin{array}{ccc}1 & 1 & 0 \\ 1 & 1 & 1 \\ 0 & 1 & 1\end{array}\right),$ 记 $W=\left\{B \, |\, A B=B A, B \in P^{3 \times 3}\right\},$ 求 $W$ 的维数和一组基.
+	\end{enumerate}
+\end{exa}}
+\end{frame}
+
+\begin{frame}
+\begin{exa}已知两个齐次线性方程组
+\begin{center}
+\text {(I)} $\left\{\begin{array}{c}x_{1}+2 x_{2}+x_{3}=0 \\ 2 x_{1}+2 x_{2}+x_{4}=0\end{array}\right.$ \qquad
+%\end{center}
+%\begin{center}
+\text {(II)} $\left\{\begin{array}{l}-2 x_{1}+x_{2}+6 x_{3}-x_{4}=0 \\ -x_{1}+2 x_{2}+5 x_{3}-x_{4}=0\end{array}\right.$
+\end{center}
+\begin{enumerate}
+\item 分别求(I)和(II)的解空间 $V_{1}$ 和 $V_{2}$ 的维数和一组基.
+
+\item 求 $V_{1} \cap V_{2}$ 的维数和一组基.
+\end{enumerate}
+\end{exa}
+\end{frame}
+
+
+\setcounter{exa}{0}
+
+\begin{frame}
+\begin{exa}
+	取 $P^{3}$ 的线性变换 $\sigma(a, b, c)=(a-b, b-c, a+b)$
+	\begin{enumerate}
+		\item  求 $\sigma$ 在基 $\varepsilon_{1}=(1,0,0), \varepsilon_{2}=(0,1,0), \varepsilon_{3}=(0,0,1)$ 下的矩阵
+		\item  求 $\sigma$ 在基 $\eta_{1}=(1,0,0), \eta_{2}=(1,1,0), \eta_{3}=(1,1,1)$ 下的矩阵
+		\item  求向量 $\alpha=(1,2,3)$ 的像 $\sigma \alpha$ 分别在基 $\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3}$ 和 $\eta_{1}, \eta_{2}, \eta_{3}$ 下的坐标.
+	\end{enumerate}
+\end{exa}
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+	在线性空间 $P^{3}$ 中，定义线性变换 $$\sigma(a, b, c)=(a+2 b-c, b+c, a+b-2 c),$$ 分别求 $\sigma$ 的值域与核的维数与一组基.
+\end{exa}
+\end{frame}
+
+
+	\setcounter{exa}{0}
+
+\begin{frame}
+\begin{exa}
+设 $A=\left(\begin{array}{ccc}2 & -1 & -1 \\ -1 & 2 & -1 \\ -1 & -1 & 2\end{array}\right)$.
+
+(1) 求 $A$ 的特征值和对应的特征向量.
+
+(2) 求正交阵 $Q,$ 使得 $Q^{T} A Q$ 是对角阵.
+\end{exa}
+
+\begin{exa}
+ 用正交线性替换化实二次型为标准形 $f\left(x_{1}, x_{2}, x_{3}\right)=2 x_{1}^{2}+2 x_{2}^{2}+2 x_{3}^{2}-2 x_{1} x_{2}-2 x_{1} x_{3}-2 x_{2} x_{3}$.
+\end{exa}
+\end{frame}
+
+\begin{frame}
+\begin{exa}
+	设1,1,-3是3阶实对称矩阵 $A$ 的特征值，  $(1,-1,0)^{T}$ 是 $A$ 属于-3的特征向量，求 $A$.
+\end{exa}
+\end{frame}
+
+
+
+
+
+\end{document} 
