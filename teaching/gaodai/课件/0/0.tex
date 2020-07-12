@@ -5,7 +5,6 @@
 
 \usepackage{amsmath,amssymb,amsthm}             % AMS Math
 \usepackage[T1]{fontenc}
-
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{tikz}
@@ -34,7 +33,7 @@
 
 \usepackage{ctex}
 % \usepackage{CJK,CJKnumb,CJKulem}
-\usepackage{minitoc}
+%\usepackage{minitoc}
 
 
 \setbeamertemplate{theorems}[numbered]
@@ -96,18 +95,25 @@
 \date{}
 
 
+
 \AtBeginSection[]
 {
+\begin{frame}
+	\frametitle{Outline}
+	\tableofcontents[currentsection]
+\end{frame}
 \setcounter{exa}{0}
 \setcounter{equation}{0}
 }
+
 
 
 \begin{frame}
 \maketitle
 \end{frame}
 
-\begin{frame}{Outline}
+\begin{frame}
+\frametitle{\textcolor{orange}{Outline}}
 \tableofcontents
 \end{frame}
 
@@ -175,34 +181,38 @@ S=v_{0} t+\frac{1}{2} a t^{2}
 \begin{frame}
 \begin{itemize}
 \item 数学 史表明,早在中世纪人们就已经找到解一元一次、二次代数方程的一 般方法. 
-\item 到欧洲的文艺复兴时代，又找到一元三次、四次方程的求根 公式. 
+\item 到欧洲的文艺复兴时代，又找到\alert{一元三次、四次方程}的求根 公式. 
 \item 但是随后数学家们就碰到难题了. 在数百年时间内，他们苦苦 寻求五次以上代数方程的求根公式,却总是遭到失败. 
 \pause
-\item 直到 1832 年， 法国数学家 Galois 才找到了一个高次代数方程有根式解(即用该方 程的系数经加、减、乘、除及开方运算表示它的全部根）的判别准则， 完满地解决了高次代数方程根的理论课题. 
+\item 直到 1832 年， 法国数学家 Galois 才找到了一个\alert{高次代数方程}有根式解(即用该方 程的系数经加、减、乘、除及开方运算表示它的全部根）的判别准则， 完满地解决了高次代数方程根的理论课题. 
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-根据 Galois 的理论，五 次以上的一般代数方程没有求根公式. 
+\begin{itemize}
+	\item
+	根据 Galois 的理论，五 次以上的一般代数方程没有求根公式. 
 
-Galois 的工作中最值得注意 的是，他不是局限在数的四则运算的范围内考查问题. 
+	\item Galois 的工作中最值得注意 的是，他不是局限在数的四则运算的范围内考查问题. 
 
-他跳出这个圈 子,考查 $n$ 次方程的 $n$ 个根的某些\alert{置换}所组成的集合 $G,$ 规定 $G$ 内两 个置换的“乘积”是对根的集合逐次进行这两个置换. 
+	\item 他跳出这个圈 子,考查 $n$ 次方程的 $n$ 个根的某些\alert{置换}所组成的集合 $G,$ 规定 $G$ 内两 个置换的“乘积”是对根的集合逐次进行这两个置换. 
 
-他在一个 并非由数组成的集合 G 内定义了一种新的代数运算：\alert{乘法}(它完全 不同于数的乘法). 他发现这种乘法也具有与数的乘法相类似的某些 运算法则(例如满足结合律等等). 这个新的具有乘法运算的集合我 们现在把它称为该高次代数方程的 \alert{Galois 群}. 
+	\item 他在一个 并非由数组成的集合 G 内定义了一种新的代数运算：\alert{乘法}(它完全 不同于数的乘法). 他发现这种乘法也具有与数的乘法相类似的某些 运算法则(例如满足结合律等等). 这个新的具有乘法运算的集合我 们现在把它称为该高次代数方程的 \alert{Galois 群}. 
 
-Galois 证明：
+	\item Galois 证明：
 \begin{center}
 高次代 数方程有没有根式解取决于它的 Galois 群的结构. 
 \end{center}
-
+\end{itemize}
 \end{frame}
 
 \begin{frame}
-这样，人们的认 识发生了一个质的飞跃,那就是为了研讨数及其代数运算中所包含 的深刻规律,我们必须跳出数及其四则运算的框框,去研究一个更一 般的集合及其中应有的代数运算.
+\begin{itemize}
+	\item 这样，人们的认 识发生了一个质的飞跃,那就是为了研讨数及其代数运算中所包含 的深刻规律,我们必须跳出数及其四则运算的框框,去研究一个更一 般的集合及其中应有的代数运算.
 
- 这样 ,代数学发生了一个革命性的 变化：从研究代数方程的求根这一经典课题解脱出来,变成研究一 个一般的\alert{集合}(其元素可以完全抽象,没有具体内容)，在其中存在一 种或若干种\alert{代数运算}(这种运算不同于数的四则运算,甚至可以是抽 象定义的)，同时要求这些运算要满足一定的运算法则. 
+	\item  这样 ,代数学发生了一个革命性的 变化：从研究代数方程的求根这一经典课题解脱出来,变成研究一 个一般的\alert{集合}(其元素可以完全抽象,没有具体内容)，在其中存在一 种或若干种\alert{代数运算}(这种运算不同于数的四则运算,甚至可以是抽 象定义的)，同时要求这些运算要满足一定的运算法则. 
+\end{itemize}
 \end{frame}
 
 
@@ -474,6 +484,19 @@ $$(a+b i)+(c+d i)  : =(a+c)+(b+d) i $$
 \end{tikzpicture}
 \end{center}
 \end{frame}
+
+\begin{frame}
+\begin{center}
+\begin{figure}[t]
+	\includegraphics[scale=0.4]{r=1-sintheta.png}
+	\caption{笛卡尔心形线~~~~~~}
+\end{figure}
+
+\end{center}
+
+
+\end{frame}
+
 
 \begin{frame}
 如果又有复数
