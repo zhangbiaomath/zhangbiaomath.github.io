@@ -4,7 +4,7 @@
 
 
 \usepackage{amsmath,amssymb,amsthm}             % AMS Math
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{tikz}
@@ -30,8 +30,8 @@
 
 
 
-
-\usepackage{ctex}
+\usepackage[fontset=mac]{ctex}
+%\usepackage{ctex}
 % \usepackage{CJK,CJKnumb,CJKulem}
 %\usepackage{minitoc}
 
@@ -87,7 +87,7 @@
 
 
 \title[]{高等代数}
-\author[]{{\large 张彪}\\  }
+\author[]{{\large 张彪} }
 \institute[]{{\normalsize
 		天津师范大学\\[6pt]
 		zhang@tjnu.edu.cn}}
@@ -125,95 +125,108 @@
 
 \begin{frame}
 
-\begin{center}
-{ \Large 宇宙之大，粒子之微,} \\[8pt]
-
-{ \Large 火箭之速，化工之巧，}\\[8pt]
-
-{ \Large 地球之变，生物之评,}\\[8pt]
-
-{ \Large 日用之繁，}\qquad \qquad \qquad \qquad \quad \\[8pt]
-
-{ \Large \qquad \qquad 无处不用数学.}
-\end{center}
 
 
-\rightline{ {\Large 一华罗庚 \qquad \qquad\qquad}}
+\begin{columns}[c]  %开始进入分栏环境，居中设置
+	
+	\column{6cm}
+\begin{leftline}
+	{\Large  宇宙之大，粒子之微，} \\[8pt]
+	
+	{ \Large 火箭之速，化工之巧，}\\[8pt]
+	
+	{ \Large 地球之变，生物之评，}\\[8pt]
+	
+	{ \Large 日用之繁，无处不用数学。}
+\end{leftline}
+
+
+%\rightline{ {\Large 一华罗庚 \qquad \qquad\qquad}}
+	\column{5cm} 
+	\begin{figure}[p]
+		\includegraphics[scale=0.5]{hua.jpg}
+		\caption{华罗庚 (1910--1985)}
+	\end{figure}
+	
+\end{columns}
+
+
 
 \end{frame}
 
-\begin{frame}
-大约在 1637 年,法国数学家 Fermat 断言，
-\begin{conj}
-	对于大于 2 的整数 $n$,三个未知量 $x, y, z$ 的代数方程 $x^{n}+y^{n}=z^{n}$ 没有正整数解. 
-\end{conj}
-\pause
-
-%这个问题中,只牵涉到正整数的加法与乘 法(乘方)运算，可说是再简单不过了，具有初中一年级代数知识的人 都能看明白.
-
-%但是
-它历经 350 余年,无数第一流的数学家为之纹尽脑汁, 才于 1994 年被 Princeton 大学的数学家 Wiles 使用现代最深奥 的数学理论得出解答. 
-
-\end{frame}
-
-
-
-\begin{frame}
-\begin{itemize}
-\item 从生产实践和自然科学理论中,自然地产生了\alert{求解代数方
-程}的问题,它就是代数学的经典课题.
-\item 
-例如，根据牛顿第二运动定律， 物体所受的力 F,它的质量 $m$ 和产生的加速度 $a$ 之间存在关系 $F=$ ma. 
-如果已知物体的质量 $m$ 和所受的力 $F$,求加速度 $a,$ 这就是\alert{一元 一次方程}的求解问题.
-\item  又比如，一个以初速 $v_{0}$ 在水平面上作匀加速 运动的物体，它的加速度 a,运动时间 $t$ 和移动的距离 S 满足
-\[
-S=v_{0} t+\frac{1}{2} a t^{2}
-\]
-如果已知 $S, v_{0}, a,$ 求运动时间 $t,$ 这就是求\alert{一元二次方程}的根.
-\end{itemize}
-
-
- 
-
-\end{frame} 
-
-
-\begin{frame}
-\begin{itemize}
-\item 数学 史表明,早在中世纪人们就已经找到解一元一次、二次代数方程的一 般方法. 
-\item 到欧洲的文艺复兴时代，又找到\alert{一元三次、四次方程}的求根 公式. 
-\item 但是随后数学家们就碰到难题了. 在数百年时间内，他们苦苦 寻求五次以上代数方程的求根公式,却总是遭到失败. 
-\pause
-\item 直到 1832 年， 法国数学家 Galois 才找到了一个\alert{高次代数方程}有根式解(即用该方 程的系数经加、减、乘、除及开方运算表示它的全部根）的判别准则， 完满地解决了高次代数方程根的理论课题. 
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}
-\begin{itemize}
-	\item
-	根据 Galois 的理论，五 次以上的一般代数方程没有求根公式. 
-
-	\item Galois 的工作中最值得注意 的是，他不是局限在数的四则运算的范围内考查问题. 
-
-	\item 他跳出这个圈 子,考查 $n$ 次方程的 $n$ 个根的某些\alert{置换}所组成的集合 $G,$ 规定 $G$ 内两 个置换的“乘积”是对根的集合逐次进行这两个置换. 
-
-	\item 他在一个 并非由数组成的集合 G 内定义了一种新的代数运算：\alert{乘法}(它完全 不同于数的乘法). 他发现这种乘法也具有与数的乘法相类似的某些 运算法则(例如满足结合律等等). 这个新的具有乘法运算的集合我 们现在把它称为该高次代数方程的 \alert{Galois 群}. 
-
-	\item Galois 证明：
-\begin{center}
-高次代 数方程有没有根式解取决于它的 Galois 群的结构. 
-\end{center}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\begin{itemize}
-	\item 这样，人们的认 识发生了一个质的飞跃,那就是为了研讨数及其代数运算中所包含 的深刻规律,我们必须跳出数及其四则运算的框框,去研究一个更一 般的集合及其中应有的代数运算.
-
-	\item  这样 ,代数学发生了一个革命性的 变化：从研究代数方程的求根这一经典课题解脱出来,变成研究一 个一般的\alert{集合}(其元素可以完全抽象,没有具体内容)，在其中存在一 种或若干种\alert{代数运算}(这种运算不同于数的四则运算,甚至可以是抽 象定义的)，同时要求这些运算要满足一定的运算法则. 
-\end{itemize}
-\end{frame}
+%
+%\begin{frame}
+%大约在 1637 年,法国数学家 Fermat 断言，
+%\begin{conj}
+%	对于大于 2 的整数 $n$,三个未知量 $x, y, z$ 的代数方程 $x^{n}+y^{n}=z^{n}$ 没有正整数解. 
+%\end{conj}
+%\pause
+%
+%%这个问题中,只牵涉到正整数的加法与乘 法(乘方)运算，可说是再简单不过了，具有初中一年级代数知识的人 都能看明白.
+%
+%%但是
+%它历经 350 余年,无数第一流的数学家为之纹尽脑汁, 才于 1994 年被 Princeton 大学的数学家 Wiles 使用现代最深奥 的数学理论得出解答. 
+%
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%\begin{itemize}
+%\item 从生产实践和自然科学理论中,自然地产生了\alert{求解代数方
+%程}的问题,它就是代数学的经典课题.
+%\item 
+%例如，根据牛顿第二运动定律， 物体所受的力 F,它的质量 $m$ 和产生的加速度 $a$ 之间存在关系 $F=$ ma. 
+%如果已知物体的质量 $m$ 和所受的力 $F$,求加速度 $a,$ 这就是\alert{一元 一次方程}的求解问题.
+%\item  又比如，一个以初速 $v_{0}$ 在水平面上作匀加速 运动的物体，它的加速度 a,运动时间 $t$ 和移动的距离 S 满足
+%\[
+%S=v_{0} t+\frac{1}{2} a t^{2}
+%\]
+%如果已知 $S, v_{0}, a,$ 求运动时间 $t,$ 这就是求\alert{一元二次方程}的根.
+%\end{itemize}
+%
+%
+% 
+%
+%\end{frame} 
+%
+%
+%\begin{frame}
+%\begin{itemize}
+%\item 数学 史表明,早在中世纪人们就已经找到解一元一次、二次代数方程的一 般方法. 
+%\item 到欧洲的文艺复兴时代，又找到\alert{一元三次、四次方程}的求根 公式. 
+%\item 但是随后数学家们就碰到难题了. 在数百年时间内，他们苦苦 寻求五次以上代数方程的求根公式,却总是遭到失败. 
+%\pause
+%\item 直到 1832 年， 法国数学家 Galois 才找到了一个\alert{高次代数方程}有根式解(即用该方 程的系数经加、减、乘、除及开方运算表示它的全部根）的判别准则， 完满地解决了高次代数方程根的理论课题. 
+%\end{itemize}
+%\end{frame}
+%
+%
+%\begin{frame}
+%\begin{itemize}
+%	\item
+%	根据 Galois 的理论，五 次以上的一般代数方程没有求根公式. 
+%
+%	\item Galois 的工作中最值得注意 的是，他不是局限在数的四则运算的范围内考查问题. 
+%
+%	\item 他跳出这个圈 子,考查 $n$ 次方程的 $n$ 个根的某些\alert{置换}所组成的集合 $G,$ 规定 $G$ 内两 个置换的“乘积”是对根的集合逐次进行这两个置换. 
+%
+%	\item 他在一个 并非由数组成的集合 G 内定义了一种新的代数运算：\alert{乘法}(它完全 不同于数的乘法). 他发现这种乘法也具有与数的乘法相类似的某些 运算法则(例如满足结合律等等). 这个新的具有乘法运算的集合我 们现在把它称为该高次代数方程的 \alert{Galois 群}. 
+%
+%	\item Galois 证明：
+%\begin{center}
+%高次代 数方程有没有根式解取决于它的 Galois 群的结构. 
+%\end{center}
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{itemize}
+%	\item 这样，人们的认 识发生了一个质的飞跃,那就是为了研讨数及其代数运算中所包含 的深刻规律,我们必须跳出数及其四则运算的框框,去研究一个更一 般的集合及其中应有的代数运算.
+%
+%	\item  这样 ,代数学发生了一个革命性的 变化：从研究代数方程的求根这一经典课题解脱出来,变成研究一 个一般的\alert{集合}(其元素可以完全抽象,没有具体内容)，在其中存在一 种或若干种\alert{代数运算}(这种运算不同于数的四则运算,甚至可以是抽 象定义的)，同时要求这些运算要满足一定的运算法则. 
+%\end{itemize}
+%\end{frame}
 
 
 \begin{frame}{Outline}
