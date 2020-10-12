@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  12 OCT 2020 10:12
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  12 OCT 2020 16:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1257,81 +1257,85 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 ] (./0.toc) [3
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 137
+LaTeX Font Info:    Trying to load font information for U+msa on input line 156
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 137
+LaTeX Font Info:    Trying to load font information for U+msb on input line 156
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 13
-7.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 15
+6.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 137.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 156.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 137.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 156.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 137.
- [4
-
-] [5
-
-]
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 156.
 File: hua.jpg Graphic file (type bmp)
 <hua.jpg>
+ [4
 
+]
+File: 数学好玩.jpg Graphic file (type bmp)
+<数学好玩.jpg>
+File: chern.jpeg Graphic file (type bmp)
+<chern.jpeg>
+ [5
+
+]
 [6
 
 ] [7
 
-] (./0.toc) [8
+] [8
+
+] [9
+
+] (./0.toc) [10
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 295.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 332.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 295.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 332.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 295.
- [9
-
-] [10
-
-] (./0.toc) [11
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 332.
+ [11
 
 ] [12
 
-] [13
+] (./0.toc) [13
+
+] [14
+
+] [15
 
 ]
 
 LaTeX Font Warning: Font shape `TU/PingFangSC(0)/m/it' undefined
-(Font)              using `TU/PingFangSC(0)/m/n' instead on input line 378.
+(Font)              using `TU/PingFangSC(0)/m/n' instead on input line 417.
 
 
-Overfull \vbox (3.36653pt too high) detected at line 378
+Overfull \vbox (3.36653pt too high) detected at line 417
  []
 
-[14
+[16
 
-] [15
-
-] [16
-
-] (./0.toc) [17
+] [17
 
 ] [18
 
-] [19
+] (./0.toc) [19
 
 ] [20
 
@@ -1340,18 +1344,22 @@ Overfull \vbox (3.36653pt too high) detected at line 378
 ] [22
 
 ]
-File: r=1-sintheta.png Graphic file (type bmp)
-<r=1-sintheta.png>
- [23
+Overfull \vbox (5.99142pt too high) detected at line 557
+ []
 
-] [24
+[23
+
+]
+Overfull \vbox (6.30135pt too high) detected at line 586
+ []
+
+[24
 
 ] [25
 
 ] [26
 
-]
-(./0.toc) [27
+] [27
 
 ] [28
 
@@ -1359,17 +1367,9 @@ File: r=1-sintheta.png Graphic file (type bmp)
 
 ] [30
 
-]
-Overfull \vbox (5.99142pt too high) detected at line 686
- []
+] (./0.toc) [31
 
-[31
-
-]
-Overfull \vbox (6.30135pt too high) detected at line 715
- []
-
-[32
+] [32
 
 ] [33
 
@@ -1379,9 +1379,17 @@ Overfull \vbox (6.30135pt too high) detected at line 715
 
 ] [36
 
-] [37
+]
+File: r=1-sintheta.png Graphic file (type bmp)
+<r=1-sintheta.png>
+
+[37
 
 ] [38
+
+] [39
+
+] [40
 
 ]
 \tf@nav=\write6
@@ -1393,25 +1401,25 @@ Overfull \vbox (6.30135pt too high) detected at line 715
 \tf@snm=\write8
 \openout8 = `0.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 884.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 884.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 927.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 927.
  (./0.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 884.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 884.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 927.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 927.
 Package rerunfilecheck Info: File `0.out' has not changed.
-(rerunfilecheck)             Checksum: 8E64C47E0D6235F121DF1645D12AD1EF;399.
+(rerunfilecheck)             Checksum: 124A6B10D4419BCC17D665BFB9032DB3;399.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 30503 strings out of 479418
- 659548 string characters out of 5884585
- 944384 words of memory out of 5000000
- 47326 multiletter control sequences out of 15000+600000
+ 30620 strings out of 479418
+ 666561 string characters out of 5884585
+ 945475 words of memory out of 5000000
+ 47440 multiletter control sequences out of 15000+600000
  540468 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  63i,11n,82p,795b,864s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 0.pdf (38 pages).
+Output written on 0.pdf (40 pages).

@@ -1,5 +1,5 @@
 \beamer@sectionintoc {1}{引言}{3}{0}{1}
-\beamer@sectionintoc {2}{充分必要条件}{8}{0}{2}
-\beamer@sectionintoc {3}{数学归纳法}{11}{0}{3}
-\beamer@sectionintoc {4}{复数}{17}{0}{4}
-\beamer@sectionintoc {5}{整数的可除性理论}{27}{0}{5}
+\beamer@sectionintoc {2}{充分必要条件}{10}{0}{2}
+\beamer@sectionintoc {3}{数学归纳法}{13}{0}{3}
+\beamer@sectionintoc {4}{整数的可除性理论}{19}{0}{4}
+\beamer@sectionintoc {5}{复数}{31}{0}{5}
