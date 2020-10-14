@@ -1,5 +1,5 @@
 % !Mode:: "TeX:UTF-8"
-\documentclass[13pt]{beamer}
+\documentclass[13pt,fontset=mac]{ctexbeamer}
 \usepackage[utf8]{inputenc}
 
 
@@ -30,7 +30,7 @@
 
 
 
-\usepackage[fontset=mac]{ctex}
+%\usepackage[fontset=mac]{ctex}
 %\usepackage{ctex}
 % \usepackage{CJK,CJKnumb,CJKulem}
 %\usepackage{minitoc}
@@ -288,22 +288,61 @@
 %\end{frame}
 
 
+
+\begin{frame}{教材}
+	教材
+	
+	\begin{itemize}
+		\item 北京大学数学系几何与代数教研室代数小组, 高等代数(第5版), 高等教育出版社, 2019.
+		
+		
+	\end{itemize}
+	
+	参考书目
+		\begin{itemize}
+		
+		\item  王萼芳, 石生明, 高等代数辅导与习题解答（北大·第5版), 高等教育出版社, 2019.
+		
+		\item 徐仲等, 高等代数(北大第四版)导教导学导考, 西安:西北工业大学出版社, 2014.
+		
+	\end{itemize}
+
+\end{frame}
+
+
+
 \begin{frame}{Outline}
+	
+		\begin{columns}[c]  %开始进入分栏环境，居中设置
+		
+		\column{6cm}
+
 \alert{第一学期}
 \begin{itemize}
-\item[1]多项式
-\item[2] 行列式
-\item[3] 线性方程组
+	\item[1]多项式
+	\item[2] 行列式
+	\item[3] 线性方程组
 \end{itemize}
 
 \alert{第二学期}
 \begin{itemize}
-\item[4] 矩阵
-\item[5] 二次型
-\item[6] 线性空间
-\item[7] 线性变换
-\item[9] 欧几里得空间
+	\item[4] 矩阵
+	\item[5] 二次型
+	\item[6] 线性空间
+	\item[7] 线性变换
+	\item[9] 欧几里得空间
 \end{itemize}
+		
+		\column{5cm} 
+		\begin{figure}[p]
+			\includegraphics[scale=0.5]{gaodai_code.png}
+			\caption{课程网页}
+		\end{figure}
+	\end{columns}
+
+
+
+
 \end{frame}
 
 
@@ -367,7 +406,7 @@ B是A的充分必要条件(或称为充要条件).
 
 \section{数学归纳法}
 
-\begin{frame}{第一数学归纳法}
+\begin{frame}
 
 
 如果你有一排很长的直立着的多米诺骨牌那么如果你可以确定：
@@ -377,15 +416,19 @@ B是A的充分必要条件(或称为充要条件).
 只要某一个骨牌倒了,与他相临的下一个骨牌也要倒. 
 
 那么你就可以推断所有的的骨牌都将要倒. \\[15pt]
+		\includegraphics[scale=0.4]{gupai.jpg}
+\end{frame}
 
-\pause
 
+\begin{frame}{第一数学归纳法}
 第一数学归纳法可以概括为以下三步：
 \begin{enumerate}
 \item 归纳奠基：证明$n=1$时命题成立.
 \item 归纳假设：假设$n=k$时命题成立.
 \item 归纳递推：由归纳假设推出$n=k+1$时命题也成立．
 \end{enumerate}
+
+
 \end{frame}
 
 \begin{frame}
@@ -437,6 +480,16 @@ B是A的充分必要条件(或称为充要条件).
 	因此，对于任意自然数$n$，都有 $3^n−1$ 是 $2$ 的倍数.
 	 \qed
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{exa}[思考题]
+给定圆周上任意$n$个点，确定有$\binom{n}{2}$条弦划分的圆内的区域数$R_n$，这里假设任意三条弦在园内不相交。
+	\end{exa}
+
+
+
+
 \end{frame}
 
 \begin{frame}{第二数学归纳法}
