@@ -1,0 +1,184 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[13pt,fontset=mac]{ctexbeamer}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{amsmath,amssymb,amsthm}             % AMS Math
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\linespread{1.3}
+
+\usepackage{mathrsfs}  %花写字母
+ 
+
+%%%=== theme ===%%%
+% \usetheme{Warsaw}
+%\usetheme{Copenhagen}
+%\usetheme{Singapore}
+\usetheme{Madrid}
+%\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+% \usefonttheme{structureitalicserif}
+%%\useinnertheme{rounded}
+%%\useinnertheme{inmargin}
+\useinnertheme{circles}
+%\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[page number]
+
+
+
+
+\usepackage{minitoc}
+
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{thm}{定理}
+\newtheorem{lem}{引理}
+\newtheorem{exa}{例}
+\newtheorem*{theo}{定理}
+\newtheorem*{defi}{定义}
+\newtheorem*{coro}{推论}
+\newtheorem*{ex}{练习}
+\newtheorem*{rem}{注}
+\newtheorem*{prop}{性质}
+\newtheorem*{qst}{问题}
+
+\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
+\def\pf{{\bf 证明~~ }}
+\def\sol{{\bf 解~~ }}
+
+
+
+\def\R{\mathbb{R}}
+\def\Rn{\mathbb{R}^n}
+\def\A{\mathscr{A}}
+\def\B{\mathscr{B}}
+\def\D{\mathscr{D}}
+\def\E{\mathscr{E}}
+\def\O{\mathscr{O}}
+
+\def\rank{\operatorname{rank}}
+\def\dim{\operatorname{dim}}
+\def\0{\mathbf{0}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\r{\gamma}
+
+\usepackage{color}
+\definecolor{linkcol}{rgb}{0,0,0.4}
+\definecolor{citecol}{rgb}{0.5,0,0}
+
+\definecolor{blue}{rgb}{0,0.08,1}
+\newcommand{\blue}{\textcolor{blue}}
+
+  \usepackage{graphicx}
+  \DeclareGraphicsExtensions{.eps}
+%   \usepackage[a4paper,pagebackref,hyperindex=true,pdfnewwindow=true]{hyperref}
+
+
+\begin{document}
+
+
+
+\title[]{第一章 \quad 多项式}
+\author[]{{\large 张彪}\\  }
+\institute[]{{\normalsize
+		天津师范大学\\[6pt]
+		zhang@tjnu.edu.cn}}
+
+\date{}
+
+
+\AtBeginSection[]
+{
+\setcounter{exa}{0}
+\setcounter{equation}{0}
+}
+
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+\section{数域}
+\begin{frame}{\S 1    数域}
+
+\begin{defi}
+设$P$是由一些复数组成的集合，其中
+	包括0与1.如果$P$中任意两个数的和、差、积、商
+	（除数不为零）仍在$P$中，则称$P$为一个数域.
+\end{defi}
+
+   常用到的数域：有理数域$\mathbb{Q}$ 、实数域$\mathbb{R}$、复数域$\mathbb{C}$.
+   
+   \vspace{10pt}
+数域定义的另一形式  
+\begin{defi}
+	设$P$是由一些复数组成的集合，其中
+	包括0与1.如果对
+	于加法、减法、乘法、除法（除数不为零）运算
+	封闭，则称$P$为一个数域.
+\end{defi}
+
+
+\end{frame}
+
+
+\begin{frame}
+\begin{exa}
+所有形如 $a+b \sqrt{2}(a ,b$ 是有理数) 的数 构成一个数域 $\mathbb{Q}(\sqrt{2}) .$
+\end{exa} 
+
+\pause
+\pf (i) $0,1 \in \mathbb{Q}(\sqrt{2})$
+
+
+(ii)对四则运算封闭.事实上 $\forall a, \beta \in \mathbb{Q}(\sqrt{2}),$ 设 $a=a+b \sqrt{2}, \beta=c+d \sqrt{2},$ 有
+\begin{align*}
+a \pm \beta & =(a \pm c)+(b \pm d) \sqrt{2} \in \mathbb{Q}(\sqrt{2})\\[6pt]
+a \beta & =(a c+2 b d)+(a d+b c) \sqrt{2} \in \mathbb{Q}(\sqrt{2})
+\end{align*}
+
+设 $a=a+b \sqrt{2} \neq 0, \quad$ 则 $a-b \sqrt{2} \neq 0$ 且
+\begin{align*}
+\frac{\beta}{a}= & \frac{c+d \sqrt{2}}{a+b \sqrt{2}}=\frac{(c+d \sqrt{2})(a-b \sqrt{2})}{(a+b \sqrt{2})(a-b \sqrt{2)}}\\[6pt]
+= & \frac{a c-2 b d}{a^{2}-2 b^{2}}+\frac{a d-b c}{a^{2}-2 b^{2}} \sqrt{2} \in \mathbb{Q}(\sqrt{2})
+\end{align*}
+\qed
+\end{frame}
+
+\begin{frame}
+\begin{rem}
+有理数域是最小的数域。
+%也就是说，任何数域都包含有理数域作为它的一部分。
+\pf
+设$P$为一个数域.
+\begin{itemize}
+    \item 由定义知$1\in P$，
+    \item 又$P$对加法封闭知：1+1=2，
+1+2=3, $\cdots$,  $P$包含所有\alert{自然数}；
+	\item 由$0\in P$及$P$对减法的封闭性知：$P$包含所有负
+整数，因而$P$包含所有\alert{整数}；
+\item 
+任何一个有理数都可以表为两个整数的商，
+由P对除法的封闭性知：$P$包含所有\alert{有理数}.
+
+\end{itemize}
+
+即
+    任何数域都包含有理数域作为它的一部分.
+
+\qed
+\end{rem}
+
+\end{frame}
+
+\end{document} 
