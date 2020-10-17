@@ -102,8 +102,6 @@
 	\frametitle{Outline}
 	\tableofcontents[currentsection]
 \end{frame}
-\setcounter{exa}{0}
-\setcounter{equation}{0}
 }
 
 
@@ -340,10 +338,9 @@
 		\end{figure}
 	\end{columns}
 
-
-
-
 \end{frame}
+
+
 
 
 \section{充分必要条件}
@@ -503,6 +500,40 @@ B是A的充分必要条件(或称为充要条件).
 \item 由归纳假设推出 $n=k+1$时命题也成立.
 \end{enumerate}
 \end{frame}
+
+
+
+
+
+
+\section{连加号}
+
+\begin{frame}
+		\small{
+	在数学中经常碰到若干个数连加的情况
+	\begin{align}\label{eq:a_i}
+		a_1+a_2+\cdots+a_n
+	\end{align}
+	为了简便起见，我们通常记成
+	\begin{align}\label{eq:a_i_sum}
+		\sum_{i=1}^{n}a_i
+	\end{align}
+	$\sum$称为\alert{连加号}，而连加号上下的写法表示$i$的取值由$1$到$n$.
+	
+	例如
+	\[1^2+2^2+\cdots+n^2=\sum_{i=1}^{n}i^2\]
+	
+	这里的 $i$ 称为\alert{求和指标}, 它只起一个辅助的作用.
+	
+	把 \eqref{eq:a_i_sum}还原成 \eqref{eq:a_i} 时，
+	它是不出现的.譬如说, \eqref{eq:a_i}也可以记成
+	$$
+	\sum_{j=1}^{n} a_{j}
+	$$
+因之,只要不与连加号中出现的其它指标相混,用什么字母作为求和指标是
+	任意的.}
+\end{frame}
+
 
 
 

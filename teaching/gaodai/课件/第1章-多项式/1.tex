@@ -141,24 +141,26 @@
 \pf (i) $0,1 \in \mathbb{Q}(\sqrt{2})$
 
 
-(ii)对四则运算封闭.事实上 $\forall a, \beta \in \mathbb{Q}(\sqrt{2}),$ 设 $a=a+b \sqrt{2}, \beta=c+d \sqrt{2},$ 有
+(ii)对四则运算封闭.事实上 $\forall a, \beta \in \mathbb{Q}(\sqrt{2}),$ 设 $\a=a+b \sqrt{2}, \beta=c+d \sqrt{2},$ 有
 \begin{align*}
 a \pm \beta & =(a \pm c)+(b \pm d) \sqrt{2} \in \mathbb{Q}(\sqrt{2})\\[6pt]
 a \beta & =(a c+2 b d)+(a d+b c) \sqrt{2} \in \mathbb{Q}(\sqrt{2})
 \end{align*}
 
-设 $a=a+b \sqrt{2} \neq 0, \quad$ 则 $a-b \sqrt{2} \neq 0$ 且
+设 $\a=a+b \sqrt{2} \neq 0, \quad$ 则 $a-b \sqrt{2} \neq 0$ 且
 \begin{align*}
-\frac{\beta}{a}= & \frac{c+d \sqrt{2}}{a+b \sqrt{2}}=\frac{(c+d \sqrt{2})(a-b \sqrt{2})}{(a+b \sqrt{2})(a-b \sqrt{2)}}\\[6pt]
+\frac{\beta}{\a}= & \frac{c+d \sqrt{2}}{a+b \sqrt{2}}=\frac{(c+d \sqrt{2})(a-b \sqrt{2})}{(a+b \sqrt{2})(a-b \sqrt{2)}}\\[6pt]
 = & \frac{a c-2 b d}{a^{2}-2 b^{2}}+\frac{a d-b c}{a^{2}-2 b^{2}} \sqrt{2} \in \mathbb{Q}(\sqrt{2})
 \end{align*}
-\qed
+
 \end{frame}
 
 \begin{frame}
 \begin{rem}
 有理数域是最小的数域。
 %也就是说，任何数域都包含有理数域作为它的一部分。
+
+
 \pf
 设$P$为一个数域.
 \begin{itemize}
@@ -176,9 +178,51 @@ a \beta & =(a c+2 b d)+(a d+b c) \sqrt{2} \in \mathbb{Q}(\sqrt{2})
 即
     任何数域都包含有理数域作为它的一部分.
 
-\qed
 \end{rem}
 
 \end{frame}
 
+
+\begin{frame}
+
+\begin{defi}
+设$x$是一个符号(文字)，$n$为非负整数. 
+形式表达式  
+\[
+a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,
+\]                
+其中$a_0, a_1, \ldots, a_n\in P$, 称为系数在数域$P$中的一元多项式，简称为\alert{数域$P$上的一元多项式}.
+\end{defi}
+
+
+\begin{rem}
+\begin{itemize}
+\item 符号$x$ 可以是为未知数，
+也可以是其它待定事物.
+\item 这里 $a_ix^i$ 称为 \alert{$i$次项}, $a_i$ 称为 \alert{$i$次项系数}.
+
+若$a_n\neq 0$, 则称 $a_n x^n$ 为\alert{首项}.
+\item 习惯上记为$f (x), g(x), \ldots$或 $f, g, \ldots$ 
+上述形式表达式可写为         
+\[
+\sum_{i=0}a_i x^i.
+\]       
+\end{itemize}
+\end{rem}
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item 零多项式  ——系数全为0的多项式
+\item 多项式相等 ——$ f (x)=g(x)$当且仅当同次项的系
+数全相等 （系数为零的项除外）
+\item 多项式 $f (x)$的次数 —— $f (x)$的最高次项对应的幂
+次，记作 $\deg (f (x))$.
+
+如： $f (x) =3x^3+4x^2-5x+6$的次数为3，即
+$\deg (f (x))=3$
+
+\end{itemize}
+
+\end{frame}
 \end{document} 
