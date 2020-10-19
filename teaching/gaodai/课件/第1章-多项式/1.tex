@@ -34,6 +34,13 @@
 
 \usepackage{minitoc}
 
+\usepackage{array}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
+
 
 \setbeamertemplate{theorems}[numbered]
 \newtheorem{thm}{定理}
@@ -74,6 +81,9 @@
 
 \definecolor{blue}{rgb}{0,0.08,1}
 \newcommand{\blue}{\textcolor{blue}}
+
+\definecolor{red}{rgb}{1,0.08,0}
+\newcommand{\red}{\textcolor{red}}
 
   \usepackage{graphicx}
   \DeclareGraphicsExtensions{.eps}
@@ -223,6 +233,122 @@ a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,
 $\deg (f (x))=3$
 
 \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+	\setlength{\tabcolsep}{2mm}{
+\begin{tabular}{R{2cm}|R{10pt} R{20pt}R{20pt}R{15pt}|R{1.3cm}}
+\blue{$x^{2}-3 x +1$} & \red{$ 3 x^{3}$}& \red{$+4 x^{2}$} & \red{$-5 x$} & \red{$+6$}  & $3x +13$ \\
+&  $3 x^{3}$ &$-9 x^{2}$ & $+3 x$  & \\
+ \cline{2-5}
+&& $13 x^{2}$& $-8 x$ & +6  & \\
+ & &$13 x^{2}$ & $-39 x$ & +13 & \\
+  \cline{2-5}
+&&& $ 31 x$& -7 & 
+\end{tabular}}
+\end{center}
+		\[
+	\red{f(x)}=q(x) \blue{g(x)} +r(x)
+	\]
+\end{frame}
+
+
+\begin{frame}
+	\begin{exa}
+$$
+\begin{array}{l}
+	f(x)=x^{4}+3 x^{3}-x^{2}-4 x-3 \\
+	g(x)=3 x^{3}+10 x^{2}+2 x-3
+\end{array}
+$$
+求 $(f(x), g(x))$, 并求 $u(x), v(x)$ 使
+$$
+(f(x), g(x))=u(x) f(x)+v(x) g(x)
+$$
+	\end{exa}
+\end{frame}
+
+
+\begin{frame}
+辗转相除法可按下面的格式来作:
+	\begin{center}
+		\renewcommand\arraystretch{1.3}
+		\begin{tabular}{R{3cm} |R{4cm}|L{1.5cm}}
+			\blue{$3x^3+10x^2+2x-3$}&\red{$x^4+3x^3-x^2\, -4x-3$}&$\frac{1}{3}x-\frac{1}{9}$\\
+			& $x^4+\frac{10}{3}x^3+\frac{2}{3}x^2-x\qquad $& $=q_1(x)$\\
+			\cline{2-2}
+			& $-\frac{1}{3}x^3-\frac{5}{3}x^2-3x-3\, $ & \\
+			& $-\frac{1}{3}x^3-\frac{10}{9}x^2-\frac{2}{9}x+\frac{1}{3}$ & \\
+			\cline{2-2}
+			& $r_1(x)= -\frac{5}{9}x^2-\frac{25}{9}x-\frac{10}{3}$ & 
+		\end{tabular}
+	\end{center}
+	
+	
+	\[
+	\red{f(x)}=q_1(x) \blue{g(x)} +r_1(x)
+	\]
+\end{frame}
+
+
+
+
+\begin{frame}
+	\begin{center}
+				\renewcommand\arraystretch{1.3}
+		\begin{tabular}{R{1.5cm}|R{3cm} |R{4cm}|L{1.7cm}}
+$-\frac{27}{5}x+9$ &\red{$3x^3+10x^2+2x-3$}&{$x^4+3x^3-x^2\, -4x-3$}&$\frac{1}{3}x-\frac{1}{9}$\\
+$=q_2(x)$ & $3x^3+15x^2+18x\quad $ & $x^4+\frac{10}{3}x^3+\frac{2}{3}x^2-x\qquad $& $=q_1(x)$\\
+ \cline{2-3}
+ &$ -5x^2-16x-3$ & $-\frac{1}{3}x^3-\frac{5}{3}x^2-3x-3\, $ & \\
+  &$ -5x^2-25x-30$ & $-\frac{1}{3}x^3-\frac{10}{9}x^2-\frac{2}{9}x+\frac{1}{3}$ & \\
+   \cline{2-3}
+  &$ r_2(x) = 9x+27$ & \blue{$r_1(x) =-\frac{5}{9}x^2-\frac{25}{9}x-\frac{10}{3}$} & 
+		\end{tabular}
+	\end{center}
+	\pause
+	
+\begin{align*}
+	{f(x)} & =q_1(x) {g(x)} +r_1(x)\\
+\red{g(x)} & =q_2(x) \blue{r_1(x)} +r_2(x)
+\end{align*}
 
 \end{frame}
+
+
+
+
+\begin{frame}
+	\begin{center}
+				\renewcommand\arraystretch{1.3}
+		\begin{tabular}{R{1.5cm}|R{3cm} |R{4cm}|L{1.7cm}}
+			$-\frac{27}{5}x+9$ &{$3x^3+10x^2+2x-3$}&{$x^4+3x^3-x^2\, -4x-3$}&$\frac{1}{3}x-\frac{1}{9}$\\
+			$=q_2(x)$ & $3x^3+15x^2+18x\quad $ & $x^4+\frac{10}{3}x^3+\frac{2}{3}x^2-x\qquad $& $=q_1(x)$\\
+			\cline{2-3}
+			&$ -5x^2-16x-3$ & $-\frac{1}{3}x^3-\frac{5}{3}x^2-3x-3\, $ & \\
+			&$ -5x^2-25x-30$ & $-\frac{1}{3}x^3-\frac{10}{9}x^2-\frac{2}{9}x+\frac{1}{3}$ & \\
+			\cline{2-3}
+			&\blue{$r_2(x) = 9x+27$} & \red{$r_1(x) =-\frac{5}{9}x^2-\frac{25}{9}x-\frac{10}{3}$} & $-\frac{5}{81}x-\frac{10}{81}$\\
+			& & $-\frac{5}{9}x^2-\frac{5}{3}x$ & $=q_3(x)$\\
+			\cline{3-3}
+			& & $-\frac{10}{9}x-\frac{10}{3}$ & \\
+			& & $-\frac{10}{9}x-\frac{10}{3}$ & \\
+			\cline{3-3}
+			& & 0 & \\
+		\end{tabular}
+	\end{center}
+	
+	
+	\begin{align*}
+		{f(x)} & =q_1(x) {g(x)} +r_1(x)\\
+		{g(x)} & =q_2(x) {r_1(x)} +r_2(x)\\
+		\red{r_1(x)} & = q_3(x) \blue{r_2(x)}
+	\end{align*}
+	
+\end{frame}
+
+
+
 \end{document} 

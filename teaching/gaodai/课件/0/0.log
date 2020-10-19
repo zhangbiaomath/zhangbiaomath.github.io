@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  17 OCT 2020 08:59
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  19 OCT 2020 16:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1333,10 +1333,10 @@ File: gupai.jpg Graphic file (type bmp)
 ]
 
 LaTeX Font Warning: Font shape `TU/PingFangSC(0)/m/it' undefined
-(Font)              using `TU/PingFangSC(0)/m/n' instead on input line 457.
+(Font)              using `TU/PingFangSC(0)/m/n' instead on input line 456.
 
 
-Overfull \vbox (3.36653pt too high) detected at line 457
+Overfull \vbox (3.36653pt too high) detected at line 456
  []
 
 [17
@@ -1360,13 +1360,13 @@ Overfull \vbox (3.36653pt too high) detected at line 457
 ] [26
 
 ]
-Overfull \vbox (5.99142pt too high) detected at line 641
+Overfull \vbox (5.99142pt too high) detected at line 640
  []
 
 [27
 
 ]
-Overfull \vbox (6.30135pt too high) detected at line 670
+Overfull \vbox (6.30135pt too high) detected at line 669
  []
 
 [28
@@ -1417,11 +1417,11 @@ File: r=1-sintheta.png Graphic file (type bmp)
 \tf@snm=\write8
 \openout8 = `0.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1011.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1011.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1010.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1010.
  (./0.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1011.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1011.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1010.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1010.
 
 Package rerunfilecheck Info: File `0.out' has not changed.
 (rerunfilecheck)             Checksum: 652E09D36FC4495068B337B253E9166A;466.
