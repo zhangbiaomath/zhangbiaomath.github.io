@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{定理是什么？}{2}{0}{1}
+\beamer@sectionintoc {2}{证明}{10}{0}{2}
+\beamer@sectionintoc {3}{例子的作用}{16}{0}{3}
+\beamer@sectionintoc {4}{定义}{18}{0}{4}
+\beamer@sectionintoc {5}{优劣比较}{25}{0}{5}
