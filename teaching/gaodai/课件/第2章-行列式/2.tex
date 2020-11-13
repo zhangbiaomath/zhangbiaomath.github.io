@@ -1,0 +1,308 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[13pt,fontset=mac]{ctexbeamer}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{amsmath,amssymb,amsthm}             % AMS Math
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\linespread{1.3}
+
+\usepackage{mathrsfs}  %花写字母
+ \usepackage{mathdots}
+
+%%%=== theme ===%%%
+% \usetheme{Warsaw}
+%\usetheme{Copenhagen}
+%\usetheme{Singapore}
+\usetheme{Madrid}
+%\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+% \usefonttheme{structureitalicserif}
+%%\useinnertheme{rounded}
+%%\useinnertheme{inmargin}
+\useinnertheme{circles}
+%\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[page number]
+
+
+
+
+\usepackage{minitoc}
+
+\usepackage{array}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
+
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{thm}{定理}
+\newtheorem{lem}{引理}
+\newtheorem{exa}{例}
+\newtheorem*{theo}{定理}
+\newtheorem*{defi}{定义}
+\newtheorem*{coro}{推论}
+\newtheorem*{ex}{练习}
+\newtheorem*{rem}{注}
+\newtheorem*{prop}{性质}
+\newtheorem*{qst}{问题}
+
+\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
+\def\pf{{\bf 证明~~ }}
+\def\sol{{\bf 解~~ }}
+
+
+
+\def\R{\mathbb{R}}
+\def\Rn{\mathbb{R}^n}
+\def\A{\mathscr{A}}
+\def\B{\mathscr{B}}
+\def\D{\mathscr{D}}
+\def\E{\mathscr{E}}
+\def\O{\mathscr{O}}
+
+\def\rank{\operatorname{rank}}
+\def\dim{\operatorname{dim}}
+\def\0{\mathbf{0}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\r{\gamma}
+
+\usepackage{color}
+\definecolor{linkcol}{rgb}{0,0,0.4}
+\definecolor{citecol}{rgb}{0.5,0,0}
+
+\definecolor{blue}{rgb}{0,0.08,1}
+\newcommand{\blue}{\textcolor{blue}}
+
+\definecolor{red}{rgb}{1,0.08,0}
+\newcommand{\red}{\textcolor{red}}
+
+  \usepackage{graphicx}
+  \DeclareGraphicsExtensions{.eps}
+%   \usepackage[a4paper,pagebackref,hyperindex=true,pdfnewwindow=true]{hyperref}
+
+
+\begin{document}
+
+
+
+\title[]{第二章 \quad 行列式}
+\author[]{{\large 张彪}\\  }
+\institute[]{{\normalsize
+		天津师范大学\\[6pt]
+		zhang@tjnu.edu.cn}}
+
+\date{}
+
+
+\AtBeginSection[]
+{
+\setcounter{exa}{0}
+\setcounter{equation}{0}
+}
+
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+%\begin{frame}{Outline}
+%	\tableofcontents
+%\end{frame}
+
+%\section{数域}
+\begin{frame}{ 1.利用定义计算 }
+
+\[
+		\left|\begin{array}{ccccc}
+			0 & 0 & \cdots & 0 & 1 \\
+			0 & 0 & \cdots & 2 & 0 \\
+			\vdots & \vdots & & \vdots & \vdots \\
+			0 & n-1 & \cdots & 0 & 0 \\
+			n & 0 & \cdots & 0 & 0
+		\end{array}\right| 
+%	=(-1)^{\tau(n \cdots 321)} n !=(-1)^{\frac{n(n-1)}{2}} n ! 
+\]
+\vspace{20pt}
+\[
+			\left|
+	\begin{array}{ccccc}
+			0 & 1 & 0 & \cdots & 0 \\
+			0 & 0 & 2 & \cdots & 0 \\
+			\vdots & \vdots & \vdots & & \vdots \\
+			0 & 0 & 0 & \cdots & n-1 \\
+			n & 0 & 0 & \cdots & 0
+		\end{array}\right|
+%	=(-1)^{\tau(23 \cdots n 1)} n !=(-1)^{n-1} n !
+\]
+
+\end{frame}
+
+
+
+\begin{frame}{2. 利用行列式性质把行列式化为上、下三角形行列式.}
+\[
+	\left|\begin{array}{llll}
+		3 & 1 & 1 & 1 \\
+		1 & 3 & 1 & 1 \\
+		1 & 1 & 3 & 1 \\
+		1 & 1 & 1 & 3
+	\end{array}\right|
+\qquad
+	\left|\begin{array}{cccc}
+		1+x & 1 & 1 & 1 \\
+		1 & 1-x & 1 & 1 \\
+		1 & 1 & 1+y & 1 \\
+		1 & 1 & 1 & 1-y
+	\end{array}\right|
+\]
+\end{frame}
+
+
+
+\begin{frame}{3. 行列式按一行(一列)展开,或按多行(多列)展开(Laplace 定理)}
+		\text { 公式: }
+\begin{align*}
+\left|\begin{array}{cc}
+		A & 0 \\
+		C_{1} & B
+	\end{array}\right| & =\left|\begin{array}{cc}
+		A & C_{2} \\
+		0 & B
+	\end{array}\right|=|A||B|,\\
+\left|\begin{array}{cc}
+		0 & A \\
+		B & D_{1}
+	\end{array}\right| & =\left|\begin{array}{cc}
+		D_{2} & A \\
+		B & 0
+	\end{array}\right|=(-1)^{m n}|A| B \mid, 
+\end{align*}
+ { 其中 } $A, B$  { 分别是 } $m,  n$  { 阶的方阵. }
+\end{frame}
+
+
+\begin{frame}{3. 行列式按一行(一列)展开,或按多行(多列)展开(Laplace 定理)}
+$$
+D_{2 n}=
+\left|\begin{array}{cccccc}
+	a_{n} & & & & & b_{n} \\
+	& \ddots & & & \iddots & \\
+	& & a_{1} & b_{1} & & \\
+	& & c_{1} & d_{1} & & \\
+	&  \iddots  & & & \ddots & \\
+	c_{n} & & & &  & d_{n}
+\end{array}\right|
+=\prod_{i=1}^{n}\left(a_{i} d_{i}-b_{i} c_{i}\right) .
+$$
+\end{frame}
+
+
+\begin{frame}{4. 箭头形行列式或者可以化为箭头形的行列式}
+\begin{align*}
+\left|\begin{array}{ccccc}
+	a_{0} & 1 & 1 & \cdots & 1 \\
+	1 & a_{1} & 0 & \cdots & 0 \\
+	1 & 0 & a_{2} & \cdots & 0 \\
+	\vdots & \vdots & \vdots & & \vdots \\
+	1 & 0 & 0 & \cdots & a_{n}
+\end{array}\right|
+& =\left|\begin{array}{ccccc}
+	a_{0}-\sum_{i=1}^{n} \frac{1}{a_{i}} & 1 & 1 & \cdots & 1 \\
+	0 & a_{1} & 0 & \cdots & 0 \\
+	0 & 0 & a_{2} & \cdots & 0 \\
+	\vdots & \vdots & \vdots & & \vdots \\
+	0 & 0 & 0 & \cdots & a_{n}
+\end{array}\right|\\[6pt]
+& =\left(a_{0}-\sum_{i=1}^{n} \frac{1}{a_{i}}\right) a_{1} a_{2} \cdots a_{n}
+\end{align*}
+\end{frame}
+
+
+\begin{frame}
+	\small{
+\begin{align*}
+& 	\left|\begin{array}{ccccc}
+		x_{1}-m & x_{2} & x_{3} & \cdots & x_{n} \\
+		x_{1} & x_{2}-m & x_{3} & \cdots & x_{n} \\
+		x_{1} & x_{2} & x_{3}-m & \cdots & x_{n} \\
+		\vdots & \vdots & \vdots & & \vdots \\
+		x_{1} & x_{2} & x_{3} & \cdots & x_{n}-m
+	\end{array}\right|\\[-3pt]
+= & \left|\begin{array}{ccccc}
+		x_{1}-m & x_{2} & x_{3} & \cdots & x_{n} \\
+		m & -m & 0 & \cdots & 0 \\
+		m & 0 & -m & \cdots & 0 \\
+		\vdots & \vdots & \vdots & & \vdots \\
+		m & 0 & 0 & \cdots & 0-m
+	\end{array}\right|\\[-3pt]
+ = & \left|\begin{array}{ccccc}
+		\sum_{i=1}^{n} x_{i}-m & x_{2} & x_{3} & \cdots & x_{n} \\
+		0 & -m & 0 & \cdots & 0 \\
+		0 & 0 & -m & \cdots & 0 \\
+		\vdots & \vdots & \vdots & & \vdots \\
+		0 & 0 & 0 & \cdots & 0-m
+	\end{array}\right|=\left(\sum_{i=1}^{n} x_{i}-m\right)(-m)^{n-1}
+\end{align*}}
+\end{frame}
+
+\begin{frame}
+\begin{align*}
+& 	\left|\begin{array}{ccccc}
+		1 & 1 & \cdots & 1 & a_{0} \\
+		0 & 0 & \cdots & a_{1} & 1 \\
+		\vdots & \vdots & & \vdots & \vdots \\
+		0 & a_{n-1} & \cdots & 0 & 1 \\
+		a_{n} & 0 & \cdots & 0 & 1
+	\end{array}\right| \\[8pt]
+= & \left|\begin{array}{ccccc}
+		1 & 1 & \cdots & 1 & a_{0}-\sum_{i=1}^{n} \frac{1}{a_{i}} \\
+		0 & 0 & \cdots & a_{1} & 0 \\
+		\vdots & \vdots & & \vdots & \vdots \\
+		0 & a_{n-1} & \cdots & 0 & 0 \\
+		a_{n} & 0 & \cdots & 0 & 0
+	\end{array}\right|  \\[8pt]
+= & (-1)^{\frac{n(n+1)}{2}} a_{1} a_{2} \cdots a_{n}\left(a_{0}-\sum_{i=1}^{n} \frac{1}{a_{i}}\right)
+\end{align*}
+\end{frame}
+
+
+
+
+\begin{frame}
+\begin{align*}
+	& \left|\begin{array}{ccccc}
+		b & \cdots & b & b & a \\
+		b & \cdots & b & a & b \\
+		b & \cdots & a & b & b \\
+		\vdots & & \vdots & \vdots & \vdots \\
+		a & \cdots & b & b & b
+	\end{array}\right|   
+=	\left|\begin{array}{ccccc}
+	b & b & \cdots & b & a \\
+	0 & 0 & \cdots & a-b & b-a \\
+	\vdots & \vdots & & \vdots & \vdots \\
+	0 & a-b & \cdots & 0 & b -a\\
+	a-b& 0 & \cdots & 0 & b-a
+\end{array}\right|   \\[8pt]
+=	& \left|\begin{array}{ccccc}
+b & b & \cdots & b & a+(n-1)b \\
+0 & 0 & \cdots & a-b & 0 \\
+\vdots & \vdots & & \vdots & \vdots \\
+0 & a-b & \cdots & 0 & 0 \\
+a-b& 0 & \cdots & 0 & 0
+\end{array}\right|   \\[8pt]
+= & (-1)^{\frac{n(n-1)}{2}}(a+(n-1) b)(a-b)^{n-1}
+\end{align*}
+\end{frame}
+
+
+\end{document} 
