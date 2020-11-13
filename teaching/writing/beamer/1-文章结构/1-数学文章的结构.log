@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  3 NOV 2020 19:32
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.12)  13 NOV 2020 22:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1356,10 +1356,10 @@ Package rerunfilecheck Info: File `1-数学文章的结构.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30355 strings out of 479418
- 657694 string characters out of 5884585
- 915304 words of memory out of 5000000
- 47194 multiletter control sequences out of 15000+600000
+ 30347 strings out of 479418
+ 657630 string characters out of 5884585
+ 915080 words of memory out of 5000000
+ 47186 multiletter control sequences out of 15000+600000
  540444 words of font info for 96 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  65i,11n,77p,834b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
