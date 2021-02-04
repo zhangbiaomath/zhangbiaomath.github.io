@@ -17,7 +17,8 @@
   + 2020年8月1日至3日，参加了曲阜师范大学举办的“2020年解析组合学研讨会”线上会议，并做题为“Multivariate stable Eulerian polynomials on segmented permutations”的邀请报告。 [website](https://math.qfnu.edu.cn/__local/D/52/7D/7243247DE4E52AD3B02F646B72E_36E33C98_83C6D.pdf)
   + 2020年11月20日至23日，参加了浙江师范大学举办的“第五届组合数学与符号计算研讨会”，并做题为“Equivariant Kazhdan-Lusztig polynomials of thagomizer matroids”的邀请报告。
   + 2020年12月11日至14日，参加了大连理工大学举办的“2020年大连组合数学研讨会”，并做题为“Real-rootedness of variations of Eulerian polynomials”的邀请报告。
-  + 2020年12月31日，受上海交通大学邀请，做题为“Distributions of mesh patterns of short lengths”的线上报告。[website](http://www.math.sjtu.edu.cn/Default/seminarshow/tags/MDAwMDAwMDAwMLGedpg)
+  + 2020年12月31日，受上海交通大学邀请，做题为“Multivariate stable Eulerian polynomials on segmented permutations”的线上报告。[website](http://www.math.sjtu.edu.cn/Default/seminarshow/tags/MDAwMDAwMDAwMLGedpg)
+  
 + 2019
   + 2019年12月13日至16日，在天津师范大学组织的“2019李理论及相关课题研讨会上”做40分钟报告。
   + 2019年11月9日至10日，在南开大学举办的“组合数学研讨会”做45分钟邀请报告。
