@@ -83,6 +83,8 @@
 
 
 # Referee for: 
++ Transactions of American Mathematical Society
++ Advances in Applied Mathematics
 + Algebraic Combinatorics
 + Applied Mathematics and Computation
 + Discrete Applied Mathematics
