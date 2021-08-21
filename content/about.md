@@ -30,8 +30,6 @@
   + 2021年8月，张彪参加了山东大学举办“第十一届海峡两岸图论与组合数学学术会议”（线上），并做题为“The log-concavity of Kazhdan-Lusztig polynomials of uniform
 matroids”的小组报告。[website](http://gtc2021.allconfs.org/meeting/index.asp?id=9946)
 
-线上
-
 
 + 2020
   + 2020年6月11日，受山东大学数学与交叉科学研究中心邀请，做题为“Distributions of mesh patterns of short lengths”的线上报告。[website](http://www.mis.sdu.edu.cn/info/1036/1802.htm)
