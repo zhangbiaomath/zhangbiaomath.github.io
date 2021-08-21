@@ -24,8 +24,9 @@
   + 2021年5月14日至16日，张彪到苏州参加西交利物浦大学举办的“超平面配置会议”。
   + 2021年6月4日至7日，张彪到桂林参加“第十二届中国数学会计算机数学大会 (CM2021)”。 [website](http://www.smartchair.org/hp/CM2021)
   + 2021年6月26日，张彪到南开大学数学科学学院参加了“南开大学-天津师范大学数学学院双边学术论坛”，并做题为“Chromatic nonsymmetric polynomials of Dyck graphs are slide-positive”的学术报告。[website](http://sxkx.tjnu.edu.cn/info/1039/4156.htm)
-  + 2021年7月2日至5日 张彪到哈尔滨工业大学参加“哈工大组合数学会议”，并做题为“Chromatic nonsymmetric polynomials of Dyck graphs are slide-positive
+  + 2021年7月2日至5日，张彪到哈尔滨工业大学参加“哈工大组合数学会议”，并做题为“Chromatic nonsymmetric polynomials of Dyck graphs are slide-positive
 ”学术报告。 [website](http://im.hit.edu.cn/2021/0630/c8390a256371/page.htm)
+  + 2021年8月5日，张彪应中科院陈绍示邀请，做题为“Chromatic nonsymmetric polynomials of Dyck graphs are slide-positive”的线上报告。[website](http://www.amss.cas.cn/mzxsbg/202106/t20210625_6117162.html)
   + 2021年8月，海峡两岸
 
 
@@ -35,7 +36,7 @@
   + 2020年8月1日至3日，参加了曲阜师范大学举办的“2020年解析组合学研讨会”线上会议，并做题为“Multivariate stable Eulerian polynomials on segmented permutations”的邀请报告。 [website](https://math.qfnu.edu.cn/__local/D/52/7D/7243247DE4E52AD3B02F646B72E_36E33C98_83C6D.pdf)
   + 2020年11月20日至23日，参加了浙江师范大学举办的“第五届组合数学与符号计算研讨会”，并做题为“Equivariant Kazhdan-Lusztig polynomials of thagomizer matroids”的邀请报告。[website](http://sjxy.zjnu.edu.cn/2020/1127/c11744a339153/page.htm)
   + 2020年12月11日至14日，参加了大连理工大学举办的“2020年大连组合数学研讨会”，并做题为“Real-rootedness of variations of Eulerian polynomials”的邀请报告。
-  + 2020年12月31日，受上海交通大学邀请，做题为“Multivariate stable Eulerian polynomials on segmented permutations”的线上报告。[website](http://www.math.sjtu.edu.cn/Default/seminarshow/tags/MDAwMDAwMDAwMLGedpg)
+  + 2020年12月31日，应上海交通大学马俊邀请，做题为“Multivariate stable Eulerian polynomials on segmented permutations”的线上报告。[website](http://www.math.sjtu.edu.cn/Default/seminarshow/tags/MDAwMDAwMDAwMLGedpg)
   
 + 2019
   + 2019年12月13日至16日，在天津师范大学组织的“2019李理论及相关课题研讨会上”做40分钟报告。
