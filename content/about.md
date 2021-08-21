@@ -27,7 +27,10 @@
   + 2021年7月2日至5日，张彪到哈尔滨工业大学参加“哈工大组合数学会议”，并做题为“Chromatic nonsymmetric polynomials of Dyck graphs are slide-positive
 ”学术报告。 [website](http://im.hit.edu.cn/2021/0630/c8390a256371/page.htm)
   + 2021年8月5日，张彪应中科院陈绍示邀请，做题为“Chromatic nonsymmetric polynomials of Dyck graphs are slide-positive”的线上报告。[website](http://www.amss.cas.cn/mzxsbg/202106/t20210625_6117162.html)
-  + 2021年8月，海峡两岸
+  + 2021年8月，张彪参加了山东大学举办“第十一届海峡两岸图论与组合数学学术会议”（线上），并做题为“The log-concavity of Kazhdan-Lusztig polynomials of uniform
+matroids”的小组报告。[website](http://gtc2021.allconfs.org/meeting/index.asp?id=9946)
+
+线上
 
 
 + 2020
