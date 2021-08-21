@@ -18,17 +18,15 @@
 
 
 + 2021
-  + 2021年5月7至9日，南开大学组合数学中心举办了“2021南开组合单峰性”学术研讨会。[website](http://www.combinatorics.net.cn/news/newsM.aspx?link=21dfxyth)
-  + 2021年4月16至18日，南开大学组合数学中心举办了“2021组合、代数与几何”学术研讨会。[website](http://www.combinatorics.net.cn/news/newsM.aspx?link=21zhdsjh)
+  + 2021年3月20日至21日，张彪到南开大学组合数学中心参加了"Kazhdan-Lusztig理论"研讨会。 [website](http://www.combinatorics.net.cn/news/newsN.aspx?link=21KZll)
+  + 2021年4月16至18日，张彪到南开大学组合数学中心参加了“2021组合、代数与几何”学术研讨会。[website](http://www.combinatorics.net.cn/news/newsM.aspx?link=21zhdsjh)
+  + 2021年5月7至9日，张彪到南开大学组合数学中心参加了“2021南开组合单峰性”学术研讨会。[website](http://www.combinatorics.net.cn/news/newsM.aspx?link=21dfxyth)
   + 2021年5月14日至16日，张彪到苏州参加“超平面配置会议”。
-  + 2021年3月20日至21日，南开大学组合数学中心举办了"Kazhdan-Lusztig理论"研讨会。 [website](http://www.combinatorics.net.cn/news/newsN.aspx?link=21KZll)
   + 2021年6月4日至7日，张彪到桂林参加“第十二届中国数学会计算机数学大会 (CM2021)”。 [website](http://www.smartchair.org/hp/CM2021)
   + 2021年6月26日，张彪到南开大学参加了“南开大学-天津师范大学数学学院双边学术论坛”，并做题为“Chromatic nonsymmetric polynomials of Dyck graphs are slide-positive”的学术报告。[website](http://sxkx.tjnu.edu.cn/info/1039/4156.htm)
-
-
   + 2021年7月2日至5日 张彪到哈尔滨工业大学参加“哈工大组合数学会议”，并做题为“Chromatic nonsymmetric polynomials of Dyck graphs are slide-positive
-”学术报告。
-  [website](http://im.hit.edu.cn/2021/0630/c8390a256371/page.htm)
+”学术报告。 [website](http://im.hit.edu.cn/2021/0630/c8390a256371/page.htm)
+  + 2021年8月，海峡两岸
 
 
 + 2020
