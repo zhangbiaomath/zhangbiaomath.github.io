@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.26)  1 OCT 2021 13:39
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.26)  1 OCT 2021 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1242,29 +1242,55 @@ File: tjnu.jpg Graphic file (type bmp)
 [1
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 123
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.131 \end{frame}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.131 \end{frame}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+File: writing.png Graphic file (type bmp)
+<writing.png>
+LaTeX Font Info:    Trying to load font information for U+msa on input line 131
 .
- (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 123
+LaTeX Font Info:    Trying to load font information for U+msb on input line 131
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 12
-3.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 13
+1.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 123.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 131.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 123.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 131.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 123.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 131.
  [2
 
 ] [3
@@ -1278,11 +1304,13 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 
 ] [7
 
+] [8
+
 ]
-Overfull \vbox (24.25653pt too high) detected at line 209
+Overfull \vbox (24.25653pt too high) detected at line 234
  []
 
-[8
+[9
 
 ]
 \tf@nav=\write6
@@ -1299,12 +1327,12 @@ Package rerunfilecheck Info: File `0-引言.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29030 strings out of 476919
- 628817 string characters out of 5821840
- 942478 words of memory out of 5000000
- 48366 multiletter control sequences out of 15000+600000
+ 29039 strings out of 476919
+ 628915 string characters out of 5821840
+ 942522 words of memory out of 5000000
+ 48373 multiletter control sequences out of 15000+600000
  409156 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  145i,11n,146p,448b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 0-引言.pdf (8 pages).
+Output written on 0-引言.pdf (9 pages).
