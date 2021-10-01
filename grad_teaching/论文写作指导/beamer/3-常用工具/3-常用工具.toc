@@ -2,6 +2,7 @@
 \beamer@subsectionintoc {1}{1}{LaTex 简介}{3}{0}{1}
 \beamer@subsectionintoc {1}{2}{中文排版}{9}{0}{1}
 \beamer@subsectionintoc {1}{3}{LaTeX发行版与编辑器}{13}{0}{1}
+\beamer@subsectionintoc {1}{4}{网络资源}{18}{0}{1}
 \beamer@sectionintoc {2}{Mathpix Snip - 数学公式识别神器}{19}{0}{2}
 \beamer@sectionintoc {3}{Tables Generator - 表格识别神器 }{20}{0}{3}
 \beamer@sectionintoc {4}{JabRef-文献管理软件}{21}{0}{4}
