@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.26)  1 OCT 2021 16:28
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.26)  1 OCT 2021 16:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**3-常用工具.tex
-(./3-常用工具.tex
+**常用工具.tex
+(./常用工具.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/ctex/ctexbeamer.cls
@@ -1041,8 +1041,8 @@ File: t3cmr.fd 2001/12/31 TIPA font definitions
 LaTeX Font Warning: Font shape `T3/lmss/m/n' undefined
 (Font)              using `T3/cmr/m/n' instead on input line 357.
 
-))) (./3-常用工具.aux)
-\openout1 = `3-常用工具.aux'.
+))) (./常用工具.aux)
+\openout1 = `常用工具.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
 LaTeX Font Info:    ... okay on input line 55.
@@ -1119,9 +1119,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 55.
 LaTeX Info: Redefining \pageref on input line 55.
 LaTeX Info: Redefining \nameref on input line 55.
- (./3-常用工具.out) (./3-常用工具.out)
+ (./常用工具.out) (./常用工具.out)
 \@outlinefile=\write5
-\openout5 = `3-常用工具.out'.
+\openout5 = `常用工具.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 55.
@@ -1252,7 +1252,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 55.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  TU/lmtt/b/n --> TU/lmtt/b/n on input line 55.
- (./3-常用工具.nav)
+ (./常用工具.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 60.
@@ -1262,50 +1262,61 @@ File: tjnu.jpg Graphic file (type bmp)
 <tjnu.jpg>
 [1
 
-] (./3-常用工具.toc) [2
+] (./常用工具.toc) [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 241
+LaTeX Font Info:    Trying to load font information for U+msa on input line 108
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 241
+LaTeX Font Info:    Trying to load font information for U+msb on input line 108
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 24
-1.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
+8.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 241.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 108.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 241.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 108.
  [3
 
 ]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 269.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 269.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 269.
+File: Knuth.jpg Graphic file (type bmp)
+<Knuth.jpg>
  [4
 
 ]
+Missing character: There is no ε (U+03B5) in font [lmsans10-regular]:mapping=te
+x-text;!
+File: Lamport.jpg Graphic file (type bmp)
+<Lamport.jpg>
+
 [5
 
-] [6
+]
+File: LATEX.jpg Graphic file (type bmp)
+<LATEX.jpg>
+ [6
 
 ] [7
 
-] [8
+]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 264.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 264.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 264.
+ [8
 
 ] [9
 
@@ -1321,30 +1332,36 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
 
 ] [15
 
+] [16
+
+] [17
+
+] [18
+
 ]
 \tf@nav=\write6
-\openout6 = `3-常用工具.nav'.
+\openout6 = `常用工具.nav'.
 
 \tf@toc=\write7
-\openout7 = `3-常用工具.toc'.
+\openout7 = `常用工具.toc'.
 
 \tf@snm=\write8
-\openout8 = `3-常用工具.snm'.
+\openout8 = `常用工具.snm'.
 
- (./3-常用工具.aux)
+ (./常用工具.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `3-常用工具.out' has not changed.
-(rerunfilecheck)             Checksum: 214C0B353FBD57917B916B8CB36589D5;905.
+Package rerunfilecheck Info: File `常用工具.out' has not changed.
+(rerunfilecheck)             Checksum: 76C2C0E9D5EC6DC4361F9F0DFA045406;1012.
  ) 
 Here is how much of TeX's memory you used:
- 29921 strings out of 476919
- 647098 string characters out of 5821840
- 949977 words of memory out of 5000000
- 49225 multiletter control sequences out of 15000+600000
+ 30096 strings out of 476919
+ 656172 string characters out of 5821840
+ 950252 words of memory out of 5000000
+ 49397 multiletter control sequences out of 15000+600000
  411886 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 145i,11n,146p,450b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 145i,11n,146p,448b,678s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 3-常用工具.pdf (15 pages).
+Output written on 常用工具.pdf (18 pages).
