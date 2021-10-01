@@ -1,10 +1,8 @@
 % !Mode:: "TeX:UTF-8"
-\documentclass[13pt,fontset=mac]{ctexbeamer}
-\usepackage[utf8]{inputenc}
+\documentclass[13pt]{ctexbeamer}
 
 
 \usepackage{amsmath,amssymb,amsthm}             % AMS Math
-%\usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{tikz}
@@ -89,7 +87,7 @@
 
 
 
-\title[]{论文写作指导}
+\title[让LaTeX跑起来]{论文写作指导  ---  让LaTeX跑起来}
 \author[]{{\large 张彪} }
 \institute[]{{\normalsize
 		天津师范大学\\[6pt]
@@ -126,7 +124,7 @@
 
 \section{LaTeX}
 
-
+\subsection{LaTex 简介}
 \begin{frame}
 	\begin{itemize}
 	\item 	TeX
@@ -153,7 +151,7 @@ TeX被普遍认为是一个优秀的排版工具，尤其是对于复杂数学�
 			TeX
 			是一个由美国计算机教授高德纳（Donald Ervin Knuth）编写的排版软件。
 			
-			\item 高德纳最早开始自行编写TeX的原因，是因为当时的电脑排版技术十分粗糙，已经影响到他的巨著《计算机程序设计艺术》的印刷质量。他以典型的黑客思维模式，决定自行编写一个排版软件：TeX。
+			\item 高德纳最早开始自行编写TeX的原因，是因为当时的电脑排版技术十分粗糙，已经影响到他的巨著《计算机程序设计艺术》的印刷质量。作为一名计算机学家，他决定自行编写一个排版软件：TeX。
 		\end{itemize}
 		
 		
@@ -192,6 +190,26 @@ TeX被普遍认为是一个优秀的排版工具，尤其是对于复杂数学�
 
 \end{frame}
 
+
+\begin{frame}{LaTeX}
+
+\begin{itemize}
+\item     LaTeX 是 基于 TeX 的排版系统。
+    
+\item 实际上 LaTeX 利用 TeX 的控制命令，定义了许多新的控制命令并封装成一个可执行文件。
+    
+\item这个可执行文件会去解释 LaTeX 新定义的命令成为 TeX 的控制命令，并最终交由 TeX 引擎进行排版。
+
+\item LaTeX 实际上是一个工具，它将用户按照它的格式编写的文档解释成 TeX 引擎能理解的形式并交付给 TeX 引擎处理，再将最终结果返回给用户。
+\end{itemize}
+
+    
+    
+ 
+\end{frame}
+
+
+
 \begin{frame}{LaTeX}
 \begin{itemize}
 	\item 对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学、物理文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。
@@ -229,30 +247,56 @@ LaTeX的正确的写法是
 	
 
 \end{frame}
+\subsection{中文排版}
 
 
+\begin{frame}{中文排版}
+\begin{itemize}
+    \item 高德纳教授在实现 TeX 的当初并没有考虑到中日韩等字符的处理，而只支持 ASCII 字符。
+    \item 在 XeTeX 出现之前，为了能让 TeX 系统排版中文，国人曾使用了 天元、CCT、CJK 等手段处理中文。其中 天元和 CCT 现在已经基本不用，CJK 因为使用时间长且效果相对较好，现在还有人使用。
 
-\begin{frame}{CTeX 套装}
+    \end{itemize}
+\end{frame}
+    
+    
+    
+    
+\begin{frame}{CTeX 中文套装}
 
 
 \begin{itemize}
-	\item 网站  http://www.ctex.org/
+	\item 
+	CTeX 中文套装是中国科学院吴凌云研究员开发的一种中文LaTeX排版系统，他在MiKTeX的基础上增加了对中文的完整支持。
+	\item 
+	网站  http://www.ctex.org/
 %	\item CTeX 套装是科学院吴凌云研究员的个人作品。
-	\item 在 CTeX 套装刚刚问世之时，因其解决了繁琐的中文字体安装工作，所以广受欢迎。
+
+\item CTeX 中文套装集成了WinEdt, SumatraPDF等工具软件。
 \end{itemize}
- 但是，
+在 CTeX 套装刚刚问世之时，因其解决了中文的排版问题，所以广受欢迎。 但是，
 \begin{itemize}
 	\item  一方面 CTeX 套装已经很久不更新(最新的稳定版本	v2.9.2.164 -- 2012.03.22)，内里的宏包、工具陈旧；
-	\item 另一方面，随着 XeLaTeX 的发展，以及 xeCJK 等技术的成熟，上述这些繁琐的工作已经没有必要而失去意义；
+	\item 另一方面，XeLaTeX等技术逐渐成熟，可以更简便地完成中文排版；
 \end{itemize}
 
-	因此，\alert{现在不推荐使用 CTeX 套装}。
-	
-
+	因此，\alert{现在不推荐使用 CTeX 中文套装}。
 
 %不要安装和使用 CTeX 套装！
 %如\documentclass{ctexart}
 \end{frame}
+
+    
+\begin{frame}{XeTeX}
+
+\begin{itemize}
+    \item 不同于 CJK 等方式使用 TeX 和 pdfTeX 这两个不直接支持 Unicode 字符的引擎，\alert{XeTeX 引擎}直接支持 Unicode 字符。也就是说现在不使用 CJK 也能排版中日韩文的文档了，并且这种方式要比之前的方式更加优秀。
+    
+    \item XeLaTeX 和 XeTeX 的关系与 pdfLaTeX 和 pdfTeX 的关系类似，这里不再赘述。
+
+ \item  使用 XeTeX 引擎需要使用 \alert{UTF-8 编码}。{UTF-8 编码}是 Unicode 编码的一种。
+\end{itemize}
+\end{frame}
+
 
 
 
@@ -270,6 +314,63 @@ LaTeX的正确的写法是
  
 %请在任何情况下优先使用 CTeX 宏集在 LaTeX 中处理中文！
 \end{frame}
+
+\subsection{LaTeX发行版与编辑器}
+\begin{frame}{LaTeX发行版}
+\begin{itemize}
+	\item MiKTex 
+		\begin{itemize}
+	\item
+	MiKTeX 是 mick-tech 公司 TEX/LATEX 最新的
+实施方案及相关程序 MiKTEX 集成软件包
+管理器可以从互联网中安装缺失的部分宏
+包。
+\end{itemize}
+	\item CTeX中文套装 (基于MiKTeX,支持中文，已停更)
+	
+	\item \alert{TeX Live} 
+	\begin{itemize}
+	\item
+	TeX Live是由国际TeX用户组（TUG）整理和发布的TeX软件发行套装，包含与TeX系统相关的各种程序、编辑与查看工具、常用宏包及文档、常用字体及多国语言支持。
+		\item
+	TeX Live是许多Linux/Unix系统默认或推荐的TeX套装，同时也支持包括Windows和Mac OS X等在内的其它操作系统。
+	\end{itemize}
+
+	\item MacTeX -- macOS（OS X）系统下的一个定
+制化的 TeXLive 版本。
+
+\item proTeXt -- MiKTeX-based distribution for Windows 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{TeX Live}
+
+\begin{itemize}
+	\item TeX Live 是 TUG (TeX User Group) 维护和发布的 TeX 系统，可说是「官方」的 TeX 系统。
+	\item 我们推荐任何阶段的 TeX 用户，都尽可能使用 TeX Live，以保持在跨操作系统平台、跨用户的一致性。
+	\item TeX Live 的官方站点是 \href{https://tug.org/texlive/}{https://tug.org/texlive/}
+	\item 建议尝试使用国内大学的镜像站下载。
+	
+	\href{https://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/} {https://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/}
+	
+	
+	\href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/}{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/}
+	
+\end{itemize}
+\end{frame} 
+
+
+\begin{frame}{编辑器}
+\begin{itemize}
+\item  TeXStudio (推荐使用)
+\item TeXmaker
+\item TeXworks (TexLive自带)
+\item TexPad (for Mac users)
+\item WinEdt
+\end{itemize}
+\end{frame}
+
 
 
 \begin{frame}{推荐使用TeXLive + TeXStudio }
@@ -296,49 +397,49 @@ LaTeX的正确的写法是
 
 
 
-
-\begin{frame}
-{ 编译器： TeX Live}
-
+\begin{frame}{线上Latex：  Overleaf}
+网站 
+\href{https://www.overleaf.com/
+}{https://www.overleaf.com/
+}
 \begin{itemize}
-	\item TeX Live 是 TUG (TeX User Group) 维护和发布的 TeX 系统，可说是「官方」的 TeX 系统。
-	\item 我们推荐任何阶段的 TeX 用户，都尽可能使用 TeX Live，以保持在跨操作系统平台、跨用户的一致性。
-	\item TeX Live 的官方站点是 \href{https://tug.org/texlive/}{https://tug.org/texlive/}
-	\item 建议尝试使用国内大学的镜像站下载。
-	
-	\href{https://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/} {https://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/}
-	
-	
-	\href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/}{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/}
-	
-\end{itemize}
-\end{frame} 
+\item 在线编辑
 
-\begin{frame}{编辑器}
-\begin{itemize}
-\item  TeXStudio (推荐使用)
-\item TeXmaker
-\item TeXworks (TexLive自带)
-\item TexPad (for Mac users)
+\item 免安装，免配置
+
+\item 多人协作
+
+\item 版本管理
 \end{itemize}
 \end{frame}
 
 
-
-\section{Mathpix}
-\begin{frame}{Mathpix}
+\begin{frame}{Latex模板}
 \begin{itemize}
-	\item  Mathpix
+    \item Latex工作室  
+    \href{https://www.latexstudio.net/}{https://www.latexstudio.net/}
+    \item Overleaf 
+    \href{https://www.overleaf.com/
+}{https://www.overleaf.com/
+}
+\end{itemize}
+    
+\end{frame}
+
+\section{Mathpix Snip - 数学公式识别神器}
+\begin{frame}{Mathpix Snip}
+\begin{itemize}
+	\item  Mathpix Snip
 	
 \href{https://mathpix.com/}{https://mathpix.com/}
 \end{itemize}
 \end{frame} 
 
 
-\section{JabRef}
+\section{JabRef-文献管理软件}
 \begin{frame}{JabRef}
 \begin{itemize}
-\item  Jabref
+\item  JabRef
 
 \href{https://www.jabref.org/}{https://www.jabref.org/}
 \end{itemize}

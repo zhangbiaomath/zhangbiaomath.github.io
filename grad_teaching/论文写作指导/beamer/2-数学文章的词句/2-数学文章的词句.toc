@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{定理是什么？}{2}{0}{1}
+\beamer@sectionintoc {2}{优劣比较}{3}{0}{2}

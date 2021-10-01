@@ -1,0 +1,214 @@
+\documentclass[13pt]{ctexbeamer}
+
+
+\usepackage{amsmath,amssymb,amsthm}             % AMS Math
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\linespread{1.3}
+
+\usepackage{mathrsfs}  %花写字母
+ 
+
+%%%=== theme ===%%%
+%\usetheme{Warsaw}
+%\usetheme{Copenhagen}
+%\usetheme{Singapore}
+\usetheme{Madrid}
+%\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+% \usefonttheme{structureitalicserif}
+%%\useinnertheme{rounded}
+%%\useinnertheme{inmargin}
+\useinnertheme{circles}
+%\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{footline}[page number]
+\setbeamertemplate{footline}[frame number] 
+
+
+\titlegraphic{\includegraphics[width=2cm]{tjnu.jpg}} 
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{thm}{定理}
+\newtheorem{lem}{引理}
+\newtheorem{exa}{例}
+\newtheorem*{theo}{定理}
+\newtheorem*{conj}{猜想}
+\newtheorem*{defi}{定义}
+\newtheorem*{coro}{推论}
+\newtheorem*{ex}{练习}
+\newtheorem*{rem}{注}
+\newtheorem*{prop}{性质}
+\newtheorem*{qst}{问题}
+
+\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
+\def\pf{{\bf 证明~~ }}
+\def\sol{{\bf 解~~ }}
+
+
+
+\def\R{\mathbb{R}}
+\def\Rn{\mathbb{R}^n}
+\def\A{\mathscr{A}}
+\def\B{\mathscr{B}}
+\def\D{\mathscr{D}}
+\def\E{\mathscr{E}}
+\def\O{\mathscr{O}}
+
+\def\rank{\operatorname{rank}}
+\def\dim{\operatorname{dim}}
+\def\0{\mathbf{0}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\r{\gamma}
+
+\usepackage{color}
+\definecolor{linkcol}{rgb}{0,0,0.4}
+\definecolor{citecol}{rgb}{0.5,0,0}
+
+\definecolor{blue}{rgb}{0,0.08,1}
+\newcommand{\blue}{\textcolor{blue}}
+
+  \usepackage{graphicx}
+  \DeclareGraphicsExtensions{.eps}
+%   \usepackage[a4paper,pagebackref,hyperindex=true,pdfnewwindow=true]{hyperref}
+
+
+\begin{document}
+
+
+
+\title[]{论文写作指导 }
+\author[]{{\large 张彪} }
+\institute[]{{\normalsize
+		天津师范大学\\[6pt]
+		zhang@tjnu.edu.cn}}
+
+\date{}
+
+
+%
+%\AtBeginSection[]
+%{
+%\begin{frame}
+%	\frametitle{Outline}
+%	\tableofcontents[currentsection]
+%\end{frame}
+%\setcounter{exa}{0}
+%\setcounter{equation}{0}
+%}
+
+
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+
+\begin{frame}{参考书目}
+
+	\begin{itemize}
+	\item 汤涛，丁玖，数学之英文写作，高等教育出版社，2019. 
+
+	\item  数学论文写作(原书第二版), [英] 尼古拉斯，J.海厄姆 著，贾志刚，常亮，李建波 译, 科学出版社, 2016. 
+
+	\item \alert{数学论文英文写作实用模板(汉英对照)}, [波兰] 耶日 泰锡斯克（Jerzy Trzeciak） 著，张文彪，刘晓敏 译, 机械工业出版社, 2016. 
+
+	\item LaTeX入门, 刘海洋 著, 电子工业出版社, 2013.
+	\end{itemize}
+
+	文档密码：po21
+\end{frame}
+
+\begin{frame}
+	通过
+		\begin{itemize}
+		\item  系统的训练，
+		\item 用心去探索\alert{规律}
+		\item 并吸取教训，反复提高
+	\end{itemize}
+研究者完全可以写出语言表达上乘的学术论文。
+
+
+\vspace{15pt}
+
+\begin{itemize}
+	\item 在多阅读、多练习的基础上，
+	\item 掌握\alert{技巧}，
+	\item 熟练一些\alert{典型句型}和\alert{结构}
+\end{itemize}
+是写出好的科技论文的第一步。
+\end{frame}
+
+
+\begin{frame}
+	数学在语言表达上的特点
+	\begin{itemize}
+		\item 数学词汇的意义经久不衰，不为时代所动，
+		\item 数学概念的定义严密准确，无懈可击，
+		\item 数学定理的证明服从逻辑规律，以三段论推理为其宗旨，
+		\item 数学写作的方式技巧，有章可循
+	\end{itemize}
+\vspace{15pt}
+\pause
+	数学写作的要求
+\begin{itemize}
+	\item 如何能让我们的写作体现数学之美？
+	\item 如何能让我们的文章结构、遣词造句、思想流动、动机结论让人读之犹如行云流水？
+	\item 如何能让表达之美和推导之美并驾齐驱、相辅相成？
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+	写文章前的准备工作及写作中应该遵循的几项基本原则
+	\begin{itemize}
+		\item  写作目的是让别人清楚知道你想叙述和表达的东西。
+		\item 要收集一些与写作有关的材料，特别要有几篇关键的文献。
+		\item 文章要精确、清楚、简洁地表达你想说的东西。
+		\item 初稿完成后，要反复修改，不要冀望一次完成。
+		\item 平生第一篇英文文章写作时，应该找有英文写作经验的人修改。
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{基本原则}
+
+\begin{itemize}
+	\item  写作帮助学习。写作通过强迫你将思想集中于有可能忽略的每一步，从而提出理解上的间断。
+	\item 优秀的写作反映清晰的思想。好的框架来源于清晰的思考。
+	\item  写作时困难的。一个在某些程度上很有效的解决方法是强迫自己先写出来。
+	\item 写作的一个最基本的原则是保持你的论文简单和直接。
+	\item 改进写作的最好的方法可能是接受建设性的批评并从中学习。
+	\item 另外一个改进写作的办法是带着批判的眼光去读，越多越好。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Halmos's principle}
+	\begin{itemize}
+		\item  In order to say something well you must have something to say. 
+		\item When you decide to write something, ask yourself who it is that you want to reach. (为谁而写)
+	\end{itemize}
+
+\vspace{8pt}
+The basic problem in writing mathematics is the same as in writing biology, writing a novel, or wrting directions for assembling a harpsichord(大键琴): 
+\begin{center}
+the problem is \alert{to communicate an idea}.
+\end{center}
+To do so, and to do it clearly, 
+\begin{itemize}
+	\item you must have somthing to say, and 
+	\item you must arrange it in the order that you want to it said in, 
+	\item you must write it, rewrite it, and re-rewrite it  several times, and 
+	\item you must be willing to think hard about and work hard on mechanical details such as diction, notation, and punctuation.
+	\end{itemize}
+That is' all there is to it.
+\end{frame}
+	
+	
+
+
+\end{document} 

@@ -1,0 +1,242 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass{ctexbeamer}
+
+
+\usepackage{amsmath,amssymb,amsthm}             % AMS Math
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\linespread{1.3}
+\usepackage{amsfonts}
+
+
+\usepackage{mathrsfs}  %花写字母
+ 
+
+%%%=== theme ===%%%
+% \usetheme{Warsaw}
+%\usetheme{Copenhagen}
+%\usetheme{Singapore}
+\usetheme{Madrid}
+%\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+% \usefonttheme{structureitalicserif}
+%%\useinnertheme{rounded}
+%%\useinnertheme{inmargin}
+\useinnertheme{circles}
+%\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{footline}[page number]
+\setbeamertemplate{footline}[frame number] 
+
+
+\titlegraphic{\includegraphics[width=2cm]{tjnu.jpg}} 
+
+
+%\usepackage[fontset=mac]{ctex}
+%\usepackage{ctex}
+\usepackage{xcolor}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+
+
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{thm}{定理}
+\newtheorem{lem}{引理}
+\newtheorem{exa}{例}
+\newtheorem*{theo}{定理}
+\newtheorem*{conj}{猜想}
+\newtheorem*{defi}{定义}
+\newtheorem*{coro}{推论}
+\newtheorem*{ex}{练习}
+\newtheorem*{rem}{注}
+\newtheorem*{prop}{性质}
+\newtheorem*{qst}{问题}
+
+\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
+\def\pf{{\bf 证明~~ }}
+\def\sol{{\bf 解~~ }}
+
+
+
+\def\R{\mathbb{R}}
+\def\Rn{\mathbb{R}^n}
+\def\A{\mathscr{A}}
+\def\B{\mathscr{B}}
+\def\D{\mathscr{D}}
+\def\E{\mathscr{E}}
+\def\O{\mathscr{O}}
+
+\def\rank{\operatorname{rank}}
+\def\dim{\operatorname{dim}}
+\def\0{\mathbf{0}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\r{\gamma}
+
+
+\begin{document}
+
+
+
+\title[]{论文写作指导}
+\author[]{{\large 张彪} }
+\institute[]{{\normalsize
+		天津师范大学\\[6pt]
+		zhang@tjnu.edu.cn}}
+
+\date{}
+
+
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\frametitle{Outline}
+	\tableofcontents[currentsection]
+\end{frame}
+\setcounter{exa}{0}
+\setcounter{equation}{0}
+}
+
+
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+\section{定理是什么？}
+
+
+\section{优劣比较}
+
+\begin{frame}{符号放置}
+	避免以数学表达式开始一个句子，特别是如果前面的句子以数学表达式结束，否则读者难以分析句子。
+	
+	例如, ``$A$ is  an ill-conditioned matrix'' 
+	(可能与单词``A''混淆)	
+	可改为\pause
+	
+	 \qquad 	 \ ``The matrix $A$ is   ill-conditioned''. 
+\vspace{10pt}
+
+如果可能的话，为了同样的理由，用标点符号或者文字将数学符号隔开。
+
+	\begin{itemize}
+\item 差: If $x>1 \, f(x)<0$.\pause
+
+\item 中: If $x>1, f(x)<0$. \pause
+
+\item  好: If $x>1$ then $f(x)<0$.
+	\end{itemize}
+
+\vspace{10pt}
+
+	\begin{itemize}
+	\item 
+差: since $p^{-1}+q^{-1}=1,\|\cdot\|_{p}$ and $\|\cdot\|_{q}$ are dual norms. \pause
+
+\item  好: since $p^{-1}+q^{-1}=1,$ the norms $\|\cdot\|_{p}$ and $\|\cdot\|_{q}$ are dual.
+	\end{itemize}
+\vspace{10pt}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+	\item 
+差: It suffices to show that $\|H\|_{p}=n^{1 / p}, 1 \leqslant p \leqslant 2$. \pause
+	\item 
+好: It suffices to show that $\|H\|_{p}=n^{1 / p}$ for $1 \leqslant p \leqslant 2$. 
+\item  
+好: It suffices to show that $\|H\|_{p}=n^{1 / p}(1 \leqslant p \leqslant 2)$.
+	\end{itemize}
+\vspace{10pt}
+
+\begin{itemize}
+	\item 
+差: For $n=r(2.2)$ holds with $\delta_{r}=0$. \pause
+\item 
+好: For $n=r,(2.2)$ holds with $\delta_{r}=0 .$ 
+\item 
+好: For $n=r,$ inequality (2.2) holds with $\delta_{r}=0$.
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{``The''或``A''}
+    
+    \begin{itemize}
+        \item  当一个普通名词以复数形式第一次出现时，它的前面不加the，除非它带有一限定性形容词，比如writing for sciences 和 writing for the mathematical sciences.
+        \item 当一个普通名词以单数形式出现时，除了一些抽象名词外，前面要加a或the。
+        比如   Let $M$ be a matroid on a ground set $E$.
+        
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{冠词}
+冠词的使用规则是 复杂的. 
+{Swan} 解释了它们并认同两种最重要的规则:
+
+\begin{itemize}
+    \item  通常不要使用 $t h e$ (复数或不可数名词) 描述事情. 
+    
+    例: ``Mathematics is interestin''
+    
+    (不是 ``The mathematics is interestin'');
+    
+    ``Indefinite integrals do not always have closed form solutions''
+    
+    (不是 ``The indefinite integrals do not always have the closed form solutions'' ).
+    
+    \item 没有冠词就不要使用单数可数名词.
+    
+    例: ``the derivative is'' ``a derivative is'' , 而不是 ``derivative is''.
+    
+ \item 在特定环境下冠词是可选择的. 
+
+``A matrix with the property (3.2) is well conditioned'' 和 ``A matrix with property $(3.2)$ is well conditioned'' 都是正确的.
+
+ \item 使用冠词的错误是令人反感的, 但是它们通常不会模糊句子的含义.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{``The''或``A''}
+在数学写作中，当宾语指代（可能）\alert{不是独一无二的}或者\alert{不存在的事物}时，使用冠词``the''是不恰当地。
+改写句子，或者将冠词改为``a'', 通常能解决问题。
+\vspace{10pt}
+
+{
+\begin{itemize}
+\item 差: Let the Schur decomposition of $A$ be $Q T Q^{*}$. \pause
+\item 好: Let a Schur decomposition of $A$ be $Q T Q^{*}$.
+	\end{itemize}
+}
+
+\vspace{10pt}
+
+\begin{itemize}
+\item 差: Under what conditions does the iteration converge to the solution of $f(x)=$ 
+$0 ?$  \pause
+\item  好: Under what conditions does the iteration converge to a solution of $f(x)=0 ?$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{翻译}
+\begin{itemize}
+\item 
+    令$a$为常数。不失一般性我们可把这个常数取成非零。
+
+Let $a$ be a constant. Without loss of generality we may take the constant to be nonzero.
+\item 
+    令$A$为满秩方阵并记$A^{-1}$为$A$的逆。
+    
+Let $A$ be a square matrix with full rank and let $A^{-1}$ be the inverse of $A$.
+\end{itemize}
+\end{frame}
+\end{document} 

@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{主体}{12}{0}{1}
+\beamer@subsectionintoc {1}{1}{定理}{15}{0}{1}
+\beamer@subsectionintoc {1}{2}{例子的作用}{27}{0}{1}
+\beamer@sectionintoc {2}{定义}{28}{0}{2}
