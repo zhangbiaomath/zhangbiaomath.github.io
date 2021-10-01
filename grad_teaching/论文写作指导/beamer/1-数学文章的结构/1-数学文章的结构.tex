@@ -29,39 +29,6 @@
 
 \titlegraphic{\includegraphics[width=2cm]{tjnu.jpg}} 
 
-\setbeamertemplate{theorems}[numbered]
-\newtheorem{thm}{定理}
-\newtheorem{lem}{引理}
-\newtheorem{exa}{例}
-\newtheorem*{theo}{定理}
-\newtheorem*{conj}{猜想}
-\newtheorem*{defi}{定义}
-\newtheorem*{coro}{推论}
-\newtheorem*{ex}{练习}
-\newtheorem*{rem}{注}
-\newtheorem*{prop}{性质}
-\newtheorem*{qst}{问题}
-
-\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
-\def\pf{{\bf 证明~~ }}
-\def\sol{{\bf 解~~ }}
-
-
-
-\def\R{\mathbb{R}}
-\def\Rn{\mathbb{R}^n}
-\def\A{\mathscr{A}}
-\def\B{\mathscr{B}}
-\def\D{\mathscr{D}}
-\def\E{\mathscr{E}}
-\def\O{\mathscr{O}}
-
-\def\rank{\operatorname{rank}}
-\def\dim{\operatorname{dim}}
-\def\0{\mathbf{0}}
-\def\a{\alpha}
-\def\b{\beta}
-\def\r{\gamma}
 
 \usepackage{color}
 \definecolor{linkcol}{rgb}{0,0,0.4}
@@ -112,21 +79,23 @@
 	
 \begin{frame}{第一章~数学文章的结构}
 一篇数学论文一般由如下几个部分组成：
-\begin{itemize}
-\item {题目}
-\item 摘要
-\item 引言
-\item 主体
-\item 结论
-\item 致谢
-\item 文献
-\item 附录
-\end{itemize}
-
-
+%\begin{itemize}
+%\item {题目}
+%\item 摘要
+%\item 引言
+%\item 主体
+%\item 结论
+%\item 致谢
+%\item 文献
+%\item 附录
+%\end{itemize}
+\setcounter{tocdepth}{1}
+	\tableofcontents
 \end{frame}
 
-\begin{frame}{1.1~题目}
+
+\section{题目}
+\begin{frame}{题目}
 题目是文章的一句广告语。
 \begin{itemize}
 	\item 题目不宜太长，也不宜太短。
@@ -136,7 +105,7 @@
 \end{frame}
 
 
-\begin{frame}{1.1~题目}
+\begin{frame}{题目}
 	题目是文章的一句广告语。
 	\begin{itemize}
 		\item 题目不宜太长，也不宜太短。
@@ -153,8 +122,8 @@
 \end{itemize}
 \end{frame}
 
-
-\begin{frame}{1.2~摘要}
+\section{摘要}
+\begin{frame}{摘要}
 摘要是一篇有足够信息的微型文章。	文章的摘要应该：
 	\begin{itemize}
 		\item 概括文章的主要目的、思想和结果。
@@ -172,7 +141,7 @@
 
 \end{frame}
 
-
+\section{关键词和学科分类}
 \begin{frame}{关键词和学科分类}
 	关键词keywords
 	\begin{itemize}
@@ -196,8 +165,8 @@
 \end{frame}
 
 
-
-\begin{frame}{1.3~引言}
+\section{引言}
+\begin{frame}{引言}
 	引言应该比较全面、准确并且客观地介绍文章中将要讨论
 	\begin{itemize}
 		\item 问题的背景材料和简要发展，
@@ -214,7 +183,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{1.3.1~引言的开首}
+\begin{frame}{1~引言的开首}
 		\begin{itemize}
 		\item ``好的开始是成功的一半'
 
@@ -229,7 +198,7 @@
 \end{frame}
 
 
-\begin{frame}{1.3.2~引言的中间}
+\begin{frame}{2~引言的中间}
 	\begin{itemize}
 		
 		\item 定义问题
@@ -241,7 +210,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{1.3.3~引言的结尾}
+\begin{frame}{3~引言的结尾}
 	\begin{itemize}
 		
 		\item 简单叙述文章的组成部分
@@ -252,7 +221,11 @@
 \end{frame}
 
 \section{主体}
-\begin{frame}{1.4~主体}
+\begin{frame}{主体}
+	
+	\setcounter{tocdepth}{2}
+	\tableofcontents
+	
 	Preliminaries（预备知识）
 	\begin{itemize}
 		\item  引进符号说明和概念定义。
@@ -267,6 +240,7 @@
 Proofs（证明）
 \end{frame}
 
+\subsection{文章的章节标题}
 \begin{frame}{文章的章节标题}
 章节的标题是文章的骨骼。
 
@@ -289,6 +263,8 @@ Proofs（证明）
 \end{itemize}
 \end{frame}
 
+
+\subsection{定理}
 \begin{frame}{定理是什么？}
 
 	
@@ -386,7 +362,7 @@ Proofs（证明）
 \end{frame}
 
 
-%\subsection{证明}
+\subsection{证明}
 
 \begin{frame}
 	\begin{itemize}
@@ -453,9 +429,9 @@ Proofs（证明）
 \end{frame}
 
 
-\subsection{例子的作用}
+\subsection{例子}
 
-\begin{frame}{例子的作用}
+\begin{frame}
 \begin{itemize}
 	\item 
 适应于技术写作（从教学到研究）所有形式的教学策略是在讨论一般情况前都会先讨论\blue{特殊例子}。
@@ -479,7 +455,7 @@ Proofs（证明）
 \end{frame}
 
 
-\section{定义}
+\subsection{定义}
 \begin{frame}{定义}
 \begin{itemize}
 \item 
@@ -566,8 +542,8 @@ Proofs（证明）
 
 
 
-
-\begin{frame}{1.5~结论}
+\section{结论}
+\begin{frame}{结论}
 	
 	\begin{itemize}
 		\item  非常简短地叙述文章的主要贡献
@@ -578,8 +554,8 @@ Proofs（证明）
 	\end{itemize}
 \end{frame}
 
-
-\begin{frame}{1.6~致谢}
+\section{致谢}
+\begin{frame}{致谢}
 	
 	\begin{itemize}
 		\item  致谢的对象是主要包括给文章写作提供过意见或者帮助的人或机构
@@ -588,8 +564,8 @@ Proofs（证明）
 	\end{itemize}
 \end{frame}
 
-
-\begin{frame}{1.7~文献}
+\section{参考文献}
+\begin{frame}{参考文献}
 	
 	\begin{itemize}
 		\item  文献引用
@@ -597,8 +573,8 @@ Proofs（证明）
 	\end{itemize}
 \end{frame}
 
-
-\begin{frame}{1.8~附录}
+\section{附录}
+\begin{frame}{附录}
 	
 	\begin{itemize}
 		\item  附录记载的主要是作者不想放在正文内的冗长复杂的定理证明。
