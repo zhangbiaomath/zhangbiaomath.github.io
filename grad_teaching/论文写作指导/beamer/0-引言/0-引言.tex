@@ -1,4 +1,4 @@
-\documentclass[13pt]{ctexbeamer}
+\documentclass[12pt]{ctexbeamer}
 
 
 \usepackage{amsmath,amssymb,amsthm}             % AMS Math
@@ -29,49 +29,19 @@
 
 \titlegraphic{\includegraphics[width=2cm]{tjnu.jpg}} 
 
-\setbeamertemplate{theorems}[numbered]
-\newtheorem{thm}{定理}
-\newtheorem{lem}{引理}
-\newtheorem{exa}{例}
-\newtheorem*{theo}{定理}
-\newtheorem*{conj}{猜想}
-\newtheorem*{defi}{定义}
-\newtheorem*{coro}{推论}
-\newtheorem*{ex}{练习}
-\newtheorem*{rem}{注}
-\newtheorem*{prop}{性质}
-\newtheorem*{qst}{问题}
-
-\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
-\def\pf{{\bf 证明~~ }}
-\def\sol{{\bf 解~~ }}
-
-
-
-\def\R{\mathbb{R}}
-\def\Rn{\mathbb{R}^n}
-\def\A{\mathscr{A}}
-\def\B{\mathscr{B}}
-\def\D{\mathscr{D}}
-\def\E{\mathscr{E}}
-\def\O{\mathscr{O}}
-
-\def\rank{\operatorname{rank}}
-\def\dim{\operatorname{dim}}
-\def\0{\mathbf{0}}
-\def\a{\alpha}
-\def\b{\beta}
-\def\r{\gamma}
-
 \usepackage{color}
 \definecolor{linkcol}{rgb}{0,0,0.4}
 \definecolor{citecol}{rgb}{0.5,0,0}
 
-\definecolor{blue}{rgb}{0,0.08,1}
-\newcommand{\blue}{\textcolor{blue}}
+
+\usepackage{xcolor}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+
 
   \usepackage{graphicx}
-  \DeclareGraphicsExtensions{.eps}
+%  \DeclareGraphicsExtensions{.eps}
 %   \usepackage[a4paper,pagebackref,hyperindex=true,pdfnewwindow=true]{hyperref}
 
 
@@ -109,24 +79,25 @@
 
 \begin{frame}
 
-	课程网页 
-\begin{center}
 
-	\includegraphics[width=60]{writing.png}
-\end{center}
-参考书目
+\red{参考书目}
 	\begin{itemize}
 	\item 汤涛，丁玖，数学之英文写作，高等教育出版社，2019. 
 
 	\item  数学论文写作(原书第二版), [英] 尼古拉斯，J.海厄姆 著，贾志刚，常亮，李建波 译, 科学出版社, 2016. 
 
-	\item \alert{数学论文英文写作实用模板(汉英对照)}, [波兰] 耶日 泰锡斯克（Jerzy Trzeciak） 著，张文彪，刘晓敏 译, 机械工业出版社, 2016. 
+	\item \blue{数学论文英文写作实用模板(汉英对照)}, [波兰] 耶日 泰锡斯克（Jerzy Trzeciak） 著，张文彪，刘晓敏 译, 机械工业出版社, 2016. 
 
 	\item LaTeX入门, 刘海洋 著, 电子工业出版社, 2013.
 	\end{itemize}
 
 	文档密码：po21
-	
+	 
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=0.18\textwidth]{writing.png}
+	\caption{课程网页}
+\end{figure}
 
 \end{frame}
 
@@ -151,7 +122,7 @@
 	通过
 		\begin{itemize}
 		\item  系统的训练，
-		\item 用心去探索\alert{规律}
+		\item 用心去探索\blue{规律}
 		\item 并吸取教训，反复提高
 	\end{itemize}
 研究者完全可以写出语言表达上乘的学术论文。
@@ -161,8 +132,8 @@
 
 \begin{itemize}
 	\item 在多阅读、多练习的基础上，
-	\item 掌握\alert{技巧}，
-	\item 熟练一些\alert{典型句型}和\alert{结构}
+	\item 掌握\blue{技巧}，
+	\item 熟练一些\blue{典型句型}和\blue{结构}
 \end{itemize}
 是写出好的科技论文的第一步。
 \end{frame}
@@ -221,7 +192,7 @@
 \vspace{8pt}
 The basic problem in writing mathematics is the same as in writing biology, writing a novel, or wrting directions for assembling a harpsichord(大键琴): 
 \begin{center}
-the problem is \alert{to communicate an idea}.
+the problem is \blue{to communicate an idea}.
 \end{center}
 To do so, and to do it clearly, 
 \begin{itemize}
