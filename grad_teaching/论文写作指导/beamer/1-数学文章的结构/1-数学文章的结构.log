@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.26)  1 OCT 2021 16:23
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.26)  1 OCT 2021 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1240,73 +1240,74 @@ File: tjnu.jpg Graphic file (type bmp)
 
 ] (./1-数学文章的结构.toc) [2
 
+] (./1-数学文章的结构.toc) [3
+
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 105
+LaTeX Font Info:    Trying to load font information for U+msa on input line 103
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 105
+LaTeX Font Info:    Trying to load font information for U+msb on input line 103
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
-5.
+3.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 105.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 103.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 105.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 103.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 105.
- [3
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 103.
+ [4
 
-] [4
+] [5
 
 ]
-[5
-
-] [6
+(./1-数学文章的结构.toc) [6
 
 ] [7
 
-] [8
+] (./1-数学文章的结构.toc) [8
 
-]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 198.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 198.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 198.
- [9
+] [9
 
 ] [10
 
-] [11
+] (./1-数学文章的结构.toc)
+[11
 
 ] [12
 
-] (./1-数学文章的结构.toc) [13
+]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 196.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 196.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 196.
+ [13
 
 ] [14
 
 ] [15
 
-] [16
+] (./1-数学文章的结构.toc) [16
+
+] [17
+
+] (./1-数学文章的结构.toc) [18
 
 ]
-[17
-
-] [18
-
-] [19
+[19
 
 ] [20
 
@@ -1332,10 +1333,44 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
 
 ] [31
 
-]
-[32
+] [32
 
 ] [33
+
+]
+[34
+
+] (./1-数学文章的结构.toc)
+Overfull \vbox (19.45802pt too high) detected at line 501
+ []
+
+[35
+
+] [36
+
+] (./1-数学文章的结构.toc)
+Overfull \vbox (19.45802pt too high) detected at line 513
+ []
+
+[37
+
+] [38
+
+] (./1-数学文章的结构.toc)
+Overfull \vbox (19.45802pt too high) detected at line 523
+ []
+
+[39
+
+] [40
+
+] (./1-数学文章的结构.toc)
+Overfull \vbox (19.45802pt too high) detected at line 532
+ []
+
+[41
+
+] [42
 
 ]
 \tf@nav=\write6
@@ -1352,12 +1387,12 @@ Package rerunfilecheck Info: File `1-数学文章的结构.out' has not changed.
 (rerunfilecheck)             Checksum: C0EB513F0360924A6907E7783BF6E6F9;252.
  ) 
 Here is how much of TeX's memory you used:
- 29388 strings out of 476919
- 644789 string characters out of 5821840
- 948532 words of memory out of 5000000
- 48705 multiletter control sequences out of 15000+600000
+ 29434 strings out of 476919
+ 645566 string characters out of 5821840
+ 953516 words of memory out of 5000000
+ 48733 multiletter control sequences out of 15000+600000
  411430 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  145i,11n,146p,453b,617s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 1-数学文章的结构.pdf (33 pages).
+Output written on 1-数学文章的结构.pdf (42 pages).

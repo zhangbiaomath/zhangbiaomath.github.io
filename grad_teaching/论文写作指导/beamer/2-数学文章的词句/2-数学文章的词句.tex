@@ -91,15 +91,13 @@
 
 
 
-%\AtBeginSection[]
-%{
-%\begin{frame}
-%	\frametitle{Outline}
-%	\tableofcontents[currentsection]
-%\end{frame}
-%\setcounter{exa}{0}
-%\setcounter{equation}{0}
-%}
+\AtBeginSection[]
+{
+\begin{frame}
+	\frametitle{Outline}
+	\tableofcontents[currentsection]
+\end{frame}
+}
 
 
 
@@ -108,11 +106,17 @@
 \end{frame}
 
 
+\begin{frame}
+	\tableofcontents	
+\end{frame}
+
+
+
 \section{证明}
 
 
 
-\begin{frame}{证明}
+\begin{frame}{证明的常用句型}
 	下面是一些可以用的各种各样的短语例子。
 	\begin{itemize}
 		\item The aim/idea is to 
@@ -214,12 +218,12 @@
 	\end{itemize}
 
 \end{frame}
-
+\section{{冠词}的使用}
 \begin{frame}{``The''或``A''}
     
     \begin{itemize}
-        \item  当一个普通名词以复数形式第一次出现时，它的前面不加the，除非它带有一限定性形容词，比如writing for sciences 和 writing for the mathematical sciences.
-        \item 当一个普通名词以单数形式出现时，除了一些抽象名词外，前面要加a或the。
+        \item  当一个\blue{普通名词}以\red{复数形式}第一次出现时，它的前面不加the，除非它带有一限定性形容词，比如writing for sciences 和 writing for the mathematical sciences.
+        \item 当一个\blue{普通名词}以\red{单数形式}出现时，除了一些抽象名词外，前面要加a或the。
         比如   Let $M$ be a matroid on a ground set $E$.
         
     \end{itemize}
@@ -228,26 +232,37 @@
 
 \begin{frame}{冠词}
 冠词的使用规则是 复杂的. 
-{Swan} 解释了它们并认同两种最重要的规则:
+
+
+{Swan} 解释了他认为两种最重要的规则:
 
 \begin{itemize}
-    \item  通常不要使用 $t h e$ (复数或不可数名词) 描述事情. 
+    \item \blue{通常不要使用 $t h e$ (复数或不可数名词) 描述事情. }
     
-    例: ``Mathematics is interestin''
+    例: ``Mathematics is interesting''
     
-    (不是 ``The mathematics is interestin'');
+    (不是 ``The mathematics is interesting'');
     
     ``Indefinite integrals do not always have closed form solutions''
     
     (不是 ``The indefinite integrals do not always have the closed form solutions'' ).
     
-    \item 没有冠词就不要使用单数可数名词.
+    \item \blue{没有冠词就不要使用单数可数名词.}
     
     例: ``the derivative is'' ``a derivative is'' , 而不是 ``derivative is''.
-    
- \item 在特定环境下冠词是可选择的. 
+\end{itemize}
+\end{frame}
 
-``A matrix with the property (3.2) is well conditioned'' 和 ``A matrix with property $(3.2)$ is well conditioned'' 都是正确的.
+
+\begin{frame}
+\begin{itemize} 
+	\item 在特定环境下冠词是可选择的. 
+
+``A matrix with the property (3.2) is well conditioned'' 
+和
+
+ ``A matrix with property $(3.2)$ is well conditioned'' 
+都是正确的.
 
  \item 使用冠词的错误是令人反感的, 但是它们通常不会模糊句子的含义.
 \end{itemize}
@@ -256,22 +271,27 @@
 
 
 \begin{frame}{``The''或``A''}
-在数学写作中，当宾语指代（可能）\alert{不是独一无二的}或者\alert{不存在的事物}时，使用冠词``the''是不恰当地。
+在数学写作中，当宾语指代（可能）\blue{不是独一无二的}或者\blue{不存在的事物}时，使用冠词``the''是不恰当地。
 改写句子，或者将冠词改为``a'', 通常能解决问题。
-\vspace{10pt}
-
+%\vspace{10pt}
+%  Let \alert{a / the} Schur decomposition of $A$ be $Q T Q^{*}$. 
 {
+	
 \begin{itemize}
-\item 差: Let the Schur decomposition of $A$ be $Q T Q^{*}$. \pause
+\item 差: Let the Schur decomposition of $A$ be $Q T Q^{*}$. 
 \item 好: Let a Schur decomposition of $A$ be $Q T Q^{*}$.
 	\end{itemize}
 }
 
-\vspace{10pt}
+\pause
+\red{
+Although every square matrix has a Schur decomposition, in general this decomposition is not unique.  Similarly, }
+
 
 \begin{itemize}
 \item 差: Under what conditions does the iteration converge to the solution of $f(x)=$ 
 $0 ?$  \pause
+
 \item  好: Under what conditions does the iteration converge to a solution of $f(x)=0 ?$
 \end{itemize}
 \end{frame}
@@ -280,12 +300,13 @@ $0 ?$  \pause
 \begin{itemize}
 \item 
     令$a$为常数。不失一般性我们可把这个常数取成非零。
+\pause
 
-Let $a$ be a constant. Without loss of generality we may take the constant to be nonzero.
+Let $a$ be \alert{a} constant. Without loss of generality we may take \alert{the} constant to be nonzero.
 \item 
     令$A$为满秩方阵并记$A^{-1}$为$A$的逆。
-    
-Let $A$ be a square matrix with full rank and let $A^{-1}$ be the inverse of $A$.
+    \pause
+Let $A$ be \alert{a} square matrix with full rank and let $A^{-1}$ be \alert{the} inverse of $A$.
 \end{itemize}
 \end{frame}
 \end{document} 

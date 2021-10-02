@@ -52,6 +52,10 @@
 %   \usepackage[a4paper,pagebackref,hyperindex=true,pdfnewwindow=true]{hyperref}
 
 
+
+\usepackage{tikz}
+\usetikzlibrary{graphs, positioning, quotes, shapes.geometric}
+
 \begin{document}
 
 
@@ -103,8 +107,23 @@
 	\item
 TeX被普遍认为是一个优秀的排版工具，尤其是对于复杂数学公式的处理。
 	\item
-科研工作者使用文本编辑器(WinEdt, TexStudio等）编写tex源文件(.tex), 利用LaTeX进行编译，能够排版出精美的pdf文件。
+科研工作者使用文本编辑器(WinEdt, TexStudio等）编写tex源文件(.tex),  经过LaTeX进行编译，能够排版出精美的pdf文件。
 \end{itemize}
+
+\begin{figure}
+	
+	\begin{tikzpicture}
+
+	\tikzstyle{arrow} = [thick,->,>=stealth]
+	\node[diamond, minimum width=3cm,
+	minimum height=1cm, text width=2cm, rounded corners, text centered, fill=blue!30]     (tex)  {.tex文件};
+	\node[diamond, rounded corners, minimum width=3cm,
+	minimum height=1cm, text width=2cm, fill=blue!30, text centered,  right=100pt of tex]     (pdf)  {.pdf文档};
+\draw [arrow] (tex) -- node[anchor=south] {LaTeX编译} (pdf);
+
+\end{tikzpicture}
+\end{figure}
+
 \end{frame}
 
 
@@ -246,29 +265,30 @@ LaTeX的正确的写法是
 管理器可以从互联网中安装缺失的部分宏
 包。
 \end{itemize}
-	\item CTeX中文套装 (基于MiKTeX,支持中文，已停更)
+	\item CTeX中文套装 (基于MiKTeX,支持中文，\green{已停更})
 	
-	\item \alert{TeX Live} 
-	\begin{itemize}
-	\item
-	TeX Live是由国际TeX用户组（TUG）整理和发布的TeX软件发行套装，包含与TeX系统相关的各种程序、编辑与查看工具、常用宏包及文档、常用字体及多国语言支持。
-		\item
-	TeX Live是许多Linux/Unix系统默认或推荐的TeX套装，同时也支持包括Windows和Mac OS X等在内的其它操作系统。
-	\end{itemize}
+	\item \blue{TeX Live}   多数国外期刊采用的编译套装, \red{推荐安装} 
+
 
 	\item MacTeX -- macOS（OS X）系统下的一个定
 制化的 TeXLive 版本。
 
-\item proTeXt -- MiKTeX-based distribution for Windows 
+\item proTeXt -- 基于 MikTeX 并把 TeXStudio 作为前端编辑器
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}{TeX Live}
-
+	\begin{itemize}
+		\item TeX Live 是 TUG (TeX User Group) 维护和发布的 TeX 系统，可说是「官方」的 TeX 系统。
+	
+	TeX Live包含与TeX系统相关的各种程序、编辑与查看工具、常用宏包及文档、常用字体及多国语言支持。
+	\item
+	TeX Live是许多Linux/Unix系统默认或推荐的TeX套装，同时也支持包括Windows和Mac OS X等在内的其它操作系统。
+\end{itemize}
 \begin{itemize}
-	\item TeX Live 是 TUG (TeX User Group) 维护和发布的 TeX 系统，可说是「官方」的 TeX 系统。
-	\item 我们推荐任何阶段的 TeX 用户，都尽可能使用 TeX Live，以保持在跨操作系统平台、跨用户的一致性。
+
+%	\item 我们推荐任何阶段的 TeX 用户，都尽可能使用 TeX Live，以保持在跨操作系统平台、跨用户的一致性。
 	\item TeX Live 的官方站点是 \href{https://tug.org/texlive/}{https://tug.org/texlive/}
 	\item 建议尝试使用国内大学的镜像站下载。
 	
@@ -283,11 +303,11 @@ LaTeX的正确的写法是
 
 \begin{frame}{编辑器}
 \begin{itemize}
-\item  \blue{TeXStudio} (推荐使用，开源)
+\item  \blue{TeXStudio} (\red{推荐使用}，开源)
 \item TeXmaker
 \item TeXworks (TexLive自带)
 \item TexPad (for Mac users)
-\item WinEdt (最近版，需要破解)
+\item WinEdt (建议使用最新版，需要\green{破解})
 \end{itemize}
 \end{frame}
 
@@ -351,7 +371,7 @@ LaTeX的正确的写法是
 		\item 另一方面，XeLaTeX等技术逐渐成熟，可以更简便地完成中文排版；
 	\end{itemize}
 	
-	因此，\red{现在不推荐使用 CTeX 中文套装}。
+	因此，\red{不推荐使用 CTeX 中文套装}，除非作为\blue{老中文期刊的备选版本}。
 	
 	%不要安装和使用 CTeX 套装！
 	%如\documentclass{ctexart}
@@ -376,9 +396,10 @@ LaTeX的正确的写法是
 	\begin{itemize}
 		\item 
 		虽然它的名字也是「CTeX」，但是 CTeX 宏集和 CTeX 套装是两个不同的东西。
-		\item  CTEX 宏集支持LATEX、pdfLATEX、XƎLATEX、LuaLATEX、upLATEX 等多种不同的编译方式，并为它们提供了统一的界面。主要功能由宏包ctex 以及中文文档类ctexart、ctexrep、ctexbook 和 ctexbeamer 实现。
-		\item 我们推荐\red{优先使用 CTeX 宏集处理中文}。
-		\item 中文的文档可以直接使用ctex 文档类。
+		\item  CTEX 宏集支持LATEX、pdfLATEX、XƎLATEX、LuaLATEX、upLATEX 等多种不同的编译方式，并为它们提供了统一的界面。主要功能由宏包  \blue{ctex} 以及中文文档类  \blue{ctexart}、\blue{ctexbook} 和  \blue{ctexbeamer}  等 实现。
+		%{ctexrep}
+		\item 我们推荐\red{使用 CTeX 宏集处理中文}。
+		\item 中文的文档可以直接\red{使用ctex 文档类}。
 		%也就是ctexart、ctexrep、ctexbook、ctexbeamer 这些。
 	\end{itemize}
 	
@@ -406,11 +427,11 @@ LaTeX的正确的写法是
 	
 \begin{itemize}
     \item 
-    \href{https://www.latexstudio.net/}{https://www.latexstudio.net/}    ---Latex工作室  
+   \blue{ \href{https://www.latexstudio.net/}{https://www.latexstudio.net/} }   ---     \red{Latex工作室}  
     \item 
     \href{https://www.overleaf.com/
 }{https://www.overleaf.com/
-}   ---Overleaf  
+}   ---  Overleaf  
 \item 
 http://www.latextemplates.com --- 各种模板
 
@@ -418,8 +439,8 @@ http://www.latextemplates.com --- 各种模板
 \end{frame} 
   
 
-\section{Mathpix Snip - 数学公式识别神器}
-\begin{frame}{Mathpix Snip}
+\section{Mathpix Snip --- 数学公式识别神器}
+\begin{frame}{Mathpix Snip --- 数学公式识别神器}
 \begin{itemize}
 	\item 截图识别公式，一键转换成 LaTeX 代码。
 	
@@ -428,8 +449,8 @@ http://www.latextemplates.com --- 各种模板
 \end{frame} 
 
 
-\section{Tables Generator - 表格识别神器 }
-\begin{frame}{Tables Generator }
+\section{Tables Generator --- 表格识别神器 }
+\begin{frame}{Tables Generator  --- 表格识别神器 }
 \begin{itemize}
 	\item 	 像在 Excel 里一样使用表格，一键转换成 LaTeX 代码。 
 	\href{ http://www.tablesgenerator.com/}{ http://www.tablesgenerator.com/}
@@ -440,8 +461,8 @@ http://www.latextemplates.com --- 各种模板
 \end{frame}
 
 
-\section{JabRef-文献管理软件}
-\begin{frame}{JabRef}
+\section{JabRef --- 文献管理软件}
+\begin{frame}{JabRef  --- 文献管理软件}
 \begin{itemize}
 \item  JabRef
 

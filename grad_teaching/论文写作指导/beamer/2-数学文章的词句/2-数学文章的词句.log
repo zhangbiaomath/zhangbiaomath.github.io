@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.26)  1 OCT 2021 16:23
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.26)  1 OCT 2021 18:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1241,44 +1241,45 @@ File: tjnu.jpg Graphic file (type bmp)
 <tjnu.jpg>
 [1
 
+] (./2-数学文章的词句.toc) [2
+
+] (./2-数学文章的词句.toc) [3
+
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 127
+LaTeX Font Info:    Trying to load font information for U+msa on input line 131
 .
- (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 127
+LaTeX Font Info:    Trying to load font information for U+msb on input line 131
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 12
-7.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 13
+1.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 127.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 131.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 127.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 131.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 127.
- [2
-
-] [3
-
-]
-[4
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 131.
+ [4
 
 ] [5
 
-] [6
+]
+[6
 
 ] [7
 
-] [8
+] (./2-数学文章的词句.toc) [8
 
 ] [9
 
@@ -1292,19 +1293,30 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 
 ] [14
 
-]
-Overfull \vbox (8.50482pt too high) detected at line 255
- []
-
-[15
+] [15
 
 ] [16
 
-] [17
+]
+(./2-数学文章的词句.toc) [17
 
 ] [18
 
 ] [19
+
+] [20
+
+] [21
+
+] [22
+
+] [23
+
+] [24
+
+] [25
+
+] [26
 
 ]
 \tf@nav=\write6
@@ -1316,17 +1328,18 @@ Overfull \vbox (8.50482pt too high) detected at line 255
 \tf@snm=\write8
 \openout8 = `2-数学文章的词句.snm'.
 
- (./2-数学文章的词句.aux)
+
+(./2-数学文章的词句.aux)
 Package rerunfilecheck Info: File `2-数学文章的词句.out' has not changed.
-(rerunfilecheck)             Checksum: 0153CCE34504CDDF585DE532367DB595;134.
+(rerunfilecheck)             Checksum: 7014F8DE428691B4A724DF8EB965ED9F;217.
  ) 
 Here is how much of TeX's memory you used:
- 29030 strings out of 476919
- 627723 string characters out of 5821840
- 942938 words of memory out of 5000000
- 48366 multiletter control sequences out of 15000+600000
+ 29090 strings out of 476919
+ 629117 string characters out of 5821840
+ 943316 words of memory out of 5000000
+ 48418 multiletter control sequences out of 15000+600000
  409156 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 145i,11n,146p,453b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 145i,11n,146p,453b,615s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 2-数学文章的词句.pdf (19 pages).
+Output written on 2-数学文章的词句.pdf (26 pages).
