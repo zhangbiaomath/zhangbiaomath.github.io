@@ -29,19 +29,19 @@
   
 + Matthew H.Y. Xie, Philip B. Zhang, 
   Equivariant Kazhdan-Lusztig polynomials of thagomizer matroids, 
-  Proc. Amer. Math. Soc., 147 (2019), 4687-4695.
+  Proceedings of the American Mathematical Society, 147 (2019), 4687-4695.
 
 + James Haglund, Philip B. Zhang, 
   Real-rootedness of variations of Eulerian polynomials, 
-  Adv. in Appl. Math., 109 (2019), 38-54.
+  Advances in Applied Mathematics, 109 (2019), 38-54.
 
 + Philip B. Zhang,  Xutong Zhang,
   Multivariate stable Eulerian polynomials on segmented permutations,
-  European J. Combin., 78 (2019), 155-162.
+  European Journal of Combinatorics, 78 (2019), 155-162.
   
 + Arthur L.B. Yang, Philip B. Zhang, 
   Brenti's open problem on the real-rootedness of q-Eulerian polynomials of type D,
-  SIAM J. Discrete Math., 31 (2) (2017), 918-926.
+  SIAM Journal on Discrete Mathematics, 31 (2) (2017), 918-926.
 
 + 更多论文参见 个人主页 [https://zhangbiaomath.github.io/](https://zhangbiaomath.github.io/)
 
