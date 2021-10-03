@@ -43,7 +43,7 @@
   Brenti's open problem on the real-rootedness of q-Eulerian polynomials of type D,
   SIAM Journal on Discrete Mathematics, 31 (2) (2017), 918-926.
 
-+ 更多论文参见 个人主页 [https://zhangbiaomath.github.io/](https://zhangbiaomath.github.io/)
++ 更多论文参见个人主页 [https://zhangbiaomath.github.io/](https://zhangbiaomath.github.io/)
 
 #
 + 入选 天津市“131”创新型人才培养工程2017年第三层次人选 [website](http://rsc.tjnu.edu.cn/info/1067/3152.htm)
