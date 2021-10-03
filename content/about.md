@@ -1,5 +1,5 @@
 # 个人简介
-研究方向为代数组合学，在J. Combin. Theory Ser. A.、SIAM J. Discrete Math.、Adv. in Appl. Math.等期刊发表学术论文20余篇。
+研究方向为组合数学，在J. Combin. Theory Ser. A.、SIAM J. Discrete Math.、Adv. in Appl. Math.等期刊发表学术论文20余篇。
 
 # 承担课程
 
