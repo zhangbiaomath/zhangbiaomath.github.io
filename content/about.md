@@ -1,7 +1,8 @@
 # 个人简介
 研究方向为组合数学，在J. Combin. Theory Ser. A.、SIAM J. Discrete Math.等期刊发表学术论文20余篇。
 
-# 教授课程
+# 承担课程
+
 高等代数、组合数学
 
 # 工作经历
