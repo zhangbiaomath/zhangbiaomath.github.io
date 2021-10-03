@@ -23,9 +23,29 @@
 + 2017.1-2017.12，广义欧拉多项式的实根性，国家自然科学基金数学天元基金(No. 11626172)，主持 
 
 ## 论文
++ Zhicong Lin, Jun Ma, Philip B. Zhang, 
+  Plateaux on generalized Stirling permutations and partial gamma-positivity, 
+  Journal of Combinatorial Theory, Series A, 183 (2021), 105488.
+  
++ Matthew H.Y. Xie, Philip B. Zhang, 
+  Equivariant Kazhdan-Lusztig polynomials of thagomizer matroids, 
+  Proc. Amer. Math. Soc., 147 (2019), 4687-4695.
 
-+ 参见 个人主页 [https://zhangbiaomath.github.io/](https://zhangbiaomath.github.io/)
++ James Haglund, Philip B. Zhang, 
+  Real-rootedness of variations of Eulerian polynomials, 
+  Adv. in Appl. Math., 109 (2019), 38-54.
 
++ Philip B. Zhang,  Xutong Zhang,
+  Multivariate stable Eulerian polynomials on segmented permutations,
+  European J. Combin., 78 (2019), 155-162.
+  
++ Arthur L.B. Yang, Philip B. Zhang, 
+  Brenti's open problem on the real-rootedness of q-Eulerian polynomials of type D,
+  SIAM J. Discrete Math., 31 (2) (2017), 918-926.
+
++ 更多论文参见 个人主页 [https://zhangbiaomath.github.io/](https://zhangbiaomath.github.io/)
+
+#
 + 入选 天津市“131”创新型人才培养工程2017年第三层次人选 [website](http://rsc.tjnu.edu.cn/info/1067/3152.htm)
 
 <!-- +  2017年1月至2019年12月， 校博士基金，主持 -->
