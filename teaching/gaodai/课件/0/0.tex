@@ -11,7 +11,7 @@
 \linespread{1.3}
 
 \usepackage{mathrsfs}  %花写字母
- 
+
 
 %%%=== theme ===%%%
 % \usetheme{Warsaw}
@@ -28,7 +28,7 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}[page number]
 
-
+\titlegraphic{\includegraphics[width=2cm]{../tjnu.jpg}}
 
 %\usepackage[fontset=mac]{ctex}
 %\usepackage{ctex}
@@ -86,10 +86,11 @@
 
 
 
-\title[]{高等代数}
+\title[]{高等代数  ---  引言}
 \author[]{{\large 张彪} }
 \institute[]{{\normalsize
-		天津师范大学\\[6pt]
+		天津师范大学\\[4pt]
+        数学科学学院\\[10pt]
 		zhang@tjnu.edu.cn}}
 
 \date{}
@@ -123,47 +124,47 @@
 
 
 
-	
+
 
 
 \begin{frame}
 
 \begin{columns}[c]  %开始进入分栏环境，居中设置
-	
+
 	\column{6cm}
 \begin{leftline}
 	{\Large  宇宙之大，粒子之微，} \\[8pt]
-	
+
 	{ \Large 火箭之速，化工之巧，}\\[8pt]
-	
+
 	{ \Large 地球之变，生物之评，}\\[8pt]
-	
+
 	{ \Large 日用之繁，无处不用数学。}
 \end{leftline}
 
 
 %\rightline{ {\Large 一华罗庚 \qquad \qquad\qquad}}
-	\column{5cm} 
+	\column{5cm}
 	\begin{figure}[p]
 		\includegraphics[scale=0.5]{hua.jpg}
 		\caption{华罗庚 (1910--1985)}
 	\end{figure}
-	
+
 \end{columns}
 
 \end{frame}
 
 
 \begin{frame}
-	
+
 	\begin{columns}[c]  %开始进入分栏环境，居中设置
-		
+
 		\column{6cm}
 		\begin{figure}[p]
 	\includegraphics[scale=0.4]{数学好玩.jpg}
 \end{figure}
 
-		\column{5cm} 
+		\column{5cm}
 		\begin{figure}[p]
 			\includegraphics[scale=0.5]{chern.jpeg}
 					\caption{陈省身 (1911-2004)}
@@ -179,9 +180,9 @@
 \begin{frame}
 	自然科学的发展往往是在推翻或修正旧的理论基础上建立新理论的大厦。
 	\begin{itemize}
-		\item 哥白尼的地动说推翻了统治人们思想1500年的托勒密地心说
-		\item 伽利略的比萨斜塔落体实验否定了亚里士多德的错误想象
-		\item 爱因斯坦的相对论则是对牛顿运动定律的修正。
+		\item 哥白尼(1473—1543)的``日心说''推翻了托勒密(约90-168)的``地心说''
+		\item 伽利略（1564-1642）的比萨斜塔落体实验否定了亚里士多德(前384-前322)的错误想象
+		\item 爱因斯坦(1879-1955)的相对论则是对牛顿(1643－1727)运动定律的修正。
 	\end{itemize}
 \end{frame}
 
@@ -192,15 +193,15 @@
 		\item 然而，作为自然科学的共同语言，数学的独特之处在于它不需要被订正，新的数学理论只是为旧的建筑添砖加瓦，而无须连根拔起。
 		\item 在数学里，已经证明为真的的命题永远为真。比如勾股定理（毕达哥拉斯定理）。
 		\item 欧氏几何源于公元前3世纪。古希腊数学家欧几里德把人们公认的一些几何知识作为定义和公理(公设)，在此基础上研究图形的性质，推导出一系列定理，组成演绎体系，写出《几何原本》，形成了欧氏几何。
-		\item 美国卓越的犹太人科普作家阿西莫夫所说：“托勒密也许对天体系统给出了错误的描绘，但他为了计算而发展处的三角系统永远保持正确。”
+		\item 美国卓越的科普作家阿西莫夫所说：“托勒密也许对天体系统给出了错误的描绘，但他为了计算而发展出的三角学系统永远是正确的。”
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	代数学起源于人类对于数的理解
-	
+
 	\vspace{6pt}
-	
+
 	代数学习的几个阶段
 	\begin{itemize}
 		\item 算~~术 ：自然数、正分数的四则运算（小学）
@@ -215,14 +216,14 @@
 %\begin{frame}
 %大约在 1637 年,法国数学家 Fermat 断言，
 %\begin{conj}
-%	对于大于 2 的整数 $n$,三个未知量 $x, y, z$ 的代数方程 $x^{n}+y^{n}=z^{n}$ 没有正整数解. 
+%	对于大于 2 的整数 $n$,三个未知量 $x, y, z$ 的代数方程 $x^{n}+y^{n}=z^{n}$ 没有正整数解.
 %\end{conj}
 %\pause
 %
 %%这个问题中,只牵涉到正整数的加法与乘 法(乘方)运算，可说是再简单不过了，具有初中一年级代数知识的人 都能看明白.
 %
 %%但是
-%它历经 350 余年,无数第一流的数学家为之纹尽脑汁, 才于 1994 年被 Princeton 大学的数学家 Wiles 使用现代最深奥 的数学理论得出解答. 
+%它历经 350 余年,无数第一流的数学家为之纹尽脑汁, 才于 1994 年被 Princeton 大学的数学家 Wiles 使用现代最深奥 的数学理论得出解答.
 %
 %\end{frame}
 %
@@ -232,8 +233,8 @@
 %\begin{itemize}
 %\item 从生产实践和自然科学理论中,自然地产生了\alert{求解代数方
 %程}的问题,它就是代数学的经典课题.
-%\item 
-%例如，根据牛顿第二运动定律， 物体所受的力 F,它的质量 $m$ 和产生的加速度 $a$ 之间存在关系 $F=$ ma. 
+%\item
+%例如，根据牛顿第二运动定律， 物体所受的力 F,它的质量 $m$ 和产生的加速度 $a$ 之间存在关系 $F=$ ma.
 %如果已知物体的质量 $m$ 和所受的力 $F$,求加速度 $a,$ 这就是\alert{一元 一次方程}的求解问题.
 %\item  又比如，一个以初速 $v_{0}$ 在水平面上作匀加速 运动的物体，它的加速度 a,运动时间 $t$ 和移动的距离 S 满足
 %\[
@@ -243,18 +244,18 @@
 %\end{itemize}
 %
 %
-% 
 %
-%\end{frame} 
+%
+%\end{frame}
 %
 %
 %\begin{frame}
 %\begin{itemize}
-%\item 数学 史表明,早在中世纪人们就已经找到解一元一次、二次代数方程的一 般方法. 
-%\item 到欧洲的文艺复兴时代，又找到\alert{一元三次、四次方程}的求根 公式. 
-%\item 但是随后数学家们就碰到难题了. 在数百年时间内，他们苦苦 寻求五次以上代数方程的求根公式,却总是遭到失败. 
+%\item 数学 史表明,早在中世纪人们就已经找到解一元一次、二次代数方程的一 般方法.
+%\item 到欧洲的文艺复兴时代，又找到\alert{一元三次、四次方程}的求根 公式.
+%\item 但是随后数学家们就碰到难题了. 在数百年时间内，他们苦苦 寻求五次以上代数方程的求根公式,却总是遭到失败.
 %\pause
-%\item 直到 1832 年， 法国数学家 Galois 才找到了一个\alert{高次代数方程}有根式解(即用该方 程的系数经加、减、乘、除及开方运算表示它的全部根）的判别准则， 完满地解决了高次代数方程根的理论课题. 
+%\item 直到 1832 年， 法国数学家 Galois 才找到了一个\alert{高次代数方程}有根式解(即用该方 程的系数经加、减、乘、除及开方运算表示它的全部根）的判别准则， 完满地解决了高次代数方程根的理论课题.
 %\end{itemize}
 %\end{frame}
 %
@@ -262,17 +263,17 @@
 %\begin{frame}
 %\begin{itemize}
 %	\item
-%	根据 Galois 的理论，五 次以上的一般代数方程没有求根公式. 
+%	根据 Galois 的理论，五 次以上的一般代数方程没有求根公式.
 %
-%	\item Galois 的工作中最值得注意 的是，他不是局限在数的四则运算的范围内考查问题. 
+%	\item Galois 的工作中最值得注意 的是，他不是局限在数的四则运算的范围内考查问题.
 %
-%	\item 他跳出这个圈 子,考查 $n$ 次方程的 $n$ 个根的某些\alert{置换}所组成的集合 $G,$ 规定 $G$ 内两 个置换的“乘积”是对根的集合逐次进行这两个置换. 
+%	\item 他跳出这个圈 子,考查 $n$ 次方程的 $n$ 个根的某些\alert{置换}所组成的集合 $G,$ 规定 $G$ 内两 个置换的“乘积”是对根的集合逐次进行这两个置换.
 %
-%	\item 他在一个 并非由数组成的集合 G 内定义了一种新的代数运算：\alert{乘法}(它完全 不同于数的乘法). 他发现这种乘法也具有与数的乘法相类似的某些 运算法则(例如满足结合律等等). 这个新的具有乘法运算的集合我 们现在把它称为该高次代数方程的 \alert{Galois 群}. 
+%	\item 他在一个 并非由数组成的集合 G 内定义了一种新的代数运算：\alert{乘法}(它完全 不同于数的乘法). 他发现这种乘法也具有与数的乘法相类似的某些 运算法则(例如满足结合律等等). 这个新的具有乘法运算的集合我 们现在把它称为该高次代数方程的 \alert{Galois 群}.
 %
 %	\item Galois 证明：
 %\begin{center}
-%高次代 数方程有没有根式解取决于它的 Galois 群的结构. 
+%高次代 数方程有没有根式解取决于它的 Galois 群的结构.
 %\end{center}
 %\end{itemize}
 %\end{frame}
@@ -281,7 +282,7 @@
 %\begin{itemize}
 %	\item 这样，人们的认 识发生了一个质的飞跃,那就是为了研讨数及其代数运算中所包含 的深刻规律,我们必须跳出数及其四则运算的框框,去研究一个更一 般的集合及其中应有的代数运算.
 %
-%	\item  这样 ,代数学发生了一个革命性的 变化：从研究代数方程的求根这一经典课题解脱出来,变成研究一 个一般的\alert{集合}(其元素可以完全抽象,没有具体内容)，在其中存在一 种或若干种\alert{代数运算}(这种运算不同于数的四则运算,甚至可以是抽 象定义的)，同时要求这些运算要满足一定的运算法则. 
+%	\item  这样 ,代数学发生了一个革命性的 变化：从研究代数方程的求根这一经典课题解脱出来,变成研究一 个一般的\alert{集合}(其元素可以完全抽象,没有具体内容)，在其中存在一 种或若干种\alert{代数运算}(这种运算不同于数的四则运算,甚至可以是抽 象定义的)，同时要求这些运算要满足一定的运算法则.
 %\end{itemize}
 %\end{frame}
 
@@ -289,20 +290,20 @@
 
 \begin{frame}{教材}
 	教材
-	
+
 	\begin{itemize}
 		\item 北京大学数学系几何与代数教研室代数小组, 高等代数(第5版), 高等教育出版社, 2019.
-		
-		
+
+
 	\end{itemize}
-	
+
 	参考书目
 		\begin{itemize}
-		
+
 		\item  王萼芳, 石生明, 高等代数辅导与习题解答（北大·第5版), 高等教育出版社, 2019.
-		
+
 		\item 徐仲等, 高等代数(北大第四版)导教导学导考, 西安:西北工业大学出版社, 2014.
-		
+
 	\end{itemize}
 
 \end{frame}
@@ -310,9 +311,9 @@
 
 
 \begin{frame}{Outline}
-	
+
 		\begin{columns}[c]  %开始进入分栏环境，居中设置
-		
+
 		\column{6cm}
 
 \alert{第一学期}
@@ -330,8 +331,8 @@
 	\item[7] 线性变换
 	\item[9] 欧几里得空间
 \end{itemize}
-		
-		\column{5cm} 
+
+		\column{5cm}
 		\begin{figure}[p]
 			\includegraphics[scale=0.5]{gaodai_code.png}
 			\caption{课程网页}
@@ -349,19 +350,19 @@
 设A与B为两命题，
 \begin{itemize}
 	\item A的\alert{充分条件}是B
-	
+
 	如果B成立，那么A成立，即$A\Leftarrow B$（箭头表示能够推导出）
-	
+
 	\item A的\alert{必要条件}是B
-	
+
 	如果A成立，那么B成立，即$A\Rightarrow B$.
-	
+
 	\item A的\alert{充分必要条件}是B
 	\begin{itemize}
 		\item 充分性 $A\Leftarrow B$
 		\item 必要性 $A\Rightarrow B$
 	\end{itemize}
-	
+
 \end{itemize}
 
 
@@ -408,9 +409,9 @@ B是A的充分必要条件(或称为充要条件).
 
 如果你有一排很长的直立着的多米诺骨牌那么如果你可以确定：
 
-第一张骨牌将要倒下. 
+第一张骨牌将要倒下.
 
-只要某一个骨牌倒了,与他相临的下一个骨牌也要倒. 
+只要某一个骨牌倒了,与他相临的下一个骨牌也要倒.
 
 那么你就可以推断所有的的骨牌都将要倒. \\[15pt]
 		\includegraphics[scale=0.4]{gupai.jpg}
@@ -420,8 +421,8 @@ B是A的充分必要条件(或称为充要条件).
 \begin{frame}{第一数学归纳法}
 第一数学归纳法可以概括为以下三步：
 \begin{enumerate}
-	
-\item 归纳奠基：证明$n=1$时命题成立. 
+
+\item 归纳奠基：证明$n=1$时命题成立.
 \item 归纳假设：假设$n=k$时命题成立.
 \item 归纳递推：由归纳假设推出$n=k+1$时命题也成立．
 \end{enumerate}
@@ -434,13 +435,13 @@ B是A的充分必要条件(或称为充要条件).
 1+2+3+\cdots+n=\frac{n(n+1)}{2}.
 \]
 \end{exa}
-%这是用于计算前 $n$ 个自然数之和的公式. 
+%这是用于计算前 $n$ 个自然数之和的公式.
 
-\pf 
+\pf
 \begin{itemize}
-\item 这个公式在 $n=1$ 时成立.  左边 = 1，右边 = 1(1+ 1) / 2 = 1. 
+\item 这个公式在 $n=1$ 时成立.  左边 = 1，右边 = 1(1+ 1) / 2 = 1.
 
-所以这个公式在 $n=1$ 时成立. 
+所以这个公式在 $n=1$ 时成立.
 \item 我们假设 $n=m$ 时公式成立，即
 \[
 1+2+\cdots+m=\frac{m(m+1)}{2}.
@@ -449,7 +450,7 @@ B是A的充分必要条件(或称为充要条件).
 \[
 1+2+\cdots+m+(m+1)=\frac{m(m+1)}{2}+(m+1) = \frac{(m+1)(m+2)}{2}.
 \]
-这就是 $n=m+1$ 时的等式. 
+这就是 $n=m+1$ 时的等式.
 
 因此，对于任意自然数等式都成立. \qed
 \end{itemize}
@@ -459,20 +460,20 @@ B是A的充分必要条件(或称为充要条件).
 \begin{exa}
 对于任意自然数$n$证明$3^n−1$ 是 $2$ 的倍数.
 \end{exa}
-\pf 
+\pf
 
 \begin{itemize}
-	\item  $3^0−1 = 1−1 = 0$是$ 2 $的倍数.  所以, 当 $n=0$ 时命题成立. 
+	\item  $3^0−1 = 1−1 = 0$是$ 2 $的倍数.  所以, 当 $n=0$ 时命题成立.
 	\item 我们假设 $n=k$ 时命题成立, 即 $3^{k}−1$ 是 $2$ 的倍数.
-	\item 接下来证明$n=k+1$ 时命题也成立. 
+	\item 接下来证明$n=k+1$ 时命题也成立.
 	\begin{align*}
 		3^{k+1}-1 & = 2 \cdot 3^{k}+(3^{k}-1 )
 	\end{align*}
 	$2 \cdot 3^{k}$是 $2$ 的倍数.
 	由归纳假设，$3^{k}−1$ 是 $2$ 的倍数.
-	又因为$2 \cdot 3^{k}$也是 $2$ 的倍数, 
+	又因为$2 \cdot 3^{k}$也是 $2$ 的倍数,
 	所以	$3^{k+1}-1$是 $2$ 的倍数.
-	
+
 	因此，对于任意自然数$n$，都有 $3^n−1$ 是 $2$ 的倍数.
 	 \qed
 \end{itemize}
@@ -490,7 +491,7 @@ B是A的充分必要条件(或称为充要条件).
 
 \begin{frame}{第二数学归纳法}
 有些命题用第一归纳法证明不大方便，可以用第二归纳法证
-明. 
+明.
 
 第二数学归纳法的证明步骤是：
 \begin{enumerate}
@@ -518,12 +519,12 @@ B是A的充分必要条件(或称为充要条件).
 		\sum_{i=1}^{n}a_i
 	\end{align}
 	$\sum$称为\alert{连加号}，而连加号上下的写法表示$i$的取值由$1$到$n$.
-	
+
 	例如
 	\[1^2+2^2+\cdots+n^2=\sum_{i=1}^{n}i^2\]
-	
+
 	这里的 $i$ 称为\alert{求和指标}, 它只起一个辅助的作用.
-	
+
 	把 \eqref{eq:a_i_sum}还原成 \eqref{eq:a_i} 时，
 	它是不出现的.譬如说, \eqref{eq:a_i}也可以记成
 	$$
@@ -548,7 +549,7 @@ B是A的充分必要条件(或称为充要条件).
 %这一附录引导读者学习整数的可除性理论.这是学习高等代数以及其它 课程必须知道的数学知识. 我们列出了所有的结论,但没有证明.读者完全可 以仿照多项式理论中有关结论的论证补出这些证明.这是留给读者的绝好的
 %练习
 
-整数有加法, 减法和乘法等运算, 减法是加法的逆运算. 
+整数有加法, 减法和乘法等运算, 减法是加法的逆运算.
 
 %加法和乘法满足 下面的八条规律.
 %以下用 $a, b, c, d, \ldots$ 表示任意整数.
@@ -582,33 +583,33 @@ B是A的充分必要条件(或称为充要条件).
 \end{itemize}
 \end{frame}
 \begin{frame}{带余除法}
-在 $\mathbb{Z}$ 中不能作除法,但是有以下的\alert{带余除法}.  
+在 $\mathbb{Z}$ 中不能作除法,但是有以下的\alert{带余除法}.
 \begin{thm}
 对于任意两个整数 $a ,b,b\neq 0$,存在一对整数 $q, r$ 满足
 \[
 a=q \cdot b+r, \quad 0 \leqslant r<|b|
 \]
-而且满足这个条件的整数 $q, r$ 是唯一的. 
+而且满足这个条件的整数 $q, r$ 是唯一的.
 \end{thm}
 \begin{defi}
 \begin{itemize}
-\item $q$ 称为b 除 $a$ 的\alert{商}, 
-\item $r$ 称为 $b$ 除 $a$ 的\alert{余数}. 
+\item $q$ 称为b 除 $a$ 的\alert{商},
+\item $r$ 称为 $b$ 除 $a$ 的\alert{余数}.
 \end{itemize}
 \end{defi}
- 
+
 \end{frame}
 
 \begin{frame}
 \begin{defi}
 	对于整数 $a ,b$,如果存在一个整数 $c$ 使得 $a=b c,$ 则称
 \begin{itemize}
-\item $b$ 是 $a$ 的\alert{因数}, 
+\item $b$ 是 $a$ 的\alert{因数},
 \item $a$ 是 $b$ 的\alert{倍数}.
 \end{itemize}
 \end{defi}
 \begin{rem}
-在定义中我们并不要求 $b\neq0$. 
+在定义中我们并不要求 $b\neq0$.
 \end{rem}
 
 
@@ -619,7 +620,7 @@ a=q \cdot b+r, \quad 0 \leqslant r<|b|
 \begin{prop}
 	当 $b\neq 0$ 时，$b$ 是 $a$ 的因数的充 分必要条件是 $b$ 除 $a$ 所得的余数为 $0$.
 \end{prop}
-因此 $b$ 是 $a$ 的因数, 也称 $b$ \alert{整除} $a,$ 记作$b | a$. 
+因此 $b$ 是 $a$ 的因数, 也称 $b$ \alert{整除} $a,$ 记作$b | a$.
 
 关于整除,有以下一些性质：
 \begin{prop}
@@ -656,21 +657,21 @@ a=q \cdot b+r, \quad 0 \leqslant r<|b|
 \begin{rem}
 	\begin{itemize}
 \item 根据定义，如果 $d_{1}, d_{2}$ 都是 $a, b$ 的最大公因数,那么 $d_{1}\left|d_{2}, d_{2}\right| d_{1} .$ 从
-而 $d_{1}=\pm d_{2} .$ 
+而 $d_{1}=\pm d_{2} .$
 按规定 $d_{1}, d_{2}$ 皆非负,故 $d_{1}=d_{2}$.
 
 \item 当 $b | a$ 时, $b$ 是 $a$ 与 $b$ 的最大公因数.
 
 \item 特别地当 $a=0$ 时, $b$ 是 $a$ 与 $b$ 的一 个最大公因数.
- 
-\item 当 $a, b$  不全为零时, $a,b$ 的最大公因数不为0,  这时我们规定:以$(a, b)$ 表示 $a, b$ 的正的最大公因数. 在这个规定下，$(a, b)$是唯一的. 
+
+\item 当 $a, b$  不全为零时, $a,b$ 的最大公因数不为0,  这时我们规定:以$(a, b)$ 表示 $a, b$ 的正的最大公因数. 在这个规定下，$(a, b)$是唯一的.
 \end{itemize}
 \end{rem}
 \end{frame}
 
 \begin{frame}{辗转相除法}
 
-设 $b \neq 0,$ 即 $b>0 .$ 反复应用 带余除法. 
+设 $b \neq 0,$ 即 $b>0 .$ 反复应用 带余除法.
 	\[
 	\begin{array}{cc}
 	a=q_{1} b+r_{1}, & 0<r_{1}<b \\
@@ -708,22 +709,22 @@ u a+v b=1
 \item 如果 $a|c, b| c$ 而且 $(a, b)=1,$ 则 $a b | c$
 \item 如果 $(a, c)=1,(b, c)=1,$ 则 $(a b, c)=1$
 \end{enumerate}
-这些性质说明了互素的重要性. 
+这些性质说明了互素的重要性.
 \end{frame}
 
 
- 
- \begin{frame}
-%最后介绍素数(亦称质数)的概念.  
 
-%一个整数 $a(a>1)$ 至少有两个因数: 1 和 $a$ 本身. 不等于 1 和 $a$ 的因数 叫做 $a$ 的真因数.  
+ \begin{frame}
+%最后介绍素数(亦称质数)的概念.
+
+%一个整数 $a(a>1)$ 至少有两个因数: 1 和 $a$ 本身. 不等于 1 和 $a$ 的因数 叫做 $a$ 的真因数.
 
 \begin{defi}
 	$a$ 是一个大于 1 的整数.如果除去 1 和本身外，$a$ 没有其它因数, 那么称$a$是一个\alert{素数}.
 \end{defi}
-例如 2, 3, 5, 23 等都是素数.  
+例如 2, 3, 5, 23 等都是素数.
 
-从定义可知, 如果$p$ 表示成 $p=a \cdot b,$ 则必有 $a=1, b=p$ 或 $a=p, b=1$ 
+从定义可知, 如果$p$ 表示成 $p=a \cdot b,$ 则必有 $a=1, b=p$ 或 $a=p, b=1$
 
 %素数有下述性质：
 \begin{prop}
@@ -732,7 +733,7 @@ u a+v b=1
 \item 如果 素数 $p | a  b$ 则 $p | a$ 或$p| b$.
 \item  如果一个>1 的整数 $p$ 和任何整数 $a$ 都有 : $p | a \text { 或( } p, a)=1,$ 则 $p$
 是一个素数.
-\item 如果大于 1 的整数$p$ 具有下述性质:对任何整数 $a , b$: 从 $p | a b$ 可推 出 $p | a$ 或 $p | b,$ 则 $p$ 是一个素数.  
+\item 如果大于 1 的整数$p$ 具有下述性质:对任何整数 $a , b$: 从 $p | a b$ 可推 出 $p | a$ 或 $p | b,$ 则 $p$ 是一个素数.
 \end{enumerate}
 \end{prop}
 如果一个素数  $p$ 是整数 $a$ 的一个因数，则 $p$ 称为 $a$ 的一个素因数.
@@ -741,7 +742,7 @@ u a+v b=1
 
  \begin{frame}
 根据互素及素数的性质, 应用数学归纳法可以证明整数的一个基本
-定理. 
+定理.
 \begin{thm}[因数分解及唯一性定理]
 任一个大于 1 的整数 a 可以分解 成有限多个 素因数的乘积：
 \[
@@ -762,9 +763,9 @@ $p_{i}=q_{i}, \quad i=1,2, \cdots, s$.
 \[
 a=p_{1}^{\ell_{1}} p_{2}^{\ell_{2}} \cdots p_{r}^{\ell_r},  \quad p_{1}<p_{2}<\cdots<p_{r}, l_{i}>0, i=1, \cdots, r.
 \]
-这种表示法称为 $a$ 的\alert{标准分解式}. 
+这种表示法称为 $a$ 的\alert{标准分解式}.
 
-可以应用整数的分解式来判断整除性及计算最大公因数. 
+可以应用整数的分解式来判断整除性及计算最大公因数.
 
 现在将整数 $a$ , $b$ 的因数合在一起, 设为 $p_{1}, p_{2}, \cdots, p_{t},$ 并设
 \begin{equation}\label{eq-1}
@@ -779,7 +780,7 @@ b=p_{1}^{d_{1}} p_{2}^{d_{2}} \cdots p_{t}^{d_t}, & d_{i} \geqslant 0,  \quad i=
 $
 \ell_{i} \leqslant d_{i}, i=1,2, \cdots, t
 $
-\item 
+\item
 $
 (a, b)=p_{1}^{\min \left(\ell_{1}, d_{1}\right)} p_{2}^{\min \left(\ell_{2}, d_{2}\right)}\cdots p_{t}^{\min \left(\ell_{t}, d_{t}\right)}
 $
@@ -790,11 +791,11 @@ $
 
 
 \begin{frame}
-%最后我们介绍最小公倍数的概念.  
+%最后我们介绍最小公倍数的概念.
 
 \begin{defi}
-设 $a ,b$ 是两个非负整数. $m$ 是 $a, b$ 的一个公倍数(按前面约定, 也是非负的). 
-如果 $a , b$ 的任一个公倍数都是 $m$ 的倍数, 则 $m$ 称为 $a, b$ 的一 个\alert{最小公倍数}.  
+设 $a ,b$ 是两个非负整数. $m$ 是 $a, b$ 的一个公倍数(按前面约定, 也是非负的).
+如果 $a , b$ 的任一个公倍数都是 $m$ 的倍数, 则 $m$ 称为 $a, b$ 的一 个\alert{最小公倍数}.
 \end{defi}
 \begin{rem}
 \begin{itemize}
@@ -824,7 +825,7 @@ a  b=(a, b) \cdot[a, b]
 %可以把最大公因数及最小公倍数的概念推广到有限多个整数 $a_{1}, a_{2}$
 
 
-%$a,$ 的楠形.类似地规定 $\left(a_{1}, a_{2}, \cdots, a_{s}\right)$ 和 $\left[a_{1}, a_{2}, \cdots, a_{s}\right] .$ 
+%$a,$ 的楠形.类似地规定 $\left(a_{1}, a_{2}, \cdots, a_{s}\right)$ 和 $\left[a_{1}, a_{2}, \cdots, a_{s}\right] .$
 %
 %特别地,当 $a_{1}, a_{2}$
 %$\cdots, a,$ 全为正整数时有
@@ -857,9 +858,9 @@ a  b=(a, b) \cdot[a, b]
 	\[
 	\mathbb{C}=\{a+b i \, | \, a, b \text { 取所有实数 }\}
 	\]
-	%集合 $\mathbb{C}$包含实数集合 $\mathbb{R}$. 
-	
-	
+	%集合 $\mathbb{C}$包含实数集合 $\mathbb{R}$.
+
+
 	有了复数之后，开方运算就不再局限于大于0的数了，这样一元二次方 程：
 	\[
 	a x^{2}+b x+c=0 \quad(a \neq 0)
@@ -868,20 +869,20 @@ a  b=(a, b) \cdot[a, b]
 	\[
 	x=\frac{-b \pm \sqrt{b^{2}-4 a c}}{2 a}
 	\]
-	
-	
+
+
 \end{frame}
 
 \begin{frame}
 	\begin{itemize}
 		\item 定义$\mathbb{C}$内的加法
 		$$(a+b i)+(c+d i)  : =(a+c)+(b+d) i $$
-		
+
 		\item 定义 $a+b {i}$的负数 $-(a+b {i})${ 是 } $(-a)+(-b) {i}$
-		
+
 		\item 定义  $\mathbb{C}$内的减法 $$(a+b i)-(c+d i) =(a-c)+(b-d) i $$
 	\end{itemize}
-	
+
 \end{frame}
 
 \begin{frame}
@@ -890,7 +891,7 @@ a  b=(a, b) \cdot[a, b]
 		\[
 		(a+b i)(c+d i) =(a c-b d)+(a d+b c) i
 		\]
-		
+
 		\item 定义 $a+b {i}$ 的倒数或逆
 		\[
 		\frac{1}{a+b i}=\frac{1}{a^{2}+b^{2}}(a-b i)=\frac{a-b i}{a^{2}+b^{2}}
@@ -903,16 +904,16 @@ a  b=(a, b) \cdot[a, b]
 \end{frame}
 
 \begin{frame}{复数的表示：实部、虚部、共轭、模}
-	
+
 	\begin{defi}
 		对于复数$z=a+b i,$ 其中 $a, b$ 是实数.
-		
+
 		\begin{itemize}
 			\item $a$ 称为$z$的\alert{实部}, 记为$\text{Re} z$
-			
+
 			\item $b$ 称为$z$的\alert{虚部}, 记为$\text{Im}  z$
-			
-			\item 复数$z=a+b i$的\alert{共轭} $\bar{z}:=a-bi$ 
+
+			\item 复数$z=a+b i$的\alert{共轭} $\bar{z}:=a-bi$
 			\item  $|z|=\sqrt{a^{2}+b^{2}}$ 称为 $a+b i$ 的\alert{模}或绝对值。
 		\end{itemize}
 	\end{defi}
@@ -928,13 +929,13 @@ a  b=(a, b) \cdot[a, b]
 
 
 \begin{frame}
-	将 $Ox$ 轴正方向沿反时针方向旋转到直线 $OA$ 的旋转角 $\varphi$ 称为复数 $\alpha=a+b {i}$ 的\alert{辐角}. 辐角的值不是唯一确定的,可以加上 $2 \pi$ 的任意整数倍. 
-	
+	将 $Ox$ 轴正方向沿反时针方向旋转到直线 $OA$ 的旋转角 $\varphi$ 称为复数 $\alpha=a+b {i}$ 的\alert{辐角}. 辐角的值不是唯一确定的,可以加上 $2 \pi$ 的任意整数倍.
+
 	因为 $a=|\alpha| \cos \varphi, b=|\alpha| \sin \varphi,$ 故有
 	\[
 	\alpha=a+b {i}=|\alpha|(\cos \varphi+{i} \sin \varphi)
 	\]
-	上式称为复数的三角表示. 
+	上式称为复数的三角表示.
 	\begin{center}
 		\begin{tikzpicture}
 			\draw [fill=black](0, 0) [radius=0.03cm] circle;   % 原点
@@ -955,10 +956,10 @@ a  b=(a, b) \cdot[a, b]
 			\includegraphics[scale=0.4]{r=1-sintheta.png}
 			\caption{笛卡尔心形线~~~~~~}
 		\end{figure}
-		
+
 	\end{center}
-	
-	
+
+
 \end{frame}
 
 
@@ -983,14 +984,14 @@ a  b=(a, b) \cdot[a, b]
 	\[
 	{e}^{{i} \varphi}=\cos \varphi+{i} \sin \varphi
 	\]
-	上式表示的复数模为 1，称为复数的\alert{欧拉公式}. 
-	
+	上式表示的复数模为 1，称为复数的\alert{欧拉公式}.
+
 	因而位于以坐标原点 O 为中心的单位圆上， 其辐角为 $\varphi$. 于是
 	\[
 	{e}^{{i} \varphi} {e}^{{i} \psi}={e}^{{i}(\varphi+\psi)}
 	\]
-	
-	
+
+
 	当$\varphi$为$\pi$时, $$ e^{i\pi }=-1$$
 	将数学内4个极重要的数$e, i, \pi, -1 $连起来.
 \end{frame}
@@ -1027,4 +1028,4 @@ a  b=(a, b) \cdot[a, b]
 
 \end{frame}
 
-\end{document} 
+\end{document}

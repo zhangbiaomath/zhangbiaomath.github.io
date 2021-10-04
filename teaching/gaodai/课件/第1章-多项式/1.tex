@@ -12,7 +12,7 @@
 \linespread{1.3}
 
 \usepackage{mathrsfs}  %花写字母
- 
+
 
 %%%=== theme ===%%%
 % \usetheme{Warsaw}
@@ -30,7 +30,7 @@
 \setbeamertemplate{footline}[page number]
 
 
-
+\titlegraphic{\includegraphics[width=2cm]{../tjnu.jpg}}
 
 \usepackage{minitoc}
 
@@ -97,8 +97,9 @@
 \title[]{第一章 \quad 多项式}
 \author[]{{\large 张彪}\\  }
 \institute[]{{\normalsize
-		天津师范大学\\[6pt]
-		zhang@tjnu.edu.cn}}
+        天津师范大学\\[4pt]
+        数学科学学院\\[10pt]
+        zhang@tjnu.edu.cn}}
 
 \date{}
 
@@ -128,9 +129,9 @@
 \end{defi}
 
    常用到的数域：有理数域$\mathbb{Q}$ 、实数域$\mathbb{R}$、复数域$\mathbb{C}$.
-   
+
    \vspace{10pt}
-数域定义的另一形式  
+数域定义的另一形式
 \begin{defi}
 	设$P$是由一些复数组成的集合，其中
 	包括0与1.如果对
@@ -145,7 +146,7 @@
 \begin{frame}
 \begin{exa}
 所有形如 $a+b \sqrt{2}(a ,b$ 是有理数) 的数 构成一个数域 $\mathbb{Q}(\sqrt{2}) .$
-\end{exa} 
+\end{exa}
 
 \pause
 \pf (i) $0,1 \in \mathbb{Q}(\sqrt{2})$
@@ -179,7 +180,7 @@ a \beta & =(a c+2 b d)+(a d+b c) \sqrt{2} \in \mathbb{Q}(\sqrt{2})
 1+2=3, $\cdots$,  $P$包含所有\alert{自然数}；
 	\item 由$0\in P$及$P$对减法的封闭性知：$P$包含所有负
 整数，因而$P$包含所有\alert{整数}；
-\item 
+\item
 任何一个有理数都可以表为两个整数的商，
 由P对除法的封闭性知：$P$包含所有\alert{有理数}.
 
@@ -196,11 +197,11 @@ a \beta & =(a c+2 b d)+(a d+b c) \sqrt{2} \in \mathbb{Q}(\sqrt{2})
 \begin{frame}
 
 \begin{defi}
-设$x$是一个符号(文字)，$n$为非负整数. 
-形式表达式  
+设$x$是一个符号(文字)，$n$为非负整数.
+形式表达式
 \[
 a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,
-\]                
+\]
 其中$a_0, a_1, \ldots, a_n\in P$, 称为系数在数域$P$中的一元多项式，简称为\alert{数域$P$上的一元多项式}.
 \end{defi}
 
@@ -212,11 +213,11 @@ a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,
 \item 这里 $a_ix^i$ 称为 \alert{$i$次项}, $a_i$ 称为 \alert{$i$次项系数}.
 
 若$a_n\neq 0$, 则称 $a_n x^n$ 为\alert{首项}.
-\item 习惯上记为$f (x), g(x), \ldots$或 $f, g, \ldots$ 
-上述形式表达式可写为         
+\item 习惯上记为$f (x), g(x), \ldots$或 $f, g, \ldots$
+上述形式表达式可写为
 \[
 \sum_{i=0}a_i x^i.
-\]       
+\]
 \end{itemize}
 \end{rem}
 \end{frame}
@@ -246,7 +247,7 @@ $\deg (f (x))=3$
 && $13 x^{2}$& $-8 x$ & +6  & \\
  & &$13 x^{2}$ & $-39 x$ & +13 & \\
   \cline{2-5}
-&&& $ 31 x$& -7 & 
+&&& $ 31 x$& -7 &
 \end{tabular}}
 
 \end{center}
@@ -283,13 +284,13 @@ $$
 			& $-\frac{1}{3}x^3-\frac{5}{3}x^2-3x-3\, $ & \\
 			& $-\frac{1}{3}x^3-\frac{10}{9}x^2-\frac{2}{9}x+\frac{1}{3}$ & \\
 			\cline{2-2}
-			& $r_1(x)= -\frac{5}{9}x^2-\frac{25}{9}x-\frac{10}{3}$ & 
+			& $r_1(x)= -\frac{5}{9}x^2-\frac{25}{9}x-\frac{10}{3}$ &
 		\end{tabular}
 	\end{center}
-	
 
 
-	
+
+
 	\[
 	\red{f(x)}=q_1(x) \blue{g(x)} +r_1(x)
 	\]
@@ -308,11 +309,11 @@ $=q_2(x)$ & $3x^3+15x^2+18x\quad $ & $x^4+\frac{10}{3}x^3+\frac{2}{3}x^2-x\qquad
  &$ -5x^2-16x-3$ & $-\frac{1}{3}x^3-\frac{5}{3}x^2-3x-3\, $ & \\
   &$ -5x^2-25x-30$ & $-\frac{1}{3}x^3-\frac{10}{9}x^2-\frac{2}{9}x+\frac{1}{3}$ & \\
    \cline{2-3}
-  &$ r_2(x) = 9x+27$ & \blue{$r_1(x) =-\frac{5}{9}x^2-\frac{25}{9}x-\frac{10}{3}$} & 
+  &$ r_2(x) = 9x+27$ & \blue{$r_1(x) =-\frac{5}{9}x^2-\frac{25}{9}x-\frac{10}{3}$} &
 		\end{tabular}
 	\end{center}
 	\pause
-	
+
 \begin{align*}
 	{f(x)} & =q_1(x) {g(x)} +r_1(x)\\
 \red{g(x)} & =q_2(x) \blue{r_1(x)} +r_2(x)
@@ -342,7 +343,7 @@ $=q_2(x)$ & $3x^3+15x^2+18x\quad $ & $x^4+\frac{10}{3}x^3+\frac{2}{3}x^2-x\qquad
 			& & 0 & \\
 		\end{tabular}
 	\end{center}
-	
+
 	\begin{align*}
 		{f(x)} & =q_1(x) {g(x)} +r_1(x)\\
 		{g(x)} & =q_2(x) {r_1(x)} +r_2(x)\\
@@ -352,4 +353,4 @@ $=q_2(x)$ & $3x^3+15x^2+18x\quad $ & $x^4+\frac{10}{3}x^3+\frac{2}{3}x^2-x\qquad
 
 
 
-\end{document} 
+\end{document}
