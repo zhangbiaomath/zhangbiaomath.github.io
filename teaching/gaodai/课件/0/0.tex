@@ -436,7 +436,7 @@ B是A的充分必要条件(或称为充要条件).
 \]
 \end{exa}
 %这是用于计算前 $n$ 个自然数之和的公式.
-
+\pause
 \pf
 \begin{itemize}
 \item 这个公式在 $n=1$ 时成立.  左边 = 1，右边 = 1(1+ 1) / 2 = 1.
@@ -460,6 +460,8 @@ B是A的充分必要条件(或称为充要条件).
 \begin{exa}
 对于任意自然数$n$证明$3^n−1$ 是 $2$ 的倍数.
 \end{exa}
+
+\pause
 \pf
 
 \begin{itemize}
@@ -521,7 +523,7 @@ B是A的充分必要条件(或称为充要条件).
 	$\sum$称为\alert{连加号}，而连加号上下的写法表示$i$的取值由$1$到$n$.
 
 	例如
-	\[1^2+2^2+\cdots+n^2=\sum_{i=1}^{n}i^2\]
+	\[1^2+2^2+\cdots+n^2=\sum_{i=1}^{n}i^{\, 2}\]
 
 	这里的 $i$ 称为\alert{求和指标}, 它只起一个辅助的作用.
 
@@ -585,7 +587,7 @@ B是A的充分必要条件(或称为充要条件).
 \begin{frame}{带余除法}
 在 $\mathbb{Z}$ 中不能作除法,但是有以下的\alert{带余除法}.
 \begin{thm}
-对于任意两个整数 $a ,b,b\neq 0$,存在一对整数 $q, r$ 满足
+对于任意两个整数 $a ,b$,其中$b\neq 0$,存在一对整数 $q, r$ 满足
 \[
 a=q \cdot b+r, \quad 0 \leqslant r<|b|
 \]
@@ -613,15 +615,15 @@ a=q \cdot b+r, \quad 0 \leqslant r<|b|
 \end{rem}
 
 
+
+    \begin{prop}
+        当 $b\neq 0$ 时，$b$ 是 $a$ 的因数的充 分必要条件是 $b$ 除 $a$ 所得的余数为 $0$.
+    \end{prop}
+    因此 $b$ 是 $a$ 的因数, 也称 $b$ \alert{整除} $a,$ 记作$b | a$.
+
 \end{frame}
 
 \begin{frame}
-
-\begin{prop}
-	当 $b\neq 0$ 时，$b$ 是 $a$ 的因数的充 分必要条件是 $b$ 除 $a$ 所得的余数为 $0$.
-\end{prop}
-因此 $b$ 是 $a$ 的因数, 也称 $b$ \alert{整除} $a,$ 记作$b | a$.
-
 关于整除,有以下一些性质：
 \begin{prop}
 \begin{enumerate}
@@ -660,7 +662,7 @@ a=q \cdot b+r, \quad 0 \leqslant r<|b|
 而 $d_{1}=\pm d_{2} .$
 按规定 $d_{1}, d_{2}$ 皆非负,故 $d_{1}=d_{2}$.
 
-\item 当 $b | a$ 时, $b$ 是 $a$ 与 $b$ 的最大公因数.
+\item 当 $b\,  | a$ 时, $b$ 是 $a$ 与 $b$ 的最大公因数.
 
 \item 特别地当 $a=0$ 时, $b$ 是 $a$ 与 $b$ 的一 个最大公因数.
 
@@ -817,9 +819,14 @@ a  b=(a, b) \cdot[a, b]
 
 
 \begin{frame}
-	\begin{exa}[思考题]
-一个整数的数字和能被3整除，则这个数能被3整除。
+	\begin{exa}
+一个整数能被3整除当且仅当这个数的数字和能被3整除。
 	\end{exa}
+
+\begin{exa}[思考题]
+一个数字能被7（或13）整除当且仅当其末3位与末3位之前的数字之差能被7（或13）整除。
+\end{exa}
+
 
 \end{frame}
 %可以把最大公因数及最小公倍数的概念推广到有限多个整数 $a_{1}, a_{2}$
@@ -1012,20 +1019,20 @@ a  b=(a, b) \cdot[a, b]
 	具，在许多问题中都会用到.
 \end{frame}
 
-
-\begin{frame}
-\begin{equation}
-	\frac{d v^{2}}{d t}=2 v \frac{d v}{d t}=2 v \dot{v}
-\end{equation}
-
-\begin{equation}
-	D^{+}\left|\eta_{i}(t)\right| \leq e^{t}\left\{-h_{i}\left|\eta_{i}(t)\right|+\left|\varepsilon_{i}(t)\right|\right\}
-\end{equation}
-
-\begin{equation}
-	e^{\int_{x}^{y} \frac{\theta s}{(1-a) \lambda \mu^{2}} d s}
-\end{equation}
-
-\end{frame}
+%
+%\begin{frame}
+%\begin{equation}
+%	\frac{d v^{2}}{d t}=2 v \frac{d v}{d t}=2 v \dot{v}
+%\end{equation}
+%
+%\begin{equation}
+%	D^{+}\left|\eta_{i}(t)\right| \leq e^{t}\left\{-h_{i}\left|\eta_{i}(t)\right|+\left|\varepsilon_{i}(t)\right|\right\}
+%\end{equation}
+%
+%\begin{equation}
+%	e^{\int_{x}^{y} \frac{\theta s}{(1-a) \lambda \mu^{2}} d s}
+%\end{equation}
+%
+%\end{frame}
 
 \end{document}

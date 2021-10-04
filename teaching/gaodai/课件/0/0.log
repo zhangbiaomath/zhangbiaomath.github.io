@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  4 OCT 2021 21:18
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  4 OCT 2021 21:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1332,17 +1332,27 @@ Overfull \vbox (3.36653pt too high) detected at line 457
 
 ]
 Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
- [18
+Missing character: There is no 1 ("31) in font nullfont!
+
+Overfull \vbox (3.36653pt too high) detected at line 457
+ []
+
+[18
 
 ]
 Missing character: There is no 2 ("32) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
  [19
 
-] [20
+]
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+ [20
 
-] (./0.toc) [21
+]
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+ [21
 
 ] [22
 
@@ -1350,113 +1360,116 @@ Missing character: There is no 1 ("31) in font nullfont!
 
 ] [24
 
-]
-Missing character: There is no 2 ("32) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
-Missing character: There is no 3 ("33) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
- [25
+] (./0.toc) [25
+
+] [26
 
 ]
 Missing character: There is no 3 ("33) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
 Missing character: There is no 4 ("34) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
- [26
-
-]
-Missing character: There is no 4 ("34) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
-Missing character: There is no 5 ("35) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 5 ("35) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
-
-Overfull \vbox (5.99142pt too high) detected at line 641
- []
-
-[27
-
-]
-Missing character: There is no 6 ("36) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
-Missing character: There is no 7 ("37) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-
-Overfull \vbox (6.30135pt too high) detected at line 670
- []
-
-[28
-
-] [29
-
-]
-Missing character: There is no 7 ("37) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
- [30
-
-]
-Missing character: There is no 8 ("38) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 8 ("38) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
- [31
-
-]
+Missing character: There is no 3 ("33) in font nullfont!
 Missing character: There is no 9 ("39) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
+ [27
+
+]
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+ [28
+
+]
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+
+[29
+
+]
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+Missing character: There is no 7 ("37) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 7 ("37) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+
+Overfull \vbox (6.30135pt too high) detected at line 672
+ []
+
+[30
+
+] [31
+
+]
+Missing character: There is no 8 ("38) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
  [32
 
-] [33
+]
+Missing character: There is no 8 ("38) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+ [33
 
 ]
 Missing character: There is no 9 ("39) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 0 ("30) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
  [34
+
+] [35
 
 ]
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 0 ("30) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
- [35
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+ [36
 
-] (./0.toc) [36
+]
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+ [37
 
-] [37
-
-] [38
+] (./0.toc) [38
 
 ] [39
 
-]
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
- [40
+] [40
+
+] [41
 
 ]
-[41
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+ [42
+
+]
+[43
 
 ]
 File: r=1-sintheta.png Graphic file (type bmp)
 <r=1-sintheta.png>
- [42
-
-] [43
-
-] [44
+ [44
 
 ] [45
 
 ] [46
+
+] [47
 
 ]
 \tf@nav=\write6
@@ -1476,12 +1489,12 @@ Package rerunfilecheck Info: File `0.out' has not changed.
 (rerunfilecheck)             Checksum: 652E09D36FC4495068B337B253E9166A;466.
  ) 
 Here is how much of TeX's memory you used:
- 29829 strings out of 476919
- 658539 string characters out of 5821840
- 978093 words of memory out of 5000000
- 49124 multiletter control sequences out of 15000+600000
+ 29858 strings out of 476919
+ 660326 string characters out of 5821840
+ 975204 words of memory out of 5000000
+ 49153 multiletter control sequences out of 15000+600000
  411454 words of font info for 101 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  145i,12n,146p,445b,864s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 0.pdf (46 pages).
+Output written on 0.pdf (47 pages).
