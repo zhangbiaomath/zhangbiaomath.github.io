@@ -1,7 +1,7 @@
 % !Mode:: "TeX:UTF-8"
-\documentclass[13pt,fontset=mac]{ctexbeamer}
+\documentclass[13pt,punct]{ctexbeamer}
 %\usepackage[utf8]{inputenc}
-
+% fontset=mac
 
 \usepackage{amsmath,amssymb,amsthm}             % AMS Math
 %\usepackage[T1]{fontenc}
@@ -62,6 +62,8 @@
 \def\D{\mathscr{D}}
 \def\E{\mathscr{E}}
 \def\O{\mathscr{O}}
+\def\e{\mathrm{e}}
+\def\i{\, \mathrm{i}}
 
 \def\rank{\operatorname{rank}}
 \def\dim{\operatorname{dim}}
@@ -483,7 +485,7 @@ B是A的充分必要条件(或称为充要条件).
 
 \begin{frame}
 	\begin{exa}[思考题]
-给定圆周上任意$n$个点，确定有$\binom{n}{2}:=\frac{n(n-1)}{2}$条弦划分的圆内的区域数$R_n$，这里假设任意三条弦在圆内不相交。
+给定圆周上任意$n$个点，确定有$\frac{n(n-1)}{2}$条弦划分的圆内的区域数，这里假设任意三条弦在圆内不相交。
 	\end{exa}
 
 
@@ -501,6 +503,7 @@ B是A的充分必要条件(或称为充要条件).
 \item 假设$n\le k$ 时命题都成立.
 \item 由归纳假设推出 $n=k+1$时命题也成立.
 \end{enumerate}
+
 \end{frame}
 
 
@@ -593,6 +596,7 @@ a=q \cdot b+r, \quad 0 \leqslant r<|b|
 \]
 而且满足这个条件的整数 $q, r$ 是唯一的.
 \end{thm}
+
 \begin{defi}
 \begin{itemize}
 \item $q$ 称为b 除 $a$ 的\alert{商},
@@ -601,6 +605,8 @@ a=q \cdot b+r, \quad 0 \leqslant r<|b|
 \end{defi}
 
 \end{frame}
+
+
 
 \begin{frame}
 \begin{defi}
@@ -664,7 +670,7 @@ a=q \cdot b+r, \quad 0 \leqslant r<|b|
 
 \item 当 $b\,  | a$ 时, $b$ 是 $a$ 与 $b$ 的最大公因数.
 
-\item 特别地当 $a=0$ 时, $b$ 是 $a$ 与 $b$ 的一 个最大公因数.
+\item 特别地当 $b=0$ 时, $a$ 是 $a$ 与 $b$ 的一 个最大公因数.
 
 \item 当 $a, b$  不全为零时, $a,b$ 的最大公因数不为0,  这时我们规定:以$(a, b)$ 表示 $a, b$ 的正的最大公因数. 在这个规定下，$(a, b)$是唯一的.
 \end{itemize}
@@ -705,13 +711,20 @@ a=q \cdot b+r, \quad 0 \leqslant r<|b|
 \begin{enumerate}
 \item $a ,b$ 互素的充分必要条件是存在整数 $u, v$ 使
 \[
-u a+v b=1
+u \, a+v\,  b=1
 \]
 \item 如果 $a | b c,$ 月 $(a, b)=1,$ 则 $a | c$.
 \item 如果 $a|c, b| c$ 而且 $(a, b)=1,$ 则 $a b | c$
 \item 如果 $(a, c)=1,(b, c)=1,$ 则 $(a b, c)=1$
 \end{enumerate}
 这些性质说明了互素的重要性.
+
+\begin{rem}
+    对于整数$c\neq 1$, 如果存在整数 $u, v$ 使
+$
+ u\, a+v\,  b=c,
+$这不意味着 $c$是$a$ 和 $b$的最大公因数。试试自己举出反例。
+\end{rem}
 \end{frame}
 
 
@@ -722,7 +735,7 @@ u a+v b=1
 %一个整数 $a(a>1)$ 至少有两个因数: 1 和 $a$ 本身. 不等于 1 和 $a$ 的因数 叫做 $a$ 的真因数.
 
 \begin{defi}
-	$a$ 是一个大于 1 的整数.如果除去 1 和本身外，$a$ 没有其它因数, 那么称$a$是一个\alert{素数}.
+	设$a$ 是一个大于 1 的整数.如果除去 1 和本身外，$a$ 没有其它因数, 那么称$a$是一个\alert{素数}.
 \end{defi}
 例如 2, 3, 5, 23 等都是素数.
 
@@ -732,13 +745,13 @@ u a+v b=1
 \begin{prop}
 \begin{enumerate}
 \item  一个 素数$p$ 和任一个整数 $a$ 都有~或者 $p | a,$ 或者 $(p, a)=1$.
-\item 如果 素数 $p | a  b$ 则 $p | a$ 或$p| b$.
-\item  如果一个>1 的整数 $p$ 和任何整数 $a$ 都有 : $p | a \text { 或( } p, a)=1,$ 则 $p$
+\item 如果 素数 $p | a  b$, 那么$p | a$ 或$p| b$.
+\item  如果一个大于 1  的整数 $p$ 和任何整数 $a$ 都有~  $p | a \text { 或 } (p, a)=1,$ 则 $p$
 是一个素数.
-\item 如果大于 1 的整数$p$ 具有下述性质:对任何整数 $a , b$: 从 $p | a b$ 可推 出 $p | a$ 或 $p | b,$ 则 $p$ 是一个素数.
+\item 如果大于 1 的整数$p$ 具有下述性质:对任何整数 $a , b$ 从 $p | a b$ 可推 出 $p | a$ 或 $p | b,$ 则 $p$ 是一个素数.
 \end{enumerate}
 \end{prop}
-如果一个素数  $p$ 是整数 $a$ 的一个因数，则 $p$ 称为 $a$ 的一个素因数.
+如果一个素数  $p$ 是整数 $a$ 的一个因数，则 $p$ 称为 $a$ 的一个\blue{素因数}.
  \end{frame}
 
 
@@ -780,7 +793,7 @@ b=p_{1}^{d_{1}} p_{2}^{d_{2}} \cdots p_{t}^{d_t}, & d_{i} \geqslant 0,  \quad i=
 \begin{enumerate}
 \item $a$ 能整除 $b$ 的充分必要条件为
 $
-\ell_{i} \leqslant d_{i}, i=1,2, \cdots, t
+\ell_{i} \leqslant d_{i},\,  i=1,2, \cdots, t
 $
 \item
 $
@@ -796,7 +809,7 @@ $
 %最后我们介绍最小公倍数的概念.
 
 \begin{defi}
-设 $a ,b$ 是两个非负整数. $m$ 是 $a, b$ 的一个公倍数(按前面约定, 也是非负的).
+设 $a ,b$ 是两个非负整数. $m$ 是 $a, b$ 的一个公倍数  (按前面约定, 也是非负的).
 如果 $a , b$ 的任一个公倍数都是 $m$ 的倍数, 则 $m$ 称为 $a, b$ 的一 个\alert{最小公倍数}.
 \end{defi}
 \begin{rem}
@@ -819,7 +832,7 @@ a  b=(a, b) \cdot[a, b]
 
 
 \begin{frame}
-	\begin{exa}
+	\begin{exa}[思考题]
 一个整数能被3整除当且仅当这个数的数字和能被3整除。
 	\end{exa}
 
@@ -854,21 +867,21 @@ a  b=(a, b) \cdot[a, b]
 \begin{frame}
 	高中的时候，定义了
 	\[
-	i=\sqrt{-1}
+	\i=\sqrt{-1}
 	\]
 	然后形如：
 	\[
-	a+b i \quad(a, b \in \mathbb{R})
+	a+b \i \quad(a, b \in \mathbb{R})
 	\]
 	这样的数就是复数。
 	全体复数的集合记为
 	\[
-	\mathbb{C}=\{a+b i \, | \, a, b \text { 取所有实数 }\}
+	\mathbb{C}=\{a+b \i \, | \, a, b \in \mathbb{R}\}
 	\]
 	%集合 $\mathbb{C}$包含实数集合 $\mathbb{R}$.
 
 
-	有了复数之后，开方运算就不再局限于大于0的数了，这样一元二次方 程：
+	有了复数之后，开方运算就不再局限于大于零的数了，这样一元二次方 程
 	\[
 	a x^{2}+b x+c=0 \quad(a \neq 0)
 	\]
@@ -883,11 +896,11 @@ a  b=(a, b) \cdot[a, b]
 \begin{frame}
 	\begin{itemize}
 		\item 定义$\mathbb{C}$内的加法
-		$$(a+b i)+(c+d i)  : =(a+c)+(b+d) i $$
+		$$(a+b i)+(c+d \i)  : =(a+c)+(b+d) \i $$
 
-		\item 定义 $a+b {i}$的负数 $-(a+b {i})${ 是 } $(-a)+(-b) {i}$
+		\item 定义 $a+b {\i}$的负数 $-(a+b {\i})${ 是 } $(-a)+(-b) {\i}$
 
-		\item 定义  $\mathbb{C}$内的减法 $$(a+b i)-(c+d i) =(a-c)+(b-d) i $$
+		\item 定义  $\mathbb{C}$内的减法 $$(a+b \i)-(c+d \i) =(a-c)+(b-d) \i $$
 	\end{itemize}
 
 \end{frame}
@@ -896,16 +909,16 @@ a  b=(a, b) \cdot[a, b]
 	\begin{itemize}
 		\item 定义$\mathbb{C}$内的乘法
 		\[
-		(a+b i)(c+d i) =(a c-b d)+(a d+b c) i
+		(a+b \i)(c+d \i) =(a c-b d)+(a d+b c) \i
 		\]
 
-		\item 定义 $a+b {i}$ 的倒数或逆
+		\item 定义 $a+b {\i}$ 的倒数或逆
 		\[
-		\frac{1}{a+b i}=\frac{1}{a^{2}+b^{2}}(a-b i)=\frac{a-b i}{a^{2}+b^{2}}
+		\frac{1}{a+b \i}=\frac{1}{a^{2}+b^{2}}(a-b \i)=\frac{a-b \i}{a^{2}+b^{2}}
 		\]
-		\item  $\mathbb{C}$ 内的除法是(设 $c+d {i} \neq 0$ )
+		\item  $\mathbb{C}$ 内的除法是(设 $c+d {\i} \neq 0$ )
 		\[
-		\frac{a+b i}{c+d i}=(a+b i) \frac{1}{c+d i}=(a+b i) \frac{c-d i}{c^{2}+d^{2}}
+		\frac{a+b \i}{c+d \i}=(a+b \i) \frac{1}{c+d \i}=(a+b \i) \frac{c-d \i}{c^{2}+d^{2}}
 		\]
 	\end{itemize}
 \end{frame}
@@ -913,22 +926,22 @@ a  b=(a, b) \cdot[a, b]
 \begin{frame}{复数的表示：实部、虚部、共轭、模}
 
 	\begin{defi}
-		对于复数$z=a+b i,$ 其中 $a, b$ 是实数.
+		对于复数$z=a+b \i,$ 其中 $a, b$ 是实数.
 
 		\begin{itemize}
 			\item $a$ 称为$z$的\alert{实部}, 记为$\text{Re} z$
 
 			\item $b$ 称为$z$的\alert{虚部}, 记为$\text{Im}  z$
 
-			\item 复数$z=a+b i$的\alert{共轭} $\bar{z}:=a-bi$
-			\item  $|z|=\sqrt{a^{2}+b^{2}}$ 称为 $a+b i$ 的\alert{模}或绝对值。
+			\item 复数$z=a+b \i$的\alert{共轭} $\bar{z}:=a-b\i$
+			\item  $|z|=\sqrt{a^{2}+b^{2}}$ 称为 $a+b \i$ 的\alert{模}或绝对值。
 		\end{itemize}
 	\end{defi}
 	\begin{prop}
 		\begin{itemize}
-			\item $z  \bar{z}=(a+b i)(a-b i)=a^{2}+b^{2}$.
-			\item $z+\bar{z}=(a+b i)+(a-b i)=2 a$.
-			\item $z-\bar{z}=(a+b i)-(a-b i)=2 b i$.
+			\item $z  \bar{z}=(a+b \i)(a-b \i)=a^{2}+b^{2}$.
+			\item $z+\bar{z}=(a+b \i)+(a-b \i)=2 a$.
+			\item $z-\bar{z}=(a+b \i)-(a-b \i)=2 b \i$.
 		\end{itemize}
 	\end{prop}
 \end{frame}
@@ -936,20 +949,23 @@ a  b=(a, b) \cdot[a, b]
 
 
 \begin{frame}
-	将 $Ox$ 轴正方向沿反时针方向旋转到直线 $OA$ 的旋转角 $\varphi$ 称为复数 $\alpha=a+b {i}$ 的\alert{辐角}. 辐角的值不是唯一确定的,可以加上 $2 \pi$ 的任意整数倍.
+\begin{defi}
+一个复数 $z=a+b {\i}$ 的\alert{辐角}是指	将 $Ox$ 轴正方向沿逆时针方向旋转到 $Oz$ 的旋转角 \blue{$\varphi$} .
+\end{defi}
+     辐角的值不是唯一确定的,可以加上 $2 \pi$ 的任意整数倍.
 
-	因为 $a=|\alpha| \cos \varphi, b=|\alpha| \sin \varphi,$ 故有
+	因为 $a=|z| \cos \varphi, b=|z| \sin \varphi,$ 故有
 	\[
-	\alpha=a+b {i}=|\alpha|(\cos \varphi+{i} \sin \varphi)
+	z=a+b {\i}= \blue{|\alpha|(\cos \varphi+{i} \sin \varphi)}
 	\]
-	上式称为复数的三角表示.
+	上式称为复数的\alert{三角表示}.
 	\begin{center}
 		\begin{tikzpicture}
 			\draw [fill=black](0, 0) [radius=0.03cm] circle;   % 原点
 			\draw [fill=black](2, 1) [radius=0.03cm] circle;   % 原点
 			\draw[->](0,0)--(2.5,0);
 			\draw[->](0,0)--(0,1.8);
-			\draw[-](0,0) node[below left]{$O$}--(2,1) node[above right]{$\alpha$};
+			\draw[-](0,0) node[below left]{$O$}--(2,1) node[above right]{$z$};
 			\draw[->](-1/2,0)--(2.5,0) node[right]{x};
 			\draw[->](0,-1/2)--(0,1.8) node[above]{y};
 			\draw (2/3, 0) node[above right]{$\varphi$} arc (0 : 18 : 1);
@@ -973,50 +989,56 @@ a  b=(a, b) \cdot[a, b]
 \begin{frame}
 	如果又有复数
 	\[
-	\beta=c+d {i}=|\beta|(\cos \psi+\operatorname{isin} \psi)
+	\beta=c+d {\i}=|\beta|(\cos \psi+\i \operatorname{sin} \psi)
 	\]
 	那么
 	\[
 	\begin{aligned}
-		\alpha \beta &=|\alpha||\beta|(\cos \varphi+i \operatorname{sin} \varphi)(\cos \psi+ i \operatorname{sin} \psi) \\
-		&=|\alpha||\beta|(\cos \varphi \cos \psi-\sin \varphi \sin \psi)+(\sin \varphi \cos \psi+\cos \varphi \sin \psi) {i}) \\
-		&=|\alpha||\beta|(\cos (\varphi+\psi)+i \operatorname{sin}(\varphi+\psi))
+		\alpha \beta &=|\alpha||\beta|(\cos \varphi+\i \operatorname{sin} \varphi)(\cos \psi+ i \operatorname{sin} \psi) \\
+		&=|\alpha||\beta|(\cos \varphi \cos \psi-\sin \varphi \sin \psi)+(\sin \varphi \cos \psi+\cos \varphi \sin \psi) {\i}) \\
+		&=|\alpha||\beta|(\cos (\varphi+\psi)+ \i \operatorname{sin}(\varphi+\psi))
 	\end{aligned}
 	\]
 	上式表示,两个复数相乘时，其模为这两个复数的模相乘,其辐角相 加(因为三角函数以 2 $\pi$ 为周期,故把相差 2 $\pi$ 的整数倍的角认为是相 同的).
 \end{frame}
 
 \begin{frame}{欧拉公式}
-	令
+	令模为 1的复数
 	\[
-	{e}^{{i} \varphi}=\cos \varphi+{i} \sin \varphi
+	{\e}^{{\i} \varphi}=\cos \varphi+{\i} \sin \varphi,
 	\]
-	上式表示的复数模为 1，称为复数的\alert{欧拉公式}.
+	上式称为\alert{欧拉公式}.
 
 	因而位于以坐标原点 O 为中心的单位圆上， 其辐角为 $\varphi$. 于是
 	\[
-	{e}^{{i} \varphi} {e}^{{i} \psi}={e}^{{i}(\varphi+\psi)}
+	{\e}^{\i \varphi} {\e}^{{\i} \psi}={\e}^{{\i}(\varphi+\psi)}.
 	\]
 
 
-	当$\varphi$为$\pi$时, $$ e^{i\pi }=-1$$
-	将数学内4个极重要的数$e, i, \pi, -1 $连起来.
+	当$\varphi$为$\pi$时, $${\e^{\i\pi }=-1}.$$
+	将数学内4个极重要的数$\e, \i, \, \pi,\,  -1 $连起来.
 \end{frame}
 
 
 
-\begin{frame}
-	给定正整数 $n$,考查下列 $n$ 个复数
+\begin{frame}{方程$x^{\, n}-1=0$的解}
+	给定一个正整数 $n$,考虑下面 $n$ 个复数
 	\[
-	{e}^{\frac{2 k \pi_{{i}}}{n}}=\cos \frac{2 k \pi}{n}+i\operatorname{sin} \frac{2 k \pi}{n}
+	\blue{{\e}^{\frac{2 k \pi }{n}{\i}}=\cos \frac{2 k \pi}{n}+\i\operatorname{sin} \frac{2 k \pi}{n}},
 	\]
-	其中 $k=0,1,2, \cdots, n-1.$ 这 $n$ 个复数就是以坐标原点 $O$ 为中心的单 位圆的内接正 $n$ 边形的 $n$ 个顶点.
-	于是
+	其中 $k=0,1,2, \cdots, n-1.$
+
+     这 $n$ 个复数就是以原点 $O$ 为中心的单 位圆的内接正 $n$ 边形的 $n$ 个顶点.
+	由欧拉公式可知,
 	\[
-	\left({e}^{\frac{2 {k\pi i}}{n}}\right)^{n}=\left(\cos \frac{2 k \pi}{n}+i \operatorname{sin} \frac{2 k \pi}{n}\right)^{n}=\cos 2 k \pi+{i} \sin 2 k \pi=1
+	\left({\e}^{\frac{2 {k\pi }}{n}i}\right)^{n}=\left(\cos \frac{2 k \pi}{n}+\i \operatorname{sin} \frac{2 k \pi}{n}\right)^{n}=\cos 2 k \pi+{\i} \sin 2 k \pi=1.
 	\]
-	因此，上面 $n$ 个复数 ${e}^{\frac{2 k \pi_{{i}}}{n}}=\cos \frac{2 k \pi}{n}+$ isin $\frac{2 k \pi}{n}$ 恰为 $n$ 次代数方程 $$x^{n}-1=0$$ 在复数系 $\mathbb{C}$ 内的 $n$ 个根,称为 $n$ 次单位根,它们是很有用的工
-	具，在许多问题中都会用到.
+	因此，这$n$ 个复数
+%    $\blue{{\e}^{\frac{2 k \pi}{n} \i}=\cos \frac{2 k \pi}{n} + \i\,  \sin \frac{2 k \pi}{n}}$
+    恰为 $n$ 次代数方程 $$\alert{x^{\,n}-1=0}$$ 在复数系 $\mathbb{C}$ 内的 $n$ 个根,称为 \blue{$n$ 次单位根}。
+
+%    它们是很有用的工
+%	具，在许多问题中都会用到.
 \end{frame}
 
 %
