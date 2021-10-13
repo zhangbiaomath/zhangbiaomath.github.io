@@ -14,6 +14,18 @@
 \usepackage{mathrsfs}  %花写字母
 
 
+\linespread{1.2}\selectfont
+\makeatletter
+\renewcommand\normalsize{%
+    \@setfontsize\normalsize\@xpt\@xiipt
+    \abovedisplayskip 1\p@ \@plus1\p@ \@minus1\p@
+    \abovedisplayshortskip \z@ \@plus3\p@
+    \belowdisplayshortskip 3\p@ \@plus3\p@ \@minus1\p@
+    \belowdisplayskip \abovedisplayskip
+    \let\@listi\@listI}
+\makeatother
+\parskip=6pt
+
 %%%=== theme ===%%%
 % \usetheme{Warsaw}
 %\usetheme{Copenhagen}
@@ -349,8 +361,38 @@ $=q_2(x)$ & $3x^3+15x^2+18x\quad $ & $x^4+\frac{10}{3}x^3+\frac{2}{3}x^2-x\qquad
 		{g(x)} & =q_2(x) {r_1(x)} +r_2(x)\\
 		\red{r_1(x)} & = q_3(x) \blue{r_2(x)}
 	\end{align*}
+
+
+
 \end{frame}
 
+\begin{frame}
+因此
+    $$(f(x), g(x))=\red{\frac{1}{9}}r_2(x)= x+3$$
+由\begin{align*}
+        {f(x)} & =q_1(x) {g(x)} +r_1(x)\\
+        {g(x)} & =q_2(x) {r_1(x)} +r_2(x)\\
+        {r_1(x)} & = q_3(x) {r_2(x)}
+    \end{align*}
+可知
+\begin{align*}
+r_2(x)  & ={g(x)} - q_2(x) {r_1(x)} \\
+ & ={g(x)} - q_2(x) \left(   {f(x)} - q_1(x) {g(x)}  \right)  \\
+ & = - q_2(x) {f(x)} + \left(  1+  q_1(x)  q_2(x)   \right)  {g(x)}
+% \\
+% & =\left(\frac{27}{5} x-9\right) f(x)+\left(-\frac{9}{5} x^{2}+\frac{18}{5} x\right) g(x)
+\end{align*}
+于是，令
+\begin{align*}
+u(x) & =  - \red{\frac{1}{9}} q_2(x) = \frac{3}{5} x-1,\\
+v(x) & =\red{\frac{1}{9}} \left(  1+  q_1(x)  q_2(x)   \right) =  -\frac{1}{5} x^{2}+\frac{2}{5} x,
+\end{align*}
+就有
+\begin{align*}
+(f(x), g(x))=u(x) f(x)+v(x) g(x) .
+\end{align*}
 
+
+\end{frame}
 
 \end{document}
