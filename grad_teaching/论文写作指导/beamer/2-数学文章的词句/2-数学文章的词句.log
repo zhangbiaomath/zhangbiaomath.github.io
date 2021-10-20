@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.26)  1 OCT 2021 18:20
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  19 OCT 2021 22:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1318,6 +1318,8 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 
 ] [26
 
+] [27
+
 ]
 \tf@nav=\write6
 \openout6 = `2-数学文章的词句.nav'.
@@ -1334,12 +1336,12 @@ Package rerunfilecheck Info: File `2-数学文章的词句.out' has not changed.
 (rerunfilecheck)             Checksum: 7014F8DE428691B4A724DF8EB965ED9F;217.
  ) 
 Here is how much of TeX's memory you used:
- 29090 strings out of 476919
- 629117 string characters out of 5821840
- 943316 words of memory out of 5000000
- 48418 multiletter control sequences out of 15000+600000
+ 29092 strings out of 476919
+ 629133 string characters out of 5821840
+ 943372 words of memory out of 5000000
+ 48420 multiletter control sequences out of 15000+600000
  409156 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  145i,11n,146p,453b,615s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 2-数学文章的词句.pdf (26 pages).
+Output written on 2-数学文章的词句.pdf (27 pages).
