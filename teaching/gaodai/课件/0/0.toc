@@ -1,6 +1,0 @@
-\beamer@sectionintoc {1}{引言}{3}{0}{1}
-\beamer@sectionintoc {2}{充分必要条件}{11}{0}{2}
-\beamer@sectionintoc {3}{数学归纳法}{14}{0}{3}
-\beamer@sectionintoc {4}{连加号}{23}{0}{4}
-\beamer@sectionintoc {5}{整数的可除性理论}{25}{0}{5}
-\beamer@sectionintoc {6}{复数}{38}{0}{6}

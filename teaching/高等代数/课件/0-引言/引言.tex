@@ -39,12 +39,11 @@
 \setbeamertemplate{theorems}[numbered]
 \newtheorem{thm}{定理}
 \newtheorem{lem}{引理}
-\newtheorem{exa}{例}
+\newtheorem{ex}{例}
 \newtheorem*{theo}{定理}
 \newtheorem*{conj}{猜想}
 \newtheorem*{defi}{定义}
 \newtheorem*{coro}{推论}
-\newtheorem*{ex}{练习}
 \newtheorem*{rem}{注}
 \newtheorem*{prop}{性质}
 \newtheorem*{qst}{问题}
@@ -102,7 +101,7 @@
 \AtBeginSection[]
 {
 \begin{frame}
-	\frametitle{Outline}
+	\frametitle{提纲}
 	\tableofcontents[currentsection]
 \end{frame}
 }
@@ -114,7 +113,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{\textcolor{orange}{Outline}}
+\frametitle{\textcolor{orange}{提纲}}
 \tableofcontents
 \end{frame}
 
@@ -144,36 +143,64 @@
 	{ \Large 日用之繁，无处不用数学。}
 \end{leftline}
 
-
 %\rightline{ {\Large 一华罗庚 \qquad \qquad\qquad}}
-	\column{5cm}
+	\column{6cm}
 	\begin{figure}[p]
-		\includegraphics[scale=0.5]{hua.jpg}
+		\includegraphics[scale=0.5]{hua.jpeg}
 		\caption{华罗庚 (1910--1985)}
 	\end{figure}
-
+中国解析数论创始人和开拓者
 \end{columns}
-
 \end{frame}
 
+
+\begin{frame}
+    \begin{columns}[c]
+        \column{6cm}
+        \begin{center}
+            {\Large  数学是科学的皇后}
+        \end{center}
+
+
+%       Mathematics is the queen of the sciences.
+
+
+
+        \column{5cm}
+        \begin{figure}[p]
+          \includegraphics[scale=0.25]{Gauss.jpeg}
+            \caption{高斯}
+        \end{figure}
+
+    \end{columns}
+      高斯(Johann Carl Friedrich Gauss，1777年4月30日-1855年2月23日)，德国著名数学家、天文学家、大地测量学家、物理学家。
+
+      被认为是最重要的数学家，并有数学王子的美誉。
+\end{frame}
 
 \begin{frame}
 
 	\begin{columns}[c]  %开始进入分栏环境，居中设置
 
-		\column{6cm}
+		\column{5.5cm}
 		\begin{figure}[p]
-	\includegraphics[scale=0.4]{数学好玩.jpg}
+	\includegraphics[scale=0.45]{数学好玩.jpg}
 \end{figure}
-
-		\column{5cm}
+{\small	2002年8月在北京举行国际数学家大会期间，91岁高龄的数学大师陈省身先生为少年儿童题词。	}
+		\column{6.5cm}
 		\begin{figure}[p]
-			\includegraphics[scale=0.5]{chern.jpeg}
+			\includegraphics[scale=0.6]{chern.jpeg}
 					\caption{陈省身 (1911-2004)}
-		\end{figure}
+{\small	20世纪世界最重要的微分几何学家之一、\\
+美国国家数学科学研究所首任所长、\\
+南开数学研究所首任所长	}
+    \end{figure}
 	\end{columns}
 \vspace{6pt}
-			2002年8月在北京举行国际数学家大会(ICM2002)期间，91岁高龄的数学大师陈省身先生为少年儿童题词，写下了“数学好玩”4个大字。
+
+
+
+
 \end{frame}
 
 
@@ -431,17 +458,17 @@ B是A的充分必要条件(或称为充要条件).
 \end{frame}
 
 \begin{frame}
-\begin{exa}
+\begin{ex}
 证明对于任意正整数$n$，下面的公式都成立
 \[
 1+2+3+\cdots+n=\frac{n(n+1)}{2}.
 \]
-\end{exa}
+\end{ex}
 %这是用于计算前 $n$ 个自然数之和的公式.
 \pause
 \pf
 \begin{itemize}
-\item 这个公式在 $n=1$ 时成立.  左边 $= 1$，右边 $= 1(1+ 1) / 2 = 1$.
+\item 这个公式在 $n=1$ 时成立.  左边 $= 1$，右边 $= \frac{1 \times 2}{2} = 1$.
 
 所以这个公式在 $n=1$ 时成立.
 \item 我们假设 $n=k$ 时公式成立，即
@@ -458,10 +485,44 @@ B是A的充分必要条件(或称为充要条件).
 \end{itemize}
 \end{frame}
 
+
 \begin{frame}
-\begin{exa}
+    \begin{ex}
+        证明对于任意正整数$n$，下面的公式都成立
+        \[
+        1^2+2^2+3^2+\cdots+n^2=\frac{n(n+1)(2n+1)}{6}.
+        \]
+    \end{ex}
+
+    \pause
+    \pf
+    \begin{itemize}
+        \item 这个公式在 $n=1$ 时成立.  左边 $= 1$，右边 $= \frac{1 \times 2 \times 3}{6}  = 1$.
+
+        所以这个公式在 $n=1$ 时成立.
+        \item 我们假设 $n=k$ 时公式成立，即
+        \[
+    1^2+2^2+3^2+\cdots+k^2=\frac{k(k+1)(2k+1)}{6}.
+        \]
+        \item 在上式等号两边分别加上 $k+1$ 得到
+\begin{align*}
+1+2+\cdots+k+(k+1)
+& = \frac{k(k+1)(2k+1)}{6}+(k+1)^2\\
+& = \frac{(k+1)(k+2)(2k+3)}{6}.
+\end{align*}
+
+        这就是 $n=k+1$ 时的等式.
+
+        因此，对于任意正整数等式都成立. \qed
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{ex}
 对于任意自然数$n$证明$3^n−1$ 是 $2$ 的倍数.
-\end{exa}
+\end{ex}
 
 \pause
 \pf
@@ -483,15 +544,11 @@ B是A的充分必要条件(或称为充要条件).
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-	\begin{exa}[思考题]
-给定圆周上任意$n$个点，确定有$\frac{n(n-1)}{2}$条弦划分的圆内的区域数，这里假设任意三条弦在圆内不相交。
-	\end{exa}
-
-
-
-
-\end{frame}
+%\begin{frame}
+%	\begin{ex}[思考题]
+%给定圆周上任意$n$个点，确定有$\frac{n(n-1)}{2}$条弦划分的圆内的区域数，这里假设任意三条弦在圆内不相交。
+%	\end{ex}
+%\end{frame}
 
 \begin{frame}{第二数学归纳法}
 有些命题用第一归纳法证明不大方便，可以用第二归纳法证
@@ -834,13 +891,13 @@ a  b=(a, b) \cdot[a, b]
 
 
 \begin{frame}
-	\begin{exa}[思考题]
+	\begin{ex}[思考题]
 一个整数能被3整除当且仅当这个数的数字和能被3整除。
-	\end{exa}
+	\end{ex}
 
-\begin{exa}[思考题]
+\begin{ex}[思考题]
 一个数字能被7（或13）整除当且仅当其末3位与末3位之前的数字之差能被7（或13）整除。
-\end{exa}
+\end{ex}
 
 
 \end{frame}
