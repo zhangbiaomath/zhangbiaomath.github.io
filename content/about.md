@@ -27,7 +27,7 @@
 
 ## 论文
 + Zhicong Lin, Jun Ma, Philip B. Zhang, 
-  Plateaux on generalized Stirling permutations and partial gamma-positivity, 
+  Statistics on multipermutations and partial gamma-positivity, 
   Journal of Combinatorial Theory, Series A, 183 (2021), 105488.
   
 + Matthew H.Y. Xie, Philip B. Zhang, 
