@@ -1,5 +1,5 @@
 % !Mode:: "TeX:UTF-8"
-\documentclass[13pt,fontset=mac]{ctexbeamer}
+\documentclass[13pt,fontset=mac, mathserif]{ctexbeamer}
 \usepackage[utf8]{inputenc}
 
 
@@ -128,8 +128,8 @@
 			\vdots & \vdots & & \vdots & \vdots \\
 			0 & n-1 & \cdots & 0 & 0 \\
 			n & 0 & \cdots & 0 & 0
-		\end{array}\right| 
-%	=(-1)^{\tau(n \cdots 321)} n !=(-1)^{\frac{n(n-1)}{2}} n ! 
+		\end{array}\right|
+%	=(-1)^{\tau(n \cdots 321)} n !=(-1)^{\frac{n(n-1)}{2}} n !
 \]
 \vspace{20pt}
 \[
@@ -218,7 +218,7 @@
 %	\end{array}\right| & =\left|\begin{array}{cc}
 %		D_{2} & A \\
 %		B & 0
-%	\end{array}\right|=(-1)^{m n}|A| B \mid, 
+%	\end{array}\right|=(-1)^{m n}|A| B \mid,
 %\end{align*}
 % { 其中 } $A, B$  { 分别是 } $m,  n$  { 阶的方阵. }
 %\end{frame}
@@ -304,7 +304,7 @@ $$
 		0 & a_{n-1} & \cdots & 0 & 0 \\
 		a_{n} & 0 & \cdots & 0 & 0
 	\end{array}\right|  \\[8pt]
-= & (-1)^{\frac{n(n+1)}{2}} a_{1} a_{2} \cdots a_{n}\left(a_{0}-\sum_{i=1}^{n} \frac{1}{a_{i}}\right)
+= & (-1)^{\frac{n(n-1)}{2}} a_{1} a_{2} \cdots a_{n}\left(a_{0}-\sum_{i=1}^{n} \frac{1}{a_{i}}\right)
 \end{align*}
 \end{frame}
 
@@ -319,7 +319,7 @@ $$
 		b & \cdots & a & b & b \\
 		\vdots & & \vdots & \vdots & \vdots \\
 		a & \cdots & b & b & b
-	\end{array}\right|   
+	\end{array}\right|
 =	\left|\begin{array}{ccccc}
 	b & b & \cdots & b & a \\
 	0 & 0 & \cdots & a-b & b-a \\
@@ -341,7 +341,7 @@ a-b& 0 & \cdots & 0 & 0
 
 \begin{frame}{5. 逐行逐列相加减}
 	行列式特点是每相邻两行(列)之间有许多元素相同.用逐行(列)相减可以化出零.
-	
+
 	$$
 	\left|\begin{array}{ccccc}
 		1 & 2 & 2 & \cdots & 2 \\
@@ -414,7 +414,7 @@ a-b& 0 & \cdots & 0 & 0
 			1 & 1-n & \cdots & 1 & 1 \\
 			1-n & 1 & \cdots & 1 & 1
 		\end{array}\right| \\[8pt]
-	= & \,  \cdots 	\cdots 	
+	= & \,  \cdots 	\cdots
 	\end{aligned}
 	$$}
 \end{frame}
@@ -502,17 +502,17 @@ $D_{n}=(\alpha+\beta) D_{n-1}-\alpha \beta D_{n-2}=(\alpha+\beta) \frac{\alpha^{
 解: 按第一行展开得 $D_{n}=(\alpha+\beta) D_{n-1}-\alpha \beta D_{n-2}$, 将此式化为:
 \begin{center}
  $D_{n}-\alpha D_{n-1}=\beta\left(D_{n-1}-\alpha D_{n-2}\right)$ (1)
- 
+
  $D_{n}-\beta D_{n-1}=\alpha\left(D_{n-1}-\beta D_{n-2}\right)$ (2)
  \end{center}
-利用公式(1)得 $D_{n}-\alpha D_{n-1}=\beta\left(D_{n-1}-\alpha D_{n-2}\right)=\beta^{2}\left(D_{n-2}-\alpha D_{n-3}\right)=\cdots=\beta^{n-2}\left(D_{2}-\alpha D_{1}\right)=\beta^{n},$ 
+利用公式(1)得 $D_{n}-\alpha D_{n-1}=\beta\left(D_{n-1}-\alpha D_{n-2}\right)=\beta^{2}\left(D_{n-2}-\alpha D_{n-3}\right)=\cdots=\beta^{n-2}\left(D_{2}-\alpha D_{1}\right)=\beta^{n},$
 
 即
 $D_{n}=\alpha D_{n-1}+\beta^{n}$
 (3)
 
 
-利用公式(2)得 $D_{n}-\beta D_{n-1}=\alpha\left(D_{n-1}-\beta D_{n-2}\right)=\alpha^{2}\left(D_{n-2}-\beta D_{n-3}\right)=\cdots=\alpha^{n-2}\left(D_{2}-\beta D_{1}\right)=\alpha^{n},$ 
+利用公式(2)得 $D_{n}-\beta D_{n-1}=\alpha\left(D_{n-1}-\beta D_{n-2}\right)=\alpha^{2}\left(D_{n-2}-\beta D_{n-3}\right)=\cdots=\alpha^{n-2}\left(D_{2}-\beta D_{1}\right)=\alpha^{n},$
 
 即
 $D_{n}=\beta D_{n-1}+\alpha^{n}$
@@ -580,4 +580,4 @@ $
 \end{frame}
 
 
-\end{document} 
+\end{document}
