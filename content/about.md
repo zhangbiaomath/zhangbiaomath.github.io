@@ -1,5 +1,5 @@
 # 个人简介
-研究方向为组合数学，在《Journal of Combinatorial Theory, Series A》、《Advances in Applied Mathematics》、《SIAM Journal on Discrete Mathematics》等期刊发表学术论文20余篇，近年来主持并完成国家自然科学基金青年基金、数学天元基金，现主持国家自然科学基金面上项目。
+研究方向为组合数学，在《J. Combin. Theory Ser. A》、《Proc. Amer. Math. Soc.》、《SIAM J. Discrete Math.》等权威期刊上发表学术论文20余篇，现主持国家自然科学基金面上项目。
 
 # 个人经历
 
