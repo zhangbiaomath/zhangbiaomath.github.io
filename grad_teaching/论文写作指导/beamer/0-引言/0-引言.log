@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.26)  1 OCT 2021 16:23
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  8 MAR 2022 10:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1239,40 +1239,35 @@ File: tjnu.jpg Graphic file (type bmp)
 [1
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 102
+LaTeX Font Info:    Trying to load font information for U+msa on input line 106
 .
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 102
+LaTeX Font Info:    Trying to load font information for U+msb on input line 106
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
-2.
+6.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <12> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 102.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 106.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 102.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 106.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 102.
-File: writing.png Graphic file (type bmp)
-<writing.png>
-
-Overfull \vbox (16.04242pt too high) detected at line 102
- []
-
-[2
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 106.
+ [2
 
 ] [3
 
-] [4
+]
+[4
 
 ] [5
 
@@ -1282,11 +1277,82 @@ Overfull \vbox (16.04242pt too high) detected at line 102
 
 ] [8
 
+] [9
+
+] [10
+
+] [11
+
 ]
-Overfull \vbox (63.23047pt too high) detected at line 205
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 242.
+
+Overfull \vbox (12.6773pt too high) detected at line 242
  []
 
-[9
+[12
+
+]
+Overfull \vbox (12.6773pt too high) detected at line 242
+ []
+
+[13
+
+]
+Overfull \vbox (12.6773pt too high) detected at line 242
+ []
+
+[14
+
+]
+Runaway argument?
+{\small The basic problem in writing mathematics is the same as in wr\ETC.
+! Paragraph ended before \beamer@inlineframetitle was complete.
+<to be read again> 
+                   \par 
+l.261 \end{frame}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten \endgroup.
+\beamer@doifinframe ...t is' all there is to it. }
+                                                   \par \pause {\small 写数学的基...
+l.261 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+[15
+
+]
+Runaway argument?
+{\small The basic problem in writing mathematics is the same as in wr\ETC.
+! Paragraph ended before \beamer@inlineframetitle was complete.
+<to be read again> 
+                   \par 
+l.261 \end{frame}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten \endgroup.
+\beamer@doifinframe ...t is' all there is to it. }
+                                                   \par \pause {\small 写数学的基...
+l.261 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+[16
 
 ]
 \tf@nav=\write6
@@ -1303,12 +1369,12 @@ Package rerunfilecheck Info: File `0-引言.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29018 strings out of 476919
- 628877 string characters out of 5821840
- 943386 words of memory out of 5000000
- 48347 multiletter control sequences out of 15000+600000
- 409169 words of font info for 79 fonts, out of 8000000 for 9000
+ 29096 strings out of 476919
+ 634098 string characters out of 5821840
+ 943490 words of memory out of 5000000
+ 48423 multiletter control sequences out of 15000+600000
+ 410898 words of font info for 88 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  145i,11n,146p,448b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 0-引言.pdf (9 pages).
+Output written on 0-引言.pdf (16 pages).

@@ -8,7 +8,7 @@
 \linespread{1.3}
 
 \usepackage{mathrsfs}  %花写字母
- 
+
 
 %%%=== theme ===%%%
 %\usetheme{Warsaw}
@@ -24,10 +24,10 @@
 %\useoutertheme{miniframes}
 \setbeamertemplate{navigation symbols}{}
 %\setbeamertemplate{footline}[page number]
-\setbeamertemplate{footline}[frame number] 
+\setbeamertemplate{footline}[frame number]
 
 
-\titlegraphic{\includegraphics[width=2cm]{tjnu.jpg}} 
+\titlegraphic{\includegraphics[width=2cm]{tjnu.jpg}}
 
 
 \usepackage{color}
@@ -62,8 +62,9 @@
 \AtBeginSection[]
 {
 \begin{frame}
-	\frametitle{Outline}
+	\frametitle{框架}
 	\tableofcontents[currentsection]
+    \setcounter{tocdepth}{1}
 \end{frame}
 }
 
@@ -74,7 +75,7 @@
 \end{frame}
 
 
-	
+
 \begin{frame}{第一章~数学文章的结构}
 一篇数学论文一般由如下几个部分组成：
 %\begin{itemize}
@@ -128,7 +129,7 @@
 		\item 极可能简明扼要，但又要有足够的内容。
 		\item 用词精确、意思明确，尽可能让更多的人读懂你的叙述。
 	\end{itemize}
-	
+
 摘要是文章的心脏。它一般要回答
 	\begin{itemize}
 		\item 本文要干什么？本文涉及的问题是什么？
@@ -143,9 +144,9 @@
 \begin{frame}{关键词和学科分类}
 	关键词keywords
 	\begin{itemize}
-		
+
 		\item 关键词的设置是为了让数学论著归档服务机构（如美国《数学评论》）能把你的论文放到其门类齐全的数据库中的正确位置。
-		
+
 		\item 科学引用指标检索工具（SCI）利用关键词给文章分门别类，而读者根据关键词检索与它研究或兴趣相关的文献。
 		\item 最好只写单数形式，但是写成复数也无伤大雅
 	\end{itemize}
@@ -155,9 +156,9 @@
 \begin{frame}{关键词和学科分类}
 	数学学科分类 Mathematics Subject Classification  （MSC)
 	\begin{itemize}
-		
+
 		\item 分类系统是由美国《数学评论》Math Reviews（MR）和德国《数学文摘》（zbMath）共同制定的。2010，2020
-		
+
 		\item https://mathscinet.ams.org/mathscinet/msc
 	\end{itemize}
 \end{frame}
@@ -198,9 +199,9 @@
 
 \begin{frame}{2~引言的中间}
 	\begin{itemize}
-		
+
 		\item 定义问题
-		
+
 		\item 解释准备解决什么问题
 		\item 总结以前取得的主要成果及不足之处
 		\item 简介一下你解决问题主要的手法
@@ -210,9 +211,9 @@
 
 \begin{frame}{3~引言的结尾}
 	\begin{itemize}
-		
+
 		\item 简单叙述文章的组成部分
-		
+
 		\item 对于文章后面的每一节内容写上一句话，概括地告诉读者这一节是干什么的
 		\item 用不同的语句给出每一节大意一个简单的小结。
 	\end{itemize}
@@ -221,10 +222,10 @@
 \section{主体}
 
 \begin{frame}{主体}
-	
 
 
-	
+
+
 	Preliminaries（预备知识）
 	\begin{itemize}
 		\item  引进符号说明和概念定义。
@@ -273,21 +274,21 @@ Proofs（证明）
 \subsection{定义}
 \begin{frame}{定义}
 	\begin{itemize}
-		\item 
+		\item
 		制定一个定义时要考虑三个问题
-		
-		``\blue{为什么？}'' 
-		
-		``\blue{放哪里？}'' 
-		
-		``\blue{怎么样？}'' 
-		\item 
+
+		``\blue{为什么？}''
+
+		``\blue{放哪里？}''
+
+		``\blue{怎么样？}''
+		\item
 		首先，自问为什么你要做一个定义： 它是必须的么？
-		\item 
+		\item
 		不恰当地定义会使表达复杂化并且太多定义会压垮读者，因此设想自己正在为每一个定理支出一大笔花销是明智的。
-		\item 
+		\item
 		在给定的学科领域中符号是标准的，需要判断定义是否要给出。
-		\item 
+		\item
 		用多余的单词可以避免潜在的混淆。
 	\end{itemize}
 \end{frame}
@@ -295,7 +296,7 @@ Proofs（证明）
 
 \begin{frame}
 	\begin{itemize}
-		\item  第二个问题是``\blue{放哪里？}'' 
+		\item  第二个问题是``\blue{放哪里？}''
 		\item 不推荐在一篇文章刚开始的地方放置一长串的定义。
 		\item  一个定义应该被放置在该属于首次使用的位置。
 		\item 如果定义较早给出，读者将不得不往回查找，这可能失去集中力（或者更糟糕，失去兴趣）。
@@ -307,9 +308,9 @@ Proofs（证明）
 \begin{frame}
 	\begin{itemize}
 		\item  为了强化几页没有使用的数学符号，你可以重复定义。
-		
+
 		\item 例如，``最佳步长$\alpha^{*}$如下''。
-		
+
 		\item  这个含蓄的再定义或者提醒了读者$\alpha^{*}$是什么, 或者再次确保他们已经准确地记住了它。
 	\end{itemize}
 \end{frame}
@@ -327,32 +328,32 @@ Proofs（证明）
 
 \begin{frame}
 	\begin{itemize}
-		\item 依照惯例，在定义中if 的意思是 if and only if , 所以不要写 
-		
+		\item 依照惯例，在定义中if 的意思是 if and only if , 所以不要写
+
 		``The graph is connected  \alert{if and only if }~there is a path from every node in $G$ to every other node in $G$''.
-		
+
 		而写成
-		
+
 		``The graph is connected \alert{if}  there is a path from every node in $G$ to every other node in $G$''.
-		
+
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\begin{itemize}
 		\item 把要定义的文字排版成斜体是惯例：
-		
+
 		``The graph is \emph{connected} {if}  there is a path from every node in $G$ to every other node in $G$~''.
-		
+
 		\item 这种强调也可以写为
-		
+
 		``The graph is defined to be {connected} {if}  \dots''
-		
+
 		或者
-		
+
 		``The graph is said to be {connected} {if}  \dots''
 	\end{itemize}
-	
+
 \end{frame}
 
 
@@ -360,13 +361,13 @@ Proofs（证明）
 
 \begin{frame}{例子}
 	\begin{itemize}
-		\item 
+		\item
 		适应于技术写作（从教学到研究）所有形式的教学策略是在讨论一般情况前都会先讨论\blue{特殊例子}。
-		\item 
+		\item
 		尤其对于数学家来说，采取反证法是有吸引力的，但是\blue{以例子开头来解释说明是更有效的方法}。
-%		\item 
+%		\item
 		能说明如何\blue{以特定实例开头}的一个很好的例子是Strang的《应用数学导论》第一章内容：
-		
+
 		{\small
 			应用数学中最简单的模型是线性方程组，也是目前为止最重要的模型，我们以一个极为简单的例子开始本书的内容：
 			\begin{align*}
@@ -374,11 +375,11 @@ Proofs（证明）
 				4 x_1 +11x_2 & =1.
 			\end{align*}
 			在一些进一步的开场白之后, Strang继续详细地研究这个$2\times 2$矩阵和一个特殊的$4\times 4$矩阵。仅在数页之后就给出了一般的$n \times n$矩阵。}
-		
+
 		\item 课本上的\alert{练习题}是例子的一种形式。
 	\end{itemize}
-	
-	
+
+
 \end{frame}
 
 
@@ -387,7 +388,7 @@ Proofs（证明）
 \subsection{定理}
 \begin{frame}{定理是什么？}
 
-	
+
 \begin{itemize}
 	\item 定理
 	\item 引理
@@ -401,7 +402,7 @@ Proofs（证明）
 \begin{itemize}
 \item \blue{定理}、\blue{引理}、\blue{命题}之间的差别是什么？
 \item 在某种程度上，答案取决于结论在行文中的位置。
-\item 
+\item
 一般地，\blue{定理}是一个具有独立意义的重要结论。
 定理的证明通常是非平凡的。
 
@@ -413,24 +414,24 @@ Proofs（证明）
 
 
 \begin{frame}{引理}
-	
+
 \begin{itemize}
-	\item 
+	\item
 	\blue{引理}是一个辅助的结果—是迈向定理的一个跳板。
 	其证明可能容易也可能困难。
-	
+
 \item 一个明确的独立的值得概括但是不值得冠以定理头衔的结论也可被称为\blue{引理}。
 事实上，有很多著名的引理。
-\item 
+\item
 	一个结论是否应该被正式地规定为引理或者只是在文中简单地提及取决于你写作的\red{等级}。
-\item 
+\item
 \alert{把所有结论都标注为定理是不可取的}，因为这样做就无法突出你文章的逻辑结构，
 而且也无法将读者的关注点指向最重要的结论。
 \item 如果你对一个结论是称为引理还是定理有所迟疑，那就称为\blue{引理}。
 \end{itemize}
 
 
-在一个线性代数的研究论文中，给出一个叙述``对称正定矩阵的特征值是正的'' 的引理是不恰当的， 
+在一个线性代数的研究论文中，给出一个叙述``对称正定矩阵的特征值是正的'' 的引理是不恰当的，
 因为这个权威的结论是众所周知的。
 
 \end{frame}
@@ -438,7 +439,7 @@ Proofs（证明）
 
 \begin{frame}{命题}
 \begin{itemize}
-	\item 
+	\item
 \blue{命题}比引理和定理使用范围要小并且他的意义也不尚明确。
 它倾向于表示一个次要定理的方法。
 \item 讲义和教科书的作者可能认为他温文尔雅的名字是的它比定理显得不那么令人生畏。
@@ -491,7 +492,7 @@ Proofs（证明）
 		\item \blue{使证明成立的关键想法}
 		\end{itemize}
 		很重要。
-		
+
 	\end{itemize}
 \end{frame}
 
@@ -500,7 +501,7 @@ Proofs（证明）
 
 \section{结论}
 \begin{frame}{结论}
-	
+
 	\begin{itemize}
 		\item  非常简短地叙述文章的主要贡献
 		\item  解释你在引言里提到的问题和疑问。经过整篇文章的论证，也许可以谈论部分答案了
@@ -512,7 +513,7 @@ Proofs（证明）
 
 \section{致谢}
 \begin{frame}{致谢}
-	
+
 	\begin{itemize}
 		\item  致谢的对象是主要包括给文章写作提供过意见或者帮助的人或机构
 		\item  很多研究基金规定获资助者在所发表的\alert{相关}论文中必须清楚表明获其资助，有时需列出所获资基金的号码。
@@ -522,7 +523,7 @@ Proofs（证明）
 
 \section{参考文献}
 \begin{frame}{参考文献}
-	
+
 	\begin{itemize}
 		\item  文献引用
 		\item  文献格式
@@ -531,7 +532,7 @@ Proofs（证明）
 
 \section{附录}
 \begin{frame}{附录}
-	
+
 	\begin{itemize}
 		\item  附录记载的主要是作者不想放在正文内的冗长复杂的定理证明。
 		\item  另一种附录防止的是正文定理证明中所要的的一些预备证明或一些标准引理，甚至一些有关概念的定义等。
@@ -542,4 +543,4 @@ Proofs（证明）
 
 
 
-\end{document} 
+\end{document}
