@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  8 MAR 2022 10:59
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  8 MAR 2022 11:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1378,7 +1378,7 @@ Package rerunfilecheck Info: File `1-数学文章的结构.out' has not changed.
 Here is how much of TeX's memory you used:
  29434 strings out of 476919
  645566 string characters out of 5821840
- 953580 words of memory out of 5000000
+ 953635 words of memory out of 5000000
  48733 multiletter control sequences out of 15000+600000
  411430 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
