@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  8 MAR 2022 11:02
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  8 MAR 2022 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1276,46 +1276,49 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 
 ] [7
 
-] (./1-数学文章的结构.toc) [8
+] [8
 
 ] [9
 
-] [10
+]
+Overfull \vbox (23.32962pt too high) detected at line 194
+ []
 
-] (./1-数学文章的结构.toc)
-[11
+[10
+
+] [11
 
 ] [12
 
-]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 197.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 197.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 197.
- [13
+] [13
 
 ] [14
 
 ] [15
 
-] (./1-数学文章的结构.toc) [16
+] [16
 
 ] [17
 
 ] (./1-数学文章的结构.toc) [18
 
-]
-[19
+] [19
 
 ] [20
 
-] [21
+]
+(./1-数学文章的结构.toc) [21
 
 ] [22
 
-] [23
+]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 375.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 375.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 375.
+ [23
 
 ] [24
 
@@ -1333,33 +1336,112 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
 
 ] [31
 
-] [32
+]
+[32
 
 ] [33
 
+] [34
+
+] [35
+
 ]
-[34
 
-] (./1-数学文章的结构.toc)
-Overfull \vbox (19.45802pt too high) detected at line 502
- []
+! LaTeX Error: There's no line here to end.
 
-[35
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.522 \\
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-] [36
+! Undefined control sequence.
+\beamer@doifinframe ...newline 文章的概要如下\newline或者是 
+                                                  \newline -This paper is or...
+l.535 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-] (./1-数学文章的结构.toc) [37
+[36
+
+] [37
 
 ] [38
 
-] (./1-数学文章的结构.toc) [39
+] [39
 
 ] [40
 
-]
-(./1-数学文章的结构.toc) [41
+] [41
 
-] [42
+] (./1-数学文章的结构.toc) [42
+
+] [43
+
+] (./1-数学文章的结构.toc)
+[44
+
+] [45
+
+] [46
+
+] [47
+
+] [48
+
+] [49
+
+] [50
+
+] [51
+
+] [52
+
+] [53
+
+] [54
+
+] [55
+
+] [56
+
+] [57
+
+] [58
+
+]
+[59
+
+] [60
+
+] (./1-数学文章的结构.toc)
+Overfull \vbox (19.45802pt too high) detected at line 876
+ []
+
+[61
+
+] [62
+
+] (./1-数学文章的结构.toc) [63
+
+] [64
+
+] (./1-数学文章的结构.toc) [65
+
+] [66
+
+]
+(./1-数学文章的结构.toc) [67
+
+] [68
 
 ]
 \tf@nav=\write6
@@ -1376,12 +1458,12 @@ Package rerunfilecheck Info: File `1-数学文章的结构.out' has not changed.
 (rerunfilecheck)             Checksum: 2CC24F2E523159695071DB765D1F715E;59.
  ) 
 Here is how much of TeX's memory you used:
- 29434 strings out of 476919
- 645566 string characters out of 5821840
- 953635 words of memory out of 5000000
- 48733 multiletter control sequences out of 15000+600000
- 411430 words of font info for 98 fonts, out of 8000000 for 9000
+ 29571 strings out of 476919
+ 651768 string characters out of 5821840
+ 955231 words of memory out of 5000000
+ 48869 multiletter control sequences out of 15000+600000
+ 411438 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 145i,11n,146p,453b,617s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 145i,11n,146p,772b,617s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 1-数学文章的结构.pdf (42 pages).
+Output written on 1-数学文章的结构.pdf (68 pages).
