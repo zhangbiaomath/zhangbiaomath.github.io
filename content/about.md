@@ -60,7 +60,8 @@
 # 参加会议
 
 
-
++ 2022
+ +  2022年3月15日，张彪应邀在大连理工大学做题为“The log-concavity of Kazhdan-Lusztig polynomials of uniform matroids”的线上报告。[website](https://math.dlut.edu.cn/info/1019/15055.htm)
 
 
 
