@@ -1,5 +1,5 @@
 ## 个人简介
-张彪，2015年6月博士毕业于南开大学。2018年8月至2019年8月赴美国宾夕法尼亚大学访问。研究方向为组合数学，从事代数组合学和计数组合学的研究，在《Journal of Combinatorial Theory, Series A》、《Proceedings of the American Mathematical Society》、《Advances in Applied Mathematics》、《SIAM Journal on Discrete Mathematics》等期刊发表学术论文20余篇，先后主持国家自然科学基金数学天元基金项目、青年基金项目、面上项目。
+张彪，副教授。2015年6月博士毕业于南开大学。2018年8月至2019年8月赴美国宾夕法尼亚大学访问。研究方向为组合数学，从事代数组合学和计数组合学的研究，在《Journal of Combinatorial Theory, Series A》、《Proceedings of the American Mathematical Society》、《Advances in Applied Mathematics》、《SIAM Journal on Discrete Mathematics》等期刊发表学术论文20余篇，先后主持国家自然科学基金数学天元基金项目、青年基金项目、面上项目。
 
 ## 个人经历
 
