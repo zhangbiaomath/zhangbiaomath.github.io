@@ -11,7 +11,7 @@
 |  2010.9–2015.6	|    南开大学组合数学中心|  	博士|  
 
 
-##承担课程
+## 承担课程
 
 高等代数、组合数学
 
@@ -45,13 +45,16 @@
 
 + 更多论文参见个人主页 [https://zhangbiaomath.github.io/](https://zhangbiaomath.github.io/)
 
-<!--+ 入选 天津市“131”创新型人才培养工程2017年第三层次人选 [website](http://rsc.tjnu.edu.cn/info/1067/3152.htm) -->
-
-<!-- +  2017年1月至2019年12月， 校博士基金，主持 -->
-<!-- +  2017年至2020年， 一类特殊的图染色问题研究，天津市高等学校科技发展计划项目，参与 -->
 
 
 
+
+
+
+## 学术兼职
++ Mathematical Reviews 评论员
++ 中国运筹学会会员
++ 中国工业与应用数学学会会员
 
 
 
@@ -63,12 +66,4 @@
 + Discrete Applied Mathematics
 + Discrete Mathematics
 + Electronic Journal of Combinatorics
-
-## 学术兼职
-+ Mathematical Reviews 评论员
-+ 中国运筹学会会员
-+ 中国工业与应用数学学会会员
-
-
-
 
