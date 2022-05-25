@@ -23,8 +23,6 @@
       position: fixed;            /** Keeps the header fixed in relation to the browser window. **/
       width: 100%;
       z-index: 1000;              /** Ensures the header is above other elements when scrolling. **/
-      background-color: #ffffff;  /** Gives the header a white background, so that other elements
-                                      aren't visible underneath the header when scrolling. **/
       text-align: center;         /** Besides centering the title, this will center the
                                       navigation bar as a whole. **/
       white-space: nowrap;        /** Forces the contents of a header element to never wrap. **/  
@@ -55,26 +53,26 @@
             }
 
 
-          nav ul  /** Selects all ul's inside of a nav. **/
+          nav > ul  /** Selects all ul's inside of a nav. **/
             {
               margin: 0;
+              border: 0;
               padding: 0;
               list-style: none;      
               display: inline-block; 
             }
 
 
-          nav ul li  /** Selects all li's that are inside of a ul which is inside of a nav. **/
-            {
+          nav > ul > li  /** Selects all li's that are inside of a ul which is inside of a nav. **/
+            {            
+              margin: 5px 10px;
               float: left;
-              margin: 0 25px;
             }
 
-          nav ul a  /** Selects all links that are inside of a ul which is a child of a nav. **/
+          nav  a  /** Selects all links that are inside of a ul which is a child of a nav. **/
             {
-              margin: 0 25px;
+               margin: 0 20px;
                padding: 5px 10px;
-              display: inline-block; 
                font-weight: bold;
             }
 
