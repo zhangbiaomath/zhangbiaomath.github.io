@@ -29,10 +29,15 @@
       background-color:white;
 
     }
+  h2
+    {
+      color: #990033;
+      font-size: 22pt;
+    }
 
   h4
     {
-      color: #0000cc;
+      color: #990033;
       font-size: 15pt;
     }
 
@@ -101,7 +106,7 @@
 
     a:link, a:hover, a:visited, a:visited:hover
       {
-      color: #990033;
+      color: #0000cc;
       text-decoration: none;
       }
 
