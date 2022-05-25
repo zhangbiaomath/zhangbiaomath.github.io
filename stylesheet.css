@@ -109,4 +109,8 @@
       text-decoration: none;
       }
 
+    b:link, b:hover
+      {
+      text-decoration: none;
+      }
 
