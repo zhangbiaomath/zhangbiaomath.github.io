@@ -15,7 +15,7 @@
       padding: 0 0 50px;
       width: 100%;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 13pt;
+      font-size: 14pt;
       line-height: 1.5em;
     }
 
@@ -44,7 +44,7 @@
 
           nav
             {
-              margin: 0;
+              margin: 10px 20px;
               padding: 0;
             }
 
@@ -67,9 +67,10 @@
 
           nav  a  /** Selects all links that are inside of a ul which is a child of a nav. **/
             {
-               margin: 0 20px;
+               margin: 10px 20px;
                padding: 5px 10px;
                font-weight: bold;
+               font-size: 16pt;
             }
 
 
@@ -103,7 +104,7 @@
 
 .zzz {
   margin: 15px 10px;
-  height: 30px;
+  height: 25px;
   color: #990033;
   font-size: 20pt;
   font-weight: bold;
