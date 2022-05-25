@@ -28,7 +28,12 @@
                                       navigation bar as a whole. **/
       white-space: nowrap;        /** Forces the contents of a header element to never wrap. **/  
       background-color:white;
+    }
 
+  footer
+    {
+      text-align: center;         /** Besides centering the title, this will center the
+                                      navigation bar as a whole. **/
     }
 
   h1
@@ -80,8 +85,8 @@
       margin: 0 auto;
       border: 0;
       padding: 100px 0px 0px;
-      width: 80%;
-      min-width: 900px;
+      width: 100%;
+      min-width: 800px;
       max-width: 1000px;
       text-align: left;
       position: relative;
