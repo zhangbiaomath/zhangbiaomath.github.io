@@ -15,7 +15,8 @@
       padding: 0 0 50px;
       width: 100%;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 14pt;
+      font-size: 13pt;
+      line-height: 1.5em;
     }
 
   header
@@ -29,13 +30,8 @@
       background-color:white;
 
     }
-  h2
-    {
-      color: #990033;
-      font-size: 22pt;
-    }
 
-  h4
+  h1
     {
       color: #990033;
       font-size: 15pt;
@@ -43,13 +39,6 @@
 
 
 
-          header h2  /** Selects all h2's inside of a header. **/
-            {
-              margin: 10pt;
-              border: 0;
-              padding: 0;
-              font-weight: bold;
-            }
 
         /** The navigation bar (the area between the two horizontal lines). **/
 
@@ -92,7 +81,7 @@
       padding: 100px 0px 0px;
       width: 80%;
       min-width: 900px;
-      max-width: 1100px;
+      max-width: 1000px;
       text-align: left;
       position: relative;
       display: block;
@@ -109,5 +98,23 @@
       color: #0000cc;
       text-decoration: none;
       }
+
+
+
+.zzz {
+  margin: 15px 10px;
+  height: 30px;
+  color: #990033;
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+
+
+
+
+.paper-tight .papertitle { font-weight: bold; }
+
+.paper-tight .journalname { font-weight: bold; font-style: italic;  color: #990033}
 
 
