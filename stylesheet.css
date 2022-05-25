@@ -15,7 +15,7 @@
       padding: 0 0 50px;
       width: 100%;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 13pt;
+      font-size: 14pt;
     }
 
   header
@@ -31,6 +31,7 @@
     }
   h2
     {
+      color: #990033;
       font-size: 22pt;
     }
 
@@ -89,9 +90,9 @@
       margin: 0 auto;
       border: 0;
       padding: 100px 0px 0px;
-      width: 70%;
-      min-width: 800px;
-      max-width: 1000px;
+      width: 80%;
+      min-width: 900px;
+      max-width: 1100px;
       text-align: left;
       position: relative;
       display: block;
@@ -109,8 +110,4 @@
       text-decoration: none;
       }
 
-    b:link, b:hover
-      {
-      text-decoration: none;
-      }
 
