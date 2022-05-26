@@ -86,7 +86,6 @@
       max-width: 1000px;
       text-align: left;
       position: relative;
-      display: block;
     }
 
 /*Styling links*/
@@ -114,9 +113,8 @@
 
 
 
+.paper { padding-top: .25rem; padding-bottom: .25rem; }
 
 .paper-tight .papertitle { font-weight: bold; }
 
 .paper-tight .journalname { font-weight: bold; font-style: italic;  color: #990033}
-
-
