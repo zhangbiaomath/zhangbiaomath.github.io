@@ -3,7 +3,6 @@ document.writeln("<html> ");
 document.writeln("<head>");
 document.writeln("  <!-- Specifies the character encoding of the document. -->");
 document.writeln("  <meta http-equiv=\'content-type\' content=\'text/html; charset=utf-8\' \'>");
-document.writeln("  <link rel=\'icon\' href=\'content/s4.png\' type=\'image/x-icon\'/>");
 document.writeln("");
 document.writeln("  <!-- Specifies the title of the document. -->");
 document.writeln("  <title>Philip B. Zhang\'s Homepage</title>");
