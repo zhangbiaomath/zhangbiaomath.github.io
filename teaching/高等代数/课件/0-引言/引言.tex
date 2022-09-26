@@ -2,6 +2,8 @@
 \documentclass[13pt,punct]{ctexbeamer}
 %\usepackage[utf8]{inputenc}
 % fontset=mac
+\usefonttheme[onlymath]{serif}
+
 
 \usepackage{amsmath,amssymb,amsthm}             % AMS Math
 %\usepackage[T1]{fontenc}
@@ -506,7 +508,7 @@ B是A的充分必要条件(或称为充要条件).
         \]
         \item 在上式等号两边分别加上 $k+1$ 得到
 \begin{align*}
-1+2+\cdots+k+(k+1)
+1^2+2^2+\cdots+k^2+(k+1)^2
 & = \frac{k(k+1)(2k+1)}{6}+(k+1)^2\\
 & = \frac{(k+1)(k+2)(2k+3)}{6}.
 \end{align*}
@@ -574,23 +576,23 @@ B是A的充分必要条件(或称为充要条件).
 		\small{
 	在数学中经常碰到若干个数连加的情况
 	\begin{align}\label{eq:a_i}
-		a_1+a_2+\cdots+a_n
+		a_1+a_2+\cdots+a_n.
 	\end{align}
 	为了简便起见，我们通常记成
 	\begin{align}\label{eq:a_i_sum}
-		\sum_{i=1}^{n}a_i
+		\sum_{i=1}^{n}a_i.
 	\end{align}
-	$\sum$称为\alert{连加号}，而连加号上下的写法表示$i$的取值由$1$到$n$.
+	称$\sum$为\alert{连加号}，而连加号上下的写法表示$i$的取值由$1$到$n$.
 
 	例如
-	\[1^2+2^2+\cdots+n^2=\sum_{i=1}^{n}i^{\, 2}\]
+	\[1^2+2^2+\cdots+n^2=\sum_{i=1}^{n}i^{\, 2}.,\]
 
 	这里的 $i$ 称为\alert{求和指标}, 它只起一个辅助的作用.
 
-	把 \eqref{eq:a_i_sum}还原成 \eqref{eq:a_i} 时，
+	把 \eqref{eq:a_i_sum} 还原成 \eqref{eq:a_i} 时，
 	它是不出现的.譬如说, \eqref{eq:a_i}也可以记成
 	$$
-	\sum_{j=1}^{n} a_{j}
+	\sum_{j=1}^{n} a_{j}.
 	$$
 因之,只要不与连加号中出现的其它指标相混,用什么字母作为求和指标是
 	任意的.}
@@ -715,7 +717,7 @@ a=q \cdot b+r, \quad 0 \leqslant r<|b|
 公因数中最重要的是最大公因数.
 
 \begin{defi}
-设 $d$ 是 $a$ 和 $b$ 的一个公因数. 如果 $a, b $的任一个因数都是 $d$ 的
+设 $d$ 是 $a$ 和 $b$ 的一个公因数. 如果 $a, b $的任一个共因数都是 $d$ 的
 因数, 则称 $d$ 是 $a, b$ 的一个\alert{最大公因数}.
 \end{defi}
 
@@ -762,7 +764,7 @@ a=q \cdot b+r, \quad 0 \leqslant r<|b|
 
 \begin{frame}
 \begin{defi}
-	如果整数 $a, b$ 的最大公因数等于 1,则称 $a, b$ \alert{互素} (亦称互质).
+	如果整数 $a, b$ 的最大公因数等于 1,则称 $a, b$ \alert{互素} (也称互质).
 \end{defi}
 例如，3 与5互素, 21 与 40 互素.
 
@@ -794,7 +796,7 @@ u \, a+v\,  b=1
 %一个整数 $a(a>1)$ 至少有两个因数: 1 和 $a$ 本身. 不等于 1 和 $a$ 的因数 叫做 $a$ 的真因数.
 
 \begin{defi}
-	设$a$ 是一个大于 1 的整数.如果除去 1 和本身外，$a$ 没有其它因数, 那么称$a$是一个\alert{素数}.
+	设$a$ 是一个大于 1 的整数.如果除去 1 和本身外，$a$ 没有其它因数, 那么称$a$是一个\alert{素数}(也称质数).
 \end{defi}
 例如 2, 3, 5, 23 等都是素数.
 
@@ -896,7 +898,7 @@ a  b=(a, b) \cdot[a, b]
 	\end{ex}
 
 \begin{ex}[思考题]
-一个数字能被7（或13）整除当且仅当其末3位与末3位之前的数字之差能被7（或13）整除。
+一个数字能被7整除当且仅当其末3位与末3位之前的数字之差能被7整除。
 \end{ex}
 
 
