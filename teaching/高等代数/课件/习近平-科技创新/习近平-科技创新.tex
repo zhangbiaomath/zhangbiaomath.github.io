@@ -251,25 +251,25 @@
     \begin{columns}[c]
         \column{8cm}
 
-        对任意 $\overrightarrow{O A}=\left(\begin{array}{l}a_1 \\ a_2\end{array}\right), \overrightarrow{O B}=\left(\begin{array}{l}b_1 \\ b_2\end{array}\right)$
+%        对任意 $\overrightarrow{O A}=\left(\begin{array}{l}a_1 \\ a_2\end{array}\right), \overrightarrow{O B}=\left(\begin{array}{l}b_1 \\ b_2\end{array}\right)$
 
         将 $O B$ 绕 $O$ 沿顺时针方向旋转直角得到有向线 段 $O B^{\, \prime}$. 则 $\overrightarrow{O B^{\, \prime}}=\left(\begin{array}{r}b_2 \\ -b_1\end{array}\right)$.
 
 
         %则 $\overrightarrow{O B^{\, \prime}}=\left( b_2, -b_1 \right)$.
 
-        考虑$\Delta=a_1 b_2-a_2 b_1$, 它就是 $\overrightarrow{O A} \cdot \overrightarrow{O B^{\, \prime}}$.
 
         由于 $\left|O B^{\, \prime}\right|=|O B|, \angle B O B^{\, \prime}=$ $-\frac{\pi}{2}$, 于是
 %        \pause
         $$
         \begin{aligned}
-            \Delta=\overrightarrow{O A} \cdot \overrightarrow{O B^{\, \prime}}
+            |O A||O B| \sin \angle A O B
             & = |O A|\left|O B^{\, \prime}\right| \cos \angle A O B^{\, \prime}\\
             & = |O A||O B| \cos \left(\angle A O B-\frac{\pi}{2}\right) \\
-            & = |O A||O B| \sin \angle A O B
+            & =\overrightarrow{O A} \cdot \overrightarrow{O B^{\, \prime}}
         \end{aligned}
         $$
+
 
 
         \column{4.5cm}
@@ -278,17 +278,17 @@
             %    \caption{}
         \end{figure}
 
-        \pause
-        \begin{itemize}
-            \item  $\triangle$ 的\alert{绝对值}就是以 $O A, O B$ 为一组邻边的平行四边形OAPB 的面积
-            \item   $\triangle$ 的\alert{符号}就是 $\sin \angle A O B$ 的符号
-        \end{itemize}
+
 
 
     \end{columns}
+        \pause
+ 令$\Delta=\overrightarrow{O A} \cdot \overrightarrow{O B^{\, \prime}}=a_1 b_2-a_2 b_1$. 因此,
 
-
-
+\begin{itemize}
+    \item  $\triangle$ 的\alert{绝对值}就是以 $O A, O B$ 为一组邻边的平行四边形OAPB 的面积,
+    \item   $\triangle$ 的\alert{符号}就是 $\sin \angle A O B$ 的符号.
+\end{itemize}
 \end{frame}
 
 \begin{frame}{平行四边形的面积与二阶行列式}
@@ -302,7 +302,7 @@
 
     称为\alert{二阶行列式}.
 
-    将它理解为平行四边形 OAPB 的\alert{有向 面积},
+    可将它理解为平行四边形 OAPB 的\alert{有向 面积},
 
     取值既可以为正实数, 也可以取负实数或零.
 \end{frame}
