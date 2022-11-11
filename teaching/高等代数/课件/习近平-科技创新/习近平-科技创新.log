@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  8 NOV 2022 19:46
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  9 NOV 2022 08:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1302,57 +1302,49 @@ File: wu.jpeg Graphic file (type bmp)
 ] (./习近平-科技创新.toc) [8
 
 ]
-File: det-2.png Graphic file (type bmp)
-<det-2.png>
+File: det-2.jpeg Graphic file (type bmp)
+<det-2.jpeg>
  [9
 
 ]
-File: det-2.png Graphic file (type bmp)
-<det-2.png>
+File: det-2.jpeg Graphic file (type bmp)
+<det-2.jpeg>
  [10
 
 ]
-File: det-2.png Graphic file (type bmp)
-<det-2.png>
- [11
-
-] [12
-
-]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 334.
-
 
 LaTeX Font Warning: Font shape `TU/lmr/b/it' in size <10> not available
-(Font)              Font shape `TU/lmr/b/sl' tried instead on input line 334.
+(Font)              Font shape `TU/lmr/b/sl' tried instead on input line 297.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/b/it' in size <7> not available
-(Font)              Font shape `TU/lmr/b/sl' tried instead on input line 334.
+(Font)              Font shape `TU/lmr/b/sl' tried instead on input line 297.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/b/it' in size <5> not available
-(Font)              Font shape `TU/lmr/b/sl' tried instead on input line 334.
+(Font)              Font shape `TU/lmr/b/sl' tried instead on input line 297.
 
+[11
+
+]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 323.
 Missing character: There is no 2 ("32) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 2 ("32) in font nullfont!
 Missing character: There is no 6 ("36) in font nullfont!
+
 
 LaTeX Font Warning: Font shape `TU/PingFangSC(0)/m/it' undefined
-(Font)              using `TU/PingFangSC(0)/m/n' instead on input line 334.
+(Font)              using `TU/PingFangSC(0)/m/n' instead on input line 323.
 
 Missing character: There is no 3 ("33) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
-[13
+[12
 
-]
-Overfull \vbox (0.31715pt too high) detected at line 355
- []
+] [13
 
-[14
-
-] [15
+] [14
 
 ]
 Missing character: There is no 3 ("33) in font nullfont!
@@ -1361,29 +1353,36 @@ Missing character: There is no 4 ("34) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 4 ("34) in font nullfont!
 Missing character: There is no 6 ("36) in font nullfont!
+ [15
+
+]
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
  [16
 
 ]
 Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
  [17
 
-]
-Missing character: There is no 5 ("35) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
-Missing character: There is no 6 ("36) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
- [18
+] [18
 
 ] [19
 
-] [20
+]
 
-] [21
+LaTeX Font Warning: Font shape `TU/lmr/b/it' in size <9> not available
+(Font)              Font shape `TU/lmr/b/sl' tried instead on input line 491.
 
-] [22
 
-] (./习近平-科技创新.toc) [23
+LaTeX Font Warning: Font shape `TU/lmr/b/it' in size <6> not available
+(Font)              Font shape `TU/lmr/b/sl' tried instead on input line 491.
+
+[20
+
+] (./习近平-科技创新.toc) [21
 
 ]
 Missing character: There is no 6 ("36) in font nullfont!
@@ -1392,21 +1391,25 @@ Missing character: There is no 7 ("37) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 7 ("37) in font nullfont!
 Missing character: There is no 6 ("36) in font nullfont!
- [24
+ [22
 
 ]
 Missing character: There is no 8 ("38) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 8 ("38) in font nullfont!
 Missing character: There is no 6 ("36) in font nullfont!
+ [23
 
-[25
+] [24
+
+] (./习近平-科技创新.toc) [25
 
 ] [26
 
-] (./习近平-科技创新.toc) [27
+] [27
 
-] [28
+]
+[28
 
 ] [29
 
@@ -1414,37 +1417,32 @@ Missing character: There is no 6 ("36) in font nullfont!
 
 ] [31
 
-] [32
+] (./习近平-科技创新.toc) [32
 
 ] [33
-
-] (./习近平-科技创新.toc)
-[34
-
-] [35
 
 ]
 Missing character: There is no 9 ("39) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
- [36
+ [34
 
 ]
 File: r=1-sintheta.png Graphic file (type bmp)
 <r=1-sintheta.png>
- [37
+ [35
+
+] [36
+
+] [37
 
 ] [38
 
-] [39
+]
+(./习近平-科技创新.toc) [39
 
-] [40
+] (./习近平-科技创新.toc) [40
 
-] (./习近平-科技创新.toc) [41
-
-] (./习近平-科技创新.toc)
-[42
-
-] [43
+] [41
 
 ]
 Missing character: There is no 9 ("39) in font nullfont!
@@ -1453,38 +1451,38 @@ Missing character: There is no 6 ("36) in font nullfont!
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 934.
+(amsmath)                 on input line 937.
 
 
-Overfull \vbox (5.00035pt too high) detected at line 934
+Overfull \vbox (5.00035pt too high) detected at line 937
  []
 
-[44
+[42
 
 ]
 Missing character: There is no 9 ("39) in font nullfont!
 Missing character: There is no 6 ("36) in font nullfont!
 
-Overfull \vbox (5.00035pt too high) detected at line 934
+Overfull \vbox (5.00035pt too high) detected at line 937
+ []
+
+[43
+
+]
+File: yanghui.png Graphic file (type bmp)
+<yanghui.png>
+ [44
+
+]
+Overfull \vbox (2.02855pt too high) detected at line 1132
  []
 
 [45
 
 ]
-File: yanghui.png Graphic file (type bmp)
-<yanghui.png>
- [46
-
-]
-Overfull \vbox (2.02855pt too high) detected at line 1129
- []
-
-[47
-
-]
 File: path.png Graphic file (type bmp)
 <path.png>
- [48
+ [46
 
 ]
 File: HockeyStick.png Graphic file (type bmp)
@@ -1492,18 +1490,30 @@ File: HockeyStick.png Graphic file (type bmp)
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 0 ("30) in font nullfont!
 Missing character: There is no 5 ("35) in font nullfont!
+ [47
+
+]
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+ [48
+
+]
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
  [49
 
 ]
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
  [50
 
 ]
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
  [51
 
 ]
@@ -1512,19 +1522,7 @@ Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 9 ("39) in font nullfont!
  [52
 
-]
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 9 ("39) in font nullfont!
- [53
-
-]
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 9 ("39) in font nullfont!
- [54
-
-] [55
+] [53
 
 ]
 Missing character: There is no 1 ("31) in font nullfont!
@@ -1533,7 +1531,7 @@ Missing character: There is no 2 ("32) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 3 ("33) in font nullfont!
 Missing character: There is no 7 ("37) in font nullfont!
- [56
+ [54
 
 ]
 \tf@nav=\write6
@@ -1553,12 +1551,12 @@ Package rerunfilecheck Info: File `习近平-科技创新.out' has not changed.
 (rerunfilecheck)             Checksum: 4F6EBB5AF8B364C311D2D929E2189D63;546.
  ) 
 Here is how much of TeX's memory you used:
- 29981 strings out of 476919
- 657354 string characters out of 5821840
- 978249 words of memory out of 5000000
- 49234 multiletter control sequences out of 15000+600000
- 415974 words of font info for 124 fonts, out of 8000000 for 9000
+ 30023 strings out of 476919
+ 658498 string characters out of 5821840
+ 978035 words of memory out of 5000000
+ 49270 multiletter control sequences out of 15000+600000
+ 417849 words of font info for 134 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  145i,23n,146p,482b,887s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 习近平-科技创新.pdf (56 pages).
+Output written on 习近平-科技创新.pdf (54 pages).
