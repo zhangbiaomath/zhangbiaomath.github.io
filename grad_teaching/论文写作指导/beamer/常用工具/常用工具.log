@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  8 MAR 2022 10:46
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  1 MAR 2023 10:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1332,16 +1332,16 @@ File: LATEX.jpg Graphic file (type bmp)
 
 ] [7
 
+] [8
+
 ]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 278.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 293.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 278.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 293.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 278.
- [8
-
-] [9
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 293.
+ [9
 
 ] [10
 
@@ -1376,12 +1376,12 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `常用工具.out' has not changed.
-(rerunfilecheck)             Checksum: E03152DF2DB6A39876E9CC1047B04AF3;1037.
+(rerunfilecheck)             Checksum: DFD9348F3FB344B7C76F7549CCD9893A;1037.
  ) 
 Here is how much of TeX's memory you used:
  31410 strings out of 476919
  690948 string characters out of 5821840
- 1004055 words of memory out of 5000000
+ 1004051 words of memory out of 5000000
  50694 multiletter control sequences out of 15000+600000
  411886 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
