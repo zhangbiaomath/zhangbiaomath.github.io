@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{论文写作}{3}{0}{1}
+\beamer@sectionintoc {2}{文献搜索}{20}{0}{2}
+\beamer@sectionintoc {3}{LaTeX}{23}{0}{3}

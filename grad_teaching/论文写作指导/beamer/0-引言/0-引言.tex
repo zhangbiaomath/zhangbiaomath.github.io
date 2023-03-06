@@ -1,10 +1,12 @@
-\documentclass[12pt]{ctexbeamer}
+\documentclass[10pt]{ctexbeamer}
 
 
 \usepackage{amsmath,amssymb,amsthm}             % AMS Math
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{tikz}
+\usetikzlibrary{graphs, positioning, quotes, shapes.geometric}
+\usepackage{tipa}
 \linespread{1.3}
 
 \usepackage{mathrsfs}  %花写字母
@@ -75,8 +77,15 @@
 \maketitle
 \end{frame}
 
+\setcounter{tocdepth}{1}
+
+\begin{frame}
+    \frametitle{\textcolor{orange}{Outline}}
+    \tableofcontents
+\end{frame}
 
 
+\section{论文写作}
 \begin{frame}
 
 
@@ -240,25 +249,241 @@ All writing is influenced by the audience, but, given the audience, the author's
 所有写作都被读者所左右。但是, 当读者是既定的, 作者的课 题就是尽他所能与之交流 $\cdots$
 }
 \end{frame}
-\begin{frame}
-    {\small
-    The basic problem in writing mathematics is the same as in writing biology, writing a novel, or wrting directions for assembling a harpsichord(大键琴):
-        the problem is \blue{to communicate an idea}.
 
-    To do so, and to do it clearly,
-    \begin{itemize}
-        \item you must have somthing to say, and
-        \item you must arrange it in the order that you want to it said in,
-        \item you must write it, rewrite it, and re-rewrite it  several times, and
-        \item you must be willing to think hard about and work hard on mechanical details such as diction, notation, and punctuation.
-    \end{itemize}
-    That is' all there is to it.
-}
+
+
+\begin{frame}{Halmos's principle}
+
+
+    {\small  The basic problem in writing mathematics is the same as in writing biology, writing a novel, or wrting directions for assembling a harpsichord(大键琴):     the problem is  to communicate an idea.}
 
   \pause
-{\small
-写数学的基本问题和写生物、写小说或写键琴安装指南一样: 如何交流想法。为了这样做并做得好, 你必须有述说的内容, 你必须有说话的对象, 你必须组织好你想说的一切, 你必须按 照你想说的次序来安排它, 你必须写、重写, 并重复改写几次, 你必须愿意绞尽脑汁, 在措词、记号及标点符号等细节上猛下 功夫。这就是一切的一切。 }
+
+{\small  写数学的基本问题和写生物、写小说或写键琴安装指南一样: 如何交流想法。}
+
 \end{frame}
 
+\begin{frame}{}
+
+
+    {\small To do so, and to do it clearly,
+        \begin{itemize}
+            \item you must have something to say, and
+            \item you must arrange it in the order that you want to it said in,
+            \item you must write it, rewrite it, and re-rewrite it  several times, and
+            \item you must be willing to think hard about and work hard on mechanical details such as diction, notation, and punctuation.
+        \end{itemize}
+        That is' all there is to it.}
+
+    \pause
+
+    {\small 为了这样做并做得好, 你必须有述说的内容, 你必须有说话的对象, 你必须组织好你想说的一切, 你必须按 照你想说的次序来安排它, 你必须写、重写, 并重复改写几次, 你必须愿意绞尽脑汁, 在措词、记号及标点符号等细节上猛下 功夫。这就是一切的一切。 }
+\end{frame}
+
+
+
+\section{文献搜索}
+\begin{frame}{文献搜索 -- 用好校园网络资源}
+    \begin{itemize}
+        \item VPN  -- 可以在校外使用校园网络
+
+        \href{https://svpn.tjnu.edu.cn/}{https://svpn.tjnu.edu.cn/}
+
+        \href{https://vpn.tjnu.edu.cn/}{https://vpn.tjnu.edu.cn/}
+
+
+
+
+        \item 图书馆
+
+        \href{https://tsg.tjnu.edu.cn/}{https://tsg.tjnu.edu.cn/}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{文献搜索}
+    \begin{itemize}
+
+        \item 知网
+
+        \href{https://www.cnki.net/}{https://www.cnki.net/}
+
+        \item 万方数据
+
+        \href{https://www.wanfangdata.com.cn/}{https://www.wanfangdata.com.cn/}
+
+
+        \item 维普网
+
+        \href{http://www.cqvip.com/}{http://www.cqvip.com/}
+
+        \item Web of Science
+
+        \href{https://www.webofknowledge.com/}{https://www.webofknowledge.com/}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{文献搜索}
+    \begin{itemize}
+        \item
+        百度学术
+
+        \href{http://xueshu.baidu.com/}{http://xueshu.baidu.com/}
+
+
+
+
+        \item
+        谷歌学术镜像
+
+        \href{http://scholar.hedasudi.com/}{http://scholar.hedasudi.com/}
+
+        \href{http://scholar.scqylaw.com/}{http://scholar.scqylaw.com/}
+
+        \item
+        Bing
+
+        \item 俄罗斯搜索
+    \end{itemize}
+
+\end{frame}
+
+
+\section{LaTeX}
+
+\begin{frame}{LaTeX}
+
+    \begin{itemize}
+        \item 	TeX
+        （$\backslash$t\textepsilon x$\backslash$，常被读作$\backslash$t\textepsilon k$\backslash$，音译“泰赫”，“泰克”）
+
+        \item 它在学术界特别是数学、物理学和计算机科学界十分流行。
+        \item
+        TeX被普遍认为是一个优秀的排版工具，尤其是对于复杂数学公式的处理。
+        \item
+        科研工作者使用文本编辑器(WinEdt, TexStudio等）编写tex源文件(.tex),  经过LaTeX进行编译，能够排版出精美的pdf文件。
+    \end{itemize}
+
+    \begin{figure}
+
+        \begin{tikzpicture}
+
+            \tikzstyle{arrow} = [thick,->,>=stealth]
+            \node[diamond, minimum width=3cm,
+            minimum height=1cm, text width=2cm, rounded corners, text centered, fill=blue!30]     (tex)  {.tex文件};
+            \node[diamond, rounded corners, minimum width=3cm,
+            minimum height=1cm, text width=2cm, fill=blue!30, text centered,  right=100pt of tex]     (pdf)  {.pdf文档};
+            \draw [arrow] (tex) -- node[anchor=south] {LaTeX编译} (pdf);
+
+        \end{tikzpicture}
+    \end{figure}
+
+\end{frame}
+
+
+
+
+\begin{frame}{线上Latex：  Overleaf}
+    网站
+    \href{https://www.overleaf.com?r=4c8832b9&rm=d&rs=b
+    }{https://www.overleaf.com/
+    }
+
+
+    \begin{itemize}
+        \item 在线编辑
+
+        \item 免安装，免配置
+
+        \item 多人协作
+
+        \item 版本管理
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{换行和新的段落}
+    \begin{itemize}
+        \item 一个空行或者多个连续空行代表着前后内容是两段，会产生缩进。
+
+
+        \item  $\backslash\backslash$ 也可以表示换行，但只是换行，不会产生缩进。
+
+
+        \item 一般是用插入空行来实现分段，为保证源文件的清晰
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{输入数学公式}
+
+    欧拉函数常用于数论中.
+    \begin{align}\label{eq1}
+        \varphi(n)=n\left(1-\frac{1}{p_{1}}\right)\left(1-\frac{1}{p_{2}}\right) \cdots\left(1-\frac{1}{p_{q}}\right)
+    \end{align}
+
+    例如,若 $n=12=2^{2} \cdot 3$,则由\eqref{eq1}可得
+    $$
+    \varphi(12)=12\left(1-\frac{1}{2}\right)\left(1-\frac{1}{3}\right)=4
+    $$
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item 插入图片
+        \begin{center}
+            \includegraphics[width=2cm]{tjnu.jpg}
+        \end{center}
+
+        \item 插入表格
+        \begin{table}
+            \centering
+            \caption{顾客损失率计算参数值}
+            \begin{tabular}{|l||c|c|c|}
+                \hline
+                姓名 & 语文 & 数学 & 外语  \\
+                \hline  \hline
+                张三 & 87 & 100 & 93 \\
+                \hline
+                李四 & 75 & 64 & 52  \\
+                \hline
+                王二 & 80 & 82 & 78  \\
+                \hline
+            \end{tabular}
+        \end{table}
+    \end{itemize}
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{推荐使用TeXLive + TeXStudio }
+    推荐安装\green{最新版本}的
+
+    \begin{itemize}
+        \item \blue{TeXLive}  ---\red{发行版}
+
+        \href{https://www.tug.org/texlive/}{https://www.tug.org/texlive/}
+
+
+
+        \item \blue{TeXStudio}    ---\red{编辑器}
+
+        http://www.texstudio.org/
+    \end{itemize}
+
+    {TeXLive} + {TeXStudio}   ~安装指南，可以参考
+    \begin{itemize}
+        \item 	\href{https://zhuanlan.zhihu.com/p/80603542}{https://zhuanlan.zhihu.com/p/80603542}
+        \item \href{https://blog.csdn.net/yeler082/article/details/80665186}{https://blog.csdn.net/yeler082/article/details/80665186}
+    \end{itemize}
+\end{frame}
 
 \end{document}
