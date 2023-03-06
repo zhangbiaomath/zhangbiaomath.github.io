@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  6 MAR 2023 19:36
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  6 MAR 2023 20:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1288,79 +1288,75 @@ File: tjnu.jpg Graphic file (type bmp)
 ] (./常用工具.toc) [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 127
+LaTeX Font Info:    Trying to load font information for U+msa on input line 114
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 127
+LaTeX Font Info:    Trying to load font information for U+msb on input line 114
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 12
-7.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
+4.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 127.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 114.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 127.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 114.
  [3
+
+] [4
+
+]
+[5
+
+] [6
 
 ]
 File: Knuth.jpg Graphic file (type bmp)
 <Knuth.jpg>
- [4
+ [7
 
 ]
 Missing character: There is no ε (U+03B5) in font [lmsans10-regular]:mapping=te
 x-text;!
 File: Lamport.jpg Graphic file (type bmp)
 <Lamport.jpg>
-
-[5
+ [8
 
 ]
 File: LATEX.jpg Graphic file (type bmp)
 <LATEX.jpg>
- [6
+ [9
 
-] [7
+] [10
 
-] [8
+] [11
 
-]
-
-LaTeX Warning: Reference `eq1' on page 9 undefined on input line 278.
-
-[9
+] [12
 
 ]
 File: tjnu.jpg Graphic file (type bmp)
 <tjnu.jpg>
- [10
-
-] [11
-
-]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 355.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 355.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 355.
- [12
-
-] [13
+ [13
 
 ] [14
 
-] [15
+]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 423.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 423.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 423.
+ [15
 
 ] [16
 
@@ -1372,7 +1368,14 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
 
 ] [20
 
-] [21
+]
+[21
+
+] [22
+
+] [23
+
+] [24
 
 ]
 \tf@nav=\write6
@@ -1388,28 +1391,16 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `常用工具.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `常用工具.out':
-(rerunfilecheck)             Before: DFD9348F3FB344B7C76F7549CCD9893A;1037
-(rerunfilecheck)             After:  51DCACC96D8E33A1B6D15809B4BCA6EA;1038.
+Package rerunfilecheck Info: File `常用工具.out' has not changed.
+(rerunfilecheck)             Checksum: 48730425D701F7739B44B8A3CCDE6843;1113.
  ) 
 Here is how much of TeX's memory you used:
- 31416 strings out of 476919
- 691108 string characters out of 5821840
- 1006051 words of memory out of 5000000
- 50700 multiletter control sequences out of 15000+600000
+ 31431 strings out of 476919
+ 691228 string characters out of 5821840
+ 1002297 words of memory out of 5000000
+ 50715 multiletter control sequences out of 15000+600000
  411886 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  145i,11n,146p,448b,913s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 常用工具.pdf (21 pages).
+Output written on 常用工具.pdf (24 pages).
