@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  6 MAR 2023 20:08
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  6 MAR 2023 20:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1379,17 +1379,14 @@ File: tjnu.jpg Graphic file (type bmp)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `0-引言.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31284 strings out of 476919
- 684948 string characters out of 5821840
- 1000869 words of memory out of 5000000
- 50572 multiletter control sequences out of 15000+600000
+ 31275 strings out of 476919
+ 684876 string characters out of 5821840
+ 1000633 words of memory out of 5000000
+ 50563 multiletter control sequences out of 15000+600000
  410151 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  145i,11n,146p,448b,911s stack positions out of 5000i,500n,10000p,200000b,80000s
