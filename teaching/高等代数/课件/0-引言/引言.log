@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  8 NOV 2022 18:39
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  26 SEP 2023 19:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1243,142 +1243,117 @@ File: ../tjnu.jpg Graphic file (type bmp)
 ] (./引言.toc) [3
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 156
+LaTeX Font Info:    Trying to load font information for U+msa on input line 246
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 156
+LaTeX Font Info:    Trying to load font information for U+msb on input line 246
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 15
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 24
 6.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-File: hua.jpeg Graphic file (type bmp)
-<hua.jpeg>
- [4
+) [4
+
+] [5
 
 ]
-File: Gauss.jpeg Graphic file (type bmp)
-<Gauss.jpeg>
- [5
-
-]
-File: 数学好玩.jpg Graphic file (type bmp)
-<数学好玩.jpg>
-File: chern.jpeg Graphic file (type bmp)
-<chern.jpeg>
-
-Overfull \vbox (5.92035pt too high) detected at line 206
- []
+File: gaodai_code.png Graphic file (type bmp)
+<gaodai_code.png>
 
 [6
 
-] [7
+] (./引言.toc) [7
 
 ] [8
 
 ] [9
 
-] [10
-
-]
-File: gaodai_code.png Graphic file (type bmp)
-<gaodai_code.png>
- [11
-
-] (./引言.toc) [12
-
-] [13
-
-] [14
-
-] (./引言.toc) [15
+] (./引言.toc) [10
 
 ]
 File: gupai.jpg Graphic file (type bmp)
 <gupai.jpg>
- [16
+ [11
 
-]
-[17
+] [12
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 488.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 490.
 
 
 LaTeX Font Warning: Font shape `TU/PingFangSC(0)/m/it' undefined
-(Font)              using `TU/PingFangSC(0)/m/n' instead on input line 488.
+(Font)              using `TU/PingFangSC(0)/m/n' instead on input line 490.
 
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 
-Overfull \vbox (3.36653pt too high) detected at line 488
+Overfull \vbox (3.36653pt too high) detected at line 490
  []
 
-[18
+[13
 
 ]
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 
-Overfull \vbox (3.36653pt too high) detected at line 488
+Overfull \vbox (3.36653pt too high) detected at line 490
  []
 
-[19
+[14
 
 ]
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 
-Overfull \vbox (30.49792pt too high) detected at line 520
+Overfull \vbox (30.49792pt too high) detected at line 522
  []
 
-[20
+[15
 
 ]
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 
-Overfull \vbox (30.49792pt too high) detected at line 520
+Overfull \vbox (30.49792pt too high) detected at line 522
  []
 
-[21
+[16
 
 ]
 Missing character: There is no 2 ("32) in font nullfont!
 Missing character: There is no 8 ("38) in font nullfont!
- [22
+ [17
 
 ]
 Missing character: There is no 2 ("32) in font nullfont!
 Missing character: There is no 8 ("38) in font nullfont!
- [23
+ [18
 
-] [24
+] [19
 
-] (./引言.toc) [25
+] (./引言.toc) [20
 
-] [26
+] [21
 
-] (./引言.toc) [27
+] (./引言.toc) [22
 
-] [28
+] [23
 
 ]
 Missing character: There is no 3 ("33) in font nullfont!
 Missing character: There is no 7 ("37) in font nullfont!
 Missing character: There is no 4 ("34) in font nullfont!
 Missing character: There is no 2 ("32) in font nullfont!
- [29
+ [24
 
 ]
 Missing character: There is no 4 ("34) in font nullfont!
@@ -1387,7 +1362,7 @@ Missing character: There is no 5 ("35) in font nullfont!
 Missing character: There is no 2 ("32) in font nullfont!
 Missing character: There is no 5 ("35) in font nullfont!
 Missing character: There is no 7 ("37) in font nullfont!
- [30
+ [25
 
 ]
 Missing character: There is no 6 ("36) in font nullfont!
@@ -1397,7 +1372,7 @@ Missing character: There is no 7 ("37) in font nullfont!
 Missing character: There is no 7 ("37) in font nullfont!
 Missing character: There is no 2 ("32) in font nullfont!
 
-[31
+[26
 
 ]
 Missing character: There is no 7 ("37) in font nullfont!
@@ -1405,96 +1380,96 @@ Missing character: There is no 7 ("37) in font nullfont!
 Missing character: There is no 8 ("38) in font nullfont!
 Missing character: There is no 2 ("32) in font nullfont!
 
-Overfull \vbox (6.89359pt too high) detected at line 743
+Overfull \vbox (6.89359pt too high) detected at line 745
  []
 
-[32
+[27
 
-] [33
+] [28
 
 ]
 Missing character: There is no 8 ("38) in font nullfont!
 Missing character: There is no 7 ("37) in font nullfont!
 Missing character: There is no 9 ("39) in font nullfont!
 Missing character: There is no 2 ("32) in font nullfont!
- [34
+ [29
 
 ]
 Missing character: There is no 9 ("39) in font nullfont!
 Missing character: There is no 7 ("37) in font nullfont!
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 822.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 824.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 822.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 824.
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 0 ("30) in font nullfont!
 Missing character: There is no 2 ("32) in font nullfont!
 
-Overfull \vbox (1.50964pt too high) detected at line 822
+Overfull \vbox (1.50964pt too high) detected at line 824
  []
 
-[35
+[30
 
 ]
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 0 ("30) in font nullfont!
 Missing character: There is no 7 ("37) in font nullfont!
- [36
+ [31
+
+] [32
+
+]
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 7 ("37) in font nullfont!
+ [33
+
+]
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 7 ("37) in font nullfont!
+ [34
+
+] (./引言.toc) [35
+
+] [36
 
 ] [37
 
-]
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 7 ("37) in font nullfont!
- [38
+] [38
 
 ]
 Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
 Missing character: There is no 2 ("32) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
 Missing character: There is no 7 ("37) in font nullfont!
  [39
-
-] (./引言.toc) [40
-
-] [41
-
-] [42
-
-] [43
-
-]
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 3 ("33) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 3 ("33) in font nullfont!
-Missing character: There is no 7 ("37) in font nullfont!
- [44
 
 ]
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 4 ("34) in font nullfont!
 Missing character: There is no 2 ("32) in font nullfont!
- [45
+ [40
 
 ]
 File: r=1-sintheta.png Graphic file (type bmp)
 <r=1-sintheta.png>
- [46
+ [41
 
-] [47
+] [42
 
 ]
-[48
+[43
 
-] [49
+] [44
 
 ]
 \tf@nav=\write6
@@ -1514,12 +1489,12 @@ Package rerunfilecheck Info: File `引言.out' has not changed.
 (rerunfilecheck)             Checksum: 652E09D36FC4495068B337B253E9166A;466.
  ) 
 Here is how much of TeX's memory you used:
- 29842 strings out of 476919
- 657548 string characters out of 5821840
- 973973 words of memory out of 5000000
- 49123 multiletter control sequences out of 15000+600000
+ 29702 strings out of 476919
+ 650142 string characters out of 5821840
+ 971862 words of memory out of 5000000
+ 48988 multiletter control sequences out of 15000+600000
  413188 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  145i,11n,146p,476b,883s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 引言.pdf (49 pages).
+Output written on 引言.pdf (44 pages).
