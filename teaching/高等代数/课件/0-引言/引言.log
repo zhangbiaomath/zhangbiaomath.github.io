@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  27 SEP 2023 09:38
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  27 SEP 2023 09:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1287,16 +1287,16 @@ File: gupai.jpg Graphic file (type bmp)
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 490.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 491.
 
 
 LaTeX Font Warning: Font shape `TU/PingFangSC(0)/m/it' undefined
-(Font)              using `TU/PingFangSC(0)/m/n' instead on input line 490.
+(Font)              using `TU/PingFangSC(0)/m/n' instead on input line 491.
 
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 
-Overfull \vbox (3.36653pt too high) detected at line 490
+Overfull \vbox (3.36653pt too high) detected at line 491
  []
 
 [13
@@ -1305,7 +1305,7 @@ Overfull \vbox (3.36653pt too high) detected at line 490
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 
-Overfull \vbox (3.36653pt too high) detected at line 490
+Overfull \vbox (3.36653pt too high) detected at line 491
  []
 
 [14
@@ -1314,7 +1314,7 @@ Overfull \vbox (3.36653pt too high) detected at line 490
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 
-Overfull \vbox (30.49792pt too high) detected at line 522
+Overfull \vbox (30.49792pt too high) detected at line 523
  []
 
 [15
@@ -1323,7 +1323,7 @@ Overfull \vbox (30.49792pt too high) detected at line 522
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 1 ("31) in font nullfont!
 
-Overfull \vbox (30.49792pt too high) detected at line 522
+Overfull \vbox (30.49792pt too high) detected at line 523
  []
 
 [16
@@ -1380,7 +1380,7 @@ Missing character: There is no 7 ("37) in font nullfont!
 Missing character: There is no 8 ("38) in font nullfont!
 Missing character: There is no 2 ("32) in font nullfont!
 
-Overfull \vbox (6.89359pt too high) detected at line 745
+Overfull \vbox (6.89359pt too high) detected at line 746
  []
 
 [27
@@ -1398,14 +1398,14 @@ Missing character: There is no 2 ("32) in font nullfont!
 Missing character: There is no 9 ("39) in font nullfont!
 Missing character: There is no 7 ("37) in font nullfont!
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 824.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 825.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 824.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 825.
 Missing character: There is no 1 ("31) in font nullfont!
 Missing character: There is no 0 ("30) in font nullfont!
 Missing character: There is no 2 ("32) in font nullfont!
 
-Overfull \vbox (1.50964pt too high) detected at line 824
+Overfull \vbox (1.50964pt too high) detected at line 825
  []
 
 [30
