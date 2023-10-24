@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  28 NOV 2022 21:11
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  24 OCT 2023 16:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1133,6 +1133,10 @@ LaTeX Info: Redefining \nameref on input line 58.
 \openout5 = `6-递推关系.out'.
 
 
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+
 (/usr/local/texlive/2021/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1578,14 +1582,20 @@ Overfull \vbox (12.41664pt too high) detected at line 1366
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `6-递推关系.out' has not changed.
-(rerunfilecheck)             Checksum: 3CF9178B57149DAA4F7E0AC4651B94B2;687.
+
+Package rerunfilecheck Warning: File `6-递推关系.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `6-递推关系.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  3CF9178B57149DAA4F7E0AC4651B94B2;687.
  ) 
 Here is how much of TeX's memory you used:
- 29456 strings out of 476919
- 639034 string characters out of 5821840
- 955197 words of memory out of 5000000
- 48752 multiletter control sequences out of 15000+600000
+ 29455 strings out of 476919
+ 639032 string characters out of 5821840
+ 953806 words of memory out of 5000000
+ 48751 multiletter control sequences out of 15000+600000
  429938 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  145i,14n,146p,493b,792s stack positions out of 5000i,500n,10000p,200000b,80000s
