@@ -1,0 +1,5 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {2}{第二章~~数列极限}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{数列极限的概念}{3}{0}{1}
+\beamer@subsectionintoc {2}{2}{收敛数列的性质}{3}{0}{1}
+\beamer@subsectionintoc {2}{3}{数列极限存在的条件}{3}{0}{1}

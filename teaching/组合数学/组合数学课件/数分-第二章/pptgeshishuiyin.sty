@@ -1,0 +1,244 @@
+\ProvidesPackage{pptgeshi}
+ %%%=====For Chinese=====%%%
+\usepackage{fontspec} 
+\usepackage{setspace} 
+
+%\usepackage{xeCJK}
+\setsansfont{STKaiti} % font name is case-sensitive  
+\XeTeXlinebreaklocale “zh”
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行
+
+%%%=====设置新字体的快捷命令=====%%%
+%\newfontfamily{\hei}{STKaitiSC-Black}  
+\newfontfamily{\alb}{Arial}  
+
+%%%=====设置字体大小=====%%%
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}     %初号  
+\newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont} %小初号  
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}      %一号  
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}      %二号  
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}  %小二号  
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}  %三号  
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}%     四号  
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}  %小四号  
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}    %五号  
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}   %小五号  
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}  %六号  
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}    %七号
+
+
+
+
+
+
+
+ %%%=====主题=====%%%
+\mode<presentation>
+{  
+  \usetheme{PaloAlto} % 上标题左目录，蓝色，白底，环境效果不错
+
+  %\useinnertheme{}%控制内部主题
+  %\useoutertheme{}%控制外部主题
+  \usecolortheme{spruce}%改变模版颜色  （crane 黄色） （spruce薄荷绿）
+  %\usefonttheme{}%改变模版字体
+  %参考https://blog.csdn.net/chichoxian/article/details/19113649
+  %参考http://blog.sina.com.cn/s/blog_4b1645570102v2o1.html
+ 
+  %以下为其他可选主题
+  %\usetheme{PaloAlto} % 上标题左目录，蓝色，白底，环境效果不错
+  %\usetheme{Boadilla} %简介模式，无目录，淡紫色边，白底
+  %\usetheme{Madrid} %蓝色白底，无跳转目录，其他还可以
+  %\usetheme{CambridgeUS} %上边目录，红色，白底，环境效果差点
+  %\usetheme{JuanLesPins} %上面详细目录，蓝色，整体还可以
+  %\usetheme{Antibes} %上边目录有点宽，蓝色，环境效果还行
+  %\usetheme{Bergen} %左蓝右白底，有点浪费空间
+   %\usetheme{Darmstadt} %蓝色，上边详细目录，长目录可能显示不全
+   %\usetheme{Dresden} %蓝色，上边详细目录，会占用较大空间
+  %\usetheme{Copenhagen} %蓝色，上面详细目录，有点浪费空间，但比上一个好一点
+  %\usetheme{default} %最简洁模式，纯白底
+  %\usetheme{Goettingen} %右侧淡紫色目录，无环境效果
+  %\usetheme{Hannover} %左侧淡紫色目录，无环境效果
+   %\usetheme{Marburg}%右侧蓝黑色目录，无环境效果 
+  %\usetheme{Malmoe} %上面蓝黑详细目录，无环境效果
+  %\usetheme{Montpellier} %简洁型，紫色边条，白底
+  %\usetheme{Warsaw} %蓝色，上边详细目录，长度跟目录多少有关
+
+  
+  
+\setbeamercovered{transparent}  %透明度？ 也可删去 dynamic
+  
+\setbeamertemplate{background}{%水印
+
+\begin{picture}(0,0)
+
+\put(45,-272){\color{yellow}\fontsize{5}{5}\selectfont $\mathscr{R}.Huang$}
+
+%\put(60,-150){\color{gray}\fontsize{40}{40}\selectfont $\mathscr{T\quad J\quad N\quad U}$}
+
+\end{picture}}
+
+}
+
+
+
+
+%%%=====设置logo图片=====%%%
+% 如果你想插入学校的徽章, 其文件名为 "university-logo.xxx",
+% 其中 xxx 是 pdflatex 能接受的格式, 则可用以下命令插入
+\pgfdeclareimage[height=0.3cm]{university-logo}{logo}
+\logo{\pgfuseimage{university-logo}}
+
+%%%=====显示指令=====%%%
+\allowdisplaybreaks%允许跨页
+\usepackage{etoolbox}
+\renewcommand\appendix{\setcounter{secnumdepth}{-2}}%章节编号设置
+
+ %%%=====程序包=====%%%
+\setbeamertemplate{caption}[numbered]   %beamer默认的图片的caption不带编号
+\usepackage{paralist}%paralist 宏包提供了 inparaenum 环境，产生不分段的列表。
+\usepackage{hyperref} %引用
+\hypersetup{bookmarks, unicode} % unicode
+\usepackage{multicol} %用于实现在同一页中实现不同的分栏
+\usepackage{amsmath, amsfonts, amssymb}%数学环境
+\usepackage[english]{babel}
+\usepackage{color}       % color content
+\usepackage{graphicx}   % import figures
+\usepackage{url}         % hyperlinks
+\usepackage{bm}  %数学环境的字体？
+\usepackage{setspace} %调整行距
+\usepackage{mathrsfs}%涉及花体
+\usepackage{booktabs}%表格所需
+\usepackage{extpfeil}%可写长等号\xlongequal[xia]{shang}
+
+\usepackage{xcolor}
+\usepackage{draftwatermark}
+
+\usepackage{tikz}
+\usepackage{eso-pic}
+\newcommand\Background{%
+	\begin{tikzpicture}[remember picture,overlay]
+		\node[inner sep=0pt,outer sep=0pt,opacity=0.5]
+		at (4.3,-5.15)
+		{\includegraphics[width=\paperwidth,height=\paperheight/3]{beijing1.jpg}};
+	\end{tikzpicture}%
+}
+%设置背景命令\background
+
+%\setbeamertemplate{background}{\includegraphics[width=\paperwidth]{beijing2.png}}
+
+
+
+%%%=====设置环境=====%%%
+\newtheorem{prop}{命题}
+\newtheorem{ex}{例}
+\newtheorem{ex1}{例：求定积分}
+\newtheorem{proofs}{证明}
+\newtheorem{jie}{解}
+\newtheorem{thm}{定理}
+\newtheorem{lem}{引理}
+\newtheorem{dfn}{定义}
+\newtheorem{col}{推论}
+\newtheorem{pro}{性质}
+\newtheorem{proo}{证明要点}
+\newtheorem{zhu}{注}
+
+%%%=====设置简化字母=====%%%
+\def\a{\alpha}
+\def\b{\beta}
+\def\dd{\mathrm{～d}}
+\def\ee{\textnormal{e}}
+\def\ff{\frac}
+\def\RR{\mathbb{R}}
+\def\yinxing{\color{white}}
+\def\f{f\ }
+\def\suojin{\qquad}
+\def\jh{.\ \ }
+\def\x{x\  }
+\def\R{\mathbb{R}}
+\def\N{\mathbb{N}}
+\def\wsx{\frac{\dd}{\dd x}}%对x求导，微商形式
+\def\qd{\ \prime}%求导f '形式
+
+%%---------间隔命令
+\def\line{\rule[0.2\baselineskip]{0.8\textwidth}{0.2pt}}
+\def\jiange{\vspace{0.5cm}}
+\def\xiaojg{\vspace{0.2cm}}
+\def\juzhong{\centerline}
+
+%%%------设置颜色
+\definecolor{qian}{rgb}{0.9,0.9,0.9}
+\def\bianqian{\color{qian}}
+\def\lan{\color{blue}}
+\def\hong{\color{red}}
+
+   
+   
+   
+   %%%%%%%%%%%%========字号
+   \xiaosihao %设置全文字体大小
+   
+   
+   %%%%%%%%%%%%========行
+   \linespread{1.4}
+
+   
+     %%%%%%%%%%%%========目录显示层级 
+\setcounter{tocdepth}{4}%目录章节深度
+\setcounter{secnumdepth}{3}
+
+\everymath{\displaystyle}
+
+
+%----------- 李君新增  -------------%
+  
+\newcommand{\bena}{\begin{eqnarray}\begin{array}{l}}
+\newcommand{\eena}{\end{array}\end{eqnarray}}
+\newcommand{\benas}{\begin{eqnarray*}\begin{array}{l}}
+\newcommand{\eenas}{\end{array}\end{eqnarray*}}
+
+
+\newtheoremstyle{mydef}%
+{3pt}{3pt}{\bfseries}{}{\bfseries\color{red}}{}{.5em}{}
+\theoremstyle{mydef}
+
+\newtheoremstyle{myliti}%
+{3pt}{3pt}{\bfseries}{}{\bfseries\color{blue}}{}{.5em}{}
+\theoremstyle{myliti}
+
+\newtheoremstyle{mystarli}%
+{3pt}{3pt}{\bfseries}{}{\bfseries\color{blue}}{}{.5em}{}
+\theoremstyle{mystarli}
+\newtheorem{starli}{*例} 
+
+
+
+\newcommand{\liang}[1]{\textcolor{blue}{#1}}
+\newcommand{\tuchu}[1]{\textcolor{red}{#1}}
+   
+   
+ 
+ \def\zheng{\textcolor{blue}{证} }
+ 
+ 
+ 
+% begin watermark
+\usepackage{tikz}
+ 
+\makeatletter
+% prepare \bg@text
+\def\bg@text{}
+\foreach \i in {1, ..., 5} {
+	\g@addto@macro\bg@text{\hspace{5em}Tianjin Normal University}
+}
+ 
+% allow multiline contents
+\AddToHook{shipout/foreground}{
+	\begin{tikzpicture}[remember picture,overlay]
+		\node(a)[cyan,rotate=35,scale=2.5,opacity=0.2,,xshift=-1.1cm,yshift=0cm] at (current page.center) {\bg@text}; 
+	\end{tikzpicture}
+}
+\makeatother
+% end watermark
+
+
+

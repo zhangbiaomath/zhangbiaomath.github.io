@@ -1,0 +1,1061 @@
+
+\chapter{Dyck路, Motzkin路, Schr\"{o}der路}
+
+Catalan, Motzkin以及Schr\"{o}der数是三个被广泛涉及和研究的序列。它们与许多组合物体都有关联，相互之间也存在着联系。
+它们有很多具体化的组合解释，这里我们用特定的格路来描述这三种数，即Dyck路, Motzkin路, Schr\"{o}der路。下面我们来具体讨论它们的性质。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Catalan数及Dyck路}
+\subsection{概述}
+Catalan数首次出现在Catalan的著作中，它是在研究多边形的不交三角划分中被发现的，
+后来出现在很多组合问题的研究中，
+它由法裔比利时数学家 Eug\`{e}ne Charles Catalan (1814–1894)所命名。他的主要工作是关于连分式，画法几何学，数论以及组合学。他在1855年发现了
+unique surface (periodic minimal surface in the space )并给它命名。1844年，他已经发表了了著名的Catalan猜想，并把Catalan数带入了解决组合问题的领域。这个猜想在
+2002年被罗马尼亚数学家Preda Mih\v{a}ilescu证明。
+
+在Stanley所写的计数组合学第二卷\cite{Stanley1999}
+习题6.19里
+，列举了很多被Catalan数计数的组合对象，在这一节里，我们将列举其中的几个例子，
+推导Catalan数的生成函数,它与dyck路之间的关系，以及其他与dyck路有关的组合物体。此外我们
+将探讨与Catalan数密切相关的另一类组合数：Narayana数。
+
+
+\begin{defi}
+第$n^{th}$ Catalan数 $c_n=\displaystyle{\frac{1}{n+1}{2n\choose n}}$。
+\end{defi}
+$Catalan$数也可以使用如下的递推关系式给出
+\begin{equation}
+\label{cnrecurrence}
+c_n=\sum\limits_{i=0}^{n-1}c_ic_{n-1-i}
+\end{equation}
+同时有初值$c_0=1$。易计算出$c_1=c_0\cdot c_0=1,c_2=c_0\cdot c_1+c_1\cdot c_0=2,c_3=c_0\cdot c_2+c_1\cdot c_1+c_2\cdot c_0=5,c_4=14,c_5=42,\cdots$。
+
+Catalan数在组合计数中有着十分广泛的应用。许多计数问题都可以直接或间接地使用Catalan数解决，比如
+二叉树、平面树、多边形分割等问题。下面就来讨论一些使用Catalan数计数的经典问题。
+\subsection{Dyck路的计数及其生成函数}
+首先我们给出$n$-Dyck路的定义： \begin{defi}
+平面上从$(0,0)$到$(2n,0)$
+的一条路径，如果每一步只能是向$(1,1)$方向或$(1,-1)$方向前进（只走格点），并且保证不穿越到$x$轴的下方。
+这样的路径被称为{\bf Dyck路}，从$(0,0)$到$(2n,0)$的Dyck路可简记为$n-$Dyck路。 \end{defi}
+我们给出图例：
+\begin{figure}[ht!] \begin{center} \begin{picture}(50,50)(0,0)
+\setlength{\unitlength}{1.3mm}
+
+\thinlines \put(4,1){\vector(1,0){64}}
+\put(5,0){\vector(0,1){35}}
+\multiput(5,1)(5,0){13}{\circle*{0.6}}
+\multiput(5,6)(5,0){13}{\circle*{0.6}}
+\multiput(5,11)(5,0){13}{\circle*{0.6}}
+\multiput(5,16)(5,0){13}{\circle*{0.6}}
+\multiput(5,21)(5,0){13}{\circle*{0.6}}
+%\multiput(5,26)(5,0){13}{\circle*{0.6}}
+
+\thicklines \put(5,1){\line(1,1){15}}
+\put(20,16){\line(1,-1){10}} \put(30,6){\line(1,1){5}}
+\put(35,11){\line(1,-1){10}} \put(45,1){\line(1,1){10}}
+\put(55,11){\line(1,-1){10}}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+
+\begin{thm}
+$n$-Dyck路的个数是Catalan数$c_n$。
+\end{thm}
+
+设$\omega$是从(0,0)到(2n,0)的一条Dyck路，
+$\omega$第一次与$x$轴的交点在$(2i,0)$($i\geq1$)，
+则$\omega$被分割成两部分：从$(1,1)$到$(2i-1,1)$，以及
+从$(2i,0)$到$(2n,0)$。
+而从$(1,1)$到$(2i-1,1)$的Dyck路等价于从$(0,0)$到$(2i-2,0)$的Dyck路（只需要做个平移即可），
+这样就立刻可以得到递推关系式\eqref{cnrecurrence}。
+Dyck路的用途很广泛，有很多计数问题可以通过对应到Dyck路得到解决。
+
+\begin{thm} \label{cnfunc} Catalan数的生成函数是
+  \begin{equation} C(x)=\sum\limits_{n=0}^\infty
+    c_nx^n=\frac{1-\sqrt{1-4x}}{2x}.
+  \end{equation}
+\end{thm}
+{\bf 证}\ 由递推关系\eqref{cnrecurrence}可知$C(x)$满足
+$$xC^2(x)-C(x)+1=0.$$
+由此解得$$C(x)=\frac{1\pm\sqrt{1-4x}}{2x}.$$
+但$\frac{1+\sqrt{1-4x}}{2x}$的展开式中明显包含了项$\frac{2}{2x}=\frac{1}{x}$，
+不满足要求，故舍去。\qed
+
+\subsection{Catalan计数的组合物体举例}
+
+Catalan数是非常重要的组合数，很多组合物体与之有联系，下面我们介绍一些由Catalan数计数的组合物体。既然这些组合物体计数相同，
+自然我们就可以讨论这些物体之间是否存在双射。
+
+
+
+\begin{defi}
+非叶子节点恰好有$2$个孩子的树，叫做{\bf 二叉树}\index{二叉树, binary
+tree}，如图\ref{fig1}所示。
+\end{defi}
+\begin{center}
+\begin{figure}[ht]
+\setlength{\unitlength}{1mm}
+\begin{picture}(60,52)(-40,0)
+\put(5, 34.9){\line(4,1){26.5}} \put(5, 34.9){\circle*{1}} \put(5.0,
+34.9){\line(-2, -1){13}}    \put(-18.5, 18){\circle*{1}}
+\put(5,34.9){\line(2,-1){13}} \put(5,34.9){\circle*{1}}
+\put(-8,28.4){\line(-1,-1){10}} \put(-8,28.4){\circle*{1}}
+\put(-8,28.4){\line(1,-1){10}} \put(2.5, 18){\circle*{1}}
+\put(18,28.4){\line(-1,-1){10}} \put(18,28.4){\circle*{1}}
+\put(18,28.4){\line(1,-1){10}}  \put(34.5, 18){\circle*{1}}
+\put(7.9,18.3){\line(-1,-2){7}} \put(7.9,18.3){\circle*{1}}
+\put(7.9,18.3){\line(1,-2){7}} \put(28, 18){\circle*{1}}
+\put(58,34.9){\line(2,-1){13}} \put(58,34.9){\circle*{1}}
+\put(58,34.9){\line(-2,-1){13}} \put(1,4.4){\circle*{1}}
+\put(58,34.9){\line(-4,1){26.5}} \put(48,4.4){\circle*{1}}
+\put(45,28.4){\line(-1,-1){10}} \put(45,28.4){\circle*{1}}
+\put(45,28.4){\line(1,-1){10}} \put(62,4.4){\circle*{1}}
+\put(55,18.4){\circle*{1}} \put(55,18.4){\line(1,-2){7}}
+\put(55,18.4){\line(-1,-2){7}}   \put(71,28.4){\circle*{1}}
+\put(31.8,41.7){\circle*{1}}   \put(14.9,4.4){\circle*{1}}
+\end{picture}
+\caption{二叉树} \label{fig1}\end{figure}
+\end{center}
+
+\begin{exa}
+含$n$个非叶子节点的二叉树的个数由第$n$项Catalan数$C_n=\frac
+1{n+1}{2n\choose n}$给出。
+\end{exa}
+首先我们可以从生成函数的角度考虑：
+设$n$个节点的二叉树的个数是$b_n$。显然$b_1=1$，$b_2=2$（注意左孩子与右孩子被认为是不同的），不妨设$b_0=1$。
+根结点有左子树、右子树，所以得到下述递推关系
+$$b_n=\sum\limits_{k=0}^{n-1}b_kb_{n-1-k}.$$
+所以$b_n=c_n$.
+
+
+\begin{center}
+\begin{figure}[h]
+\setlength{\unitlength}{0.7mm}
+\begin{picture}(180,50)(-20,0)
+\linethickness{1pt} \thicklines \put(0,0){\vector(1,0){175}}
+\put(0,0){\vector(0,1){45}} \put(0,0){\line(1,1){10}}
+\put(0,0){\circle*{1.5}} \put(10,10){\line(1,-1){10}}
+\put(10,10){\circle*{1.5}} \put(20,0){\line(1,1){20}}
+\put(40,20){\line(1,-1){10}} \put(50,10){\line(1,1){10}}
+\put(60,20){\line(1,-1){20}} \put(80,0){\line(1,1){30}}
+\put(110,30){\line(1,-1){20}} \put(130,10){\line(1,1){10}}
+\put(140,20){\line(1,-1){20}} \put(10,10){\circle*{1.5}}
+\put(20,0){\circle*{1.5}} \put(30,10){\circle*{1.5}}
+\put(40,20){\circle*{1.5}} \put(50,10){\circle*{1.5}}
+\put(60,20){\circle*{1.5}} \put(70,10){\circle*{1.5}}
+\put(80,0){\circle*{1.5}} \put(90,10){\circle*{1.5}}
+\put(100,20){\circle*{1.5}} \put(110,30){\circle*{1.5}}
+\put(120,20){\circle*{1.5}} \put(130,10){\circle*{1.5}}
+\put(140,20){\circle*{1.5}}  \put(150,10){\circle*{1.5}}
+\put(160,0){\circle*{1.5}}
+\end{picture}
+\caption{Dyck路}\label{fig2}
+\end{figure}
+\end{center}
+既然我们知道长为$2n$的Dyck路的个数也是$C_n$，我们就可以考虑二叉树与Dyck路之间的关系。
+
+确切的说，对树进行深度优先搜索\index{深度优先搜索, depth-first
+search}给出了二叉树与Dyck路之间的一个双射。实际上，将每一个叶子（最左边的顶点除外）对应为一步$(1,\,
+1)$，将每一个内节点对应为$(1,\,
+-1)$，对这个树进行递归的搜索：先搜索左边的孩子节点，接着搜索右边的孩子节点，然后搜索根节点。作为一个例子，
+图\ref{fig1}的二叉树与图\ref{fig2}的Dyck路是一一对应的。
+
+将$n$对括号()进行合法归组\index{归组,
+groupings}，这里``合法"的意思就是每个左括号都有一个右括号与之对应。举个例子，(())就是合法的，而())()不是。
+那么对每一个$
+n$，有多少种不同的归组方法呢？下面的表格给出了$n=0,\,1,\,2,\,3$时的情况：
+
+\begin{table}
+\begin{center}\begin{tabular}{|l|l|l|}
+
+\hline $n$ & \hfil 归组方法\hfil & 方法数 \\
+\hline $0$ & *   &\quad 1  \\
+\hline $1$ & ()  &\quad 1  \\
+\hline $2$ & ()(), (()) & \quad 2 \\
+\hline $3$ & ()()(), ()(()), (())(),
+(()()), ((())) & \quad 5  \\
+\hline
+\end{tabular}
+\caption{平衡括号}
+\end{center}
+\end{table}
+
+由位于$x$轴上方的$n$个上行\index{上行,
+upstroke}和$n$个下行可以构成多少个不同的``山脉"\index{山脉, mountain
+range}？如同括号的情形，如果我们定义$n=0$时为$1$，则下面的图\ref{tab2}
+给出了$n=0,\,1,\,2,\,3$的情况:
+
+\begin{figure}[ht]
+\begin{center}
+\setlength{\unitlength}{0.5mm}
+\begin{picture}(300,125)(-32,20)
+\put(20,20){\line(1,0){168}} \put(24, 33){\quad$3$}
+\put(20,20){\line(0,1){101}} \put(48,20){\line(0,1){101}}
+\put(50,22){\line(1,3){3}} \put(53,31){\line(1,-3){3}}
+\put(56,22){\line(1,3){3}} \put(59,31){\line(1,-3){3}}
+\put(62,22){\line(1,3){3}} \put(65,31){\line(1,-3){3}}
+\put(71,22){\line(1,3){3}} \put(74,31){\line(1,-3){3}}
+\put(77,22){\line(1,3){6}} \put(80,31){\circle{3}}
+\put(83,40){\line(1,-3){6}} \put(86,31){\circle{3}}
+\put(92,22){\line(1,3){6}} \put(95,31){\circle{3}}
+\put(98,40){\line(1,-3){6}} \put(101,31){\circle{3}}
+\put(104,22){\line(1,3){3}} \put(107,31){\line(1,-3){3}}
+\put(113,22){\line(1,3){6}} \put(116,31){\circle{3}}
+\put(119,40){\line(1,-3){3}} \put(122,31){\line(1,3){3}}
+\put(125,40){\line(1,-3){6}} \put(128,31){\circle{3}}
+\put(134,22){\line(1,3){9}} \put(137,31){\circle{3}}
+\put(140,40){\circle{3}} \put(143,49){\line(1,-3){9}}
+\put(146,40){\circle{3}} \put(149,31){\circle{3}}
+\put(155,20){\line(0,1){101}} \put(160,33){\quad$5$}
+\put(188,20){\line(0,1){101}} \put(20,55){\line(1,0){168}}
+\put(24,60){\quad$2$} \put(50,57){\line(1,3){3}}
+\put(53,66){\line(1,-3){3}} \put(56,57){\line(1,3){3}}
+\put(59,66){\line(1,-3){3}} \put(68,57){\line(1,3){6}}
+\put(71,66){\circle{3}} \put(74,75){\line(1,-3){6}}
+\put(77,66){\circle{3}} \put(20,80){\line(1,0){168}}
+\put(160,59){\quad$2$} \put(24,85){\quad$1$}
+\put(50,82){\line(1,3){3}} \put(53,91){\line(1,-3){3}}
+\put(160,84){\quad$1$} \put(20,95){\line(1,0){168}}
+\put(24,100){\quad$0$} \put(54,98){*} \put(160,98){\quad$1$}
+\put(20,108){\line(1,0){168}} \put(20,121){\line(1,0){168}}
+\put(24,112){\quad$n$} \put(77,111){不同的山脉}
+\put(160,111){方法数}
+\end{picture}
+\caption{山脉}\label{tab2}
+\end{center}
+\end{figure}
+
+注意到山脉的构成问题与上面的括号归组问题是相对应的。左括号对应了一
+个上行，右括号对应了一个下行。限于篇幅，上述例子中省略了$
+n=4$和$n=5$的情况，事实上，$n=4$和$n=5$的方法数分别是$14$种和$42$种
+。读者可以将$n= 4$的$14$种情况列出来。这将是一个很好的练习。
+
+对$n$个上行和$n$个下行构成的山脉进行计数。首先，若不考虑其是否完全处于$x$轴上
+方，则这样的$n $个上行和$n$个下行有${2n\choose
+n}$种不同的组合方式。其次，去掉其中不构成山脉的部分。考虑任何一种非山脉的情形$P
+$，则$P$必在某一点$t$第一次达到$y=-1$，将$t$之后的一段路以直线$y=-1$做反射得到
+$P'$。显然$P'
+$是由$n+1$个下行和$n-1$个上行组成并中止于$y=-2$。反过来，对于每一个终点在$y=
+-2$上的路径都一定是这样的情形，因此也对应了一个不合法的路径。
+
+因此，合法山脉的计数，即$C_n$，由下式自然的给出：
+\[C_n ={2n\choose n}-{2n \choose n+1}={2n\choose n}-\frac{n}{n+1}{2n\choose
+n}=\frac 1{n+1}{2n\choose n}.
+\]
+
+假设，已经给出了$k$($0\leq k<
+n$)对括号的计数，我们现在计数$n$对括号的情况。用$C_i$计数$i$对括号的不同构造的个数，
+那么容易计算，$C_0=1, \,C_1=1,\,C_2=2,\,C_3=5,\,C_4=14
+$。我们知道任何一个合法的构造，其初始一定是一个左括号。而在这个构造的某一个地方一定
+有一个与它匹配的右括号。这一对括号里面左右括号的数目是相同的，记此结构为$(A)
+B$，这里$A$中有数量相同的左右括号，$B$中也有数量相同的左右括号。同时，$A$和$B$里面都
+可以包含至多$n-
+1$对括号。如果$A$中有$k$对括号，则$B$中包含$n-k-1$对括号。因此我们可以计算所有的构造
+：$A$中没有括号，$B
+$中有$n-1$对括号；$A$中含有$1$对括号，$B$中含$n-2$对括号等等。将这些项加起来我们可以
+得到由$n
+$对括号构成的不同结构的个数。从上面的讨论可知$C_3$的计数为$C_3=2\cdot
+1 +1\cdot 1 +1\cdot 2$。
+
+根据以上分析，事实上，我们已经得到当$n\geq
+1$时，$C_n$满足如下的递推关系：
+\begin{lem}\label{rec}
+当$n\geq 1$时，
+\begin{align*}
+C_n&= C_{n-1} C_0+C_{n-2} C_1+\cdots +C_1 C_{n-2} +C_0 C_{n-1}.
+\end{align*}
+\end{lem}
+进一步，我们又可以推导出Catalan数的生成函数。
+\begin{thm}
+设 $G(x)$ 是 Catalan 数的生成函数即
+$G(x)=\sum\limits_{n=0}^{\infty}C_nx^n$，则
+$G(x)=\frac{1-\sqrt{1-4x}}{2x}$。
+\end{thm}
+\noindent{\textbf{证明}:}
+根据引理\ref{rec}，我们知道$C_n=\sum\limits_{i=0}^{n-1}C_iC_{n-1-i}$，所以
+\begin{align*}
+G(x)-1%
+&=\sum_{n\ge1}C_nx^n\\
+&=\sum_{n\ge1}\left(\sum_{i=0}^{n-1}C_iC_{n-1-i}\right)x^n\\%
+&=x\sum_{n\ge0}\left(\sum_{i=0}^{n}C_iC_{n-i}\right)x^{n}\\
+&=xG^2(x).%
+\end{align*}
+
+解上面的函数方程得
+
+\[
+G(x)=\frac{1-\sqrt{1-4x}}{2x}.
+\]
+
+这与前面的推到结果是一致的。\qed
+
+
+
+
+
+\begin{exa}
+\label{planebinary}平面树（plane tree）计数问题\\
+{\bf 平面树}即平面上无标号的有根树，并且任意节点的孩子节点是有序的。
+如果记有$n$条边的平面树的个数为$p_n$，则$p_{n}=c_n$。
+\end{exa}
+
+$p_{1}=1=c_1$（注意此时没有左右之分），$p_2=2=c_2$。
+我们来寻找$n$条边的平面树与$n$节点二叉树之间的一一对应。
+
+\begin{thm}
+\label{Plane_Binary}
+  $n$条边的平面树构成的集合$P_n$和$n$节点二叉树构成的集合之间存在一个双射。
+\end{thm}
+{\bf 证} 设$T$为任一$n$条边的平面树，
+$R$为$T$中任意节点，取$R$的任一孩子（一般用最左孩子）作为$R$的左孩子，
+并切断与其他孩子的“联系”；同时将这些孩子依次（一般按从左至右）作为前一兄弟的右孩子；
+最后再去掉$T$的根结点。例如（便于看清映射图中使用了标号）
+\begin{figure}[ht] \begin{center} \begin{picture}(80,40)
+\setlength{\unitlength}{1.3mm} \put(18.2,27.5){\shortstack{0}}
+\put(18,27){\line(-3,-1){12}} \put(18,27){\line(0,-1){4}}
+\put(18,27){\line(3,-1){12}} \put(5.5,23.5){\shortstack{1}}
+\put(6,23){\line(-1,-1){5}} \put(6,23){\line(1,-1){5}}
+\put(1,15){\shortstack{4}} \put(11,15){\shortstack{5}}
+\put(18,20){\shortstack{2}} \put(31,23){\shortstack{3}}
+\put(30,23){\line(-1,-1){5}} \put(30,23){\line(0,-1){5}}
+\put(30,23){\line(1,-1){5}} \put(24.5,15){\shortstack{6}}
+\put(29.5,15){\shortstack{7}} \put(34.5,15){\shortstack{8}}
+
+\put(40,23){\vector(1,0){5}}
+\put(58.2,27.5){\shortstack{1}}
+\put(58,27){\line(-1,-1){5}}
+\put(53,22){\line(1,-1){5}}
+\put(58,27){\line(1,-1){5}}
+\put(63,22){\line(1,-1){5}}
+\put(68,17){\line(-1,-1){5}}
+\put(63,12){\line(1,-1){5}}
+\put(68,7){\line(1,-1){5}}
+
+\put(51,21){\shortstack{4}} \put(56,15){\shortstack{5}}
+\put(63.5,22){\shortstack{2}} \put(68.5,17){\shortstack{3}}
+\put(60,11){\shortstack{6}} \put(68.5,7){\shortstack{7}}
+\put(73.5,1){\shortstack{8}} \end{picture} \end{center}
+\end{figure}
+上述映射就是将兄弟节点依次作为右孩子，要找到其逆映射也不难，只要注意将右孩子变成兄弟即可。
+\qed
+
+\begin{thm}
+$n$条边的平面树构成的集合与$n$-Dyck路构成的集合之间存在一个双射。
+\end{thm}
+{\bf 证}我们对平面树进行前序遍历，按照此种走法，当从一个点到达它的子节点时就对应$n$-Dyck路
+ 中的“$\nearrow$”；当从一个点到达它的父节点时，就对应$n$-Dyck路中的“$\searrow$”。
+ 这样我们就得到了一个$n$条边的平面树构成的集合与$n$-Dyck路
+ 构成的集合之间的双射。例如在下图中，为了便于理解，我们对平面树的点进行了标号。\\
+
+\begin{figure}[ht] \begin{center} \begin{picture}(60,20)(30,10)
+\setlength{\unitlength}{3mm}
+
+\put(8,9){\line(-1,-1){3}}
+\put(8,9){\line(0,-1){3}}
+\put(8,9){\line(1,-1){3}}
+\put(8,6){\line(0,-1){3}}
+\put(8,9){\circle*{0.3}}
+\put(5,6){\circle*{0.3}}
+\put(8,6){\circle*{0.3}}
+\put(11,6){\circle*{0.3}}
+\put(8,3){\circle*{0.3}}
+
+\put(16,6){$\longleftrightarrow$}
+
+\thinlines \put(23,3){\vector(1,0){20}}
+\put(24,2){\vector(0,1){10}}
+
+\put(26,5){\line(-1,-1){2}}
+\put(26,5){\line(1,-1){2}}
+\put(32,7){\line(-1,-1){2}}
+\put(32,7){\line(1,-1){2}}
+\put(30,5){\line(-1,-1){2}}
+\put(34,5){\line(1,-1){2}}
+\put(38,5){\line(-1,-1){2}}
+\put(38,5){\line(1,-1){2}}
+\put(24,3){\circle*{0.3}}
+\put(28,3){\circle*{0.3}}
+\put(36,3){\circle*{0.3}}
+\put(40,3){\circle*{0.3}}
+\put(26,5){\circle*{0.3}}
+\put(30,5){\circle*{0.3}}
+\put(34,5){\circle*{0.3}}
+\put(38,5){\circle*{0.3}}
+\put(32,7){\circle*{0.3}}
+
+\put(7.5,9.5){$1$}
+\put(5,5){$2$}
+\put(8.5,5){$3$}
+\put(7.5,1.5){$4$}
+\put(11,5){$5$}
+
+\put(23,3){$1$}
+\put(27.5,3.5){$1$}
+\put(35.5,3.5){$1$}
+\put(40.5,3){$1$}
+\put(25.5,5.5){$2$}
+\put(29,5){$3$}
+\put(34.5,5){$3$}
+\put(31.5,7.5){$4$}
+\put(37.5,5.5){$5$}
+\end{picture}
+\end{center}
+\end{figure}
+\qed
+
+
+
+
+\subsection{Narayana数}
+下面，我们来讨论和Catalan数密切相关的Narayana数，记为$N_{n,k}$，
+\begin{equation}
+N_{n,k}=\frac{1}{n}{n \choose k}{n \choose k-1}.
+\end{equation}
+事实上，我们可以将Narayana数看成是Catalan数的一个细化，这是因为
+\[
+\sum\limits_{k\geq 1}N_{n,k}=\frac{1}{n}\sum\limits_{k\geq 1}{n
+\choose n-k}{n \choose k-1}=\frac{1}{n}{2n \choose
+n-1}=\frac{1}{n+1}{2n \choose n}.
+\]
+Narayana数有很多组合解释，为了给出它在平面树上的解释，我们先给出一个引理。
+\begin{lem}\label{rootedtree}{\rm(Chen,\cite{Chen1990})}
+在$n+1$个顶点的标号平面树和标号集为$\{1,\ldots,n,n+1,(n+2)^{*},\ldots,(2n)^{*}\}$上的
+$n$个匹配之间存在一个一一对应。这里，一个匹配指的是含两个顶点的有根树。
+\end{lem}
+\begin{thm}\label{theorem1.3}{\rm(Narayana)}
+有$k$个叶子，$n+1$个顶点的无标号平面树的个数是{\rm：}
+\[ T_{n+1,\,k} =\frac {1}{n+1} {n+1 \choose k}{n-1\choose n-k}=N_{n,k}.\]
+\end{thm}
+\pf
+设$T$是任意平面树。根据引理\ref{rootedtree}，$T$是一个含$k$个叶子的平面树的充分必要条件是，
+与$T
+$一一对应的n个匹配的叶子中含有$k$个未标号的顶点。那么，对$k$个未标号的点有${n+1\choose
+k}$种取法；对剩下的$n-k$个叶子有${n-1\choose
+n-k}$种取法。叶子被确定以后，有$n!$种方法确定各根。最后将上述式子除以$(n+1)!$，即去掉所有
+顶点的标号，即可完成定理的证明。 \qed
+
+考虑有$nk+1$个顶点的$k$叉树（每一个部分\index{部分，fiber}都有$k$个顶点的平面树），则有下面的定理。
+
+\begin{thm}
+未标号的，包含$n$个$k$叉平面树的森林与$kn+1$个顶点的平面$k$叉树之间存在一个一一对应。
+\end{thm}
+在上面的定理中，因为有$kn+1$个未标记的顶点，因此对于森林的$n$个根我们有${kn+1\choose
+n}$种不同的取法，然后我们将这些根升序排列，因此，$kn$个叶子的任何一个排列都决定了一个森林。
+从而$kn+1 $个顶点的$k $叉树的个数就是${kn+1\choose n}(kn)!$。
+
+从上面的叙述我们就得到了未标号的$kn+1$个顶点的$k$叉树的计数为：
+$$\frac{1}{kn+1}{kn + 1\choose n}.$$
+
+\section{反射原理}
+
+\subsection{反射原理背景}
+反射原理(reflection principle)是D.
+Andr\'e\cite{Andre1887}首先提出来的，用来计算平面上满足某些条件的格路得个数。
+反射原理在组合学和
+概率里都有着重要的应用，例如，读者可参考文献\cite{Andre1887,
+Feller1950, Mohanty1979,  Narayana1979,  Stanley1999,  Takacs1967}。
+\subsection{反射原理}
+下面我们举例说明什么是反射原理，并用它计算平面上满足某些条件的格路的个数。
+\begin{thm}
+假定$m$和$n$都是整数，且$1\leq
+n<m$。证明从$(1,0)$到$(m,n)$，步子为$(0,1)$和$(1,0)$，与直线$y=x$至少有一个交点的格路
+的个数等于从$(0,1)$到$(m,n)$，步子为$(0,1)$和$(1,0)$的格路的个数。
+\end{thm}
+{\bf{证明：}}
+记$P$为满足第一个条件格路的集合，$Q$为满足第二个条件格路的集合。我们在集合$P$和集合$Q$
+之间构造一个双射$f$。任给$p\in
+P$，记$(i,i)$为$p$与直线$y=x$的第一个交点，构造映射$f$将$p$中从$(1,0)$到$(i,i)$这部分关
+于直线$y=x$做对称，从$(i,i)$到$(m,n)$这部分保持不变，这样我们得到一个新的格路，从
+$(0,1)$到$(m,n)$，步子为$(1,0)$和$(0,1)$，即$f(p)\in
+Q$。反之，任给$q\in
+Q$，因为$n<m$，$q$与直线$y=x$必然相交，记第一个交点为$(j,j)$，$f^{-1}$将$q$中从
+$(0,1)$到$(j,j)$这部分关
+于直线$y=x$做对称，从$(j,j)$到$(m,n)$这部分保持不变，这样我们得到一条从
+$(1,0)$到$(m,n)$，步子为$(1,0)$和$(0,1)$，与直线$y=x$至少有一个交点的格路，即$f^{-1}(q)\in
+P$。易知$f$是双射。\qed
+\subsection{反射原理的应用}
+下面我们利用反射原理来计数格路的个数。
+\begin{prop}
+假定$1\leq
+n<m$。证明从$(0,0)$到$(m,n)$，步子为$(0,1)$和$(1,0)$，与直线$y=x$只交于点$(0,0)$的格路
+个数是$\frac{m-n}{m+n}{m+n \choose n}$。
+\end{prop}
+{\bf{证明：}} 记满足条件的格路集合为$P$，任给$p\in
+P$，$p$的第一步必然是从$(0,0)$到$1,0$。故为了计算$|P|$，我们需要在从$(1,0)$出发到$(m,n)$
+，步子为$(0,1)$和$(1,0)$格路集合里去掉从$(1,0)$到$(m,n)$，步子为$(0,1)$和$(1,0)$，与直线
+$y=x$至少有一个交点的格路。根据上面的定理，即去掉从$(0,1)$到$(m,n)$，步子为$(0,1)$和$(1,0)$
+的格路。所以，我们得到
+\begin{equation*}
+|P|={m-1+n \choose n}-{m+n-1\choose m}=\frac{m-n}{m+n}{m+n \choose
+n}，
+\end{equation*}
+证毕。\qed
+
+\begin{coro}
+计算从$(0,0)$到$(n,n)$，步子为$(0,1)$和$(1,0)$，始终在与直线$y=x$下方的格路
+个数是$n$-阶Catalan数$C_n=\frac{1}{n+1}{2n \choose n}$。
+\end{coro}
+{\bf{证明：}}
+给定一个满足条件的格路，我们将它整体向右移动一个单位，得到一条$(1,0)$到$(n+1,n)$，步子为
+$(0,1)$和$(1,0)$，与直线$y=x$没有交点的格路，或者说，得到一条$(0,0)$到$(n+1,n)$，步子为
+$(0,1)$和$(1,0)$，与直线$y=x$只交于点$(0,0)$的格路。利用上面的性质，我们有满足条件的格路
+个数为
+\begin{equation*}
+\frac{n+1-n}{n+1+n}{n+1+n \choose n}=\frac{1}{n+1}{2n \choose n}，
+\end{equation*}
+证毕。\qed
+
+
+更一般的，我们可以利用反射原理来计算$n$维空间中从原点
+$(0,0,\ldots,0)$ 到格点 $m=(m_1,m_2,\ldots,m_n)$ 且限制在区域
+$x_1\geq x_2\geq \ldots\geq x_n\geq 0$
+内的格路的个数，记为$G(0\rightarrow m)$。我们有如下结论：
+\begin{thm}{\rm \cite{Zeiber1983}}
+\[
+G(0\rightarrow m)=\sum_{\pi\in
+S_n}(-1)^{\sigma(\pi)}{{(m_1+\cdots+m_n)!}\choose
+{(m_1-1+\pi(1))!\cdots(m_n-n+\pi(n))!}}.
+\]
+\end{thm}
+{\bf{证明：}}
+现在我们对格路进行讨论，给定 $n$ 维空间中的两个格点 $a=(a_1,a_2,\ldots,a_n)$\\
+和 $b=(b_1,b_2,\ldots,b_n)$，记 $F(a\rightarrow b)$ 为从点 $a$ 到点
+$b$ 且每步都是朝着坐标正向走单位长度的格路总数。容易看出
+$$F(a\rightarrow
+b)={{b_1+\cdots+b_n-a_1-\cdots-a_n}\choose{(b_1-a_1)!\cdots(b_n-a_n)!}}.$$
+
+在所有从点 $a$ 到点 $b$ 的格路中，如果格路 $w$ 始终不穿过所有形如
+$x_i-x_{i+1}=-1$ 的超平面，我们就称格路 $w$
+是好的，否则就称为坏的。利用 $G(a\rightarrow b)$ 和 $B(a\rightarrow
+b)$ 分别表示点 $a$ 到点 $b$ 所有好的和不好的格路的个数。
+
+对于在对称群 $S_n$ 中的任意一个置换 $\pi$，构造与其对应的格点
+$e_{\pi}=(1-\pi(1),\ldots,i-\pi(i),\ldots,n-\pi(n))$，考虑点
+$e_{\pi}$ 到 $m=(m_1,m_2,\ldots,m_n)$（其中 $m_1\geq
+m_2\geq\ldots\geq
+m_n$）的格路。对每条坏的格路来讲，我们假设它最开始要经过的是超平面
+$x_i-x_{i+1}=-1$，然后我们把从点 $e_\pi$
+到这个交点之间的格路关于超平面 $x_i-x_{i+1}=-1$
+进行反射，就得到另外一个起点为
+$e_{(i,i+1)\pi}=(1-\pi(1),\ldots,i-\pi(i+1),i+1-\pi(i),\ldots,n-\pi(n))$
+的坏的格路，可以看出，起点所对应的置换的奇偶性发生变换。由此可以构造出所有起点形如
+$e_\pi$ 的分别对应于偶置换和奇置换的坏的格路之间的一个双射。即有
+$$\sum_{\pi\ even}B(e_{\pi}\rightarrow) m=\sum_{\pi\ odd}B(e_{\pi}\rightarrow m).$$
+对于区域 $x_1\geq x_2\geq \ldots\geq x_n$ 内的点
+$m=(m_1,m_2,\ldots,m_n)$，如果 $\phi$ 不是恒等置换，那么点
+$e_{\pi}$一
+定在某个负的象限内，由于格路中从起点出发每步都是朝着正坐标方向前进单位长度，对应于坐标
+表示就是每次某个坐标分量加1，而终点满足的条件为 $m_1\geq m_2\geq
+\ldots\geq m_n$，所以一定会在某次前进中使得对于某个坐标分量 $x_k$ 和
+$x_{k+1}$ 有关系式 $x_k-x_{k+1}=-1$，从而导致这条格路是坏的。因此有
+$$F(e_{\pi}\rightarrow m)=B(e_{\pi}\rightarrow m), \mbox{其中$\pi$不是恒等置换}.$$
+最终，我们有
+\begin{align*}
+G(0\rightarrow m)&=F(0\rightarrow m)-B(0\rightarrow
+m)\\
+&=F(0\rightarrow m)-\sum_{\pi\neq
+id}(-1)\sigma(\pi)B(e_{\pi}\rightarrow m)\\
+&=\sum_{\pi\in S_n}(-1)^{\sigma(\pi)}F(e_{\pi}\rightarrow
+m)\\
+&=\sum_{\pi\in S_n}(-1)^{\sigma(\pi)}{{(m_1+\cdots+m_n)!}\choose
+{(m_1-1+\pi(1))!\cdots(m_n-n+\pi(n))!}}
+\end{align*}
+成立。\qed
+
+练习：计算$n$ 维空间中从原点 $(0,0,\ldots,0)$ 到格点
+$(a_1,a_2,\ldots,a_n)$ 且限制在区域 $x_1> x_2>\ldots>x_n>0$
+内的格路的个数。
+
+（提示：这类问题实际与上述问题等价，只需在经过的每个
+格点对应坐标减去（n,n-1,\ldots,2,1）即可。）
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Motzkin数及Motzkin路}
+\subsection{概述}
+Theodore Samuel Motzkin (1908–1970)是一位 以色列裔的美国数学家，1934年在巴塞尔大学获得博士学位。Motzkin转置理论，Motzkin数以及Fourier–Motzkin消去 都是以他的名字命名的。Motzkin是首先发展了多面体组合学和计算几何学的"double description" 算法的人，他也是第一个证明了“非欧几里德域的主理想域存在”的人。
+
+本节我们将主要探讨Motzkin路的相关问题，它是以Motzkin数计数的。
+
+Motzkin数的一个普遍的组合解释是计数了对于给定的正整数$n$, 在画有$n$个点的圆周上画无交叉的弦的方法数。Motzkin数在几何，
+组合以及数论等领域都有广泛的应用。我们将在本节阐述Motzkin数的另一个形象的组合解释，
+即Motzkin数计数了长度为$n$的Motzkin路的个数，关于Motzkin路的定义如下。
+\begin{defi}
+二维平面上从$(0,0)$出发，每一步只能走$(1,1)$（“$\nearrow$”）、$(1,0)$（“$\longrightarrow$”）
+或$(1,-1)$（“$\searrow$”），保证不穿越到$x$轴的下方（可以达到$x$轴），
+并且最后回到$x$轴的路径称为{\bf Motzkin路}。如果一条Motzkin路的终点在$(n,0)$，则称这条Motzkin路的长度为$n$。 \end{defi}
+\begin{exa} 下图是一条长为$10$的Motzkin路，如果记$(1,1)$步为$1$，$(1,0)$步为$0$，$(1,-1)$步为$-1$，
+则它的步序列是$(1,1,0,-1,1,1,-1,0,-1,-1)$。
+\begin{figure}[ht] \begin{center} \begin{picture}(50,30)
+\setlength{\unitlength}{1.3mm} \put(1,0){\vector(0,1){18}}
+\put(0,1){\vector(1,0){52}} \multiput(1,1)(5,0){10}{\circle*{0.6}}
+\multiput(1,6)(5,0){10}{\circle*{0.6}}
+\multiput(1,11)(5,0){10}{\circle*{0.6}}
+\multiput(1,16)(5,0){10}{\circle*{0.6}} \put(1,1){\line(1,1){10}}
+\put(11,11){\line(1,0){5}} \put(16,11){\line(1,-1){5}}
+\put(21,6){\line(1,1){10}} \put(31,16){\line(1,-1){5}}
+\put(36,11){\line(1,0){5}} \put(41,11){\line(1,-1){10}}
+\end{picture}
+\end{center}
+\end{figure}
+ \end{exa}
+
+\subsection{Motzkin路的计数及生成函数}
+记$M_n$为长度为$n$的Motzkin路的个数，容易计算出$M_1=1,M_2=2,M_3=4$，$M_n$被称为Motzkin数。
+下面我们来推导$M_n$的递推关系式（类似于Dyck路递推关系的推导）。
+
+设$P$为长度为$n$的Motzkin路，$P$的第一步只可能是$(1,1)$或$(1,0)$，如果第一步是$(1,0)$，则相应的Motzkin路的个数
+为$M_{n-1}$；
+
+ 如果$P$的第一步是$(1,1)$，设$P$在$(k+2,0)$（$k\geq0$）第一次回到$x$轴，于是$(k+2,0)$将$P$分成两部分，
+前一部分以$\nearrow$开始以$\searrow$结束，并且中间部分未曾越过$y=1$下方，所以它可完全由从$(1,1)$到$(k+1,1)$的Motzkin路
+（将坐标原点平移至$(1,1)$点）决定，总数为$M_k$；
+后一部分可看成是从$(k+2,0)$到$(n,0)$的Motzkin路（坐标原点平移至$(k+2,0)$点）。
+
+由上分析即知Motzkin路的递推关系是（记$M_0$=1）
+\begin{equation}
+\label{Motzkinrecur}
+M_n=M_{n-1}+\sum\limits_{k=0}^{n-2}M_kM_{n-2-k}.
+\end{equation}
+$n=1$时也可认为上述等式成立。
+
+记$M(x)=\sum\limits_{n=0}^\infty M_nx^n$为Motzkin路的生成函数，利用式\eqref{Motzkinrecur}可导出
+$M(x)$满足的递推关系式，现在我们打算使用给Motzkin路赋权的方法来得到。\\
+\indent 若将Motzkin路的每一步赋予权重$x$，每一条长为$n$的Motzkin路的权是$x^n$，
+所以$M(x)$即为平面上所有Motzkin路的权重之和。\\
+\indent 长度为$0$的Motzkin路的权为$1$；\\
+\indent 所有第一步为$(1,0)$的Motzkin路的权重之和显然是$xM(x)$（第一步的权为$x$）。\\
+\indent 设$P$是一条长度非$0$的Motzkin路，并且$P$的第一步是$(1,1)$，设$P$第一次回到$x$轴的点是$(k+2,0)$（$k\geq0$），
+于是$P$被分解成四段：$(0,0)\longmapsto(1,1)$、$(1,1)\longmapsto(k+1,1)$、$(k+1,1)\longmapsto(k+2,0)$、
+$(k+2,0)\longmapsto(n,0)$，其中第一段及第三段的权都是$x$，第二段及第四段仍是Motzkin路。\\
+\indent 综上所述，有如下关系式
+\begin{equation}
+\label{Motzkinfunc}
+M(x)=1+xM(x)+x^2M^2(x).
+\end{equation}
+由此解出（注意另外一根舍去）
+$$M(x)=\frac{1-x-\sqrt{1-2x-3x^2}}{2x^2}.$$
+\subsection{Motzkin数的其他组合解释}
+Motkin数是具有重要意义的一个序列，下面我们给出其它的组合解释。
+\begin{defi}
+一个有序无标号的有根树，如果它的非叶子节点的出度是$1$或者$2$，
+那么我们称这样的树为{\bf $0,1,2$-树}。$n$条边的$0,1,2$-树的个数记为$T_{1,2}(n)$。
+\end{defi}
+
+\begin{prop}
+\label{1,2tree}
+$T_{1,2}(n)=M_n$.
+\end{prop}
+
+{\bf 证} 任给一个$n$条边的$0,1,2$-树$T$,
+如果根结点只有一个子结点，我们删除根结点得到一个$n-1$条边的$0,1,2$-树；
+如果根节点有两个子结点，删除根结点得到两个$0,1,2$-树。因此
+$0,1,2$-树的递归关系式和Motzkin数的相同，所以命题得证。\qed
+
+记$T_{1,2}(x)=\sum\limits_{n=0}^\infty T_{1,2}(n) x^n$为$0,1,2$-树的生成函数，
+现在我们用赋权的方法来得到生成函数的关系。\\
+\indent 若将$0,1,2$-树的每一条边赋予权重$x$，每一个边数为$n$的$0,1,2$-树的权是$x^n$，
+所以$T_{1,2}(x)$即为平面上所有$0,1,2$-树的权重之和。我们分三种情况讨论：\\
+（1） 边数为$0$的$0,1,2$-树的权为$1$；\\
+（2） 所有出度是$1$的根结点构成的$0,1,2$-树权重之和显然是$xT_{1,2}(x)$。\\
+（3） 设$T$是一个根结点的出度是$2$的$0,1,2$-树，
+那么以根结点的子结点为根结点得到的子树仍是$0,1,2$-树。
+因而这样的树的权重之和是$x^2T_{1,2}^2(x)$.
+
+综上所述，有如下关系式
+\begin{equation}
+\label{1,2treefunc}
+T_{1,2}(x)=1+xT_{1,2}(x)+x^2T_{1,2}^2(x).
+\end{equation}
+由等式\ref{Motzkinfunc}和\ref{1,2treefunc}从而很容易得到命题\ref{1,2tree}。
+
+\section{$2$-Motzkin路}
+\subsection{定义与计数}
+本章开始就介绍了Motzkin路的定义以及一些组合性质，下面我们介绍$2$-Motzkin路。\\$2$-Motzkin路这个组合结构是由Barcucci, Lungo, Pergola和Pinzani提出的. 它在平面树，Dyck路, Motzkin路, noncross-ing partitions, RNA secondary structures, Devenport-Schinzel sequences和combinatorial
+identities都有广泛的应用。很自然的，我们想要建立长为$2n$的Dyck路和长为$n-1$的$2$-Motzkin路之间的一一对应关系。
+本节我们将给出这个对应关系，以及plane tree与$2$-Motzkin路之间的一一对应关系。首先我们来关注$2$-Motzkin路的定义。
+\begin{defi}
+二维平面上从$(0,0)$出发，每一步只能走$(1,1)$（“$\nearrow$”）、$(1,0)$或$(1,-1)$
+（“$\searrow$”），保证不穿越到$x$轴的下方（可以达到$x$轴），
+并且最后回到$x$轴，其中水平步$(1,0)$有两种选择：直线（“$\longrightarrow$”）或虚线（$\dashrightarrow$）,我们称
+这样的路径为{\bf$2$-Motzkin路}。如果一条$2$-Motzkin路的终点在$(n,0)$，则称这条Motzkin路的长度为$n$. \end{defi}
+
+其实很容易证明长为$n$的$2$-Motzkin路的个数由Catalan数$C_{n+1}$给出。它们之间存在一一对应关系，容易看出这里只需要
+重复在证明等式\eqref{motzkincatalan}中
+所用到的重新
+编码的方法即可证明，其中每一个长为$2n+2$的Dyck路经过重新编码都可以对应得到一条长为$n$的$2$-Motzkin路, 反之显然。
+\subsection{Chen-Deutsch-Elizalde映射}
+下面我们来介绍plane tree与$2$-Motzkin路之间的对应关系。这个对应是相对复杂的。
+
+首先我们递归的确定对平面树$T$的所有边的遍历顺序：也就是令$u$是$T$的根，$v_1,v_2,\ldots,v_k$
+是$u$依次从左到右的孩子，而$T_1,T_2,\ldots,T_k$是以$v_1,v_2,\ldots,v_k$为根的$T$的子树，用$P(T)$表示对$T$的遍历顺序，
+则$T$的所有边的线性遍历顺序可以递归的表示为$$(u,v_1)P(T_1)(u,,v_2)P(T_2)\cdots(u,v_k)P(T_k).$$
+
+对于平面树$T$：
+\begin{itemize}
+\item 首先我对于平面树的所有边给出下列分类定义：
+\begin{itemize}
+\item 一个顶点$v$如果没有孩子则被称为叶子；至少有一个孩子则被称为内部点。
+\item 边表为$(u,v)$使得$v$是$u$的孩子。
+\item 若$u$是内部点，$v_1,v_2,\ldots,v_k$是$u$依次从左到右的孩子，我们称$v_k$是外部点，$(u,v_k)$是外部边。
+      若$k>1$，则$(u,v_1),(u,v_2),\ldots,(u,v_{k-1})$被称为内部边，$v_1,v_2,\ldots,v_{k-1}$被称为内部点。
+\item 包含叶子的边被称为终结边。
+\item 令$u$为$T$的根节点，若$(u,u_1)$是$u$的外部边，$(u_1,u_2)$是$u_1$的外部r边，以此类推直到$(u_{k-1},u_k)$
+    是$u_{k-1}$的外部边且$u_k$是叶子点，则称外部边$(u_{k-1},u_k)$为$T$的关键边。
+\end{itemize}
+总体来说平面树$T$的边可以被分为以下五类：
+\begin{itemize}
+\item 非终结的内部(interior)边。
+\item 非终结的外部(exterior)边。
+\item 终结的内部(interior)边。
+\item 终结的外部(exterior)边(不包括关键(crtical)边)。
+\item 关键(critcal)边。
+\end{itemize}
+\end{itemize}
+
+显然关键边是在按照预定顺序遍历$T$时最后遇到的边，基于以上对平面树边的分类，我们就可以比较容易的描述平面树
+与$2$-Motzkin路之间的Chen-Deutsch-Elizalde映射，这个映射需要按照预排顺序遍历$T$的所有边。
+
+下面我们可以具体来描述Chen-Deutsch-Elizalde映射：$T$是非空平面树，按预先约定的遍历顺序遍历平面树的每条边，并做如下对应。
+\begin{itemize}
+\item 非终结的内部边$\mapsto$ （“$\nearrow$”）.
+\item 非终结的外部边$\mapsto$ （“$\longrightarrow$”）.
+\item 终结的内部边$\mapsto$    （$\dashrightarrow$）.
+\item 终结的外部边(不包括关键边)$\mapsto$  （“$\searrow$”）.
+\item 关键边$\mapsto$  不作为。
+\end{itemize}
+
+容易看出，我们从一个有$n$条边的平面树得到了一个长为$n-1$的$2$-Motzkin路，
+这个一一对应关系之所以成立是因为对于任意的平面树$T$有：$\sharp$ 非终结性内部边$=$$\sharp$终结性外部边。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\section{Schr\"{o}der数与Schr\"{o}der路}
+
+\subsection{概述}
+
+数学中，Schr\"{o}der数$R_n$可以计数很多组合物体，如在$n\times n$的网格中通过$(0,1),(1,0),(1,1)$这样的步从西南角$(0,0)$到东北角$(n\times n)$并且不超过对角线$y=x$的格路的条数。
+
+此外，Schr\"{o}der数$R_n$也计数了通过
+$(1,1),(1,-1),(2,0)$的步从$(0,0)$到$(2n,0)$\\并且不会下降到$x-$轴以下的路的条数。我们称
+这样的路为半长为$n$的Schr\"{o}der路. 简言之，Schr\"{o}der数$R_n$计数了半长为$n$的Schr\"{o}der路的个数。
+
+如当$n=0,1,2,3,4,5,6,7,,\ldots$时的Schr\"{o}der数为：
+$$R_0=1, R_1=2,R_2= 6,R_3= 22,R_4= 90, R_5=394, R_6=1806, R_7=8558,\ldots$$
+
+下面我们给出Schr\"{o}der路的具体定义并讨论它的计数问题。
+
+\subsection{Schr\"{o}der路的计数及其生成函数}
+\begin{defi}
+二维平面上从$(0,0)$出发，每一次只能走$(1,1)$（“$\nearrow$”）、$(2,0)$（“$\longrightarrow\longrightarrow$”）
+或$(1,-1)$（“$\searrow$”），保证不穿越到$x$轴的下方（可以达到$x$轴），
+并且最后回到$x$轴的路径称为{\bf Schr\"{o}der路}. 如果一条Schr\"{o}der路的终点在$(2n,0)$，则称这条Schr\"{o}der路的半长为$n$. \end{defi}
+
+\begin{exa} 如下图是一条半长为$5$的Schr\"{o}der路, 如果记$(1,1)$步为$1$, $(1,0)$步为$2$, $(1,-1)$步为$-1$,
+ 则它的步序列是$(1,1,2,1,-1,2,-1,-1)$.
+
+ \begin{figure}[ht] \begin{center} \begin{picture}(60,30)
+\setlength{\unitlength}{1.3mm} \put(1,0){\vector(0,1){18}}
+\put(0,1){\vector(1,0){52}} \multiput(1,1)(5,0){10}{\circle*{0.6}}
+\multiput(1,6)(5,0){10}{\circle*{0.6}}
+\multiput(1,11)(5,0){10}{\circle*{0.6}}
+\multiput(1,16)(5,0){10}{\circle*{0.6}} \put(1,1){\line(1,1){10}}
+\put(11,11){\line(1,0){10}} \put(26,16){\line(1,-1){5}}
+\put(21,11){\line(1,1){5}} \put(31,11){\line(1,0){5}}
+\put(36,11){\line(1,0){5}} \put(41,11){\line(1,-1){10}}
+\end{picture}
+\end{center}
+\end{figure}
+ \end{exa}
+
+
+类似于Motzkin路和Catalan路有递推关系式，我们也可以用与推导Motzkin路递推关系式时
+所使用的分类方法完全类似的得到Schr\"{o}der路的递推关系式(只需要注意此时图中两个单位长度才使$R_n$的下标改变$1$)如下：
+
+$$R_{n}=R_{n-1}+\sum_{k=0}^{n-1}R_kR_{n-k-1}, $$
+其中$R_0=0$.
+
+记$R(x)=\sum\limits_{n=0}^\infty R_nx^n$为Motzkin路的生成函数，同样类似的运用赋权的方法，给Schr\"{o}der路
+的每一步赋权$\sqrt{x}$，这是因为这里的$R_n$计数的
+长为$2n$的Schr\"{o}der路。仍然运用与Motzkin路中完全类似的方法，可以得到如下的关系式：
+$$R(x)=1+xR(x)+xR^2(x)$$
+由此解出$$R(x)=\frac{1-x-\sqrt{1-6x+x^2}}{2x}.$$
+
+\subsection{$C_n$, $M_n$, $R_n$之间的关系}
+
+这三个数是相互关联的：
+
+首先Schr\"{o}der数可以用Catalan数表示出来：$$R_n=\sum^{n}_{k=0}{2n-k\choose k}C_{n-k}. \ n\geq 0$$
+
+这个等式是显然的，考虑Schr\"{o}der路: 半长为$n$且包含$k$个平行步$(2,0)$. 我们可以通过去掉Schr\"{o}der路中所有的平行步$(2,0)$从而得到一个半长为\\$n-k$的Dyck路。 相反的，给出一个半长为$n-k$的Dyck路, 我们可以重新构造${2n-k\choose k}$个半长为$n$的Schr\"{o}der路, 只需任意的插入$k$个平行步$(2,0)$即可。
+
+我们以$R_2$为例说明：
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  6=R_2 &=& \sum^{2}_{k=0}{4-k\choose k}C_{4-k}={4-0\choose 0}C_2+{4-1\choose 1}C_1+{4-2\choose 2}C_0 \\
+   &=&1 \times 2+3\times 1+1\times 1=6
+\end{eqnarray*}
+
+半长为$2$且包含$k$个平行步$(2,0)$的Schr\"{o}der路与长为$n-k$的Dyck路的对应关系如下：\\
+$k=0:\ R_2 \rightarrow C_2$\\
+
+
+ \begin{figure}[ht] \begin{center} \begin{picture}(50,30)
+\setlength{\unitlength}{1.3mm} \put(0,1){\vector(1,0){52}}
+ \multiput(1,1)(5,0){10}{\circle*{0.6}}
+\multiput(1,6)(5,0){10}{\circle*{0.6}}
+\multiput(1,11)(5,0){10}{\circle*{0.6}}
+\multiput(1,16)(5,0){10}{\circle*{0.6}}
+\put(1,1){\line(1,1){10}}
+ \put(11,11){\line(1,-1){10}}
+  \put(21,8){\vector(1,0){7}}
+  \put(26,1){\line(1,1){10}}
+ \put(36,11){\line(1,-1){10}}
+ \put(10,14){$R_2$}
+  \put(33,14){$C_2$}
+\end{picture}
+\end{center}
+\end{figure}
+
+ \begin{figure}[ht] \begin{center} \begin{picture}(50,30)
+\setlength{\unitlength}{1.3mm} \put(0,1){\vector(1,0){52}}
+ \multiput(1,1)(5,0){10}{\circle*{0.6}}
+\multiput(1,6)(5,0){10}{\circle*{0.6}}
+\multiput(1,11)(5,0){10}{\circle*{0.6}}
+\multiput(1,16)(5,0){10}{\circle*{0.6}}
+\put(1,1){\line(1,1){5}}
+\put(6,6){\line(1,-1){5}}
+ \put(11,1){\line(1,1){5}}
+  \put(16,6){\line(1,-1){5}}
+  \put(21,8){\vector(1,0){7}}
+\put(26,1){\line(1,1){5}}
+\put(31,6){\line(1,-1){5}}
+ \put(36,1){\line(1,1){5}}
+  \put(41,6){\line(1,-1){5}}
+ \put(10,14){$R_2$}
+  \put(33,14){$C_2$}
+\end{picture}
+\end{center}
+\end{figure}
+ 
+ \newpage
+$k=1:\ R_2 \rightarrow C_1$
+
+\begin{figure}[h] \begin{center} \begin{picture}(50,55)
+\setlength{\unitlength}{1.3mm} \put(0,1){\vector(1,0){52}}
+ \multiput(1,1)(5,0){10}{\circle*{0.6}}
+\multiput(1,6)(5,0){10}{\circle*{0.6}}
+\multiput(1,11)(5,0){10}{\circle*{0.6}}
+\multiput(1,16)(5,0){10}{\circle*{0.6}}
+\multiput(1,21)(5,0){10}{\circle*{0.6}}
+\multiput(1,26)(5,0){10}{\circle*{0.6}}
+\put(1,1){\line(1,1){5}}
+\put(16,6){\line(1,-1){5}}
+ \put(6,6){\line(1,0){10}}
+
+ \put(11,11){\line(1,1){5}}
+\put(16,16){\line(1,-1){5}}
+ \put(1,11){\line(1,0){10}}
+
+ \put(1,21){\line(1,1){5}}
+\put(6,26){\line(1,-1){5}}
+ \put(11,21){\line(1,0){10}}
+
+  \put(21,13){\vector(1,0){7}}
+\put(31,11){\line(1,1){5}}
+\put(36,16){\line(1,-1){5}}
+ \put(10,30){$R_2$}
+  \put(33,30){$C_1$}
+\end{picture}
+\end{center}
+\end{figure}
+
+$k=2:\ R_2 \rightarrow C_0$\\
+
+ \begin{figure}[h] \begin{center} \begin{picture}(50,30)
+\setlength{\unitlength}{1.3mm} \put(0,1){\vector(1,0){52}}
+ \multiput(1,1)(5,0){10}{\circle*{0.6}}
+\multiput(1,6)(5,0){10}{\circle*{0.6}}
+\multiput(1,11)(5,0){10}{\circle*{0.6}}
+\put(1,6){\line(1,0){20}}
+  \put(21,8){\vector(1,0){7}}
+ \put(10,14){$R_2$}
+  \put(33,14){$C_0$}
+\end{picture}
+\end{center}
+\end{figure}
+
+
+
+此外Catalan数与Motzkin数有如下关系：
+
+\begin{equation}
+\label{motzkincatalan}
+M_n=\sum\limits_{k=0}^{[n/2]}{n\choose 2k}c_{k}.
+\end{equation}
+\begin{equation}
+\label{catalanmotzkin}
+c_{n+1}=\sum\limits_{k=0}^n{n\choose k}M_k.
+\end{equation}
+
+对于式\eqref{motzkincatalan}, 设$P$是长度为$n$的Motzkin路，并设$P$中包含水平$\longrightarrow$步的个数为$n-2k$（$k\geq0$），
+另外$2k$步是由$\nearrow$及$\searrow$构成的Dyck路，不难得知式\eqref{motzkincatalan}成立。\\
+\indent 对于式\eqref{catalanmotzkin}，我们准备使用一种新的方法将Dyck路进行重新“编码”，目标是将长度为$2n+2$的
+Dyck路转换成由四个文字$\nearrow,\searrow,\longrightarrow,\dashrightarrow$组成的长度为$n$的新序列。
+设$P$是长度为$2n+2$的Dyck路，$P$的第一步必是$\nearrow$，最后一步必是$\searrow$，这两步不予考虑。
+从$(1,1)$点开始，此后每两步对应到一个新的“文字”，方法如下：
+\newpage
+
+\begin{figure}[h]
+\begin{center}
+\begin{picture}(100,15)
+\setlength{\unitlength}{1.3mm}
+\put(0,0){\vector(1,1){4}}
+\put(4,4){\vector(1,1){4}}
+\put(7,3){\shortstack{$\Longrightarrow$}}
+\put(13,2){\vector(1,1){4}}
+\put(17,2){\shortstack{，}}
+\put(20,2){\vector(1,1){4}}
+\put(24,6){\vector(1,-1){4}}
+\put(28,3){\shortstack{$\Longrightarrow$}}
+\put(34,4){\vector(1,0){4}}
+\put(38,2){\shortstack{，}}
+
+\put(40,8){\vector(1,-1){4}}
+\put(44,4){\vector(1,-1){4}}
+\put(47,3){\shortstack{$\Longrightarrow$}}
+\put(53,6){\vector(1,-1){4}}
+\put(57.5,2){\shortstack{，}}
+
+\put(60,6){\vector(1,-1){4}}
+\put(64,2){\vector(1,1){4}}
+\put(68,3){\shortstack{$\Longrightarrow$}}
+\put(74,3){\shortstack{$\dashrightarrow$}}
+\end{picture}
+\end{center}
+\end{figure}
+
+例如:\\
+
+\begin{figure}[h]
+\begin{center}
+\begin{picture}(110,30)
+\setlength{\unitlength}{1.3mm}
+\put(1,0){\vector(0,1){22}}
+\put(0,1){\vector(1,0){62}}
+\multiput(1,1)(5,0){13}{\circle*{0.5}}
+\multiput(1,6)(5,0){13}{\circle*{0.5}}
+\multiput(1,11)(5,0){13}{\circle*{0.5}}
+\multiput(1,16)(5,0){13}{\circle*{0.5}}
+\multiput(1,20)(5,0){13}{\circle*{0.5}}
+\thicklines
+\put(1,1){\line(1,1){10}}
+\put(11,11){\line(1,-1){10}}
+\put(21,1){\line(1,1){15}}
+\put(36,16){\line(1,-1){10}}
+\put(46,6){\line(1,1){5}}
+\put(51,11){\line(1,-1){10}}
+\thinlines
+\multiput(6,1)(0,2){5}{\line(0,1){0.6}}
+\multiput(16,1)(0,2){5}{\line(0,1){0.6}}
+\multiput(26,1)(0,2){5}{\line(0,1){0.6}}
+\multiput(36,1)(0,2){8}{\line(0,1){0.6}}
+\multiput(46,1)(0,2){5}{\line(0,1){0.6}}
+\multiput(56,1)(0,2){5}{\line(0,1){0.6}}
+
+\thinlines
+\put(62,10){\shortstack{$\Longrightarrow$}}
+\put(69,1){\vector(1,0){36}}
+\put(70,0){\vector(0,1){20}}
+\multiput(70,1)(5,0){7}{\circle*{0.5}}
+\multiput(70,6)(5,0){7}{\circle*{0.5}}
+\multiput(70,11)(5,0){7}{\circle*{0.5}}
+\multiput(70,16)(5,0){7}{\circle*{0.5}}
+
+\thicklines
+\put(70,1){\vector(1,0){5}}
+\put(75,0.4){\shortstack{$\dashrightarrow$}}
+\put(80,1){\vector(1,1){5}}
+\put(85,6){\vector(1,-1){5}}
+\put(90,1){\vector(1,0){5}}
+\end{picture}
+\end{center}
+\end{figure}
+
+经过上述转化之后，长度为$2n+2$的Dyck路就对应到一个长度为$n$的新路径，
+注意这种新的路径实际上是在Motzkin路中穿插若干$\dashrightarrow$而成。
+另一方面，如果$Q$是一条长度为$k$（$k\leq n$）的Motzkin路，在其中插入$n-k$条$\dashrightarrow$
+之后再经过上述对应的逆过程就可以回到一条长度为$2n+2$的Dyck路。
+据此分析即可得到式\eqref{catalanmotzkin}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{练习}
+证明catalan数计数了以下集合所含元素的个数：
+\begin{itemize}
+\item 从$(0,0)$到$(2n+2,0)$的Dyck路，它的最长的连续的$(1,-1)$的组成的部分长度为奇数且（右）端点在$x$-轴上。
+\item$(0,0)$到$(2n+2,0)$的Dyck路且不存在高度为$2$的峰。
+\end{itemize}
+
+
+
+
+\begin{thebibliography}{99}
+
+
+\bibitem{chen} 陈永川，
+\href{ref/motzkin.pdf}{应用图论}。
+
+\bibitem{E}Eva Y.P. Deng, Wei-Jun Yan，
+\href{ref/sdarticle.pdf}{Some identities on the Catalan, Motzkin and Schr\"{o}der numbers}.
+
+\bibitem{E}William Y.C. Chen, Sherry H.F. Yan and Laura L.M. Yang
+\href{ref/chen.pdf}{Weighted $2$-Motzkin Paths}.
+
+
+
+\bibitem{Andre1887} D. Andr\'e,
+Solution directe du probl\`eme r\'esolu par M. Bertrand, CR Acad.
+Sci. Paris 105 (1887), 436--437.
+
+
+
+\bibitem{Feller1950} W. Feller,
+An Introduction to Probability Theory and Its Applications, vol 1,
+John Wiley and Sons, New York, 1950.
+
+
+\bibitem{Mohanty1979} S.G. Mohanty, Lattice Path Counting and Applications,
+Academic Press, New York, 1979.
+
+\bibitem{Narayana1979} T.V. Narayana,
+Lattice Path Combinatorics with Statistical Applications,
+Mathematical Expositions no. 23, University of Toronto Press,
+Toronto, 1979.
+
+\bibitem{Stanley1999} R.P. Stanley,
+Enumerative Combinatorics, vol. 2, Cambridge University, Cambridge,
+1999.
+
+\bibitem{Takacs1967} L. Tak\'acs,
+Combinatorial Methods in the Theory of Stochastic Processes, John
+Wiley and Sons, New York, 1967.
+
+\bibitem{Zeiber1983} D. Zeilberger, \href{Andre's reflection proof generalized to the
+many-candidate reflection problem.pdf}{Andre's reflection proof
+generalized to the many-candidate reflection problem}, Discrete
+Math., 44 (1983) 325--326.
+
+\bibitem{Chen1990} W.Y.C. Chen,
+\href{ref/A general bijective algorithm for trees.pdf}{A general
+bijective algorithm for trees}, Proc. Natl. Acad. Sci. USA. 87
+(1990), 9635--9639.
+
+\bibitem{Stanley1999} R.P. Stanley,
+Enumerative Combinatorics, vol. 2, Cambridge University, Cambridge,
+1999.
+
+\end{thebibliography}
+

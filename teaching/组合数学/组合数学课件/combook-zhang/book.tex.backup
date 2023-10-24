@@ -1,0 +1,1875 @@
+\documentclass[a4paper,11pt,twoside]{book}
+
+\usepackage{minitoc,hyperref}
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+% \usepackage[boldfont]{xeCJK}
+% % \setCJKsansfont{WenQuanYi Zen Hei}
+% % \setCJKmonofont{WenQuanYi Zen Hei}
+% \setCJKmainfont{SimSun}
+% \setCJKsansfont{KaiTi}
+% \setCJKmonofont{SimHei}
+
+\usepackage{ctex}
+   
+
+
+\usepackage{amssymb,amsfonts,amsmath,amsthm,cite}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{amsmath,tikz}
+
+
+
+\parskip=7pt
+%--------------------------------------------------------------------
+\hoffset -25truemm \oddsidemargin=25truemm \evensidemargin=25truemm
+\textwidth=160truemm \voffset -25truemm \topmargin=20truemm
+\headheight=5truemm \headsep=5truemm \textheight=240truemm
+\baselineskip=16pt
+%--------------------------------------------------------------------
+\newtheorem{thm}{定理}[section]
+\newtheorem{cor}{推论}[section]
+\newtheorem{lem}{引理}[section]
+\newtheorem{prop}{命题}[section]
+\newtheorem{defi}{定义}[section]
+\newtheorem{rem}{注}[section]
+\newtheorem{exa}{例}[section]
+\def\theequation{\thesection.\arabic{equation}}
+\makeatletter \@addtoreset{equation}{section}
+%--------------------------------------------------------------------
+
+\def \e{\mathrm{e}}
+\def\pf{\noindent {\bf 证明\ }}
+\def\sln{\noindent {\bf 解\ }} 
+
+
+
+\begin{document}
+
+
+\begin{center}
+{\Large\bf 组合数学}
+\end{center}
+
+\tableofcontents
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{基本计数方法}
+\section{加法原则}
+\section{乘法原则}
+\section{容斥原理}
+
+
+\chapter{生成函数}
+\section{Fibonacci数}
+生成函数(generating function)方法最初是由Laplace和Euler引进的，是组合计数中一个很有效的方法。
+我们首先从熟知的Fibonacci数列入手，来了解生成函数的运用。
+
+意大利数学家Fibonacci在13世纪提出了如下的一个问题：
+
+最初有一对小兔子(雌雄各一)，这对兔子从第二个月开始每月都产下一对雌雄各一的小兔，每对新生小兔间隔一个月后也开始每月都产下
+一对雌雄各一的小兔。假定兔子都不死亡，最终会有多少对兔子？
+
+著名的Fibonacci数列由此而得名。若设$F_n$ 表示第$n$个月所有的兔子对数，则我们不难得出如下递推关系式：
+$$F_0=F_1=1,\ F_{n+2}=F_{n+1}+F_n\ \ (n\geq 0).$$
+
+先给出生成函数的一个粗略定义：令$a_0,a_1,a_2,\ldots$为一无穷序列，则
+$f(x)=\sum_{n\geq0}a_nx^n$
+称为该无穷序列的生成函数。
+
+由上述定义，我们来计算Fibonacci数列的生成函数$F(x)$。
+
+\begin{eqnarray*}
+F(x)&=&\sum_{n=0}^{\infty}F_nx^n=1+x+\sum_{n=2}^{\infty}F_nx^n\\
+&=&1+x+\sum_{n=2}^{\infty}(F_{n-1}+F_{n-2})x^n\\
+&=&1+x+x\sum_{n=2}^{\infty}F_{n-1}x^{n-1}+x^2\sum_{n=2}^{\infty}F_{n-2}x^{n-2}\\
+&=&1+xF(x)+x^2F(x)
+\end{eqnarray*}
+由此可得$F(x)=(1-x-x^2)^{-1}$。
+
+对上述生成函数适当调整形式，我们还可得出
+\begin{align}\label{f-ge1}
+\sum_{n=0}^{\infty}F_nx^n=(1-(x+x^2))^{-1}=\sum_{k=0}^{\infty}(x+x^2)^k.
+\end{align}
+比较(\ref{f-ge1})两边的系数可得Fibonacci 数的另一种表示形式：
+$$
+F_n=\sum_{k}{n-k\choose k}.
+$$
+通过这个式子就可以赋予Fibonacci数列以组合解释了。
+\begin{prop}
+$F_n$计数了集合$[n-1]=\{1,2,\cdots,n-1\}$ 中不含相邻整数的子集个数。
+\end{prop}
+例如，$[3]=\{1,2,3\}$中满足条件的的子集为$\emptyset$, $\{1\}$, $\{2\}$, $\{3\}$, $\{1,3\}$, 总计为5个。
+恰好对应与$F_4$. 接下来我们来看一下该命题的证明。
+
+\pf 令$f(n,k)$表示$[n-1]$中满足条件的$k$ 元子集的个数。 设$\{i_1,i_2, \ldots ,i_k\}$ 为满足条件的一个$k$元子集，其中$i_1<i_2<\cdots<i_k$。 由于子集中不存在相邻的两个整数，因此$i_s-i_{s-1}\geq 2$。 记$j_s=j_s-s,$ 可得$0\leq j_1<j_2<\cdots j_k<n-k$. 所以$f(n,k)=\binom{n-k}{k}$， 进而$F_n=\sum_k\binom{n-k}{k}$， 即是集合$[n]$中不含相邻整数的子集个数。\qed
+
+
+ 通过生成函数的变换我们还可以得知Fabonacci数列的一些性质。
+
+\begin{prop}
+Fibonacci数列满足如下恒等式：
+\begin{align}\label{ge2}
+\sum_{i=0}^nF_i=F_{n+2}-1.
+\end{align}
+\end{prop}
+\pf 注意到对任意级数$\sum_{n}a_nx^n,$ 有$(1-x)^{-1}\sum_{n}a_nx^n=\sum_n(\sum_{i=0}^na_i)x^n$ 成立，于是从
+$$1=F(x)(1-x-x^2)=F(x)(2-x-x^2)-F(x),$$
+得
+$$F(x)=F(x)(2-x-x^2)-1=F(x)(2+x)(1-x)-1,$$
+所以
+$$(1-x)^{-1}F(x)=F(x)(2+x)-(1-x)^{-1}.$$
+比较两边$x^n$的系数，可以得到$\sum\limits_{i=0}^nF_i=2F_n+F_{n-1}-1=F_{n+2}-1$。\qed
+
+
+
+
+
+
+
+
+
+
+
+\section{生成函数的定义、类型与一般运算}
+通过上一节大家熟知的例子，我们对生成函数的方法有个一个大致了解。本节中，我们将详细给出生成函数的严格定义以及一些常用的
+类型。
+\begin{defi}
+设$g_n(x)(n=0,1,2,\ldots)$线性无关，则称
+\begin{equation}\label{ge1}
+G(x)=\sum_{n=0}^{\infty}a_ng_n(x),
+\end{equation}
+为$a_n(n=0,1,2,\ldots)$的生成函数。
+\end{defi}
+
+
+$(\ref{ge1})$式称为关于未定元$x$的形式幂级数。一般情况下，形式幂级数中的$x$ 只是一个抽象符号，并不需要对$x$赋予具体的数值。
+进而也就不需要讨论级数收敛性（即\\
+$\lim\limits_{N\to\infty}\sum\limits_{n=0}^Na_ng_n(x)$ 是否存在）的问题。
+
+设$A(x)=\sum_{n=0}^{\infty}a_ng_n(x),\ B(x)=\sum_{n=0}^{\infty}b_ng_n(x)$. 定义
+\begin{eqnarray}
+A(x)+B(x)=\sum_{n=0}^{\infty}(a_n+b_n)g_n(x).
+\end{eqnarray}
+
+以上是形式幂级数的加法，与$g_n(x)$的具体形式无关。而形式幂级数的乘法在定义的时候会依据$g_n(x)$的不同而有细微的变化。
+接下来我们再了解一下生成函数的一些常见类型。
+
+\begin{defi}
+取$g_n(x)=x^n$, 则有
+\begin{align}
+f(x)=\sum_{n\geq0}a_nx^n,
+\end{align}
+称为$a_n$的普通型生成函数(ordinary generating functions)。
+\end{defi}
+
+\begin{exa}
+序列$\{1,1,1,1,\ldots\}$的普通型生成函数为：
+$$f(x)=\sum_{n\ge0}x^n=\frac{1}{1-x}.$$
+\end{exa}
+
+\begin{defi}
+取$g_n(x)=\frac{x^n}{n!}$, 则有
+\begin{align}
+f(x)=\sum_{n\geq0}a_n\frac{x^n}{n!},
+\end{align}
+称为$a_n$的指数型生成函数(exponential generating functions)。
+\end{defi}
+
+\begin{exa}
+序列$\{0!,1!,2!,3!,\cdots\}$的指数型生成函数为：
+$$f(x)=\sum_{n\geq 0}n!\frac{x^n}{n!}=\frac{1}{1-x}.$$
+序列$\{1,1,1,\ldots\}$的指数型生成函数为：
+$$f(x)=\sum_{n\geq 0}\frac{x^n}{n!}=e^x.$$
+\end{exa}
+以上是常用的两种生成函数的类型，其它还有兰伯特级数（Lambert series）、贝尔级数（Bell series）、狄利克雷级数（Dirichlet series）等。下来我们就依据最常用的普通型生成函数与指数型生成函数的具体形式给出生成函数乘法的定义。
+对于普通性生成函数而言：
+
+\begin{thm}
+$f(x)=\sum a_nx^n$和$g(x)=\sum b_nx^n$
+是两个生成函数，则：
+\begin{align}
+f(x)g(x)=\sum c_nx^n,
+\end{align}
+其中$c_n=\sum_{k=0}^n a_kb_{n-k}.$
+\end{thm}
+
+对于指数型生成函数而言：
+\begin{thm}
+$f(x)=\sum a_n\frac{x^n}{n!}$和$g(x)=\sum b_n\frac{x^n}{n!}$
+是两个生成函数，则：
+\begin{align}
+f(x)g(x)=\sum c_n\frac{x^n}{n!},
+\end{align}
+其中$c_n=\sum_{k=0}^n{n\choose k}a_kb_{n-k}.$
+\end{thm}
+
+生成函数的乘法有严格的组合意义。假设$a_n$
+所计数的组合结构称为A-结构，$b_n$
+计数的是B-结构，那么$c_n$计数的则是由部分A- 结构和部分B-结构组合而成的结构。
+
+\begin{exa}
+给定一个$n$元集合$X$, 令$h(n)$表示将$X$ 分裂为两个子集$S$和$T$ 使得$S\cup T=X,\ S\cap T=\emptyset.$ 并且对$S$中的元素进行排列，对$T$进行取子集的操作之后的方法数。求$h(n)$ 的生成函数。
+\end{exa}
+
+{\noindent \bf 解:} 记$f(k)$表示对$k$元集合中元素进行排列的方法数，$g(k)$ 表示从一个$k$元集合中任取一个子集的方法数。则
+$$h(n)=\sum_{k=0}^nf(k)g(n-k).$$
+且$f(k)=k!\ g(k)=2^k,$ 因此
+\begin{align}
+\sum_{n\geq 0}h(n)\frac{x^n}{n!}&=(\sum_{n\geq 0}n!\frac{x^n}{n!})(\sum_{n\geq 0}2^n\frac{x^n}{n!})\notag\\
+&=\frac{e^{2x}}{1-x}.\notag
+\end{align}
+展开生成函数还可以得到$h(n)$的具体表达式。
+
+
+
+
+
+
+
+
+
+
+\section{生成函数的复合公式}
+这里我们将要介绍的复合公式是针对指数型生成函数而言的.
+
+记$E_f(x)=\sum_{n\geq
+0}f(n)\frac{x^n}{n!}$为$f(n)$的指数型生成函数，其中 函数$f:
+\mathbb{N} \rightarrow \mathbb{C}$.
+在介绍复合公式之前，我们首先定义集合的划分、有序划分和弱有序划分.
+\begin{defi}
+有限集$X$的划分是由子集构成的集合$\Pi=\{B_1,B_2,\cdots,B_k\}$ 满足
+\begin{description}
+  \item[1] 对于任意$i$, $B_i\neq\emptyset$;
+  \item[2] 对于任意$i\neq j$, $B_i\cap B_j=\emptyset$;
+  \item[3] $B_1\cup B_2\cup \cdots\cap B_k=X.$
+\end{description}
+其中$B_i$称为$\Pi$的一个块，上述划分有$k$ 个块，记作$|\Pi|=k.$
+\end{defi}
+
+注意集合的划分并不区分块之间的顺序.而集合的有序划分则要求各个块之间是有顺序的，集合的弱有序划分则并在有序划分的基础上不要求$B_i\neq \emptyset.$
+
+下面，我们首先从集合划分的角度解释指数型生成函数乘法的意义.
+\begin{thm}
+已知函数$f,g: \mathbb{N} \rightarrow \mathbb{C}$，
+定义新函数$h: \mathbb{N} \rightarrow \mathbb{C}$，使其满足$h(\sharp X)=\sum_{(S,T)}f(\sharp S)g(\sharp T)$, 其中$(S,T)$ 取遍$X$的2块弱有序划分，则$$E_h(x)=E_f(x)\cdot E_g(x).$$
+\end{thm}
+
+\pf
+令$\sharp x=n$,则满足$\sharp S=k,\sharp T=n-k$的弱有序划分$(S,T)$有$n \choose k$ 对，所以
+\begin{equation*}
+h(n)=\sum_{k=0}^n {n \choose k} f(k)g(n-k).
+\end{equation*}
+得证.
+
+反复迭代上述定理可得到下述推广的乘法公式：
+\begin{thm}
+已知函数$f_i(1 \leq i \leq k): \mathbb{N} \rightarrow \mathbb{C}$，
+定义新函数$h: \mathbb{N} \rightarrow \mathbb{C}$，使其满足
+若$h(\sharp X)=\sum_{(T_1,T_2,\cdots,T_k)}f_1(\sharp T_1)f_2(\sharp T_2)\cdots f_k(\sharp T_k)$, 其中$(T_1,T_2,\cdots,T_k)$取遍$X$ 的$k$块弱有序划分.则$$E_h=\prod_{i=1}^k E_{f_i}.$$
+\end{thm}
+
+有了上述知识准备后，下面我们来看指数型生成函数的复合公式.
+\begin{thm}
+{\rm(}复合公式{\rm)}已知函数$f_i(1 \leq i \leq k): \mathbb{P} \rightarrow \mathbb{C}$,~ 函数$g: \mathbb{N} \rightarrow \mathbb{C}$
+且$g(0)=1$,定义新函数$h: \mathbb{N} \rightarrow \mathbb{C}$，使其满足
+若$h(\sharp X)=\sum_{k=0}^{\sharp X}\sum_{(B_1,B_2,\cdots,B_k)}f(\sharp B_1)f(\sharp B_2)\cdots f(\sharp B_k)g(k)$, 其中$(B_1,B_2,\cdots,B_k)$ 取遍$X$ 的所有$k$ 块划分，$h(0)=1$.则$$E_h=E_g(E_{f}).$$
+\end{thm}
+\pf 设
+\begin{align*}
+t_k(\sharp X)&=g(k)\sum_{\{B_1,B_2,\cdots,B_k\}}f(\sharp B_1)f(\sharp B_2)\cdots f(\sharp B_k)\\
+&=\frac{g(k)}{k!}\sum_{\{{B'}_1,{B'}_2,\cdots,{B'}_k\}}f(\sharp {B'}_1)f(\sharp {B'}_2)\cdots f(\sharp {B'}_k).
+\end{align*}
+其中$\{{B'}_1,{B'}_2,\cdots,{B'}_k\}$ 取遍$X$ 的所有$k$块弱有序划分，那么由指数型生成函数的推广乘积公式可知，
+$$\sum_{k\geq 0}t_k(n)\frac{x^n}{n!}=\frac{g(k)}{k!}E_f^k.$$
+所以
+\begin{align}
+E_h&=\sum_{n\geq 0}h(n)\frac{x^n}{n!}=\sum_{n\geq 0}\sum_{k=0}^n t_k(n)\frac{x^n}{n!}\notag\\
+&=\sum_{k\geq 0}g(k)\frac{E_f^k}{k!}=E_g(E_f).\notag
+\end{align}
+特别的，在上述复合公式中令$g(k)\equiv 1$，则有如下指数公式.
+\begin{thm}  \label{exponentialFormula}
+已知函数$f_i(1 \leq i \leq k): \mathbb{P} \rightarrow \mathbb{C}$, 定义新函数$h: \mathbb{N} \rightarrow \mathbb{C}$，使其满足
+$h(\sharp X)=\sum_{k=0}^{\sharp X}\sum_{(B_1,B_2,\cdots,B_k)}f(\sharp B_1)f(\sharp B_2)\cdots f(\sharp B_k)$, 其中$(B_1,B_2,\cdots,B_k)$取遍$X$的所有$k$块划分，且$h(0)=1$。则$E_h=\exp(E_{f}).$
+\end{thm}
+
+在了解复合公式和指数公式的组合意义之前，我们先看一下它的运用.
+\begin{exa}
+求将$n$个人分成若干组，每组站成队，并将这些队有序的放置在同一圆圈上的方法数.
+\end{exa}
+\textbf{解:} 记$h(n)$表示上述方法数，$f(n)$ 表示将$n$个人站成一排的方法数，$g(n)$表示将那个不同的数放在一个圆上的方法数.
+由题意可知：
+$$h(n)=\sum_{k\geq 0}\sum_{\{B_1,B_2,\cdots,B_k\}}f(\sharp B_1)f(\sharp B_2)\cdots f(\sharp B_k)g(k),$$
+其中$f(i)=i!, g(i)=(i-1)!.$
+因此
+\begin{align}
+E_f&=\sum_{i\geq 0}i!\frac{x^i}{i!}=\frac{x}{1-x},\notag\\
+E_g&=1+\sum_{i\geq 1}(i-1)!\frac{x^i}{i!}=1+\log(1-x)^{-1}.\notag
+\end{align}
+由复合公式可得
+\begin{align}
+E_h&=1+\log(\frac{1-2x}{1-x})^{-1}\notag\\
+&=1+\log(1-2x)^{-1}-\log(1-x)^{-1}\notag\\
+&=1+\sum_{n\geq 1}\frac{2^nx^n}{n}-\sum_{n\geq 1}\frac{x^n}{n}.\notag
+\end{align}
+进而当$n\geq 1$时有$h(n)=(2^n-1)(n-1)!$
+
+$h(n)$有着如此简单的形式，经验表明，我们可以用组合方法求出$h(n)$ 的表达式.首先，将$n$ 个人围成一圈，有$(n-1)!$种方法数.圈中每相邻的两个人
+形成$1$个间隔，对圈中$n$个人形成的$n$ 个间隔进行操作，或加入隔板，或不加，但要保证圈中至少加入$1$个隔板，易知这种操作有$2^n-1$ 种方法数.经过上述操作后，
+显然我们已经完成了将$n$个人分组、并将每组放置到了圆圈上，事实上，每组中的队列顺序也是确定的，我们只需按照顺时针方向依次读取即可.示例参见图1.
+
+\setlength{\unitlength}{1mm}
+\begin{center}
+\begin{picture}(120,50)
+\put(30,25){\circle{14}}
+\put(30,32){\circle*{1.5}}
+\put(31,33){\small{5}}
+\put(30,18){\circle*{1,5}}
+\put(31,16){\small{1}}
+\put(37,25){\circle*{1,5}}
+\put(39,25){\small{2}}
+\put(23,25){\circle*{1,5}}
+\put(21,26){\small{6}}
+\put(35,30){\circle*{1,5}}
+\put(36,31){\small{8}}
+\put(35,20){\circle*{1,5}}
+\put(37,19){\small{4}}
+\put(25,20){\circle*{1,5}}
+\put(22,19){\small{7}}
+\put(25,30){\circle*{1,5}}
+\put(23,31){\small{3}}
+\put(90,25){\circle{14}}
+\put(90,32){\circle*{1,5}}
+\put(90,34){\small{5}}
+\put(97,25){\circle*{1,5}}
+\put(95,27){\small{4}}
+\put(97,25){\line(1,0){10}}
+\put(102,25){\circle*{1.5}}
+\put(102,27){\small{2}}
+\put(107,25){\circle*{1.5}}
+\put(107,27){\small{8}}
+\put(90,18){\circle*{1,5}}
+\put(90,20){\small{7}}
+\put(90,18){\line(0,-1){5}}
+\put(90,13){\circle*{1.5}}
+\put(92,13){\small{1}}
+\put(83,25){\circle*{1,5}}
+\put(85,27){\small{3}}
+\put(83,25){\line(-1,0){5}}
+\put(78,25){\circle*{1.5}}
+\put(78,27){\small{6}}
+\put(60,25){\vector(1,0){5}}
+\put(60,25){\vector(-1,0){5}}
+\put(58,5){\makebox(0,0)[c]{图\ 1}}
+\end{picture}
+\end{center}
+
+
+
+\subsection{一个关于Stirling数的公式}
+
+我们所要证明的公式：
+\begin{align} \label{th1}
+\sum_{k=0}^{n}c(n,k)x^k=x(x+1)(x+2)\cdots(x+n-1).
+\end{align}
+其中~$c(n,k)$~表示无符号的第一类Stirling 数。其值等于~$[n]$~的排列中恰含~$k$~ 个圈的排列的个数。初值为:~$c(0,0)=1,c(0,k)=0$~，当~$k\neq 0$~。
+根据其组合意义，容易得到~$c(n,k)$~的递推关系：
+\begin{align*}
+c(n,k)=(n-1)c(n-1,k)+c(n-1,k-1).
+\end{align*}
+即考虑~$[n]$~的排列中恰含~$k$~个圈的排列，若~$n$~独立构成一个圈，则余下的~$[n-1]$~需构成一个~$k-1$~圈的排列，则有~$c(n-1,k-1)$~种，若不然，
+则~$n$~可以插入由~$[n-1]$~组成的~$k$~ 圈中，
+有~$n-1$~种插法，这种排列个数为~$(n-1)c(n-1,k)$~，故有上面的递推公式。Stirling 数有两类，
+分别称为第一类Stirling数和第二类Stirling 数，都是由18世纪苏格兰数学家James Stirling 提出的。为方便书写，
+我们把上阶乘~$x(x+1)(x+2)\cdots(x+n-1)$~ 记为~$[x]^n$~。Stirling 把上阶乘~$[x]^n$~ 展成多项式形式，即
+\begin{align*}
+[x]^n=\sum_{k=0}^{n}c(n,k)x^k.
+\end{align*}
+其中的系数就是无符号的第一类Stirling数~$c(n,k)$~，至于~$c(n,k)$~ 的组合意义是后来才发现的。在证明式\ref{th1}之前，我们先验证在~$n$~较小时公式的正确性。
+首先我们可以根据~$c(n,k)$~的初值和递推公式计算出~$c(n,k)$~的一些值：
+\begin{align*}
+c(0,0)&=1 \\
+c(1,0)&=0,c(1,1)=1 \\
+c(2,0)&=0,c(2,1)=1,c(2,2)=1 \\
+c(3,0)&=0,c(3,1)=1,c(3,2)=3,c(3,3)=1.
+\end{align*}
+把他们代入式\ref{th1}，便有
+\begin{align*}
+1&=1\\
+0+x&=x \\
+0+x+x^2&=x(x+1) \\
+0+x+3x^2+x^3&=x(x+1)(x+2)
+\end{align*}
+容易验证上面的等式都是成立的。现在我们再来证明式\ref{th1}，
+这个公式有很多证明方法，而且从后面证明可以看到，很多证明都是基于~$c(n,k)$~的递推公式的。\\
+证明一（归纳法）
+当~$n=1$~时，公式\ref{th1}显然成立。设当~$n=m$~时成立，
+\begin{align*}
+[x]^{m+1}=[x]^m(x+m)&=\sum_{k=0}^mc(m,k)x^k(x+m)\\
+                    &=\sum_{k=0}^mc(m,k)x^{k+1}+m\sum_{k=0}^mc(m,k)x^k\\
+                    &=\sum_{k=0}^{m+1}c(m,k-1)x^{k}+\sum_{k=0}^{m+1}mc(m,k)x^k\\
+                    &=\sum_{k=0}^{m+1}c(m+1,k)x^k.  \\
+\end{align*}
+所以公式\ref{th1}对于~$n=m+1$~也成立。结论得证。\\
+证明二（生成函数法）
+令~$F_n(x)=\sum_{k\geq 0}c(n,k)x^k$~，容易求得~$F_1(x)=x$~。
+\begin{align*}
+F_{n+1}(x)&=\sum_{k \geq 0}c(n+1,k)x^k  \\
+          &=\sum_{k\geq 0}[nc(n,k)+c(n,k-1)]x^k\\
+          &=n\sum_{k\geq 0}c(n,k)x^k+x\sum_{k\geq 0}c(n,k)x^k\\
+          &=(n+x)F_n(x).
+\end{align*}
+所以~$F_n(x)=(x+n-1)F_{n-1}(x)=(x+n-1)(x+n-2)F_{n-2}(x)= \cdots= [x]^n. $~结论成立。\\
+证明三（组合证明）
+假设~$x$~是个正整数，则公式\ref{th1}右边表示了~$n$~个人到~$x$~ 个窗口去排队的方法数。下面我们用另一种方法来得到这些排队的方案。首先我们先将这~$n$~个
+人标号，然后排列这~$n$~个人，按标准圈结构表示该排列。然后，我们将该圈结构按从左到右顺序一圈圈放入窗口中，先放入的靠近窗口，圈中最大的元素靠近窗口。
+由于~$[n]$~含有~$k$~个圈的排序数恰有~$c(n,k)$~个，而每个圈放入窗口有~$x$~ 种选择，故一共可以得到~$\sum_{k=0}^{n}c(n,k)x^k$~ 排队数。
+为证明式\ref{th1}，我们只要说明，这样得到的排队方案不会有重复，且表示了
+所有~$n$~个人到~$x$~个窗口去排队的方案数即可。为说明这两件事，我们只需说明任给一个~$n$~ 个人到~$x$~个窗口去排队的方案，我们可以找到相应的唯一的圏排列，
+即只要确定每个窗口的圈结构。由于我们前面的排列是标准的圈排列，根据放入圈时的规则，我们可以知道每一个自窗口从近到远的极大元和下一个极大元之前是一个圈。
+这样我们可以唯一找到相应的排列。所以我们证明了当~$x$~是个正整数时，公式\ref{th1} 成立。而公式\ref{th1}两边都是关于~$x$~的多项式，
+所以对任意的~$x$~,公式\ref{th1}成立。\\
+ 证明四（构造映射）
+ ~$[x]^n$~中~$x^k$~的系数为
+ \begin{align} \label{th2}
+ \sum_{1\leq a_1<a_2< \cdots <a_{n-k}\leq n-1}a_1a_2 \cdots a_{n-k}.
+ \end{align}
+ 其中求和取遍~$[n-1]$~的所有 ~${n-1 \choose k-1}$~个~$(n-k)$~ 元子集~$\{a_1,a_2 \cdots a_{n-k} \} $~。显然
+ \ref{th2}式计数了序对~$(S,f)$~的个数，其中~$S \in {[n-1] \choose n-k}$~，而~$f:S\rightarrow [n-1]$~满足
+ ~$f(i)\leq i$~。于是只需找到上述序对~$(S,f)$~构成的集合~$\Omega$~到具有~$k$~ 个圈的排列~$\pi \in \sigma_n$~ 所构成的集合
+ ~$\sigma_{nk}$~之间的一个双射~$\phi:\Omega\rightarrow \sigma_{nk}$~ 即可。
+
+给定~$(S,f)\in \Omega $~，其中~$S=\{a_1,a_2 \cdots a_{n-k}\}_<\subseteq [n-1]$~。定义~$T=\{j\in [n]:n-j \notin S\}$~。 设
+   ~$[n]-T$~中的元素为~$b_1>b_2> \cdots >b_{n-k}$~。定义~$\pi=\phi(S,f)$~为写成标准形式之后满足下列条件的排列：（1）
+   ~$\pi$~的每个圈的首元素（即最大元）是集合~$T$~中的元素，（2）对每个~$i \in [n-k]$~，~$\pi $~中在~$b_i$~之前并且比~$b_i$~
+   大的元素个数为~$f(a_i)$~。现在我们来证明这就是一个双射。先来看对于给定的一个~$(S,f)\in \Omega $~，我们能否确定唯一一个
+   ~$\pi \in \sigma_{nk}$~。由条件（1）显然可以确实~$T$~中元素在排列中的位置，接下面只要确定排列中~$[n]-T$~中元素即
+   ~$b_1,b_2 \cdots b_{n-k}$~的位置即可。显然根据条件（2），可唯一确定这些元素在排列~$\pi$~中的位置。所以给定一个有序对
+   ~$(S,f)\in \Omega $~，就可以由上述映射~$\phi$~唯一对应到一个含有~$k$~ 圈的排列~$\pi$~。反过来，也容易说明给定一个排列
+   ~$\pi \in \sigma_{nk}$~，可以唯一确定一个有序对~$(S,f)\in \Omega $~。 结论得证。\\
+证明五（文法）
+给定文法：
+\begin{align*}
+f_i \to f_{i+1}g_1;\\
+g_i \to ig_{i+1}.
+\end{align*}
+ 则
+ \begin{align*}
+ D^n(f)|_{g_i=x,f_i=1}=\sum_{k=0}^nc(n,k)x^k.
+ \end{align*}
+ 假设\ref{th1}式对~$m\leq n$~时成立，即
+ \begin{align*}
+ D^s(f)|_{g_i=x,f_i=1}=\sum_{k=0}^sc(s,k)x^k=[x]^s.
+ \end{align*}
+ 则
+\begin{align*}
+ D^{n+1}(f)|_{g_i=x,f_i=1}&=D^n(f_1g_1)|{g_i=x,f_i=1}\\
+                          &=\sum_{k=0}^n{n \choose k}D^k(f_1)D^{n-k}(g_1)|{g_i=x,f_i=1}\\
+                          &=\sum_{k=0}^n{n \choose k}[x]^k(n-k)!x\\
+                          &=n!x \sum_{k=0}^n{x+k-1 \choose k}\\
+                          &=n!x{x+n \choose n}\\
+                          &=[x]^{n+1}.
+ \end{align*}
+ 结论得证。
+
+
+
+
+
+\section{生成函数的计算}
+在了解完生成函数的具体定义之后，我们来看看怎么利用生成函数进行计算。
+如果我们已知了$a_i,b_i$之间的关系，如何推出$A(x)=\sum_{i=0}^{\infty}a_i$与
+$B(x)=\sum_{i=0}^{\infty}b_i$之间的关系。
+
+如下我们列出一些常见的关系：
+$$b_k=\sum_{i=0}^ka_i\Rightarrow B(x)=\frac{A(x)}{1-x}.$$
+\pf 由假设可得：
+\begin{align}
+b_0&=a_0\notag\\
+b_1x&=(a_0+a_1)x\notag\\
+b_2x^2&=(a_0+a_1+a_2)x^2\notag\\
+&\cdots\notag\\
+b_nx^n&=(a_0+a_1+a_2+\cdots+a_n)x^n\notag\\
+&\cdots\notag
+\end{align}
+等式左端相加为$B(x).$ 等式右端相加，得
+\begin{align}
+&\ \ \ \ a_0+(a_0+a_1)x+(a_0+a_1+a_2)x^2+\cdots\notag\\
+&=a_0\sum_{i=0}^{\infty}x^i+a_1x\sum_{i=0}^{\infty}x^i+a_2x^2\sum_{i=0}^{\infty}x^i+\cdots\notag\\
+&=\sum_{i=0}^{\infty}a_i\sum_{i=0}^{\infty}x^i\notag\\
+&=\frac{A(x)}{1-x}.\notag
+\end{align}
+因此
+$$B(x)=\frac{A(x)}{1-x}.$$
+
+
+
+
+
+
+
+
+
+\section{生成函数的运用}
+与组合数学相关的很多计数问题都会用到生成函数这一工具。现在我们看一下有关二叉树的例子。
+设$c_n$表示有$n$个结点的不同的二叉树的个数，$c_0=1$。$n>0$时，二叉树由一个根节点和$n-1$ 个儿子结点，设左子树
+$T_l$有$k$个结点，则右子树$T_r$有$n-1-k$ 个结点，从而
+$$c_n=\sum_{k=0}^{n-1}c_kc_{n-1-k},\ \ \ n>0.$$
+设$c_n$的生成函数为$B(x)=\sum_{i=0}^{\infty}c_ix^i,$ 于是$B(x)$ 满足如下方程：
+$$xB(x)^2=B(x)-1,\ \ B(0)=1.$$
+解方程得
+\begin{align}
+B(x)&=\frac{1-\sqrt{1-4x}}{2x}\notag\\
+&=\frac{1-\sum_{n\geq 0}{1/2\choose n}(-4x)^n}{2x}\notag\\
+&=\sum_{n\geq 0}{1/2\choose n+1}(-1)^n2^{2n+1}x^n\notag
+\end{align}
+因此
+$$c_n={1/2\choose n+1}(-1)^n2^{2n+1}=\frac{1}{n+1}{2n\choose n}$$
+$c_n$常称为Catalan数，是组合计数中常见的数。
+
+
+
+\section{一个例子}
+本节我们用指数公式(定理\ref{exponentialFormula})证明下面的恒等式：
+
+\begin{equation}\label{trivia}
+e^{log{\frac{1}{1-x}}}=\frac{1}{1-x}
+\end{equation}
+上式等价于
+\begin{equation}
+e^{ - log({1-x})}=\sum_{n\geq 0 } x^n
+\end{equation}
+用对数函数的泰勒展开，得上式等价于
+\begin{equation}\label{cycleDecomp}
+exp\big( { \sum_{n\geq 1 } (n-1)! \frac{x^n}{n!}}  \big)=\sum_{n\geq 0 }  n! \frac{x^n}{n!}
+\end{equation}
+现在待证的结论已经变形为可以用指数公式(定理\ref{exponentialFormula})来解释的形式了。
+我们注意到左边的指数部分$\sum_{n\geq 1 } (n-1)! \frac{x^n}{n!} $ 中， $\frac{x^n}{n!} $的系数是$[n]$上的圈的个数。而右边是$[n]$上的置换数的指数生成函数。而我们知道每个置换都可以分解成若干个不相交的圈的乘积，也就是说，$[n]$上的所有置换可以通过在$[n]$的划分的每个部分上构造圈置换得到。利用指数公式，即得到\eqref{cycleDecomp},从而
+\eqref{trivia} 得证。
+
+
+
+
+
+\section{推广的牛顿公式} \def \a{\alpha}
+
+我们熟知的二项式定理$$(1+x)^n = \sum_{k=0}^n {n\choose k}x^k , \quad n\in \mathbb{N}_+$$
+可以推广到 非自然数的指数。
+
+\begin{thm}[牛顿公式]\label{newtonFormula}
+对于任意复数$\a \in \mathbb{C},$ 我们有$(1+x)^\a$的MacLaurin级数：
+$$(1+x)^\a = \sum_{k\geq p0} \frac{(\a)_k}{k!}x^k , \quad \a \in \mathbb{C},$$
+这里$(x)_k=x\cdot (x-1)\cdot \ldots \cdot (x-k+1)$ 是下阶乘。
+\end{thm}
+
+为了证明牛顿公式，我们对左边变形：
+\begin{eqnarray}
+(1+x)^\a
+&=& exp(\a log(1+x) )   \nonumber\\
+&=& exp(\a ( x- x^2/2 +x^3/3 \ldots ) )\nonumber \\
+&=& exp(\sum_{n\geq 1} \a (-1)^{n+1} (n-1)! \frac{x^n}{n!}    ) \label{newton1}
+\end{eqnarray}
+
+利用指数公式，我们由上式得到 $(1+x)^\a $作为指数生成函数时， $x^n/n!$的系数为
+\begin{eqnarray*}
+f(n)&=&\sum_{[n]=B_1 \cup\ldots \cup B_k } (-1)^{b_1+1+..+b_k+1}  \a^k (b_1-1)!\ldots (b_k-1)! \\
+&=& \sum_{[n]=B_1 \cup\ldots \cup B_k } (-1)^{n+k}  \a^k (b_1-1)!\ldots (b_k-1)!
+\end{eqnarray*}
+这里的求和跑遍所有$[n]$的分拆$B_1 \cup\ldots \cup B_k$，块$B_i$的大小记为$b_i$。注意$(b_i-1)$是$B_i$上圈置换的个数。
+这样，$f(n)$的组合意义就非常明显了：$f(n)$是跑遍$[n]$上所有置换，按照圈分解的圈数的奇偶性加权平均得到的。而有$[n]$上有$k$个圈的置换数是(无符号的)第一类Stirling数，乘以$(-1)^{n+k}$ 后恰好为带符号的第一类Stirling数$s(n,k)$，所以我们由$s(n,k)$的生成函数
+$$ \sum_{k=0}^n s(n,k) x^k = (x)_n$$
+得到
+$f(n) = \sum_{k=0}^n s(n,k) \a^k = (\a)_n.$
+将上式代入\eqref{newton1},就可得
+$$(1+x)^\a = \sum_{n\geq 0} \frac{(\alpha)_n}{n!} x^n  $$
+
+这样我们就证明了定理\ref{newtonFormula}。
+
+
+
+
+
+
+
+
+
+\chapter{集合的划分}
+\section{Bell数的组合学}
+\subsection{Bell数的生成函数}
+
+著名数学家埃里克·坦普尔·贝尔（Eric Temple Bell）1883年出生于苏格兰，
+他青年时来到美国，相继在斯坦福大学和华盛顿大学取得文学学士学位和硕士学位后，
+才在哥伦比亚大学获得哲学博士学位。这段求学的岁月中，他不但研究数学，还写长诗和科幻小说。
+在数学领域，贝尔于1924年获美国数学学会颁发的博歇(Bocher)奖，这是分析数学领域的最高奖之一。
+他所著的数学家传记《数学大师》(Men of Mathematics)在全球有重大影响力。这本书介绍了从古至今的30多
+位数学家的故事，深入浅出地介绍了数学发展的历程，追述了从古代到20世纪数学思想的伟大发展。
+贝尔最终成为美国国家科学院院士，并曾担任美国数学协会主席。
+
+基数为$n$的集合的划分方法的数目记作$B_n$，叫做贝尔数。贝尔数的前几项为
+$$B_0=1,\quad B_1=1,\quad B_2=2,\quad B_3=5,\quad B_4=15,\quad B_5=52, \dots$$
+
+
+
+
+
+
+$$\sum_{n\geq 1}B_n x^n = e^{e^x-1}p$$
+
+Dobinski formula:
+
+$$B_n=\frac{1}{e}\sum_{k=0}^\infty \frac{k^n}{k!}.$$
+
+\subsection{Bell数与上下文无关文法}
+这一节的内容来自于陈永川的文章\cite{Chen93}.
+我们的基本想法是，给定一个字符集，通过一些替换规则，定义一个作用在所有形式幂级数上的形式微分算子。这样的替换规则可以看做形式语言理论里的上下文无关文法。
+
+第二类Stirling数通常写作$S(n,k)$，表示$[n]$的分成$k$块的集合划分的个数。Bell 数$B(n)$ 是$[n]$ 的所有集合划分的个数，于是我们有
+$$B(n)=\sum_{k\geq 1}^n S(n,k).$$
+
+为了研究集合划分问题，我们在无穷字符集$\{f_i,g_i|i\geq 1\}$的形式幂级数上定义如下的替换规则：
+ $$f_i \to f_{i+1}g_1, g_i \to g_{i+1}.$$
+这套规则称为Fa\'a di Bruno文法。
+
+由Fa\'a di Bruno文法可以构造出一个形式微分算子$D$，满足下列条件:
+$$D(u\cdot v)=D(u)\cdot D(v),$$
+$$D(f_i)= f_{i+1}g_1, \quad D(g_i)= g_{i+1},$$
+并线性扩展到$\{f_i,g_i|i\geq 1\}$形成的形式幂级数上。
+
+为描述算子$D$的作用，我们还需要定义分拆$\pi = \{B_1,\ldots,B_k\}$的类型(type). 设$\pi$中块的大小分别为
+$$|B_1|=i_1,\ldots,|B_k|=i_k,$$
+则$\pi$的类型为
+$$\lambda(\pi) = f_k g_{i_1} g_{i_2}\ldots g_{i_k}.$$
+
+现在我们可以用算子$D$描述$[n]$的集合划分了。注意到构造$[n]$的划分时，我们可以以$[n-1]$的划分为基础，将$n$放入其中现存的某个块，或者让$n$独立成为一个块。
+这样，我们就可以把幂级数的每一项对应到一个以其为类型的划分。
+
+现在我们把上面的描述的过程转化为对幂级数的操作，$f_i \to f_{i+1}g_1$描述了增加一个新的块，$ g_j \to g_{j+1}$描述了一个大小为$j$的块中增加一个元素。考虑$D^n(f)$ 中的某一项 $f_k g_{i_1} g_{i_2}\ldots g_{i_k}$,其中每个$g_i$都是通过$f_i \to f_{i+1}g_1$得到$g_1$，然后再作用$i-1$次$ g_j \to g_{j+1}$而得到的。这样$g_i$对应一个$i-$子集，整个单项式对应一个以其为类型的分拆$\pi$。这样我们就证明了下面的定理：
+
+\begin{thm}\label{bellGrammar}
+$D$是Fa\'a di Bruno文法对应的微分算子，则$$D^n(f) = \sum_{\pi \text{是}[n] \text{的分拆}}\lambda(\pi).$$
+\end{thm}
+
+
+ % i still don't know where  this is going
+
+\subsection{另一种微分算子}
+回忆上一节我们观察到，到构造$[n]$的划分时，可以以$[n-1]$的划分为基础，将$n$ 放入其中现存的某个块，或者让$n$独立成为一个块。
+
+据此我们得到第二类Stirling数的递推公式：
+$$S(n+1,k) = S(n,k)\cdot k + S(n,k-1)$$
+
+定义算子$\widetilde{D}=  y\cdot \rm{ \frac{d}{dy}} + \emph{xy}$, 满足
+$$\widetilde{D}(x^n y^k) = kx^{n+1}y^k + x^{n+1}y^{k+1}, $$
+这样就有
+$$\widetilde{D}^{n-1}(xy) = \sum_{k\geq 0}^{n}  S(n,k)x^ny^k.$$
+
+这实际上等价于在Fa\'a di Bruno文法中取$$f_i=x,g_i=y.$$
+或者更简单地，我们令$f_i=x=1$，得到第二类斯特灵数的生成函数
+$$S_n(y):=\sum_{k\geq 0}^n S(n,k)y^k$$
+ 的递推关系：
+$$S_{n+1}(y)= y({\rm \frac{d}{d\emph{y}}}+1) S_n(y)$$
+
+
+\subsection{Bell多项式}
+这一节我们研究Bell多项式的实根性。类似于Euler多项式，
+Bell多项式的所有根都是实根，从而具有对数凹性以及单峰性。在证明这一结论之前，
+我们首先回忆一些基本概念。
+
+设$\,[n]=\{1,2,\ldots,n\}.$ 若集族 $\,\pi=\{B_1,B_2,\ldots,B_k\}$ 满足以下条件：
+\begin{itemize}
+\item $B_{i}\neq\emptyset, \quad   1\leq i\leq k$,
+\item $B_i\cap B_j=\emptyset$, \quad $\quad  i\neq j,$
+\item $\bigcup_{i=1}^{k}B_i=[n]$
+\end{itemize}
+则称 $\,\pi$ 为集合 $\,[n]$ 的一个分拆（partition）。$B_i$ 称为 $\,\pi$ 的块（block）。第二类Stirling数，记为\,$S(n,k)$，
+定义为集合 $\,[n]$ 的具有$\,k$个块的分拆的个数，约定$\,S(0,0)=1$。由定义，不难推
+出$\,S(n,k)$满足如下递推关系（见\cite[pp. 33]{Stanley1997}）：
+\begin{equation}\label{St}
+S(n,k)=S(n-1,k-1)+kS(n-1,k).
+\end{equation}
+其中，当$\,n\geq
+1$时，如果$\,k>n$，则$\,S(n,k)=0$。
+
+
+\begin{thm}\label{Fmroot}\cite{Harper1967}
+对任意的 $\,n\geq 1$，Bell多项式
+\begin{equation}
+B_n(x)=\sum\limits_{k=0}^{n}S(n,k)x^k,
+\end{equation}
+有 $\,n$ 个不同的非正实根。
+\end{thm}
+
+\noindent
+\pf  对 $\, n$ 用归纳法加以证明。由于 $\, B_1(x)=x,\, B_2(x)=x(x+1)$，当 $\ n=1,\ 2$ 时定理成立。
+假设定理对所有多项式 $\,B_m(x)$，$\,m\leq n-1$都成立。
+以下证明多项式 $\, B_n(x)$ 有 $\, n$ 个不同的非正实根。
+
+利用递推关系式（\ref{St}），我们
+得到
+\begin{equation}\label{Fmrec}
+B_n(x)=x\left[B_{n-1}(x)+\frac{d}{dx}B_{n-1}(x)\right].
+\end{equation}
+在 $\,(-\infty,\infty)$ 上，定义
+函数
+\[
+H_n(x)=B_n(x)e^x,
+\]
+则 $\, H_n(x)$ 与多项式 $\, B_n(x)$ 有相同的实根。根据（\ref{Fmrec}）式，我们得到
+\[
+B_n(x)e^x=x\left[B_{n-1}(x)e^x+\left(\frac{d}{dx}B_{n-1}(x)\right)e^x\right],
+\]
+因此，
+\begin{equation}\label{Hn}
+H_n(x)=x\frac{d}{dx}H_{n-1}(x).
+\end{equation}
+
+根据归纳假设，$\,B_{n-1}(x)$ （从而 $\,H_{n-1}(x)$）有 $\, n-1$个
+不同的非正实根 $\, -\infty<r_1<r_2<\cdots<r_{n-1}=0$。观察到
+\[
+lim_{x\rightarrow -\infty}H_{n-1}(x)=lim_{x\rightarrow
+-\infty}e^xB_{n-1}(x)=0,
+\]根据Roll定理，
+$\,\frac{d}{dx}H_{n-1}(x)$必有
+$\, n-1$ 个负实根 $\, r_i^{'},\ 1\leq i\leq n-1$ 使得 $$r_{i-1}<r_{i}^{'}<r_i,$$ 其中 $r_0=-\infty.$
+故根据（\ref{Hn}）式，$\,H_n(x)$有 $\,n$ 个不同的非正实根 $\, r_{1}^{'}, r_{2}^{'},\ldots, r_{n-1}^{'}, 0$。
+从而，多项式 $\, B_n(x)$ 有 $\, n$ 个不同的非正实根。\qed
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Euler多项式}
+
+\section{Euler多项式和文法}
+在文法的理论中最经典的一个例子就是Euler 多项式了。
+
+我们考虑$[n]$上的一个置换$w=w_1 w_2 \ldots w_n$,$w$的一个``位''表示其中相邻两个元素，下降位集合记为
+  $$Des(w) = {i:w_i>w_{i+1} },$$
+其余的是上升位$Asc(w)$。我们要考虑的统计量是
+  $$des(w)=|Des(w)|,asc(w)=|Asc(w)|.$$
+为此我们研究$[n]$上的置换是如何由$[n-1]$ 上的置换得到的。
+
+为了方便，我们暂时再在每个置换的前面和后面都加上一个$0$，这样每个$[n]$上的置换共有$n+1$ 个位。当我们将$n$插入$[n-1]$上的第$i$ 位，得到$w_i,n,w_i+1$ 都是上升位- 下降位的形式。
+
+据此我们构造一个文法 $$x \to xy, y\to xy,$$
+相对应的微分算子$D$满足下列条件:
+$$D(u\cdot v)=D(u)\cdot D(v),$$
+$$D(x)= xy, \quad D(y)= xy,$$
+并线性扩展到$\{f_i,g_i|i\geq 1\}$形成的形式幂级数上。可以用来得到$des(w)$和$asc(w)$ 的二元生成函数：
+$$D^{n-1}(xy) = A_n(x,y)= \sum_{w\in S_n } x^{1+asc(w)} y^{1+des(w)} .$$
+令$x=1$就得到欧拉多项式
+$$A_n(y)= \sum_{w\in S_n } y^{1+asc(w)}.$$
+注意到这里$x,y$ 是对称的.  %，习惯上我们用$x$作为欧拉多项式的变量。
+
+在本书后续章节中我们将给出$A_n(x)$的递推公式，并证明它只有实数根。
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  copy from Yang
+
+\section{Euler 多项式的实根性}
+
+本节我们主要研究\, Euler 多项式的实根性。令 $\,S_n$ 为集合 $\,[n]=\{1,2,\ldots,n\}$ 上的所有排列（permutation）做成的集合。 设 $\,\pi=\pi_1\pi_2\cdots\pi_n\in S
+_n$ 且 $\,1\leq i\leq n-1$, 如果 $\,\pi_i>\pi_{i+1}$, 则称 $\,i$ 为排列 $\,\pi$ 的一个下降位（descent），若 $\,\pi_i<\pi_{i+1}$, 则称 $\, i$ 为 $\,\pi$ 的一个上升位（ascent）。 $\,\pi$ 的下降（上升）位的个数记为 $\,\rm{des}(\pi)$ （$\rm{asc}(\pi)$）。欧拉数（Eulerian number） $A(n,k)$ 定义为集合 $\,[n]$ 的所有具有 $\,k-1$ 个下降位的排列的个数，（见\cite[pp. 21-22]{Stanley1997}）。由欧拉数出发，定义欧拉多项式(Eulerian polynomial)为$$A_n(x)=\sum_{k\geq 1}A(n,\,k)x^k,\,n\geq1.$$ 显然，欧拉多项式也可表示为$$A_n(x)=\sum_{\pi \in S_n}x^{1+des(\pi)}.$$
+
+为了讨论欧拉多项式的实根，我们首先给出欧拉数的如下递推关系
+\begin{lem}
+对任意 $\,n\leq 2$ 及 $\,k\leq n$，
+\begin{equation}\label{EULER-REC}
+A(n,k)=kA(n-1,k)+(n-k+1)A(n-1,k-1).
+\end{equation}
+\end{lem}
+
+\pf 显然，任意一个 $\ n$ 长的排列 $\ \pi$ 可由一个 $\ n-1$ 长的排列 $\ \sigma$ 插入 $\ n$ 得到, 即存在 $\ 0\leq i\leq n-1$ 使得 $$\ \pi=\sigma_1\cdots\sigma_{i} n \sigma_{i+1}\cdots\sigma_{n-1},$$其中当 $\ i=0$ 或 $\ i=n-1$ 时，$\ \pi$ 分别为 $\ n\sigma_1\cdots\sigma_{n-1}$ 或 $\ \sigma_1\cdots\sigma_{n-1}n$.
+若 $\ i>1$ 且 $\ \sigma_{i}>\sigma_{i+1}$, 则显然 $\,\rm{des}(\pi)=\rm{des}(\sigma)$. 若 $\,i=0$ 或 $\,\sigma_{i}<\sigma_{i+1}$, 则 $\,\rm{des}(\pi)=\rm{des}(\sigma)+1$. 所以，任何一个 $\,n$ 长的具有 $\,k-1$ 个下降位的排列 $\,\pi$ 可由以下两种方式得到：
+\begin{itemize}
+\item 将 $\,n$ 插入到某个 $\,n-1$长且具有 $\,k-1$ 个下降位的排列的末尾或者某个下降位处；\\
+\item 将 $\,n$ 插入到某个 $\, n-1$长且具有 $\, k-2$ 个下降位的排列的最前端或者某个上升位处；\\
+\end{itemize}
+由此可见，引理中的递推关系成立。\qed
+
+
+\begin{thm}\cite[pp. 23-24]{Bona2004}
+对于任意 $\,n\leq 1$,  欧拉多项式 $\,A_{n}(x)=\sum
+_{k=1}^{n}A(n,k)x^{k}$ 有$\,n$个不同的非正实根。
+\end{thm}
+
+\pf 对 $\, n$ 进行归纳。$\, A_1(x)=x$ 有唯一一个根　
+$\, x=0$, 结论成立。对任意 $\,n\leq 1$, 显然 $\,x=0$ 为 $\,A_{n}(x)$ 的根。 假设 $\,A_{n-1}(x)$ 有 $\,n-1$ 个不同的非正实根。以下证明
+$\,A_{n}(x)$ 有 $\,n$ 个不同的非正实根。由 递推式\eqref{EULER-REC}不难得到
+\begin{equation*}
+A_n(x)=nxA_{n-1}(x)+(x-x^{2})\frac{d}{dx}A_{n-1}(x).
+\end{equation*}
+所以，
+\begin{equation}\label{relation}
+A_n(x)=x(1-x)^{n+1}\frac{d}{dx}\bigl((1-x)^{-n}A_{n-1}(x)\bigr).
+\end{equation}
+
+令 $\,g(x)=(1-x)^{-n}A_{n-1}(x)$，由归纳假设，$A_{n-1}(x)$ （从而 $\,g(x)$） 有 $\,n-1$ 个不同的非正实根：$\,r_1<r_2<\cdots<r_{n-1}=0$。
+因此，由罗尔定理知，$\frac{d}{dx}g(x)$ 有 $\,n-2$ 个不同的负实根：$\,r_1'<r_2'<\cdots<r_{n-2}'<0$ 使得 $\,r_i<r_i'<r_{i+1}$。由\eqref{relation} 式知 $\,A_n(x)$ 有 $\,n-1$ 个非正实根：$\,r_1'<r_2'<\cdots<r_{n-2}'<r_{n-1}'=0$。 由于方程的虚根总是成对出现，所以 $\,A_n(x)$ 的所有根必为实根。任给实数 $\,a\neq 0$，记
+$$
+sgn(a)=\left\{
+         \begin{array}{ll}
+           +1, & \hbox{if $a>0$;} \\
+           -1, & \hbox{if $a<0$.}
+         \end{array}
+       \right.
+$$
+
+不难看出，$$\,sgn(A_{n}(r_{n-2}))=1, \,sgn(A_{n}(r_{n-3}))=-1\,\ldots,\,sgn(A_{n}(r_{1}))=(-1)^{n-1}.$$ 而 当 $\,M$ 充分大的时候， $sgn(A_n(-M))=(-1)^{n}$. 因此，除去 $\,r_1',\,r_2',\ldots,\,r_{n-1}'$ 以外， $A_n(x)$ 的另一个实根必在区间 $\, (-\infty, r_1)$ 内。综上所述，$\,A_n(x)$ 的 $\,n$ 个非正实根互不相同。\qed
+
+另一种证明方法：
+
+\pf
+我们仍然从
+\begin{equation*}
+A_n(x)=nxA_{n-1}(x)+(x-x^{2})\frac{d}{dx}A_{n-1}(x).
+\end{equation*}
+出发。类比证明Bell多项式实根性的办法，我们希望让在多项式两边乘以一个指数函数，使得右边是$(exp\cdot A_{n-1})'$的导数的形式。为此我们把上式变形为
+\begin{equation}\label{recur}
+\frac{A_n(x)}{nx} = A_{n-1}(x)+ \frac{1-x}{n} \frac{d}{dx}A_{n-1}(x),
+\end{equation}
+令$exp(g(x))'=\frac{1-x}{n} $
+得到$$g(x)= \frac{2x-x^2}{2n}.  $$
+在\eqref{recur}两边乘上$e^{g(x)}$，变形得到：
+\[
+\frac{e^{g(x)} A_n(x)}{nx}  = \frac{d}{dx}e^{g(x)A_{n-1}(x)  }
+\]
+这样我们可以按照证明Bell多项式实根性的办法，归纳地证明 $A_n(x)$有$n$个负的实根。
+\qed
+
+
+
+
+\chapter{树的计数}
+本章里，我们介绍并研究一个非常重要的组合结构——树。树的计数是计数组合学中一个重要的问题。下面，先给出若干类树的定义。
+{
+\defi \label{rtree}一个有限顶点集T称为是有根树(rooted tree)，若它满足：
+{\itemize
+\item[a.]有一个特殊的顶点$v_0$，称为T 的根(root)；
+\item[b.]其余顶点（除根外）被划分为$m\geqslant0$个不交的非空集合$T_1,\ldots T_m$, 每个集合都构成一棵树。树$T_1,\ldots T_m$称为根的子树(sub tree)。
+
+}
+}
+在一棵有根树$T$上，其每一个子树（以及子树的子树，子树的子树的子树等等）的顶点称为$T$ 的一个结点(vertex)。对于每个结点$v\in T$
+（包括顶点$v_0$），它对应的子树称为以$v$ 为根的子树或由$v$生成的子树，若以$u$ 为根的子树是$v$的子树，则称$u$
+是$v$的子结点，$v$是$u$的父结点。一个结点$s$ 的子结点个数成为这个结点的度(degree), 记做$d_T(s)$, 在不引起歧义的前提下，简记做$d(s)$. 度为$0$的结点称为叶子点(leaf).
+
+若忽略有根树的根的指派，即只考虑树的顶点之间的连接关系，则得到一个图论意义上的树，这里我们称之为“自由树”。在自由树中，
+没有根的定义，自然就没有了父结点和子结点的概念，其中结点的度定义为与它相邻的点的个数，同样用$d(s)$标记。称度为$1$ 的结点为叶子点。
+
+有根树主要为了和自由树进行区别，在不影响理解的情形下，有根树简称为“树”。
+
+修改定义\ref{rtree}中的第二条，可以得到其他特殊的树。如下：
+{
+\defi 一个有限顶点集$T$称为平面树(plane tree) 或有序树(ordered tree)，若$T$ 满足条件$a$ 及如下条件
+{\itemize
+
+\item[b'.]其余顶点（除根外）被有序地划分为$m\geqslant0$个不交的非空集合$T_1,\ldots T_m$, 每个集合都构成一棵平面树。树$T_1,\ldots T_m$称为根的子树。
+
+}
+}
+{
+\defi 一个有限顶点集$T$称为m元树(m-ary tree)($m\geqslant2$), 若$T$满足如下条件
+{\itemize
+\item[a'.]T或者是空树，或者有一个特殊的顶点$v_0$，称为T的根(root)；
+
+\item[b'.]其余顶点（除根外）被有序地划分为$m$ 个不交的集合（可能空）$T_1,\ldots T_m$, 每个集合都构成m 元树。树$T_1,\ldots T_m$ 称为根的子树。
+
+}
+}
+
+2元树也称二叉树(binary tree), 在计算机科学领域中有很重要的应用，很多算法的分析都和二叉树有关。二叉树中，顶点的两个子树分别被称为左子树
+和右子树。
+
+若每个非叶子点的$m$个子树皆非空，则称此m 元树为完全的(complete).
+
+由以上定义可知，空树（即不含结点的树）属于二叉树，但不属于有根树和平面树。
+
+按树中的结点是否加以区别，可以将树分为有标号的(labeled)和无标号的(unlabeled) 两种。我们这里主要讨论有标号树的计数。
+对于平面树及m元树，由于每个结点都是不同的，有标号树与无标号树恰好相差$n!$ 倍，因此我们只需计数对应的无标号树即可。对于有标号树，
+一个很重要的问题是研究它的标号之间的大小关系，我们在本章的最后$3$节着重研究。
+%有标号树恰好对应到无标号树的任意一个标号（此时每个点都不同），即恰好相差$n!$ 倍，
+（以上定义更为详尽的描述见参考文献\cite[p.294]{Stanley2004_1}。）
+
+接下来的几节里，我们将逐个研究这些树的计数问题。在此，先给出将要用到的两个重要定理（具体证明见参考文献\cite[p.5, p.38]{Stanley2004_2}）。
+
+对于任意一个形式幂级数$f(x)=a_0+a_1x+a_2x^2+\cdots$, 称另一个形式幂级数$g(x)$ 是$f(x)$ 的复合逆(compositional inverse), 若$f(g(x))=g(f(x))=x$, 记作$g(x)=f^{<-1>}(x)$.
+
+
+
+\begin{thm}[拉格朗日反演公式]
+记$F(x)=a_1x+a_2x^2+\cdots$ 是常数项为$0$ 的形式幂
+级数，且$a_1\neq0$, 则$F^{<-1>}(x)$存在且唯一，且对于任意$k,n\in\mathbb{Z}$, 有
+$$n[x^n]F^{<-1>}(x)^k=k[x^{n-k}]\left({x\over F(x)}\right)^n=k[x^{-k}]F(x)^{-n}.$$
+等价地，若对于形式幂级数$G(x),$ 其中$G(0)\neq0,$  而$f(x)=xG(f(x)),$ 则
+$$n[x^n]f(x)^k=k[x^{n-k}]G(x)^n.$$
+特别的，当~$k=1$~时，有$$[x^n]f(x)={[x^{n-1}]G(x)^n \over n}.$$
+\end{thm}
+
+\begin{thm}[指数公式] 给定函数$f:\mathbb{P}\rightarrow K,$ 定义函数$h:\mathbb{P}\rightarrow K$ 如下：
+\begin{eqnarray*}
+h(\#S)&=&\sum_{\{B_1,\ldots,B_k\}}f(\#B_1)f(\#B_2)\cdots f(\#B_k),      \#S>0\\
+h(0)&=&1
+\end{eqnarray*}
+则有
+$$E_h(x)=\exp(E_f(x))$$
+其中$E_f(x)=\sum_{n\geqslant0}f(n)x^n/n!$ 
+\end{thm}
+
+接下来的几节里，我们将利用这两个强大的工具，对一些常见的树的计数问题进行研究。
+\section{有根树的计数}
+
+记$n$个结点的有根标号树的集合为$\mathcal{R}_n$, 记其个数为$r_n$. 记所有含$n$ 个结点的有标记自由树的集合为
+$\mathcal{F}_n$, 个数为$f_n$. 对于任意一个自由树，标记其任意一个结点为根，可以得到一棵有根树。故
+$r_n=nf_n$. 我们有以下结论：
+{
+\begin{thm}[（凯莱公式）(Cayley's formula)]
+   $f_n=n^{n-2}$.
+\end{thm}
+
+ 
+}
+
+定理实际上告诉我们，在自由树与$n-2$长的序列之间存在一个一一映射。但我们不准备给出双射，而是采用生成函数的方法证明。
+
+
+{
+\pf
+我们只需要证明$r_n=n^{n-1}$. 我们定义一个图$T$为有根森林，若它的每个连通分支都是有根树。记$n$个结点的
+有根森林的集合为$\mathcal{RF}_n$, 个数为$t_n$. 记$R(x)=\sum_{n=0}^\infty r_nx^n/n!$,
+$RF(x)=\sum_{n=0}^\infty t_nx^n/n!$. 由指数公式$RF(x)=e^{R(x)}$. 另一方面，易知$r_n=n\times t_{n-1}$, 故$R(x)=xRF(x)=xe^{R(x)}$.
+
+由拉格朗日反演公式，
+\begin{eqnarray*}
+r_n&=&n!\times[x^n]R(x)\\
+&=&n!\times {1\over n}[x^{n-1}](e^x)^n\\
+&=&n!\times{1\over n}{n^{n-1}\over (n-1)!}\\
+&=&n^{n-1}.
+\end{eqnarray*}
+\qed
+}
+
+\section{二叉树的计数}
+为了计数无标号二叉树的个数，我们考虑其普通型生成函数。类似于上一节，定义$n$ 个结点的
+二叉树的集合为$\mathcal{B}_n$, 个数为$b_n$,
+其普通型生成函数为$B(x)$. 则首先我们有如下的结论： {\thm
+\label{binary}
+
+(1.)$b_n$满足如下递推关系：当$n=0$时，$b_0=1$; 当$n\geqslant 1$ 时，
+$$b_n=\sum_{i=0}^{n-1}b_ib_{n-1-i}$$
+
+
+(2.)$B(x)$满足函数方程$B(x)=1+xB^2(x).$
+
+}
+{
+\pf
+
+(1.)由定义，显然空树属于二叉树，因此$b_0=1$. 对于任意$n\geqslant1$个结点的二叉树，我们从中选择一个结点作为根，再将其余的$n-1$个点任意的分到两个子树中。
+对于两个子树，对应的方案数分别为$b_i$ 与$b_{n-1-i}$, 故
+$$b_n=\sum_{i=0}^{n-1}b_ib_{n-1-i}.$$
+
+(2.)
+\begin{eqnarray*}
+B(x)&=&1+\sum_{n=1}^\infty b_nx^n\\
+&=&1+\sum_{n=1}^\infty \sum_{i=0}^{n-1}b_ib_{n-1-i}x^n\\
+&=&1+x\sum_{n=0}^\infty \sum_{i=0}^{n}b_ib_{n-i}x^{n}\\
+&=&1+x\sum_{i=0}^\infty b_ix^i\sum_{j=0}^\infty b_jx^j\\
+&=&1+xB^2(x).
+\end{eqnarray*}
+\qed
+
+}
+利用拉格朗日反演公式，可得如下二叉树的计数公式：
+
+具有$n$个顶点的二叉树的个数为第$n$个卡塔兰数，即$C_n={1\over n+1}{2n\choose n}$.
+
+{\pf 令$F(x)=B(x)-1$, 则对于$n>0$, $[x^n]B(x)=[x^n]F(x)$; 另一方面，由定理\ref{binary}, $F(x)=x\left(F(x)+1\right)^2$. 利用拉格朗日反演公式，得
+\begin{eqnarray*}
+b_n&=&[x^n]B(x)=[x^n]F(x)\\
+&=&{1\over n}[x^{n-1}]((x+1)^2)^n\\
+&=&{1\over n}{2n\choose n-1}\\
+&=&{1\over n+1}{2n\choose n}.
+\end{eqnarray*}
+\qed
+}
+
+完全类似的思路，可以将以上的结论推广到任意m 元树。
+{
+\thm 记具有$n$个顶点的m元树的个数为$C(m,n)$, 记其普通型生成函数为$C_m(x)$. 则有
+
+(1.)$C_m(x)=1+xC_m(x)^m.$
+
+(2.)$C(m,n)={1\over n}{mn\choose n-1}.$
+}
+
+{
+\pf 与上面定理和推论完全类似，略去。\qed
+}
+
+注：
+{\itemize
+\item[(1.)]$C(m,n)$有时被称作推广的卡塔兰数。
+
+\item[(2.)]可以证明：具有$n$个中间点（即非叶子点）的完全二叉树的个数是卡塔兰数；类似的，具有$n$个中间点的完
+全m元树的个数是推广的卡塔兰数。事实上，我们可以利用如下简单的对应，将完全二叉树对应于普通二叉树，使得
+得到的二叉树的结点数等于原来二叉树的中间点的个数：
+
+对于任意一个完全二叉树，将所有叶子点去掉，得到一个二叉树；反过来，对于任意一个二叉树，在每个结点的空子
+树上添加只有一个结点的子树，得到一个完全二叉树。
+
+m元树的对应完全类似。
+
+}
+
+
+\section{平面树的计数} { \thm
+记$n$个点的平面树的全体为$\mathcal{P}_n$, 个数为$p_n$,
+其普通型生成函数为$P(x)$. 则有：
+
+(1.)P(x)满足函数方程
+$$P(x)={x\over1-P(x)}.$$
+
+(2.)$n$个点的平面树的个数为
+$$p_n=C_{n-1}={1\over n}{2n-2\choose n-1}.$$
+
+}
+{
+\pf (1.)由平面树的定义知，$p_0=0$. 对于任意一个平面树，去掉其根，得到一个平面森林。若平面森林的连通分支为$i$, 则对应的森林的生成函数为$P(x)^i$, 故有
+$$P(x)=\sum_{i=0}^\infty xP(x)^i={x\over1-P(x)}.$$
+
+(2.)由拉格朗日反演公式，有
+\begin{eqnarray*}
+p_n=[x^n]P(x)&=&{1\over n}[x^{n-1}]\left({1\over 1-x}\right)^n\\
+&=&{1\over n}{-n\choose n-1}(-1)^{n-1}\\
+&=&{1\over n}{2n-2\choose n-1}.
+\end{eqnarray*}
+}
+
+细心的同学可能已经注意到$p_n$恰好也被卡塔兰数所计数，事实上，卡塔兰数是组合数学中一个很重要的数列，最早由比利时数学家
+欧仁·查理·卡塔兰(1814-1894)研究。除我们这里讲的两种有序树以外，很多组合结构都被其计数，在参考文献\cite{Stanley2004_2} 中，作
+者给出了卡塔兰数的$66$种组合证明。 事实上，二叉树与平面树之间存在着一个自然、著名的映射，我们这里略作描述。
+
+由平面树到二叉树的映射，被称作平面树的“分层”，定义如下：对以任意具有$n+1$个结点的平面树，去掉其根，对于每个非根结点$s$，将原树中
+相邻右边的兄弟作为新树中结点$s$的右孩子，而将$s$的最左边的孩子作为新树中结点$s$的左孩子。例如，我们有如下对应：
+
+%\begin{tikzpicture}%[baseline=3.75ex]
+%\node [tn]{}[grow=down]
+%    child{node[tn]{}
+%        child{node[tn]{}}
+%        child{node[tn]{}}
+%    }
+%    child{node[tn]{}
+%        child{node[tn]{}}
+%    }
+%    child{node[tn]{}
+%        child{node[tn]{}}
+%        child{node[tn]{}}
+%    };
+%\end{tikzpicture}
+%$\longrightarrow$
+%\begin{tikzpicture}%[remember picture,baseline=0.25]
+%\node [tn]{}[grow=down]
+%    child{node[tn]{}
+%        child[fill=none] {edge from parent[draw=none]}
+%        child{node[tn]{}}
+%    }
+%    child{node[tn]{}
+%        child{node[tn]{}}
+%        child{node[tn]{}
+%            child{node[tn]{}
+%                child[fill=none] {edge from parent[draw=none]}
+%                child{node[tn]{}}
+%            }
+%            child[fill=none] {edge from parent[draw=none]}
+%        }
+%    };
+%\end{tikzpicture}
+
+
+
+
+
+\section{0-1-2递增树、交错排列与Euler 数}
+称一棵递增标号树为$0-1-2$递增树($0-1-2$incresing tree), 若此树的孩子的个数不超过$2$. 对于此类特殊的递增标号树，我们有如下结论：
+
+{\thm $[n]$上的$0-1-2$递增树与$[n]$上的交错排列同分布。
+}
+
+{\pf （代数证明）根据二者的性质，我们分别计算它们的指数型生成函数$Alt(x)=\sum_{n=0}^{\infty}|Alt_n|\frac{x^n}{n!}$, $IT(x)=\sum{n=0}^{\infty}|IT_n|\frac{x^n}{n!}$.
+
+首先考虑$Alt(x)$, 若记$a_n=|Alt_n|$, $a(x)=Alt(x)$, 则可以证明$a_n(n\neq1)$ 具有如下递推关系：
+
+\begin{eqnarray*}
+a_{2n+1}&=&\sum_{i=1}^{n}{2n\choose 2i-1}a_{2i-1}a_{2n-2i+1};\\
+a_{2n+1}&=&\sum_{i=1}^{n}{2n\choose 2i}a_{2i}a_{2n-2i};\\
+a_{2n}&=&\sum_{i=1}^{n-1}{2n-1\choose 2i}a_{2i}a_{2n-2i-1}
+\end{eqnarray*}
+
+事实上，注意到当$j$为奇数时，集合$|\{\sigma\in Alt_n,\sigma(j)=1\}|$的个数为${n-1\choose j-1}a_{j-1}a_{n-j}$; 而当$j$为偶数时，个数为$0.$ 因此对$a_n$分类计数，即可得后面的两个式子；类似地分析集合$|\{\sigma\in Alt_n,\sigma(j)=n\}|$, 可得第一个式子。将前两个式子相加，将后一个式子乘以$2$, 则得到一个统一的递推关系如下：
+
+$$
+2a_{n+1}=\sum_{i=0}^n{n\choose k}a_ka_{n-k}(n\neq1).
+$$
+
+\begin{eqnarray*}
+2a'(x)&=&2+\sum_{n=1}^{\infty}2a_{n+1}\frac{x^n}{n!}\\
+      &=&2+\sum_{n=1}^{\infty}\sum_{i=0}^n{n\choose k}a_k a_{n-k}\frac{x^n}{n!}\\
+      &=&1+\sum_{n=0}^{\infty}\sum_{i=0}^n{n\choose k}a_k a_{n-k}\frac{x^n}{n!}\\
+      &=&1+a^2(x)
+\end{eqnarray*}
+
+即$a(x)$满足微分方程$2a'=1+a^2$和初值条件$a(0)=1,$ 由基本的微分方程的知识，解此微分方程，可得$a(x)=\tan(x)+\sec(x).$
+
+将$2a'=1+a^2$两边对$x$求导，得
+\begin{equation}\label{derivate}
+2a''=2a\cdot a'.
+\end{equation}
+
+\eqref{derivate}两边展开成形式幂级数，再取两边$\frac{x^n}{n!}$ 的系数，得$a_n$ 的另一个递推关系。
+\begin{equation}\label{recurrence}
+a_{n+2}=\sum_{k=0}^n{n\choose k}a_{k+1}a_{n-k}
+\end{equation}
+
+接下来考虑$0-1-2$递增树，我们记$b_n=$ 为$[n]$ 上的$0-1-2$递增树的个数，我们只需证明$b_n$也具有相同的递推关系\eqref{recurrence} 和初值条件。初值条件是平
+凡的，下面考虑其递推关系。
+
+对于任意一棵$[n+2]$上的$0-1-2$树$T$, 考虑根的孩子。由于根至多只有两个孩子，去掉$T$ 中与根相邻接的两条边，树$T$被分解成了两棵树（可能有一棵为空树）。我们按照包含结点
+$n+2$的树的大小进行分类，此树可能包含结点由$1$到$n+1.$ 若包含的结点个数为$k+1$ 个，选择$n+2$以外的$k$个标号的方案数为$n\choose k$, 将其构成一棵$0-1-2$递增树的方案数为$b_{k+1}$, 而另外一棵树的方案树为$b_{n-k}$. 故有$
+a_{n+2}=\sum_{k=0}^n{n\choose k}a_{k+1}a_{n-k}.
+$
+
+至此，我们证明了二者的同分布性，同时，给出了其生成函数，\qed
+}
+
+
+
+
+
+
+
+
+
+\section{$Parking\ Function$}
+
+\subsection{基本概念}
+
+$Parking\ Function$的定义首先是由~$Konheim$ 和~$Weiss$在他们研究计算机科学中的一个分配问题中提出的.\\
+\indent 几乎所有的信息归档、分类和存储系统中都会出现如下的结构：每个记录或者信息单元都具有一个自然命名和记录辨识命名.
+所有可能的命名，记为~$\{a_1,a_2,..,a_m\}$，比我们常见的数目大很多。$r$ 记为这个大数，$\{a_{i_1},a_{i_2},\cdots,a_{i_r}\}$记为将要存储的某个文件的数据.
+存储的过程包括一个重要步骤：分配每个~$a_{i_k}$一个唯一的记录其位置的数~$A_{i_k}\in\{0,1,\cdots,n-1\}$，其中~$n$ 是内存的大小.当然，$r$远小于~$n$.
+于是一个问题便出现了：如何设置一个过程来分配位置数的记录使得在只知道这个记录的命名的前提下，存储和恢复这个记录的时间最短.\\
+\indent 这个问题有一个更为简要和生动的描述.有一个单行的有~$n$ 个停车位的停车场.停车位从第一个位置开始依次按~$1,2,\cdots,n$ 来命名.
+在实际生活中，每辆车都是有最想要的停车位，我们将他们停车的偏好按照位置编号构成一个序列.
+如$n=3$时，$(1,1,2)$便是一个偏好序列，表明第一、二辆车想停一号位，第三辆车想停二号位.
+当然，这条单行道非常狭窄，驶入的车无法掉头回走，每辆车驶入后都首先寻找它的偏好停车位，如果这个位置是空的，停在那里；
+否则，它将继续往前开直到发现第一个空置的停车位并泊车.我们称一个序列是一个~$Parking\ Function$如果它能让所的车完成泊车.
+例如~$(1,1,2)$便是一个~$Parking\ Function$，然而~$(2,3,2)$不是.对于~$(1,1,2)$，第一辆车按偏好驶入一号位，第二辆车经过一号位后发现被占据只能前进一步驶入二号位，第三辆车经过二号位后 只能驶入三号位，完成泊车.然而对~$(2,3,2)$，在第一辆车和第二辆车依次占据了二号位和三号位之后，第三辆车经过其偏好位置二号位，却因为二号位被占据只能前往三号位，
+但是三号位已被第二辆车占据，导致第三辆车无法泊车.\\
+\subsection{简单结论}
+在看了上面的例子后，很自然产生一个问题，怎么判断一个序列是否是~$Parking\ Function$ 呢？对排列和逆序数感兴趣的读者不难想出下面的判别条件.\\
+\begin{thm}
+设~$\alpha=(a_1,a_2,\cdots,a_n)\in \mathbb{P}^n$,~$b_1\leq b_2\leq \cdots \leq b_n$ 是~$\alpha$的按照递增（允许相等）顺序的重新排列.则~$\alpha$是~$Parking\ Function$当且仅当~$b_i\leq i$.
+\end{thm}
+\pf
+假设某个~$b_i>i$，那么至少有~$n-i+1$辆车偏好~$n-i$个位置~$i+1,i+2,\cdots,n$ 于是便不能完成停车.
+于是条件是必要的.充分性可以通过对~$n$ 进行归纳来证明.~$n=1$时显然成立.可设~$a_1=k$. 设对~$1\leq i\leq n-1$，\\
+\begin{equation*}
+a'_i=
+\begin{cases}a_{i+1} & \text{若} a_{i+1}\leq k\\a_{i+1}-1 & \text{若} a_{i+1}>k.
+\end{cases}
+\end{equation*}
+于是序列~$(a'_1,a'_2,\cdots,a'_{n-1})$ 满足归纳中的作为~$Parking\ Function$ 的条件.这就意味着第二辆车及其后所有的车可在第一辆车占据了~$k$ 位之后仍然完成泊车.命题得证.\\
+\indent 回到前面的例子.对于~$(1,1,2)$，它本身便是一个非递减的排列，而且每个位置~$i$ 上的~$a_i$满足~$a_i \leq i$，于是便是一个~$Parking\ Function$.然而对~$(2,3,2)$，它的非递减的排列是~$(2,2,3)$，第一个位置~$a_1=2 > 1$，不符合定理~$1$的条件，便不是~$Parking\ Function$.给出了
+~$Parking\ Function$的判别条件之后，很自然就会产生一个疑问：$n$ 长的序列中到底有多少个~$Parking\ Function$呢？下面的定理回答了这个问题.
+\begin{thm}
+（$Konheim\ and\ Weiss,1966$）令~$f(n)$ 是长为~$n$的~$Parking\ Function$.则有
+\[f(n)=(n+1)^{n-1}.\]
+\end{thm}
+\pf
+（$Pollak,c.1974$）.增加一个额外的停车位~$n+1$，然后把~$1$与~$n+1$相连并按原来顺序，将停车位重组成一个圆.允许~$n+1$作为一个
+偏好位置.这样一来所有的车便都能找到位置泊车.~$\alpha$是一个~$Parking\ Function$ 当且仅当空车位是~$n+1$.若~$\alpha=(a_1,a_2,\cdots,a_n)$使第~$i$ 辆车停在位置~$p_i$
+，那么~$(a_1+j,a_2+j,\cdots,a_n+j)\ (modulo\  n+1)$将会导致第~$i$辆车停在~$p_i+j$.于是仅有一个向量
+\[(a_1+i,a_2+i,\cdots,a_n+i)\ (modulo\ n+1)\ \ \ i=0,1,\cdots,n，\]
+于是有
+\[ f(n)=\frac{(n+1)^n}{n+1}=(n+1)^{n-1}.\]
+
+\indent 上述的证明简洁优美，其结果也许会引起读者的兴趣：$[n]$ 上的 ~$Parking\ Function$的数目为什么恰恰跟~$[n]$上的有根森林数目相同？下面我们将要说明它们
+有着相同的递推关系.\\
+\indent 记~$P(i)$为~$[n]$上的~$Parking\ Function$的数目.特别地，我们即将带有“组合意味”地解释下面的递推关系
+\[P(n+1)=\sum_{i=0}^n \binom{n}{i}(i+1)P(i)P(n-i),\]
+分别适用于~$[n+1]$上的有根森林和~$[n+1]$ 上的~$Parking\ Function$. 虽然可以用纯粹代数方法来证明递推关系，但是这并不能让我们获得关键的
+组合观点.\\
+\indent 首先，令~$F$是~$[n+1]$上的有根森林，~$F_1$是~$F$中含顶点~$1$的连通分支.
+设~$F_1$含有~$i+1$个顶点。于是我们有~$\binom{n}{i}$种方法选择除去~$1$
+以外的~$i$个顶点，同时有~$P(i)$种方法确定含~$i+1$个顶点的树.一旦
+完成上述过程，~$i+1$个顶点的任何一个都可以作为~$F_1$的根.最后，我们有
+~$P(n-i)$种方法确定剩下~$n-i$个顶点组成的有根森林.因此，根据乘法原理，
+在~$[n+1]$个顶点上的确有~$\binom{n}{i}(i+1)P(i)P(n-i)$个有根森林，其中顶点
+~$1$是在顶点数目为~$i+1$的连通分支中.对所有的~$i$进行加和，我们便得到了
+上述递推关系.\\
+\indent 接下来设~$f$是~$[n+1]$上的~$Parking\ Function$.设最后一辆车驶入时，停车位~$i+1$是空的，其中~$i \in [0,n]$.这就意味着存在集合~$S$由~$i$辆车组成,这些车停在前~$i$个停车位上，
+而且它们的偏好序列构成了一个~$[i]$上的~$Parking\ Function$.
+如果我们对后面的~$n-i$辆车的车位号减去~$i+1$，则它们自动构成一个
+~$[n-i]$上的~$Parking\ Function$（注意到这~$n-i$辆车不可能有在~$[i+1]$ 中的数作为偏好车位，
+否则车位~$i+1$在最后就不会空下来）.最后，因为~$f$构成一个~$Parking\ Function$，有~$f(n+1)\leq i+1$.也就是说，对~$f(n+1)$ 有~$i+1$种选择.考虑到~$S$ 有~$\binom{n}{i}$
+种可能性，根据乘法原理和对$i$求和就证明了递推关系.具有相同的递归关系，说明~$Parking\ Function$和有根森林这两个组合结构有着内在的联系.\\
+\indent ~$Parking\ Function$一经提出便激起了大量数学家的研究兴趣.~$Foata$和~$Riordan$ 以及~$Francon$构造了从~$Parking\ Function$ 到~$[n]$上的无圈函数的集合的映射；~$Kreweras$ 研究了~$Parking\ Function$ 和标号树的生成函数共同满足的递推关系；~$Stanley$ 和~$Pitman$ 解释了~$Parking\ Function$和超平面排列、~$interval orders$、 非交分拆、~$polytope$ 之间的联系.最近~$Parking\ Function$ 又成了概率学家和统计学家的新宠.
+
+
+
+
+
+
+
+
+
+
+树的计数是计数组合学中非常经典、非常精彩的一节，由于树紧凑的递归结构，生成函数这一强大的工具得以使用，这里我们仅仅选了一些极其经典
+的结论，以求一管以窥全豹。文献\cite{} 中专门讲解了各式各样利用生成函数的思路，文献\cite{Stanley2004_2}专门研究了一些经典树的计数，
+以及树的应用，有兴趣的同学可以深入的研究。
+
+关于树的一些组合双射以及树与其它组合结构之间的映射使得树上的研究方法可以应用到格路、字、排列等等；同样，它们的研究技巧同样可以用来处理
+一些树的问题。例如：我们前面讲到的递增树与排列的对应，以及后面将会涉及到的平面树与迪克路的对应等等。这些研究手段一定程度上体现了组合
+数学的一个特点，即研究一些看似无关的物体之间的内在联系，从不同的角度认识组合物体。
+
+
+
+
+
+\chapter{整数分拆}
+
+\section{基本概念}
+
+\begin{defi}
+正整数$n$的一个分拆$\lambda$是指一个单调不增的正整数序列 $(\lambda_1,\lambda_2,\ldots,\lambda_k)$, 满足
+$$
+\lambda_1+\lambda_2+\cdots+\lambda_k=n.
+$$
+这里$\lambda_i(1\leq i\leq k)$称为分拆$\lambda$的部分； $\lambda_1$ 称为分拆$\lambda$ 的最大部分； $k$即分拆$\lambda$ 的部分数称为该分拆的长度， 记为$\ell(\lambda)$； $n$ 即分拆的所有部分之和称为该分拆的权重， 记为$|\lambda|$。 我们常用记号$\lambda\vdash n$ 表示$\lambda$是$n$的一个分拆。
+\end{defi}
+
+令$p(n)=|\mathcal{P}(n)|$, 即$p(n)$为$n$ 的所有分拆的个数。 欧拉在整数分拆上的第一个重要工作就是如下$p(n)$的生成函数。
+\begin{thm}
+\begin{equation*}
+\sum_{n=0}^\infty p(n)x^n = \prod_{k=1}^\infty \frac{1}{1-x^k}.
+\end{equation*}
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+\section{欧拉分拆定理}
+
+上面考虑的分拆是无条件的分拆，即对分拆的部分只要求正整数而已。下边带条件的分拆是指分拆的部分带有限制条件。
+欧拉考虑两类带条件的分拆的生成函数：一类是约定分拆部分只能是奇数，
+另一类是约定分拆的各个部分互不相同。记$\mathcal
+{O}(n)$为$n$的所有分拆部分全是奇数的分拆；$\mathcal{D}(n)$为$n$ 分拆部分各互不相同的分拆。 令
+$$
+p_o(n)=|\mathcal{O}(n)|,\quad p_d(n)=|\mathcal{D}(n)|.
+$$
+则有
+\begin{align*}
+\sum_{n=0}^\infty p_o(n)x^n &= \prod_{k=1}^\infty \frac{1}{1-x^{2k-1}}, \\
+\sum_{n=0}^\infty p_d(n)x^n &= \prod_{k=1}^\infty (1+x^k).
+\end{align*}
+
+
+欧拉注意到了$p_o(n)=p_d(n)$这个事实， 用分拆的语言就是如下著名的欧拉分拆定理：
+\begin{thm}
+对于正整数$n$， $n$的分拆部分全是奇数的分拆个数等于$n$的分拆部分各互不相同的分拆个数。
+\end{thm}
+
+我们将给出两个证明。一个是欧拉给的生成函数证明，另一个是 Glaisher 给的双射证明。
+
+{\noindent \bf 证明一 }\quad 由$1-x^{2k}=(1-x^k)(1+x^k)$得
+\[
+\prod_{k=1}^\infty (1+x^k)=\prod_{k=1}^\infty \frac{1-x^{2k}}{1-x^k}=\prod_{k=1}^\infty \frac{1}{1-x^{2k-1}},
+\]
+因为所有偶次幂因式$1-x^{2k}$都约掉了。所以
+\[
+\sum_{n=0}^\infty p_d(n)x^n=\sum_{n=0}^\infty p_o(n)x^n.
+\]
+比较$x^n$的系数得$p_o(n)=p_d(n)$, 对所有的非负整数$n$.\qed
+
+$\lambda\vdash n$可形式写为
+\[
+\lambda=(1^{f_1}2^{f_2}3^{f_3}\cdots n^{f_n}),
+\]
+其中$i^{f_i}$表示正好有$f_i$个部分取值为$i$.
+为了书写方便，常将$f_j$为零的项$j^{f_j}$ 省略而$f_j$为$1$的项只写底下的$j$.
+这写法和数论中正整数写成素数乘积的唯一分解法类似。 如例\ref{egp1}中的分拆$\lambda$可写为$\lambda=(12^235^26)$.
+当然若$i$是多位数，则可加括号以示区别。
+
+{\noindent \bf 证明二 }\quad  我们的目标是建立一个从集合$\mathcal{O}(n)$到$\mathcal{D}(n)$的双射$\varphi$.
+
+设 $\lambda=(\lambda_1^{t_1}\lambda_2^{t_2}\cdots \lambda_s^{t_s})\in \mathcal{O}(n)$.
+如何将分拆$\lambda$变成各部分都不相同的分拆呢？注意$\lambda_1,\lambda_2,\ldots,\lambda_s$
+是互不相同的奇数，而任何一个正整数可唯一写成$2$的次幂与一个奇数的乘积。这样启发我们把
+$t_j$写成一些$2$的次幂之和:
+\[
+t_j=2^{k_{j,1}}+2^{k_{j,2}}+\cdots+2^{k_{j,l(j)}}.
+\]
+那么显然有
+\[
+n=\sum_{j=1}^s\sum_{r=1}^{l(j)} 2^{k_{j,r}}\lambda_j,
+\]
+且这$\sum_{j=1}^s
+l(j)$个数$2^{k_{j,r}}\lambda_j$是互不相同的。把这些个形式为$2^{k_{j,r}}\lambda_j$ 的数从大到小排就得$n$的一个属于
+$\mathcal{D}(n)$的分拆记为$\lambda'$. 定义映射$\varphi$如下:
+\[
+\varphi(\lambda)=\lambda'.
+\]
+如对$(1^33^27^6)\vdash 51$, 按上边的分解有
+\[
+51=(2+1)\cdot 1+2\cdot 3+(4+2)\cdot 7.
+\]
+所以
+\[
+\varphi((1^33^27^6))=(28,14,6,2,1)\in \mathcal{D}(51).
+\]
+易得$\varphi$是单射。现在还需要证明$\varphi$ 是满射，即对于任何一个分拆$\mu'\in
+\mathcal{D}(n)$存在一个分拆$\mu\in \mathcal{O}(n)$使得$\varphi(\mu)=\mu'$.
+设$\mu'=(\mu_1,\mu_2,\ldots,\mu_t)$，将每个$\mu_i$表示成 $2^{a_i}b_i$, 其中$b_i$为奇数。作集合
+\[
+B=\{b_1,b_2,\ldots,b_t\}=\{c_1,c_2,\ldots,c_r\},
+\]
+其中$r\leq t$且$c_i<c_{i+1}$对$1\leq i\leq r-1$. 依次把部分$\mu_i$换成$2^{a_i}$个部分均为$b_i$,
+得到的分拆$\mu$其部分来自不包含偶数的集合$B$ 且部分数为$\sum_{i=1}^t 2^{a_i}$. 令
+\[
+m_i=\sum_{j=1}^t 2^{a_j} \delta(b_j,c_i), \quad 1\leq i\leq r,
+\]
+其中$\delta(x,y)=1$, 当$x=y$时，否则为$0$. 则 $\mu=c_1^{m_1}c_2^{m_2}\cdots c_r^{m_r}\in
+\mathcal{O}(n)$且$\varphi(\mu)=\mu'$. 如对$\mu'=(28,14,6,2,1)=(4\cdot 7,2\cdot 7, 2\cdot 3, 2\cdot 1, 1\cdot
+1)$, 则$B=(7,3,1)$及
+\[
+\mu=(1^{(1+2)}3^27^{(2+4)})=(1^33^27^6).
+\]
+满足$\varphi(\mu)=\mu'$. 所以$\varphi$ 是双射，进而$p_o(n)=p_d(n)$. \qed
+
+
+
+
+
+
+
+
+
+
+\section{欧拉五角数定理}
+
+欧拉得到$p(n)$的生成函数后，考虑的下一个问题就是求出$p(n)$的一个递推式以便于计算。
+由
+\[
+1=\prod_{k=1}^\infty(1-q^k)\cdot \sum_{n=0}^\infty p(n)q^n.
+\]
+这使得欧拉去考虑以下展开式问题
+\[
+\prod_{k=1}^\infty(1-q^k)=\sum_{n=0}^\infty b(n)q^n.
+\]
+先让我们看$b(n)$前四十项的值。计算$\prod_{k=1}^{40}(1-q^k)$等于
+\[
+1-q-q^2+q^5+q^7-q^{12}-q^{15}+q^{22}+q^{26}-q^{35}-q^{40}+\cdots.
+\]
+我们发现$b(n)$取值只有$-1,0,1$, 且只有当$n=1,2,5,7,12,15,22,26,35,40$ 时$b(n)\neq 0$.
+现在关键是猜测以上$n$的规律或则有什么具体的表达式。 设由系数不为零的次幂所构成的数列为$c(n)$, 则有
+\[
+c(1)=1,c(2)=2,c(3)=5,c(4)=7,c(5)=12,c(6)=15,c(7)=22,\ldots
+\]
+观察并猜测$c(2i)-c(2i-1)=i$和$c(2i+1)-c(2i)=2i+1$对于$i\geq 1$. 取$i=1,2,\ldots,n$, 把这$2n$个式子相加得
+\[
+c(2n+1)=\frac{(n+1)(3n+2)}{2},\quad c(2n)=\frac{n(3n+1)}{2}.
+\]
+这样我们可猜测
+\begin{eqnarray*}
+\sum_{n=0}^\infty b(n)q^n&=&1+\sum_{n=0}^\infty
+(-1)^{n+1}q^{c(2n+1)}+\sum_{n=1}^\infty (-1)^nq^{c(2n)}\\[5pt]
+&=&\sum_{n=0}^\infty (-1)^{n+1}q^{(n+1)(3n+2)/2}+\sum_{n=0}^\infty
+(-1)^nq^{n(3n+1)/2}\\[5pt]
+&=&\sum_{n=1}^\infty (-1)^nq^{n(3n-1)/2}+\sum_{n=0}^\infty
+(-1)^nq^{n(3n+1)/2}\\[5pt]
+&=&\sum_{n=-\infty}^\infty (-1)^nq^{n(3n+1)/2}.
+\end{eqnarray*}
+
+实际上欧拉也是通过计算前面若干项发现规律猜测了以上等式， 但其证明距离发现相隔十年之久，为欧拉本人所给出。 这等式后人称为欧拉五角数定理。
+
+\begin{thm}
+\begin{equation}\label{eqpentagonal}
+\prod_{k=1}^\infty (1-q^k)=1+\sum_{n=1}^\infty (-1)^n\left(q^{n(3n-1)/2}+q^{n(3n+1)/2}\right).
+\end{equation}
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+\chapter{高斯系数}
+\section{高斯系数的定义}
+
+我们下面要介绍的高斯系数是由德国数学家高斯最早提出的．高斯被认为是最重要的数学家，并有“数学王子”的美誉．
+1792年，15岁的高斯进入Braunschweig学院．从此，高斯开始对高等数学作研究．独立发现了二项式定理的一般形式、数论上的“二次互反律”、素数定理及算术-几何平均数．
+18岁时，高斯转入哥廷根大学学习．在他19 岁时，第一个成功的用尺规构造出了规则的17 边形．
+1811年，高斯已是哥廷根大学的教授．一次偶然的机会，他在研究“二次高斯和”的估值的时候提出了这样一个多项式
+$\left[{{n}\atop {k}}\right]$．
+
+\begin{defi}
+一般地，称
+\begin{equation}\label{1.1}
+{n\brack
+k}=\frac{(q^n-1)(q^n-q)\cdots(q^n-q^{k-1})}{(q^k-1)(q^k-q)\cdots(q^k-q^{k-1})},\quad
+1\leq k\leq n.
+\end{equation}
+为{\bf Gauss系数}．
+\end{defi}
+
+我们总是假定$|q|<1$. 若记$[n]!=[1]![2]!\cdots[n]!,$
+其中$[n]=1+q+q^2+\ldots+q^{n-1},$ 则\eqref{1.1}式也可写为
+$${n\brack k}=\frac{[n]!}{[k]![n-k]!}.$$
+
+
+组合恒等式中最基本的就是二项系数$n \choose k$，它的组合意义大家都已十分清楚了．高斯系数是二项式系数的$q$-模拟．由定义可知
+$$\displaystyle\lim_{q\rightarrow 1}{n\brack k}=\frac{n!}{k!(n-k)!}={n\choose
+k}，$$
+这也是我们将$q$-Gauss系数，也称为$q$- 二项式系数名称的由来．
+\\[3pt]
+
+\section{高斯系数的性质}
+\begin{thm}[{\cite[Theorem 3.2]{Andrews1976}}]
+$q$-Gauss系数具有以下性质：
+\begin{enumerate}
+\item
+$\displaystyle{n\brack 0}={n\brack n}=1; $
+\item
+$\displaystyle{n\brack k}={n\brack {n-k}};$
+\item
+$\displaystyle{n\brack k}={n-1\brack k}+q^{n-k}{n-1\brack{k-1}};$
+\item
+$\displaystyle{n\brack k}={n-1\brack{k-1}}+q^k{n-1\brack k}.$
+\end{enumerate}
+\end{thm}
+
+\begin{pf}
+(1)、(2)可直接由定义可得，我们只证(3),
+\begin{align*}
+{n\brack k}-{n-1\brack
+k}&={\frac{(1-q^{n-1})\cdots{(1-q^{n-k+1})}}{(1-q^k)\cdots(1-q)}}[(1-q^n)-(1-q^{n-k})]\\&={\frac{(1-q^{n-1})\cdots{(1-q^{n-k+1}})q^{n-k}(1-q^k)}{(1-q^k)\cdots(1-q)}}\\
+&=\frac{q^{n-k}(1-q^(n-1))\cdots(1-q^{n-k+1})}{(1-q^{k-1})\cdots(1-q)}\\
+&=q^{n-k}{n-1\brack{k-1}}.
+\end{align*}
+类似可证明(4).
+\end{pf}\\[15pt]
+\section{Gauss系数的组合意义}
+下面我们主要阐述Gauss系数的组合意义．\\[5pt]
+\subsection{与线性代数的关系}
+\noindent{\bf 组合意义1:}
+
+假设$q$是一素数的方幂，从而我们有$q$元数域$\mathbb{F}_q$，
+其上的$n$维空间记为$V_n(q)$，则 ${n\brack
+k}$的组合含义由下面定理给出．
+\begin{thm}
+$V_n(q)$的$k$维子空间的个数是${n\brack k}.$
+\end{thm}
+
+\begin{pf}
+首先，从$V_n(q)$中选取一个由$k$个向量组成的元组构成一个$k$维子空间的(有序)基．为此，我们需要从空间$V_n(q)$中选取$k$个线性无关的向量．对于第一个向量$v_1$，可以选取任意非零向量，因此由$q^n-1$中选择．对于第二个向量$v_2$，我们不能选取$v_1$的倍数，因此有$q^n-q$种选择．对于第三个向量$v_3$，有$q^2$ 个不能选取的向量，它们是$v_1$和$v_2$的线性组合．以此类推，从$V_n(q)$中选取$k$ 个线性无关的向量的方法数为
+\begin{equation}\label{v_n(q)}
+(q-1)(q^n-q^2)\cdots(q^n-q^{k-1}),
+\end{equation}
+值得注意的是，一个子空间可以有很多组(有序)基．类似上面的讨论，选定一个$k$ 维子空间，在其中选一组基的方法数为
+$$(q^k-1)(q^k-q)\cdots(q^k-q^{k-1}).$$
+这就是\ref{v_n(q)}中每个子空间重复计数的数目．因此，$V_n(q)$的$k$维子空间的个数是
+$$\frac{(q-1)(q^n-q^2)\cdots(q^n-q^{k-1})}{(q^k-1)(q^k-q)\cdots(q^k-q^{k-1})}={n\brack k}.$$
+\end{pf}
+
+\subsection{与排列的关系}
+\noindent{\bf  组合意义2:}
+
+首先给出排列中逆序数的概念．一对元素$(i,j)$ 称为是一个{逆序}(inversion)，如果满足$i<j$ 且$\pi_i>\pi_j$．$\pi$的
+逆序的个数为$\pi$的逆序数，记作$inv(\pi)$．
+
+\begin{prop}
+$${n\brack k}=\sum_{\pi\in S(1^k2^{n-k})}q^{\mathrm{inv} \pi},$$
+其中$S(1^k2^{n-k})$是由如下置换$\pi$构成的集合：$\pi=a_1a_2\cdots
+a_n,$ 其中有$k$个$a_i$为$1$，$n-k$个$a_i$ 为$2$．
+\end{prop}
+\begin{pf}
+对$n$用归纳法．
+
+当$n=1$时，性质显然成立． 现在假设对$n-1$ 成立，考虑$n$的情形．
+$\forall\ \pi=a_1a_2\cdots a_n\in S(1^k2^{n-k})$，分两种情况考虑：
+
+若$a_n=2$，
+则将$a_n$去掉后，$\pi$的逆序数不发生变化，且此时$a_1a_2\cdots
+a_{n-1}\in S(1^k2^{n-k-1});$
+
+若$a_n=1$，
+则因为$\pi$中的每个$2$皆对$a_n$产生一个逆序数，故去掉$a_n$后，逆序数减少$n-k$ 个，且$a_1a_2\cdots
+a_{n-1}\in S(1^{k-1}2^{n-k}).$
+
+所以
+$$ \sum_{\pi\in
+S(1^k2^{n-k})}q^{\mathrm{inv} \pi}={n-1\brack
+k}+q^{n-k}{n-1\brack{k-1}}={n\brack k}.$$
+\end{pf}\\[15pt]
+\subsection{与分拆的关系}
+\subsubsection{分拆简介}
+
+一个关于整数$n$的分拆$\lambda$是一个有限非递增的整数序列$(\lambda_1,\lambda_2,\ldots,\lambda_r)$,
+使得$\sum_{i=1}^{r}\lambda_{r}=n$，则$\lambda_i$称为$\lambda$
+的部分，$\lambda_1$为最大部分，$\lambda$ 的部分数称为$\lambda$ 的长度，记为$l(\lambda)$．
+$\lambda$的权重是$\lambda$的各部分相加的和，记为$|\lambda|$．\par
+例如，$5$的分拆共有$7$个，分别是：
+\begin{center}
+$(5),(4,1),(3,2),(3,1,1),(2,2,1),(2,1,1,1),(1,1,1,1,1).$
+\end{center}
+有时我们需要用到$\lambda$中相同部分出现的次数．若
+$\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_r)$ 中有$f_1$个$1$，$f_2$个$2$，……我们可以将其表示为
+\begin{equation*}
+\lambda=\langle1^{f_1},2^{f_2},3^{f_3},...\rangle
+\end{equation*}
+其中$f_j$表示有$j$出现的次数，注意$\sum_{i\geq1}if_i=n$．\par
+所以上面的例子还可以写为：
+\begin{center}
+$\langle5^{1}\rangle,\langle1^{1},4^{1}\rangle,\langle2^{1},3^{1}\rangle,
+\langle1^{2},3^{1}\rangle,\langle1^{1},2^{2}\rangle,\langle1^{3},2^{1}\rangle,
+\langle1^{5}\rangle$
+\end{center}
+
+分拆还可以用它的Young图表示，如图所示：
+\begin{center}\setlength{\unitlength}{1mm}
+\begin{picture}(100,60)
+\multiput(10,55)(0,-5){2}{\line(1,0){35}}\multiput(10,45)(0,-5){2}{\line(1,0){25}}
+\put(10,35){\line(1,0){10}}\multiput(10,35)(5,0){3}{\line(0,1){20}}
+\multiput(25,40)(5,0){3}{\line(0,1){15}}\multiput(40,50)(5,0){2}{\line(0,1){5}}
+\put(40,35){$\lambda$} \multiput(65,55)(0,-5){3}{\line(1,0){20}}
+\multiput(65,40)(0,-5){3}{\line(1,0){15}}\multiput(65,25)(0,-5){2}{\line(1,0){5}}
+\multiput(65,20)(5,0){2}{\line(0,1){35}}\multiput(75,30)(5,0){2}{\line(0,1){25}}
+\put(85,45){\line(0,1){10}}\put(85,30){$\lambda^{'}$} \put(0,10){图
+1.1:
+分拆$\lambda=(7,5,5,2)$及其共轭分拆$\lambda^{'}=(4,4,3,3,3,1,1)$}
+\end{picture}
+\end{center}
+
+给定分拆$\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_r)$ 我们定义$\lambda$的共轭分拆
+$\lambda^{'}=(\lambda_1^{'},\lambda_2^{'},\ldots,\lambda_t^{'})$, 其中$\lambda_i^{'}$
+表示$\lambda$中大于或者等于$i$的部分数．实际上共轭$\lambda^{'}$ 可以由分拆$\lambda$ 通过作
+关于主对角线的翻转而得到，如图1.1所示．
+
+
+\subsubsection{高斯系数与分拆的关系}
+\noindent{\bf  组合意义3:}
+
+令$Par$表示所有分拆的集合．
+设
+$$L(m,n)=\{\lambda\in Par: \ell(\lambda)\leq n, \ell(\lambda')\leq m\}.$$ 高斯系数和分拆的联系由下面的定理给出．
+
+\begin{thm}
+对任意的$m,n\in\mathbb{N}$，我们有
+$$\left[{{m+n}\atop {n}}\right]=\sum_{\lambda\in L(m,n)}q^{|\lambda|}$$
+\end{thm}
+
+\begin{exa}
+当$m=2,n=3$时，
+$$\left[{{2+3}\atop {3}}\right]=1+q+2q^2+2q^3+2q^4+q^5+q^6$$
+\end{exa}
+
+
+假设$n$的分拆为
+\begin{equation}
+n=1\cdot a_1+2\cdot a_2+3\cdot a_3+\ldots+n\cdot a_n
+\end{equation}
+令$p(n,k,N)$表示$n$的所有分拆中满足
+$$a_1+a_2+\ldots+a_n\leq k,\quad
+a_{N+1}=\ldots=a_n=0$$的分拆个数，即分拆部分数$\leq k,$
+且最大部分$\leq N$的分拆数．
+
+显然
+\begin{align*}
+p(kN,k,N)&=1\text{，唯一的分拆是}<N^k>;\\
+p(n,k,N)&=0,\quad \mbox{当}n>kN\mbox{时}.\\
+\end{align*}
+另外，我们令
+\[
+p(n,0,N)=p(n,k,0)=\begin{cases}1,\quad n=k=N=0,\\ 0,\quad
+\mbox{其他}.
+\end{cases}
+\]
+则有
+\begin{lem}
+\begin{equation}\label{1.3}
+p(n,k,N)=p(n,k-1,N)+p(n-k,k,N-1).
+\end{equation}
+\end{lem}
+\begin{pf}
+\eqref{1.3}有如下的组合解释：$p(n,k,N)-p(n,k-1,N)$计数的是$n$ 的分拆中分拆部分数恰为$k,$
+且最大部分$\leq
+N$的$n$的分拆个数；任给$n$的一个满足条件的分拆，从每一部分里减去1，得到$n-k$ 的一个分拆，且满足部分数$\leq
+k,$ 最大部分$\leq N-1.$ 这样的分拆个数为$p(n-k,k,N-1).$
+
+容易验证，这两种类型的分拆之间有一个一一对应．因此\eqref{1.3} 式成立．
+考虑$p(n,k,N)$的生成函数
+$$F(q;k,N)=\sum_{n=0}^{kN}p(n,k,N)q^n.$$
+由\eqref{*}式，
+$$F(q;k,N)=F(q;k-1,N)+q^kF(q;k;N-1),$$
+其中$F(q;0,N)=F(q;k,0)=1.$
+
+根据定理1.1.1中的(1),(3),我们看到$F(q;k,N)$ 和${N+k\brack
+k}$有相同的递推关系式和初始值，因此
+$$F(q;k,N)={N+k\brack k},$$ 也即
+$${N+k\brack k}=\sum_{n=0}^{kN}p(n,k,N)q^n.$$
+\end{pf}
+
+
+
+
+
+
+
+
+
+\chapter{勾长公式}
+
+
+
+\section{ Hook length 公式}
+
+\begin{defi}
+假定 $F$ 是一个 Ferrers shape，并且 $b$ 是其中的一个盒子. 我们称在
+$F$ 里处在盒子 $b$ 的右边和下边的那些盒子（包括盒子b本身）为盒子 $b$
+在 $F$ 中的hook，这些盒子的集合记为 $H_b$。$H_b$ 的阶数就称为是盒子
+$b$ 在 $F$ 中的hook length。
+\end{defi}
+下面是关于 hook 和 hook length 的一个例子。
+\begin{exa}
+左边的例子给出来一个具体的 hook 的集合，右边的例子标明了每个盒子的
+hook length。
+\begin{figure}[ht]
+\setlength{\unitlength}{1pt}
+\begin{center}
+
+\begin{picture}(180,70)
+\put(20,20){\line(0,1){45}} \put(35,20){\line(0,1){45}}
+\put(50,20){\line(0,1){45}} \put(65,35){\line(0,1){30}}
+\put(80,50){\line(0,1){15}} \put(20,20){\line(1,0){30}}
+\put(20,35){\line(1,0){45}} \put(20,50){\line(1,0){60}}
+\put(20,65){\line(1,0){60}} \put(20,50){b}
+
+
+
+\put(120,20){\line(0,1){45}} \put(135,20){\line(0,1){45}}
+\put(150,20){\line(0,1){45}} \put(165,35){\line(0,1){30}}
+\put(180,50){\line(0,1){15}} \put(120,20){\line(1,0){30}}
+\put(120,35){\line(1,0){45}} \put(120,50){\line(1,0){60}}
+\put(120,65){\line(1,0){60}} \put(126,25){2} \put(141,25){1}
+\put(126,37){4} \put(141,37){3} \put(156,37){1} \put(126,50){7}
+\put(141,50){6} \put(156,50){3} \put(171,50){1}
+
+\linethickness{2pt} \put(26,58){\line(1,0){50}}
+\put(26,58){\line(0,-1){30}}
+\end{picture}
+\end{center}
+\end{figure}
+\end{exa}
+\begin{defi}
+给定一个 Ferrers
+shape，我们在每个盒子里面填数，如果添完之后的杨表中行与列都是递增的，并且所添的数各不相同，则称这样的一个杨表为标准杨表。
+\end{defi}
+对于一个特定的 Ferrers shape $F$，所有形状为 $F$
+的标准杨表的计数公式由下面的定理给出：
+\begin{thm}
+给定一个由 $n$ 个盒子构成的 Ferrers shape $F$，那么所以形状为 $F$
+的标准杨表的计数公式为：
+$$\frac{n!}{\prod_bh_b},$$
+其中求和为对 $F$ 中所有的盒子求和.
+\end{thm}
+
+
+
+
+
+
+
+
+\begin{thebibliography}{999}
+
+
+\bibitem {Che1}
+George E.Andrews,The Theory of Partitions,Cambridge University Press,Cambridge,U.K.,1998.
+
+\bibitem {Che2}
+George E.Andrews and Kimmo Eriksson, Integer partitions,Cambridge University Press,Cambridge,U.K.,2004.
+
+\bibitem{indiamath} Singh, Parmanand (1985). "The So-called Fibonacci numbers in ancient and medieval India". Historia Mathematica 12 (3): 229–244.
+
+\bibitem{mathgems} Honsberger, R. Mathematical Gems III. Washington, DC: Math. Assoc. Amer, 1985.p. 122
+
+\bibitem{chen}William Y.C. Chen, E.Y.P. Deng and R.R.X. Du, Reduction of m-regular noncrossing
+partitions, Europ. J. Combin., 26 (2005), No. 2, 237–243.
+\bibitem{wyang}W. Yang, Bell numbers and k-trees, Discrete Math., 156 (1996), 247-252.
+\bibitem{RSDU}R. Simion and D. Ullman, On the structure of the lattice of noncrossing
+partitions, Discrete Math., 98 (1991), 193-206.
+
+\bibitem{Klazar}M. Klazar, On abab-free and abba-free set partitions, Europ. J. Combin.,
+17 (1996), 53-68.
+
+\bibitem{Andrews1976}
+ G.E. Andrews, The Theory of Partitions, Encylopedia of Mathematics
+ and its Applications, Vol. 2, G.C. Rotaed., Addison-Wesley,
+ Reading, Massachusetts, 1976.
+
+\bibitem{Cohn2004}
+ H. Cohn, Projective Geometry over $\mathbb{F}_1$ and the Gaussian Binomial Coefficients,The American Mathematical Monthly, vol. 111, no. 6, June/July 2004, pp. 487-495.
+
+\bibitem{GasRah04}
+G. Gasper and M. Rahman, Basic Hypergeometric Series, Second Ed.,
+Cambridge University Press, Cambridge, 2004.
+
+\bibitem{Stanley1997} R.P. Stanley, {Enumerative Combinatorics, Vol. 1}, 2nd ed., Cambridge Studies in Advanced Mathematics, 49, Cambridge University Press, Cambridge, 1997.
+
+\bibitem{Bondy}J. Bondy and U. Murty, Graph Theory with Applications, North-Holland, New York, 1976.
+
+\bibitem{Foata_Schutzenberger}D.Foata and M.P.Schutzenberger, Nombres d'Euler et permutations alternantes, A survey of combinatorial theory, ed. J.N. Srivastava et al., North-Holland, Amsterdam (1973)173-187.
+
+\bibitem{Donaghey1975}R. Donaghey,  {Alternating permutations and binary increasing trees}, J.Comb.Theory.Ser.A 18(1975)141-148.
+
+\bibitem{Shin}Heesung Shin,{A REFINED BIJECTION BETWEEN ALTERNATING PERMUTATIONS AND 0-1-2 INCREASING TREES}, preprint
+
+\bibitem{Kuznetsov_Pak_Postnikov}]A.G. Kuznetsov, I.M. Pak and A.E. Postnikov, {Increasing trees and alternating permutations}, Russian Math. Surveys 49(6)(1994)79–114
+
+\bibitem {Stanley2004_1}R.P.Stanley,
+计数组合学（卷1），机械工业出版社，北京，2004.11.
+
+\bibitem {Stanley2004_2}R.P.Stanley,
+计数组合学（卷2），机械工业出版社，北京，2004.11.
+
+\bibitem {Tannery86}
+J. Tannery, Introduction a la Theorie des Fonctions d'une Variable, Sec.183, 1886
+
+
+
+\bibitem {Che1}
+Richard P.Stanley,Enumerative Combinatorics,Cambridge University Press,Cambridge,U.K.,1997.
+
+\bibitem {Che2}
+Mil\'{o}s B\'{o}na , Introduction to Enumerative Combinatorics, McGraw-Hill,New York,USA.,2007.
+
+\bibitem {Che3}
+Alan G.Konheim and Benjamin Weiss,An Occupancy Discipline and Application,SIAM J.Appl.Math.14,1266-1274(1966).
+
+\bibitem {Chen93}
+William Y.C. Chen, Context-free grammars, differential operator and formal power series, Theoret. Comput. Sci. 117 (1993) 113–129.
+
+
+
+
+\bibitem{Bona2004}Mikl\'{o}s B\'{o}na,{Combinatorics of permutations}, Chapman $\&$ Hall/ CRC 2004.
+
+\bibitem{Harper1967}L. H. Harper,{Stirling behavior is asymptotically normal}, The Annals of Mathematical Statistics, vol. 38, No. 2 (Apr., 1967), pp. 410-414.
+
+\bibitem{Stanley1997} R.P. Stanley, {Enumerative Combinatorics, Vol. 1}, 2nd ed., Cambridge Studies in Advanced Mathematics, 49, Cambridge University Press, Cambridge, 1997.
+
+
+\bibitem{Burnside1911} W. Burnside,
+Theory of Groups of Finite Order, 2nd edition, Cambridge University
+Press, London, 1911.
+
+\bibitem{Brualdi1999} R.A. Brualdi,
+Introductory Combinatorics, 3rd edition, Prentice Hall, 1999.
+
+\bibitem{Polya1937} G. P\'olya,
+Kombinatorische anzahlbestimmungen f\"ur gruppen, graphen und
+chemische verbindungen, Acta Math. 68 (1937), 145--254.
+
+\bibitem{Redfield1927} J.H. Redfield,
+The theory of group-reduced distributions, Amer. J. Math. 49 (1927),
+433--455.
+
+
+
+\bibitem{ColBook}
+A. Soifer,  The mathematical coloring book: mathematics of coloring and the colorful life of its creators, Springer Science and Business Media, 2008.
+
+\bibitem{sun95}
+ Z.-W. Sun, Covering the integers by arithmetic sequences, ACTA ARITHMETICA, 1995, 72: 109-129.
+
+\bibitem{sun}
+ Z.-W. Sun, Problems and Results on Covering System, preprint.
+
+\bibitem{Ste58}
+S.K. Stein, Unions of arithmetic sequences, Mathematische Annalen, 1958, 134(4): 289-294.
+
+\bibitem{Zna69}
+  S. Znam, On exactly covering systems of arithmetic sqeuences, Math. Ann., 180(1969), 227–232.
+\end{thebibliography}
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

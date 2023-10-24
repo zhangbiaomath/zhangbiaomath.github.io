@@ -1,0 +1,180 @@
+\chapter{生成函数}
+\label{chap1} \minitoc
+
+\section{生成函数}
+生成函数(generating function)方法最初是由Laplace和Euler引进的，是组合计数中一个很有效的方法。
+在了解生成函数的具体定义之前，我们首先从我们熟知的Fibonacci数列开始，了解一下生成函数的运用。
+
+意大利数学家Fibonacci在13世纪提出了如下的一个问题：
+
+最初有一对小兔子(雌雄各一)，这对兔子从第二个月开始每月都产下一对雌雄各一的小兔，每对新生小兔间隔一个月后也开始每月都产下
+一对雌雄各一的小兔。假定兔子都不死亡，最终会有多少对兔子。
+
+著名的Fibonacci数列由此而得名。若设$F_n$表示第$n$个月所有的兔子对数，则我们不难得出如下递推关系式：
+$$F_0=F_1=1,\ F_{n+2}=F_{n+1}+F_n\ \ (n\geq 0).$$
+
+先给出生成函数的一个粗略的定义：令$a_0,a_1,a_2,\ldots$为一无穷序列，则
+$f(x)=\sum_{n\geq0}a_nx^n$
+称为该无穷序列的生成函数。
+
+
+由上述定义，我们现在计算一下Fibonacci数列的生成函数$F(x).$
+
+\begin{eqnarray*}
+F(x)&=&\sum_{n=0}^{\infty}F_nx^n=1+x+\sum_{n=2}^{\infty}F_nx^n\\
+&=&1+x+\sum_{n=2}^{\infty}(F_{n-1}+F_{n-2})x^n\\
+&=&1+x+x\sum_{n=2}^{\infty}F_{n-1}x^{n-1}+x^2\sum_{n=2}^{\infty}F_{n-2}x^{n-2}\\
+&=&1+xF(x)+x^2F(x)
+\end{eqnarray*}
+由此可得$F(x)=(1-x-x^2)^{-1}.$
+
+此即Fibonacci数列的生成函数，因$1-x-x^2$的两根为
+$$\alpha=\frac{1+\sqrt{5}}{2}\ \ \beta=\frac{1-\sqrt{5}}{2}.$$
+于是
+\begin{eqnarray*}
+(1-x-x^2)^{-1}&=&(1-\alpha x)^{-1}(1-\beta x)^{-1}\\
+&=&\frac{\alpha/(1-\alpha x)-\beta/(1-\beta x)}{\alpha-\beta}\\
+&=&\sum_{n=0}^{\infty}\frac{\alpha^{n+1}-\beta^{n+1}}{\alpha-\beta}x^n
+\end{eqnarray*}
+因此
+\begin{equation}
+F_n=\frac{\alpha^{n+1}-\beta^{n+1}}{\alpha-\beta}=\frac{1}{\sqrt{5}}(\alpha^{n+1}-\beta^{n+1}).
+\end{equation}
+通过上述的例子，我们得知通过生成函数的方法可以求解一些计数上的问题。通过生成函数的变换我们还可以得知一些
+数列的性质。我们同样以Fabonacci数列为例来进行说明。
+
+\begin{prop}
+Fibonacci数列满足如下恒等式：
+$$\sum_{i=0}^nF_i=F_{n+2}-1.$$
+\end{prop}
+\pf 注意到对任意级数$\sum_{n}a_nx^n,$ 有$(1-x)^{-1}\sum_{n}a_nx^n=\sum_n(\sum_{i=0}^na_i)x^n$成立，于是从
+$$1=F(x)(1-x-x^2)=F(x)(2-x-x^2)-F(x)$$
+得
+$$F(x)=F(x)(2-x-x^2)-1=F(x)(2+x)(1-x)-1$$
+所以
+$$(1-x)^{-1}F(x)=F(x)(2+x)-(1-x)^{-1}.$$
+比较两边的系数，就得到上式。\qed
+
+通过上述我们熟知的例子，我们对生成函数的方法有个一个大致的了解。接下来我们详细给出生成函数的严格定义以及一些常用的
+类型。
+
+\begin{defi}
+设$g_i(x)(i=0,1,2,\ldots)$线性无关，则称
+\begin{equation}\label{ge1}
+G(x)=\sum_{i=0}^{\infty}a_ig_i(x)
+\end{equation}
+为$a_i(i=0,1,2,\ldots)$的生成函数。
+\end{defi}
+
+
+$(\ref{ge1})$式称为关于未定元$x$的形式幂级数。一般情况下，形式幂级数中的$x$只是一个抽象符号，并不需要对$x$赋予具体的数值。
+进而也就不需要讨论级数收敛性的问题。
+
+$\mathbb{R}$上关于未定元$x$的形式幂级数的全体记为$\mathbb{R}(x)$。在集合$\mathbb{R}(x)$中适当定义加法$(+)$和乘法
+$(\cdot)$, 则$(\mathbb{R}(x),+,\cdot)$构成环。
+
+设$A(x)=\sum_{i=0}^{\infty}a_ig_i(x),\ B(x)=\sum_{i=0}^{\infty}b_ig_i(x)$. 定义
+\begin{eqnarray*}
+A(x)+B(x)=\sum_{i=0}^{\infty}(a_i+b_i)g_i(x).
+\end{eqnarray*}
+
+以上是形式幂级数的加法，与$g_i(x)$的具体形式无关。而形式幂级数的乘法在定义的时候会依据$g_i(x)$的不同而有细微的变化。
+接下来我们先了解一下生成函数的一些常见形式。
+
+\begin{defi}
+取$g_i(x)=x^i$, 则有
+$$f(x)=\sum_{i\geq0}a_ix^i$$
+称为$a_i$的普通型生成函数。例如：$\{1,1,1,1,\ldots\}$的普通型生成函数为：
+$$f(x)=\sum_{i\ge0}x^i=\frac{1}{1-x}.$$
+\end{defi}
+
+\begin{defi}
+取$g_i(x)=\frac{x^i}{i!}$, 则有
+$$f(x)=\sum_{i\geq0}a_i\frac{x^i}{i!}$$
+称为$a_i$的指数型生成函数。例如：$\{0!,1!,2!,3!,\cdots\}$的指数型生成函数为：
+$$f(x)=\sum_{i\ge0}i!\frac{x^i}{i!}=\frac{1}{1-x}.$$
+$\{1,1,1,\ldots\}$的指数型生成函数为：
+$$f(x)=\sum_{i\ge0}\frac{x^i}{i!}=e^x.$$
+\end{defi}
+
+以上是常用的两种生成函数的形式，下来我们就依据两者的具体形式给出生成函数乘法的定义。
+对于普通性生成函数而言：
+\begin{thm}
+$f(x)=\sum a_1x^i$和$g(x)=\sum b_ix^i$
+是两个生成函数，则：
+$$f(x)g(x)=\sum c_ix^i,$$
+其中$c_i=\sum_{k=0}^i a_kb_{i-k}.$
+\end{thm}
+
+对于指数型生成函数而言：
+\begin{thm}
+$f(x)=\sum a_i\frac{x^i}{i!}$和$g(x)=\sum b_i\frac{x^i}{i!}$
+是两个生成函数，则：
+$$f(x)g(x)=\sum c_i\frac{x^i}{i!},$$
+其中$c_i=\sum_{k=0}^i{i\choose k}a_kb_{n-k}.$
+\end{thm}
+
+生成函数的乘法有严格的组合意义。假设$a_i$
+所计数的组合结构称为A-结构，$b_i$
+计数的是B-结构，那么$c_i$计数的则是由部分A-结构和部分B-结构组合而成的结构。
+
+\section{生成函数的计算}
+在了解完生成函数的具体定义之后，我们现在具体看一下怎么利用生成函数进行计算。
+如果我们已知了$a_i,b_i$之间的关系，如何推出$A(x)=\sum_{i=0}^{\infty}a_i$与
+$B(x)=\sum_{i=0}^{\infty}b_i$之间的关系。
+
+如下我们列出一些常见的关系：
+$$b_k=\sum_{i=0}^ka_i\Rightarrow B(x)=\frac{A(x)}{1-x}.$$
+\pf 由假设可得：
+\begin{align}
+b_0&=a_0\notag\\
+b_1x&=(a_0+a_1)x\notag\\
+b_2x^2&=(a_0+a_1+a_2)x^2\notag\\
+&\cdots\notag\\
+b_nx^n&=(a_0+a_1+a_2+\cdots+a_n)x^n\notag\\
+&\cdots\notag
+\end{align}
+等式左端相加为$B(x).$ 等式右端相加，得
+\begin{align}
+&a_0+(a_0+a_1)x+(a_0+a_1+a_2)x^2+\cdots\notag\\
+&=a_0\sum_{i=0}^{\infty}x^i+a_1x\sum_{i=0}^{\infty}x^i+a_2x^2\sum_{i=0}^{\infty}x^i+\cdots\notag\\
+&=\sum_{i=0}^{\infty}a_i\sum_{i=0}^{\infty}x^i\notag\\
+&=\frac{A(x)}{1-x}.\notag
+\end{align}
+因此
+$$B(x)=\frac{A(x)}{1-x}.$$
+
+用类似的方法还可以证明如下几个等式：
+\begin{align}
+&\mbox{若}\sum_{i=0}^{\infty}a_i\mbox{收敛，且}
+b_k=\sum_{i=k}^{\infty}\Rightarrow B(x)=\frac{A(x)-xA(x)}{1-x}\notag\\
+&b_k=ka_k\Rightarrow B(x)=xA(x)^{'}\notag\\
+&b_k=\frac{a_k}{1+k}\Rightarrow B(x)=\frac{1}{x}\int_0^1A(x)dx\notag
+\end{align}
+
+\section{生成函数的运用}
+与组合相关的很多计数问题都会用到生成函数这一工具。现在我们看一下有关二叉树的例子。
+设$c_n$表示有$n$个结点的不同的二叉树的个数。则有$c_0=1.$ 在$n>0$时，二叉树由一个根节点和$n-1$个儿子结点，设左子树
+$T_l$有$k$个结点，则右子树$T_r$有$n-1-k$个结点，从而
+$$c_n=\sum_{k=0}^{n-1}c_kc_{n-1-k},\ \ \ n>0.$$
+设$c_n$的生成函数为$B(x)=\sum_{i=0}^{\infty}c_ix^i,$ 于是$B(x)$满足如下方程：
+$$xB(x)^2=B(x)-1,\ \ B(0)=1.$$
+解方程得
+\begin{align}
+B(x)&=\frac{1-\sqrt{1-4x}}{2x}\notag\\
+&=\frac{1-\sum_{n\geq 0}{1/2\choose n}(-4x)^n}{2x}\notag\\
+&=\sum_{n\geq 0}{1/2\choose n+1}(-1)^n2^{2n+1}x^n\notag
+\end{align}
+因此
+$$c_n={1/2\choose n+1}(-1)^n2^{2n+1}=\frac{1}{n+1}{2n\choose n}$$
+$c_n$常称为Catalan数。是在组合计数中常见的数，可以用来计数很多组合物体。
+
+\bibliographystyle{cfcbook}
+\begin{thebibliography}{99}
+\bibitem{zuheshuxuema}马光思，组合数学，西安电子科技大学出版社，第一版，2002。
+
+
+
+
+
+\end{thebibliography}

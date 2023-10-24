@@ -1,0 +1,816 @@
+\documentclass[a4paper,12pt]{ctexbook}
+\usepackage[utf8]{inputenc}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage[leqno]{amsmath}
+%[leqno]使得公式编号在左侧
+%\numberwithin{equation}{section}公式按章节编号
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[mathscr]{euscript}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{subfigure}
+
+
+
+\geometry{a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\newtheorem{lemma}{\hspace{2em}引理}[section]%定义引理格式,用节标题编号
+\newtheorem{theorem}[lemma]{\hspace{2em}定理}%定理和引理统一编号
+\newtheorem{corollary}[lemma]{\hspace{2em}推论}
+\newtheorem{proposition}[lemma]{\hspace{2em}命题}
+\renewcommand{\proofname}{\indent\bf 证明}
+\renewcommand\arraystretch{2}%使得表格宽松
+
+
+
+
+\begin{document}
+%	\author{Bruce E. Sagan}
+%	\title{The Art of Counting（计数的艺术）}
+%	\date{}
+%	\maketitle
+%	\newpage
+\setcounter{chapter}{3}
+
+
+\chapter{指数生成函数计数}
+	\begin{center}
+		(韩甜 \quad 翻译)
+	\end{center}
+
+
+给定一个复数序列\(a_{0},a_{1},a_{n}, \dots\), 将其与一个指数生成函数相关联,其中$a_{n}$是\(x^{n}/n!\)的系数.  事实证明,在某些情况下指数生成函数比普通函数更容易处理.  尤其是$a_{n}$从某个标签集获得的组合对象中计数.  我们给出了一种处理这种结构的方法,这种结构又会产生求和和积规则,以及这种方法所特有的指数公式.  
+\section{示例一}
+复数序列$a_{0},a_{1},a_{n} \dots$,其中对任意$n$有$a_{n} \in \mathbb C$,相应的{\kaishu 指数生成函数}（egf）是
+\[
+F(x)=a_{0}+a_{1}\frac{x}{1!}+a_{2}\frac{x}{2!}+\cdots =\sum_{n\ge0}a_{n}\frac{x^{n}}{n!}. 
+\]
+为了与前一章中的普通生成函数（ogfs）区分开来,我们通常使用大写字母表示指数生成函数,小写字母表示普通生成函数.  形容词“指数”的使用是因为在对任意$n$有$a_{n}=1$的简单情况下,相应的指数生成函数是$F(x)=\sum_{n\ge0}n!\frac{x^{n}}{n!}=e^x$.  
+为了说明指数生成函数在序列研究中的作用,考虑对任意$n\ge0$有$a_{n}=n!$的序列.  普通生成函数$f(x)=\sum_{n\ge0}n!x^n$并且该幂级数无法简化.  此外,如果需要,现在就可以对指数生成函数$$F(x)=\sum_{n\ge0}n!\frac{x^{n}}{n!}=\frac{1}{1-x}$$进行操作.  
+
+为了练习使用指数生成函数,我们现在将计算一些例题.  在确定生成函数时经常出现的一种技术是求和的交换.  例如,考虑错乱数$D(n)$以及定理2.1.2中给出的公式.  因此
+%$$\sum_{n\ge0}D{n}\frac{x^{n}}{n!}=\sum_{n\ge0}n!(\sum_{k=0}^n(-1)^k\frac{1}{k!})\frac{x^{n}}{n!}
+\begin{align*}
+\sum_{n\ge0}D{n}\frac{x^{n}}{n!}
+&=\sum_{n\ge0}n!\left(\sum_{k=0}^n(-1)^k\frac{1}{k!}\right)\frac{x^{n}}{n!}\\
+&=\sum_{k\ge0}\frac{(-1)^k}{k!}\sum_{n\ge k}x^{n}\\
+&=\sum_{k\ge0}\frac{(-1)^k}{k!}\frac{x^k}{1-x}\\
+&=\frac{1}{1-x}\sum_{k\ge0}\frac{(-x)^k}{k!}\\
+&=\frac{e^{-x}}{1-x}. 
+\end{align*}
+在第4.3节中介绍标记结构理论之后,我们将能够对该公式进行更多的组合推导.  目前,我们只记录结果以供将来参考.  
+\begin{theorem}
+	我们有
+	$$
+	\sum_{n\ge0}D(n)\frac{x^{n}}{n!}=\frac{e^{-x}}{1-x}. 
+	$$
+\end{theorem}
+%\hfill\qedsymbol
+
+如果给定序列由递推关系定义,则可以对第3.6节中的算法稍作修改,以计算其指数生成函数.  只需乘以\(x^{n}/n!\),而不是$x^{n}$,然后求和.  需要注意的是,由于以下考虑因素,递归中的最大索引可能不是用作$x$上的幂的最佳选择.  对于$f(x)=\sum_{n\ge0}a_{n}x^n$,其{\kaishu 形式导数}就是形式幂级数$${f}'(x)=\sum_{n\ge0}na_{n}x^{n-1}. $$
+该导数具有普通解析导数的大多数常见特性,如线性和乘积法则.  以类似的定义形式积分.  需要注意的是,如果以指数生成函数$F(x)=\sum_{n\ge0}a_{n}x^{n}/{n!}$开头,然后
+\begin{equation}
+{F}'(x)=\sum_{n\ge0}na_{n}\frac{x^{n-1}}{n!}
+=\sum_{n\ge1}a_{n}\frac{x^{n-1}}{(n-1)!}
+=\sum_{n\ge0}a_{n+1}\frac{x^{n}}{n!}
+\end{equation}
+这就是同一序列的指数生成函数向上移动了1.  因此,如果序列中某个元素的下标大于$x$的相应幂的指数,它可以简化问题.  
+
+让我们考虑定理1.4.1中给出的贝尔数及其递推关系.  让$B(x)=\sum_{n\ge0}B_nx^{n}/{n!}$.  在用\(x^{n}/n!\)相乘和求和之前,可以方便地在递归中用$n+1$替换$n$,用$k+1$替换$k$.  因此,使用（4.1）和求和交换技巧我们可以得到
+\begin{align*}
+{B}'(x)
+&=\sum_{n\ge0}B(n+1)\frac{x^{n}}{n!}\\
+&=\sum_{n\ge0}\left(\sum_{k=0}\binom{n}{k}B(n-k)\right)\frac{x^{n}}{n!}\\
+&=\sum_{n\ge0}\sum_{k=0}^n\frac{1}{k!(n-k)!}B(n-k)x^{n}\\
+&=\sum_{k\ge0}\frac{x^k}{k!}\sum_{n\ge k}B(n-k)\frac{x^{n-k}}{(n-k)!}\\
+&=\sum_{k\ge0}\frac{x^k}{k!}B(x)\\
+&=e^xB(x). 
+\end{align*}
+
+我们现在有一个微分方程要解,但我们必须注意确保这可以完成.  为此,我们定义
+\begin{equation}
+\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots =\sum_{n\ge1}\frac{(-1)^{n-1}x^n}{n}
+\end{equation}
+的{\kaishu 形式自然对数},这可以认为是对$1/(1+x)$的几何级数的形式积分. 注意,由于$ln(1+x)$有无穷多个项,要定义$ln(1+f(x))$,必须根据定理3.3.3,$f(x)$有常数项$0$. 换句话说,对于无穷级数$g(x)$, 我们有$ln(g(x))$仅当$g(x)$的常数项为$1$.  幸运的是,这对于$B(x)$是正确的,所以我们可以分离上面的变量来得到${B}'(x)/B(x)=e^x$,然后形式积分得到某个常数$c$的$ln(B(x))=e^x+c$. 根据定义（4.2），自然对数没有常数项，因此我们必须取$c=-1$.  求解$B(x)$，我们得到以下结果.  同样，稍后将给出更多的组合证明.  
+\begin{theorem}
+ 	我们有
+ 	$$
+ 	\sum_{n\ge0}B(n)\frac{x^{n}}{n!}=e^{e^{x}-1}. 
+ 	$$
+\end{theorem}
+
+在这一节的结尾,我们将讨论某些具有良好结构的下降集的排列.  为了计算它们的指数生成函数,我们需要定义
+$$
+\sin x=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots =\sum_{n\ge0}(-1)^n\frac{x^{2n+1}}{(2n+1)!}
+$$
+和$$\cos x=(\sin x)',\sec x=\frac{1}{\cos x},\tan x=\frac{\sin x}{\cos x}$$
+的{\kaishu 形式正弦幂级数}.  请注意,$\sin x$和$\tan x$由定理3.3.1明确定义.  
+
+对于$\pi\in P([n])$排列,若
+\begin{equation}
+\pi_{1}>\pi_{2}<\pi_{3}>\pi_{4}<\cdots
+\end{equation}
+则称其是{\kaishu 交错的},同样的,若$Des\pi$是由$[n]$中的奇数组成,则称其是交错的. 第$n$个$Euler$数为$$E_{n}=\pi\in P([n])\text{的交错次数}. $$例如,当$n=4$时,交错排列为
+$$2143,3142,3241,4132,4231$$
+因此$E_4=5$. 如果$\pi_{1}<\pi_{2}>\pi_{3}<\pi_{4}>\cdots$或者$\pi^c$是交错的,其中$\pi^c$是第1章练习（37）（b）中定义的$\pi$的补集,则称排列是{\kaishu 互补交错}的.  很明显,$E_n$也计算互补交错$\pi\in P([n])$的次数.  更一般地,使用（4.3）定义任何要交错的整数序列,对于互补交错也是如此.  欧拉数的结果如下.  
+\begin{theorem}
+	我们有$E_{0}=E_{1}=1$以及,对于$n\ge1$,有
+	$$2E_{n+1}=\sum_{k=0}^n\binom{n}{k}E_{k}E_{n-k}. $$
+	也有
+	$$\sum_{n\ge0}E_{n}\frac{x^{n}}{n!}=\sec x+\tan x. $$
+\end{theorem}
+\begin{proof}
+	为了证明递推性,可以方便地考虑集$S$,它是$ P([n+1])$中所有交错排列或互补交错排列的并集.  因此$\#S=2E_{n+1}$. 令$\pi\in C$并且假设$\pi _k=n+1$. 然后$\pi$因子成为$\pi=\pi'(n+1)\pi''$. 首先假设$\pi$是交错的.  然后$k$是奇数,$\pi'$是交错的,$\pi''$是$\pi'$的互补交错.  选择$\pi'$元素的方法数是$\binom{n}{k}$,其余的用于$\pi''$.  $\pi'$元素按交错顺序排列的方式数为$E_{k}$,$\pi''$元素为$E_{n-k}$. 这样$\pi$的总数是$\binom{n}{k}E_{k}E_{n-k}$,其中$k$是奇数.  类似的考虑表明,当$\pi$是互补交错的时,相同的公式适用于偶数$k$.  下面是递归的求和端.  
+	
+	现在,让$E(x)$是$E_{n}$的指数生成函数.  将递推乘以${x^{n}}/{n!}$,然后对$n\ge 1$的求和,得到微分方程和边界条件$$2E'(x)=E(x)^2+1 \text{和}E(0)=1$$其中,为了对形式幂级数进行良好定义,$E(0)$是$E(x)$常数项的缩写.  现在可以通过分离变量或验证此函数满足微分方程和初始条件来获得唯一解$E(x)=\sec x+\tan x$.  
+\end{proof}
+\section{欧拉多项式的指数生成函数}
+在第3.2节中,我们看到inv和maj统计数据具有相同的分布.  事实证明,有一些统计数据与des具有相同的分布,这些被称为欧拉分布.  具有这种分布的多项式具有很好的普通型和指数型对应生成函数.  我们将在本节中讨论它们.  彼得森（Petersen）[69]写了一整本关于这个主题的书.  
+
+给出$n,k\in \mathbb{N}$,其中$0\le k<n$,对应的欧拉数为
+$$A(n,k)=\#\{\pi\in \mathfrak{S}_n|\operatorname{des}\pi=k\}. $$
+像往常一样,除了$A(0,0)=1$,当$k<0$或者$k\ge n$时,我们让$A(n,k)=0$. 
+例如,如果$n=3$,我们有 
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{l|| c| c| c}
+		k&0&1&2\\  \hline
+		$\operatorname{des}\pi =k$&123&132,213,231,312&321
+	\end{tabular}
+\end{table} 
+因此
+$$A(3,0)=1,A(3,1)=4,A(3,2)=1. $$
+请确保不要将这些欧拉数与上一节中介绍的欧拉数混淆.  此外,一些作者使用$A(n,k)$表示在$\mathfrak{S}$中具有$k-1$下降的排列数.  下一个结果给出了$A(n,k)$的一些基本性质.  我们让$$A([n],k)=\{\pi\in \mathfrak{S}_n|\operatorname{des}\pi=k\}$$是非常方便的. 
+\begin{theorem}
+	假设$n\ge 0$. 
+	
+	(a)欧拉数满足初始条件
+	$$A(0,k)=\delta_{k,o}$$
+	和递推关系
+	$$A(n,k)=(k+1)A(n-1,k)+(n-k)A(n-1,k-1),n\ge 1. $$
+	
+	(b)欧拉数在$$A(n,k)=A(n,n-k-1)$$中是对称的. 
+	
+	(c)我们有
+	$$\sum_{k}A(n,k)=n!. $$
+\end{theorem}
+\begin{proof}
+	除了递推,我们把所有的都留作练习.  假设$\pi\in A([n],k)$. 然后,根据元素相对于$\pi$中$n $两侧的相对大小,从$\pi$中删除$n$将导致$\pi'\in A([n-1],k)$或者$\pi''\in A([n-1],k-1)$. 如果$\pi$中的$n$在对应于$\pi'$下降的空间中或在$\pi'$的末端,则会产生排列$\pi'$.  因此,给定的$\pi'$将通过这个方法得到$k+1$次,这就解释了求和中的第一项.  类似地,如果$n$在上升空间或在开始时,则得到$\pi''$.  因此,这种情况下的总重复次数是$n-k$,并且证明了递推性.   
+\end{proof}
+
+第$n$个{\kaishu 欧拉多项式}是
+$$A_n(q)=\sum_{k\ge0}A(n,k)q^k=\sum_{\pi \in \mathfrak{S}_{n}}q^{\text {des } \pi}. $$
+任何具有分布${A}_n(q)$的统计量都被称为{\kaishu 欧拉统计量}.  另一个著名的欧拉统计数据统计了超标情况.  排列$\mathfrak{S}$的{\kaishu 超越}是一个整数$i$,使得$\pi (i)>i$.  这就产生了{\kaishu 超越集}$$\operatorname{Exc}\pi=\{i|\pi (i)>i\}$$和{\kaishu 超标统计}
+$$ \operatorname{exc} \pi=\# \operatorname{Exc} \pi. $$
+举例来说,如果$\pi=3167542$,那么$\pi(1)=3,\pi(3)=6,$以及$\pi(4)=7$,而对其他$i$都有
+$\pi(i)\le i$. 因此$\operatorname{Exc} \pi=\{1,3,4\}$以及$\operatorname{Exc} \pi=3$. 
+做一个就像我们为$\operatorname{des}$所做的那样的表格,其中$n=3$,有
+\begin{table}[htbp]
+  	\centering
+  	\begin{tabular}{l|| c| c| c}
+  		k&0&1&2\\  \hline
+  		$\operatorname{exc}\pi =k$&123&132,213,312,321&231
+  	\end{tabular}
+\end{table} 
+因此,每列中的排列数由$A(n,k)$给出,即使两个表中的排列集不一定相等.  
+
+为了证明$A(n,k)$也通过超越来计算排列,我们需要一个在枚举组合学中非常重要的映射,它有时被称为基本双射.  在定义此函数之前,我们需要更多的概念.  与第1.12节中的操作类似,如果
+$$\pi_i>\max\{\pi_{1},\pi_{2},\dots\,\pi_{i-1}\},$$
+那么当$\pi \in \mathfrak{S}_{n}$时就叫元素$\pi_i$为一个{\kaishu 左右最大值}.  
+请注意,$\pi_{1}$和$n$始终是左右最大值,并且左右最大值从左向右增加.  
+举例来说,$\pi=51327846$的左右最大值是5,7,和8. $\pi$的左右最大值决定了$\pi$到因子$\pi_{i}\pi_{i+1}\dots\pi_{j-1}$的左右因式分解,其中$\pi_i$是左右最大值,$\pi_j$是下一个这样的最大值.  在我们的示例$\pi$中,因式分解是5132,7和846.  
+
+回想一下,由于不相交循环交换,有许多方法可以编写不相交循环分解$\pi=c_{1}c_{2}\dots c_{k}$.  我们希望区分一种类似于左右因式分解的方法.  $\pi$的{\kaishu 正则循环分解}是通过写入每个$c_{i}$,使其从$\max c_i$开始,然后对循环排序,使
+$$\max c_{1}<\max c_{2}<\dots<\max c_{k}. $$
+举例来说,按照规范编写的排列$\pi=(7,1,8)(2,4,5,3)(6)$变成$\pi=(5,3,2,4)(6)(8,7,1)$. 
+
+{\kaishu 基本映射}是$\Phi: \mathfrak{S}_{n} \rightarrow \mathfrak{S}_{n}$,其中$\Phi (\pi)$是通过将每个左右系数$\pi_{i}\pi_{i+1}\dots\pi_{j-1}$替换为循环
+$(\pi_{i},\pi_{i+1},\dots,\pi_{j-1})$得到的. 例如,
+$$\Phi (51327846)=(5,1,3,2)(7)(8,4,6)=35261874. $$
+注意,从定义中可以看出,得到的$\Phi (\pi)$的循环分解将是正则分解.  
+也很容易构造逆映射
+$\Phi: \text{给定}\sigma\in\mathfrak{S}_{n}$,我们构造其正则循环分解,然后去掉括号和逗号的生成函数得到$\pi$.  这些映射是逆的,因为定义左右因式分解和正则循环分解的不等式是相同的.  我们已经证明了以下几点.  
+\begin{theorem}
+	基本映射$\Phi: \mathfrak{S}_{n} \rightarrow \mathfrak{S}_{n}$是一个双射.  
+\end{theorem}
+\begin{corollary}
+	对于$n,k\ge 0$,我们有
+	$$A(n,k)=\text{超过}k\text{的}\pi \in\mathfrak{S}_{n}\text{的数量}. $$
+\end{corollary}
+\begin{proof}
+	$\pi \in\mathfrak{S}_{n}$的{\kaishu 共超越}是$i\in [n]$,因此
+	$\pi(i)<i$.  请注意,$\mathfrak{S}_{n}$上的共超越分布与超越分布相同.  事实上,我们在$\mathfrak{S}_{n}$上有一个由
+	$\pi\mapsto \pi^{-1}$定义的双射.  这个双射的性质是,$\pi $的超越数是$\pi^{-1}$的共超越数,因为我们通过取$\pi $的两行符号,交换顶行和底行,然后排列列,直到第一行为
+	$12\dots n$,从而获得$\pi^{-1}$的两行符号（如第1.5节所定义的）. 
+	
+	我们现在说明,如果$\Phi(\pi)=\sigma$ ,其中$\Phi$是基本双射,那么
+	$\operatorname{des}\pi$是$\sigma$的共超越数,这就得以证明.  但是如果我们在$\pi $中有下降$\pi(i)>\pi(i+1)$,那么$\pi(i),\pi(i+1)$必须在左右因式分解的相同因子中.  所以在$\Phi(\pi)$中,我们有一个循环映射$\pi_i$到$\pi_i+1$.  这使得$\pi_i$是$\sigma$的共激.  类似的想法表明,$\sigma$的上升不会引起$\sigma$的共激,证毕.  
+\end{proof}
+
+现在我们将导出两个涉及欧拉多项式的生成函数,一个普通函数和一个指数函数.  
+\begin{theorem}
+	对于$n\ge 0$,我们有
+	\begin{equation}
+	\frac{A_{n}(q)}{(1-q)^{n+1}}=\sum_{m\geq 0}(m+1)^n q^m.  
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	我们将计算由排列$\pi \in\mathfrak{S}_{n}$组成的{\kaishu 下降分区排列}$\overline{\pi}$,排列
+	$\pi \in\mathfrak{S}_{n}$在元素之间、$\pi_1$之前或$\pi_n$之后的某些空间中插入条形,但每个下降$\pi(i)>\pi(i+1)$之间的空间必须有条形.  例如,如果
+	$\pi= 2451376$,那么我们有$\overline{\pi}=24|5||137|6|$.  让$b(\overline{\pi})$是$\overline{\pi}$中的条数.  我们将证明（4.4）的两边都是生成函数$f(q)=\sum_{\overline{\pi}}q^{b(\overline{\pi})}$.  
+	
+	首先,给定$\pi $,它对$f(q)$的贡献是什么？首先,我们必须把条放在$\pi $的下降方向上,从而得到一个因子$q^{\operatorname{des}\pi}$.  现在,我们可以把其余的条放在$n+1$的任何$\pi $空间中,重复是允许的,根据定理3.4.2,它给出了一个因子${1}/{(1-q)^{n+1}}$. 因此
+	$$f(q)=\sum_{\pi \in\mathfrak{S}_{n}}\frac{q^{\operatorname{des}\pi}}{(1-q)^{n+1}}=\frac{A_{n}(q)}{(1-q)^{n+1}}$$
+	这是我们希望证明的前一半.  
+	
+	另一方面,$f(q)$中$q^m$的系数是$\overline{\pi}$的个数,$\overline{\pi}$中正好有$m$条.  我们可以如下构造这些排列,从$m$条开始,在它们之间创建$m+1$个空格.  现在,将数字$1,\dots,n$放在两条线之间,确保两条连续线之间的数字形成递增序列.  因此,我们基本上是将$n$个可分辨球放入$m+1$个可分辨框中,因为每个框中的顺序是固定的.  按照十二倍的方法,有$(m+1)^n$种方法可以完成这项工作,这就完成了证明.  
+\end{proof}
+
+我们现在可以使用刚刚导出的ogf来找到多项式$A_{n}(x)$的egf. 
+\begin{theorem}
+	我们有
+	\begin{equation}
+	\sum_{n\geq0}A_{n}(q)\frac{x^n}{n!}=\frac{q-1}{q-e^{(q-1)x}}. 
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	将前面定理中等式的两边乘以$(1-q)^{n}x^n/n!$和$n$的数量和.  左侧变成
+	$$\sum_{n\geq0}\frac{(1-q)^{n}A_{n}(q)x^n}{(1-q)^{n+1}n!}=\frac{1}{1-q}\sum_{n\geq0}A_{n}(q)\frac{x^n}{n!}. $$
+	右边现在是
+	\begin{align*}
+	\sum_{n\geq0}\sum_{m\geq0}q^m\frac{(1-q)^{n}(m+1)^{n}x^n}{n!}
+	&=\sum_{m\geq0}q^m\sum_{n\geq0}\frac{[(1-q)x(m+1)]^n}{n!}\\
+	&=\sum_{m\geq0}q^m e^{(1-q)x(m+1)}\\
+	&=\frac{e^{(1-q)x}}{1-qe^{(1-q)x}}\\
+	&=\frac{1}{e^{(q-1)x}-q}. 
+	\end{align*}
+	将两侧设置为相等并求解所需的生成函数,即可完成证明.  
+\end{proof}
+\section{标记结构}
+有一种组合使用指数生成函数的方法,我们将在以下部分介绍.  它基于乔亚尔的物种理论[47].  他最初的方法使用了范畴和函子的机制.  但是对于我们将要进行的枚举类型,没有必要使用这种级别的通用性.  
+Bergeron、Labelle和Leroux的教科书中有对完整理论的阐述[11].  
+
+{\kaishu 标记结构}是一个函数$\mathcal{S}$,它为每个有限集$\mathcal{S}(L)$指定一个有限集$L$,使得
+\begin{equation}
+    \# L=\# M \Longrightarrow \# \mathcal{S}(L)=\# \mathcal{S}(M). 
+\end{equation}
+我们称$L$为{\kaishu 标签集},$\mathcal{S}(L)$为$L$上的{\kaishu 结构集}.  我们让
+$$s_n=\# \mathcal{S}(L)$$
+表示基数$n$的任意$L$,这是因为（4.6）而定义完善的. 我们有时使用$\mathcal{S}(\cdot)$作为结构$\mathcal{S}$的替代符号.  我们也有相应的egf
+$$
+F_{\mathcal{S}}=F_{\mathcal{S}(\cdot)}(x)=\sum_{n \geq 0} s_{n} \frac{x^{n}}{n !} . 
+$$
+虽然这些定义看起来很抽象,但我们已经看到了许多标记结构的示例.  只是我们没有确定他们的性质.  本节其余部分将专门介绍这些示例的上下文.  总结见表4.1.  
+ 
+首先,考虑由$\mathcal{S}(L)=2^L$定义的标签结构.  因此$\mathcal{S}$将$L$的子集集合指定给每个标签集$L$.  以说明
+$$
+\mathcal{S}=\{\varnothing,\{a\},\{b\},\{a,b\}\}. 
+$$
+很明显,$\mathcal{S}$满足（4.6）和$s_n=\#2^[n]=2^n$,所以相关的生成函数是
+\begin{equation}
+     F_{2}(x)=\sum_{n \geq 0}2^n\frac{x^{n}}{n !}=e^{2x}. 
+\end{equation}
+
+我们还想通过对固定的$k\ge 0$使用结构$\mathcal{S}(L)=\binom{L}{k}$来指定所考虑的子集的大小.  现在我们有$s_n=\binom{n}{k}$,并且利用$n<k$的二项式系数为零的事实可得
+\begin{equation}
+     F_{\binom{\cdot}{k}}(x)=\sum_{n \geq 0}\binom{n}{k}\frac{x^{n}}{n !}
+     =\sum_{n \geq k} \frac{n !}{k !(n-k) !} \cdot \frac{x^{n}}{n !}
+     =\frac{x^{k}}{k !} \sum_{n \geq k} \frac{x^{n-k}}{(n-k) !}
+     =\frac{x^{k}}{k !} e^{x}. 
+\end{equation}
+
+拥有一个不向标签集添加额外映射的贴图将非常方便.  
+因此,定义标记结构$E(L)=\{L\}$.  注意,$E$返回由$L$本身组成的集合,而不是由$L$元素组成的集合.  因此,$s_n=1$代表所有$n$和$F_E=e^x$.  对该标记结构使用$E$既反映了其egf是指数函数的事实,也反映了法语单词“set”是“整体”.  （乔亚尔是个讲法语的人.  ）我们还需要通过定义
+$$
+\bar{E}(L)=\begin{cases}
+    \{L\} & \text { if } L \neq \emptyset, \\
+	\emptyset & \text { if } L=\emptyset . 
+    \end{cases} 
+$$
+来指定集合是非空的. 
+需注意,尽管有$\bar{E}(\emptyset)=\emptyset$,仍有${E}(\emptyset)=\{\emptyset\}. $
+对于$\bar{E}$,很明显对于$n\ge 1$有$s_n=1$和$s_0=0$. 
+很明显也有
+\begin{equation}
+    F_{\bar{E}}=e^x-1. 
+\end{equation}
+ 
+对于集合的划分,我们将使用结构
+$L\mapsto B(L)$,其中$B(L)$的定义如第1.4节所述.  所以$s_n=B(n)$,根据定理4.1.2,egf是
+$$
+ F_{B}=\sum_{n \geq 0}B(n)\frac{x^{n}}{n !}=e^{e^{x}-1}. 
+$$
+一旦我们在第4.5节推导出指数公式,而不是像以前那样使用递归和形式化操作,我们将能够对这一事实进行组合推导.  
+\begin{table}[htbp]
+	\centering
+	\caption{标记结构}\label{tab-1}
+	\begin{tabular}{l |l|l|l}
+		$\mathcal{S}(L)$&计数&$s_n$&egf\\
+		\hline
+		
+		$2^L$&子集&$2^n$&$\sum_{n \geq 0}2^n\frac{x^{n}}{n !}=e^{2x}$\\
+		
+		$\binom{L}{k}$&$k$-子集&$s_n$&$\sum_{n \geq 0}\binom{n}{k}\frac{x^{n}}{n !}=\frac{x^{k}e^x}{k!}$\\
+		
+		$E(L)$&集合&1&$\sum_{n \geq 0}\frac{x^{n}}{n !}=e^{x}$\\
+		
+		$\bar{E}(L)$&非空集&$1-\delta_{n, 0}$&$\sum_{n \geq 1}\frac{x^{n}}{n !}=e^{x}-1$\\
+		
+		$B(L)$&集合划分&$B_n$&$\sum_{n \geq 0}B(n)\frac{x^{n}}{n !}=e^{e^{x}-1}$\\
+		
+		$S(L,k)$&用$b$块设置分区&$S(n,k)$&$\sum_{n \geq 0}S(n,k)\frac{x^{n}}{n !}=\frac{1}{k!}(e^{x}-1)^k$\\
+		
+		$S_o(L,k)$&有序的$S(L,k)$版本&$k!S(n,k)$&$k!\sum_{n \geq 0}S(n,k)\frac{x^{n}}{n !}=(e^{x}-1)^k$\\
+		
+		$\mathfrak{S}(L)$&排列&$n!$&$\sum_{n \geq 0}n!\frac{x^{n}}{n !}=\frac{1}{1-x}$\\
+		
+		$c(L,k)$&具有$c$圈的排列&$c(n,k)$&$\sum_{n \geq 0}c(n,k)\frac{x^{n}}{n !}=\frac{1}{k!}(\ln {\frac{1}{1-x}})^k$\\
+		
+		$c_o(L,k)$&有序的$c(L,k)$版本&$k!c(n,k)$&$k!\sum_{n \geq 0}c(n,k)\frac{x^{n}}{n !}=(\ln {\frac{1}{1-x}})^k$\\
+		
+		$c(L)$&具有1个圈的排列&$(n-1)!$&$\sum_{n \geq 1}(n-1)!\frac{x^{n}}{n !}=\ln {\frac{1}{1-x}}$\\	
+		
+	\end{tabular}
+\end{table}
+
+与子集一样,我们将使用
+$L\mapsto S(L,k)$限制我们对具有给定块数的分区的关注.  现在我们有$s_n=S(N,k)$,即第二类斯特林数.  但我们尚未找到egf 
+$\sum_{n \geq 0}S(n,k)x^{n}/n!$的闭合形式,以验证表\ref{tab-1}中的条目.  一旦我们在下一节中介绍了egfs的求和和积规则,我们就可以很容易地做到这一点.  
+
+我们有时会处理块上有指定顺序的集合分区,并使用符号
+$$
+S_o(L,k)=\{B_1,B_2,\dots ,B_k|B_1/B_1/B_2/\dots B_k\vdash L\}. 
+$$
+我们称这些{\kaishu 有序集分区}或{\kaishu 集合组合}.  请注意,顺序是块本身,而不是每个块中的元素,因此
+$(\{1,3\},\{2\})\neq(\{2\},\{1,3\})$但是$(\{1,3\},\{2\})=(\{3,1\},\{2\})$.  很明显,标记的结构$L\mapsto S_o(L,k)$有$s_n=k!S(n,k)$,可以对egf做出类似的陈述.  我们还需要允许空块的{\kaishu 弱集合组合}.  
+
+我们可以用类似于我们刚才看到的集合分区的方法来观察排列上的标记结构.  在这种情况下,将$L$的排列视为分解为循环的双射
+$\Pi: L \rightarrow L$是一个双射,正如我们在第1.5节中对$L=[n]$所做的那样. 设
+$\mathcal{S}(L)=\mathfrak{S}_{L}$是$L$的所有排列的标记结构,使得$s_n=n!$和
+$F_\mathfrak{S}=\sum_{n}n!x^{n}{n !}={1}/{1-x}. $
+我们有关联结构
+$$c(L,k)=\{\pi=c_1c_2\dots c_k|\pi \text{是有着}k\text{个循环数}c_i\text{的排列}\}$$
+和有序变量
+$$c_o(L,k)=\{(c_1,c_2,\dots ,c_k)|c_i\text{是}L\text{排列的循环}\}. $$
+使用第一类无符号斯特林数,我们可以看到这两种结构的序列的计数分别是$c(n,k)$和$k!c(n,k)$.  同样,我们将等待计算相应的egfs.  
+
+最后,我们会发现只有一个循环的特例$c(L):=c(L,1)$特别有用.  在这种情况下,计数器很容易计算.  
+
+\begin{proposition}
+	我们有
+	$$
+	\#c([n])=\begin{cases}
+	(n-1)! & \text { if } n \ge 1, \\
+	0 & \text { if } n=0. 
+	\end{cases} 
+	$$
+\end{proposition}
+\begin{proof}
+	空排列没有圈,因此$c(\emptyset)=0$. 假设$ n \ge 1$,并考虑$(a_1,a_2,\dots ,a_n)\in c([n])$. 那么这样的圈数是排序$a_i$的方式数除以给出相同圈的排序数,即
+	$n!/n=(n-1)!. $
+\end{proof}
+
+根据前面的命题,
+$$F_c=\sum_{n \geq 1}(n-1)!\frac{x^{n}}{n !}=\sum_{n \geq 1}\frac{x^{n}}{n !}=\ln {\frac{1}{1-x}}$$
+由(4.2)所定义. 
+\section{egfs的和积规则}
+与集合和ogfs一样,egfs也有求和规则和乘积规则.  为了得到这些结果,我们首先需要标记结构的相应规则.  
+
+假设$\mathcal{S}$和$\mathcal{J}$是标记的结构.  如果对于任何有限集$L$有$\mathcal{S}(L)\cap\mathcal{J}(L)=\emptyset$,那么我们说$\mathcal{S}$和$\mathcal{J}$是{\kaishu 不相交}的.  在这种情况下,我们用
+$$(\mathcal{S}\uplus\mathcal{J})(L)=\mathcal{S}(L)\uplus\mathcal{J}(L). $$
+定义它们的{\kaishu 不相交并结构}$\mathcal{S}\uplus\mathcal{J}. $
+很容易看出,我们将在下面的命题4.4.1中证明,$\mathcal{S}\uplus\mathcal{J}$满足标记结构的定义.  作为这个概念的例子,假设$\#L=n$.  那么$2^L$可以被划分为$L$的子集,$2^L$的大小为$k$,其中$0\le k\le n$. 换句话说
+\begin{equation}
+     2^L=\binom{L}{0}\uplus\binom{L}{1}\uplus\dots\uplus\binom{L}{n}. 
+\end{equation}
+请注意,要对所有$L$进行说明,而不考虑基数,因为对于$k>\#L$有$\binom{L}{k}=\emptyset$,我们可以说$ 2^L=\uplus_{k\ge 0}\binom{L}{k}$. 
+同样地,我们有
+\begin{equation}
+B(L)=S(L,0)\uplus S(L,1)\uplus \dots \uplus S(L,n)
+\end{equation}
+和
+\begin{equation}
+\mathfrak{S}(L)=c(L,0)\uplus c(L,1)\uplus \dots \uplus c(L,n). 
+\end{equation}
+
+要定义乘积,让$\mathcal{S}$和$\mathcal{J}$是任意标记的结构.  它们的{\kaishu 乘积},$\mathcal{S}\times\mathcal{J}$,由
+$$\mathcal{S}\times\mathcal{J}=\{(S,T)|S\in\mathcal{S}(L_1),T\in\mathcal{J}(L_2)
+\text{以及}L\text{的弱组合}(L_1,L_2)
+\}$$
+所定义.  
+直观地,我们以各种可能的方式将$L$划分为两个子集,并在第一个子集上放置$\mathcal{S}$结构,在第二个子集上放置$\mathcal{J}$结构.  我们将再次证明,这确实是命题4.4.1中的标记结构.  严格地说,$\mathcal{S}\times\mathcal{J}$应该是一个多重集,因为同一对$(S,T)$可能来自两个不同的有序分区.  然而,在我们将使用的示例中,情况永远不会是这样.  
+如果我们用多重数计算,我们将证明的关于乘积的定理在更一般的情况下仍然成立.  
+
+为了给出一些乘积的例子,我们需要一个结构等效的概念.  假设标记的结构$\mathcal{S}$和$\mathcal{J}$是相等的,
+如果$$\#\mathcal{S}(L)=\#\mathcal{J}(L)$$对所有有限的$L$成立,则让$\mathcal{S}\equiv\mathcal{J}$.  
+有时,如果上下文能够方便地包含通用标签集$L$,那么我们会为此令$\mathcal{S}(L)\equiv\mathcal{J}(L)$.  显然,如果$\mathcal{S}\equiv\mathcal{J}$,那么
+$F_\mathcal{S}(x)=F_\mathcal{J}(x)$. 
+作为这些概念的第一个例证,我们称
+\begin{equation}
+2^\cdot\equiv(E\times E)(\cdot). 
+\end{equation}
+为了弄明白这个,我们需注意的是,子集$S\in 2^L$是通过映射
+$$S\leftrightarrow(S,L-S)$$
+的弱组合的双射. 
+因此$\#2^L=\#(E\times E)(L)$是我们希望得到的结果.  这些相同的想法表明,我们有
+$S_o(\cdot,2)=(\bar{E}\times \bar{E})(\cdot)$,更一般地说,对于任何$k\ge 0$,有
+\begin{equation}
+S_o(\cdot,k)={\bar{E}}^k(\cdot). 
+\end{equation}
+以类似的方式,我们得到
+\begin{equation}
+c_o(\cdot,k)={c}^k(\cdot). 
+\end{equation}
+ 
+现在是时候证明标记结构的和积规则了.  这样做,我们还将证明它们满足标记结构的定义（4.6）.  
+\begin{proposition}
+	令$\mathcal{S},\mathcal{J}$是标记结构以及当$\#L=n$时令$s_n=\#\mathcal{S}(L),t_n=\mathcal{J}(L)$. 
+	
+	$(a)\quad(\text{求和规则})$如果$\mathcal{S}$和$\mathcal{J}$不相交,那么
+	$$\#(\mathcal{S}\uplus\mathcal{J})(L)=s_n+t_n. $$
+	
+	$(b)\quad(\text{求积规则})$对于任何$\mathcal{S},\mathcal{J}$得到
+	$$\#(\mathcal{S}\times\mathcal{J})(L)
+	=\sum_{k= 0}^n\binom{n}{k}s_kt_{n-k}. $$
+\end{proposition}
+\begin{proof}
+	对于$(a)$,我们有
+	$$\#(\mathcal{S}\uplus\mathcal{J})(L)
+	=\#(\mathcal{S}(L)\uplus\mathcal{J}(L))
+	=\#\mathcal{S}(L)+\#\mathcal{J}(L)=s_n+t_n. $$
+	现在考虑$(b)$,为了构建
+	$(\mathcal{S},\mathcal{J})\in(\mathcal{S}\times\mathcal{J})(L)$,我们必须首先选取弱组合
+	$L=L_1\uplus L_2$,这相当于只选取$L_1$作为$L_2=L-L_1. $
+	因此,如果$\#L_1=k$,然后有$\binom{n}{k}$种方法去可以执行此步骤. 
+	接下来,我们必须在$L_1$上放置$\mathcal{S}$结构,在$L_2$上放置$\mathcal{J}$结构,这可以用$s_kt_{n-k}$种方式完成.  
+	将两个计数相乘,然后对所有可能的$k$求和,得到所需的公式.  
+\end{proof}
+
+作为这个结果的应用,请注意,将求和规则应用于（4.10）只会得到$2_n=\sum_k\binom{n}{k}$,即定理1.3.3（c）.  如果我们将乘积规则应用于（4.13）,我们会再次得到
+$$2^n=\sum_{k=0}^n\binom{n}{k}\cdot1\cdot1=\sum_{k=0}^n\binom{n}{k}. $$
+本章练习8（b）推导出了一些更有趣的公式.  
+
+我们现在可以将命题4.4.1转换为指数生成函数的相应规则.  这将允许我们填写上一节中表4.1中后续的条目.  
+\begin{theorem}
+	令$\mathcal{S},\mathcal{J}$是标记结构. 
+	
+	$(a)\quad(\text{求和规则})$如果$\mathcal{S}$和$\mathcal{J}$不相交,那么
+	$$F_{\mathcal{S}\uplus\mathcal{J}}(x)=F_{\mathcal{S}}(x)+F_{\mathcal{J}}(x). $$
+	
+	$(b)\quad(\text{求积规则})$对于任何$\mathcal{S},\mathcal{J}$得到
+	$$F_{\mathcal{S}\times\mathcal{J}}(x)=F_{\mathcal{S}}(x)\cdot F_{\mathcal{J}}(x). $$
+\end{theorem}
+\begin{proof}
+	令$s_n=\mathcal{S}([n])$以及$t_n=\mathcal{J}([n])$. 使用命题4.4.1中的求和规则,得出\begin{align*}
+	F_{\mathcal{S}}(x)+F_{\mathcal{J}}(x)
+	&=\sum_{n\geq0}s_n\frac{x^n}{n!}+\sum_{n\geq0}t_n\frac{x^n}{n!}\\
+	&=\sum_{n\geq0}(s_n+t_n)\frac{x^n}{n!}\\
+	&=\sum_{n\geq0}\#(\mathcal{S}\uplus\mathcal{J})([n])\frac{x^n}{n!}\\
+	&=F_{\mathcal{S}\uplus\mathcal{J}}(x). 
+	\end{align*}
+	现在使用同一命题的乘积法则得到
+	\begin{align*}
+	F_{\mathcal{S}}(x)F_{\mathcal{J}}(x)
+	&=\left(\sum_{n\geq0}s_n\frac{x^n}{n!}\right)\left(\sum_{n\geq0}t_n\frac{x^n}{n!}\right)\\
+	&=\sum_{n\geq0}\left(\sum_{k=0}^n\frac{s_k}{k!}\cdot \frac{t_{n-k}}{(n-k)!}\right)x^n\\
+	&=\sum_{n\geq0}\left(\sum_{k=0}^n\binom{n}{k}s_kt_{n-k}\right)\frac{x^n}{n!}\\
+	&=\sum_{n\geq0}\#(\mathcal{S}\times\mathcal{J})([n])\frac{x^n}{n!}\\
+	&=F_{\mathcal{S}\times\mathcal{J}}(x),
+	\end{align*}
+	这就完成了证明.  
+\end{proof}
+
+为了说明如何使用该结果,我们可以将求和规则应用于（4.10）,记住等式后面的注释,写出
+$$F_{2^\cdot}(x)=\sum_{k\geq0}F_{\binom{\cdot}{k}}(x). $$
+我们可以使用（4.7）和（4.8）进行检查：
+$$\sum_{k\geq0}F_{\binom{\cdot}{k}}(x)=\sum_{k\geq0}\frac{x^k}{k!}e^x=e^x\sum_{k\geq0}\frac{x^k}{k!}=e^x\cdot e^x=e^{2x}=F_{2^\cdot}(x). $$
+还可以将乘积规则应用于（4.13）并得到
+$$F_{2^\cdot}(x)=F_E(x)F_E(x). $$
+同样,这产生了一个简单的恒等式；即$e^{2x}=e^x\cdot e^x$. 
+定理4.4.2的真正威力在于,它可以用来推导egfs,而egfs更难用其他方法证明.  例如,将乘积规则应用于等式（4.14）和（4.9）得到
+$$F_{S_o}(\cdot,k)(x)=F_{\bar{E}}{(x)^k}={(e^x-1)}^k,$$
+表4.1的新条目.  此外,由于$F_{S_o}(\cdot,k)(x)=k!F_{S(\cdot,k)}(x)$我们得到
+$$F_{S(\cdot,k)}(x)=\frac{{(e^x-1)}^k}{k!}. $$
+这允许我们给出$B(n)$的egf的另一个推导.  使用求和规则和（4.11）得到
+$$F_{B}(x)=\sum_{k\geq0}F_{S(\cdot,k)}(x)=\sum_{k\geq0}\frac{{(e^x-1)}^k}{k!}=e^{e^x-1}. $$
+正如读者在练习中被要求做的那样,这些相同的想法可用于推导具有给定周期数的排列的egfs.  
+\section{指数公式}
+在组合数学和其他数学领域中,常常存在可以分解为组件的对象.  例如,集合分区的组件是块,排列的组件是循环.  指数公式根据标记结构成分的egf确定其egf.  它也可以被视为egfs的乘积规则的类似物,其中一个将$L$切割成任意数量的子集（而不仅仅是2个）,而这些子集是无序的（而不是有序的）.  
+
+为了使这些想法更精确,让$\mathcal{S}$是满足
+\begin{equation}
+\mathcal{S}(L)\cap \mathcal{S}(M)=\emptyset\text{如果}L\ne M
+\end{equation}
+的标记结构. 相应的{\kaishu 分区结构},$\varPi(\mathcal{S})$,由
+$$(\varPi(\mathcal{S}))(L)=\{
+\{S_1,S_2,\dots\}|\text{任何}i,\text{对于所有的}L_1/L_2/\dots\vdash L\text{有}S_i\in \mathcal{S}(L_i)
+\}$$
+定义. 
+直观地说,为了形成$\varPi(\mathcal{S})(L)$,我们以所有可能的方式对标签集$L$进行分区,然后以所有可能的方式将$\mathcal{S}$的结构放在分区的每个块上.  施加条件（4.16）,使得$\varPi(\mathcal{S})(L)$的每个元素只能以一种方式从该过程中产生.  举例来说,
+\begin{equation}
+B(L)=\{L_1/L_2/\dots\vdash L
+\}\equiv(\varPi(E))(L)
+\end{equation}
+因为$L_i$是任何$i$的$E(L_i)$的唯一元素.  以同样的方式,我们可以看到
+\begin{equation}
+   \mathfrak{S}(L)
+   =\{c_1c_2\dots |\text{任何}i,\text{对于所有的}L_1/L_2/\dots\vdash L\text{有}c_i\text{是} L_i\text{上的一个循环}\}
+   \equiv(\varPi(c))(L). 
+\end{equation}
+
+在$\varPi(\mathcal{S})$的egf和$\bar{\mathcal{S}}$的egf之间有一个简单的关系,$\bar{\mathcal{S}}$的egf是由
+$$
+\bar{\mathcal{S}}(L)=\begin{cases}
+\mathcal{S}(L) & \text { if } L \neq \emptyset, \\
+\emptyset & \text { if } L=\emptyset . 
+\end{cases} 
+$$
+定义的标记结构. 
+因此如果$s_n=\#\mathcal{S}([n])$,那么
+$$F_{\bar{\mathcal{S}}}(x)=\sum_{n\geq1}s_n\frac{x^n}{n!}. $$
+我们需要$F_{\bar{\mathcal{S}}}(x)$有一个零常数项,这样下一个结果的构成成分就会得到很好的定义,见定理3.3.3.  
+\begin{theorem}
+	（指数公式）.  如果$\mathcal{S}$是符合（4.16）要求的标记结构,则
+	$$F_{\varPi(\mathcal{S})}(x)=e^{F_{\bar{\mathcal{S}}}(x)}. $$
+\end{theorem}
+\begin{proof}
+	从定理4.4.2中egfs的乘积规则可以看出,$F_{\bar{\mathcal{S}}}(x)^k$是将标签集的分区上的$\mathcal{S}$结构放入$k$有序非空块的egf.  
+	所以,根据（4.16）,$F_{\bar{\mathcal{S}}}(x)^k/k!$是egf,用于将标签集的分区上的$\mathcal{S}$结构放入$k$无序的非空块中.  现在使用egfs的求和规则,同样来自定理4.4.2,可以得
+	出$\sum_{k\ge 0}F_{\bar{\mathcal{S}}}(x)^k/k!$是egf,用于将标签集的分区上的$\mathcal{S}$结构放入任意数量的无序非空块中.  但这正是结构
+	$\varPi(\mathcal{S})$,所以我们完成了证明.  
+\end{proof}
+
+作为指数公式的首次应用,请考虑（4.17）.  在这个例子中,$\mathcal{S}=E$和$F_{\bar{E}}(x)=e^x-1$.  因此,应用前面的定理,
+$$F_B(x)=F_{\varPi(\bar{E})}(x)=e^{F_{\bar{E}}(x)}=e^{e^x-1}. $$
+尽管我们已经知道这个生成函数,但这个证明在计算和概念上都是最简单的.  
+
+我们可以以类似的方式使用（4.18）.  现在$\mathcal{S}=c$以及
+$$F_c(x)=\ln (1/(1-x))=F_{\bar{c}}(x),$$因为原egf已经没有常数项了.  应用指数公式得出
+$$
+F_\mathfrak{S}(x)
+=F_{\bar{c}}(x)=e^{F_{\bar{c}}(x)}=e^{\ln (1/(1-x))}=\frac{1}{1-x}
+,$$
+这至少与我们之前计算的egf相一致,尽管这是一种更为迂回的方法.  但有了定理4.5.1,就很容易得到关于排列或其他标记结构的更精确信息.  例如,假设我们希望对定理4.1.1中的错乱数$D(n)$的egf给出一个更简单、更组合的推导.  相应的结构由
+$$\mathcal{D}(L)=L\text{上的错乱数}$$
+定义. 
+为了将$\mathcal{D}(L)$表示为分区结构,我们需要只允许长度为2或更大的循环.  所以让
+$$
+\mathcal{S}(L)=\begin{cases}
+c(L) & \text { if } \#L \ge2, \\
+\emptyset & \text { otherwise }. 
+\end{cases} 
+$$
+因此,$\mathcal{D}\equiv \varPi(\mathcal{S}). $此外,
+$$
+s_n=\begin{cases}
+(n-1)! & \text { if }n \ge2, \\
+0 & \text { otherwise },
+\end{cases} 
+$$
+因此
+$$
+F_{\bar{\mathcal{S}}}(x)
+=\sum_{n\geq2}(n-1)!\frac{x^n}{n!}
+=\sum_{n\geq2}\frac{x^n}{n!}
+=\ln \left(\frac{1}{1-x}\right)-x. 
+$$
+应用指数公式得出
+\begin{equation}
+\sum_{n\geq0}D(n)\frac{x^n}{n!}
+=F_{\mathcal{D}}(x)
+=F_{\varPi(\mathcal{S})}(x)
+=exp\left(\ln \left(\frac{1}{1-x}\right)-x\right)
+=\frac{e^{-x}}{1-x}. 
+\end{equation}
+
+人们可以从定理4.5.1中挖掘更多的信息,因为证明表明每个求和$F_{\bar{\mathcal{S}}}(x)^k/k!$都有组合意义.  定义{\kaishu 双曲正弦和余弦}函数为形式幂级数
+$$
+\sinh x=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\cdots =\sum_{n\ge0}\frac{x^{2n+1}}{(2n+1)!}
+$$
+和
+$$
+\cosh x=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots =\sum_{n\ge0}\frac{x^{2n}}{(2n)!}. 
+$$
+很容易看出,对于任何形式的幂级数$f(x)=\sum_{n\geq0}a_nx^n$,我们都可以通过
+\begin{equation}
+\sum_{n\ge0}a_{2n+1}x^{2n+1}=\frac{f(x)-f(-x)}{2}\quad\quad\text{和}
+\quad\quad\sum_{n\ge0}a_{2n}x^{2n}=\frac{f(x)+f(-x)}{2}. 
+\end{equation}
+提取奇偶项级数. 因此,
+\begin{equation}
+\sinh x=\frac{e^x-e^{-x}}{2}\quad\quad\text{和}\quad\quad
+\cosh x=\frac{e^x+e^{-x}}{2}. 
+\end{equation}
+用
+$$
+(\varPi_o(\mathcal{S}))(L)=\{
+{S_1,S_2,\dots}\in(\varPi_o(\mathcal{S}))(L)|L\text{划分为奇数个块}
+\}
+$$
+定义{\kaishu 奇数分区结构}$\varPi_o(\mathcal{S})$,同样定义{\kaishu 偶划分结构}$\varPi_e(\mathcal{S})$. 类似指数公式的证明可用于证明以下内容.  
+\begin{theorem}
+	如果$\mathcal{S}$是满足（4.16）的标记结构,则有
+	$$
+	F_{\varPi_o(\mathcal{S})}(x)
+	=\sinh F_{\bar{\mathcal{S}}}(x)
+	$$
+	和
+	$$
+	F_{\varPi_e(\mathcal{S})}(x)
+	=\cosh F_{\bar{\mathcal{S}}}(x). 
+	$$
+\end{theorem}
+
+现在假设我们想要找到$a_n$的egf,它是$[n]$的排列数,具有奇数个循环.  与前面的$\mathcal{S}=c$和$  F_{c}(x)=F_{\bar{c}}(x)=\ln (1/(1-x))$一样,使用定理4.5.2,然后（4.21）,我们可以看到
+\begin{align*}
+\sum_{n\geq0}a_n\frac{x^n}{n!}
+&=\sinh F_{\bar{c}}(x)\\
+&=\frac{e^{\ln (1/(1-x))}+e^{-\ln (1/(1-x))}}{2}\\
+&=\frac{1}{2}\left(\frac{1}{1-x}-(1-x)\right)\\
+&=x+\frac{1}{2}\sum_{n\geq2}{x^n}. 
+\end{align*}
+从上述第一个和最后一个和中提取$x^n/n!$的系数得到
+\begin{equation}
+a_n=\begin{cases}
+n!/2 & \text { if }n \ge2, \\
+1 & \text { if }n=1. 
+\end{cases} 
+\end{equation}
+当然,一旦你得到了这样一个简单的答案,你就会想要一个纯粹的组合解释,鼓励读者在本章练习12（c）中找到一个.  
+\section{习题}
+\begin{enumerate}
+	   \item[(1)]
+    	\begin{enumerate}
+		 \item[(a)] 使用第2章练习4中的错乱数递归来重新证明定理4.1.1. 
+		 \item[(b)] 使用第2章练习5中的错乱数递归来重新证明定理4.1.1.
+	    \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(2)]
+	\begin{enumerate}
+		\item[(a)] 完成定理4.2.1的证明.
+		\item[(b)] 完成定理4.2.3的证明. 
+		\item[(c)] 给出恒等式
+		$$
+		(m+1)^n=\sum_{k\geq0}A(n,k)\binom{m+n-k}{n}
+		$$
+		的两个证明,一个使用方程（4.4）,另一个使用下降分区排列. 
+		\item[(d)] 给出$A(n,k)$的以下公式的组合证明：
+		$$
+		A(n,k)=\sum_{i=0}^{k+1}(-1)^i\binom{n+1}{i}(k-i+1)^n. 
+		$$
+		提示：使用包含和排除以及下降分区排列的原则.  
+		\item[(e)] 给出$n\ge1$的下列递归的组合证明：
+		$$
+		A_n(q)=A_{n-1}(q)+q\sum_{i=0}^{n-2}\binom{n-1}{i}A_i(q)A_{n-i-1}(q). 
+		$$
+		提示：将每个$\pi\in\mathfrak{S}_n$作为$\pi=\sigma n \tau$的因子. 
+		\item[(f)] 使用（e）再次证明（4.5）. 
+	\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(3)] 设$I\subset\mathbb{P}$是有限的,如果$I$是非空的,则设$m=\max I$,如果$I=\emptyset$是$m=0$.  对于$n>m$,定义相应的下降多项式$d(I;n)$为$\pi\in\mathfrak{S}_n$的个数,使得$\text {Des }\pi=I$. 
+	\begin{enumerate}
+		\item[(a)] 证明$d([k];n)=\binom{n-1}{k}. $
+		\item[(b)] 如果$I\ne\emptyset$,让$I^-=I-\{m\}$. 证明
+		$$
+		d(I;n)=\binom{n}{m}d(I^-;m)-d(I^-;n). 
+		$$
+		提示：考虑$\pi\in\mathfrak{S}_n$的集合,使$\text {Des }(\pi_1\pi_2\dots\pi_m)=I^-$和$\pi_{m+1}<\pi_{m+2}<\dots<\pi_{n}$. 
+		\item[(c)] 使用第（b）部分说明$d(I;n)$是$n$中具有$\text {deg }(I;n)=m$次的多项式. 
+		\item[(d)] 用包含和排除原理证明$d(I;n)$是$n$中的多项式. 
+		\item[(e)] 由于$d(I;n)$是$n$中的多项式,它的定义域可以扩展到所有$n\in\mathbb{C}$. 显示如果$i\in I$,那么$d(I;i)=0$. 
+		\item[(f)] 证明$d(I;n)$的复根都位于复平面上的圆$|z|\le m$中,并且都有大于或等于$-1$的实部. 注：这似乎是一个困难的问题. 
+		\item[(g)] （猜想）证明$d(I;n)$的复根都位于圆
+		$$
+		\left|z-\frac{m+1}{2}\right|\le \frac{m-1}{2}
+		$$
+		中. 
+		注意,这个猜想暗示了（f）部分.  
+	\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(4)]
+	\begin{enumerate}
+		\item[(a)] 使用$S(n,k)$的递归和表4.1中的生成函数这两种方法导出生成函数：
+		$$
+		\sum_{n,k\geq0}S(n,k)t^k\frac{x^n}{n!}=e^{t(e^x-1)}. 
+		$$
+		\item[(b)] 使用第（a）部分重新推导Bell数$B(n)$的egf. 
+	\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(5)]
+	\begin{enumerate}
+		\item[(a)] 找到一个$\sum_{n,k\geq0}c(n,k)t^kx^n/n!$的公式,并用两种方法证明：使用$c(n,k)$的递归和表4.1中的生成函数. 
+		\item[(b)] 使用第（a）部分重新推导排列结构$\mathfrak{S}(\cdot)$的egf. 
+	\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(6)]
+	\begin{enumerate}
+		\item[(a)] 设$i_n$是$\mathfrak{S}_n$中的对合数.  证明$i_0=i_1=1$和$n\ge2$时有
+		$$
+		i_n=i_{n-1}+(n-1)i_{n-2}. 
+		$$
+		\item[(b)] 使用（a）部分中的递归和使用指数公式这两种方法证明
+		$$
+		\sum_{n\geq0}i_n\frac{x^n}{n!}=e^{x+x^{2}/2}. 
+		$$
+		\item[(c)] 给定$A\subseteq\mathbb{P}$,设$S(n,A)$是$[n]$的分区数,所有分区的块大小都是$A$的元素.  使用指数公式找到并证明$\sum_{\geq0}S(n,A)x^n/n!. $
+		\item[(d)] 对$c(n,A)$重复第（c）部分,$[n]$的排列数中所有循环的长度都是$A$的元素. 
+	\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(7)] 在定理4.1.3的证明中填写查找egf和求解微分方程的详细信息.  
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(8)]
+	\begin{enumerate}
+		\item[(a)] 使用（4.14）和乘积规则标记结构，以证明$$S(n,2)=2^{n-1}-1. $$
+		\item[(b)] 使用（4.15）和乘积规则标记结构，以证明$$c(n+1,2)=n!\sum_{k=1}^n\frac{1}{k}. $$
+	\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(9)]
+	\begin{enumerate}
+		\item[(a)] 使用定理4.4.2推导表4.1中结构$c_o(\cdot,k)$和$c(\cdot,k)$的egfs. 
+		\item[(b)] 使用部分（a）重新推导结构$\mathfrak{S}(\cdot)$的egf. 
+	\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(10)]
+	\begin{enumerate}
+		\item[(a)] 假设$\mathcal{S}$是满足（4.16）的标记结构，$\mathcal{J}$是任何标记结构.  
+		它们的组成$\mathcal{S}\circ\mathcal{J}$是这样的结构，即
+		$$
+		(\mathcal{J}\circ\mathcal{S})(L)		
+		=\{
+		(\{S_1,S_2,\dots\},T)|
+		\text{任何}i\text{以及}T\in\mathcal{J}(\{S_1,S_2,\dots\}),
+		\text{对于所有的}L_1/L_2/\dots\vdash L\text{有}S_i\in \mathcal{S}(L_i)
+		\}. 
+		$$		
+		证明$$F_{\mathcal{J}\circ\mathcal{S}}(x)=F_{\mathcal{J}}(F_{\bar{\mathcal{S}}}(x)). $$
+		\item[(b)] 使用（a）重新推导指数公式. 
+	\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(11)]
+	设$\mathcal{F}$是由以$L$为顶点集的族组成的标记结构.  证明
+	$$
+	\sum_{n\geq0}\#\mathcal{F}([n])\frac{x^n}{n!}=exp\left(\sum_{n\geq1}n^{n-2}x^n/n!\right). 
+	$$
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(12)]
+	\begin{enumerate}
+		\item[(a)] 证明恒等式（4.20）.  
+		\item[(b)] 证明定理4.5.2.  
+		\item[(c)] 通过在具有奇数个循环的$[n]$排列，其中$n\ge 2$，以及具有偶数个循环的排列之间找到一个双射来证明（4.22）.  
+		\item[(d)] 用两种方法求循环数为偶数的$[n]$的排列数的公式：利用定理4.5.2和（4.22）
+	\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(13)] 设$a_n$是$\mathfrak{S}_n$中具有偶数个循环的排列数，所有循环的长度均为奇数.  
+	\begin{enumerate}
+		\item[(a)] 使用奇偶校验参数表明，如果$n$是奇数，那么$a_n=0$.  
+		\item[(b)] 使用egfs证明，如果$n$是偶数，则
+		$$
+		a_n=\binom{n}{n/2}\frac{n!}{2^n}. 
+		$$
+		\item[(c)] 使用部分（b）表明，如果$n$是偶数，那么在投掷一枚公平硬币的过程中，$n$次恰好出现$n/2$次正面的概率与从$\mathfrak{S}_n$中均匀随机选择的排列具有偶数个周期的概率相同，所有周期的长度都是奇数. 
+		\item[(d)] 当$n$为偶数时，通过在对$(S,\pi)$（其中$S\in \binom{[n]}{n/2}$和$\pi\in\mathfrak{S}_n$）和对$(T,\sigma)$（其中$T\in2^{[n]}$和$\sigma\in\mathfrak{S}_n$）有偶数个循环）之间给出一个双射来重新解释部分（c），所有循环的长度都为奇数.  
+	\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\item[(14)] 设$j_n$是$\mathfrak{S}_n$中没有固定点的对合数.  
+	\begin{enumerate}
+		\item[(a)] 给出$j_{2n+1}=0$和$j_{2n}=1\cdot3\cdot5\dots(2n-1)$的组合证明. 
+		\item[(b)] 使用指数公式找到指数生成函数$\sum_{n\geq0}j_n\frac{x^n}{n!}$的简单表达式. 
+		\item[(c)] 使用（b）中的指数生成函数对（a）中的公式进行第二次推导.   
+	\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+
+
+\end{document}

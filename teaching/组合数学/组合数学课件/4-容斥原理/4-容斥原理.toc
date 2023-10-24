@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{引论}{3}{0}{1}
+\beamer@sectionintoc {2}{容斥原理}{18}{0}{2}
+\beamer@sectionintoc {3}{错排问题}{38}{0}{3}
+\beamer@sectionintoc {4}{有限重数的多重集合的组合数}{46}{0}{4}

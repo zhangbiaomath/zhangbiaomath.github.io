@@ -1,0 +1,1269 @@
+\documentclass[punct]{ctexbeamer}
+\usefonttheme{professionalfonts}   % 数学公式字体
+
+\titlegraphic{\includegraphics[width=2cm]{tjnu.jpg}}
+
+\usepackage{color}
+%\lineskip=9pt
+\linespread{1.3}\selectfont
+\makeatletter
+\renewcommand\normalsize{%
+    \@setfontsize\normalsize\@xpt\@xiipt
+    \abovedisplayskip 3\p@ \@plus3\p@ \@minus3\p@
+    \abovedisplayshortskip \z@ \@plus3\p@
+    \belowdisplayshortskip 3\p@ \@plus3\p@ \@minus1\p@
+    \belowdisplayskip \abovedisplayskip
+    \let\@listi\@listI}
+\makeatother
+\parskip=6pt
+%\usepackage{ctex}
+%\usepackage[UTF8, heading = false, scheme = plain]{ctex}
+%%%=== theme ===%%%
+\usetheme{Madrid}
+\useinnertheme{circles}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{footline}[page number]
+\setbeamertemplate{footline}[frame number]{}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+
+
+
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{thm}{定理}[section]
+\newtheorem{prop}[thm]{命题}
+\newtheorem{cor}[thm]{推论}
+\newtheorem{defi}[thm]{定义}
+\newtheorem{lem}[thm]{引理}
+
+\newtheorem{quest}[thm]{问题}
+\newtheorem{conj}[thm]{猜想}
+\newtheorem{ex}{例}[section]
+\newtheorem{pr}{性质}
+
+\newcommand{\blue}{\textcolor{blue}}
+\def\pf{\noindent {\bf 证明\ }}
+\def\sol{\noindent {\bf 解\ }}
+
+
+\def\multiset#1#2{\ensuremath{\left(\kern-.3em\left(\genfrac{}{}{0pt}{}{#1}{#2}\right)\kern-.3em\right)}}
+
+
+
+\begin{document}
+
+\title{组\ 合\ 数\ 学}
+
+\author{张\ 彪}
+\institute[数学科学学院]{\normalsize 天津师范大学}
+%\date[2011年10月13日]{\small 2011年10月13日}
+\date[]{zhang@tjnu.edu.cn}
+\frame[plain]{\titlepage}
+\begin{frame}{第5章\quad 生成函数}
+	\tableofcontents
+\end{frame}
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{生成函数}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+\section{引论}
+\begin{frame}{引论}
+生成函数是一种既简单又有用的数学方法,它最早出现于19世纪初.
+
+ 对于组合计数问题,生成函数是一种最重要的一般性处理方法.
+
+ 它的中心思想是:
+
+ 对于一个有限或无限数列$$
+ \left\{a_{0}, a_{1}, a_{2}, \cdots\right\}
+ $$用幂级数
+$$
+A(x)=a_{0}+a_{1} x+a_{2} x^{2}+\cdots
+$$
+使之成为一个整体,
+
+然后通过研究幂级数 $A(x)$, 导出数列 $\left\{a_{0}, a_{1}, a_{2}, \cdots\right\}$ 的构造 和性质.
+
+我们称 $A(x)$ 为序列 $\left\{a_{0}, a_{1}, a_{2}, \cdots\right\}$ 的生成函数, 并记为 $G\left\{a_{n}\right\}$.
+\end{frame}
+
+\begin{frame}{引论}
+实际上, 在第 3 章中我们已经使用过生成函数方法. 组合数序列
+$$
+\binom{n}{0},\binom{n}{1}, \cdots,\binom{n}{n}
+$$
+的生成函数为
+$$
+f_{n}(x)=\binom{n}{0}+\binom{n}{1} x+\binom{n}{2} x^{2}+\cdots+\binom{n}{n} x^{n}.$$
+由二项式定理知
+$$
+f_{n}(x)=(1+x)^{n}.
+$$
+通过对 $(1+x)^{n}$ 的运算, 可以导出一系列组合数的关系式, 例如
+$$
+\sum_{i=0}^{n}\binom{n}{i}=2^{n}$$
+
+$$
+\sum_{i=1}^{n} i\binom{n}{i} = n \cdot 2^{n-1}
+$$
+等等.
+\end{frame}
+
+
+\begin{frame}
+\begin{block}{例1}
+ 投掷一次骰子,出现点数 $1,2, \cdots, 6$ 的概率均为 $\frac{1}{6}.$ 问连续投掷两次,出 现的点数之和为 10 的概率有多少?连续投掷 10 次, 出现的点数之和为 30 的概率又 是多少?
+\end{block}
+\pause
+一次投掷出现的点数有 6 种可能.
+连续两次投掷得到的点数构成二元数组 $(i,j)(1 \leqslant i, j \leqslant 6)$, 共有 $6^{2}=36$ 种可能.
+
+由枚举法,两次出现的点数之和为 10 的有 3 种可能: $$(4,6),(5,5),(6,4),$$ 所以概率为 $\frac{3}{36}=\frac{1}{12}$.
+\pause
+
+如果问题是连续投掷 10 次,其点数之和为 30 的概率有多少,这时就不那么简 单了.
+
+这是由于 10 个数之和为 30 的可能组合方式很多, 难以一一列举, 要解决这个 问题,只能另辟新径.
+
+\end{frame}
+
+\begin{frame}
+\sol 我们用多项式
+$$
+x+x^{2}+x^{3}+x^{4}+x^{5}+x^{6}
+$$
+表示投掷一次可能出现点数 $1,2, \cdots, 6$, 观察
+$$
+\left(x+x^{2}+x^{3}+x^{4}+x^{5}+x^{6}\right)\left(x+x^{2}+x^{3}+x^{4}+x^{5}+x^{6}\right).
+$$
+从两个括号中分别取出 $x^{m}$ 和 $x^{n}$,使
+$$
+x^{m} \cdot x^{n}=x^{10},
+$$
+即是两次投掷分别出现点数 $m, n$, 且 $m+n=10.$ 由此得出, 展开式中 $x^{10}$ 的系数 就是满足条件的方法数.
+同理, 连续投掷 10 次, 其和为 30 的方法数为
+$$
+\left(x+x^{2}+x^{3}+x^{4}+x^{5}+x^{6}\right)^{10}
+$$
+中 $x^{30}$ 的系数.
+\end{frame}
+
+\begin{frame}
+	而
+	$$
+	\begin{aligned}
+	&\left(x+x^{2}+x^{3}+x^{4}+x^{5}+x^{6}\right)^{10} \\
+	=&x^{10}\left(1-x^{6}\right)^{10}(1-x)^{-10} \\
+	=&x^{10} \cdot \sum_{i=0}^{10}(-1)^{i}\binom{10}{i} x^{6 i} \cdot \sum_{i=0}^{\infty}\binom{10-1+i}{i} x^{i}
+	\end{aligned}
+	$$
+
+	所以, $x^{30}$ 的系数为
+	$$
+	\binom{29}{20}-\binom{23}{14}\binom{10}{1}+\binom{17}{8}\binom{10}{2}-\binom{11}{2}\binom{10}{3}=2930455.
+	$$
+	故所求概率为
+	$$
+	\frac{2930455}{6^{10}} \approx 0.0485
+	$$
+\end{frame}
+
+\section{形式幂级数}
+
+\begin{frame}
+数列
+$$
+\left\{a_{0}, a_{1}, a_{2}, \cdots\right\}
+$$
+的生成函数是幂级数
+$$
+A(x)=a_{0}+a_{1} x+a_{2} x^{2}+\cdots
+$$
+
+
+由于只有收敛的幂级数才有解析意义,并可以作为函数进行各种运算, 这样就有了 级数收敛性的问题.
+
+ 为了解决这个问题, 我们从代数的观点引入形式幂级数的 概念.
+
+\end{frame}
+
+\begin{frame}{形式幂级数}
+我们称幂级数 $(5.2 .2)$ 是形式幂级数, 其中的 $x$ 是末定元,看作是抽象符号.
+
+
+对 于实数域 $\mathbb{R}$ 上的数列$
+\left\{a_{0}, a_{1}, a_{2}, \cdots\right\}
+$,
+$x$ 是 $\mathbb{R}$ 上的末定元,表达式
+$$
+A(x)=a_{0}+a_{1} x+a_{2} x^{2}+\cdots
+$$
+称为 $\mathbb{R}$ 上的形式幂级数.
+
+
+一般情况下,形式幂级数被认为是形式的,  $x$ 只是一个抽象符号, 并\alert{不需要对 $x$ 赋予具体数 值, 因而就不需要考虑它的收敛性}.
+
+
+ 在这样定义下, 解析收敛不是问题,  对于$\sum_{n \geq 0} n ! x^{n}$, 除了在$x=0$处外没有其他点收敛, 我们也可讨论形式幂级数.
+
+
+
+
+
+\begin{defi}
+	\textsl {设 $A(x)=\sum_{k=0}^{\infty} a_{k} x^{k}$ 与 $B(x)=\sum_{k=0}^{\infty} b_{k} x^{k}$ 是 $\mathbb{R}$ 上的两个形式幂 级数,若对任意 $k \geqslant 0$,有 $a_{k}=b_{k}$, 则称 $A(x)$ 与 $B(x)$ 相等,记作 $A(x)=B(x)$.}
+\end{defi}
+
+%\begin{defi}
+
+%\end{defi}
+\end{frame}
+
+\begin{frame}
+我们用符号
+$$
+\mathbb{R}[[x]]=\left\{\sum_{n \geq 0} a_{n} x^{n} \mid a_{n} \in \mathbb{R} \text { for all } n \geq 0\right\}
+$$表示形式幂级数的集合. 这个集合是代数, 称为\alert{ 形式幂级数的代数}, 加法、数乘、乘法规则定义如下
+$$
+\begin{aligned}
+    \sum_{n \geq 0} a_{n} x^{n}+\sum_{n \geq 0} b_{n} x^{n} &=\sum_{n \geq 0}\left(a_{n}+b_{n}\right) x^{n}, \\
+    c \sum_{n \geq 0} a_{n} x^{n} &=\sum_{n \geq 0}\left(c a_{n}\right) x^{n}, \\
+    \sum_{n \geq 0} a_{n} x^{n} \cdot \sum_{n \geq 0} b_{n} x^{n} &=\sum_{n \geq 0} c_{n} x^{n},
+\end{aligned}
+$$
+其中 $c \in \mathbb{R}$ 且
+$$
+c_{n}=\sum_{k=0}^{n} a_{k} b_{n-k}.
+$$
+%\begin{defi}
+%%\begin{itemize}
+%%\item  设 $A(x)=\sum_{k=0}^{\infty} a_{k} x^{k}$ 与 $B(x)=\sum_{k=0}^{\infty} b_{k} x^{k}$ 是 $\mathbb{R}$ 上的两个形式幂 级数,将 $A(x)$ 与 $B(x)$ 相加定义为
+%%$$
+%%A(x)+B(x) \equiv \sum_{k=0}^{\infty}\left(a_{k}+b_{k}\right) x^{k}
+%%$$
+%%并称 $A(x)+B(x)$ 为 $A(x)$ 与 $B(x)$ 的和, 把运算“$+$” 叫作\blue{加法}.
+%%
+%%\item         设 $\alpha$ 为任意实数, $A(x)=\sum_{k=0}^{\infty} a_{k} x^{k} \in \mathbb{R}[[x]]$, 则将
+%%$$
+%%c \, A(x) \equiv \sum_{k=0}^{\infty}\left(c \, a_{k}\right) x^{k}
+%%$$
+%%叫作 $c $ 与 $A(x)$ 的\blue{数量乘法}.
+%%
+%%\item 		将 $A(x)$ 与 $B(x)$ 相乘定义为
+%%$$
+%%A(x) \cdot B(x) \equiv \sum_{k=0}^{\infty}\left(a_{k} b_{0}+a_{k-1} b_{1}+\cdots+a_{0} b_{k}\right) x^{k}
+%%$$
+%%并称 $A(x) \cdot B(x)$ 为 $A(x)$ 和 $B(x)$ 的积, 把运算$“\cdot”$ 叫作\blue{乘法}.
+%%\end{itemize}
+%%\end{defi}
+\end{frame}
+
+\begin{frame}
+% 在集合 $\mathbb{R}[[x]]$ 中适当定义加法和乘 法运算,便可使它成为一个整环, 任何一个形式幂级数都是这个环中的元素.
+
+%	\begin{thm}
+%		集合 $\mathbb{R}[[x]]$ 在上述加法和乘法运算下构成一个整环.
+%	\end{thm}
+\begin{thm}
+对 $\mathbb{R}[[x]]$ 中的任意一个元素 $A(x)=\sum_{k=0}^{\infty} a_{k} x^{k}$ 有乘法逆 元当且仅当 $a_{0} \neq 0$.
+\end{thm}
+%若 $\widetilde{A}(x)=\sum_{k=0}^{\infty} \tilde{a}_{k} x^{k}$ 是 $A(x)$ 的乘法逆元,则有
+%$$
+%\begin{array}{l}
+%\tilde{a}_{0}=a_{0}{ }^{-1}, \\
+%\tilde{a}_{k}=(-1)^{k} a_{0}^{-(k+1)}\left|\begin{array}{cccccc}
+%a_{1} & a_{2} & a_{3} & \cdots & a_{k-1} & a_{k} \\
+%a_{0} & a_{1} & a_{2} & \cdots & a_{k-2} & a_{k-1} \\
+%0 & a_{0} & a_{1} & \cdots & a_{k-3} & a_{k-2} \\
+%\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+%0 & 0 & 0 & \cdots & a_{1} & a_{2} \\
+%0 & 0 & 0 & \cdots & a_{0} & a_{1}
+%\end{array}\right| \quad(k \geqslant 1) .
+%\end{array}
+%$$
+\begin{proof}
+一方面, 假设$A(x) B(x)=1$, 其中$B(x)=\sum_{n} b_{n} x^{n} $.
+
+ 比较两边的常数项得到 $a_{0} b_{0}=1$, 因而$a_{0} \neq 0$.
+
+另一方面, 假设$a_{0} \neq 0$. 我们构造逆$g(x)=\sum_{n} b_{n} x^{n}$, 满足 $f(x) g(x)=1$.
+
+比较两边$x^{n}$系数, 有$a_{0} b_{0}=1$ , 且当$n \geq 1$时,
+$$
+a_{0} b_{n}+a_{1} b_{n-1}+\cdots+a_{n} b_{0}=0.
+$$
+因为$a_{0} \neq 0$, 所以 $b_{0}=1 / a_{0}$.
+类似地, 当 $n \geq 1$时, 我们可以在上式中解出$b_{n}$ , 通过给出其递推关系.
+这样我们就确定了$B(x)$.
+\end{proof}
+\end{frame}
+
+\begin{frame}
+考虑 $A(x)=\sum_{n} a_{n} x^{n}$与$B(x)$的\alert{ 复合} 为
+$$
+A(B(x))=\sum_{n \geq 0} a_{n} B(x)^{n} .
+$$
+上式右边是关于形式幂级数的无限求和, 而不仅仅是形式变量.
+
+
+为讨论这样的和, 需要在 $\mathbb{C}[[x]]$中引入收敛的概念. (略)
+
+\begin{thm}
+    给定 $A(x), B(x) \in \mathbb{R}[[x]]$, 复合 $A(B(x))$存在当且仅当
+
+  $A(x)$为多项式\,  或者
+ $B(x)$常数项为0.
+\end{thm}
+
+(证明略)
+
+因此, 不存在形式幂级数 $e^{x+1}$.
+\end{frame}
+
+
+\begin{frame}
+    在整环 $\mathbb{R}[[x]]$ 上还可以定义形式导数.
+	\begin{thm}
+		对于任意 $A(x)=\sum_{k=0}^{\infty} a_{k} x^{k} \in \mathbb{R}[[x]]$,规定$$
+		\mathrm{D} A(x) \equiv \sum_{k=1}^{\infty} k a_{k} x^{k-1}
+		$$
+		称 $\mathrm{D} A(x)$ 为 $A(x)$ 的形式导数.
+	\end{thm}
+$A(x)$ 的 $n$ 次形式导数可以递归地定义为
+$$
+\left\{\begin{array}{l}
+\mathrm{D}^{0} A(x) \equiv A(x) \\
+\mathrm{D}^{n} A(x) \equiv \mathrm{D}\left(\mathrm{D}^{n-1} A(x)\right) \quad(n \geqslant 1)
+\end{array}\right.
+$$
+形式导数满足如下规则：
+
+(1) $\mathrm{D}[\alpha A(x)+\beta B(x)]=\alpha \mathrm{D} A(x)+\beta \mathrm{D} B(x)$
+
+(2) $\mathrm{D}[A(x) \cdot B(x)]=A(x) \mathrm{D} B(x)+B(x) \mathrm{D} A(x)$
+
+(3) $\mathrm{D}\left(A^{n}(x)\right)=n A^{n-1}(x) \mathrm{D} A(x)$
+\end{frame}
+
+\begin{frame}
+\pf 证明 规则(1) 由定义可以直接得出,而规则 (3) 则是规则 $(2)$ 的推论. 现证明规则 $(2)$. 显然有
+$$
+\begin{aligned}
+\mathrm{D}[A(x) \cdot B(x)] &=\mathrm{D} \sum_{k=0}^{\infty}\left(\sum_{i+j=k} a_{i} b_{j}\right) x^{k}=\sum_{k=1}^{\infty} k\left(\sum_{i+j=k} a_{i} b_{j}\right) x^{k-1} \\
+&=\sum_{k=1}^{\infty} \sum_{i+j=k}(i+j) a_{i} b_{j} x^{i+j-1} \\
+&=\sum_{k=1}^{\infty} \sum_{i+j=k}\left(i a_{i} x^{i-1}\right) b_{j} x^{j}+\sum_{k=1}^{\infty} \sum_{i+j=k}\left(a_{i} x^{i}\right)\left(j b_{j} x^{j-1}\right) \\
+&=\left(\sum_{i=1}^{\infty} i a_{i} x^{i-1}\right)\left(\sum_{j=0}^{\infty} b_{j} x^{j}\right)+\left(\sum_{i=0}^{\infty} a_{i} x^{i}\right)\left(\sum_{j=1}^{\infty} j b_{j} x^{j-1}\right) \\
+&=A(x) \mathrm{D} B(x)+B(x) \operatorname{D} A(x) . \qquad   \qedsymbol
+\end{aligned}
+$$
+
+由此可知,形式导数满足微积分中求导运算的规则.
+
+当某个形式幂级数在某个 范围内收敛时,形式导数就是微积分中的求导运算.
+
+为了书写方便, 以后用 $A^{\prime}(x)$, $A^{\prime \prime}(x), \cdots$ 分别代表 $\mathrm{D} A(x), \mathrm{D}^{(2)} A(x), \cdots .$
+\end{frame}
+
+\section{生成函数的性质}
+%\begin{frame}{生成函数的性质}
+%	生成函数与数列之间是一一对应的.
+%
+%    因此, 若两个生成函数之间存在某种关 系,那么相应的两个数列之间也必然存在一定的关系;反之亦然.
+%
+%
+%%	设数列 $\left\{a_{0}, a_{1}, a_{2}, \cdots\right\}$ 的生成函数为 $A(x)=\sum_{k=0}^{\infty} a_{k} x^{k}$,
+%%
+%%     数列 $\left\{b_{0}, b_{1}, b_{2}, \cdots\right\}$
+%%	的生成函数为 $B(x)=\sum_{k=0}^{\infty} b_{k} x^{k}$.
+%\end{frame}
+
+\begin{frame}
+   	设数列 $\left\{a_{0}, a_{1}, a_{2}, \cdots\right\}$ 的生成函数为 $A(x)=\sum_{k=0}^{\infty} a_{k} x^{k}$,
+
+  \quad 数列 $\left\{b_{0}, b_{1}, b_{2}, \cdots\right\}$
+   的生成函数为 $B(x)=\sum_{k=0}^{\infty} b_{k} x^{k}$.
+
+     我们可以得到生成函数的如下一些性质：
+
+	\begin{pr}
+		若
+		$$
+		b_{k}=\left\{\begin{array}{ll}
+		0 & (k<\ell) \\ a_{k-\ell} & (k \geqslant \ell)
+		\end{array}\right.
+		$$
+		则
+		$$
+		B(x)=x^{\ell} \cdot A(x).
+		$$
+	\end{pr}
+
+
+%\pf 由假设条件,有
+%$$
+%\begin{aligned}
+%B(x) &=\sum_{k=0}^{\infty} b_{k} x^{k} \\
+%&=a_{0} \cdot x^{l}+a_{1} \cdot x^{l+1}+\cdots+a_{n} \cdot x^{l+n}+\cdots \\
+%&=x^{l} \cdot\left(a_{0}+a_{1} x+\cdots+a_{n} x^{m}+\cdots\right) \\
+%&=x^{l} \cdot A(x).
+%\end{aligned}
+%$$
+\begin{pr}
+	若 $b_{k}=a_{k+l}$, 则
+	$$
+	B(x)=\frac{1}{x^{i}}\left(A(x)-\sum_{k=0}^{l-1} a_{k} x^{k}\right).
+	$$
+\end{pr}
+%\pf 类似于性质 1 的证明.
+\end{frame}
+
+\begin{frame}
+	\begin{pr}
+		若 $b_{k}=\sum_{i=0}^{k} a_{i}$, 则
+		$
+		B(x)=\frac{A(x)}{1-x}.
+		$
+	\end{pr}
+\pause
+\pf 由假设条件,有
+\begin{align*}
+b_{0}& =a_{0}, \\
+b_{1} x & =a_{0} x+a_{1} x \\
+b_{2} x^{2} & =a_{0} x^{2}+a_{1} x^{2}+a_{2} x^{2} \\
+& \cdots \cdots, \\
+b_{k} x^{k}& =a_{0} x^{k}+a_{1} x^{k}+a_{2} x^{k}+\cdots+a_{k} x^{k}, \\
+& \cdots \cdots
+\end{align*}
+把以上各式的两边分别相加,得
+$$
+\begin{aligned}
+B(x)& = a_{0}\left(1+x+x^{2}+\cdots\right)+a_{1} x\left(1+x+x^{2}+\cdots\right) \\
+&\quad +a_{2} x^{2}\left(1+x+x^{2}+\cdots\right)+\cdots \\
+&=\left(a_{0}+a_{1} x+a_{2} x^{2}+\cdots\right)\left(1+x+x^{2}+\cdots\right) \\
+&= \frac{A(x)}{1-x}
+\end{aligned}
+$$
+\end{frame}
+
+%\begin{frame}
+%	\begin{pr}
+%		若 $b_{k}=\sum_{i=k}^{\infty} a_{i}$, 则
+%		$$
+%		B(x)=\frac{A(1)-x A(x)}{1-x}
+%		$$
+%		这里 $\sum_{i=0}^{\infty} a_{i}$ 是收敛的.
+%	\end{pr}
+%\pause
+%\pf 因为$A(1)=\sum_{k=0}^{\infty} a_{k}$ 收敛,所以 $b_{k}=\sum_{i=k}^{\infty} a_{i}$ 是存在的.于是有
+%$$
+%\begin{array}{l}
+%b_{0}=a_{0}+a_{1}+a_{2}+\cdots=A(1) \\
+%b_{1} x=a_{1} x+a_{2} x+\cdots=\left(A(1)-a_{0}\right) x \\
+%b_{2} x^{2}=a_{2} x^{2}+a_{3} x^{2}+\cdots=\left(A(1)-a_{0}-a_{1}\right) x^{2} \\
+%\cdots, \\
+%b_{k} x^{k}=a_{k} x^{k}+a_{k+1} x^{k}+\cdots=\left(A(1)-a_{0}-a_{1}-\cdots-a_{k-1}\right) x^{k} \\
+%\cdots
+%\end{array}
+%$$
+
+%\end{frame}
+%
+%\begin{frame}
+%	把以上各式的两边分别相加,得
+%	$$
+%	\begin{aligned}
+%	B(x)=& A(1)+\left(A(1)-a_{0}\right) x+\left(A(1)-a_{0}-a_{1}\right) x^{2}+\cdots \\
+%	&+\left(A(1)-a_{0}-\cdots-a_{k-1}\right) x^{k}+\cdots \\
+%	=& A(1)\left(1+x+x^{2}+\cdots\right)-a_{0} x\left(1+x+x^{2}+\cdots\right) \\
+%	&-a_{1} x^{2}\left(1+x+x^{2}+\cdots\right)-\cdots-a_{n-1} x^{n}\left(1+x+x^{2}+\cdots\right)-\cdots \\
+%	=&\left(A(1)-x\left(a_{0}+a_{1} x+a_{2} x^{2}+\cdots\right)\right) \cdot\left(1+x+x^{2}+\cdots\right) \\
+%	=& \frac{A(1)-x A(x)}{1-x}
+%	\end{aligned}
+%	$$
+%\end{frame}
+\begin{frame}
+	\begin{pr}
+		若 $b_{k}=k a_{k}$, 则
+		$$
+		B(x)=x A^{\prime}(x).
+		$$
+	\end{pr}
+\pause
+\pf 由 $A^{\prime}(x)$ 的定义知
+$$
+x A^{\prime}(x)=x \sum_{k=1}^{\infty} k a_{k} x^{k-1}=\sum_{k=0}^{\infty} k a_{k} x^{k}=\sum_{k=0}^{\infty} b_{k} x^{k}=B(x).
+$$
+%\pause
+%\begin{pr}
+%	若 $b_{k}=\frac{a_{k}}{k+1}$, 则
+%	$$
+%	B(x)=\frac{1}{x} \int_{0}^{x} A(t) \mathrm{d} t.
+%	$$
+%\end{pr}
+%\pause
+%\pf 由假设条件,有
+%$$
+%\begin{aligned}
+%	&\int_{0}^{x} A(t) \mathrm{d} t=\sum_{k=0}^{\infty} \int_{0}^{x} a_{k} t^{k} \mathrm{~d} t=\sum_{k=0}^{\infty} \int_{0}^{x} b_{k}(k+1) t^{k} \mathrm{~d} t\\
+%=&\sum_{k=0}^{\infty} b_{k} x^{k+1}=x \cdot B(x).
+%\end{aligned}
+%$$
+\end{frame}
+
+\begin{frame}
+	\begin{pr}
+		若 $c_{k}=\alpha a_{k}+\beta b_{k}$,则
+		$$
+		C(x) \equiv \sum_{k=0}^{\infty} c_{k} x^{k}=\alpha A(x)+\beta B(x).
+		$$
+	\end{pr}
+\begin{pr}
+	若 $c_{k}=a_{0} b_{k}+a_{1} b_{k-1}+\cdots+a_{k} b_{0}$, 则
+	$$
+	C(x) \equiv \sum_{k=0}^{\infty} c_{k} x^{k}=A(x) \cdot B(x).
+	$$
+\end{pr}
+这两个 性质可由形式幂级数的数乘、加法及乘法运算的定义直接得出.
+\end{frame}
+
+\begin{frame}
+	利用这些性质,我们可以求某些数列的生成函数,也可以计算数列的和. 下面 列出常见的几个数列的生成函数:
+
+
+		(1) $G\{1\}=\frac{1}{1-x} ;$
+
+		(2) $G\left\{a^{k}\right\}=\frac{1}{1-a x} ;$
+
+		(3) $G\{k\}=\frac{x}{(1-x)^{2}};$
+
+		(4) $G\{k(k+1)\}=\frac{2 x}{(1-x)^{3}};$
+
+		(5) $G\left\{k^{2}\right\}=\frac{x(1+x)}{(1-x)^{3}};$
+
+	(6) $G\{k(k+1)(k+2)\}=\frac{6 x}{(1-x)^{4}};$
+
+	(7) $G\left\{\frac{1}{k !}\right\}=\mathrm{e}^{x}$;
+
+	(8) $G\left\{\binom{\alpha}{k}\right\}=(1+x)^{\alpha};$
+
+	(9) $G\left\{\binom{n+k}{k}\right\}=\frac{1}{(1-x)^{n+1}}.$
+
+\end{frame}
+
+\begin{frame}
+	下面证明其中的几个生成函数,而生成函数(8) 和(9) 可参见定理 $3.1.2$ 及其 分析.
+
+	\pf(3)
+	$$
+	\begin{aligned}
+	G\{k\} &=\sum_{k=1}^{\infty} k x^{k}=x \sum_{k=1}^{\infty} k x^{k-1} \\
+	&=x\left(\sum_{k=0}^{\infty} x^{k}\right)^{\prime}=x\left(\frac{1}{1-x}\right)^{\prime}=\frac{x}{(1-x)^{2}}.
+	\end{aligned}
+	$$
+(4)
+\begin{align*}
+G\{k(k+1)\} & = \sum_{k=1}^{\infty}(k+1) k x^{k}
+=  \left(x\, \sum_{k=1}^{\infty}k  x^{k} \right)'\\
+%= \left(x\, G\{k\} \right)'\\
+& = \left( \frac{x^2}{(1-x)^{2}} \right)' = \frac{2 x}{(1-x)^{3}}
+\end{align*}
+或者
+\begin{align*}
+    G\{k(k+1)\} & = x^2 \sum_{k=2}^{\infty} k (k-1)x^{k-2} = x^2 \left( \sum_{k=0}^{\infty}  x^{k} \right)'' \\
+%    = x^2 \left( G\{1\} \right)''\\
+& = x^2 \left( \frac{1}{1-x} \right)'' = \frac{2 x}{(1-x)^{3}}
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+	(5)
+$$
+\begin{aligned}
+    G\left\{k^{2}\right\} &=\sum_{k=1}^{\infty} k^{2} x^{k} =\sum_{k=1}^{\infty}(k+1) k x^{k}-\sum_{k=1}^{\infty} k x^{k} \\
+    &=\frac{2 x}{(1-x)^{3}}-\frac{x}{(1-x)^{2}} \\
+    &=\frac{x(1+x)}{(1-x)^{3}}
+\end{aligned}
+$$
+或者
+\begin{align*}
+  G\left\{k^{2}\right\} &= x \left( \sum_{k=1}^{\infty} k x^{k}\right)' =x \left( G\{k\} \right)'\\
+&=x \left( \frac{x}{(1-x)^{2}} \right)' \\
+&=\frac{x(1+x)}{(1-x)^{3}}
+\end{align*}
+
+利用生成函数的性质,可以求出一些序列以及一些序列的和, 下面的两个例子 说明了一些求解方法.
+%	(6) 设
+%	$$
+%	G\{k(k+1)(k+2)\}=A(x),
+%	$$
+%	则
+%	$$
+%	\begin{aligned}
+%	\int_{0}^{x} t A(t) \mathrm{d} t &=\sum_{k=1}^{\infty} \int_{0}^{x} k(k+1)(k+2) t^{k+1} \mathrm{~d} t \\
+%	&=\sum_{k=1}^{\infty} k(k+1) x^{k+2} \\
+%	&=x^{2} \cdot \frac{2 x}{(1-x)^{3}}.
+%	\end{aligned}
+%	$$
+%	所以
+%	$$
+%	x A(x)=\left(\frac{2 x^{3}}{(1-x)^{3}}\right)^{\prime}=\frac{6 x^{2}}{(1-x)^{4}},
+%	$$
+%	故
+%	$$
+%	A(x)=\frac{6 x}{(1-x)^{4}}.
+%	$$
+	利用生成函数的性质,可以求出一些序列以及一些序列的和, 下面的两个例子 说明了一些求解方法.
+\end{frame}
+
+\begin{frame}
+	\begin{ex}
+		已知 $\left\{a_{n}\right\}$ 的生成函数为
+		$$
+		A(x)=\frac{2+3 x-6 x^{2}}{1-2 x},
+		$$
+		求 $a_{n}$.
+	\end{ex}
+\pause
+\sol 用部分分式的方法得
+$$
+A(x)=\frac{2+3 x-6 x^{2}}{1-2 x}=\frac{2}{1-2 x}+3 x,
+$$
+而
+$$
+\frac{2}{1-2 x}=2 \sum_{n=0}^{\infty} 2^{n} x^{n}=\sum_{n=0}^{\infty} 2^{n+1} x^{n}.
+$$
+所以有
+$$
+a_{n}=\left\{\begin{array}{ll}
+2^{n+1} & (n \neq 1) \\
+2^{2}+3=7 & (n=1)
+\end{array}\right.
+$$
+\end{frame}
+
+\begin{frame}
+	\begin{ex}
+		计算级数
+		$$
+		1^{2}+2^{2}+\cdots+n^{2}
+		$$
+		的和.
+	\end{ex}
+\pause
+\sol 由前面列出的第(5) 个数列的生成函数知,数列 $\left\{n^{2}\right\}$ 的生成函数为
+$$
+A(x)=\frac{x(1+x)}{(1-x)^{3}}=\sum_{k=0}^{\infty} a_{k} x^{k},
+$$
+此处, $a_{k}=k^{2}$. 令
+$$
+b_{n}=1^{2}+2^{2}+\cdots+n^{2},
+$$
+则
+$$
+b_{n}=\sum_{k=1}^{n} a_{k}.
+$$
+\end{frame}
+
+
+\begin{frame}
+因此,
+    数列 $\left\{b_{n}\right\}$ 的生成函数为
+	$$
+	\begin{aligned}
+	B(x) &=\sum_{n=0}^{\infty} b_{n} x^{n}=\frac{A(x)}{1-x}=\frac{x(1+x)}{(1-x)^{4}} \\
+	&=\left(x+x^{2}\right) \sum_{k=0}^{\infty}\binom{k+3}{k}x^{k}.
+	\end{aligned}
+	$$
+	比较等式两边 $x^{n}$ 的系数, 得
+	$$
+	\begin{aligned}
+b_n=	1^{2}+2^{2}+\cdots+n^{2} &= \binom{n+2}{3}+\binom{n-1}{3} \\
+	&=\binom{n+2}{n-1}+\binom{n+1}{n-2} \\
+	&=\frac{n(n+1)(2 n+1)}{6}.
+	\end{aligned}
+	$$
+\end{frame}
+%
+%\begin{frame}
+%	\textbf{法二：} 注意到\[
+%	\sum_{k=0}^{n}x^{k}=\frac{x^{n+1}-1}{x-1},
+%	\]对上式两边同时作用$(xD)^{2}$, 再令$x=1$,即得我们要求的式子, 其中$xD$表示求一次导再乘以$x$.即
+%	\[\sum_{k=1}^{n}k^{2}=\lim_{x\rightarrow 1}(xD)^{2}\frac{x^{n+1}-1}{x-1}=\frac{n(n+1)(2 n+1)}{6}.\]
+%\end{frame}
+
+
+\section{组合型分配问题的生成函数}
+
+\begin{frame}{组合数的生成函数}
+	本节介绍组合数序列的生成函数, 进而介绍如何用生成函数来求解组合型分配问题.
+
+
+	我们在前面几章中讨论过三种不同类型的组合问题:
+
+
+	(1) 求 $\left\{a_{1}, a_{2}, \cdots, a_{n}\right\}$ 的 $k$ 组合数;
+
+	(2) 求 $\left\{\infty \cdot a_{1}, \infty \cdot a_{2}, \cdots, \infty \cdot a_{n}\right\}$ 的 $k$ 组合数;
+
+	(3) 求 $\{3 \cdot a, 4 \cdot b, 5 \cdot c\}$ 的 10 组合数.
+
+	其中,问题(1) 是普通集合的组合问题;
+
+	 问题 $(2)$ 转化为不定方程 $x_{1}+x_{2}+\cdots+x_{n}$ $=k$ 的非负整数解的个数问题;
+
+
+\end{frame}
+
+\begin{frame}
+	 问题(3) 是利用容斥原理在 $M=\{\infty \cdot a, \infty \cdot b,$, $\infty \cdot c\}$ 中求不满足下述三个性质：
+
+	$P_{1}: 10$ 组合中 $a$ 的个数大于或等于 4 ;
+
+	$P_{2}: 10$ 组合中 $b$ 的个数大于或等于 5 ;
+
+	$P_{3}: 10$ 组合中 $c$ 的个数大于或等于 6
+
+	的 10 组合数,它们在解题方法上各不相同.
+
+	下面我们将看到,引入生成函数的概念 后, 上述三类组合问题可以统一地处理.
+\end{frame}
+
+\begin{frame}{问题(2)的解决}
+	我们先从问题(2) 开始.令
+	$$
+	M=\left\{\infty \cdot a_{1}, \infty \cdot a_{2}, \cdots, \infty \cdot a_{n}\right\}
+	$$
+	的 $k$ 组合数为 $b_{k}$. 考虑 $n$ 个形式筸级数的乘积
+	$$
+	(1+x \underbrace{\left.+x^{2}+\cdots\right)\left(1+x+x^{2}+\cdots\right) \cdots\left(1+x+x^{2}+\cdots\right)}_{n \text { 组 }}
+	$$
+	它的展开式中,每一个 $x^{k}$ 均为
+	$$
+	x^{m_{1}} x^{m_{2}} \cdots x^{m_{n}}=x^{k} \quad\left(m_{1}+m_{2}+\cdots+m_{n}=k\right)
+	$$
+	其中 $x^{m_{1}}, x^{m_{2}}, \cdots, x^{m}$ 分别取自代表 $a_{1}$ 的第一个括号, 代表 $a_{2}$ 的第二个括号, $\cdots \cdots$, 代表 $a_{n}$ 的第 $n$ 个括号 $; m_{1}, m_{2}, \cdots, m_{n}$ 分别表示取 $a_{1}, a_{2}, \cdots, a_{n}$ 的个数.
+
+     于 是,每个 $x^{k}$ 都对应着多重集合 $M$ 的一个 $k$ 组合.
+\end{frame}
+
+\begin{frame}{问题(2)的解决}
+	 因此
+	$$
+	\left(1+x+x^{2}+\cdots\right)^{n}
+	$$
+	中 $x^{k}$ 的系数就是 $M$ 的 $k$ 组合数 $b_{k}$. 由此得出序列 $\left\{b_{k}\right\}$ 的生成函数为
+	$$
+	\left(1+x+x^{2}+\cdots\right)^{n}=\frac{1}{(1-x)^{n}}.
+	$$从而
+	$$
+	b_{k}=\binom{n-1+k}{k}.
+	$$
+	这时,我们再次得到了第 2 章中多重集合 $M$ 的 $k$ 组合数的公式,只不过现在是用生成函数获得的.
+
+\end{frame}
+
+\begin{frame}{问题(3)的解决}
+	用生成函数方法解问题 $(3)$ 尤为简单. 将 $\{3 \cdot a, 4 \cdot b, 5 \cdot c\}$ 的 $k$ 组合数记为 $b_{k},\left\{b_{k}\right\}$ 的生成函数就是
+	$$
+	\left(1+x+x^{2}+x^{3}\right)\left(1+x+x^{2}+x^{3}+x^{4}\right)\left(1+x+x^{2}+x^{3}+x^{4}+x^{5}\right).
+	$$
+	其原因是展开式中的 $x^{k}$ 必定为
+	$$
+	x^{m_{i}} x^{m_{2}} x^{m_{3}}=x^{k} \quad\left(m_{1}+m_{2}+m_{3}=k\right).
+	$$
+	由于 $x^{m_{i}}, x^{m_{2}}, x^{m_{3}}$ 分别取自第一、第二.第三个括号,故 $0 \leqslant m_{1} \leqslant 3,0 \leqslant m_{2} \leqslant 4$, $0 \leqslant m_{3} \leqslant 5$, 于是每个 $x^{k}$ 对应集合 $\{3 \cdot a, 4 \cdot b, 5 \cdot c\}$ 的一个 $k$ 组合.
+	特别令 $k=10$,则
+	$$
+	\begin{aligned}
+	&\left(1+x+x^{2}+x^{3}\right) \cdot\left(1+x+x^{2}+x^{3}+x^{4}\right) \cdot\left(1+x+x^{2}+x^{3}+x^{4}+x^{5}\right) \\
+	=&\left(1-x^{4}\right) \cdot\left(1-x^{5}\right) \cdot\left(1-x^{6}\right) \cdot \frac{1}{(1-x)^{3}} \\
+	=&\left(1-x^{4}-x^{5}-x^{6}+x^{9}+x^{10}+x^{11}-x^{15}\right) \cdot \sum_{n=0}^{\infty}\binom{n+2}{n}x^{n}.
+	\end{aligned}
+	$$
+\end{frame}
+
+\begin{frame}{问题(3)的解决}
+	所以, $x^{10}$ 的系数 $b_{10}$ 为
+	$$
+	\begin{aligned}
+	b_{10}=&\binom{10+2}{10}-\binom{6+2}{6}-\binom{5+2}{5}-\binom{4+2}{4}+\binom{1+2}{1}+\binom{0+2}{0}\\
+	=& 6
+	\end{aligned}
+	$$
+	与第 4 章中用容斥原理得到的结果相同.
+
+	在普通集合 $\left\{a_{1}, a_{2}, \cdots, a_{n}\right\}$ 的 $k$ 组合中, $a_{i}(1 \leqslant i \leqslant n)$ 或者出现或者不出 现,故该集合的 $k$ 组合数序列 $\left\{b_{k}\right\}$ 的生成函数为
+	$$
+	(1+x)^{n}=\sum_{k=0}^{n}\binom{n}{k},
+	$$
+	从而
+	$$
+	b_{k}=\binom{n}{k}.
+	$$
+\end{frame}
+
+\begin{frame}
+	\begin{thm}
+		设从 $n$ 元集合 $S=\left\{a_{1}, a_{2}, \cdots, a_{n}\right\}$ 中取 $k$ 个元素的组合数为 $b_{k}$, 若限定元素 $a_{i}$ 出现的次数集合为 $M_{i}(1 \leqslant i \leqslant n)$, 则该组合数序列的生成函数为
+		$$
+		\prod_{i=1}^{n}\left(\sum_{m \in M_{i}} x^{m}\right).
+		$$
+	\end{thm}
+\pause
+\begin{ex}
+	求多重集合 $M=\left\{\infty \cdot a_{1}, \infty \cdot a_{2}, \cdots, \infty \cdot a_{n}\right\}$ 的每个 $a_{i}$ 至少出现一次的 $k$ 组合数 $b_{k}$.
+\end{ex}
+\end{frame}
+
+\begin{frame}
+	\sol 由定理 $5.4.1$ 知
+	$$
+	M_{i}=\{1,2,3, \cdots\} \quad(1 \leqslant i \leqslant n)
+	$$
+	于是
+	$$
+	\begin{aligned}
+	G\left\{b_{k}\right\} &=\left(x+x^{2}+x^{3}+\cdots\right)^{n} \\
+	&=x^{n} \cdot \frac{1}{(1-x)^{n}} \\
+	&=\sum_{i=0}^{\infty}\binom{n-1+i}{i} x^{n+i} \\
+	&=\sum_{k=n}^{\infty}\binom{k-1}{k-n} x^{k} \\
+	&=\sum_{k=n}^{\infty}\binom{k-1}{n-1} x^{k},
+	\end{aligned}
+	$$
+	所以
+	$$
+	b_{k}=\left\{\begin{array}{ll}
+	0 & (k<n) \\
+	\binom{k-1}{n-1} & (k \geqslant n)
+	\end{array}\right.
+	$$
+\end{frame}
+
+\begin{frame}{组合型分配问题的生成函数}
+	\begin{thm}
+		把 $k$ 个相同的球放人 $n$ 个不同的盒子 $a_{1}, a_{2}, \cdots, a_{n}$ 中, 限定盒子 $a_{i}$ 的容量集合为 $M_{i}(1 \leqslant i \leqslant n)$, 则其分配方案数的生成函数为
+		$$
+		\prod_{i=1}^{n}\left(\sum_{m \in M_{i}} x^{m}\right).
+		$$
+	\end{thm}
+\pause
+\pf 不妨设盒子 $a_{1}, a_{2}, \cdots, a_{n}$ 中放人的球数分别为 $x_{1}, x_{2}, \cdots, x_{n}$,则
+$$
+x_{1}+x_{2}+\cdots+x_{n}=k \quad\left(x_{i} \in M_{i}, 1 \leqslant i \leqslant n\right)
+$$
+一种符合要求的放法相当于 ${M}=\left\{\infty \cdot a_{1}, \infty \cdot a_{2}, \cdots, \infty \cdot a_{n}\right\}$ 的一个 $k$ 组合,前 面关于盒子 $a_{i}$ 容量的限制转变成 $k$ 组合中 $a_{i}$ 出现次数的限制. 由定理 $5.4 .1$ 知,组 合型分配问题方案数的生成函数为
+$$
+\prod_{i=1}^{n}\left(\sum_{m \in M,} x^{m}\right).
+$$
+
+\end{frame}
+
+\begin{frame}
+	\begin{ex}
+		求不定方程
+		$$
+		x_{1}+x_{2}+x_{3}+x_{4}+x_{5}=20
+		$$
+		满足
+		$x_{1} \geqslant 3, x_{2} \geqslant 2, x_{3} \geqslant 4, x_{4} \geqslant 6, x_{5} \geqslant 0$
+		的整数解的个数.
+	\end{ex}
+\pause
+\sol 本问题相当于把 20 个相同的球放人 5 个不同的盒子中,盒子的容量集合 分别为
+$$
+\begin{array}{l}
+{M}_{1}=\{3,4, \cdots\} \qquad\qquad
+{M}_{2}=\{2,3, \cdots\} \qquad\qquad
+{M}_{3}=\{4,5, \cdots\}\\
+{M}_{4}=\{6,7, \cdots\} \qquad\qquad
+{M}_{5}=\{0,1,2, \cdots\}
+\end{array}
+$$
+该组合型分配问题的生成函数为
+$$
+\begin{aligned}
+&\left(x^{3}+x^{4}+\cdots\right)\left(x^{2}+x^{3}+\cdots\right)\left(x^{4}+x^{5}+\cdots\right)\\
+&\cdot\left(x^{6}+x^{7}+\cdots\right)\left(1+x+x^{2}+\cdots\right) \\
+=&x^{15} \cdot\left(1+x+x^{2}+\cdots\right)^{5}
+=x^{15} \cdot \frac{1}{(1-x)^{5}} \\
+=&x^{15} \cdot \sum_{n=0}^{\infty}\binom{n+4}{n} x^{n}
+\end{aligned}
+$$
+其中, $x^{20}$ 的系数 $\binom{5+4}{5}=126$ 就是满足条件的整数解的个数.
+\end{frame}
+
+\begin{frame}
+	\begin{ex}
+		求方程 $$x_{1}+x_{2}+x_{3}+x_{4}=18$$ 满足
+		\begin{align*}
+		& 1 \leq x_{1} \leq 5, \quad  -2 \leq x_{2} \leq 4,\\
+		& 0 \leq x_{3} \leq 5, \quad \,  \,3 \leq x_{4} \leq 9
+		\end{align*}
+		的整数解个数.
+	\end{ex}
+\pause
+\sol 令 $y_{1}=x_{1}-1, y_{2}=x_{2}+2, y_{3}=x_{3}, y_{4}=x_{4}-3$, 则方程转化为
+$$
+y_{1}+y_{2}+y_{3}+y_{4}=16
+$$
+相应的条件即 $0 \leq y_{1} \leq 4$, $0 \leq y_{2} \leq 6$, $0 \leq y_{3} \leq 5$, $0 \leq y_{4} \leq 6$.
+
+\end{frame}
+
+\begin{frame}
+	对应的生成函数为
+	$$
+	\begin{aligned}
+	&(1+x+x^2+x^3+x^4)
+	(1+x+x^2+x^3+x^4+x^5)\\
+	&\quad\cdot 	(1+x+x^2+x^3+x^4+x^5+x^6)^2\\
+	= & \frac{(1-x^5)(1-x^6)(1-x^7)^2}{(1-x)^4}\\
+	= &
+	(1 - x^5 - x^6 - 2 x^7 + x^{11} + 2 x^{12} + 2 x^{13} + x^{14} -
+	2 x^{18} - x^{19} - x^{20} + x^{25})\\
+	&\quad\cdot \sum_{k=0}^{\infty} \binom{k+3}{3} x^k
+	\end{aligned}$$
+	所以它的$x^{16}$的系数为
+	$$
+	\begin{aligned}
+	& \binom{16+3}{3}
+	-\binom{11+3}{3}
+	-\binom{10+3}{3}
+	-2\binom{9+3}{3}
+	+ \binom{5+3}{3}\\
+	&\quad
+	+2\binom{4+3}{3}
+	+2\binom{3+3}{3}
+	+\binom{2+3}{3} \\
+	= & \,969 -  364 - 286 -2 \times 220 + 56  +2 \times 35 +2 \times 20 + 10 \\
+	= & \,55.
+	\end{aligned}$$
+\end{frame}
+
+\begin{frame}
+	\begin{ex}
+		设有$2$个红球、$1$个黑球、$3$个白球, 若每次从中任取$3$个球, 有多少种不同的取法？
+	\end{ex}
+\pause\sol
+方法1：
+
+$$\begin{aligned}&\left(1+x+x^{2}\right)(1+x)\left(1+x+x^{2}+x^{3}\right)\\
+ =&\frac{1-x^{3}}{1-x} \cdot \frac{1-x^{2}}{1-x} \cdot \frac{1-x^{4}}{1-x} \\ =&\left(1-x^{2}-x^{3}+x^{5}\right)\left(1-x^{4}\right) \sum_{k=0}^{\infty}\binom{k+2}{2} x^{k} \end{aligned}$$
+
+$x^{3}$ 的系数为 $\binom{5}{2}-\binom{3}{2}-\binom{2}{2}=10-3-1=6$
+
+方法2：$\left(x_{1}, x_{2}, x_{3}\right)=(0,0,3)(0, 1, 2)(1,0,2)(1,1,1)(2,0,1)(2,1,0)$
+\end{frame}
+
+\begin{frame}
+	\begin{ex}
+		设有$1$g、$2$g、$3$g、$4$g的砝码各一枚. 若要求各砝码只能放在天平的一边, 问能称出多少种重量？($0$g不计入)
+	\end{ex}
+\pause\sol $(1+x)\left(1+x^{2}\right)\left(1+x^{3}\right)\left(1+x^{4}\right)=1+x+\cdots+x^{10}$, 故十种.
+\pause
+\begin{ex}
+	用$1$分、$2$分、$3$分的邮票可贴出多少种总面值为$4$分的方案.
+\end{ex}
+\pause
+\sol $1+1+1+1 \quad 1+1+2 \quad 1+3 \quad 2+2$, 故四种.
+\end{frame}
+
+\begin{frame}
+	\begin{ex}
+		求用苹果、香蕉、橘子、梨组成的有$n$个水果的不同水果篮的个数, 其中要求苹果有偶数个(包括$0$个), 香蕉有$5$的倍数个(包括$0$个), 橘子不超过$4$个, 梨最多$1$个.
+	\end{ex}
+\pause
+\sol $$
+\begin{aligned}
+&\left(1+x^{2}+\cdots+x^{2 n}+\cdots\right)\left(1+x^{5}+\cdots+x^{5 n}+\cdots\right)\\
+&\quad\cdot \left(1+x+x^{2}+x^{3}+x^{4}\right)(1+x)\\
+=&\frac{1}{1-x^{2}} \cdot \frac{1}{1-x^{5}} \cdot \frac{1-x^{5}}{1-x} \cdot(1+x)\\
+=&\frac{1}{(1-x)^{2}}=\sum_{k=0}^{\infty}(k+1) x^{k}
+\end{aligned}$$
+
+故所求为$n+1$种.
+\end{frame}
+
+\section{排列型分配问题的指数型生成函数}
+\begin{frame}{排列数的指数型生成函数}
+	$n$ 元集合的 $k$ 排列数为 $n(n-1) \cdots(n-k+1)$,按 $5.4 .1$ 小节中方法构成的 生成函数
+	$$
+	\sum_{k=0}^{\infty} n(n-1) \cdots(n-k+1) x^{k}
+	$$
+	没有简单的解析表达式.
+    \pause
+    但如果把基底函数 $x^{k}$ 改换成 $\frac{x^{k}}{k !}$,则
+	$$
+	\sum_{k=0}^{\infty} n(n-1) \cdots(n-k+1) \cdot \alert{\frac{x^{k}}{k !}}=(1+x)^{n},
+	$$
+	这启发人们引入指数型生成函数的概念.
+
+	数列 $\left\{a_{0}, a_{1}, a_{2}, \cdots\right\}$ 的\blue{指数型生成函数} 定义为形式幂级数
+	$$
+	\sum_{k=0}^{\infty} a_{k} \alert{ \frac{x^{k}}{k !}}.
+	$$
+\end{frame}
+
+\begin{frame}
+	\begin{thm}
+		多重集合 $M=\left\{\infty \cdot a_{1}, \infty \cdot a_{2}, \cdots, \infty \cdot a_{n}\right\}$ 的 $k$ 排列中,若限 定元素 $a_{i}$ 出现的次数集合为 $M_{i}(1 \leqslant i \leqslant n)$, 则排列数的指数型生成函数为
+		$$
+		\prod_{i=1}^{n}\left(\sum_{m \in M_{i}} \frac{x^{m}}{m !}\right).
+		$$
+	\end{thm}
+\pf 将和积式展开, 得
+$$
+\prod_{i=1}^n\left(\sum_{m \in M_i} \frac{x^m}{m !}\right)=\sum_{k>0}\left(\sum_{\substack{k_k, k_1+\cdots+k=k \\ k_i \in M_1, i=1,2, \cdots, \cdots, n}} \frac{k !}{k_{1} ! k_{2} ! \cdots k_{n} !}\right) \frac{x^k}{k !} .
+$$
+只要证明展开式中 $\frac{x^k}{k !}$ 的系数就是满足限定条件的 $k$ 可重排列数即可.
+首先, 对于集合 $M$ 的满足限定条件的每个 $k$ 可重排列, 设其中 $a_i$ 出现 $k_i$ 次 $(i=1,2, \cdots, n)$, 则 $\left(k_1, k_2, \cdots, k_n\right)$ 就是方程
+$$
+k_1+k_2+\cdots+k_n=k \quad\left(k_i \in M_i, i=1,2, \cdots, n\right)
+$$
+的一个解.
+\end{frame}
+
+\begin{frame}
+ 	\begin{block}{定理5.1}
+     多重集合 $M=\left\{\infty \cdot a_{1}, \infty \cdot a_{2}, \cdots, \infty \cdot a_{n}\right\}$ 的 $k$ 排列中,若限 定元素 $a_{i}$ 出现的次数集合为 $M_{i}(1 \leqslant i \leqslant n)$, 则排列数的指数型生成函数为
+     $$
+     \prod_{i=1}^{n}\left(\sum_{m \in M_{i}} \frac{x^{m}}{m !}\right).
+     $$
+ \end{block}
+其次, 方程 (5.5.1) 的每个解 $\left(k_1, k_2, \cdots, k_n\right)$ 都对应一类 $k$ 可重排列, 此类中的 每一个 $k$ 可重排列里, 元素 $a_i$ 出现 $k_i$ 次 $(i=1,2, \cdots, n)$. 而此类 $k$ 可重排列的个数 就是多重集合 $\left\{k_1 \cdot a_1, k_2 \cdot a_2, \cdots, k_n \cdot a_n\right\}$ 的全排列的个数, 即 $\frac{k !}{k_{1} ! k_{2} ! \cdots k_{n} !}$. 可见, 与解 $\left(k_1, k_2, \cdots, k_n\right)$ 相对应的 $k$ 可重排列有 $\frac{k !}{k_{1} ! k_{2} ! \cdots k_{n} !}$ 个.
+再者, 方程 (5.5.1) 的不同解 $\left(k_1, k_2, \cdots, k_n\right)$ 所对应的不同 $k$ 可重排列类中没有 相同的排列.
+由加法原则,集合 $M$ 满足给定条件的 $k$ 可重排列的总个数为
+$$
+\sum_{\substack{k_1, k_2, \cdots+k_k, k \\\left(k_1 \in M_1, i=1,2, \cdots, n\right)}} \frac{k !}{k_{1} ! k_{2} ! \cdots k_{n} !} .
+$$
+\qed
+
+
+\end{frame}
+\begin{frame}
+    特别地, 数列 $\{1,1, \cdots\}$ 的指数型生成函数 $e^x=\sum_{n=0}^{\infty} \frac{x^{n}}{n !}$ 具有与指数函数相似的性质:
+    $$
+    e^x e^y=e^{x+y}.
+    $$
+
+	$$
+	\begin{aligned}
+	e^x e^y &=\sum_{i=0}^{\infty} \frac{x^{i}}{i !} \cdot \sum_{j=0}^{\infty} \frac{y^{j}}{j !} =\sum_{i=0}^{\infty} \frac{1}{i !} x^{i} \cdot \sum_{j=0}^{\infty} \frac{1}{j !}\left(\frac{y}{x}\right)^{j} x^{j} \\
+	&=\sum_{n=0}^{\infty}\left(\sum_{k=0}^{n} \frac{1}{k !(n-k) !}\left(\frac{y}{x}\right)^{k}\right) x^{n} \\
+	&=\sum_{n=0}^{\infty}\left(1+\frac{y}{x}\right)^{n} \frac{x^{n}}{n !} =\sum_{n=0}^{\infty} \frac{(x+y)^{n}}{n !} \\
+	&=e^{x+y}.
+	\end{aligned}
+	$$
+	特别有
+	$$
+	e^x e^{-x}=e^0=1,
+	$$
+	从而
+	$$
+	e^{-x}=\frac{1}{e^x}.
+	$$
+\end{frame}
+
+\begin{frame}
+	\begin{ex}
+		多重集合 $M=\left\{\infty \cdot a_{1}, \infty \cdot a_{2}, \cdots, \infty \cdot a_{n}\right\}$ 的 $k$ 排列数序列 $\left\{b_{k}\right\}$ 的 指数型生成函数为
+		$$
+		\prod_{i=1}^{n}\left(1+\frac{x}{1 !}+\frac{x^{2}}{2 !}+\cdots\right)=\left(e^x\right)^n=e^{n x}=\sum_{k=0}^{\infty} n^{k} \frac{x^{k}}{k !}
+		$$
+		从而
+		$$
+		b_{k}=n^{k}
+		$$
+	\end{ex}
+\end{frame}
+\begin{frame}
+	\begin{ex}
+		由数字 $0,1,2,3$ 组成的长为 $k$ 的序列中,要求含有偶数个 $0$ , 问这样的 序列有多少个?
+	\end{ex}
+\pause \sol
+根据题意,有
+$$
+\begin{array}{l}
+M_{1}=M_{2}=M_{3}=\{0,1,2, \cdots\} \\
+M_{0}=\{0,2,4, \cdots\}
+\end{array}
+$$
+由定理 $5.5.1$ 知,该排列数的指数型生成函数为
+$$
+\left(1+\frac{x}{1 !}+\frac{x^{2}}{2 !}+\cdots\right)^{3}\left(1+\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}+\cdots\right).
+$$
+$$
+\begin{array}{l}
+=\left(e^{x}\right)^3 \cdot \frac{1}{2}  \left( e^x+e^{-x} \right)\\
+=\frac{1}{2} \left(e^{4 x}+e^{2 x}\right)
+\end{array}
+$$
+所以 $\frac{x^{k}}{k !}$ 的系数为
+$$
+b_{k}=\frac{1}{2}\left(4^{k}+2^{k}\right).
+$$
+%当 $k=2$ 时,满足题意的序列有 10 个, 它们是
+%$$
+%00,11,12,13,21,22,23,31,32,33
+%$$
+\end{frame}
+
+\begin{frame}
+	\begin{ex}
+		 由 $1,2,3,4$ 能组成多少个 $1$ 出现 两 次或 三 次,  $2$ 最多出现一次, $4$ 出现偶数次的五位数？
+	\end{ex}
+\pause\sol
+根据题意,有
+$$
+\begin{aligned}
+&{M}_{1}=\{2,3\} \quad\quad
+{M}_{3}=\{0,1,2, \cdots\} \\
+&{M}_{2}=\{0,1\} \quad\quad
+{M}_{4}=\{0,2,4, \cdots\}
+\end{aligned}
+$$
+由定理 $5.5.1$ 知,该排列数的指数型生成函数为
+$$\begin{aligned}
+&\left(\frac{x^{2}}{2 !}+\frac{x^{3}}{3 !}\right)\left(1+\frac{x}{1 !}\right)\left(1+\frac{x}{1 !}+\frac{x^{2}}{2 !}+\cdots\right)\left(1+\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}+\cdots\right) \\
+=&\frac{x^{2}}{6}\left(3+4 x+x^{2}\right) \cdot e^x \cdot \frac{e^x+e^{-x}}{2} \\
+=&\frac{x^{2}}{12}\left(3+4 x+x^{2}\right)\left(e^{2 x}+1\right).
+\end{aligned}
+$$
+所以 $\frac{x^{5}}{5 !}$ 的系数为
+$$
+5 ! \times \frac{1}{12}\left(3 \times \frac{2^{3}}{3 !}+4 \times \frac{2^{2}}{2 !}+1 \times \frac{2^1}{1 !}\right)=140,
+$$
+即满足题意的五位数有 140 个.
+\end{frame}
+
+
+\begin{frame}
+    \begin{ex}
+        确定每位数字都是奇数, 且$1$ 和 $3$出现偶数次的$n$位数的个数.
+    \end{ex}
+    \pause\sol
+    $$\begin{aligned}
+        &\left(1+\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}+\cdots\right)^{2}\left(1+x+\frac{x^{2}}{2 !}+\frac{x^{3}}{3 !}+\cdots\right)^{3} \\ =&\left(\frac{e^{x}+e^{-x}}{2}\right)^{2} \cdot e^{3 x} \\
+        =& \frac{1}{4}\left(e^{2 x}+e^{-2 x}+2\right) \cdot e^{3 x}\\
+        =&\frac{1}{4}\left(e^{5 x}+2 e^{3 x}+e^{x}\right)=\frac{1}{4}\left(\sum_{k=0}^{\infty} 5^{k} \frac{ x^{k}}{k !}+2 \cdot \sum_{k=0}^{\infty} 3^{k} \frac{ x^{k}}{k !}+\sum_{k=0}^{\infty} \frac{x^{k}}{k !}\right)\\
+        =&\frac{1}{4} \sum_{k=0}^{\infty}\left(5^{k}+2 \cdot 3^{k}+1\right) \frac{x^{k}}{k !}.
+    \end{aligned}$$
+    因此, 它的$\frac{x^{n}}{n!}$系数为
+    $\frac{1}{4}\left(5^{n}+2 \cdot 3^{n}+1\right).$
+\end{frame}
+
+
+
+\begin{frame}
+	\begin{ex}
+		求$M=\{\infty\cdot a_{1},\infty\cdot a_{2},\cdots,\infty\cdot a_{n} \}$的$k$排列中每个$a_{i}$至少出现一次的排列数$P_{k}$的指数型生成函数。
+	\end{ex}
+\pause\sol
+根据题意, 有$$M_{i}=\{1,2,3,\cdots\} \quad\quad (1\leq i\leq n).$$
+由定理5.5.1知, 排列数序列$\{P_{k}\}$的指数型生成函数为
+$$\begin{aligned}
+\left(\frac{x}{1 !}+\frac{x^{2}}{2 !}+\frac{x^{3}}{3 !}+\cdots\right)^{n} &=\left(e^x-1\right)^{n} \\
+&=\sum_{i=0}^{n}(-1)^{i}\binom{n}{i} e^{(n-i)x}  \\
+&=\sum_{i=0}^{n}(-1)^{i}\binom{n}{i}\sum_{k=0}^{\infty} \frac{(n-i)^{k} x^{k}}{k !} \\
+&=\sum_{k=0}^{\infty}\left( \sum_{i=0}^{n}(-1)^{i}\binom{n}{i}(n-i)^{k}\right) \frac{x^{k}}{k !}
+\end{aligned}$$
+所以
+$	P_{k}=\sum_{i=0}^{n}(-1)^{i}\binom{n}{i}(n-i)^{k} \quad(k \geq n).$
+\end{frame}
+
+
+\begin{frame}
+	\begin{ex}
+		用红、白、蓝$3$种颜色给$1\times n$棋盘着色, 要求白色方格数是偶数, 问有多少种着色方案？
+	\end{ex}
+\pause\sol
+将$1\times n$棋盘的$n$个方格分别用$1,2,\cdots,n$标记, 第$i$个方格着$c$色看作把第$i$个物体放入$c$盒中.这时, 问题转化为：把$n$个不同的球放入3个不同的盒子中, 各盒的容量集合分别为
+\[
+\begin{aligned}
+&M_{r}=M_{b}=\{0,1,2, \cdots\}, \\
+&M_{w}=\{0,2,4, \cdots\} .
+\end{aligned}
+\]于是, 分配方案数的指数型生成函数为\[
+\begin{aligned}
+&\left(1+x+\frac{x^{2}}{2 !}+\cdots\right)^{2}\left(1+\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}+\cdots\right) \\
+=&e^{2 x} \cdot \frac{e^x+e^{-x}}{2}  =  \frac{1}{2} \left( e^{3 x} + e^x \right)\\
+=& \frac{1}{2}\sum_{n=0}^{\infty}\left(\frac{(3x)^n}{n!}+\frac{x^n}{n!}\right).
+\end{aligned}
+\]
+
+因此, $\dfrac{x^{n}}{n!}$的系数$ \dfrac{1}{2}(3^{n}+1) $就是满足要求的着色方案数.
+\end{frame}
+
+\begin{frame}
+	\begin{prop}
+		若$f(x)=\sum_{k=0}^{\infty} a_{k} \frac{x^{k}}{k !}$, 则$f^{\prime}(x)=\sum_{k=1}^{\infty} a_{k} \cdot k \cdot \frac{x^{k-1}}{k !}=\sum_{l=0}^{\infty} a_{l+1} \frac{x^{l}}{l !}$.
+
+		即$\left\{a_{k+1}\right\}_{k=0}^{\infty}$的指数型生成函数为$f'(x)$.
+	\end{prop}
+\begin{prop}
+	若$f(x)=\sum_{k=0}^{\infty} a_{k} \frac{x^{k}}{k !}$, 则$\left\{a_{k+i}\right\}_{k=0}^{\infty}$
+	的指数型生成函数为$f^{ (i) }(x)$.
+\end{prop}
+\begin{prop}
+	若$f(x)=\sum_{k=0}^{\infty} a_{k} \frac{x^{k}}{k !}$, 则$\left\{ka_{k}\right\}_{k=0}^{\infty}$
+	的指数型生成函数为
+	$$
+	\begin{aligned}
+	\sum_{k=1}^{\infty} k a_{k} \frac{x^{k}}{k !} &=\sum_{k=1}^{\infty} a_{k} \frac{x^{k}}{(k-1) !}=x \sum_{k=1}^{\infty} a_{k} \frac{x^{k-1}}{(k-1) !} \\
+	&=x f^{\prime}(x)=x \frac{d}{d x}(f(x)).
+	\end{aligned}
+	$$
+\end{prop}
+\end{frame}
+
+\begin{frame}
+	\begin{prop}
+		若$f(x)=\sum_{k=0}^{\infty} a_{k} \frac{x^{k}}{k !}$ 且 $P(k)$为一个关于$k$的多项式, 则
+		$\left\{P(k)\, a_{k}\right\}_{k=0}^{\infty}$的指数型生成函数为$$P\left(x \frac{d}{d x}\right) \left(f(x) \right).$$
+	\end{prop}
+\begin{prop}
+	若$f(x)=\sum_{k=0}^{\infty} a_{k} \frac{x^{k}}{k !}$ 且 $g(x)=\sum_{k=0}^{\infty} b_{k} \frac{x^{k}}{k !}$, 则
+	\begin{align*}
+	f(x) g(x)& =\left(\sum_{i=0}^{\infty} a_{i} \frac{x^{i}}{i !}\right)\left(\sum_{j=0}^{\infty} b_{j} \frac{x^{i}}{j !}\right)\\
+& =\sum_{n=0}^{\infty} n !\left(\sum_{i=1}^{n} \frac{a_{i}}{i !} \cdot \frac{b_{n-i}}{(n-i) !}\right) \frac{x^{n}}{n !}\\
+&=\sum_{n=0}^{\infty}\binom{n}{i} a_{i} b_{n-i} \frac{x^{n}}{n !},
+    \end{align*}
+即$\left\{ \sum_{i=0}^{n}\binom{n}{i} a_{i}b_{n-i} \right\}_{n=0}^{\infty}$的
+	指数型生成函数为$$f(x)g(x).$$
+\end{prop}
+\end{frame}
+
+%\begin{frame}
+%	\begin{prop}
+%		若$f(x)=\sum_{k=0}^{\infty} a_{k} \frac{x^{k}}{k !}$, $g(x)=\sum_{k=0}^{\infty} b_{k} \frac{x^{k}}{k !}$, $h(x)=\sum_{k=0}^{\infty} c_{k} \frac{x^{k}}{k !}$则
+%		$$
+%		\begin{aligned}
+%		f(x) g(x) h(x) &=\left(\sum_{n=0}^{\infty}\left(\sum_{i=0}^{n}\binom{n}{i} a_{i} b_{n-i}\right) \frac{x^{n}}{n !}\right) h(x) \\
+%		&=\sum_{m=0}^{\infty}\left(\sum_{n=0}^{\infty}\binom{m}{n} d_{n} \cdot c_{m-n}\right) \frac{x^{m}}{m !}.\\
+%		&=\sum_{m=0}^{\infty}\left(\sum_{n=0}^{m}\left(\begin{array}{l}
+%		m \\ n
+%		\end{array}\right) \sum_{i=0}^{n}\left(\begin{array}{l}
+%		n \\ i
+%		\end{array}\right) a_{i} b_{n-i}\right)c_{m-n} \frac{x^{m}}{m !} \\
+%		&=\sum_{m=0}^{\infty}\left(\sum_{n=0}^{m} \sum_{i=0}^{n}\left(\begin{array}{c}
+%		m \\i, n-i, m-n
+%		\end{array}\right) a_{i} b_{n-i}c_{m-n} \right) \frac{x^{m}}{m !}.
+%		\end{aligned}
+%		$$
+%
+%		即$\left.\left\{\sum_{m=0}^{\infty} \sum_{i+j+k=m}\left(\begin{array}{c}m \\ i ,j, k\end{array}\right) a_{i} b_{j} c_{k}\right) \frac{x^{m}}{m !}\right\}$的指数型生成函数为$f(x)g(x)h(x)$.
+%
+%	\end{prop}
+%\end{frame}
+
+\end{document}

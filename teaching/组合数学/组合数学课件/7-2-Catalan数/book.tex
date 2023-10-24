@@ -1,0 +1,372 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{ctex}
+
+
+
+\usepackage{amsmath,amssymb}             % AMS Math
+\usepackage[T1]{fontenc}
+
+
+
+\usepackage{graphicx}
+% \usepackage{epstopdf}
+\usepackage{tikz}
+\usepackage[left=1.5in,right=1.3in,top=1.1in,bottom=1.1in,includefoot,includehead,headheight=13.6pt]{geometry}
+\renewcommand{\baselinestretch}{1.05}
+
+
+
+\usepackage{minitoc}
+\newtheorem{thm}{定理}[section]
+\newtheorem{prop}[thm]{命题}
+\newtheorem{coro}[thm]{推论}
+\newtheorem{defi}[thm]{定义}
+\newtheorem{lem}[thm]{引理}
+\newtheorem{exa}[thm]{例}
+\newtheorem{ex}[thm]{习题}
+\newtheorem{conj}[thm]{猜想}
+
+\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
+\def\pf{{\bf 证明~~ }}
+\def \sg{\sigma}
+\def \asc{\mathrm{asc}}
+\def \des{\mathrm{des}}
+\def \fix{\mathrm{fix}}
+\def \lef{\mathrm{lef}}
+\def \one{\mathrm{one}}
+\def \Des{\mathrm{Des}}
+\def \maj{\mathrm{maj}}
+\def \exc{\mathrm{exc}}
+\def \inv{\mathrm{inv}}
+\def \roots{\mathrm{roots}}
+\def \sgn{\mathrm{sgn}}
+% Table of contents for each chapter
+
+\usepackage{color}
+\definecolor{linkcol}{rgb}{0,0,0.4}
+\definecolor{citecol}{rgb}{0.5,0,0}
+
+  \usepackage{graphicx}
+  \DeclareGraphicsExtensions{.eps}
+  \usepackage[a4paper,pagebackref,hyperindex=true,pdfnewwindow=true]{hyperref}
+
+% \usepackage{chapterbib}
+\begin{document}
+
+
+
+
+%\pagenumbering{roman}
+%\cleardoublepage
+%\dominitoc
+% \tableofcontents
+%\mainmatter
+%
+
+%\chapter{基本组合数}
+%\label{zuhejiegou} \minitoc
+
+
+
+
+
+\clearpage
+
+
+
+
+%-------------------------------------------------------------
+\section{Catalan数}
+\subsection{格路}
+\begin{defi}
+平面上从 $(0, 0)$ 到 $(2n, 0)$ 的一条路径，如果每步只能是向 $(1, 1)$
+方向或向 $(1, -1)$ 方向前进(只走格点)，并且保证不穿越到 $x$
+轴的下方，这样的路径被称为 Dyck path。从 $(0, 0)$ 到 $(2n, 0)$ 的
+Dyck path 可简记为 $n$-Dyck path。
+\end{defi}
+我们知道，$n$-Dyck path 的总数是第 $n$ 项 Catalan 数
+$C_{n}=\frac{1}{n+1}{2n\choose n}$。容易计算，$C_{2}=2, C_{3}=5,
+C_{4}=14, C_{5}=42$。Catalan
+数在组合计数中有着十分广泛的应用，许多计数问题都可以直接或间接地用
+Catalan 数解决。比如乘法排序问题 ($multiplication\ orderings$)：将
+$n+1$
+个数通过不同的顺序乘起来的方式数，注意要求保持数本身的顺序不变。
+
+\begin{ex}
+将 $xyz$ 按照不同顺序乘起来有 $C_{2}=2$ 种方式：$((xy)z), (x(yz))$。
+
+将 $xyzw$ 按照不同顺序乘起来有 $C_{3}=5$ 种方式：$((xy)(zw)),
+(((xy)z)w), \\((x(yz))w), (x((yz)w)), (x(y(zw)))$。
+\end{ex}
+%-------------------------------------------------------------
+\subsection{有禁置换}
+
+\begin{defi}
+若置换 $\pi=\pi_1\pi_2\cdots\pi_n\in\mathfrak{S}_n$ 中不存在 $1\le
+i<j<k\le n$ 使得 $\pi_i\pi_j\pi_k$ 是模式 (pattern) 312(即
+$\pi_j<\pi_k<\pi_i$)，则称置换 $\pi=\pi_1\pi_2\cdots\pi_n$ 是
+312-禁排置换。类似可定义 123-禁排置换，321-禁排置换。
+\end{defi}
+
+由 312-禁排置换的定义容易得到下面的引理：
+
+\begin{lem}
+置换 $\pi\in\mathfrak{S}_n$ 是 312-禁排的当且仅当对 $\forall\
+i\in[n]$，$i$ 右边比 $i$ 小的所有元素构成的子列是递减的。
+\end{lem}
+
+\begin{thm}
+$\mathfrak{S}_n$ 中 312-禁排置换数目是第 $n$ 项 Catalan 数
+$C_n=\frac{1}{n+1}{2n\choose n}$。
+\end{thm}
+{\bf{证明}} 我们知道 $n$-Dyck path 的数目是第 $n$ 项 Catalan 数
+$C_{n}$，所以一个比较自然的想法就是试图在 $n$-Dyck paths 和
+$\mathfrak{S}_n$ 中
+312-禁排置换间构造一个双射。为此，我们介绍一种标号方法，这里称之为
+312-禁排标号。对任意一条 $n$-Dyck path
+$D$，我们按如下方式来标号：将向 (1, 1) 方向走的 $n$ 步用
+$1,2,\ldots,n$ 从左到右依次标号；对向 $(1, -1)$ 方向走的 $n$
+步我们这样来处理：对任意一个峰不妨设为 $ud$ (这里 $u$ 是向(1, 1)
+方向走的一步，$d$ 是紧接的向 $(1, -1)$ 方向走的一步)，对 $d$ 标与
+$u$ 相同的标号；对剩下的尚未标号的向 $(1, -1)$ 方向走的每步
+$d$，我们用 $max\{l^u\backslash l^d\}$ 从左到右依次给它标号，这里
+$l^u(l^d)$ 是 $d$ 左边向(1, 1)($(1, -1)$)
+方向走的每步标号的集合。从左到右依次记下向 $(1, -1)$ 方向走的 $n$
+步的标号得与 $D$ 对应的置换记为
+$L_{312}(D)$，由我们的标号原则不难看出 $L_{312}(D)$ 是
+312-禁排置换。反之，对任意一个 312-禁排置换
+$\pi$，据之前的原则很容易构造出与之对应的 $n$-Dyck
+path。从而，我们就得到了 $n$-Dyck paths 和 $\mathfrak{S}_n$ 中
+312-禁排置换之间的一个双射。\qed
+
+\begin{ex}
+对如下图所示的 Dyck path 用上面所叙述的原则来标号得到对应的
+$\pi=324651798$。
+\end{ex}
+
+
+\begin{picture}(320,50)
+\put(5,0){\line(1,1){50}}
+\put(3,-2){$\bullet$}%
+\put(8,10){1}%
+\put(20,14){$\bullet$}%
+\put(22,26){2}%
+\put(37,31){$\bullet$}%
+\put(40,42){3}%
+\put(68,42){3}%
+\put(83,27){2}%
+\put(94,26){4}%
+\put(120,25){4}%
+\put(130,25){5}%
+\put(145,42){6}%
+\put(171,40){6}%
+\put(186,25){5}%
+\put(200,10){1}%
+\put(213,10){7}%
+\put(235,9){7}%
+\put(248,10){8}%
+\put(263,25){9}%
+\put(290,24){9}%
+\put(307,10){8}%
+\put(54,48){$\bullet$}%
+\put(56,51){\line(1,-1){35}}%
+\put(71,31){$\bullet$}%
+\put(88,14){$\bullet$}%
+\put(90,17){\line(1,1){17}}%
+\put(107,32){$\bullet$}%
+\put(110,35){\line(1,-1){18}}%
+\put(125,14){$\bullet$}%
+\put(125,15){\line(1,1){35}}%
+\put(142,31){$\bullet$}%
+\put(157,46){$\bullet$}%
+\put(160,49){\line(1,-1){50}}%
+\put(172,31){$\bullet$}%
+\put(190,14){$\bullet$}%
+\put(206,-2){$\bullet$}%
+\put(208,0){\line(1,1){17}}%
+\put(224,15){$\bullet$}%
+\put(226,17){\line(1,-1){17}}%
+\put(242,-2){$\bullet$}%
+\put(244,0){\line(1,1){35}}%
+\put(260,15){$\bullet$}%
+\put(277,31){$\bullet$}%
+\put(280,33){\line(1,-1){35}}%
+\put(294,15){$\bullet$}%
+\put(313,-5){$\bullet$}%
+\put(123,-25){图 1}
+\end{picture}
+\\
+\\
+
+
+
+若将置换 $\pi=\pi_1\pi_2\cdots\pi_n\in\mathfrak{S}_n$ 看作一个字
+(word)，我们可以定义它的子字 (subword)
+$\sigma=\pi_{i_1}\cdots\pi_{i_k}$($1\le i_1<\cdots< i_k\le n$)。记
+$\pi-\sigma$ 为子字 (subword)
+$\pi_{j_1}\cdots\pi_{j_{n-k}}$，这里，$\{i_1,\ldots,i_k\}\cup\{j_1,\cdots,j_{n-k}\}=[n]$
+且 $\{i_1,\ldots,i_k\}\cap\{j_1,\cdots,j_{n-k}\}=\phi$。
+
+由 321-禁排置换的定义我们容易得到下面的引理：
+
+\begin{lem}
+置换 $\pi\in\mathfrak{S}_n$ 是 321-禁排的当且仅当 $lrm(\pi) =
+\{\pi_i | i=1$ 或 $\pi_i>\pi_j (j<i)\}$ 和 $[n]\backslash lrm(\pi)$
+都是递增的。
+\end{lem}
+
+\begin{thm}
+$\mathfrak{S}_n$ 中 312-禁排置换的数目与 123-禁排置换的数目相等。
+\end{thm}
+{\bf{证明}} 我们这里仍然给出一个类似于定理 2.3
+的组合证明，但这次介绍的是 321-禁排标号。对任意一条 $n$-Dyck path
+$D$，我们按如下方式来标号：将向 (1, 1) 方向走的 $n$ 步用
+$1,2,\ldots,n$ 从左到右依次标号；对向 $(1, -1)$ 方向走的 $n$
+步我们这样来处理：对任意一个峰不妨设为 $ud$ (这里 $u$ 是向(1, 1)
+方向走的一步，$d$ 是紧接的向 $(1, -1)$ 方向走的一步)，对 $d$ 标与
+$u$ 相同的标号；对剩下的尚未标号的向 $(1, -1)$ 方向走的每步
+$d$，我们用 $min\{l^u\backslash l^d\}$ 从左到右依次给它标号，这里
+$l^u(l^d)$ 是 $d$ 左边向(1, 1)($(1, -1)$)
+方向走的每步标号的集合。从左到右依次记下向 $(1, -1)$ 方向走的 $n$
+步的标号得与 $D$ 对应的置换记为 $L_{321}(D)$。
+
+
+\begin{ex}
+对如下图所示的 Dyck path 用上面所叙述的原则来标号得到对应的
+$\pi=314625798$。
+\end{ex}
+
+\begin{picture}(320,50)
+\put(5,0){\line(1,1){50}}%
+\put(3,-2){$\bullet$}%
+\put(8,10){1}%
+\put(20,14){$\bullet$}%
+\put(22,26){2}%
+\put(37,31){$\bullet$}%
+\put(40,42){3}%
+\put(68,42){3}%
+\put(83,27){1}%
+\put(94,26){4}%
+\put(120,25){4}%
+\put(130,25){5}%
+\put(145,42){6}%
+\put(171,40){6}%
+\put(186,25){2}%
+\put(200,10){5}%
+\put(213,10){7}%
+\put(235,9){7}%
+\put(248,10){8}%
+\put(263,25){9}%
+\put(290,24){9}%
+\put(307,10){8}%
+\put(54,48){$\bullet$}%
+\put(56,51){\line(1,-1){35}}%
+\put(71,31){$\bullet$}%
+\put(88,14){$\bullet$}%
+\put(90,17){\line(1,1){17}}%
+\put(107,32){$\bullet$}%
+\put(110,35){\line(1,-1){18}}%
+\put(125,14){$\bullet$}%
+\put(125,15){\line(1,1){35}}%
+\put(142,31){$\bullet$}%
+\put(157,46){$\bullet$}%
+\put(160,49){\line(1,-1){50}}%
+\put(172,31){$\bullet$}%
+\put(190,14){$\bullet$}%
+\put(206,-2){$\bullet$}%
+\put(208,0){\line(1,1){17}}%
+\put(224,15){$\bullet$}%
+\put(226,17){\line(1,-1){17}}%
+\put(242,-2){$\bullet$}%
+\put(244,0){\line(1,1){35}}%
+\put(260,15){$\bullet$}%
+\put(277,31){$\bullet$}%
+\put(280,33){\line(1,-1){35}}%
+\put(294,15){$\bullet$}%
+\put(313,-5){$\bullet$}%
+\put(123,-25){图 2}
+\end{picture}
+\\
+\\
+\\
+
+
+
+
+下面我们来证明刚刚的 321-禁排标号事实上给出了$n$-Dyck paths 和
+$\mathfrak{S}_n$ 中 321-禁排置换间的一个双射。设 $A$
+是由从左至右的峰中向 $(1, -1)$ 方向走的那些步的标号所构成的字，$B$
+是由剩余的从左至右的向 $(1, -1)$
+方向走的那些步的标号所构成的字。需要注意的是 $A$ 和 $B$
+都是递增的。考虑到向 $(1, -1)$
+方向走的任意三步的标号中必定有两步的标号或者包含于 $A$ 或者包含于
+$B$ 中，从而易知 $L_{321}(D)$ 是 321-禁排置换。反之，对任意一个
+321-禁排置换 $\pi$，作如下分解：$\pi=a_1b_1a_2b_2\cdots
+a_lb_l$，这里 $1\le l\le n$，$a_i$($1\le i\le l$) 是 $\pi$
+中左到右最大的元素(left-to-right maximum)，$b_j$($1\le j\le l-1$) 是
+$a_j$ 和 $a_{j+1}$ 间的元素构成的子字，$b_l$ 是 $a_l$
+右边的元素所构成的子字。让 $a_i$ ($1\le i\le l$) 对应向(1, 1)
+方向走的 $a_i-a_{i-1}$ 步(习惯上令 $a_0=0$)，让 $b_i$ ($1\le i\le
+l$) 对应向 $(1, -1)$ 方向走的 $|b_i|+1$ 步，结合引理 2.5
+知最后所得到的路是一条 $n$-Dyck path。另外，很容易得到
+$\mathfrak{S}_n$ 中 321-禁排置换与 123-禁排置换间的一一对应。\qed
+
+%-------------------------------------------------------------
+\subsection{Catalan 数}
+
+\begin{thm}第 $n$ 项 Catalan 数
+$$C_n={2n\choose n}-{2n\choose n-1}.$$
+\end{thm}
+{\bf{证明}} 定理中这个等式可以借助 Dyck path
+通过组合方法来证明。这里，我们给出的是一种应用了反射原理的证明方法。
+
+令 $A$ 是平面上从 (0, 0) 到 $(2n, 0)$ 且每步只能取 (1, 1) 或 $(1,
+-1)$ 的路的集合。易知 $|A|={2n\choose n}$。令 $B$ 是 $n$-Dyck path
+的集合，则 $|B|=C_n$ (第 $n$ 项 Catalan 数)。令 $C$ 是包含于 $A$
+且穿越了 $x$ 轴的那些路的集合，则 $|C|=|A|-|B|$。令 $D$ 是平面上从
+(0, 0) 到 $(2n, -2)$ 且每步只能取 (1, 1) 或 $(1, -1)$
+的路的集合。易知 $|D|={2n\choose n-1}$。因此我们只需要说明 $|C|=|D|$
+即可。对 $C$ 中任意一条路 $p$，假定 $(2i-1, -1)$ 是 $p$ 与 $y=-1$
+所交的第一个点，容易知道，将 $p$ 中从 $(2i-1, -1)$ 到 $(2n, 0)$
+的那段关于 $y=-1$ 作反射，$(0, 0)$ 到 $(2i-1,
+-1)$那段不变所得到的是从 $(0, 0)$ 到 $(2n, -2)$ 属于 $D$ 的路
+$p'$，很容易证明这样的反射事实上给出了集合 $C$ 和 $D$
+间的一个一一对应。\qed
+
+\begin{thm}
+设 $G(x)$ 是 Catalan 数的生成函数即
+$G(x)=\sum\limits_{n=0}^{\infty}C_nx^n$，则
+$G(x)=\frac{1-\sqrt{1-4x}}{2x}$。
+\end{thm}
+{\bf{证明}} 令 $u$($d$) 表示向 (1, 1)($(1,-1)$)
+方向走的一步，这样我们就可以把每条 Dyck path 对应于 $\{u, d\}$
+上的一个字。比如，图 1 中的 Dyck path 对应于字
+$uuudduduuddduduudd$。可以观察到每条非空的 Dyck path
+可以被唯一的分解成 $\delta=u\alpha d\beta$，这里 $\alpha$ 和 $\beta$
+都是 Dyck path。假定 $\delta$ 和 $\alpha$ 分别长为 $2n$ 和
+$2i$($0\le i\le n-1$)，从而易知 $\beta$ 长为 $2n-2i-2$，因此有
+$C_n=\sum\limits_{i=0}^{n-1}C_iC_{n-1-i}$，所以
+\begin{align*}
+G(x)-1%
+&=\sum_{n\ge1}C_nx^n\\
+&=\sum_{n\ge1}\left(\sum_{i=0}^{n-1}C_iC_{n-1-i}\right)x^n\\%
+&=x\sum_{n\ge0}\left(\sum_{i=0}^{n}C_iC_{n-i}\right)x^{n}\\
+&=xG^2(x).%
+\end{align*}
+
+解上面的函数方程得
+
+\[
+G(x)=\frac{1-\sqrt{1-4x}}{2x}.
+\]
+
+注意我们在应用求根公式时取了负号，这是因为
+$\frac{1+\sqrt{1-4x}}{2x}$ 的展开式中包含了项
+$\frac{2}{2x}=x^{-1}$。\qed
+
+
+
+
+
+
+\end{document} 

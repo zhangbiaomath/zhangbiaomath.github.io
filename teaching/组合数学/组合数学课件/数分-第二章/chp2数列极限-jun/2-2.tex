@@ -1,0 +1,416 @@
+% !Mode:: "TeX:UTF-8" 
+% !TEX program = xelatex
+\documentclass [t,12pt,mathserif] {beamer} 
+
+\input{defs}
+
+\title[数列极限]{数列极限}
+\institute[]{天津师范大学，数学科学学院}
+% \titlegraphic{\includegraphics[height=2.0cm]{imologo.png}}
+\author[Jun Li]{
+	李~君 }
+\date{2023年6月}
+
+
+\begin{document}
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}
+\frametitle{目~~录}
+\setcounter{tocdepth}{2}
+\tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{section}{1}
+\section{第二章~~数列极限}
+
+\subsection{数列极限的概念}
+\subsection{收敛数列的性质}
+\begin{frame}{$\S 2$ 收敛数列的性质}
+\alert{本节首先考察收敛数列这个新概念有哪 些优良性质? 然后学习怎样运用这些性质.}\\
+一、惟一性\\
+二、有界性\\
+三、保号性\\
+四、保不等式性\\
+五、迫敛性(夹逼原理)\\
+六、极限的四则运算\\
+七、一些例子
+\end{frame}
+
+\begin{frame}{一、惟一性}
+\addtocounter{thm}{1}
+\begin{thm}
+若 $\left\{a_n\right\}$ 收敛, 则它只有一个极限.
+\end{thm}
+\zheng 设 $a$ 是 $\left\{a_n\right\}$ 的一个极限.下面证明对于任何 定数 $b \neq a, b$ 不能是 $\left\{a_n\right\}$ 的极限.\\
+若 $a, b$ 都是 $\left\{a_n\right\}$ 的极限, 则对于任何正数 $\varepsilon>0$, $\exists N_1$, 当 $n>N_1$ 时, 有
+\bena
+\left|a_n-a\right|<\varepsilon
+\eena
+$\exists N_2$, 当 $n>N_2$ 时, 有
+\bena
+\left|a_n-b\right|<\varepsilon . 
+\eena
+令 $N=\max \left\{N_1, N_2\right\}$, 当 $n>N$ 时 (1), (2) 同时成立, 从而有
+
+  
+\end{frame}
+
+\begin{frame}{}
+$$
+|a-b| \leq\left|a_n-a\right|+\left|a_n-b\right|<\mathbf{2} \varepsilon .
+$$
+   因为 $\varepsilon$ 是任意的, 所以 $\boldsymbol{a}=\boldsymbol{b}$.   
+\end{frame}
+
+\begin{frame}{二、有界性}%%%%
+ \begin{thm}
+若数列 $\left\{a_n\right\}$ 收敛, 则 $\left\{a_n\right\}$ 为有界数列, 即存在 $M>0$, 使得 $\left|a_n\right| \leq M, n=1,2, \cdots$.
+\end{thm}
+\zheng 设 $\lim _{n \rightarrow \infty} a_n=a$, 对于正数 $\varepsilon=1, \exists N, n>N$ 时, 有\\ $\left|a_n-a\right|<1$, 即 $a-1<a_n<a+1$.\\
+若令 $M=\max \left\{\left|a_1\right|,\left|a_2\right|, \cdots,\left|a_n\right|,|a-1|,|a+1|\right\}$,\\
+则对一切正整数 $n$, 都有 $\left|a_n\right| \leq M$.
+\begin{alertblock}{}
+\liang{注} 数列 $\left\{(-1)^n\right\}$ 是有界的, 但却不收敛. 这就说 明有界只是数列收敛的必要条件, 而不是充分条 件.
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}{  三、保号性}%%%%
+\begin{thm}
+设 $\lim _{n \rightarrow \infty} a_n=a$, 对于任意两个实数 $b, c$, $b<a<c$, 则存在 $N$, 当 $n>N$ 时, $b<a_n<c$.
+\end{thm}
+\zheng 取 $\varepsilon=\min \{a-b, c-a\}>0, \exists N$, 当 $n>N$ 时, $b \leq a-\varepsilon<a_n<a+\varepsilon \leq c$, 故 $b<a_n<c$. 
+\begin{alertblock}{}
+\liang{注} 若 $a>0$ (或 $a<0)$, 我们可取 $b=\frac{a}{2}$ (或 $c=\frac{a}{2}$ ), 则 $a_n>\frac{a}{2}>0$ (或 $a_n<\frac{a}{2}<0$).
+\end{alertblock}
+这也是为什么称该定理为保号性定理的原因.  
+\end{frame}
+
+\begin{frame}{}%%%%
+\begin{ex}
+证明 $\lim _{n \rightarrow \infty} \frac{1}{\sqrt[n]{n !}}=0$.
+\end{ex}
+\zheng 对任意正数 $\varepsilon$, 因为 $\lim _{n \rightarrow \infty} \frac{(1 / \varepsilon)^n}{n !}=0$, 所以由 定理 2.4, $\exists N>0$, 当 $n>N$ 时,
+$$
+\frac{(1 / \varepsilon)^n}{n !}<1, \text { 即 } \frac{1}{\sqrt[n]{n !}}<\varepsilon . 
+$$
+这就证明了 $\lim _{n \rightarrow \infty} \frac{1}{\sqrt[n]{n !}}=0$.
+\end{frame}
+
+
+\begin{frame}{ 四、保不等式性}%%%%
+\begin{thm}
+设 $\left\{a_n\right\},\left\{b_n\right\}$ 均为收敛数列, 如果存在正 数 $N_0$, 当 $n>N_0$ 时, 有 $a_n \leq b_n$, 则 $\lim _{n \rightarrow \infty} a_n \leq \lim _{n \rightarrow \infty} b_n$.
+\end{thm}
+\zheng 设 $\lim _{n \rightarrow \infty} a_n=a, \lim _{n \rightarrow \infty} b_n=b$. 若 $b<a$, 取 $\varepsilon=\frac{a-b}{2}$, 由保号性定理, 存在 $N>N_0$, 当 $n>N$ 时,
+$$
+a_n>a-\frac{a-b}{2}=\frac{a+b}{2},~ b_n<b+\frac{a-b}{2}=\frac{a+b}{2},
+$$
+故 $\boldsymbol{a}_{\boldsymbol{n}}>\boldsymbol{b}_{\boldsymbol{n}}$, 导致矛盾. 所以 $\boldsymbol{a} \leq \boldsymbol{b}$.   
+\end{frame}
+
+
+
+\begin{frame}{}%%%%
+\zhu{若将定理 2.5 中的条件 $a_n \leq b_n$ 改为 $a_n<b_n$, 也只能得到 $\lim _{n \rightarrow \infty} a_n \leq \lim _{n \rightarrow \infty} b_n$.}
+\alert{这就是说, 即使条件是严格不等式, 结论却不一定 是严格不等式.}\\
+\vskip 0.5\baselineskip
+例如, 虽然 $\frac{1}{n}<\frac{2}{n}$, 但 $\lim _{n \rightarrow \infty} \frac{1}{n}=\lim _{n \rightarrow \infty} \frac{2}{n}=0$.
+    
+\end{frame}
+
+
+\begin{frame}{ 五、迫敛性（夹逼原理）}%%%%
+\begin{thm}
+设数列 $\left\{a_n\right\},\left\{b_n\right\}$ 都以 $a$ 为极限, 数列 $\left\{c_n\right\}$
+满足：存在 $N_0$, 当 $n>N_0$ 时, 有 $a_n \leq c_n \leq b_n$, 则 $\left\{c_n\right\}$ 收敛, 且 $\lim _{n \rightarrow \infty} c_n=a$.
+\end{thm}
+\zheng  对任意正数 $\varepsilon$, 因为 $\lim _{n \rightarrow \infty} a_n=\lim _{\substack{n \rightarrow \infty}} b_n=a$, 所以分 别存在 $N_1, N_2$, 使得\\
+当 $n>N_1$ 时, $a-\varepsilon<a_n$;
+当 $n>N_2$ 时, $b_n<a+\varepsilon$. \\
+取 $N=\max \left\{N_0, N_1, N_2\right\}$,
+当 $n>N$ 时, $a-\varepsilon<a_n \leq c_n \leq b_n<a+\varepsilon$.\\
+这就证得  
+$$
+\lim _{n \rightarrow \infty} c_n=a. 
+$$
+
+\end{frame}
+
+
+\begin{frame}{}%%%%
+\begin{ex}
+求数列 $\{\sqrt[n]{n}\}$ 的极限.   
+\end{ex}
+\jie  设 $\boldsymbol{h}_n=\sqrt[n]{\boldsymbol{n}}-\mathbf{1} \geq \mathbf{0}$, 则有
+$$
+n=\left(1+h_n\right)^n \geq \frac{n(n-1)}{2} h_n^2(n \geq 2),
+$$
+故 $1 \leq \sqrt[n]{n}=1+h_n \leq 1+\sqrt{\frac{2}{n-1}}$. 又因
+$$
+\lim _{n \rightarrow \infty} 1=\lim _{n \rightarrow \infty}\left(1+\sqrt{\frac{2}{n-1}}\right)=1 \text {, }
+$$
+所以由迫敛性, 求得 $\lim _{n \rightarrow \infty} \sqrt[n]{n}=1$. 
+\end{frame}
+
+
+\begin{frame}{   六、四则运算法则}%%%%
+\begin{thm}
+若 $\left\{a_n\right\}$ 与 $\left\{b_n\right\}$ 为收敛数列, 则 $\left\{a_n+b_n\right\}$, $\left\{a_n-b_n\right\},\left\{a_n \cdot b_n\right\}$ 也都是收敛数列, 且有
+\begin{enumerate}
+    \item[{\color{black}$(1)$}] $\lim _{n \rightarrow \infty}\left(a_n \pm b_n\right)=\lim _{n \rightarrow \infty} a_n \pm \lim _{n \rightarrow \infty} b_n$;
+    \item[{\color{black}$(2)$}]  $\lim _{n \rightarrow \infty}\left(a_n \cdot b_n\right)=\lim _{n \rightarrow \infty} a_n \cdot \lim _{n \rightarrow \infty} b_n$, 当 $b_n$ 为常数 $c$ 时, $\lim _{n \rightarrow \infty} c b_n=c \lim _{n \rightarrow \infty} b_n;$
+    \item[{\color{black}$(3)$}] 若 $b_n \neq 0, \lim _{n \rightarrow \infty} b_n \neq 0$, 则 $\left\{\frac{a_n}{b_n}\right\}$ 也收敛, 且 $\lim _{n \rightarrow \infty} \frac{a_n}{b_n}=\lim _{n \rightarrow \infty} a_n / \lim _{n \rightarrow \infty} b_n$. 
+\end{enumerate}
+
+\end{thm}
+
+\end{frame}
+
+
+\begin{frame}{}%%%%
+\zheng \liang{(1)} 设 $\lim _{n \rightarrow \infty} a_n=a, \lim _{n \rightarrow \infty} b_n=b, \forall \varepsilon>0$, 存在 $N$, 当 $n>N$ 时, 有 $\left|a_n-a\right|<\varepsilon,\left|b_n-b\right|<\varepsilon$, 所以
+$$
+\left|a_n \pm b_n-(a \pm b)\right| \leq\left|a_n-a\right|+\left|b_n-b\right|<2 \varepsilon,
+$$
+由 $\varepsilon$ 的任意性, 得到
+$$
+\lim _{n \rightarrow \infty}\left(a_n \pm b_n\right)=a \pm b=\lim _{n \rightarrow \infty} a_n \pm \lim _{n \rightarrow \infty} b_n .
+$$
+\zheng \liang{(2)}  因 $\left\{b_n\right\}$ 收敛, 故 $\left\{b_n\right\}$ 有界, 设 $\left|b_n\right| \leq M$.
+对于任意 $\varepsilon>0$, 当 $n>N$ 时, 有
+$$
+\left|a_n-a\right|<\frac{\varepsilon}{M+1},\left|b_n-b\right|<\frac{\varepsilon}{|a|+1},
+$$
+    
+\end{frame}
+
+
+\begin{frame}{}%%%%
+  于是
+$$
+\begin{aligned}
+\left|a_n b_n-a b\right| & =\left|a_n b_n-a b_n+a b_n-a b\right| \\
+& \leq\left|b_n\right|\left|a_n-a\right|+|a|\left|b_n-b\right|<2 \varepsilon
+\end{aligned}
+$$
+由 $\varepsilon$ 的任意性, 证得
+$$
+\lim _{n \rightarrow \infty} a_n b_n=a b=\lim _{n \rightarrow \infty} a_n \lim _{n \rightarrow \infty} b_n .
+$$
+\zheng \liang{(3)} 因为 $\frac{a_n}{b_n}=a_n \cdot \frac{1}{b_n}$, 由(2), 只要证明
+$$
+\lim _{n \rightarrow \infty} \frac{1}{b_n}=\frac{1}{\lim\limits_{n \rightarrow \infty} b_n} .
+$$
+由于 $b \neq 0$, 据保号性, $\exists N_1$, 当 $n>N_1$ 时,  
+\end{frame}
+
+
+\begin{frame}{}%%%%
+ $$
+\left|b_n\right|>\frac{|b|}{2} \text {. }
+$$
+又因为 $\lim _{n \rightarrow \infty} b_n=b, \exists N_2$, 当 $n>N_2$ 时,
+$$
+\left|b_n-b\right|<\frac{|b|^2}{2} \varepsilon
+$$
+取 $N=\max \left\{N_1, N_2\right\}$, 当 $n>N$ 时,
+$$
+\left|\frac{1}{b_n}-\frac{1}{b}\right|=\left|\frac{b_n-b}{b_n b}\right| \leq \frac{2}{|b|^2}\left|b_n-b\right| \leq \varepsilon,
+$$
+即 $\lim _{n \rightarrow \infty} \frac{1}{b_n}=\frac{1}{b}$. 所以 $\lim _{n \rightarrow \infty} \frac{a_n}{b_n}=\frac{\lim \limits_{n \rightarrow \infty} a_n}{\lim \limits_{n \rightarrow \infty} b_n}$.   
+\end{frame}
+
+
+\begin{frame}{ 七、一些例子}%%%%
+\begin{ex}
+用四则运算法则计算
+$$
+\lim _{n \rightarrow \infty} \frac{a_m n^m+a_{m-1} n^{m-1}+\cdots+a_1 n+a_0}{b_k n^k+b_{k-1} n^{k-1}+\cdots+b_1 n+b_0}
+$$
+其中 $m \leq k, a_m b_k \neq 0$.
+\end{ex}
+\jie 依据 $\lim _{n \rightarrow \infty} \frac{1}{n^\alpha}=0(\alpha>0)$, 分别得出:\\
+(1) 当 $\boldsymbol{m}=\boldsymbol{k}$ 时，有  
+
+\end{frame}
+
+
+\begin{frame}{}%%%%
+\vskip -0.5\baselineskip
+ $$
+\begin{aligned}
+& \lim _{n \rightarrow \infty} \frac{a_m n^m+a_{m-1} n^{m-1}+\cdots+a_1 n+a_0}{b_k n^k+b_{k-1} n^{k-1}+\cdots+b_1 n+b_0} \\
+& \quad=\lim _{n \rightarrow \infty} \frac{a_m+a_{m-1} \frac{1}{n}+\cdots+a_1 \frac{1}{n^{m-1}}+a_0 \frac{1}{b^m}}{b_m+b_{m-1} \frac{1}{n}+\cdots+b_1 \frac{1}{n^{m-1}}+b_0 \frac{1}{n^m}} \\
+& \quad=\frac{a_m}{b_m} .
+\end{aligned}
+$$
+(2) 当 $m<k$ 时, 有  
+$$
+\begin{aligned}
+& \lim _{n \rightarrow \infty} \frac{a_m n^m+a_{m-1} n^{m-1}+\cdots+a_1 n+a_0}{b_k n^k+b_{k-1} n^{k-1}+\cdots+b_1 n+b_0} \\
+& =\lim _{n \rightarrow \infty} \frac{1}{n^{k-m}} \cdot \lim _{n \rightarrow \infty} \frac{a_m+a_{m-1} \frac{1}{n}+\cdots+a_1 \frac{1}{n^{m-1}}+a_0 \frac{1}{n^m}}{b_k+b_{k-1} \frac{1}{n}+\cdots+b_1 \frac{1}{n^{k-1}}+b_0 \frac{1}{n^k}} \\
+& =0 \cdot \frac{a_m}{b_k}=0 .
+\end{aligned}
+$$
+
+\end{frame}
+
+\begin{frame}{}%%%%
+  所以
+$$
+\text { 原式 }=\bec
+\frac{\boldsymbol{a}_m}{\boldsymbol{b}_m}, & \boldsymbol{m}=\boldsymbol{k}, \\
+\mathbf{0}, & \boldsymbol{m}<\boldsymbol{k} .
+\eec.
+$$  
+\end{frame}
+
+
+\begin{frame}{}%%%%
+\begin{ex}
+ 设 $a_n \geq 0, \lim _{n \rightarrow \infty} a_n=a$, 求证 $\lim _{n \rightarrow \infty} \sqrt{a_n}=\sqrt{a}$. 
+\end{ex}
+\zheng 由于 $\boldsymbol{a}_n \geq \mathbf{0}$, 根据极限的保不等式性, 有 $\boldsymbol{a} \geq \mathbf{0}$. 对于任意 $\varepsilon>0, \exists N$, 当 $n>N$ 时, $\left|a_n-a\right|<\varepsilon$. 于 是可得:\\
+(1) $a=0$ 时, 有 $\left|\sqrt{a_n}-\mathbf{0}\right|=\sqrt{a_n}<\sqrt{\varepsilon}$;\\
+(2) $a>0$ 时, 有
+$$
+\left|\sqrt{a_n}-\sqrt{a}\right|=\frac{\left|a_n-a\right|}{\sqrt{a_n}+\sqrt{a}} \leq \frac{\left|a_n-a\right|}{\sqrt{a}} \leq \frac{\varepsilon}{\sqrt{a}} .
+$$
+故 $\lim _{n \rightarrow \infty} \sqrt{a_n}=\sqrt{a}$ 得证.   
+\end{frame}
+
+\begin{frame}{}%%%%
+\begin{ex}
+ 设 $a_n \geq 0, \lim _{n \rightarrow \infty} a_n=a>0$, 求证 $\lim _{n \rightarrow \infty} \sqrt[n]{a_n}=1$.
+\end{ex}
+\zheng 因为 $\lim _{n \rightarrow \infty} a_n=\boldsymbol{a}>\mathbf{0}$, 根据极限的保号性, 存在 $N$, 当 $n>N$ 时, 有 $\frac{a}{2}<a_n<\frac{3 a}{2}$, 即
+$$
+\sqrt[n]{\frac{a}{2}}<\sqrt[n]{a_n}<\sqrt[n]{\frac{3 a}{2}}.
+$$
+又因为 $\lim _{n \rightarrow \infty} \sqrt[n]{\frac{a}{2}}=\lim _{n \rightarrow \infty} \sqrt[n]{\frac{3 a}{2}}=1$, 所以由极限的迫
+敛性, 证得 $\lim _{n \rightarrow \infty} \sqrt[n]{a_n}=1$.   
+\end{frame}
+
+\begin{frame}{}%%%%
+\begin{ex}
+ 求极限 $\lim _{n \rightarrow \infty} \frac{a^n}{1+a^n}(a \neq-1)$.
+\end{ex} 
+\jie (1) $|a|<1$, 因为 $\lim _{n \rightarrow \infty} a^n=0$, 所以由极限四则 运算法则, 得 $\lim _{n \rightarrow \infty} \frac{a^n}{1+a^n}=\frac{\lim _{n \rightarrow \infty} a^n}{1+\lim _{n \rightarrow \infty} a^n}=0$.\\
+(2) $a=1, \lim _{n \rightarrow \infty} \frac{a^n}{1+a^n}=\lim _{n \rightarrow \infty} \frac{1}{2}=\frac{1}{2}$.\\
+(3) $|a|>1$, 因 $\lim _{n \rightarrow \infty}\left(1 / a^n\right)=0$, 故得
+$$
+\lim _{n \rightarrow \infty} \frac{a^n}{1+a^n}=\lim _{n \rightarrow \infty} \frac{1}{1+1 / a^n}=\frac{1}{1+\lim _{n \rightarrow \infty}\left(1 / a^n\right)}=1 .
+$$   
+\end{frame}
+
+\begin{frame}{}%%%%
+\begin{ex}
+ 设 $a_1, a_2, \cdots, a_m$ 为 $m$ 个正数, 证明
+$$
+\lim _{n \rightarrow \infty} \sqrt[n]{a_1{ }^n+a_2{ }^n+\cdots+a_m{ }^n}=\max \left\{a_1, a_2, \cdots, a_m\right\} .
+$$
+\end{ex}    
+\zheng 设 $a=\max \left\{a_1, a_2, \cdots, a_m\right\}$. 由
+$$
+\begin{gathered}
+a \leq \sqrt[n]{a_1{ }^n+a_2{ }^n+\cdots+a_m{ }^n} \leq \sqrt[n]{m} a, \\
+\lim _{n \rightarrow \infty} \sqrt[n]{m} a=\lim _{n \rightarrow \infty} a=a,
+\end{gathered}
+$$
+以及极限的迫敛性, 可得
+$$
+\lim _{n \rightarrow \infty} \sqrt[n]{a_1{ }^n+a_2{ }^n+\cdots+a_m{ }^n}=a=\max \left\{a_1, a_2, \cdots, a_m\right\} .
+$$
+\end{frame}
+
+\begin{frame}{}%%%%
+\begin{dfn}
+ 设 $\left\{a_n\right\}$ 为数列, $\left\{n_k\right\}$ 为 $\mathbf{N}_{+}$的无限子集, 且
+$$
+\boldsymbol{n}_1<\boldsymbol{n}_{\mathbf{2}}<\cdots<\boldsymbol{n}_k<\cdots,
+$$
+则数列
+$$
+a_{n_1}, a_{n_2}, \cdots, a_{n_k}, \cdots
+$$
+称为 $\left\{a_n\right\}$ 的子列, 简记为 $\left\{a_{n_k}\right\}$.
+\end{dfn}
+\zhu{由定义, $\left\{a_n\right\}$ 的子列 $\left\{a_{n_k}\right\}$ 的各项均选自 $\left\{a_n\right\}$, 且保持这些项在 $\left\{a_n\right\}$ 中的先后次序. $\left\{a_{n_k}\right\}$ 中的第 $k$ 项是 $\left\{a_n\right\}$ 中的第 $\boldsymbol{n}_{\boldsymbol{k}}$ 项, 故总有 $\boldsymbol{n}_{\boldsymbol{k}} \geq \boldsymbol{k}$. }
+  
+\end{frame}
+
+\begin{frame}{}%%%%
+ \begin{thm}
+ 若数列 $\left\{a_n\right\}$ 收敛到 $a$, 则 $\left\{a_n\right\}$ 的任意子列 $\left\{\boldsymbol{a}_{n_k}\right\}$ 也收敛到 $\boldsymbol{a}$.
+ \end{thm}   
+\zheng 设 $\lim _{n \rightarrow \infty} a_n=a$. 则 $\forall \varepsilon>0, \exists N$, 当 $n>N,\left|a_n-a\right|<\varepsilon$. 设 $\left\{a_{n_k}\right\}$ 是 $\left\{a_n\right\}$ 的任意一个子列. 由于 $\boldsymbol{n}_k \geq \boldsymbol{k}$, 因此 $\boldsymbol{k}>\boldsymbol{N}$ 时, $\boldsymbol{n}_k \geq \boldsymbol{k}>\boldsymbol{N}$, 亦有 $\left|a_{n_k}-a\right|<\varepsilon$. 这就证明了
+$$
+\lim _{k \rightarrow \infty} a_{n_k}=\boldsymbol{a} . 
+$$
+\zhu{ 由定理 $\mathbf{2. 8}$ 可知, 若一个数列的两个子列收敛 于不同的值,则此数列必发散.}
+\end{frame}
+
+\begin{frame}{}%%%%
+\begin{ex}
+ 求证 $\lim _{n \rightarrow \infty} a_n=a$ 的充要条件是
+$$
+\lim _{n \rightarrow \infty} a_{2 n-1}=\lim _{n \rightarrow \infty} a_{2 n}=a . 
+$$
+\end{ex}
+\zheng (必要性) 设 $\lim _{n \rightarrow \infty} a_n=a$, 则 $\forall \varepsilon>0, \exists N, n>N$ 时,
+\benas
+\left|a_n-a\right|<\varepsilon
+\eenas
+因为 $2 n>N, 2 n-1 \geq N$, 所以
+\benas
+\left|a_{2 n-1}-a\right|<\varepsilon, \quad\left|a_{2 n}-a\right|<\varepsilon .
+\eenas
+$$a+b$$
+
+\end{frame}
+
+\begin{frame}{}%%%%
+(充分性) 设 $\lim _{k \rightarrow \infty} a_{2 k+1}=\lim _{k \rightarrow \infty} a_{2 k}=a$, 则 $\forall \varepsilon>0, \exists N$, 当 $k>N$ 时,     $$
+\left|a_{2 k-1}-a\right|<\varepsilon, \quad\left|a_{2 k}-a\right|<\varepsilon .
+$$
+令 $N=2 K$, 当 $n>N$ 时, 则有
+$$
+\left|a_n-a\right|<\varepsilon
+$$
+所以 $\lim _{n \rightarrow \infty} a_n=a$.
+\end{frame}
+
+\begin{frame}{}%%%%
+\begin{ex}
+ 若 $a_n=(-1)^n\left(1-\frac{1}{n}\right)$. 证明数列 $\left\{a_n\right\}$ 发散.
+\end{ex}
+\zheng 显然
+$$
+\begin{gathered}
+\lim _{k \rightarrow \infty} a_{2 k-1}=\lim _{k \rightarrow \infty}-\left(1-\frac{1}{2 k-1}\right)=-1 ; \\
+\lim _{k \rightarrow \infty} a_{2 k}=\lim _{k \rightarrow \infty}\left(1-\frac{1}{2 k}\right)=1 .
+\end{gathered}
+$$
+因此, 数列 $\left\{a_n\right\}$ 发散.   
+\end{frame}
+
+\begin{frame}{ 复习思考题}%%%%
+1. 极限的保号性与保不等式性有什么不同?\\
+2. 仿效例题5的证法, 证明: 若 $\left\{a_n\right\}$ 为正有界数列, 则
+$$
+\lim _{n \rightarrow \infty} \sqrt[n]{a_1^n+a_2^n+\cdots+a_n^n}=\sup \left\{a_n\right\} .
+$$   
+\end{frame}
+
+
+\end{document}
+
+
+\begin{frame}{}%%%%
+    
+\end{frame}

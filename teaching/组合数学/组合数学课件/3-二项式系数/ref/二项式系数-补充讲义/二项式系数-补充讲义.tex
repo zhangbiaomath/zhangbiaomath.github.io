@@ -1,0 +1,684 @@
+\documentclass[a4paper,12pt]{ctexart}
+
+%\setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+
+%\setCJKmainfont{SimSun}
+%\setCJKsansfont{KaiTi}
+%\setCJKmonofont{SimHei}
+
+
+
+\usepackage{amssymb,amsfonts,amsmath,amsthm,cite}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{amsmath,tikz}
+
+
+
+\parskip=7pt
+%--------------------------------------------------------------------
+\hoffset -25truemm \oddsidemargin=25truemm \evensidemargin=25truemm
+\textwidth=160truemm \voffset -25truemm \topmargin=20truemm
+\headheight=5truemm \headsep=5truemm \textheight=240truemm
+\baselineskip=16pt
+%--------------------------------------------------------------------
+\newtheorem{theo}{定理}[section]
+\newtheorem{cor}{推论}[section]
+\newtheorem{lem}{引理}[section]
+\newtheorem{prop}{命题}[section]
+\newtheorem{defi}{定义}[section]
+\newtheorem{rem}{注}[section]
+\newtheorem{exa}{例}[section]
+\def\theequation{\thesection.\arabic{equation}}
+\makeatletter \@addtoreset{equation}{section}
+%--------------------------------------------------------------------
+
+\def \e{\mathrm{e}}
+\def\pf{\noindent {\bf 证明\ }}
+
+
+
+
+\begin{document}
+
+
+
+
+
+\title{二项式系数}
+\author{张彪}
+\maketitle
+
+\tableofcontents
+
+
+
+\section{课后习题}
+7.  利用 \begin{align*}
+	m^{2}=2\binom{m}{2}+\binom{m}{1},
+\end{align*}
+求 $1^{2}+2^{2}+\cdots+n^{2}$ 的值.
+
+ \textbf{解} \quad
+\begin{align*}
+		\sum_{m=1}^{n} m^{2} &  =\sum_{m=1}^{n} \left( 2 \binom{m}{2}+\binom{m}{1}\right)
+		=2 \sum_{m=1}^{n} \binom{m}{2}+\sum_{m=1}^{n} \binom{m}{1} \\[6pt]
+		&=2\binom{n+1}{3}+\binom{n+1}{2}=2 \cdot \frac{(n+1) \cdot n(n-1)}{3 \times 2}+\frac{(n+1) n}{2} \\[6pt]
+		& =\frac{1}{6} n(n+1)(2 n+1)
+\end{align*}
+
+8.求整数 $a, b, c$, 使得
+\begin{align}\label{eq-m3}
+	m^{3}=a\binom{m}{3}+ b \binom{m}{2}+ c \binom{m}{1},
+\end{align}
+求计算 $1^{3}+2^{3}+\cdots+n^{3}$ 的值.
+
+
+ \textbf{解} \quad
+将 $m=1$ 代入\eqref{eq-m3},  得 $c=1$.
+
+将 $m=2$ 代入\eqref{eq-m3},  得 $b+2 c=8$, 解得 $b=6$.
+
+ 将 $m=3$ 代入\eqref{eq-m3},  得 $a+3 b+3 c=27$,  解得  $a=6$.
+
+ 因此，
+\begin{align*}
+	\sum_{m=1}^{n} m^{3} &=\sum_{m=1}^{n}\left(6\binom{m}{3}+ 6 \binom{m}{2}+  \binom{m}{1}\right) \\ &=b \sum_{m=1}^{n} \binom{m}{3} +6 \sum_{m=1}^{n}\binom{m}{2}+\sum_{m=1}^{n}\binom{m}{1}\\ &=6\binom{n+1}{4}+6\binom{n+1}{3}+\binom{n+1}{2}\\
+	& =\frac{1}{4} n^{2}(n+1)^{2}=\binom{n+1}{2}^{2}
+\end{align*}
+\section{补充习题}
+
+
+\begin{enumerate}
+	\item  证明等式$$\sum_{k=0}^{n} \frac{1}{k+1} \binom{n}{k}   =\frac{2^{n+1}-1}{n+1}.$$
+
+		\textbf{ 证明 } \quad 对
+	$$
+(1+x)^{n}=\sum_{k=0}^{n}\binom{n}{k} x^{k} \text { , }
+	$$
+	两边对 $x$ 求从 0 到 1 的定积分，
+	\begin{align*}
+		\int_{0}^{1}(1+x)^{n} \mathrm{~d} x & =\sum_{k=0}^{n}\binom{n}{k} \int_{0}^{1} x^{k} \mathrm{~d} x \\
+		\left.\frac{1}{n+1}(1+x)^{n+1}\right|_{0} ^{1} & =\left.\sum_{k=0}^{n}\binom{n}{k} \cdot \frac{1}{k+1} x^{k+1}\right|_{0} ^{1} \\
+		\frac{1}{n+1}\left(2^{n+1}-1\right) & =\sum_{k=0}^{n} \frac{1}{k+1}\binom{n}{k} .
+	\end{align*}
+	此即所证等式。
+	使用这种方法证明不等式时一定要取定积分，否则易出现常数确定上的错误.
+%	使用第二个方法时要注意不要漏项.
+
+
+	\item
+	计算 $$\sum_{k=1}^{n} k^{2}\binom{n}{k} .$$
+
+	\textbf{解}  $\quad$ 对$$
+	(1+x)^{n}=\sum_{k=0}^{n} \binom{n}{k}  x^{k}
+	$$两边求导，得
+	$$
+	n(1+x)^{n-1}=\sum_{k=0}^{n} k\binom{n}{k}x^{k-1}
+	$$
+	两边乘 $x$, 得
+	$$
+	n x(1+x)^{n-1}=\sum_{k=0}^{n} k  \binom{n}{k}  x^{k}
+	$$
+	两边再求导，得
+	$$
+	n\left[(1+x)^{n-1}+(n-1) x(1+x)^{n-2}\right]=\sum_{k=0}^{n} k^{2}\binom{n}{k} x^{k-1}
+	$$
+	取 $x=1$, 得
+	$$
+	\sum_{k=1}^{n} k^{2} \binom{n}{k} =\sum_{k=0}^{n} k^{2} \binom{n}{k}
+	=n\left(2^{n-1}+(n-1) \cdot 2^{n-2}\right)=n(n+1) 2^{n-2}
+	$$
+
+
+
+\item
+证明 $$\binom{n}{k}=\frac{n}{k}\binom{n-1}{k-1}.$$
+
+
+\textbf{证法一}$\quad$
+$$\binom{n}{k}
+=\frac{n !}{k !(n-k) !}=\frac{n \cdot(n-1) !}{k \cdot(k-1) !\left(n-1-(k-1) \right) !}=\frac{n}{k}  \binom{n-1}{k-1}.$$
+
+
+\textbf{证法二} $\quad$ 用组合证明. 考虑从 $n$ 个人中选出带一个小组长的 $k$ 人小组. 若先选出 $k$ 个
+人，再从 $k$ 个人中选小组长，则有 $k \binom{n}{k}$ 种选法. 若先选出组长，再从剩下的 $n-1$ 个人中
+选 $k$ 一1 个组员，则有 $n \binom{n-1}{k-1}$ 种选法. 从而
+$$
+k\binom{n}{k}=n \binom{n-1}{k-1}, \quad
+\text { 即 }\binom{n}{k}=\frac{n}{k}\binom{n-1}{k-1}.
+$$
+
+
+\item 用 $\binom{n}{k}=\frac{n}{k}\binom{n-1}{k-1}$ 证明下列恒等式。
+\begin{enumerate}
+ \item  $\sum_{k=0}^{n} k \binom{n}{k}  =n 2^{n-1}$.
+
+ \item  $\sum_{k=0}^{n} k(k-1)  \binom{n}{k}  =n(n-1) 2^{n-2}$.
+
+ \item  $\sum_{k=0}^{n} k^{2}  \binom{n}{k}    =n(n+1) 2^{n-2}$.
+
+  \item $\sum_{k=0}^{n} \frac{1}{k+1} \binom{n}{k}   =\frac{2^{n+1}-1}{n+1}.$
+\end{enumerate}
+
+ \textbf{解}\quad
+\begin{enumerate}
+	\item  $ \sum_{k=1}^{n} k \binom{n}{k}
+	=\sum_{k=1}^{n} k \cdot \frac{n}{k}\binom{n-1}{k-1}
+	=n \sum_{k=1}^{n} \binom{n-1}{k-1}
+	=n \sum_{i=0}^{n-1} \binom{n-1}{i}=n \cdot 2^{n-1}$
+
+ \item
+ $\sum_{k=2}^{n} k(k-1) \binom{n}{k}
+ =n \sum_{k=2}^{n}(k-1)  \binom{n-1}{k-1}
+ =n \sum_{k=1}^{n-1} k  \binom{n-1}{k}
+ =n \cdot(n-1) \cdot 2^{n-2}$
+
+  \item  利用前两个式子证明。
+   \item  最后一个式子
+可用 $\binom{n+1}{k+1}=\frac{n+1}{k+1}\binom{n}{k}$ 这个公式证明。
+$$
+\begin{aligned}
+	\sum_{k=0}^{n} \frac{1}{k+1}\binom{n}{k}&=\sum_{k=0}^{n} \frac{1}{n+1}\binom{n+1}{k+1}=\frac{1}{n+1} \sum_{k=1}^{n+1}\binom{n+1}{k}\\
+	&=\frac{1}{n+1}\left(\sum_{k=0}^{n+1}\binom{n+1}{k} -\binom{n+1}{0}\right)=\frac{2^{n+1}-1}{n+1}
+\end{aligned}
+$$
+\end{enumerate}
+
+
+
+\item
+证明下列组合恒等式:
+\begin{enumerate}
+	\item $\binom{n}{k}\binom{k}{j}=\binom{n}{j} \binom{n-j}{k-j}$;
+	\item  $\sum_{k=0}^{m}(-1)^{k}\binom{n-k}{m-k} \binom{n}{k}=0$
+	\item  $\sum_{k=0}^{m}\binom{n-k}{n-m}  \binom{n}{k}=2^{m}\binom{n}{m}$
+\end{enumerate}
+
+
+\textbf{ 证明 } \quad
+\begin{enumerate}
+	\item
+	$\binom{n}{k}\binom{k}{j}=\frac{n !}{k! (n-k) !} \cdot \frac{k}{j!(k-j) !}=\frac{n}{j!(n-j) !}\frac{(n-j) !}{ (k-j) !(n-k) !}=\binom{n}{j} \binom{n-j}{k-j}$
+	\item
+	$
+	\sum_{k=0}^{m}(-1)^{k}\binom{n-k}{m-k} \binom{n}{k}
+	= \sum_{k=0}^{m}(-1)^{k}\binom{n}{m}\binom{m}{k}
+	= \binom{n}{m} \sum_{k}(-1)^{k}\binom{m}{k}
+	= \binom{n}{m} 0=0
+	$
+	\item
+	$\sum_{k=0}^{m}\binom{n-k}{n-m} \binom{n}{k}
+	=\sum_{k=0}^{m}\binom{n-k}{m-k}\binom{n}{k}
+	=\sum_{k=0}^{m}\binom{n} {m}\binom{m}{k}
+	=\binom{n}{ m}\sum_{k=0}^{m}\binom{m}{k}=2^{m}\binom{n}{m}$
+\end{enumerate}
+\end{enumerate}
+
+\section{思考题}
+
+\begin{enumerate}
+\item 设 $n$ 和 $k$ 均为正整数,给出下面式子的一个组合证明:
+\begin{align*}
+	\sum_{k=0}^{n} k \binom{n}{k}^{2}=n\binom{2n-1}{n-1}.
+\end{align*}
+
+
+
+\item
+设 $n$ 是正整数,证明
+$$
+\sum_{k=0}^{n}(-1)^{k}\binom{n}{k}^{2}=\left\{\begin{array}{ll}
+	0, & n \text { 为奇数 }, \\
+	(-1)^{m}\binom{2m}{m}, & n \text { 为偶数 } 2 m .
+\end{array}\right.
+$$
+
+
+提示： 考虑$(1-x^2)^n=(1-x)^n(1+x)^n$中$x^n$的系数。
+
+\item
+ 设 $n$是正整数，证明
+\begin{align*}
+	\sum_{k=0}^{n-1}\frac{1}{k+1}\binom{n-1}{k}  \binom{n}{k}
+=\binom{2n}{n}- \binom{2n}{n-1}.
+\end{align*}
+
+
+
+\item 证明下列恒等式
+\begin{equation*}
+	\binom{n+k}{k}^{2}=\sum_{j=0}^{k}\binom{k}{j}^{2}\binom{n+2k-j}{2k}.
+\end{equation*}
+\textbf{李善兰恒等式}为组合数学中的一个恒等式，由中国清代数学家李善兰于1859年在《垛积比类》一书中首次提出，因此得名。
+
+
+\end{enumerate}
+
+
+
+
+\section{高斯系数}
+\subsection{高斯系数的定义}
+
+我们下面要介绍的高斯系数是由德国数学家高斯最早提出的．高斯被认为是最重要的数学家，并有“数学王子”的美誉．
+1792年，15岁的高斯进入Braunschweig学院．从此，高斯开始对高等数学作研究．独立发现了二项式定理的一般形式、数论上的“二次互反律”、素数定理及算术-几何平均数．
+18岁时，高斯转入哥廷根大学学习．在他19 岁时，第一个成功的用尺规构造出了规则的17 边形．
+1811年，高斯已是哥廷根大学的教授．一次偶然的机会，他在研究“二次高斯和”的估值的时候提出了这样一个多项式
+$\left[{{n}\atop {k}}\right]$．
+
+\begin{defi}
+一般地，称
+\begin{equation}\label{1.1}
+{n\brack
+k}=\frac{(q^n-1)(q^n-q)\cdots(q^n-q^{k-1})}{(q^k-1)(q^k-q)\cdots(q^k-q^{k-1})},\quad
+1\leq k\leq n.
+\end{equation}
+为{\bf Gauss系数}．
+\end{defi}
+
+我们总是假定$|q|<1$. 若记$[n]!=[1]![2]!\cdots[n]!,$
+其中$[n]=1+q+q^2+\ldots+q^{n-1},$ 则\eqref{1.1}式也可写为
+$${n\brack k}=\frac{[n]!}{[k]![n-k]!}.$$
+
+
+组合恒等式中最基本的就是二项系数$n \choose k$，它的组合意义大家都已十分清楚了．高斯系数是二项式系数的$q$-模拟．由定义可知
+$$\displaystyle\lim_{q\rightarrow 1}{n\brack k}=\frac{n!}{k!(n-k)!}={n\choose
+k}，$$
+这也是我们将$q$-Gauss系数，也称为$q$-二项式系数名称的由来．
+\\[3pt]
+
+\subsection{高斯系数的性质}
+\begin{theo}
+$q$-Gauss系数具有以下性质：
+\begin{enumerate}
+\item
+$\displaystyle{n\brack 0}={n\brack n}=1; $
+\item
+$\displaystyle{n\brack k}={n\brack {n-k}};$
+\item
+$\displaystyle{n\brack k}={n-1\brack k}+q^{n-k}{n-1\brack{k-1}};$
+\item
+$\displaystyle{n\brack k}={n-1\brack{k-1}}+q^k{n-1\brack k}.$
+\end{enumerate}
+\end{theo}
+
+\begin{pf}
+(1)、(2)可直接由定义可得，我们只证(3),
+\begin{align*}
+{n\brack k}-{n-1\brack
+k}&={\frac{(1-q^{n-1})\cdots{(1-q^{n-k+1})}}{(1-q^k)\cdots(1-q)}}[(1-q^n)-(1-q^{n-k})]\\&={\frac{(1-q^{n-1})\cdots{(1-q^{n-k+1}})q^{n-k}(1-q^k)}{(1-q^k)\cdots(1-q)}}\\
+&=\frac{q^{n-k}(1-q^(n-1))\cdots(1-q^{n-k+1})}{(1-q^{k-1})\cdots(1-q)}\\
+&=q^{n-k}{n-1\brack{k-1}}.
+\end{align*}
+类似可证明(4).
+\end{pf}\\[15pt]
+下面我们主要阐述Gauss系数的组合意义．\\[5pt]
+\subsection{与线性代数的关系}
+\noindent{\bf 组合意义1:}
+为此，先给出有限域上的线性空间的一些概念. 设 $\mathbb{F}_q$ 为有限域, 其中 $q=p^{r}$, $p$ 为素数. 对自然数 $n$, 我们定义$V_{n}(q)$ 为$\mathbb{F}_q$ 上的有序 $n$ 元组
+\begin{align*}
+	\left(x_{1}, x_{2}, \ldots, x_{n}\right), \quad x_{i} \in \mathbb{F}_q, \quad i=1,2, \cdots, n
+\end{align*}
+组成的集合，并满足线性运算
+\begin{align*}
+	\begin{array}{c}
+		\left(x_{1}, x_{2}, \cdots, x_{n}\right)+\left(y_{1}, y_{2}, \cdots, y_{n}\right)=\left(x_{1}+y_{1}, x_{2}+y_{2}, \cdots, x_{n}+y_{n}\right) \\
+		\alpha\left(x_{1}, x_{2}, \cdots, x_{n}\right)=\left(\alpha x_{1}, \alpha x_{2}, \cdots, \alpha x_{n}\right), \quad \alpha \in \mathbb{F}_q
+	\end{array}
+\end{align*}
+则 $V_{n}$ 构成 $\mathbb{F}_q$ 上的 $n$ 维线性空间, 其中的元素称为向量.若向量 $X_{1}, X_{2}, \cdots, X_{m}$ 满足
+\begin{align*}
+	\sum_{i=1}^{m} \alpha_{i} X_{i}=0 \Rightarrow \alpha_{i}=0, \quad i=1,2, \cdots, m
+\end{align*}
+则称向量 $X_{1}, X_{2}, \cdots, X_{m}$ 是线性无关的. $\quad V_{n}$ 中含 $n$ 个向量的线性无关组称为 $V_{n}$ 的一组基。 $V_{n}$ 中的任意向量都可以由 $V_{n}$ 的一组基线性表示, 即 $\forall X \in V_{n}$, $\exists\left\{\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}\right\} \in \mathbb{F}_q$, 使得
+\begin{align*}
+	X=\sum_{i=1}^{n} \alpha_{i} X_{i}
+\end{align*}
+用坐标表示为
+\begin{align*}
+	X=\left(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{n}\right) .
+\end{align*}
+
+${n\brack
+k}$的组合含义由下面定理给出．
+\begin{theo}
+有限域 $\mathbb{F}_q$ 上的$n$维线性空间$V_n(q)$的所有$k$维子空间的个数是${n\brack k}.$
+\end{theo}
+
+\begin{pf}
+首先，从$V_n(q)$中选取一个由$k$个向量组成的元组构成一个$k$维子空间的(有序)基．为此，我们需要从空间$V_n(q)$中选取$k$个线性无关的向量．对于第一个向量$v_1$，可以选取任意非零向量，因此由$q^n-1$中选择．对于第二个向量$v_2$，我们不能选取$v_1$的倍数，因此有$q^n-q$种选择．对于第三个向量$v_3$，有$q^2$ 个不能选取的向量，它们是$v_1$和$v_2$的线性组合．以此类推，从$V_n(q)$中选取$k$ 个线性无关的向量的方法数为
+\begin{equation}\label{v_n(q)}
+(q^n-1)(q^n-q)\cdots(q^n-q^{k-1}),
+\end{equation}
+值得注意的是，一个子空间可以有很多组(有序)基．类似上面的讨论，选定一个$k$ 维子空间，在其中选一组基的方法数为
+$$(q^k-1)(q^k-q)\cdots(q^k-q^{k-1}).$$
+这就是\eqref{v_n(q)}中每个子空间重复计数的数目．因此，$V_n(q)$的$k$维子空间的个数是
+$$\frac{(q^n-1)(q^n-q)\cdots(q^n-q^{k-1})}{(q^k-1)(q^k-q)\cdots(q^k-q^{k-1})}={n\brack k}.$$
+\end{pf}
+
+\subsection{与排列的关系}
+\noindent{\bf  组合意义2:}
+
+首先给出排列中逆序数的概念．一对元素$(i,j)$ 称为是一个{逆序}(inversion)，如果满足$i<j$ 且$\pi_i>\pi_j$．$\pi$的
+逆序的个数为$\pi$的逆序数，记作$inv(\pi)$．
+
+\begin{prop}
+$${n\brack k}=\sum_{\pi\in S(1^k2^{n-k})}q^{\mathrm{inv} \pi},$$
+其中$S(1^k2^{n-k})$是由如下置换$\pi$构成的集合：$\pi=a_1a_2\cdots
+a_n,$ 其中有$k$个$a_i$为$1$，$n-k$个$a_i$ 为$2$．
+\end{prop}
+\begin{pf}
+对$n$用归纳法．
+
+当$n=1$时，性质显然成立． 现在假设对$n-1$ 成立，考虑$n$的情形．
+$\forall\ \pi=a_1a_2\cdots a_n\in S(1^k2^{n-k})$，分两种情况考虑：
+
+若$a_n=2$，
+则将$a_n$去掉后，$\pi$的逆序数不发生变化，且此时$a_1a_2\cdots
+a_{n-1}\in S(1^k2^{n-k-1});$
+
+若$a_n=1$，
+则因为$\pi$中的每个$2$皆对$a_n$产生一个逆序数，故去掉$a_n$后，逆序数减少$n-k$ 个，且$a_1a_2\cdots
+a_{n-1}\in S(1^{k-1}2^{n-k}).$
+
+所以
+$$ \sum_{\pi\in
+S(1^k2^{n-k})}q^{\mathrm{inv} \pi}={n-1\brack
+k}+q^{n-k}{n-1\brack{k-1}}={n\brack k}.$$
+\end{pf}\\[15pt]
+\subsection{与分拆的关系}
+\subsubsection{分拆简介}
+
+一个关于整数$n$的分拆$\lambda$是一个有限非递增的整数序列$(\lambda_1,\lambda_2,\ldots,\lambda_r)$,
+使得$\sum_{i=1}^{r}\lambda_{r}=n$，则$\lambda_i$称为$\lambda$
+的部分，$\lambda_1$为最大部分，$\lambda$ 的部分数称为$\lambda$ 的长度，记为$l(\lambda)$．
+$\lambda$的权重是$\lambda$的各部分相加的和，记为$|\lambda|$．\par
+例如，$5$的分拆共有$7$个，分别是：
+\begin{center}
+$(5),(4,1),(3,2),(3,1,1),(2,2,1),(2,1,1,1),(1,1,1,1,1).$
+\end{center}
+有时我们需要用到$\lambda$中相同部分出现的次数．若
+$\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_r)$ 中有$f_1$个$1$，$f_2$个$2$，……我们可以将其表示为
+\begin{equation*}
+\lambda=\langle1^{f_1},2^{f_2},3^{f_3},...\rangle
+\end{equation*}
+其中$f_j$表示有$j$出现的次数，注意$\sum_{i\geq1}if_i=n$．\par
+所以上面的例子还可以写为：
+\begin{center}
+$\langle5^{1}\rangle,\langle1^{1},4^{1}\rangle,\langle2^{1},3^{1}\rangle,
+\langle1^{2},3^{1}\rangle,\langle1^{1},2^{2}\rangle,\langle1^{3},2^{1}\rangle,
+\langle1^{5}\rangle$
+\end{center}
+
+分拆还可以用它的Young图表示，如图所示：
+\begin{center}\setlength{\unitlength}{1mm}
+\begin{picture}(100,60)
+\multiput(10,55)(0,-5){2}{\line(1,0){35}}\multiput(10,45)(0,-5){2}{\line(1,0){25}}
+\put(10,35){\line(1,0){10}}\multiput(10,35)(5,0){3}{\line(0,1){20}}
+\multiput(25,40)(5,0){3}{\line(0,1){15}}\multiput(40,50)(5,0){2}{\line(0,1){5}}
+\put(40,35){$\lambda$} \multiput(65,55)(0,-5){3}{\line(1,0){20}}
+\multiput(65,40)(0,-5){3}{\line(1,0){15}}\multiput(65,25)(0,-5){2}{\line(1,0){5}}
+\multiput(65,20)(5,0){2}{\line(0,1){35}}\multiput(75,30)(5,0){2}{\line(0,1){25}}
+\put(85,45){\line(0,1){10}}\put(85,30){$\lambda^{'}$} \put(0,10){图
+1.1:
+分拆$\lambda=(7,5,5,2)$及其共轭分拆$\lambda^{'}=(4,4,3,3,3,1,1)$}
+\end{picture}
+\end{center}
+
+给定分拆$\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_r)$ 我们定义$\lambda$的共轭分拆
+$\lambda^{'}=(\lambda_1^{'},\lambda_2^{'},\ldots,\lambda_t^{'})$, 其中$\lambda_i^{'}$
+表示$\lambda$中大于或者等于$i$的部分数．实际上共轭$\lambda^{'}$ 可以由分拆$\lambda$ 通过作
+关于主对角线的翻转而得到，如图1.1所示．
+
+
+\subsubsection{高斯系数与分拆的关系}
+\noindent{\bf  组合意义3:}
+
+令$Par$表示所有分拆的集合．
+设
+$$L(m,n)=\{\lambda\in Par: \ell(\lambda)\leq n, \ell(\lambda')\leq m\}.$$ 高斯系数和分拆的联系由下面的定理给出．
+
+\begin{theo}
+对任意的$m,n\in\mathbb{N}$，我们有
+$$\left[{{m+n}\atop {n}}\right]=\sum_{\lambda\in L(m,n)}q^{|\lambda|}$$
+\end{theo}
+
+\begin{exa}
+当$m=2,n=3$时，
+$$\left[{{2+3}\atop {3}}\right]=1+q+2q^2+2q^3+2q^4+q^5+q^6$$
+\end{exa}
+
+
+假设$n$的分拆为
+\begin{equation}
+n=1\cdot a_1+2\cdot a_2+3\cdot a_3+\ldots+n\cdot a_n
+\end{equation}
+令$p(n,k,N)$表示$n$的所有分拆中满足
+$$a_1+a_2+\ldots+a_n\leq k,\quad
+a_{N+1}=\ldots=a_n=0$$的分拆个数，即分拆部分数$\leq k,$
+且最大部分$\leq N$的分拆数．
+
+显然
+\begin{align*}
+p(kN,k,N)&=1\text{，唯一的分拆是}<N^k>;\\
+p(n,k,N)&=0,\quad \mbox{当}n>kN\mbox{时}.\\
+\end{align*}
+另外，我们令
+\[
+p(n,0,N)=p(n,k,0)=\begin{cases}1,\quad n=k=N=0,\\ 0,\quad
+\mbox{其他}.
+\end{cases}
+\]
+则有
+\begin{lem}
+\begin{equation}\label{1.3}
+p(n,k,N)=p(n,k-1,N)+p(n-k,k,N-1).
+\end{equation}
+\end{lem}
+\begin{pf}
+有如下的组合解释：$p(n,k,N)-p(n,k-1,N)$计数的是$n$ 的分拆中分拆部分数恰为$k,$
+且最大部分$\leq
+N$的$n$的分拆个数；任给$n$的一个满足条件的分拆，从每一部分里减去1，得到$n-k$ 的一个分拆，且满足部分数$\leq
+k,$ 最大部分$\leq N-1.$ 这样的分拆个数为$p(n-k,k,N-1).$
+
+容易验证，这两种类型的分拆之间有一个一一对应．因此\eqref{1.3} 式成立．
+考虑$p(n,k,N)$的生成函数
+$$F(q;k,N)=\sum_{n=0}^{kN}p(n,k,N)q^n.$$
+由\eqref{*}式，
+$$F(q;k,N)=F(q;k-1,N)+q^kF(q;k;N-1),$$
+其中$F(q;0,N)=F(q;k,0)=1.$
+
+根据定理1.1.1中的(1),(3),我们看到$F(q;k,N)$ 和${N+k\brack
+k}$有相同的递推关系式和初始值，因此
+$$F(q;k,N)={N+k\brack k},$$ 也即
+$${N+k\brack k}=\sum_{n=0}^{kN}p(n,k,N)q^n.$$
+\end{pf}
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Cauchy二项式定理}
+
+众所周知，二项式定理，又称牛顿二项式定理
+\begin{equation}
+	(1+z)^n=\sum_{j=0}^{n} {n \choose j} z^{j}
+\end{equation}
+其中
+$$
+{n \choose j}= \frac{n!}{j!(n-j)!}
+$$
+
+上述定理由艾萨克·牛顿(Newton)于1665年初提出。1643年1月4日牛顿生于英国林肯郡的沃尔索普村，父亲是一个农民，
+在牛顿出生前就死了。虽然母亲也希望他务农，但幼年的牛顿却在做机械模型和实验上显示了他的爱好和才能。
+例如，他做了一个玩具式的以老鼠为动力的磨和一架靠水推动的木钟。14 岁时，由于生活所迫，牛顿停学务农，
+以后在舅父的帮助下又入学读书。1661年，不满19 岁的牛顿考入剑桥大学的三一学院。1665 年，鼠疫在英国流行，
+剑桥大学关闭，牛顿只好回农村居住。在沃尔索普村的18个月里，牛顿给出了二项式定理的证明，发明了微积分，
+提出了万有引力定律，还研究了光的性质。牛顿一生的重大成就大都发韧于这一期间。后来，他在追忆这段峥嵘的
+青春岁月时说：“当年我正值发明创造能力最强的年华，比以后任何时期更专心致志于数学和哲学(科学)。”
+
+
+下面是Cauchy二项式定理：
+\begin{theo}
+	\label{coro-cauchy binomial}
+	\begin{equation*}
+		\prod_{k=1}^{n}(1+yq^k)=\sum_{k=0}^{n}y^k q^{\frac{k(k+1)}{2}} {n \brack k}_q
+	\end{equation*}
+\end{theo}
+~\\
+由Gauss系数的性质可知，Cauchy二项式定理为牛顿二项式定理的$q$模拟。
+下面给出推论 \ref{coro-cauchy binomial} 的四种证明。\\
+方法一（数学归纳法）
+
+假设 $n=m$时，推论\ref{coro-cauchy binomial} 显然成立，下面证明$n=m+1$ 时有
+\begin{equation*}
+	\prod_{k=1}^{m+1}(1+yq^k)=\sum_{k=0}^{m+1}y^k q^{\frac{k(k+1)}{2}} {{m+1}\brack k}_q
+\end{equation*}
+由
+$$
+{{m+1}\brack k}_q= {{m}\brack k}_q+ q^{m+1-k}{{m}\brack {k-1}}_q
+$$
+可知
+\begin{align*}
+	&\sum_{k=0}^{m+1}y^k q^{\frac{k(k+1)}{2}} {{m+1}\brack k}_q\\
+	=&\sum_{k=1}^{m}y^k q^{\frac{k(k+1)}{2}} {{m}\brack k}_q +\sum_{k=1}^{m}y^k q^{\frac{k(k+1)}{2}+m+1-k} {{m}\brack {k-1}}_q
+	+1+y^{m+1} q^{\frac{(m+1)(m+2)}{2}} {{m+1}\brack {m+1}}_q\\
+	=&\sum_{k=0}^{m}y^k q^{\frac{k(k+1)}{2}} {{m}\brack k}_q +\sum_{k=0}^{m}y^{k+1} q^{\frac{k(k+1)}{2}+m+1} {{m}\brack k}_q \\
+	=&(1+yq^{m+1})\prod_{k=1}^{m}(1+yq^k)\\
+	=&\prod_{k=1}^{m+1}(1+yq^k)
+\end{align*}
+得证。\\
+~\\
+方法二（生成函数方法）
+
+令
+\begin{equation*}
+	F(y)=\prod_{k=1}^n (1+yq^k)=\sum_{k=0}^n A_k  y^k
+\end{equation*}
+观察到
+\begin{equation*}
+	(1+yq)\prod_{k=2}^n (1+yq^k)(1+yq^{n+1})=(1+yq)F(yq)=(1+yq^{n+1})F(y)
+\end{equation*}
+则
+\begin{equation*}
+	(1+yq)\sum_{k=0}^n A_k  y^k q^k=(1+yq^{n+1})\sum_{k=0}^n A_k  y^k
+\end{equation*}
+比较$y^k$系数可知
+\begin{equation*}
+	A_k +q^{n+1}A_{k-1}=q^k A_k+q^k A_{k-1}
+\end{equation*}
+则
+\begin{equation*}
+	\frac{A_k}{A_{k-1}} =\frac{q^k(1-q^{n+1-k})}{1-q^k}
+\end{equation*}
+则
+\begin{align*}
+	&A_k =\frac{A_k}{A_{k-1}}\cdot\frac{A_{k-1}}{A_{k-2}}\cdots\frac{A_{1}}{A_{0}}\cdot A_{0}\\
+	=&\frac{q^k(1-q^{n+1-k})}{1-q^k}\cdot\frac{q^{k-1}(1-q^{n+2-k})}{1-q^{k-1}}\cdots \frac{q(1-q^{n})}{1-q}\cdot A_{0}
+\end{align*}
+由$A_0=1$可知
+\begin{equation*}
+	A_k =q^{\frac{k(k+1)}{2}}{n \brack k}_q
+\end{equation*}
+得证。\\
+~\\
+方法三(应用排列相关性质)
+
+由Gauss系数性质可知，
+\begin{equation}
+	\label{eq-2}
+	{{i+j} \brack i}_q=\sum_{\sigma \epsilon S(i,j)} q^{inv(\sigma)}
+\end{equation}
+其中 $S(i,j)$为重集 $\{1^j 2^i\}$上的所有排列构成的集合。
+
+\begin{lem}
+	令$E=\{(a_1,a_2,\cdots,a_i)|0 \leq a_1 \leq a_2 \leq\cdots \leq a_i\leq j, a_1,a_2,\cdots,a_i \epsilon \mathbb{N} \}$，集合$E$与$S(i,j)$间存在
+	一一映射。
+\end{lem}
+
+\pf
+对于任意的$(a_1,a_2,\cdots,a_i)\epsilon E$，构造重集$\{1^j 2^i\}$上的排列$\sigma$，使得$\sigma$中第一个$2$贡献$a_i$个逆序，
+第二个$2$贡献$a_{i-1}$个逆序，$\cdots\cdots$，最后一个$2$贡献$a_1$个逆序。例如：
+\begin{equation*}
+	(0,0,1,1,2,2,3)\longleftrightarrow 2122122122
+\end{equation*}
+易验证该映射为一一映射。
+~\\
+~\\
+如果$(a_1,a_2,\cdots,a_i)\longleftrightarrow \sigma$，那么
+\begin{equation*}
+	a_1+a_2+\cdots+a_i=inv(\sigma)
+\end{equation*}
+由(\ref{eq-2})得
+\begin{equation}
+	\label{eq-3}
+	{{i+j} \brack i}_q=\sum_{0 \leq a_1 \leq a_2 \leq\cdots \leq a_i\leq j} q^{a_1+a_2+\cdots+a_i}
+\end{equation}
+
+\begin{lem}
+	\label{lem-1}
+	令$F=\{(b_1,b_2,\cdots,b_i)|1 \leq  b_1 < b_2 <\cdots < b_i \leq j+i, b_1,b_2,\cdots,b_i \in p\mathbb{N} \}$，集合$E$ 与$F$间存在
+	一一映射。
+\end{lem}
+
+\pf
+该一一映射为
+\begin{equation*}
+	(a_1,a_2,\cdots,a_i)\longleftrightarrow (a_1+1,a_2+2,\cdots,a_i+i)
+\end{equation*}
+例如
+\begin{equation*}
+	(0,0,1,1,2,3)\longleftrightarrow (1,2,4,5,7,8,10).
+\end{equation*}
+~\\
+由(\ref{eq-3})及引理\ref{lem-1}可知
+\begin{align*}
+	{{i+j} \brack i}_q=&\sum_{0 \leq a_1 \leq a_2 \leq\cdots \leq a_i\leq j} q^{a_1+a_2+\cdots+a_i}\\
+	=&\sum_{0 \leq a_1 \leq a_2 \leq\cdots \leq a_i\leq j} q^{(a_1+1)+(a_2+2)+\cdots+(a_i+i)-\frac{i(i+1)}{2}}\\
+	=&\sum_{1 \leq  b_1 < b_2 <\cdots < b_i \leq j+i} q^{b_1+b_2+\cdots+b_i-\frac{i(i+1)}{2}}
+\end{align*}
+令 $j=n-i$，则
+\begin{equation}
+	\label{eq-4}
+	{n \brack i}_q=\sum_{1 \leq  b_1 < b_2 <\cdots < b_i \leq n} q^{b_1+b_2+\cdots+b_i-\frac{i(i+1)}{2}}
+\end{equation}
+注意到$\prod_{k=1}^{n}(1+yq^k)$中$y^i$ 的系数为
+\begin{equation*}
+	\sum_{1 \leq e_1 < e_2 <\cdots <e_i\leq n} q^{e_1+e_2+\cdots+e_i}=q^{\frac{i(i+1)}{2}} {n \brack i}_q
+\end{equation*}
+故推论\ref{coro-cauchy binomial}得证。\\
+~\\
+方法四(应用分拆相关性质)\\
+由生成函数知识可知，$\prod_{k=1}^{n}(1+yq^k)$ 为各部分不同、最大部分$\leq n$ 且部分数$\leq n$ 的分拆的生成函数。给定各部分不同且最大部分$\leq n$ 的分拆$\lambda$，
+%\begin{figure}[h,t,b,p]
+%\begin{center}
+%\scalebox{0.5}[0.5]{\includegraphics{pic-1.eps}}
+%\end{center}
+%\end{figure}
+设$\lambda$的部分数为$k(0 \leq k \leq n)$。 将其如图所示做分解：图中，(1)对应$q^{\frac{k(k+1)}{2}}$，
+由Guass系数的性质${n \brack k}_q$为满足部分数$\leq k$ 最大部分$\leq n-k$的分拆的生成函数可知(2)对应 ${n \brack k}_q$，
+得证。\\
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

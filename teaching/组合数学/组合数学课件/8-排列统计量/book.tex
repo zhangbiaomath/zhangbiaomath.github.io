@@ -1,0 +1,240 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{ctex}
+
+
+
+\usepackage{amsmath,amssymb}             % AMS Math
+\usepackage[T1]{fontenc}
+
+
+
+\usepackage{graphicx}
+% \usepackage{epstopdf}
+\usepackage{tikz}
+\usepackage[left=1.5in,right=1.3in,top=1.1in,bottom=1.1in,includefoot,includehead,headheight=13.6pt]{geometry}
+\renewcommand{\baselinestretch}{1.05}
+
+
+
+\usepackage{minitoc}
+\newtheorem{thm}{定理}[section]
+\newtheorem{prop}[thm]{命题}
+\newtheorem{coro}[thm]{推论}
+\newtheorem{defi}[thm]{定义}
+\newtheorem{lem}[thm]{引理}
+\newtheorem{exa}[thm]{例}
+\newtheorem{ex}[thm]{习题}
+\newtheorem{conj}[thm]{猜想}
+
+\def\qed{\nopagebreak\hfill{\rule{4pt}{7pt}}\medbreak}
+\def\pf{{\bf 证明~~ }}
+\def \sg{\sigma}
+\def \asc{\mathrm{asc}}
+\def \des{\mathrm{des}}
+\def \fix{\mathrm{fix}}
+\def \lef{\mathrm{lef}}
+\def \one{\mathrm{one}}
+\def \Des{\mathrm{Des}}
+\def \maj{\mathrm{maj}}
+\def \exc{\mathrm{exc}}
+\def \inv{\mathrm{inv}}
+\def \roots{\mathrm{roots}}
+\def \sgn{\mathrm{sgn}}
+% Table of contents for each chapter
+
+\usepackage{color}
+\definecolor{linkcol}{rgb}{0,0,0.4}
+\definecolor{citecol}{rgb}{0.5,0,0}
+
+  \usepackage{graphicx}
+  \DeclareGraphicsExtensions{.eps}
+  \usepackage[a4paper,pagebackref,hyperindex=true,pdfnewwindow=true]{hyperref}
+
+% \usepackage{chapterbib}
+\begin{document}
+
+
+\section{排列统计量}
+
+排列的各种统计量是组合数学研究的一个重要课题，对排列统计量的研究可以使我们
+更清楚的了解排列的内部结构。下面我们就介绍一些在排列上十分熟知的统计量。
+
+位置$i$($1\leqslant i<n$)称为是$\pi$的一个{下降位}(descent)
+如果$\pi_i>\pi_{i+1}$；反之则称为$\pi$的{上升位}(acscent).
+定义所有下降位构成的集合
+
+$$\Des(\pi)=\{i|\pi_i>\pi_{i+1}\}$$
+为$\pi$的下降集(descent set),
+定义该集合的个数为$\des(\pi)=|\Des(\pi)|$为
+$\pi$的下降数。由定义$n\notin \Des(\pi)$.
+同时我们定义一个排列的主指标(major index)为
+\[\maj(\pi)=\sum \limits_{i \in \Des(\pi)}i.\]
+
+如果位置$i$满足$\pi_i>i$, 则称$i$是一个{胜位}(excedance), 若$i$满足
+$\pi_i\geq i$, 则称$i$是{弱胜位}(weak excedance). 我们记 $\pi$
+的所有胜位的个 数为 $\exc(\pi)$.
+
+一对元素$(i,j)$
+称为是一个{逆序}(inversion)，如果满足$i<j$且$\pi_i>\pi_j$, 称$\pi$的
+所有逆序的个数为$\pi$的逆序数，记作$\inv(\pi)$.
+
+对于排列$\pi=\pi_1\pi_2\cdots \pi_n$, 定义其逆为其作为映射的逆，即
+$\pi^{-1}=\pi^{-1}(1)\pi^{-1}(2)\cdots \pi^{-1}(n)$;
+定义其反为$\pi^r=\pi_n\pi_{n-1}\ldots\pi_1$; 定义
+其补为$\pi^c=(n+1-\pi_1)(n+1-\pi_2)\cdots(n+1-\pi_n)$,
+显然它们三个都是$S_n$上自然的一一映射。
+
+\begin{exa}
+	对于$[5]$上的排列$\pi=43521$, 以上的统计量分别为：
+	$\Des(\pi)=\{1,3,4\}$, $\des(\pi)=3$, $\maj(\pi)=1+3+4=8$,
+	$\exc(\pi)=3$, $\inv(\pi)=7$.
+\end{exa}
+
+\subsection{下降数与胜位的等分布性质}
+我们称两个统计量$u,v$在某个集合$S$上是{等分布的}(equidistribute)，
+若对于任意的自然数$k$, 有
+$\#\{x\in S|u(x)=k\}=\#\{x\in S|v(x)=k\}$.
+
+\begin{thm} \label{exc_des}
+	$\exc$ 与 $\des$在$S_n$上是等分布的。
+\end{thm}
+
+一般而言，证明两个统计量的等分布性有两个主要的思路：
+一个是组合证明，即寻找所在集合的一个到
+自身的双射；另一个是代数证明，即证明二者有相同的生成函数。
+
+\pf 组合证明：
+
+在证明之前，先引入排列的另一种表示形式——圈表示。对于任意$x\in
+[n]$, 考虑 序列$x,\pi(x),\pi^2(x),\ldots$,
+最终一定形成一个圈（因为$\pi$是双射且$[n]$是有限集）。对所有的元素寻
+找这样的圈，我们可以把排列$\pi$写成若干个不交圈的并的形式。
+这种形式显然不是唯一的，首先，圈之间的顺
+序可以任意，其次，圈内部的圈排列也有不同的表示。
+为保证其唯一性，我们定义如下标准圈表示形式：
+
+\begin{itemize}
+	\item [a.]每个圈的最大元素放在首位；
+	\item [b.]圈按照其最大元从小到大排列。
+\end{itemize}
+
+
+可以证明，以上的标准圈表示形式存在且唯一的。
+
+对于任意一个排列$\pi\in S_n$，我们考虑其标准圈表示，
+并将标准圈表示的圈去掉，这样就得到$[n]$上的一个新
+的排列$\pi'$，可以证明$\pi\rightarrow \pi'$必然是$S_n$上的双射。
+事实上，对于任意$\pi\in S_n$, 取其自左
+向右极大元（即满足对于任意$j<i$, $\pi_j>\pi_i$的元素$\pi_i$）。
+在相应位置加括号就可以得到上述映射的逆映射。
+
+我们利用以上映射证明我们的结论，只需要证明对于任意的$\pi\in S_n$,
+$\exc(\pi)=\des(\pi')$.
+事实上，考虑$\pi$的补排列$\pi^c$的标准圈表示形式，
+$\pi$的每一个胜位恰好对应到$(\pi^c)'$的一个下降位。命题得证。\qed
+
+一般地，称与$\des$在$S_n$上等分布的统计量为Eulerian的.
+
+
+\subsection{逆序数与主指标}
+
+首先我们用代数的方法来给出逆序数的生成函数。
+
+\begin{thm}
+	\begin{equation}
+	\sum_{\pi\in
+		S_n}q^{\inv(\pi)}=(1+q)(1+q+q^2)\cdots(1+q+q^2+\cdots+q^{n-1}).
+	\end{equation}
+\end{thm}
+
+\pf 对任意的 $\pi \in S_n$, 定义其对应的逆序表(inversion table)为
+$I(\pi)=(a_1,a_2,\cdots,a_n)$,
+其中$a_i$为在$i$左边且比$i$大的元素的个数。
+例如 $\pi=417396285$, 则$I(\pi)=(1,5,2,0,4,2,0,1,0)$.
+由定义容易看出
+\[I(n)=\{(a_1,a_2,\cdots,a_n): 0\leq a_i \leq n-i\}=
+[0,n-1]\times [0,n-2] \times [0,1]\times [0,n].\]
+且$I(n)$与$S_n$是一一对应的。
+
+因此从上面的分析可知
+\begin{eqnarray*}
+	\sum_{\pi\in S_n}q^{\inv(\pi)}
+	&=&\sum_{a_1=0}^{n-1}\sum_{a_2=0}^{n-2}\cdots
+	\sum_{a_n=0}^{0}q^{a_1+a_2+\cdots+a_n}\\
+	&=& \sum_{a_1=0}^{n-1}q^{a_1}\sum_{a_2=0}^{n-2}q^{a_2} \cdots
+	\sum_{a_n=0}^{0}q^{a_n}\\
+	&=&(1+q)(1+q+q^2)\cdots(1+q+q^2+\cdots+q^{n-1}).
+\end{eqnarray*}
+\qed
+
+下面是置换与其逆之间的逆序数的一个关系。
+\begin{prop}
+	对任意的 $\pi \in S_n$, 我们有 $\inv(\pi)=\inv(\pi^{-1})$.
+\end{prop}
+
+逆序数的生成函数从它的定义中就很容易得到，然而另一个定义方式截然不同的统计量——
+主指标却和它有着非常紧密的联系，下面的定理告诉我们，二者是同分布的。
+
+\begin{thm}
+	\begin{equation}
+	\sum_{\pi\in S_n}q^{\inv(\pi)}=\sum_{\pi\in S_n}q^{\maj(\pi)}.
+	\end{equation}
+\end{thm}
+
+\pf
+我们寻找$S_n$到自身的一个双射来证明它。下面我们就给出由
+Foata给出的这个经典的双射，一般称为Foata双射。
+
+双射$\varphi$是递归的定义的。对$w=w_1w_2\cdots w_n \in S_n$,
+我们首先令$r_1=w_1$. 现在假设$r_k$($k\leq 1$)已经定义了，
+则$r_{k+1}$的定义是这样的：
+
+如果$r_k$的最后一个字母大于（或小于）$w_{k+1}$,
+则我们就在$r_k$中每个大于（或小于）$w_{k+1}$ 的字母后面画一条竖线，
+这样就把$r_k$中的元素分成了一些块，
+然后我们对每个块中的字母向右循环移动
+一位，此时每个块中的最后一个元素就变成该块中第一个元素了，
+最后我们再把$w_{k+1}$接到变换后的序
+列后面，就得到了$r_{k+1}$. 令$\varphi(w)=r_n$.
+
+由$\varphi$的构造可知在每一步变换后都能保证
+$\maj(w_1w_2\cdots w_k)=\inv(r_k)$.　
+
+要说明$\varphi$是双射，我们只需给出其逆映射。
+从$\varphi$的定义我们可以类似的定义$\varphi^{-1}$如下：
+
+假设$\sigma=\varphi(w)$, 则$\varphi^{-1}$ 的定义为：
+若$\sg_n>\sg_1$, 则在小于$\sg_n$的数字之前加一 条竖线，并且在$\sg_n$
+的前面也加；若$\sg_n<\sg_1$,
+则在大于$\sg_n$的数字之前加一条竖线，并且在 $\sg_n$
+的前面也加。然后我们把每个块中的元素向左循环移动一位，
+去掉竖线就得到了一个新的置换，此时
+我们就把最后一个元素固定下来作为$\varphi^{-1}$的最后一个元素。
+接下来用同样的方法确定最后第二个元
+素，$n$步以后就得到了$\varphi^{-1}(\sg)$,
+且有$\inv(\sg)=\maj(\varphi^{-1}(\sg)$. \qed
+
+
+我们给出一个例子以便读者更好的理解。
+
+\begin{exa}
+	若 $w=417396285$, 我们有：
+	\begin{eqnarray*}
+		r_1  &=& w_1=4;\\
+		r_2  &=& 4|1;\\
+		r_3  &=& 4|1|7;\\
+		r_4  &=& 4|71|3;\\
+		r_5  &=& 4|7|1|3|9;\\
+		r_6  &=& 74|913|6;\\
+		r_7  &=& 7|4|9|31|6|2;\\
+		r_8  &=& 7|4|39|1|6|2|8;\\
+		r_9  &=& 7|934|61|82|5.
+	\end{eqnarray*}
+	且 $\maj(w)=1+3+5+6+8=23, \inv(\varphi(w))=23$.
+\end{exa}
+
+一般地，与$\mathrm{maj}$在$S_n$上等分布的统计量称为Mohonian的。
+
+
+
+\end{document} 

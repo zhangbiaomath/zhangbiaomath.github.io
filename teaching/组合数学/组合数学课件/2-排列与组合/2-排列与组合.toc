@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{加法原理与乘法原理}{3}{0}{1}
+\beamer@sectionintoc {2}{集合的排列}{20}{0}{2}
+\beamer@sectionintoc {3}{集合的组合}{43}{0}{3}
+\beamer@sectionintoc {4}{多重集合的排列}{55}{0}{4}
+\beamer@sectionintoc {5}{多重集合的组合}{72}{0}{5}

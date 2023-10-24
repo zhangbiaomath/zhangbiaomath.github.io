@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{引论}{3}{0}{1}
+\beamer@sectionintoc {2}{形式幂级数}{11}{0}{2}
+\beamer@sectionintoc {3}{生成函数的性质}{19}{0}{3}
+\beamer@sectionintoc {4}{组合型分配问题的生成函数}{34}{0}{4}
+\beamer@sectionintoc {5}{排列型分配问题的指数型生成函数}{59}{0}{5}
