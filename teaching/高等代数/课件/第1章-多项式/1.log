@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  24 OCT 2023 16:39
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.2)  24 OCT 2023 16:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1420,6 +1420,8 @@ Missing character: There is no 1 ("31) in font nullfont!
 
 ] [8
 
+] [9
+
 ]
 \tf@nav=\write7
 \openout7 = `1.nav'.
@@ -1457,4 +1459,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  145i,11n,146p,472b,605s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 1.pdf (8 pages).
+Output written on 1.pdf (9 pages).
