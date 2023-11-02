@@ -1,0 +1,3546 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    133155,       3538]
+NotebookOptionsPosition[    131433,       3500]
+NotebookOutlinePosition[    131836,       3516]
+CellTagsIndexPosition[    131793,       3513]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SeriesCoefficient", "[", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"1", "+", 
+     RowBox[{"z", 
+      RowBox[{"(", 
+       RowBox[{"t", "-", "1"}], ")"}]}], "-", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"1", "-", 
+       RowBox[{"2", "z", 
+        RowBox[{"(", 
+         RowBox[{"t", "+", "1"}], ")"}]}], "+", 
+       RowBox[{"z", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"t", "-", "1"}], ")"}], "2"]}]}], "]"}]}], 
+    RowBox[{"2", "t", " ", "z"}]], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "0", ",", "n"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.906401334449973*^9, 3.906401409658071*^9}, {
+  3.9064014647694607`*^9, 3.906401465451354*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"fadc0d79-d4e5-4b17-a180-74ba983a064e"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\[Piecewise]", GridBox[{
+       {"0", 
+        RowBox[{"n", "\[Equal]", 
+         RowBox[{"-", "1"}]}]},
+       {
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           InterpretationBox[
+            
+            TemplateBox[Association[
+             "head" -> "DifferenceRoot", "big" -> GridBox[{{
+                  RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    RowBox[{"2", " ", "\[FormalN]"}]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "-", 
+                    RowBox[{"4", " ", "t"}], "+", 
+                    SuperscriptBox["t", "2"]}], ")"}], " ", 
+                    RowBox[{"\[FormalY]", "[", "\[FormalN]", "]"}]}], "+", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"2", "+", 
+                    RowBox[{"2", " ", "\[FormalN]"}]}], ")"}], " ", 
+                    RowBox[{"\[FormalY]", "[", 
+                    RowBox[{"1", "+", "\[FormalN]"}], "]"}]}]}], "\[Equal]", 
+                    "0"}]}, {
+                  RowBox[{
+                    RowBox[{"\[FormalY]", "[", "0", "]"}], "\[Equal]", 
+                    "1"}]}}, BaseStyle -> {"HolonomicInnerGrid"}], "small" -> 
+              RowBox[{"\[FormalY]", "[", 
+                 RowBox[{"1", "+", "\[FormalN]"}], "]"}], "branchcuts" -> 
+              "None"],
+             "HolonomicDisplay"],
+            DifferenceRoot[
+             
+             Function[{\[FormalY], \[FormalN]}, {(-1 + 2 \[FormalN]) (-1 - 
+                  4 $CellContext`t + $CellContext`t^2) \[FormalY][\[FormalN]] + \
+(2 + 2 \[FormalN]) \[FormalY][1 + \[FormalN]] == 0, \[FormalY][0] == 1}]]], 
+           "[", 
+           RowBox[{"1", "+", "n"}], "]"}], 
+          RowBox[{"2", " ", "t"}]]}], 
+        RowBox[{"n", ">", "0"}]},
+       {
+        RowBox[{
+         FractionBox["1", "4"], " ", 
+         RowBox[{"(", 
+          RowBox[{"6", "-", 
+           FractionBox["1", "t"], "-", "t"}], ")"}]}], 
+        RowBox[{"n", "\[Equal]", "0"}]},
+       {"0", 
+        TagBox["True",
+         "PiecewiseDefault",
+         AutoDelete->True]}
+      },
+      AllowedDimensions->{2, Automatic},
+      Editable->True,
+      GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.84]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}},
+      Selectable->True]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.35]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  "Piecewise",
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False,
+  StripWrapperBoxes->True]], "Output",
+ CellChangeTimes->{{3.9064014030731897`*^9, 3.906401410398446*^9}, 
+   3.906401466232318*^9, 3.906401500656117*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"b89ff5d5-0780-4a53-a0df-fbfff678d45a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Series"}]], "Input",
+ CellChangeTimes->{{3.90640139505865*^9, 3.906401396195279*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"f821571c-4568-44d2-9eda-ba598858c900"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox[
+           PaneBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIcon"]], True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIconHot"]]}, Dynamic[
+                CurrentValue["MouseOver"]]],
+              Appearance->None,
+              BaseStyle->"Link",
+              ButtonData->"paclet:ref/Series",
+              ButtonNote->"paclet:ref/Series"],
+             "\"paclet:ref/Series\""],
+            FrameMargins->{{0, 4}, {0, 2}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Series\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"n\\\", \\\"TI\\\"]}], \\\"}\\\"}]}], \\\
+\"]\\\"}]\\) \:751f\:6210 \\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) \:5173\
+\:4e8e\:70b9 \\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}]\\) \
+\:7684\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f\:ff0c\:6700\:9ad8\:6b21\:6570\:4e3a\
+ \\!\\(\\*SuperscriptBox[RowBox[{\\\"(\\\", RowBox[{StyleBox[\\\"x\\\", \
+\\\"TI\\\"], \\\"-\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]]}], \\\")\\\"}], StyleBox[\\\"n\\\", \\\"TI\\\
+\"]]\\)\:ff0c\:5176\:4e2d \\!\\(\\*StyleBox[\\\"n\\\", \\\"TI\\\"]\\) \:662f\
+\:663e\:5f0f\:6574\:6570. \\n\\!\\(\\*RowBox[{\\\"Series\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"\[Rule]\\\", \
+\\\"TI\\\"], SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]]}]}], \\\"]\\\"}]\\) \:751f\:6210 \
+\\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) \:5173\:4e8e\:70b9 \
+\\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}]\\) \
+\:7684\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f\:7684\:9996\:9879. \
+\\n\\!\\(\\*RowBox[{\\\"Series\\\", \\\"[\\\", RowBox[{StyleBox[\\\"f\\\", \\\
+\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\
+\"], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"n\\\", \
+\\\"TI\\\"], StyleBox[\\\"x\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"n\\\", \\\"TI\\\"], \
+StyleBox[\\\"y\\\", \\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) \
+\:6c42\:51fa\:8fde\:7eed\:7684\:5148\:5173\:4e8e \\!\\(\\*StyleBox[\\\"x\\\", \
+\\\"TI\\\"]\\) \:7136\:540e\:5173\:4e8e \\!\\(\\*StyleBox[\\\"y\\\", \\\"TI\\\
+\"]\\) \:7684\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f.\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Documentation\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Documentation\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Documentation", "Tooltip"]& ], 
+                   TemplateBox[{
+                    
+                    TemplateBox[{
+                    "\"Local \[RightGuillemet]\"", "paclet:ref/Series", 
+                    "paclet:ref/Series", "Link", {
+                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
+                    BaseStyle -> {
+                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
+                    "HyperlinkTemplate"], "\"  \"", 
+                    StyleBox[
+                    "\"|\"", "InformationRowLabel", StripOnInput -> False], 
+                    "\"  \"", 
+                    TemplateBox[{"\"Web \[RightGuillemet]\"", {
+                    URL[
+                    "http://reference.wolfram.com/language/ref/Series.html"], 
+                    None}, "http://reference.wolfram.com/language/ref/Series.\
+html", "Hyperlink", {
+                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
+                    BaseStyle -> {
+                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
+                    "HyperlinkTemplate"]},
+                    "RowDefault"]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Options\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Options\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Options", "Tooltip"]& ], 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Analytic", "\[Rule]", "True"}], ",", 
+                    RowBox[{"Assumptions", "\[RuleDelayed]", "$Assumptions"}],
+                     ",", 
+                    RowBox[{"SeriesTermGoal", "\[Rule]", "Automatic"}]}], 
+                    "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Attributes\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Attributes", "Tooltip"]& ], 
+                   RowBox[{"{", "Protected", "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"System`Series\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox[
+           PaneBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIcon"],
+                ImageSizeCache->{13., {4., 9.}}], True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIconHot"],
+                ImageSizeCache->{13., {4., 9.}}]}, Dynamic[
+                CurrentValue["MouseOver"]]],
+              Appearance->None,
+              BaseStyle->"Link",
+              ButtonData->"paclet:ref/Series",
+              ButtonNote->"paclet:ref/Series"],
+             "\"paclet:ref/Series\""],
+            FrameMargins->{{0, 4}, {0, 2}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Series\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"n\\\", \\\"TI\\\"]}], \\\"}\\\"}]}], \\\
+\"]\\\"}]\\) \:751f\:6210 \\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) \:5173\
+\:4e8e\:70b9 \\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}]\\) \
+\:7684\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f\:ff0c\:6700\:9ad8\:6b21\:6570\:4e3a\
+ \\!\\(\\*SuperscriptBox[RowBox[{\\\"(\\\", RowBox[{StyleBox[\\\"x\\\", \
+\\\"TI\\\"], \\\"-\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]]}], \\\")\\\"}], StyleBox[\\\"n\\\", \\\"TI\\\
+\"]]\\)\:ff0c\:5176\:4e2d \\!\\(\\*StyleBox[\\\"n\\\", \\\"TI\\\"]\\) \:662f\
+\:663e\:5f0f\:6574\:6570. \\n\\!\\(\\*RowBox[{\\\"Series\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"\[Rule]\\\", \
+\\\"TI\\\"], SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]]}]}], \\\"]\\\"}]\\) \:751f\:6210 \
+\\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) \:5173\:4e8e\:70b9 \
+\\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}]\\) \
+\:7684\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f\:7684\:9996\:9879. \
+\\n\\!\\(\\*RowBox[{\\\"Series\\\", \\\"[\\\", RowBox[{StyleBox[\\\"f\\\", \\\
+\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\
+\"], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"n\\\", \
+\\\"TI\\\"], StyleBox[\\\"x\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"n\\\", \\\"TI\\\"], \
+StyleBox[\\\"y\\\", \\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) \
+\:6c42\:51fa\:8fde\:7eed\:7684\:5148\:5173\:4e8e \\!\\(\\*StyleBox[\\\"x\\\", \
+\\\"TI\\\"]\\) \:7136\:540e\:5173\:4e8e \\!\\(\\*StyleBox[\\\"y\\\", \\\"TI\\\
+\"]\\) \:7684\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f.\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {2., 8.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{10., {2., 8.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[
+   Association[
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "\!\(\*RowBox[{\"Series\", \"[\", RowBox[{StyleBox[\"f\", \"TI\"], \",\", \
+RowBox[{\"{\", RowBox[{StyleBox[\"x\", \"TI\"], \",\", SubscriptBox[StyleBox[\
+\"x\", \"TI\"], StyleBox[\"0\", \"TR\"]], \",\", StyleBox[\"n\", \"TI\"]}], \
+\"}\"}]}], \"]\"}]\) \:751f\:6210 \!\(\*StyleBox[\"f\", \"TI\"]\) \
+\:5173\:4e8e\:70b9 \!\(\*RowBox[{StyleBox[\"x\", \"TI\"], \"=\", \
+SubscriptBox[StyleBox[\"x\", \"TI\"], StyleBox[\"0\", \"TR\"]]}]\) \:7684\
+\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f\:ff0c\:6700\:9ad8\:6b21\:6570\:4e3a \!\(\
+\*SuperscriptBox[RowBox[{\"(\", RowBox[{StyleBox[\"x\", \"TI\"], \"-\", \
+SubscriptBox[StyleBox[\"x\", \"TI\"], StyleBox[\"0\", \"TR\"]]}], \")\"}], \
+StyleBox[\"n\", \"TI\"]]\)\:ff0c\:5176\:4e2d \!\(\*StyleBox[\"n\", \"TI\"]\) \
+\:662f\:663e\:5f0f\:6574\:6570. \n\!\(\*RowBox[{\"Series\", \"[\", \
+RowBox[{StyleBox[\"f\", \"TI\"], \",\", RowBox[{StyleBox[\"x\", \"TI\"], \
+StyleBox[\"\[Rule]\", \"TI\"], SubscriptBox[StyleBox[\"x\", \"TI\"], \
+StyleBox[\"0\", \"TR\"]]}]}], \"]\"}]\) \:751f\:6210 \!\(\*StyleBox[\"f\", \
+\"TI\"]\) \:5173\:4e8e\:70b9 \!\(\*RowBox[{StyleBox[\"x\", \"TI\"], \"=\", \
+SubscriptBox[StyleBox[\"x\", \"TI\"], StyleBox[\"0\", \"TR\"]]}]\) \:7684\
+\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f\:7684\:9996\:9879. \n\
+\!\(\*RowBox[{\"Series\", \"[\", RowBox[{StyleBox[\"f\", \"TI\"], \",\", \
+RowBox[{\"{\", RowBox[{StyleBox[\"x\", \"TI\"], \",\", SubscriptBox[StyleBox[\
+\"x\", \"TI\"], StyleBox[\"0\", \"TR\"]], \",\", SubscriptBox[StyleBox[\"n\", \
+\"TI\"], StyleBox[\"x\", \"TI\"]]}], \"}\"}], \",\", RowBox[{\"{\", \
+RowBox[{StyleBox[\"y\", \"TI\"], \",\", SubscriptBox[StyleBox[\"y\", \"TI\"], \
+StyleBox[\"0\", \"TR\"]], \",\", SubscriptBox[StyleBox[\"n\", \"TI\"], \
+StyleBox[\"y\", \"TI\"]]}], \"}\"}]}], \"]\"}]\) \:6c42\:51fa\:8fde\:7eed\
+\:7684\:5148\:5173\:4e8e \!\(\*StyleBox[\"x\", \"TI\"]\) \:7136\:540e\:5173\
+\:4e8e \!\(\*StyleBox[\"y\", \"TI\"]\) \:7684\:5e42\:7ea7\:6570\:5c55\:5f00\
+\:5f0f.", "Documentation" -> 
+    Association[
+     "Local" -> "paclet:ref/Series", "Web" -> 
+      "http://reference.wolfram.com/language/ref/Series.html"], "OwnValues" -> 
+    None, "UpValues" -> None, "DownValues" -> None, "SubValues" -> None, 
+    "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> {
+     Analytic -> True, Assumptions :> $Assumptions, SeriesTermGoal -> 
+      Automatic}, "Attributes" -> {Protected}, "FullName" -> "System`Series"],
+    False]]], "Output",
+ CellChangeTimes->{3.906401396919499*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"0528023b-2527-4100-b33a-c7cd8894c7c7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Series"}]], "Input",
+ CellChangeTimes->{{3.906401422970627*^9, 3.9064014263307753`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"37041b0b-0430-49b1-81b4-6b2a138cf7e4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = True, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox[
+           PaneBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIcon"],
+                ImageSizeCache->{13., {4., 9.}}], True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIconHot"],
+                ImageSizeCache->{13., {4., 9.}}]}, Dynamic[
+                CurrentValue["MouseOver"]]],
+              Appearance->None,
+              BaseStyle->"Link",
+              ButtonData->"paclet:ref/Series",
+              ButtonNote->"paclet:ref/Series"],
+             "\"paclet:ref/Series\""],
+            FrameMargins->{{0, 4}, {0, 2}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Series\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"n\\\", \\\"TI\\\"]}], \\\"}\\\"}]}], \\\
+\"]\\\"}]\\) \:751f\:6210 \\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) \:5173\
+\:4e8e\:70b9 \\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}]\\) \
+\:7684\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f\:ff0c\:6700\:9ad8\:6b21\:6570\:4e3a\
+ \\!\\(\\*SuperscriptBox[RowBox[{\\\"(\\\", RowBox[{StyleBox[\\\"x\\\", \
+\\\"TI\\\"], \\\"-\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]]}], \\\")\\\"}], StyleBox[\\\"n\\\", \\\"TI\\\
+\"]]\\)\:ff0c\:5176\:4e2d \\!\\(\\*StyleBox[\\\"n\\\", \\\"TI\\\"]\\) \:662f\
+\:663e\:5f0f\:6574\:6570. \\n\\!\\(\\*RowBox[{\\\"Series\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"\[Rule]\\\", \
+\\\"TI\\\"], SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]]}]}], \\\"]\\\"}]\\) \:751f\:6210 \
+\\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) \:5173\:4e8e\:70b9 \
+\\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}]\\) \
+\:7684\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f\:7684\:9996\:9879. \
+\\n\\!\\(\\*RowBox[{\\\"Series\\\", \\\"[\\\", RowBox[{StyleBox[\\\"f\\\", \\\
+\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\
+\"], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"n\\\", \
+\\\"TI\\\"], StyleBox[\\\"x\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"n\\\", \\\"TI\\\"], \
+StyleBox[\\\"y\\\", \\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) \
+\:6c42\:51fa\:8fde\:7eed\:7684\:5148\:5173\:4e8e \\!\\(\\*StyleBox[\\\"x\\\", \
+\\\"TI\\\"]\\) \:7136\:540e\:5173\:4e8e \\!\\(\\*StyleBox[\\\"y\\\", \\\"TI\\\
+\"]\\) \:7684\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f.\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Documentation\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Documentation\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Documentation", "Tooltip"]& ], 
+                   TemplateBox[{
+                    
+                    TemplateBox[{
+                    "\"Local \[RightGuillemet]\"", "paclet:ref/Series", 
+                    "paclet:ref/Series", "Link", {
+                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
+                    BaseStyle -> {
+                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
+                    "HyperlinkTemplate"], "\"  \"", 
+                    StyleBox[
+                    "\"|\"", "InformationRowLabel", StripOnInput -> False], 
+                    "\"  \"", 
+                    TemplateBox[{"\"Web \[RightGuillemet]\"", {
+                    URL[
+                    "http://reference.wolfram.com/language/ref/Series.html"], 
+                    None}, "http://reference.wolfram.com/language/ref/Series.\
+html", "Hyperlink", {
+                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
+                    BaseStyle -> {
+                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
+                    "HyperlinkTemplate"]},
+                    "RowDefault"]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Options\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Options\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Options", "Tooltip"]& ], 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Analytic", "\[Rule]", "True"}], ",", 
+                    RowBox[{"Assumptions", "\[RuleDelayed]", "$Assumptions"}],
+                     ",", 
+                    RowBox[{"SeriesTermGoal", "\[Rule]", "Automatic"}]}], 
+                    "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Attributes\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Attributes", "Tooltip"]& ], 
+                   RowBox[{"{", "Protected", "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"System`Series\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"],
+               ImageSizeCache->{10., {2., 8.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"],
+               ImageSizeCache->{10., {2., 8.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox[
+           PaneBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIcon"],
+                ImageSizeCache->{13., {4., 9.}}], True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIconHot"],
+                ImageSizeCache->{13., {4., 9.}}]}, Dynamic[
+                CurrentValue["MouseOver"]]],
+              Appearance->None,
+              BaseStyle->"Link",
+              ButtonData->"paclet:ref/Series",
+              ButtonNote->"paclet:ref/Series"],
+             "\"paclet:ref/Series\""],
+            FrameMargins->{{0, 4}, {0, 2}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Series\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"n\\\", \\\"TI\\\"]}], \\\"}\\\"}]}], \\\
+\"]\\\"}]\\) \:751f\:6210 \\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) \:5173\
+\:4e8e\:70b9 \\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}]\\) \
+\:7684\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f\:ff0c\:6700\:9ad8\:6b21\:6570\:4e3a\
+ \\!\\(\\*SuperscriptBox[RowBox[{\\\"(\\\", RowBox[{StyleBox[\\\"x\\\", \
+\\\"TI\\\"], \\\"-\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]]}], \\\")\\\"}], StyleBox[\\\"n\\\", \\\"TI\\\
+\"]]\\)\:ff0c\:5176\:4e2d \\!\\(\\*StyleBox[\\\"n\\\", \\\"TI\\\"]\\) \:662f\
+\:663e\:5f0f\:6574\:6570. \\n\\!\\(\\*RowBox[{\\\"Series\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"\[Rule]\\\", \
+\\\"TI\\\"], SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]]}]}], \\\"]\\\"}]\\) \:751f\:6210 \
+\\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) \:5173\:4e8e\:70b9 \
+\\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}]\\) \
+\:7684\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f\:7684\:9996\:9879. \
+\\n\\!\\(\\*RowBox[{\\\"Series\\\", \\\"[\\\", RowBox[{StyleBox[\\\"f\\\", \\\
+\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\
+\"], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"n\\\", \
+\\\"TI\\\"], StyleBox[\\\"x\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"n\\\", \\\"TI\\\"], \
+StyleBox[\\\"y\\\", \\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) \
+\:6c42\:51fa\:8fde\:7eed\:7684\:5148\:5173\:4e8e \\!\\(\\*StyleBox[\\\"x\\\", \
+\\\"TI\\\"]\\) \:7136\:540e\:5173\:4e8e \\!\\(\\*StyleBox[\\\"y\\\", \\\"TI\\\
+\"]\\) \:7684\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f.\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {2., 8.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{10., {2., 8.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[
+   Association[
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "\!\(\*RowBox[{\"Series\", \"[\", RowBox[{StyleBox[\"f\", \"TI\"], \",\", \
+RowBox[{\"{\", RowBox[{StyleBox[\"x\", \"TI\"], \",\", SubscriptBox[StyleBox[\
+\"x\", \"TI\"], StyleBox[\"0\", \"TR\"]], \",\", StyleBox[\"n\", \"TI\"]}], \
+\"}\"}]}], \"]\"}]\) \:751f\:6210 \!\(\*StyleBox[\"f\", \"TI\"]\) \
+\:5173\:4e8e\:70b9 \!\(\*RowBox[{StyleBox[\"x\", \"TI\"], \"=\", \
+SubscriptBox[StyleBox[\"x\", \"TI\"], StyleBox[\"0\", \"TR\"]]}]\) \:7684\
+\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f\:ff0c\:6700\:9ad8\:6b21\:6570\:4e3a \!\(\
+\*SuperscriptBox[RowBox[{\"(\", RowBox[{StyleBox[\"x\", \"TI\"], \"-\", \
+SubscriptBox[StyleBox[\"x\", \"TI\"], StyleBox[\"0\", \"TR\"]]}], \")\"}], \
+StyleBox[\"n\", \"TI\"]]\)\:ff0c\:5176\:4e2d \!\(\*StyleBox[\"n\", \"TI\"]\) \
+\:662f\:663e\:5f0f\:6574\:6570. \n\!\(\*RowBox[{\"Series\", \"[\", \
+RowBox[{StyleBox[\"f\", \"TI\"], \",\", RowBox[{StyleBox[\"x\", \"TI\"], \
+StyleBox[\"\[Rule]\", \"TI\"], SubscriptBox[StyleBox[\"x\", \"TI\"], \
+StyleBox[\"0\", \"TR\"]]}]}], \"]\"}]\) \:751f\:6210 \!\(\*StyleBox[\"f\", \
+\"TI\"]\) \:5173\:4e8e\:70b9 \!\(\*RowBox[{StyleBox[\"x\", \"TI\"], \"=\", \
+SubscriptBox[StyleBox[\"x\", \"TI\"], StyleBox[\"0\", \"TR\"]]}]\) \:7684\
+\:5e42\:7ea7\:6570\:5c55\:5f00\:5f0f\:7684\:9996\:9879. \n\
+\!\(\*RowBox[{\"Series\", \"[\", RowBox[{StyleBox[\"f\", \"TI\"], \",\", \
+RowBox[{\"{\", RowBox[{StyleBox[\"x\", \"TI\"], \",\", SubscriptBox[StyleBox[\
+\"x\", \"TI\"], StyleBox[\"0\", \"TR\"]], \",\", SubscriptBox[StyleBox[\"n\", \
+\"TI\"], StyleBox[\"x\", \"TI\"]]}], \"}\"}], \",\", RowBox[{\"{\", \
+RowBox[{StyleBox[\"y\", \"TI\"], \",\", SubscriptBox[StyleBox[\"y\", \"TI\"], \
+StyleBox[\"0\", \"TR\"]], \",\", SubscriptBox[StyleBox[\"n\", \"TI\"], \
+StyleBox[\"y\", \"TI\"]]}], \"}\"}]}], \"]\"}]\) \:6c42\:51fa\:8fde\:7eed\
+\:7684\:5148\:5173\:4e8e \!\(\*StyleBox[\"x\", \"TI\"]\) \:7136\:540e\:5173\
+\:4e8e \!\(\*StyleBox[\"y\", \"TI\"]\) \:7684\:5e42\:7ea7\:6570\:5c55\:5f00\
+\:5f0f.", "Documentation" -> 
+    Association[
+     "Local" -> "paclet:ref/Series", "Web" -> 
+      "http://reference.wolfram.com/language/ref/Series.html"], "OwnValues" -> 
+    None, "UpValues" -> None, "DownValues" -> None, "SubValues" -> None, 
+    "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> {
+     Analytic -> True, Assumptions :> $Assumptions, SeriesTermGoal -> 
+      Automatic}, "Attributes" -> {Protected}, "FullName" -> "System`Series"],
+    False]]], "Output",
+ CellChangeTimes->{3.9064014267688513`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"dc0f6055-ea79-4db6-8d24-6249d4e4d202"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Solve"}]], "Input",
+ CellChangeTimes->{{3.9073752251502447`*^9, 3.9073752470950813`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"ed5c8609-9a49-40f9-8218-db0fa1c257fe"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox[
+           PaneBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIcon"]], True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIconHot"]]}, Dynamic[
+                CurrentValue["MouseOver"]]],
+              Appearance->None,
+              BaseStyle->"Link",
+              ButtonData->"paclet:ref/Solve",
+              ButtonNote->"paclet:ref/Solve"],
+             "\"paclet:ref/Solve\""],
+            FrameMargins->{{0, 4}, {0, 2}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Solve\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"vars\\\", \
+\\\"TI\\\"]}], \\\"]\\\"}]\\) \:8bd5\:56fe\:6c42\:89e3\:4ee5 \
+\\!\\(\\*StyleBox[\\\"vars\\\", \\\"TI\\\"]\\) \:4e3a\:53d8\:91cf\:7684\:65b9\
+\:7a0b\:7ec4\:6216\:4e0d\:7b49\:5f0f\:7ec4 \\!\\(\\*StyleBox[\\\"expr\\\", \\\
+\"TI\\\"]\\). \\n\\!\\(\\*RowBox[{\\\"Solve\\\", \\\"[\\\", RowBox[{StyleBox[\
+\\\"expr\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"vars\\\", \\\"TI\\\"], \
+\\\",\\\", StyleBox[\\\"dom\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) \:5728\:5b9a\
+\:4e49\:57df \\!\\(\\*StyleBox[\\\"dom\\\", \\\"TI\\\"]\\) \
+\:4e0a\:6c42\:89e3. \\!\\(\\*StyleBox[\\\"dom\\\", \\\"TI\\\"]\\) \
+\:7684\:5e38\:7528\:9009\:62e9\:4e3a Reals\:3001Integers \:548c \
+Complexes.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Documentation\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Documentation\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Documentation", "Tooltip"]& ], 
+                   TemplateBox[{
+                    
+                    TemplateBox[{
+                    "\"Local \[RightGuillemet]\"", "paclet:ref/Solve", 
+                    "paclet:ref/Solve", "Link", {
+                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
+                    BaseStyle -> {
+                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
+                    "HyperlinkTemplate"], "\"  \"", 
+                    StyleBox[
+                    "\"|\"", "InformationRowLabel", StripOnInput -> False], 
+                    "\"  \"", 
+                    TemplateBox[{"\"Web \[RightGuillemet]\"", {
+                    URL[
+                    "http://reference.wolfram.com/language/ref/Solve.html"], 
+                    None}, "http://reference.wolfram.com/language/ref/Solve.\
+html", "Hyperlink", {
+                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
+                    BaseStyle -> {
+                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
+                    "HyperlinkTemplate"]},
+                    "RowDefault"]},
+                  {
+                   PaneSelectorBox[{True->
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    TemplateBox[{"\[ThickSpace]", "\"\[ThickSpace]\"", 
+                    StyleBox[
+                    "\"Options\"", "InformationRowLabel", StripOnInput -> 
+                    False], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "DownPointerOpener"]]},
+                    "RowWithSeparators"], True->
+                    TemplateBox[{"\[ThickSpace]", "\"\[ThickSpace]\"", 
+                    StyleBox[
+                    "\"Options\"", "InformationRowLabel", StripOnInput -> 
+                    False], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "DownPointerOpenerHot"]]},
+                    "RowWithSeparators"]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    BaseStyle->None,
+                    
+                    ButtonFunction:>(Part[System`InformationDump`open$$, 3] = 
+                    False),
+                    Evaluator->Automatic,
+                    FrameMargins->0,
+                    ImageMargins->0,
+                    Method->"Preemptive"], False->
+                    ButtonBox[
+                    PaneSelectorBox[{False->
+                    TemplateBox[{"\[ThickSpace]", "\"\[ThickSpace]\"", 
+                    StyleBox[
+                    "\"Options\"", "InformationRowLabel", StripOnInput -> 
+                    False], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "RightPointerOpener"]]},
+                    "RowWithSeparators"], True->
+                    TemplateBox[{"\[ThickSpace]", "\"\[ThickSpace]\"", 
+                    StyleBox[
+                    "\"Options\"", "InformationRowLabel", StripOnInput -> 
+                    False], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "RightPointerOpenerHot"]]},
+                    "RowWithSeparators"]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                    Appearance->None,
+                    BaseStyle->None,
+                    
+                    ButtonFunction:>(Part[System`InformationDump`open$$, 3] = 
+                    True),
+                    Evaluator->Automatic,
+                    FrameMargins->0,
+                    ImageMargins->0,
+                    Method->"Preemptive"]}, Dynamic[
+                    FEPrivate`Part[System`InformationDump`open$$, 3]]], 
+                   PaneSelectorBox[{True->GridBox[{
+                    {
+                    RowBox[{"Assumptions", "\[RuleDelayed]", "$Assumptions"}]},
+                    {
+                    RowBox[{"Cubics", "\[Rule]", "Automatic"}]},
+                    {
+                    RowBox[{"GeneratedParameters", "\[Rule]", "C"}]},
+                    {
+                    RowBox[{"InverseFunctions", "\[Rule]", "Automatic"}]},
+                    {
+                    RowBox[{"MaxExtraConditions", "\[Rule]", "0"}]},
+                    {
+                    RowBox[{"Method", "\[Rule]", "Automatic"}]},
+                    {
+                    RowBox[{"Modulus", "\[Rule]", "0"}]},
+                    {
+                    RowBox[{"Quartics", "\[Rule]", "Automatic"}]},
+                    {
+                    RowBox[{"VerifySolutions", "\[Rule]", "Automatic"}]},
+                    {
+                    RowBox[{"WorkingPrecision", "\[Rule]", "\[Infinity]"}]},
+                    {
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[InvisibleSpace]\"", "10", "\" total)\""},
+                    "RowDefault"], "InformationRowOpener",
+                    StripOnInput->False]}
+                    },
+                    BaselinePosition->{Baseline, {1, 1}},
+                    DefaultBaseStyle->"Column",
+                    GridBoxAlignment->{"Columns" -> {{Left}}},
+                    
+                    GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}}], False->
+                    RowBox[{
+                    RowBox[{"Assumptions", "\[RuleDelayed]", "$Assumptions"}],
+                     "\[ThinSpace]", 
+                    StyleBox["\<\"\[Ellipsis]\"\>", "InformationRowOpener",
+                    StripOnInput->False], "\[ThinSpace]", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[InvisibleSpace]\"", "10", "\" total)\""},
+                    "RowDefault"], "InformationRowOpener",
+                    StripOnInput->False]}]}, Dynamic[
+                    FEPrivate`Part[System`InformationDump`open$$, 3]],
+                    BaselinePosition->Baseline,
+                    ImageSize->Automatic]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Attributes\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Attributes", "Tooltip"]& ], 
+                   RowBox[{"{", "Protected", "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"System`Solve\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox[
+           PaneBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIcon"],
+                ImageSizeCache->{13., {4., 9.}}], True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIconHot"],
+                ImageSizeCache->{13., {4., 9.}}]}, Dynamic[
+                CurrentValue["MouseOver"]]],
+              Appearance->None,
+              BaseStyle->"Link",
+              ButtonData->"paclet:ref/Solve",
+              ButtonNote->"paclet:ref/Solve"],
+             "\"paclet:ref/Solve\""],
+            FrameMargins->{{0, 4}, {0, 2}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox[
+             "\"\<\!\(Solve[\*StyleBox[\\\"expr\\\", \\\"TI\\\"], \*StyleBox[\
+\\\"vars\\\", \\\"TI\\\"]]\) \:8bd5\:56fe\:6c42\:89e3\:4ee5 \!\(\*StyleBox[\\\
+\"vars\\\", \\\"TI\\\"]\) \:4e3a\:53d8\:91cf\:7684\:65b9\:7a0b\:7ec4\:6216\
+\:4e0d\:7b49\:5f0f\:7ec4 \!\(\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\). \
+\\\\n\!\(Solve[\*StyleBox[\\\"expr\\\", \\\"TI\\\"], \*StyleBox[\\\"vars\\\", \
+\\\"TI\\\"], \*StyleBox[\\\"dom\\\", \\\"TI\\\"]]\) \:5728\:5b9a\:4e49\:57df \
+\!\(\*StyleBox[\\\"dom\\\", \\\"TI\\\"]\) \:4e0a\:6c42\:89e3. \!\(\*StyleBox[\
+\\\"dom\\\", \\\"TI\\\"]\) \:7684\:5e38\:7528\:9009\:62e9\:4e3a \
+Reals\:3001Integers \:548c Complexes.\>\"", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {2., 8.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{10., {2., 8.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[
+   Association[
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "\!\(\*RowBox[{\"Solve\", \"[\", RowBox[{StyleBox[\"expr\", \"TI\"], \
+\",\", StyleBox[\"vars\", \"TI\"]}], \"]\"}]\) \:8bd5\:56fe\:6c42\:89e3\:4ee5 \
+\!\(\*StyleBox[\"vars\", \"TI\"]\) \:4e3a\:53d8\:91cf\:7684\:65b9\:7a0b\:7ec4\
+\:6216\:4e0d\:7b49\:5f0f\:7ec4 \!\(\*StyleBox[\"expr\", \"TI\"]\). \n\
+\!\(\*RowBox[{\"Solve\", \"[\", RowBox[{StyleBox[\"expr\", \"TI\"], \",\", \
+StyleBox[\"vars\", \"TI\"], \",\", StyleBox[\"dom\", \"TI\"]}], \"]\"}]\) \
+\:5728\:5b9a\:4e49\:57df \!\(\*StyleBox[\"dom\", \"TI\"]\) \
+\:4e0a\:6c42\:89e3. \!\(\*StyleBox[\"dom\", \"TI\"]\) \
+\:7684\:5e38\:7528\:9009\:62e9\:4e3a Reals\:3001Integers \:548c Complexes.", 
+    "Documentation" -> 
+    Association[
+     "Local" -> "paclet:ref/Solve", "Web" -> 
+      "http://reference.wolfram.com/language/ref/Solve.html"], "OwnValues" -> 
+    None, "UpValues" -> None, "DownValues" -> None, "SubValues" -> None, 
+    "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> {
+     Assumptions :> $Assumptions, Cubics -> Automatic, GeneratedParameters -> 
+      C, InverseFunctions -> Automatic, MaxExtraConditions -> 0, Method -> 
+      Automatic, Modulus -> 0, Quartics -> Automatic, VerifySolutions -> 
+      Automatic, WorkingPrecision -> DirectedInfinity[1]}, 
+    "Attributes" -> {Protected}, "FullName" -> "System`Solve"], 
+   False]]], "Output",
+ CellChangeTimes->{3.907375247838599*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"f7d63132-8157-4779-bcf0-aee9ea6231aa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"1", ",", "1"}]], 
+          SubscriptBox["x", "1"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"1", ",", "2"}]], 
+          SubscriptBox["x", "2"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"1", ",", "3"}]], 
+          SubscriptBox["x", "3"]}]}], "\[Equal]", 
+        SubscriptBox["b", "1"]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"2", ",", "1"}]], 
+          SubscriptBox["x", "1"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"2", ",", "2"}]], 
+          SubscriptBox["x", "2"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"2", ",", "3"}]], 
+          SubscriptBox["x", "3"]}]}], "\[Equal]", 
+        SubscriptBox["b", "2"]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"3", ",", "1"}]], 
+          SubscriptBox["x", "1"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"3", ",", "2"}]], 
+          SubscriptBox["x", "2"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"3", ",", "3"}]], 
+          SubscriptBox["x", "3"]}]}], "\[Equal]", 
+        SubscriptBox["b", "3"]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox["x", "1"], ",", 
+       SubscriptBox["x", "2"], ",", 
+       SubscriptBox["x", "3"]}], "}"}]}], "]"}], "//", "Simplify"}], "//", 
+  "Factor"}]], "Input",
+ CellChangeTimes->{{3.9073756644537992`*^9, 3.90737567550102*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"72f74d13-f3b8-4cee-a426-cfc443fd078a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["x", "1"], "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       RowBox[{
+        SubscriptBox["b", "3"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "2"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["b", "3"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "3"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["b", "2"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "2"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["b", "1"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "2"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["b", "2"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "3"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["b", "1"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "3"}]]}]}], 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "1"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "1"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "2"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "2"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "3"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "3"}]]}]}]]}], ",", 
+    RowBox[{
+     SubscriptBox["x", "2"], "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       RowBox[{
+        SubscriptBox["b", "3"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "1"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["b", "3"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "3"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["b", "2"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "1"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["b", "1"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "1"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["b", "2"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "3"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["b", "1"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "3"}]]}]}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]]}], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "1"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "1"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "2"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "2"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "3"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "3"}]]}]}]]}], ",", 
+    RowBox[{
+     SubscriptBox["x", "3"], "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       RowBox[{
+        SubscriptBox["b", "3"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "1"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["b", "3"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "2"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["b", "2"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "1"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["b", "1"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "1"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["b", "2"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "2"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["b", "1"], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "2"}]]}]}], 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "1"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "1"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "2"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "3"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "2"}]]}], "+", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "3"}]]}], "-", 
+       RowBox[{
+        SubscriptBox["a", 
+         RowBox[{"1", ",", "1"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"2", ",", "2"}]], " ", 
+        SubscriptBox["a", 
+         RowBox[{"3", ",", "3"}]]}]}]]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.907375676140809*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"097bb4fa-851a-4f48-b53c-0fd2041d7e3d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"1", ",", "1"}]], 
+          SubscriptBox["x", "1"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"1", ",", "2"}]], 
+          SubscriptBox["x", "2"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"1", ",", "3"}]], 
+          SubscriptBox["x", "3"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"1", ",", "4"}]], 
+          SubscriptBox["x", "4"]}]}], "\[Equal]", 
+        SubscriptBox["b", "1"]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"2", ",", "1"}]], 
+          SubscriptBox["x", "1"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"2", ",", "2"}]], 
+          SubscriptBox["x", "2"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"2", ",", "3"}]], 
+          SubscriptBox["x", "3"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"2", ",", "4"}]], 
+          SubscriptBox["x", "4"]}]}], "\[Equal]", 
+        SubscriptBox["b", "2"]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"3", ",", "1"}]], 
+          SubscriptBox["x", "1"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"3", ",", "2"}]], 
+          SubscriptBox["x", "2"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"3", ",", "3"}]], 
+          SubscriptBox["x", "3"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"3", ",", "4"}]], 
+          SubscriptBox["x", "4"]}]}], "\[Equal]", 
+        SubscriptBox["b", "3"]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"4", ",", "1"}]], 
+          SubscriptBox["x", "1"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"4", ",", "2"}]], 
+          SubscriptBox["x", "2"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"4", ",", "3"}]], 
+          SubscriptBox["x", "3"]}], "+", 
+         RowBox[{
+          SubscriptBox["a", 
+           RowBox[{"4", ",", "4"}]], 
+          SubscriptBox["x", "4"]}]}], "\[Equal]", 
+        SubscriptBox["b", "4"]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox["x", "1"], ",", 
+       SubscriptBox["x", "2"], ",", 
+       SubscriptBox["x", "3"], ",", 
+       SubscriptBox["x", "4"]}], "}"}]}], "]"}], "//", "Simplify"}], "//", 
+  "Factor"}]], "Input",
+ CellChangeTimes->{{3.907375423726247*^9, 3.907375429484994*^9}, {
+  3.907375552022687*^9, 3.9073756044546833`*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"54351db7-0bec-44f6-b219-8a5caf3c2cc8"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["x", "1"], "\[Rule]", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}]}], ")"}]}]}], ",", 
+    RowBox[{
+     SubscriptBox["x", "2"], "\[Rule]", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          SubscriptBox["a", 
+           RowBox[{"1", ",", "4"}]]}], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}]}], ")"}]}]}], ",", 
+    RowBox[{
+     SubscriptBox["x", "3"], "\[Rule]", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}]}], ")"}]}]}], ",", 
+    RowBox[{
+     SubscriptBox["x", "4"], "\[Rule]", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "4"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "3"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["b", "2"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["b", "1"], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          SubscriptBox["a", 
+           RowBox[{"1", ",", "4"}]]}], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "1"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "2"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "4"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "3"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "+", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}], "-", 
+        RowBox[{
+         SubscriptBox["a", 
+          RowBox[{"1", ",", "1"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"2", ",", "2"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"3", ",", "3"}]], " ", 
+         SubscriptBox["a", 
+          RowBox[{"4", ",", "4"}]]}]}], ")"}]}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.9073755750878696`*^9, 3.907375605203371*^9}},
+ CellLabel->"Out[12]=",ExpressionUUID->"5594b1fa-3ab6-444a-ac39-dfffc099d935"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9073754310370913`*^9, 
+  3.907375550775177*^9}},ExpressionUUID->"2062b5ff-8ce3-45e6-8af8-\
+d5f22d9b3b6a"]
+},
+WindowSize->{1440, 847},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.2 for Mac OS X x86 (64-bit) (2021\:5e742\:67085\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"703d9cfe-5bd4-42c9-ab64-7fd73ff39314"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 782, 22, 66, "Input",ExpressionUUID->"fadc0d79-d4e5-4b17-a180-74ba983a064e"],
+Cell[1365, 46, 3495, 92, 115, "Output",ExpressionUUID->"b89ff5d5-0780-4a53-a0df-fbfff678d45a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4897, 143, 192, 3, 30, "Input",ExpressionUUID->"f821571c-4568-44d2-9eda-ba598858c900"],
+Cell[5092, 148, 19086, 401, 144, "Output",ExpressionUUID->"0528023b-2527-4100-b33a-c7cd8894c7c7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24215, 554, 195, 3, 30, "Input",ExpressionUUID->"37041b0b-0430-49b1-81b4-6b2a138cf7e4"],
+Cell[24413, 559, 19281, 405, 228, "Output",ExpressionUUID->"dc0f6055-ea79-4db6-8d24-6249d4e4d202"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43731, 969, 196, 3, 30, "Input",ExpressionUUID->"ed5c8609-9a49-40f9-8218-db0fa1c257fe"],
+Cell[43930, 974, 19013, 431, 119, "Output",ExpressionUUID->"f7d63132-8157-4779-bcf0-aee9ea6231aa"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62980, 1410, 1905, 59, 107, "Input",ExpressionUUID->"72f74d13-f3b8-4cee-a426-cfc443fd078a"],
+Cell[64888, 1471, 7988, 255, 152, "Output",ExpressionUUID->"097bb4fa-851a-4f48-b53c-0fd2041d7e3d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[72913, 1731, 2986, 92, 130, "Input",ExpressionUUID->"54351db7-0bec-44f6-b219-8a5caf3c2cc8"],
+Cell[75902, 1825, 55358, 1667, 566, "Output",ExpressionUUID->"5594b1fa-3ab6-444a-ac39-dfffc099d935"]
+}, Open  ]],
+Cell[131275, 3495, 154, 3, 30, "Input",ExpressionUUID->"2062b5ff-8ce3-45e6-8af8-d5f22d9b3b6a"]
+}
+]
+*)
+
