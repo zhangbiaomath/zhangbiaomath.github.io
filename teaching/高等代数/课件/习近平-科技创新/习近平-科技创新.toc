@@ -1,6 +1,0 @@
-\beamer@sectionintoc {1}{引言}{3}{0}{1}
-\beamer@sectionintoc {2}{行列式的几何解释}{8}{0}{2}
-\beamer@sectionintoc {3}{求两个整数的最大公因数}{21}{0}{3}
-\beamer@sectionintoc {4}{求解代数方程}{25}{0}{4}
-\beamer@sectionintoc {5}{欧拉公式}{32}{0}{5}
-\beamer@sectionintoc {6}{二项式系数}{40}{0}{6}
