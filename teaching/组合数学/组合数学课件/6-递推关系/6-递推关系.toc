@@ -1,5 +1,0 @@
-\beamer@sectionintoc {1}{递推关系的建立}{4}{0}{1}
-\beamer@sectionintoc {2}{常系数线性齐次递推关系的求解}{19}{0}{2}
-\beamer@sectionintoc {3}{常系数线性非齐次递推关系的求解}{35}{0}{3}
-\beamer@sectionintoc {4}{用迭代归纳法求解递推关系}{48}{0}{4}
-\beamer@sectionintoc {5}{用生成函数求解递推关系}{54}{0}{5}

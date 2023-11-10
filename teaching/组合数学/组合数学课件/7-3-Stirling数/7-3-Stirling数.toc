@@ -1,5 +1,0 @@
-\beamer@sectionintoc {1}{第一类Stirling数及其普通生成函数}{3}{0}{1}
-\beamer@sectionintoc {2}{第二类Stirling数及其普通生成函数}{12}{0}{2}
-\beamer@sectionintoc {3}{第二类Stirling数的指数型生成函数}{21}{0}{3}
-\beamer@sectionintoc {4}{两类Stirling数的联系}{26}{0}{4}
-\beamer@sectionintoc {5}{第一类Stirling数的指数型生成函数}{33}{0}{5}

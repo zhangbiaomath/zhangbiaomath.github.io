@@ -1,5 +1,0 @@
-\beamer@sectionintoc {1}{Pascal公式}{4}{0}{1}
-\beamer@sectionintoc {2}{二项式定理}{19}{0}{2}
-\beamer@sectionintoc {3}{多项式定理}{29}{0}{3}
-\beamer@sectionintoc {4}{组合恒等式}{37}{0}{4}
-\beamer@sectionintoc {5}{高斯系数}{77}{0}{5}
