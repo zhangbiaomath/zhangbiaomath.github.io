@@ -1,6 +1,0 @@
-\beamer@sectionintoc {1}{欧氏空间}{5}{0}{1}
-\beamer@sectionintoc {2}{标准正交基的定义与求法}{26}{0}{2}
-\beamer@sectionintoc {3}{欧氏空间的同构}{47}{0}{3}
-\beamer@sectionintoc {4}{正交变换}{51}{0}{4}
-\beamer@sectionintoc {5}{正交子空间}{55}{0}{5}
-\beamer@sectionintoc {6}{实对称矩阵的标准形}{61}{0}{6}
