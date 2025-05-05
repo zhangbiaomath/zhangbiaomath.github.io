@@ -1,3 +1,0 @@
-\beamer@sectionintoc {1}{证明}{3}{0}{1}
-\beamer@sectionintoc {2}{优劣比较}{8}{0}{2}
-\beamer@sectionintoc {3}{{冠词}的使用}{17}{0}{3}

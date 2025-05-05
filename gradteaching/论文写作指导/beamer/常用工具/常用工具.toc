@@ -1,9 +1,0 @@
-\beamer@sectionintoc {1}{文献搜索}{3}{0}{1}
-\beamer@sectionintoc {2}{LaTeX}{6}{0}{2}
-\beamer@subsectionintoc {2}{1}{LaTex 简介}{6}{0}{2}
-\beamer@subsectionintoc {2}{2}{LaTeX发行版与编辑器}{15}{0}{2}
-\beamer@subsectionintoc {2}{3}{中文排版}{18}{0}{2}
-\beamer@subsectionintoc {2}{4}{网络资源}{21}{0}{2}
-\beamer@sectionintoc {3}{Mathpix Snip --- 数学公式识别神器}{22}{0}{3}
-\beamer@sectionintoc {4}{Tables Generator --- 表格识别神器 }{23}{0}{4}
-\beamer@sectionintoc {5}{JabRef --- 文献管理软件}{24}{0}{5}

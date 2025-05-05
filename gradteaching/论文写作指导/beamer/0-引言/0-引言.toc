@@ -1,2 +1,0 @@
-\beamer@sectionintoc {1}{论文写作}{3}{0}{1}
-\beamer@sectionintoc {2}{LaTeX}{20}{0}{2}
