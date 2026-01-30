@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
 <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <script type="text/javascript" src="header.js"></script>
+  <script src="header.js" defer></script>
   <style>
     ol.paper,
     ol.project {
@@ -11,19 +14,22 @@
       counter-reset: sectioncounter;
     }
 
-    ol.paper p,
-    ol.project p {
+    ol.paper li,
+    ol.project li {
       display: list-item;
+      margin: 1em 0;
     }
 
-    ol.paper p:before,
-    ol.project p:before {
+    ol.paper li:before,
+    ol.project li:before {
       content: "(" counter(sectioncounter) ")  ";
       counter-increment: sectioncounter;
     }
 
+    body,
     p,
-    tr {
+    tr,
+    li {
       font-family: 'Times New Roman', Times, serif, SimSun;
       font-size: medium;
     }
@@ -57,7 +63,8 @@
               <p><b>电子邮箱: </b> <a href="mailto:zhang@tjnu.edu.cn"> zhang (at) tjnu.edu.cn </a> </p>
 
             </td>
-            <td width="30%"><img border="" alt="" src="content/pic.jpg" width="150"></td>
+            <td width="30%"><img border="" alt="张彪照片" loading="lazy" decoding="async" src="content/pic.jpg" width="150">
+            </td>
           </tr>
         </tbody>
       </table>
@@ -69,9 +76,12 @@
     <blockquote>
       <p>
         &nbsp; &nbsp; &nbsp; &nbsp;
-        研究方向为组合数学，主要从事单峰型理论和对称函数理论的研究工作。2015年6月博士毕业于南开大学。2018年8月至2019年8月赴美国宾夕法尼亚大学访问。在《Journal of Combinatorial
-        Theory, Series A》、《Proceedings of the American Mathematical Society》、《Advances in Applied Mathematics》、《SIAM
-        Journal on Discrete Mathematics》等期刊发表学术论文20余篇，先后主持国家自然科学基金数学天元基金项目、青年基金项目、面上项目。
+        研究方向为组合数学，主要从事单峰型理论和对称函数理论的研究工作。2015年6月博士毕业于南开大学。2018年8月至2019年8月赴美国宾夕法尼亚大学访问。解决了John Stembridge、Francesco
+        Brenti、Christos Athanasiadis、叶永南等人提出的多个猜想，在《J. Comb. Theory Ser. A》、《Adv. Appl.
+        Math.》、《SIAM J. Discrete Math.》、《Proc. Amer. Math. Soc.》等期刊发表学术论文三十余篇,
+        主持国家自然科学基金3项。与合作者定义的多项式被国际同行称为“Haglund-Zhang多项式”, 并部分验证了Fields奖得主JuneHuh提出的拟阵的增广周环Hilbert级数的实根性在均匀拟阵上的情况。
+
+        研究方向
       </p>
     </blockquote>
 
@@ -191,67 +201,111 @@
         承担课程
       </h4>
       <ol class="project list-paddingleft-2">
-        <p>
+        <li>
           本科课程：高等代数、组合数学
-        </p>
-        <p>
+        </li>
+        <li>
           研究生课程：计数组合学、代数组合学、论文写作指导
-        </p>
+        </li>
       </ol>
 
       <h4>
         科研项目
       </h4>
       <ol class="project list-paddingleft-2">
-        <p>
+        <li>
           2025.4-2028.3，排列模式中多统计量联合分布的研究，天津市自然科学基金面上项目 (No. 25JCYBJC00430)，10万，主持
-        </p>
-        <p>
+        </li>
+        <li>
           2022.1-2025.12，代数组合学中的若干Schur正性问题，国家自然科学基金面上项目 (No. 12171362)，50万，主持
-        </p>
-        <p>
+        </li>
+        <li>
           2019.1-2021.12，钩长公式及其相关组合问题研究，国家自然科学基金青年项目 (No.11801447)，25万，参与
-        </p>
-        <p>
+        </li>
+        <li>
           2018.1-2020.12，组合数学中的实根多项式， 国家自然科学基金青年科学基金项目 (No. 11701424)，25万，主持
-        </p>
-        <p>
+        </li>
+        <li>
           2017.1-2017.12，广义欧拉多项式的实根性，国家自然科学基金数学天元基金 (No. 11626172)，3万， 主持
-        </p>
+        </li>
       </ol>
 
       <h4>
         代表性成果
       </h4>
-      <ol class="paper list-paddingleft-2">
-        <p>
-          Arthur L.B. Yang, Philip B. Zhang, Descent generating polynomials and the Hermite-Biehler theorem,
-          Journal of Algebraic Combinatorics, 56 (2022), 117-152.
-        </p>
+      <ol class="project list-paddingleft-2">
+        <li>
+          Tian Han, Sergey Kitaev, Philip B. Zhang,
+          <em>Distribution of maxima and minima statistics on alternating permutations, Springer numbers, and avoidance
+            of flat
+            POPs</em>,
+          <strong>Journal of Combinatorial Theory, Series A</strong>,
+          213 (2025), 106034.
+        </li>
 
-        <p>
-          Zhicong Lin, Jun Ma, Philip B. Zhang, Statistics on multipermutations and partial gamma-positivity,
-          Journal of Combinatorial Theory, Series A, 183 (2021), 105488.
-        </p>
+        <li>
+          Zhicong Lin, Jun Ma, Philip B. Zhang,
+          <em>Statistics on multipermutations and partial gamma-positivity</em>,
+          <strong>Journal of Combinatorial Theory, Series A</strong>,
+          183 (2021), 105488.
+        </li>
 
-        <p>
-          James Haglund, Philip B. Zhang, Real-rootedness of variations of Eulerian polynomials, Advances in Applied
-          Mathematics, 109 (2019), 38-54.
-        </p>
-        <p>
-          Matthew H.Y. Xie, Philip B. Zhang, Equivariant Kazhdan-Lusztig polynomials of thagomizer matroids,
-          Proceedings of the American Mathematical Society, 147 (2019), 4687-4695.
-        </p>
+        <li>
+          Harold R. L. Yang, Philip B. Zhang,
+          <em>Stable multivariate Narayana polynomials and labeled plane trees</em>,
+          <strong>Advances in Applied Mathematics</strong>,
+          166 (2025), 102867.
+        </li>
 
-        <p>
-          Arthur L.B. Yang, Philip B. Zhang, Brenti's open problem on the real-rootedness of q-Eulerian
-          polynomials of type D, SIAM Journal on Discrete Mathematics, 31 (2) (2017), 918-926.
-        </p>
+        <li>
+          James Haglund, Philip B. Zhang,
+          <em>Real-rootedness of variations of Eulerian polynomials</em>,
+          <strong>Advances in Applied Mathematics</strong>,
+          109 (2019), 38–54.
+        </li>
+
+        <li>
+          Alice L. L. Gao, Linyuan Lu, Matthew H. Y. Xie, Arthur L. B. Yang, Philip B. Zhang,
+          <em>The Kazhdan–Lusztig polynomials of uniform matroids</em>,
+          <strong>Advances in Applied Mathematics</strong>,
+          122 (2021), 102117.
+        </li>
+
+        <li>
+          Arthur L. B. Yang, Philip B. Zhang,
+          <em>Brenti's open problem on the real-rootedness of q-Eulerian polynomials of type D</em>,
+          <strong>SIAM Journal on Discrete Mathematics</strong>,
+          31(2) (2017), 918–926.
+        </li>
+
+        <li>
+          Philip B. Zhang,
+          <em>Interlacing polynomials and the Veronese construction for rational formal power series</em>,
+          <strong>Proceedings of the Royal Society of Edinburgh Section A</strong>,
+          150(1) (2020), 1–16.
+        </li>
+
+        <li>
+          Matthew H. Y. Xie, Philip B. Zhang,
+          <em>Equivariant Kazhdan–Lusztig polynomials of thagomizer matroids</em>,
+          <strong>Proceedings of the American Mathematical Society</strong>,
+          147 (2019), 4687–4695.
+        </li>
+
+        <li>
+          Vasu Tewari, Andy Wilson, Philip B. Zhang,
+          <em>Chromatic nonsymmetric polynomials of Dyck graphs are slide-positive</em>,
+          <strong>Proceedings of the American Mathematical Society</strong>,
+          150 (2022), 1873–1888.
+        </li>
+
+        <li>
+          Matthew H. Y. Xie, Philip B. Zhang,
+          <em>The log-concavity of Kazhdan–Lusztig polynomials of uniform matroids</em>,
+          <strong>Journal of Systems Science and Complexity</strong>,
+          36 (2023), 117–128.
+        </li>
       </ol>
-      <p>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 更多文章，请点击 <a
-          href="./research.html">https://zhangbiaomath.github.io/research.html</a>
-      </p>
 
       <h4>
         <a href="https://github.com/zhangbiaomath/zhangbiaomath.github.io/blob/master/content/students.md">
