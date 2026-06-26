@@ -44,7 +44,7 @@
 
     var gtagScript = document.createElement("script");
     gtagScript.async = true;
-    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=UA-132770448-1";
+    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-P1V0D8EL8Y";
     document.head.appendChild(gtagScript);
 
     window.dataLayer = window.dataLayer || [];
@@ -52,7 +52,7 @@
       window.dataLayer.push(arguments);
     };
     window.gtag("js", new Date());
-    window.gtag("config", "UA-132770448-1");
+    window.gtag("config", "G-P1V0D8EL8Y");
   }
 
   function ensureMathJax() {
@@ -61,8 +61,8 @@
     }
 
     var mathJax = document.createElement("script");
-    mathJax.async = true;
-    mathJax.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML";
+    mathJax.defer = true;
+    mathJax.src = "https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js";
     document.head.appendChild(mathJax);
   }
 
