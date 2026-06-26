@@ -6,6 +6,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>张彪 - 个人主页</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <script src="header.js" defer></script>
   <style>
     ol.paper,
@@ -26,15 +28,15 @@
       counter-increment: sectioncounter;
     }
 
-    body,
-    p,
-    tr,
-    li {
+    #content,
+    #content p,
+    #content tr,
+    #content li {
       font-family: 'Times New Roman', Times, serif, SimSun;
       font-size: medium;
     }
 
-    a {
+    #content a {
       font-size: 14pt;
       font-weight: bold;
     }
@@ -44,154 +46,64 @@
 <body>
   <div id="content" class="mainpage">
 
-    <center>
-      <br> <br>
-
-      <table width="90%">
-        <tbody>
-          <tr>
-            <td width="50%">
-              <font color="#0000cc" size="5"><b>张彪</b></font> 教授
-
-              <p>天津师范大学数学科学学院 </p>
-
-              <p>天津市西青区宾水西道393号 </p>
-
-              <p><b> 英文主页: </b> <a href="https://zhangbiaomath.github.io/">
-                  https://zhangbiaomath.github.io/ </a> </p>
-
-              <p><b>电子邮箱: </b> <a href="mailto:zhang@tjnu.edu.cn"> zhang (at) tjnu.edu.cn </a> </p>
-
-            </td>
-            <td width="30%"><img border="" alt="张彪照片" loading="lazy" decoding="async" src="content/pic.jpg" width="150">
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </center>
+    <section class="profile-summary">
+      <div class="profile-info">
+        <p><span class="person-name">张彪</span> 教授</p>
+        <p>天津师范大学数学科学学院</p>
+        <p>天津市西青区宾水西道393号</p>
+        <p><b>英文主页:</b> <a href="https://zhangbiaomath.github.io/">https://zhangbiaomath.github.io/</a></p>
+        <p><b>电子邮箱:</b> <a href="mailto:zhang@tjnu.edu.cn">zhang (at) tjnu.edu.cn</a></p>
+      </div>
+      <img class="profile-photo zh" alt="张彪照片" loading="lazy" decoding="async" src="content/pic.jpg">
+    </section>
 
     <h3>
       个人简介
     </h3>
     <blockquote>
       <p>
-        &nbsp; &nbsp; &nbsp; &nbsp;
-        研究方向为组合数学，主要从事单峰型理论和对称函数理论的研究工作。2015年6月博士毕业于南开大学。2018年8月至2019年8月赴美国宾夕法尼亚大学访问。在《J.Comb.Theory Ser. A》、《Adv. Appl.
+        研究方向为组合数学，主要研究单峰型理论、实根多项式和对称函数理论。2015年6月博士毕业于南开大学，2018年8月至2019年8月访问美国宾夕法尼亚大学。在《J.Comb.Theory Ser. A》、《Adv. Appl.
         Math.》、《SIAM J. Discrete Math.》、《Bull. Lond. Math. Soc.》、《Proc. Amer. Math.
-        Soc.》等期刊发表学术论文三十余篇，主持国家自然科学基金3项、天津市自然科学基金1项。
-        解决了John Stembridge、Francesco
-        Brenti、Christos Athanasiadis、叶永南等人提出的多个猜想；与合作者定义的多项式被国际同行称为“Haglund-Zhang多项式”；关于实根多项式的结果被Tom Braden和Nicholas
-        Proudfoot 在他们的国际数学家大会邀请报告中列为拟阵Kazhdan-Lusztig多项式实根性猜想的"重要证据(significant evidence)"
+        Soc.》等期刊发表学术论文三十余篇，主持国家自然科学基金项目3项、天津市自然科学基金项目1项。
+        研究工作解决了John Stembridge、Francesco
+        Brenti、Christos Athanasiadis、叶永南等人提出的若干猜想；关于实根多项式的结果被Tom Braden和Nicholas
+        Proudfoot在国际数学家大会邀请报告中列为拟阵Kazhdan-Lusztig多项式实根性猜想的重要证据；与合作者定义的多项式被称为“Haglund-Zhang多项式”。现任天津市数学会理事、天津市工业与应用数学学会理事、中国运筹学会图论组合分会青年理事。
       </p>
     </blockquote>
 
-    <div>
-      <table>
-        <tbody>
-          <tr style="height: 10px" class="firstRow">
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
     <div>
       <div>
         <h3>
           个人经历
         </h3>
-        <table style="width: 98%">
+        <table class="content-table">
           <tbody>
             <tr class="firstRow">
-              <th align="left">
-                &nbsp; 时间
-              </th>
-              <th align="left">
-                &nbsp; 单位
-              </th>
-              <th align="left">
-                &nbsp; 职称/职务/学历学位
-              </th>
+              <th>时间</th>
+              <th>单位</th>
+              <th>职称/职务/学历学位</th>
             </tr>
 
             <tr>
-              <td align="left">
-                &nbsp; 2025/12-至今
-              </td>
-              <td align="left">
-                &nbsp; 天津师范大学数学科学学院
-              </td>
-              <td align="left">
-                &nbsp; 教授
-              </td>
+              <td>2025/12-至今</td>
+              <td>天津师范大学数学科学学院</td>
+              <td>教授</td>
             </tr>
 
             <tr>
-              <td align="left">
-                &nbsp; 2020/12-2025/11
-              </td>
-              <td align="left">
-                &nbsp; 天津师范大学数学科学学院
-              </td>
-              <td align="left">
-                &nbsp; 副教授
-              </td>
+              <td>2020/12-2025/11</td>
+              <td>天津师范大学数学科学学院</td>
+              <td>副教授</td>
             </tr>
             <tr>
-              <td align="left">
-                &nbsp; 2018/8-2019/8
-              </td>
-              <td align="left">
-                &nbsp; 美国宾夕法尼亚大学数学系
-              </td>
-              <td align="left">
-                &nbsp; 访问学者
-              </td>
+              <td>2018/8-2019/8</td>
+              <td>美国宾夕法尼亚大学数学系</td>
+              <td>访问学者</td>
             </tr>
             <tr>
-              <td align="left">
-                &nbsp; 2015/7-2020/11
-              </td>
-              <td align="left">
-                &nbsp; 天津师范大学数学科学学院
-              </td>
-              <td align="left">
-                &nbsp; 讲师
-              </td>
-            </tr>
-            <!--
-            <tr>
-                <td align="left">
-                    &nbsp; 2010/9-2015/6
-                </td>
-                <td align="left">
-                    &nbsp; 南开大学组合数学中心
-                </td>
-                <td align="left">
-                    &nbsp;  理学博士
-                </td>
-            </tr>
-
-            <tr>
-                <td align="left">
-                    &nbsp; 2006/9-2010/7
-                </td>
-                <td align="left">
-                    &nbsp;  邯郸学院数学系
-                </td>
-                <td align="left">
-                    &nbsp; 理学学士
-                </td>
-            </tr>
-
--->
-          </tbody>
-        </table>
-      </div>
-      <div>
-        <table>
-          <tbody>
-            <tr style="height: 10px" class="firstRow">
-              <td></td>
+              <td>2015/7-2020/11</td>
+              <td>天津师范大学数学科学学院</td>
+              <td>讲师</td>
             </tr>
           </tbody>
         </table>
@@ -308,7 +220,7 @@
       </ol>
 
       <h4>
-        <a href="https://github.com/zhangbiaomath/zhangbiaomath.github.io/blob/master/content/students.md">
+        <a href="students.html">
           指导学生情况(硕士研究生)</a>
 
       </h4>
