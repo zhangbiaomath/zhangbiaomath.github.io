@@ -1,60 +1,142 @@
-document.writeln("<!DOCTYPE html>");
-document.writeln("<html> ");
-document.writeln("<head>");
-document.writeln("  <!-- Specifies the character encoding of the document. -->");
-document.writeln("  <meta http-equiv=\'content-type\' content=\'text/html; charset=utf-8\'>"); 
-document.writeln("");
-document.writeln("  <!-- Specifies the title of the document. -->");
-document.writeln("  <title>Philip B. Zhang\'s Homepage</title>");
-document.writeln("");
-document.writeln("  <!-- Global site tag (gtag.js) - Google Analytics -->");
-document.writeln("  <script async src=\'https://www.googletagmanager.com/gtag/js?id=UA-132770448-1\'></script>");
-document.writeln("  <script>");
-document.writeln("    window.dataLayer = window.dataLayer || [];");
-document.writeln("    function gtag(){dataLayer.push(arguments);}");
-document.writeln("    gtag(\'js\', new Date());");
-document.writeln("");
-document.writeln("    gtag(\'config\', \'UA-132770448-1\');");
-document.writeln("  </script>");
-document.writeln("<script src=\'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML\' async></script>");
-document.writeln("");
-document.writeln("  <!-- Provides the location of the CSS style sheet for the document. -->");
-document.writeln("  <link rel=\'stylesheet\' type=\'text/css\' href=\'./stylesheet.css\'>");
-document.writeln("</head>");
-document.writeln("");
-document.writeln("");
-document.writeln("");
-document.writeln("");
-document.writeln("");
-document.writeln("<body>  ");
-document.writeln("");
-document.writeln("<header>");
-document.writeln("        ");
-document.writeln("        <div class=\'zzz\'>Philip B. Zhang (张彪) </div>");
-document.writeln("        ");
-document.writeln("        ");
-document.writeln("        <nav>");
-document.writeln("            <ul>");
-document.writeln("                <li><a href=\'./index.html\'>Home</a></li>");
-document.writeln("                <li><a href=\'./research.html\'>Research</a></li>");
-document.writeln("                <li><a href=\'./teaching.html\'>Teaching</a></li>");
-document.writeln("                <li><a href=\'./chinese.html\' >Chinese Version</a></li>");
-document.writeln("            </ul>");
-document.writeln("         </nav>");
-document.writeln("        ");
-document.writeln("  <hr>");
-document.writeln("");
-document.writeln("    ");
-document.writeln("</header>");
-document.writeln("");
-document.writeln("");
-document.writeln("  <br>  <br>");
-document.writeln("");
-document.writeln("");
-document.writeln("</body>");
-document.writeln("");
-document.writeln("");
-document.writeln("");
-document.writeln("");
-document.writeln("</html>");
-document.writeln("");
+(function () {
+  "use strict";
+
+  var siteTitle = "Philip B. Zhang's Homepage";
+  var navItems = [
+    ["index.html", "Home"],
+    ["research.html", "Research"],
+    ["teaching.html", "Teaching"],
+    ["chinese.html", "Chinese Version"]
+  ];
+
+  function ensureMeta() {
+    if (!document.querySelector("meta[charset]")) {
+      var charset = document.createElement("meta");
+      charset.setAttribute("charset", "utf-8");
+      document.head.prepend(charset);
+    }
+
+    if (!document.querySelector('meta[name="viewport"]')) {
+      var viewport = document.createElement("meta");
+      viewport.name = "viewport";
+      viewport.content = "width=device-width, initial-scale=1";
+      document.head.appendChild(viewport);
+    }
+
+    if (!document.title) {
+      document.title = siteTitle;
+    }
+  }
+
+  function ensureStylesheet() {
+    if (!document.querySelector('link[href$="stylesheet.css"]')) {
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = siteRoot() + "stylesheet.css";
+      document.head.appendChild(link);
+    }
+  }
+
+  function ensureAnalytics() {
+    if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+      return;
+    }
+
+    var gtagScript = document.createElement("script");
+    gtagScript.async = true;
+    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=UA-132770448-1";
+    document.head.appendChild(gtagScript);
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag("js", new Date());
+    window.gtag("config", "UA-132770448-1");
+  }
+
+  function ensureMathJax() {
+    if (document.querySelector('script[src*="MathJax"], script[src*="mathjax"]')) {
+      return;
+    }
+
+    var mathJax = document.createElement("script");
+    mathJax.async = true;
+    mathJax.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML";
+    document.head.appendChild(mathJax);
+  }
+
+  function currentPage() {
+    var page = window.location.pathname.split("/").pop();
+    return page || "index.html";
+  }
+
+  function siteRoot() {
+    if (window.siteRoot) {
+      return window.siteRoot;
+    }
+
+    var script = document.currentScript || document.querySelector('script[src$="header.js"]');
+    var src = script ? script.getAttribute("src") : "";
+
+    if (!src || src.indexOf("/") === -1) {
+      return "./";
+    }
+
+    return src.replace(/header\.js(?:\?.*)?$/, "");
+  }
+
+  function buildHeader() {
+    if (document.querySelector(".site-header")) {
+      return;
+    }
+
+    var root = siteRoot();
+    var header = document.createElement("header");
+    header.className = "site-header";
+
+    var title = document.createElement("div");
+    title.className = "zzz";
+    title.textContent = "Philip B. Zhang (张彪)";
+    header.appendChild(title);
+
+    var nav = document.createElement("nav");
+    nav.setAttribute("aria-label", "Main navigation");
+
+    var list = document.createElement("ul");
+    var page = currentPage();
+
+    navItems.forEach(function (item) {
+      var li = document.createElement("li");
+      var link = document.createElement("a");
+      link.href = root + item[0];
+      link.textContent = item[1];
+
+      if (page === item[0]) {
+        link.setAttribute("aria-current", "page");
+      }
+
+      li.appendChild(link);
+      list.appendChild(li);
+    });
+
+    nav.appendChild(list);
+    header.appendChild(nav);
+
+    document.body.insertBefore(header, document.body.firstChild);
+  }
+
+  function init() {
+    ensureMeta();
+    ensureStylesheet();
+    ensureAnalytics();
+    ensureMathJax();
+    buildHeader();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();

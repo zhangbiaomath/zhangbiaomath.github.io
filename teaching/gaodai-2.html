@@ -1,73 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
 
-<HTML>
-<!-- 
-git config --global http.proxy socks5://127.0.0.1:1080 
-git config --global https.proxy socks5://127.0.0.1:1080
--->
-<HEAD>
-   <TITLE>高等代数</TITLE>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132770448-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>高等代数</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+  <script src="../header.js" defer></script>
+  <script type="text/javascript">
+function password() {
+var testV = 1;
+var pass1 = prompt('所在班级','');
+while (testV < 3) {
+if (!pass1)
+history.go(-1);
+if (pass1 == "2003") {
+break;
+}
+testV+=1;
+var pass1 =
+prompt('错误!请重新输入:');
+}
+if (pass1!="password" & testV ==3)
+history.go(-1);
+return " ";
+}
+document.write(password());
+</script>
+</head>
 
-    gtag('config', 'UA-132770448-1');
-  </script>
-  <script type="text/javascript">   
-function password() {   
-var testV = 1;   
-var pass1 = prompt('所在班级','');   
-while (testV < 3) {   
-if (!pass1)   
-history.go(-1);   
-if (pass1 == "2003") {   
-break;   
-}   
-testV+=1;   
-var pass1 =   
-prompt('错误!请重新输入:');   
-}   
-if (pass1!="password" & testV ==3)   
-history.go(-1);   
-return " ";   
-}   
-document.write(password());   
-</script>  
-</HEAD>
+<body>
+<div id="content" class="mainpage">
+<h1 class="page-title">高等代数</h1>
 
-
-
-
-
-<BODY BGCOLOR="#FGFFCC">
-<!-- 
-<marquee direction=right>
-	<P><B><font color="#7700ee" size="10"><b>寒假快乐！ </b></font> </B></P>
-</marquee>
- -->
-
-<center><P><B><font color="#0000cc" size="6"><b>高等代数 </b></font> </B></P></center>
-
-
-
-
-
-<br>
 <p><b>任课教师：</b>
-<a href="https://zhangbiaomath.github.io/">张彪</a>, 数学科学学院, 天津师范大学 </p> 
-<!-- 
-<a href="https://zhangbiaomath.github.io">张彪</a>, 
-<a href="http://sxkx.tjnu.edu.cn">数学科学学院</a>, 
-<a href="http://tjnu.edu.cn">天津师范大学</a>
- </p>-->
-<!-- 
- <p> <b>课程主页： </b> 
- <a href="https://zhangbiaomath.github.io/teaching/gaodai.html">https://zhangbiaomath.github.io/teaching/gaodai.html</a>
-</p>
- -->
-<img src="gaodai/gaodai_code.png" align="right"/>
+<a href="https://zhangbiaomath.github.io/">张彪</a>, 数学科学学院, 天津师范大学 </p>
+<img class="course-qr" src="高等代数/gaodai_code.png" alt="高等代数课程二维码"/>
 
 
 
@@ -78,23 +46,23 @@ document.write(password());
 <p><b>课件：</b> </p>
 <ul>
 <li><p> 第4章-矩阵课件
-<a href="gaodai/课件/第4章-矩阵.pptx">[ppt]</a>
+<a href="高等代数/课件/old/第4章-矩阵.pptx">[ppt]</a>
 </p></li>
 
 <li><p> 第5章-二次型课件
-<a href="gaodai/课件/第5章-二次型/5.pdf">[pdf]</a>
+<a href="高等代数/课件/old/第5章-二次型/5.pdf">[pdf]</a>
 </p></li>
 
 <li><p> 第6章-线性空间课件
-<a href="gaodai/课件/第6章-线性空间/6.pdf">[pdf]</a>
+<a href="高等代数/课件/old/第6章-线性空间/6.pdf">[pdf]</a>
 </p></li>
 
 <li><p> 第7章-线性变换课件
-<a href="gaodai/课件/第7章-线性变换/7.pdf">[pdf]</a>
+<a href="高等代数/课件/old/第7章-线性变换/7.pdf">[pdf]</a>
 </p></li>
 
 <li><p> 第9章-欧氏空间课件
-<a href="gaodai/课件/第9章-欧氏空间/9.pdf">[pdf]</a>
+<a href="高等代数/课件/old/第9章-欧氏空间/final.pdf">[pdf]</a>
 </p></li>
 </ul>
 
@@ -103,25 +71,25 @@ document.write(password());
 <p><b>练习题：</b></p>
 <ul>
 <li><p> 第4章-矩阵练习题
-    <a href="gaodai/ch4/第4章-矩阵练习题.pdf">[pdf]</a>
+    <a href="高等代数/ch4/第4章-矩阵练习题.pdf">[pdf]</a>
 </p></li>
 
 <li><p> 第5章-二次型练习题
-    <a href="gaodai/ch5/第5章-二次型练习题.pdf">[pdf]</a>
+    <a href="高等代数/ch5/第5章-二次型练习题.pdf">[pdf]</a>
 </p></li>
 
 
 <li><p> 第6章-线性空间练习题
-    <a href="gaodai/ch6/第6章-线性空间练习题.pdf">[pdf]</a>
+    <a href="高等代数/ch6/第6章-线性空间练习题.pdf">[pdf]</a>
 </p></li>
 
 
 <li><p> 第7章-线性变换练习题
-    <a href="gaodai/ch7/第7章-线性变换练习题.pdf">[pdf]</a>
+    <a href="高等代数/ch7/第7章-线性变换练习题.pdf">[pdf]</a>
 </p></li>
 
 <li><p> 第9章-欧氏空间练习题
-    <a href="gaodai/ch9/第9章-欧氏空间练习题.pdf">[pdf]</a>
+    <a href="高等代数/ch9/第9章-欧氏空间练习题.pdf">[pdf]</a>
 </p></li>
 
 </ul>
@@ -205,7 +173,7 @@ document.write(password());
 </p></li>
 </ul>
 
-<!-- 
+<!--
 <ul>
 <li><p> 第16周作业(6.3)
 <a href="https://workspace.jianguoyun.com/inbox/collect/df53cdfbf2f34ce5b5279a8e3161c346/submit">[link]</a>
@@ -214,17 +182,17 @@ document.write(password());
 </ul>
  -->
 
-<!-- 
+<!--
 
 <p><b>基础课习题册：</b></p>
 <ul>
 
 <li><p>
-	  <a href="gaodai/ch4/ch4-16.pdf">[第4章-矩阵-16级]</a>
+	  <a href="高等代数/ch4/ch4-16.pdf">[第4章-矩阵-16级]</a>
 </p></li>
 
 <li><p>
-	  <a href="gaodai/ch4/ch4-17.pdf">[第4章-矩阵-17级]</a>
+	  <a href="高等代数/ch4/ch4-17.pdf">[第4章-矩阵-17级]</a>
 </p></li>
 
 
@@ -239,9 +207,9 @@ document.write(password());
 <hr>
 <p><b>使用教材:</b> </p>
 <ul>
-<li><p> 
-北京大学数学系几何与代数教研室代数小组, 高等代数(第4版), 高等教育出版社, 2013. 
-<a href="gaodai/高等代数-北大数学系.pdf">[第3版pdf]</a>
+<li><p>
+北京大学数学系几何与代数教研室代数小组, 高等代数(第4版), 高等教育出版社, 2013.
+<a href="高等代数/高等代数-北大数学系.pdf">[第3版pdf]</a>
 
 </p></li>
 </ul>
@@ -254,26 +222,26 @@ document.write(password());
 <ol>
 
 
-<li><p> 
-徐仲等, 高等代数(北大第四版)导教导学导考, 西安:西北工业大学出版社, 2014. 
-  <!-- 
-  <a href="gaodai/高等代数(北大·第三版)导教·导学·导考-徐仲-西北工业大学出版社.pdf">[pdf]</a>
+<li><p>
+徐仲等, 高等代数(北大第四版)导教导学导考, 西安:西北工业大学出版社, 2014.
+  <!--
+  <a href="高等代数/高等代数(北大·第三版)导教·导学·导考-徐仲-西北工业大学出版社.pdf">[pdf]</a>
    -->
 </p></li>
 
-<li><p> 
-王萼芳, 石生明, 高等代数辅导与习题解答（北大·第4版), 高等教育出版社, 2013. 
+<li><p>
+王萼芳, 石生明, 高等代数辅导与习题解答（北大·第4版), 高等教育出版社, 2013.
 </p></li>
- 
 
- 
+
+
 
 </ol>
 
 
 <p><b>视频：</b></p>
 <ol>
-<li><p> 丘维声 北京大学 
+<li><p> 丘维声 北京大学
 <a href="https://www.bilibili.com/video/av22633208"> link </a>
 </p></li>
 
@@ -297,7 +265,7 @@ document.write(password());
 
 
 <li><p> 王延新老师录课视频
- <a href=" https://pan.baidu.com/s/1CYfmmYEMEVF2P6slN8vD-Q">[link]</a>    提取码: vzbc
+ <a href="https://pan.baidu.com/s/1CYfmmYEMEVF2P6slN8vD-Q">[link]</a>    提取码: vzbc
 </p></li>
 
 
@@ -305,8 +273,12 @@ document.write(password());
 
 
 
-<font size="4"><b>
+<p class="quote">
 Don’t fear failure. Not failure, but low aim, is the crime. In great attempts it is glorious even to fail.
 ---
 Bruce Lee
- </b></font>
+</p>
+</div>
+</body>
+
+</html>

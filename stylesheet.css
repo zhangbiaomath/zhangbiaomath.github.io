@@ -1,149 +1,312 @@
 
 /** Main styles for the document **/
 
-  html
-    {
-      overflow-y: scroll; /** Ensures the up-down scrollbar is always present, to avoid 
-                              the appearance of the header shifting slightly when going 
-                              from pages requiring the scrollbar to ones which don't. **/
-    }
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
 
-:root { --blue: #007bff; 
-        --indigo: #6610f2; 
-        --purple: #6f42c1; 
-        --pink: #e83e8c; 
-        --red: #dc3545; 
-        --orange: #fd7e14; 
-        --yellow: #ffc107; 
-        --green: #28a745; 
-        --teal: #20c997; 
-        --cyan: #17a2b8; 
-        --white: #fff; 
-        --gray: #6c757d; 
-        --gray-dark: #343a40; 
-        --primary: #007bff; 
-        --secondary: #6c757d; 
-        --success: #28a745; 
-        --info: #17a2b8; 
-        --warning: #ffc107; 
-        --danger: #dc3545; 
-        --light: #f8f9fa; 
-        --dark: #343a40; 
-        --breakpoint-xs: 0; 
-        --breakpoint-sm: 576px; 
-        --breakpoint-md: 768px; 
-        --breakpoint-lg: 992px; 
-        --breakpoint-xl: 1200px; 
-        --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-  body
-    {
-      margin: 0;
-      border: 0;
-      padding: 0 0 50px;
-      width: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14pt;
-      line-height: 1.5em;
-    }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
-  header
-    {
-      position: fixed;            /** Keeps the header fixed in relation to the browser window. **/
-      width: 100%;
-      z-index: 1000;              /** Ensures the header is above other elements when scrolling. **/
-      text-align: center;         /** Besides centering the title, this will center the
-                                      navigation bar as a whole. **/
-      white-space: nowrap;        /** Forces the contents of a header element to never wrap. **/  
-      background-color:white;
-    }
+:root {
+  --accent: #990033;
+  --link: #0000cc;
+  --border: rgba(0, 0, 0, 0.12);
+  --text: #111;
+  --font-sans: Arial, Helvetica, sans-serif;
+}
 
-  hr { box-sizing: content-box; height: 0; overflow: visible; }
-  hr { margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); }
+body {
+  margin: 0;
+  border: 0;
+  padding: 0 0 50px;
+  width: 100%;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
+header,
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.75rem 1rem 0.65rem;
+  text-align: center;
+  background-color: white;
+  border-bottom: 1px solid var(--border);
+}
 
-  h1
-    {
-      color: #990033;
-      font-size: 15pt;
-    }
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
 
+h1 {
+  color: var(--accent);
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
 
+h2,
+h3,
+h4 {
+  color: var(--accent);
+}
 
+nav {
+  margin: 0.35rem 0 0;
+  padding: 0;
+}
 
-        /** The navigation bar (the area between the two horizontal lines). **/
+nav > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 1rem;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  list-style: none;
+}
 
-          nav
-            {
-              margin: 10px 20px;
-              padding: 0;
-            }
+nav > ul > li {
+  margin: 0;
+}
 
+nav a {
+  display: inline-block;
+  padding: 0.15rem 0.25rem;
+  color: var(--link);
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.3;
+  white-space: nowrap;
+}
 
-          nav > ul  /** Selects all ul's inside of a nav. **/
-            {
-              margin: 0;
-              border: 0;
-              padding: 0;
-              list-style: none;      
-              display: inline-block; 
-            }
+nav a[aria-current="page"] {
+  color: var(--accent);
+}
 
+#content {
+  margin: 0 auto;
+  border: 0;
+  padding: 1.5rem 1.25rem 0;
+  width: min(100%, 1000px);
+  text-align: left;
+  position: relative;
+  overflow-wrap: break-word;
+}
 
-          nav > ul > li  /** Selects all li's that are inside of a ul which is inside of a nav. **/
-            {            
-              margin: 5px 10px;
-              float: left;
-            }
+a:link,
+a:hover,
+a:visited,
+a:visited:hover {
+  color: var(--link);
+  text-decoration: none;
+}
 
-          nav  a  /** Selects all links that are inside of a ul which is a child of a nav. **/
-            {
-               margin: 10px 20px;
-               padding: 5px 10px;
-               font-weight: bold;
-               font-size: 16pt;
-            }
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
 
-
-
-  #content
-    {
-      margin: 0 auto;
-      border: 0;
-      padding: 100px 0px 0px;
-      width: 80%;
-      min-width: 800px;
-      max-width: 1000px;
-      text-align: left;
-      position: relative;
-    }
-
-/*Styling links*/
-
-    /*Colors all links (regardless of whether or not previously visited, 
-    currently under the cursor, or currently clicked) blue, and
-    forces the browser to display them without an underline*/
-
-    a:link, a:hover, a:visited, a:visited:hover
-      {
-      color: #0000cc;
-      text-decoration: none;
-      }
-
-
+a {
+  overflow-wrap: anywhere;
+}
 
 .zzz {
-  margin: 15px 10px;
-  height: 35px;
-  color: #990033;
-  font-size: 20pt;
+  margin: 0;
+  color: var(--accent);
+  font-size: 1.35rem;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+.profile-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+  width: min(100%, 900px);
+  margin: 0 auto 1.5rem;
+}
+
+.profile-info p {
+  margin: 0.45rem 0;
+}
+
+.person-name {
+  color: var(--link);
+  font-size: 1.45rem;
   font-weight: bold;
 }
 
+.profile-photo {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+}
 
+.profile-photo.zh {
+  width: 150px;
+}
 
+.content-table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-.paper { padding-top: .25rem; padding-bottom: .25rem; }
+.content-table th,
+.content-table td {
+  padding: 0.3rem 0.5rem;
+  text-align: left;
+  vertical-align: top;
+}
 
-.paper-tight .papertitle { font-weight: bold; }
+.page-title {
+  margin: 0 0 1.25rem;
+  color: var(--link);
+  font-size: 1.75rem;
+  line-height: 1.25;
+  text-align: center;
+}
 
-.paper-tight .journalname { font-weight: bold; font-style: italic;  color: #990033}
+.quote {
+  margin: 1.25rem 0;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+
+.course-qr {
+  float: right;
+  width: min(160px, 32vw);
+  margin: 0 0 1rem 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  max-width: 100%;
+}
+
+.paper {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+}
+
+.paper-tight .papertitle {
+  font-weight: bold;
+}
+
+.paper-tight .journalname {
+  font-weight: bold;
+  font-style: italic;
+  color: var(--accent);
+}
+
+@media (max-width: 700px) {
+  body {
+    font-size: 0.98rem;
+  }
+
+  header,
+  .site-header {
+    padding: 0.65rem 0.75rem 0.55rem;
+  }
+
+  .zzz {
+    font-size: 1.15rem;
+  }
+
+  nav > ul {
+    gap: 0.2rem 0.65rem;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+  }
+
+  #content {
+    padding: 1rem 0.9rem 0;
+  }
+
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .profile-summary {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .profile-photo {
+    justify-self: start;
+    width: 150px;
+  }
+
+  .course-qr {
+    float: none;
+    display: block;
+    margin: 0 auto 1rem;
+    width: min(150px, 60vw);
+  }
+
+  ol,
+  ul {
+    padding-left: 1.35rem;
+  }
+}
+
+@media (max-width: 520px) {
+  #content {
+    width: 100%;
+    max-width: 390px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  nav > ul {
+    gap: 0.15rem 0.35rem;
+  }
+
+  nav a {
+    padding: 0.1rem;
+    font-size: 0.9rem;
+  }
+
+  .content-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .content-table th,
+  .content-table td {
+    padding: 0.28rem 0.75rem 0.28rem 0;
+    white-space: nowrap;
+  }
+
+  .content-table th:last-child,
+  .content-table td:last-child {
+    min-width: 16rem;
+    white-space: normal;
+  }
+}
