@@ -56,6 +56,10 @@
   }
 
   function ensureMathJax() {
+    if (!pageNeedsMathJax()) {
+      return;
+    }
+
     if (document.querySelector('script[src*="MathJax"], script[src*="mathjax"]')) {
       return;
     }
@@ -64,6 +68,15 @@
     mathJax.defer = true;
     mathJax.src = "https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js";
     document.head.appendChild(mathJax);
+  }
+
+  function pageNeedsMathJax() {
+    if (document.querySelector("[data-mathjax], math")) {
+      return true;
+    }
+
+    var text = document.body ? document.body.textContent : "";
+    return /\\\(|\\\[|\\begin\{(?:equation|align|gather|matrix|cases|array)\*?\}|\$\$[^$]+\$\$|\$[^$\n]+\$/.test(text);
   }
 
   function currentPage() {
