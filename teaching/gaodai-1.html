@@ -8,28 +8,20 @@
   <title>高等代数</title>
   <link rel="stylesheet" type="text/css" href="../stylesheet.css">
   <script src="../header.js" defer></script>
-  <script type="text/javascript">
-    function password() {
-      var testV = 1;
-      var pass1 = prompt('所在班级', '');
-      while (testV < 3) {
-        if (!pass1)
-          history.go(-1);
-        if (pass1 == "2203") {
-          break;
-        }
-        testV += 1;
-        pass1 = prompt('错误!请重新输入:');
-      }
-      if (pass1 != "password" & testV == 3)
-        history.go(-1);
-      return " ";
-    }
-    document.write(password());
-  </script>
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="zzz">Philip B. Zhang (张彪)</div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../research.html">Research</a></li>
+        <li><a href="../teaching.html">Teaching</a></li>
+        <li><a href="../chinese.html">Chinese Version</a></li>
+      </ul>
+    </nav>
+  </header>
 <div id="content" class="mainpage">
 <h1 class="page-title">高等代数</h1>
 

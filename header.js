@@ -84,6 +84,41 @@
     return page || "index.html";
   }
 
+  function currentNavPage() {
+    var page = currentPage();
+    var path = window.location.pathname;
+
+    if (page === "index.html" || page === "research.html" || page === "teaching.html" || page === "chinese.html") {
+      return page;
+    }
+
+    if (page === "gradwriting.html" || path.indexOf("/teaching/") !== -1 || path.indexOf("/grad_teaching/") !== -1) {
+      return "teaching.html";
+    }
+
+    return "";
+  }
+
+  function markCurrentPage(header) {
+    var page = currentNavPage();
+
+    header.querySelectorAll("nav a").forEach(function (link) {
+      var target;
+
+      try {
+        target = new URL(link.href, window.location.href).pathname.split("/").pop() || "index.html";
+      } catch (error) {
+        target = "";
+      }
+
+      if (page && target === page) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
   function siteRoot() {
     if (window.siteRoot) {
       return window.siteRoot;
@@ -100,7 +135,10 @@
   }
 
   function buildHeader() {
-    if (document.querySelector(".site-header")) {
+    var existing = document.querySelector(".site-header");
+
+    if (existing) {
+      markCurrentPage(existing);
       return;
     }
 
@@ -137,6 +175,7 @@
     header.appendChild(nav);
 
     document.body.insertBefore(header, document.body.firstChild);
+    markCurrentPage(header);
   }
 
   function init() {
